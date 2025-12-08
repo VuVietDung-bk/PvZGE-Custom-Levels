@@ -1,0 +1,1438 @@
+{
+  "#comment": "Zombie Quick",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "Zombie Quick",
+        "FirstIntroNarrative": "ZQ_Intro",
+        "LevelNumber": 7,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(ForzenPlantPlacement@CurrentLevel)",
+          "RTID(LostCityTrapTileGroups@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(Shallowpuddle@CurrentLevel)",
+          "RTID(LevelScheduler@CurrentLevel)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)"
+        ],
+        "Name": "Zombie Quick!",
+        "NameMultiLanguage": {
+          "en": "Zombie Quick!",
+          "zh": "僵尸快跑!"
+        },
+        "WritenBy": "solar_tomato",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(PersuitStage@LevelModules)",
+        "MusicType": "MiniGame_B"
+      }
+    },
+    { 
+      "objclass": "NarrativeProperties",
+      "aliases": [
+        "ZQ_Intro"
+      ],
+      "objdata": {
+        "AutoAdvance": true,
+        "DelayBetweenLines": 3,
+        "Flow": [
+          {
+            "Character": "zombossicon",
+            "Action": "NPC_ENTER",
+            "Delay": 0.5
+          },
+          {
+            "Character": "zombossicon",
+            "Action": "SAY",
+            "Lines": {
+              "en": "Life is like a box of assorted brains, you never know what you're gonna get.",
+              "zh": "人生就像一盒各式各样的大脑，你永远不知道下一块将会是哪种。"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "zombossicon",
+            "Action": "SAY",
+            "Lines": {
+              "en": "You know it's funny what a young mind remembers. I remember my first brain... ",
+              "zh": "你知道年幼的心灵会记住什么有趣的事吗？我记得我的第一个大脑..."
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "zombossicon",
+            "Action": "SAY",
+            "Lines": {
+              "en": "From that day on, if I was going somewhere, I WAS RUNNING!",
+              "zh": "从那天起，如果我要去某个地方，我都是跑着去的！"
+            }
+          },
+          {
+            "Character": "zombossicon",
+            "Action": "SAY",
+            "Lines": {
+              "en": "The zombies are coming! The zombies are coming! And this time, we're not stopping for tea!",
+              "zh": "僵尸来了！僵尸来了！而这次，我们可不会停下来喝茶！"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "zombossicon",
+            "Action": "SAY",
+            "Lines": {
+              "en": "Death is a part of life. I'm just making sure it's a BIG part of YOURS!",
+              "zh": "死亡是生命的一部分。我只是要确保它成为你们生命中很重要的一部分！"
+            },
+            "Delay": 0.3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(BeatTheLevel@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": [
+        "BeatTheLevel"
+      ],
+      "objclass": "StarChallengeBeatTheLevelProps",
+      "objdata": {
+        "DescriptionsMultilanguage": [
+          {
+            "en": "Survive a fast zombie attack",
+            "zh": "在高速僵尸的攻势中存活"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Shallowpuddle"
+      ],
+      "objclass": "InitialGridItemProperties",
+      "objdata": {
+        "InitialGridItemMatrixes": [
+          {
+            "GridMatrix": [
+              "000000000",
+              "111111111",
+              "000000000",
+              "111111111",
+              "000000000"
+            ],
+            "TypeName": "shallowpuddle"
+          }
+        ]
+      }
+    },
+    {
+			"aliases": [ 
+        "SeedBank" 
+      ],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+				"SelectionMethod": "chooser"
+			}
+		},
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 30,
+            "StartingPoints": 200,
+            "StartingWave": 10,
+            "ZombiePool": [
+            "RTID(tutorial_imp@CurrentLevel)",
+            "RTID(tutorial@CurrentLevel)",
+            "RTID(tutorial_armor1@CurrentLevel)",
+            "RTID(tutorial_armor2@CurrentLevel)",
+            "RTID(duckytube@CurrentLevel)",
+            "RTID(duckytube_armor1@CurrentLevel)",
+            "RTID(duckytube_armor2@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 40,
+            "StartingPoints": 200,
+            "StartingWave": 10,
+            "ZombiePool": [
+            "RTID(tutorial_imp@CurrentLevel)",
+            "RTID(tutorial@CurrentLevel)",
+            "RTID(tutorial_armor1@CurrentLevel)",
+            "RTID(tutorial_armor2@CurrentLevel)",
+            "RTID(duckytube@CurrentLevel)",
+            "RTID(duckytube_armor1@CurrentLevel)",
+            "RTID(duckytube_armor2@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 50,
+            "StartingPoints": 200,
+            "StartingWave": 10,
+            "ZombiePool": [
+            "RTID(tutorial_imp@CurrentLevel)",
+            "RTID(tutorial@CurrentLevel)",
+            "RTID(tutorial_armor1@CurrentLevel)",
+            "RTID(tutorial_armor2@CurrentLevel)",
+            "RTID(duckytube@CurrentLevel)",
+            "RTID(duckytube_armor1@CurrentLevel)",
+            "RTID(duckytube_armor2@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 75,
+            "StartingPoints": 200,
+            "StartingWave": 10,
+            "ZombiePool": [
+            "RTID(tutorial_imp@CurrentLevel)",
+            "RTID(tutorial@CurrentLevel)",
+            "RTID(tutorial_armor1@CurrentLevel)",
+            "RTID(tutorial_armor2@CurrentLevel)",
+            "RTID(duckytube@CurrentLevel)",
+            "RTID(duckytube_armor1@CurrentLevel)",
+            "RTID(duckytube_armor2@CurrentLevel)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "SuppressFlagZombie": true,
+        "FlagWaveInterval": 5,
+        "WaveCount": 20,
+        "MinNextWaveHealthPercentage": 0.7,
+        "ZombieCountdownFirstWaveSecs": 20,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave11@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave12@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave13@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave14@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave15@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave16@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave17@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave18@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave19@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave20@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+				"DynamicPlantfood": [
+					1,
+					1,
+					1,
+					1,
+					1,
+					1,
+					1
+				],
+        "Zombies": [
+          {
+            "Type": "RTID(tutorial_flag_veteran@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+				"DynamicPlantfood": [
+					1,
+					1,
+					1,
+					1,
+					1,
+					1,
+					1
+				],
+        "Zombies": [
+          {
+            "Type": "RTID(tutorial_flag_veteran@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial_gargantuar@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor4@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave13"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor4@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave14"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor4@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(tutorial_flag_veteran@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_gargantuar@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_gargantuar@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave16"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor4@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave17"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor4@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor4@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave18"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor4@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave19"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor4@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave20"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(tutorial_flag_veteran@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor4@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor4@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor4@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(modern_newspaper@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial_gargantuar@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial_gargantuar@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+			"aliases": [
+				"tutorial_imp"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tutorial_imp@CurrentLevel)",
+				"ZombieBasedOn": "tutorial_imp"
+			}
+		},
+		{
+			"aliases": [
+				"tutorial_imp"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"KilledByShrinkingViolet": true,
+				"CannotBeGrabbedByPtero": true,
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"IgnoredInWaves": true,
+				"WalkSPS": 0.55,
+				"EatDPS": 250,
+				"Toughness": 190,
+				"StartingArmors": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"tutorial"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tutorial@CurrentLevel)",
+				"ZombieBasedOn": "tutorial"
+			}
+		},
+		{
+			"aliases": [
+				"tutorial"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.35,
+				"EatDPS": 250,
+				"Toughness": 190,
+				"StartingArmors": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"tutorial_armor1"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tutorial_armor1@CurrentLevel)",
+				"ZombieBasedOn": "tutorial_armor1"
+			}
+		},
+		{
+			"aliases": [
+				"tutorial_armor1"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.35,
+				"EatDPS": 250,
+				"Toughness": 190,
+        "StartingArmors": [
+					"modern_armor1"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"tutorial_armor2"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tutorial_armor2@CurrentLevel)",
+				"ZombieBasedOn": "tutorial_armor2"
+			}
+		},
+		{
+			"aliases": [
+				"tutorial_armor2"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.35,
+				"EatDPS": 250,
+				"Toughness": 190,
+        "StartingArmors": [
+					"modern_armor2"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"tutorial_armor4"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tutorial_armor4@CurrentLevel)",
+				"ZombieBasedOn": "tutorial_armor4"
+			}
+		},
+		{
+			"aliases": [
+				"tutorial_armor4"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.35,
+				"EatDPS": 250,
+				"Toughness": 190,
+        "StartingArmors": [
+					"modern_armor4"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"duckytube"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(duckytube@CurrentLevel)",
+				"ZombieBasedOn": "duckytube"
+			}
+		},
+		{
+			"aliases": [
+				"duckytube"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"ChooseToSpawnOnDeepWaterRows": true,
+				"SpeedScaleInWater": 2,
+				"LivesInDeepWater": true,
+				"WalkSPS": 0.35,
+				"EatDPS": 250,
+				"Toughness": 190,
+        "StartingArmors": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"duckytube_armor1"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(duckytube_armor1@CurrentLevel)",
+				"ZombieBasedOn": "duckytube_armor1"
+			}
+		},
+		{
+			"aliases": [
+				"duckytube_armor1"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"ChooseToSpawnOnDeepWaterRows": true,
+				"SpeedScaleInWater": 2,
+				"LivesInDeepWater": true,
+				"WalkSPS": 0.35,
+				"EatDPS": 250,
+				"Toughness": 190,
+        "StartingArmors": [
+          "modern_armor1"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"duckytube_armor2"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(duckytube_armor2@CurrentLevel)",
+				"ZombieBasedOn": "duckytube_armor2"
+			}
+		},
+		{
+			"aliases": [
+				"duckytube_armor2"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"ChooseToSpawnOnDeepWaterRows": true,
+				"SpeedScaleInWater": 2,
+				"LivesInDeepWater": true,
+				"WalkSPS": 0.35,
+				"EatDPS": 250,
+				"Toughness": 190,
+        "StartingArmors": [
+          "modern_armor2"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"duckytube_armor4"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(duckytube_armor4@CurrentLevel)",
+				"ZombieBasedOn": "duckytube_armor4"
+			}
+		},
+		{
+			"aliases": [
+				"duckytube_armor4"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"ChooseToSpawnOnDeepWaterRows": true,
+				"SpeedScaleInWater": 2,
+				"LivesInDeepWater": true,
+				"WalkSPS": 0.35,
+				"EatDPS": 250,
+				"Toughness": 190,
+        "StartingArmors": [
+          "modern_armor4"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"tutorial_flag_veteran"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tutorial_flag_veteran@CurrentLevel)",
+				"ZombieBasedOn": "tutorial_flag_veteran"
+			}
+		},
+		{
+			"aliases": [
+				"tutorial_flag_veteran"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.75,
+				"EatDPS": 600,
+				"Toughness": 350,
+        "StartingArmors": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"modern_newspaper"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(modern_newspaper@CurrentLevel)",
+				"ZombieBasedOn": "modern_newspaper"
+			}
+		},
+		{
+			"aliases": [
+				"modern_newspaper"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.35,
+				"EatDPS": 250,
+				"Toughness": 460,
+				"EnragedDamageScale": 8,
+				"EnragedSpeedScale": 6,
+				"NewspaperHealth": 800,
+        "StartingArmors": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"modern_balloon"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(modern_balloon@CurrentLevel)",
+				"ZombieBasedOn": "modern_balloon"
+			}
+		},
+		{
+			"aliases": [
+				"modern_balloon"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"ChooseToSpawnOnNonDeckRows": true,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.8,
+				"BalloonWalkSPS": 0.8,
+				"EatDPS": 250,
+				"Toughness": 250,
+				"BalloonToughness": 650
+			}
+		},
+    {
+			"aliases": [
+				"tutorial_gargantuar"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tutorial_gargantuar@CurrentLevel)",
+				"ZombieBasedOn": "tutorial_gargantuar"
+			}
+		},
+		{
+			"aliases": [
+				"tutorial_gargantuar"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Gargantuar",
+				"CannotBeGrabbedByPtero": true,
+				"CannotChangeLaneByPowerToss": true,
+				"CannotBeFlickedByPowerToss": true,
+				"CannotBeDraggedByTangleKelp": true,
+				"CannotBeTossedByCitron": true,
+				"CannotBeSwallowedByChomper": true,
+				"CannotCarryPlantfoodsInWaves": true,
+				"SmashDamage": 1500,
+				"WalkSPS": 0.48,
+				"EatDPS": 100,
+				"Toughness": 3600,
+				"LivesInDeepWater": true,
+				"NormalDeathWhenMowed": true
+			}
+		}
+  ],
+  "version": 1
+}

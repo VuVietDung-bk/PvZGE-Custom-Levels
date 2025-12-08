@@ -1,0 +1,2506 @@
+{
+  "#comment": "Temporal_Strike",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "Prepare to withstand the pursuit of time!",
+        "FirstIntroNarrative": "TEMPORAL_Intro",
+        "LevelNumber": 9,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(ForzenPlantPlacement@CurrentLevel)",
+          "RTID(LostCityTrapTileGroups@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(GoldTiles@CurrentLevel)",
+          "RTID(LevelScheduler@CurrentLevel)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)"
+        ],
+        "Name": "Temporal Strike-day8",
+        "NameMultiLanguage": {
+          "en": "Temporal Strike-day8",
+          "zh": "超时空追击-day8"
+        },
+        "WritenBy": "solar_tomato",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(PersuitStage@LevelModules)"
+      }
+    },
+    { 
+      "objclass": "NarrativeProperties",
+      "aliases": [
+        "TEMPORAL_Intro"
+      ],
+      "objdata": {
+        "AutoAdvance": true,
+        "DelayBetweenLines": 3,
+        "Flow": [
+          {
+            "Character": "crazydave",
+            "Action": "NPC_ENTER",
+            "Delay": 0.5
+          },
+          {
+            "Character": "winnie",
+            "Action": "NPC_ENTER",
+            "Delay": 0.5
+          },
+          {
+            "Character": "winnie",
+            "Action": "SAY",
+            "Lines": {
+              "en": "Sensors indicate gradual decrease in surface temperature at this location",
+              "zh": "探测器显示此处地表温度在逐渐下降"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "winnie",
+            "Action": "SAY",
+            "Lines": {
+              "en": "This will compel local wildlife to undertake collective migration",
+              "zh": "这将迫使野生动物们进行集体大迁徙"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "winnie",
+            "Action": "SAY",
+            "Lines": {
+              "en": "User Dave, you are positioned directly within the primary migration corridor",
+              "zh": "用户戴夫，你站的位置正是大迁徙的必经之路"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "crazydave",
+            "Action": "SAY",
+            "Lines": {
+              "en": "Ooh-hoo! I'll just stuff those critters into my nutty burrito!",
+              "zh": "哦吼，我会把它们当成松鼠夹在我的卷饼里"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "crazydave",
+            "Action": "SHOUT",
+            "Lines": {
+              "en": "PENNY! BRING ME THE LAWNMOWER - TIME'S A-WASTIN'!",
+              "zh": "潘妮，快把我的割草机拿来，时间不等人！"
+            },
+            "Delay": 0.3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(BeatTheLevel@CurrentLevel)",
+            "RTID(SimultaneousPlants@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": [
+        "BeatTheLevel"
+      ],
+      "objclass": "StarChallengeBeatTheLevelProps",
+      "objdata": {
+        "DescriptionsMultilanguage": [
+          {
+            "en": "Survive for 400 seconds",
+            "zh": "坚持400秒"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SimultaneousPlants"
+      ],
+      "objclass": "StarChallengeSimultaneousPlantsProps",
+      "objdata": {
+        "MaximumPlants": 8
+      }
+    },
+    {
+			"aliases": [ 
+        "GoldTiles"
+       ],
+			"objclass": "InitialGridItemProperties",
+			"objdata": {
+				"InitialGridItemPlacements": [ 
+          {
+						"GridX": 2,
+						"GridY": 1,
+						"TypeName": "goldtile"
+					}, 
+          {
+						"GridX": 1,
+						"GridY": 2,
+						"TypeName": "goldtile"
+					}, 
+          {
+						"GridX": 2,
+						"GridY": 3,
+						"TypeName": "goldtile"
+					}, 
+          {
+						"GridX": 6,
+						"GridY": 0,
+						"TypeName": "goldtile"
+					}, 
+          {
+						"GridX": 6,
+						"GridY": 4,
+						"TypeName": "goldtile"
+					}
+        ]
+			}
+    },
+    {
+      "aliases": [
+        "LevelScheduler"
+      ],
+      "objclass": "LevelSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 1,
+          "Min": 1
+        },
+        "TimeBetween": {
+          "Max": 30,
+          "Min": 30
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(SchedulerWave1@CurrentLevel)",
+          "RTID(SchedulerWave2@CurrentLevel)",
+          "RTID(SchedulerWave3@CurrentLevel)",
+          "RTID(SchedulerWave4@CurrentLevel)",
+          "RTID(SchedulerWave5@CurrentLevel)",
+          "RTID(SchedulerPortal1@CurrentLevel)",
+          "RTID(SchedulerPortal2@CurrentLevel)",
+          "RTID(SchedulerPortal3@CurrentLevel)",
+          "RTID(SchedulerPortal4@CurrentLevel)",
+          "RTID(SchedulerPortal5@CurrentLevel)",
+          "RTID(SchedulerHalf@CurrentLevel)",
+          "RTID(SchedulerFinally@CurrentLevel)",
+          "RTID(SchedulerDone@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerWave1"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 50,
+          "Min": 50
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(WaveEvent1@CurrentLevel)",
+          "RTID(WaveWarning@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WaveEvent1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(chicken@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerWave2"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 110,
+          "Min": 110
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(WaveEvent2@CurrentLevel)",
+          "RTID(WaveWarning@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WaveEvent2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(chicken@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerWave3"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 170,
+          "Min": 170
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(WaveEvent3@CurrentLevel)",
+          "RTID(WaveWarning@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WaveEvent3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerWave4"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 240,
+          "Min": 240
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(WaveEvent4@CurrentLevel)",
+          "RTID(WaveWarning@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WaveEvent4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerWave5"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 320,
+          "Min": 320
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(WaveEvent5@CurrentLevel)",
+          "RTID(WaveWarning@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WaveEvent5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerWave6"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 380,
+          "Min": 380
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(WaveEvent5@CurrentLevel)",
+          "RTID(WaveWarning@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WaveEvent5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(chicken@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_weasel@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WaveWarning"
+      ],
+      "objclass": "WaveWarningProps",
+      "objdata": {
+        "LabelR": 255,
+        "LabelG": 255,
+        "LabelB": 255,
+        "LabelAInit": 0.1,
+        "OutLineR": 255,
+        "OutLineG": 12,
+        "OutLineB": 12,
+        "String": "GREAT MIGRATION！",
+				"StringMultiLanguage": {
+            "en": "GREAT MIGRATION！",
+            "zh": "动物大迁徙！"
+        },
+        "LabelTargetScale": 0.5,
+        "LabelInitScale": 4,
+        "Duration": 3,
+        "InitTime": 0.3       	 
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal1"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 85,
+          "Min": 85
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent1-1@CurrentLevel)",
+          "RTID(PortalsEvent1-2@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent1-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "1",
+        "PortalType": "RTID(Portal1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent1-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "3",
+        "PortalType": "RTID(Portal1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal1"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal1props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal1props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 5,
+            "Max": 5
+          },
+          "TimeBetween": {
+            "Min": 6,
+            "Max": 6
+          },
+          "Scale": 1,
+          "World": "west",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "west_bull"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "chicken"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "chicken"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal2"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 155,
+          "Min": 155
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent2-1@CurrentLevel)",
+          "RTID(PortalsEvent2-2@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent2-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 5,
+        "PortalRow": "0",
+        "PortalType": "RTID(Portal2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent2-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "2",
+        "PortalType": "RTID(Portal2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal2"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal2props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal2props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 5,
+            "Max": 5
+          },
+          "TimeBetween": {
+            "Min": 8,
+            "Max": 8
+          },
+          "Scale": 1,
+          "World": "iceage",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_hunter_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_weasel"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal3"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 210,
+          "Min": 210
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent3-1@CurrentLevel)",
+          "RTID(PortalsEvent3-2@CurrentLevel)",
+          "RTID(PortalsEvent3-3@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent3-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 4,
+        "PortalRow": "1",
+        "PortalType": "RTID(Portal3@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent3-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 3,
+        "PortalRow": "2",
+        "PortalType": "RTID(Portal3@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent3-3"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "4",
+        "PortalType": "RTID(Portal3@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal3"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal3props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal3props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 5,
+            "Max": 5
+          },
+          "TimeBetween": {
+            "Min": 8,
+            "Max": 8
+          },
+          "Scale": 1,
+          "World": "imp",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "chicken"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_weasel"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "chicken"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal4"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 280,
+          "Min": 280
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent4-1@CurrentLevel)",
+          "RTID(PortalsEvent4-2@CurrentLevel)",
+          "RTID(PortalsEvent4-3@CurrentLevel)",
+          "RTID(PortalsEvent4-4@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent4-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "1",
+        "PortalType": "RTID(Portal4-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent4-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "4",
+        "PortalType": "RTID(Portal4-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal4-1"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal4-1props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal4-1props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 5,
+            "Max": 5
+          },
+          "TimeBetween": {
+            "Min": 8,
+            "Max": 8
+          },
+          "Scale": 1,
+          "World": "west",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "west_bull_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "west_bull_veteran"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent4-3"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "0",
+        "PortalType": "RTID(Portal4-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent4-4"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "3",
+        "PortalType": "RTID(Portal4-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal4-2"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal4-2props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal4-2props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 5,
+            "Max": 5
+          },
+          "TimeBetween": {
+            "Min": 8,
+            "Max": 8
+          },
+          "Scale": 1,
+          "World": "iceage",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_hunter_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_gargantuar"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_hunter_veteran"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal5"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 360,
+          "Min": 360
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent5-1@CurrentLevel)",
+          "RTID(PortalsEvent5-2@CurrentLevel)",
+          "RTID(PortalsEvent5-3@CurrentLevel)",
+          "RTID(PortalsEvent5-4@CurrentLevel)",
+          "RTID(PortalsEvent5-5@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "0",
+        "PortalType": "RTID(Portal5@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "1",
+        "PortalType": "RTID(Portal5@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-3"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 5,
+        "PortalRow": "2",
+        "PortalType": "RTID(Portal5@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-4"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "3",
+        "PortalType": "RTID(Portal5@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-5"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "4",
+        "PortalType": "RTID(Portal5@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal5"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal5props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal5props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 5,
+            "Max": 5
+          },
+          "TimeBetween": {
+            "Min": 8,
+            "Max": 8
+          },
+          "Scale": 1,
+          "World": "normal",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_hunter_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "west_bull_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_octopus"
+          },
+          {
+            "Weight": 1000,
+            "ZombieTypeName": "iceage_gargantuar"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerHalf"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 200,
+          "Min": 200
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Half@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Half"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Charge over half, countdown 200 seconds",
+          "zh": "充能过半，倒计时200秒"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerFinally"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 370,
+          "Min": 370
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Finally@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Finally"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "The elimination system is about to activate, countdown 30 seconds",
+          "zh": "抹杀系统即将启动，倒计时30秒"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerDone"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 400,
+          "Min": 400
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": true,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(done@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "done"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "The offensive has ended!",
+          "zh": "攻势结束！"
+        },
+        "LifeSpan": 10
+      }
+    },
+    {
+			"aliases": [ 
+        "SeedBank" 
+      ],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+        "OverrideSeedSlotsCount":4,
+        "PresetPlantList": 
+        [ 
+          {
+						"PlantType": "glaciershroom",
+						"Level": -1
+					}
+        ],
+				"SelectionMethod": "chooser"
+			}
+		},
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 80,
+            "StartingPoints": 120,
+            "StartingWave": 5,
+            "ZombiePool": [
+            "RTID(cowboy@ZombieTypes)",
+            "RTID(cowboy_armor1@ZombieTypes)",
+            "RTID(cowboy_armor2@ZombieTypes)",
+            "RTID(iceage_dodo@ZombieTypes)",
+            "RTID(iceage_hunter@ZombieTypes)",
+            "RTID(lostcity_bug@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 90,
+            "StartingPoints": 160,
+            "StartingWave": 5,
+            "ZombiePool": [
+            "RTID(cowboy@ZombieTypes)",
+            "RTID(cowboy_armor1@ZombieTypes)",
+            "RTID(cowboy_armor2@ZombieTypes)",
+            "RTID(iceage_dodo@ZombieTypes)",
+            "RTID(iceage_hunter@ZombieTypes)",
+            "RTID(lostcity_bug@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 100,
+            "StartingPoints": 200,
+            "StartingWave": 5,
+            "ZombiePool": [
+            "RTID(cowboy@ZombieTypes)",
+            "RTID(cowboy_armor1@ZombieTypes)",
+            "RTID(cowboy_armor2@ZombieTypes)",
+            "RTID(iceage_dodo@ZombieTypes)",
+            "RTID(iceage_hunter@ZombieTypes)",
+            "RTID(lostcity_bug@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 120,
+            "StartingPoints": 200,
+            "StartingWave": 5,
+            "ZombiePool": [
+            "RTID(cowboy@ZombieTypes)",
+            "RTID(cowboy_armor1@ZombieTypes)",
+            "RTID(cowboy_armor2@ZombieTypes)",
+            "RTID(iceage_dodo@ZombieTypes)",
+            "RTID(iceage_hunter@ZombieTypes)",
+            "RTID(lostcity_bug@ZombieTypes)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 5,
+        "WaveCount": 20,
+        "MinNextWaveHealthPercentage": 0.5,
+        "ZombieCountdownFirstWaveSecs": 7,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave11@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave12@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave13@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave14@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave15@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(chicken_farmer@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(chicken_farmer@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(cowboy_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(cowboy@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(cowboy_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(cowboy@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(chicken_farmer@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(cowboy_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(cowboy_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(chicken_farmer@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+				"DynamicPlantfood": [
+					1,
+					1,
+					1,
+					1,
+					1,
+					1,
+					1
+				],
+        "Zombies": [
+          {
+            "Row": "4",
+            "Type": "RTID(west_bull@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(cowboy_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(cowboy_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(cowboy_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(chicken_farmer@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(chicken_farmer@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(cowboy_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(cowboy_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(chicken_farmer@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(cowboy_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(cowboy_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(west_bull@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"1",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          },
+          {
+            "Row":"3",
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Row":"4",
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Row":"1",
+            "Type": "RTID(cowboy_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(cowboy_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(lostcity_bug@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(cowboy_armor2@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"1",
+            "Type": "RTID(cowboy_armor2@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row":"3",
+            "Type": "RTID(cowboy_armor2@ZombieTypes)"
+          },
+          {
+            "Row":"4",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(cowboy_armor4@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+				"DynamicPlantfood": [
+					1,
+					1,
+					1,
+					1,
+					1,
+					1,
+					1
+				],
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(lostcity_bug@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(west_bull@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(west_bull@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(chicken_farmer@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(chicken_farmer@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(chicken_farmer@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(lostcity_bug@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(west_bull@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(chicken_farmer@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(chicken_farmer@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(cowboy_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(chicken_farmer@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(lostcity_bug@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(lostcity_bug@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave13"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"1",
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+            "Type": "RTID(cowboy_armor4@ZombieTypes)"
+          },
+          {
+            "Row":"3",
+            "Type": "RTID(cowboy_armor2@ZombieTypes)"
+          },
+          {
+            "Row":"4",
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(cowboy_armor2@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave14"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"1",
+            "Type": "RTID(chicken_farmer@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+            "Type": "RTID(west_bull@ZombieTypes)"
+          },
+          {
+            "Row":"3",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          },
+          {
+            "Row":"4",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(west_bull@ZombieTypes)"
+          },
+          {
+            "Row":"1",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(chicken_farmer@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"1",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Row":"4",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(west_bull@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(west_bull@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(lostcity_bug@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(lostcity_bug@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(chicken_farmer@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(chicken_farmer@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WaveEndless"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(cowboy_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(cowboy_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(lostcity_bug@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(west_bull@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(west_bull@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(chicken_farmer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(chicken_farmer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          }
+        ]
+      }
+    }
+  ],
+  "version": 1
+}

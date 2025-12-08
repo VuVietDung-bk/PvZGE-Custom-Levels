@@ -1,0 +1,356 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "hinanarukami",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2025-08-06",
+    "UpdatedAt": "2025-08-06",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "Some of your plants are changed",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		      "RTID(StandardIntro@LevelModules)",
+              "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(ModernMowers@LevelModules)",
+          "RTID(PlantMods@CurrentLevel)"
+        ],
+        "Name": "Random Universe - Level 0",
+        "WritenBy": "hinanarukami",
+        "MusicType": "MiniGame_B",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(TutorialStage@LevelModules)"
+      }
+    },
+    {
+        "aliases": [
+            "PlantMods"
+        ],
+        "objclass": "PlantModifierProperties",
+        "objdata": {
+            "HidePlantfood": true,
+            "SuppressParticle": true,
+            "List": [
+                {
+                    "Type": "sunflower",
+                    "NewObjdata": { "PlantfoodTime": 5, "SunValue": 25, "ProduceInterval": 12.5, "ProduceIntervalAdditional": 1.5, "ProduceCountdownStart": 3, "ProduceCountdownStartAdditional": 3, "Cooldown": 4, "CooldownFrom": 0, "SunCost": 50, "BeghouledCost": 1000, "Toughness": 750, "Family": "Sun" }
+                },
+                {
+                    "Type": "peashooter",
+                    "NewObjdata": {"ShootInterval": 0.9, "ShootIntervalAdditional": 0.1, "PlantfoodPeaCount": 90, "Cooldown": 15, "CooldownFrom": 1, "SunCost": 250, "BeghouledCost": 1000, "Toughness": 10, "Family": "Peashooter" }
+                },
+                {
+                    "Type": "wallnut",
+                    "NewObjdata": { "ArmorToughness": 5000, "Cooldown": 7.5, "CooldownFrom": 0.75, "SunCost": 25, "BeghouledCost": 1000, "Toughness": 5000, "Family": "Defence" }
+                },
+                {
+                    "Type": "potatomine",
+                    "NewObjdata": { "ChargeTime": 7, "Damage": 1200, "PlantfoodChildrenCount": 4, "Cooldown": 12, "CooldownFrom": 0.75, "SunCost": 50, "BeghouledCost": 1000, "Toughness": 300, "Family": "Explosive" }
+                },
+                {
+                    "Type": "cabbagepult",
+                    "NewObjdata": {"ThrowInterval": 3.85, "ThrowIntervalAdditional": 0.15, "Cooldown": 5, "CooldownFrom": 1, "SunCost": 150, "BeghouledCost": 1000, "Toughness": 8000, "Family": "Lobber" }
+                },
+                {
+                    "Type": "iceburg",
+                    "NewObjdata": { "FreezeDuration": 6, "ChillDuration": 19, "Cooldown": 5, "CooldownFrom": 0.75, "SunCost": 50, "BeghouledCost": 1000, "Toughness": 3.14159, "Family": "Cold", "ImmuneToIceblock": true }
+                }
+            ]
+        }
+    },
+    {
+      "aliases": [
+        "tutorial_random"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(tutorial_random@CurrentLevel)",
+        "ZombieBasedOn": "tutorial"
+      }
+    },
+    {
+      "aliases": [
+        "tutorial_random"
+      ],
+      "objclass": "ZombieProperties",
+      "objdata": { "ZombieSort": "Normal", "CannotBeTossedByCitron": false, "WalkSPS": 0.13, "Toughness": 2000, "EatDPS": 100, "WavePointCost": 500, "Weight": 4000, "HitRect": "RTID(CommonHitRect@RectangleProps)", "AttackRect": "RTID(CommonAttackRect@RectangleProps)" }
+    },
+    {
+      "aliases": [
+        "tutorial_armor1_random"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(tutorial_armor1_random@CurrentLevel)",
+        "ZombieBasedOn": "tutorial_armor1"
+      }
+    },
+    {
+      "aliases": [
+        "tutorial_armor1_random"
+      ],
+      "objclass": "ZombieProperties",
+      "objdata": { "ZombieSort": "Normal", "CannotBeTossedByCitron": false, "WalkSPS": 0.35, "Toughness": 190, "EatDPS": 100, "StartingArmors": [ "modern_armor1" ], "WavePointCost": 300, "Weight": 3000, "HitRect": "RTID(CommonHitRect@RectangleProps)", "AttackRect": "RTID(CommonAttackRect@RectangleProps)" }
+    },
+    {
+      "aliases": [
+        "tutorial_armor2_random"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(tutorial_armor2_random@CurrentLevel)",
+        "ZombieBasedOn": "tutorial_armor2"
+      }
+    },
+    {
+      "aliases": [
+        "tutorial_armor2_random"
+      ],
+      "objclass": "ZombieProperties",
+      "objdata": { "ZombieSort": "Normal", "CannotBeTossedByCitron": false, "WalkSPS": 0.185, "Toughness": 190, "EatDPS": 400, "StartingArmors": [ "modern_armor2" ], "WavePointCost": 400, "Weight": 3500, "HitRect": "RTID(CommonHitRect@RectangleProps)", "AttackRect": "RTID(CommonAttackRect@RectangleProps)" }
+    },
+    {
+      "aliases": [
+        "tutorial_imp_random"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(tutorial_imp_random@CurrentLevel)",
+        "ZombieBasedOn": "tutorial_imp"
+      }
+    },
+    {
+      "aliases": [
+        "tutorial_imp_random"
+      ],
+      "objclass": "ZombieProperties",
+      "objdata": { "KilledByShrinkingViolet": true, "CannotBeGrabbedByPtero": true, "ZombieSort": "Normal", "CannotBeTossedByCitron": false, "IgnoredInWaves": true, "WalkSPS": 1.02, "EatDPS": 100, "Toughness": 80, "WavePointCost": 150, "Weight": 2000, "HitRect": "RTID(ImpHitRect@RectangleProps)", "AttackRect": "RTID(ImpAttackRect@RectangleProps)" }
+    },
+    {
+            "aliases": [
+                "ChallengeModule"
+            ],
+            "objclass": "StarChallengeModuleProperties",
+            "objdata": {
+                "Challenges": [
+                    [
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+                ],
+                "ChallengesAlwaysAvailable": true
+            }
+        },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PresetPlantList": [
+                    {
+                        "PlantType": "sunflower",
+                        "Level": -1
+                    },
+                    {
+                        "PlantType": "peashooter",
+                        "Level": -1
+                    },
+				            {
+                        "PlantType": "wallnut",
+                        "Level": -1
+                    },
+				            {
+                        "PlantType": "potatomine",
+                        "Level": -1
+                    },
+				            {
+                        "PlantType": "cabbagepult",
+                        "Level": -1
+                    },
+				            {
+                        "PlantType": "iceburg",
+                        "Level": -1
+                    }
+                ],
+        "SelectionMethod": "preset"
+      }
+    },
+		{
+			"aliases": [
+			"BeatTheLevel"
+		],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+				"Survive a massive attack in Universe XYZ",
+				],
+				"DescriptionsMultiLanguage": [
+					{
+					"en": "123",
+					"zh": "112233"
+					}
+				]
+			}
+		},
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 80, // Difficulty D, easiest
+            "StartingPoints": 150,
+            "StartingWave": 0,
+            "ZombiePool": [
+              "RTID(tutorial_random@CurrentLevel)",
+              "RTID(tutorial_armor1_random@CurrentLevel)",
+              "RTID(tutorial_armor2_random@CurrentLevel)",
+              "RTID(tutorial_imp_random@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 150, // Difficulty C, normal
+            "StartingPoints": 150,
+            "StartingWave": 0,
+            "ZombiePool": [
+              "RTID(tutorial_random@CurrentLevel)",
+              "RTID(tutorial_armor1_random@CurrentLevel)",
+              "RTID(tutorial_armor2_random@CurrentLevel)",
+              "RTID(tutorial_imp_random@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 220, // Difficulty B, advanced
+            "StartingPoints": 150,
+            "StartingWave": 0,
+            "ZombiePool": [
+              "RTID(tutorial_random@CurrentLevel)",
+              "RTID(tutorial_armor1_random@CurrentLevel)",
+              "RTID(tutorial_armor2_random@CurrentLevel)",
+              "RTID(tutorial_imp_random@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 300, // Difficulty AAAAAAAAA
+            "StartingPoints": 150,
+            "StartingWave": 0,
+            "ZombiePool": [
+              "RTID(tutorial_random@CurrentLevel)",
+              "RTID(tutorial_armor1_random@CurrentLevel)",
+              "RTID(tutorial_armor2_random@CurrentLevel)",
+              "RTID(tutorial_imp_random@CurrentLevel)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+    "aliases": [
+        "WaveManagerProps"
+    ],
+    "objclass": "WaveManagerProperties",
+    "objdata": {
+        "FlagWaveInterval": 8,
+        "WaveCount": 16,
+        "Waves": [
+          [
+            
+          ],
+          [
+            
+          ],
+          [
+            
+          ],
+          [
+            
+          ],
+          [
+            
+          ],
+          [
+            
+          ],
+          [
+            "RTID(PlantFoodSpawner0@CurrentLevel)"
+          ],
+          [
+            
+          ],
+          [
+            
+          ],
+          [
+            
+          ],
+          [
+            
+          ],
+          [
+            
+          ],
+          [
+            "RTID(PlantFoodSpawner1@CurrentLevel)"
+          ],
+          [
+
+          ],
+          [
+
+          ],
+          [
+
+          ]
+        ]
+    }
+},
+    {
+            "aliases": [
+                "PlantFoodSpawner0"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "Zombies": [
+                    {
+                        "Type": "RTID(tutorial_random@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+    {
+            "aliases": [
+                "PlantFoodSpawner1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "Zombies": [
+                    {
+                        "Type": "RTID(tutorial_armor1_random@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+  ],
+  "version": 1
+}

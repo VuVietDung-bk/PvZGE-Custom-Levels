@@ -1,0 +1,1279 @@
+{
+  "#comment": "Temporal_Strike",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "Prepare to withstand the pursuit of time!",
+        "FirstIntroNarrative": "TEMPORAL_Intro",
+        "LevelNumber": 3,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(ForzenPlantPlacement@CurrentLevel)",
+          "RTID(LostCityTrapTileGroups@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(LevelScheduler@CurrentLevel)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)"
+        ],
+        "Name": "Temporal Strike-day2",
+        "NameMultiLanguage": {
+          "en": "Temporal Strike-day2",
+          "zh": "超时空追击-day2"
+        },
+        "WritenBy": "solar_tomato",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(PersuitStage@LevelModules)",
+        "MusicType": "MiniGame_B"
+      }
+    },
+    { 
+      "objclass": "NarrativeProperties",
+      "aliases": [
+        "TEMPORAL_Intro"
+      ],
+      "objdata": {
+        "AutoAdvance": true,
+        "DelayBetweenLines": 3,
+        "Flow": [
+          {
+            "Character": "crazydave",
+            "Action": "NPC_ENTER",
+            "Delay": 0.5
+          },
+          {
+            "Character": "winnie",
+            "Action": "NPC_ENTER",
+            "Delay": 0.5
+          },
+          {
+            "Character": "crazydave",
+            "Action": "SAY",
+            "Lines": {
+              "en": "I was totally whoozy-woozy from the time travel yesterday, neighborino! Took me FOREVER to recover!",
+              "zh": "我昨天指定是晕车了，好一阵才缓过来"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "winnie",
+            "Action": "SAY",
+            "Lines": {
+              "en": "Acidic comestibles can mitigate adverse effects caused by temporal displacement",
+              "zh": "酸性食物可以缓解时光机带来的不良反应"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "crazydave",
+            "Action": "SAY",
+            "Lines": {
+              "en": "That's why I LOVE sweet potatoes - they're absolutely TUBER-RIFIC!",
+              "zh": "这就是我喜欢甜薯的原因，它们太棒了"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "winnie",
+            "Action": "TIRED",
+            "Lines": {
+                "en": "User Dave, I calculate sweet potatoes would not appreciate your culinary assessment",
+                "zh": "用户戴夫，我想甜薯们对你的评价不会太高兴的"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "crazydave",
+            "Action": "SAY",
+            "Lines": {
+              "en": "Oh Penny, you should see how zombies react to them!",
+              "zh": "哦潘妮，你是没看见过僵尸对它的反应"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "crazydave",
+            "Action": "SHOUT",
+            "Lines": {
+              "en": "SOUR-SWEET BLAST-O-RAMA!",
+              "zh": "酸甜得爆炸！"
+            },
+            "Delay": 0.3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(BeatTheLevel@CurrentLevel)",
+            "RTID(ProtectThePlant@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": [
+        "BeatTheLevel"
+      ],
+      "objclass": "StarChallengeBeatTheLevelProps",
+      "objdata": {
+        "DescriptionsMultilanguage": [
+          {
+            "en": "Survive for 150 seconds",
+            "zh": "坚持150秒"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ProtectThePlant"
+      ],
+      "objclass":"ProtectThePlantChallengeProperties",
+      "objdata":{
+      "MustProtectCount":6,
+      "Plants":[
+          {
+            "Level":-1,
+            "GridX":4,
+            "GridY":1,
+            "PlantType":"sunflower"
+          },
+          {
+            "Level":-1,
+            "GridX":5,
+            "GridY":1,
+            "PlantType":"sunflower"
+          },
+          {
+            "Level":-1,
+            "GridX":1,
+            "GridY":3,
+            "PlantType":"sunflower"
+          },
+          {
+            "Level":-1,
+            "GridX":2,
+            "GridY":3,
+            "PlantType":"sunflower"
+          },
+          {
+            "Level":-1,
+            "GridX":5,
+            "GridY":4,
+            "PlantType":"sunflower"
+          },
+          {
+            "Level":-1,
+            "GridX":6,
+            "GridY":4,
+            "PlantType":"sunflower"
+          }
+        ]
+      }  
+    },
+    {
+      "aliases": [
+        "LevelScheduler"
+      ],
+      "objclass": "LevelSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 1,
+          "Min": 1
+        },
+        "TimeBetween": {
+          "Max": 30,
+          "Min": 30
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(SchedulerPortal1@CurrentLevel)",
+          "RTID(SchedulerPortal2@CurrentLevel)",
+          "RTID(SchedulerPortal3@CurrentLevel)",
+          "RTID(SchedulerPortal4@CurrentLevel)",
+          "RTID(SchedulerPortal5@CurrentLevel)",
+          "RTID(SchedulerHalf@CurrentLevel)",
+          "RTID(SchedulerFinally@CurrentLevel)",
+          "RTID(SchedulerDone@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal1"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 20,
+          "Min": 20
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent1@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "2",
+        "PortalType": "RTID(Portal1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal1"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal1props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal1props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 7,
+            "Max": 7
+          },
+          "TimeBetween": {
+            "Min": 5,
+            "Max": 8
+          },
+          "Scale": 1,
+          "World": "kongfu",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_bomb"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_bomb"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal2"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 45,
+          "Min": 45
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent2-1@CurrentLevel)",
+          "RTID(PortalsEvent2-2@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent2-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "3",
+        "PortalType": "RTID(Portal2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent2-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "0",
+        "PortalType": "RTID(Portal2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal2"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal2props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal2props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 7,
+            "Max": 7
+          },
+          "TimeBetween": {
+            "Min": 5,
+            "Max": 8
+          },
+          "Scale": 1,
+          "World": "kongfu",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_bomb"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_bomb"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_bomb"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal3"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 70,
+          "Min": 70
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent3-1@CurrentLevel)",
+          "RTID(PortalsEvent3-2@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent3-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 3,
+        "PortalRow": "1",
+        "PortalType": "RTID(Portal3@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent3-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 4,
+        "PortalRow": "4",
+        "PortalType": "RTID(Portal3@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal3"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal3props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal3props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 7,
+            "Max": 7
+          },
+          "TimeBetween": {
+            "Min": 5,
+            "Max": 8
+          },
+          "Scale": 1,
+          "World": "kongfu",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_bomb"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_bomb"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_bomb"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerHalf"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 75,
+          "Min": 75
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Half@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal4"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 100,
+          "Min": 100
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent4-1@CurrentLevel)",
+          "RTID(PortalsEvent4-2@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent4-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 5,
+        "PortalRow": "2",
+        "PortalType": "RTID(Portal4@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent4-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 8,
+        "PortalRow": "4",
+        "PortalType": "RTID(Portal4@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal4"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal4props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal4props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 7,
+            "Max": 7
+          },
+          "TimeBetween": {
+            "Min": 5,
+            "Max": 8
+          },
+          "Scale": 1,
+          "World": "kongfu",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_bomb"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_bomb"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Half"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Charge over half, countdown 75 seconds",
+          "zh": "充能过半，倒计时75秒"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerFinally"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 120,
+          "Min": 120
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Finally@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Finally"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "The elimination system is about to activate, countdown 30 seconds",
+          "zh": "抹杀系统即将启动，倒计时30秒"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal5"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 130,
+          "Min": 130
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent5-1@CurrentLevel)",
+          "RTID(PortalsEvent5-2@CurrentLevel)",
+          "RTID(PortalsEvent5-3@CurrentLevel)",
+          "RTID(PortalsEvent5-4@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "0",
+        "PortalType": "RTID(Portal5@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 3,
+        "PortalRow": "1",
+        "PortalType": "RTID(Portal5@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-3"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "3",
+        "PortalType": "RTID(Portal5@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-4"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 4,
+        "PortalRow": "4",
+        "PortalType": "RTID(Portal5@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal5"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal5props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal5props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 5,
+            "Max": 5
+          },
+          "TimeBetween": {
+            "Min": 5,
+            "Max": 7
+          },
+          "Scale": 1,
+          "World": "kongfu",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_bomb"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_bomb"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_bomb"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_bomb"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_bomb"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_bomb"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerDone"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 150,
+          "Min": 150
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": true,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(done@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "done"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "The offensive has ended!",
+          "zh": "攻势结束！"
+        },
+        "LifeSpan": 10
+      }
+    },
+    {
+			"aliases": [ 
+        "SeedBank" 
+      ],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+        "PresetPlantList": 
+        [ 
+          {
+						"PlantType": "sweetpotato",
+						"Level": -1
+					}
+        ],
+				"SelectionMethod": "chooser"
+			}
+		},
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 100,
+            "StartingPoints": 200,
+            "StartingWave": 6,
+            "ZombiePool": [
+            "RTID(tutorial@ZombieTypes)",
+            "RTID(tutorial_armor1@ZombieTypes)",
+            "RTID(tutorial_armor2@ZombieTypes)",
+            "RTID(tutorial_armor4@ZombieTypes)",
+            "RTID(monk_imp@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 140,
+            "StartingPoints": 200,
+            "StartingWave": 6,
+            "ZombiePool": [
+            "RTID(tutorial@ZombieTypes)",
+            "RTID(tutorial_armor1@ZombieTypes)",
+            "RTID(tutorial_armor2@ZombieTypes)",
+            "RTID(tutorial_armor4@ZombieTypes)",
+            "RTID(monk_imp@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 180,
+            "StartingPoints": 200,
+            "StartingWave": 6,
+            "ZombiePool": [
+            "RTID(tutorial@ZombieTypes)",
+            "RTID(tutorial_armor1@ZombieTypes)",
+            "RTID(tutorial_armor2@ZombieTypes)",
+            "RTID(tutorial_armor4@ZombieTypes)",
+            "RTID(monk_imp@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 250,
+            "StartingPoints": 200,
+            "StartingWave": 6,
+            "ZombiePool": [
+            "RTID(tutorial@ZombieTypes)",
+            "RTID(tutorial_armor1@ZombieTypes)",
+            "RTID(tutorial_armor2@ZombieTypes)",
+            "RTID(tutorial_armor4@ZombieTypes)",
+            "RTID(monk_imp@ZombieTypes)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 8,
+        "WaveCount": 16,
+        "MinNextWaveHealthPercentage": 0.7,
+        "ZombieCountdownFirstWaveSecs": 3,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(kongfu_imp@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(monk_imp@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(monk_imp@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+				"DynamicPlantfood": [
+					1,
+					1,
+					1,
+					1,
+					1,
+					1,
+					1
+				],
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(monk_imp@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(monk_imp@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(monk_imp@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(monk_imp@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(abbot_torch@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(abbot_torch@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(monk_imp@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(monk_imp@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(abbot_torch@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(abbot_torch@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(abbot_torch@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(abbot_torch@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"1",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+            "Type": "RTID(monk_imp@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+            "Type": "RTID(monk_imp@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(abbot_torch@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WaveEndless"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(monk_imp@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(monk_imp@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(monk_imp@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(abbot_torch@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(abbot_torch@ZombieTypes)"
+          }
+        ]
+      }
+    }
+  ],
+  "version": 1
+}

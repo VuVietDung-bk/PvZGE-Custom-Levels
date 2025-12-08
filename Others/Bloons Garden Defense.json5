@@ -1,0 +1,522 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "maido",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2024-12-06",
+    "UpdatedAt": "2024-12-06",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "<PLAYERNAME>'s Trip through The Mixed Timeline!",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		  "RTID(StandardIntro@LevelModules)",
+		  "RTID(ChallengeModule@CurrentLevel)",
+		  "RTID(SkyMowers@LevelModules)",
+		  "RTID(IPP@CurrentLevel)",
+		  "RTID(CowboyRails@CurrentLevel)", 
+		  "RTID(ConveyorBelt@CurrentLevel)"
+        ],
+        "Name": "Bloons Garden Defense",
+        "NameMultiLanguage": {
+          "en": "Bloons Garden Defense",
+          "zh": "功夫世界-沙盒"
+        },
+        "WritenBy": "maido",
+		"MusicType": "MiniGame_A",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(SkyStage@LevelModules)"
+      }
+    },
+    {
+      "aliases": [
+        "balloon_cone"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(balloon_cone@CurrentLevel)",
+        "ZombieBasedOn": "modern_balloon"
+      }
+    },
+    {
+      "aliases": [
+        "balloon_cone"
+      ],
+      "objclass": "ZombieProperties",
+      "objdata": {
+		"ChooseToSpawnOnNonDeckRows": true,
+		"CannotBeTossedByCitron": false,
+		"StartingArmors": ["modern_armor1"],
+		"WalkSPS": 0.25,
+		"BalloonWalkSPS": 0.8,
+		"EatDPS": 100,
+		"Toughness": 250,
+		"BalloonToughness": 650,
+		"WavePointCost": 600,
+		"Weight": 3000,
+		"HitRect": "RTID(CommonHitRect@RectangleProps)",
+		"AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+		"HitRectWithBalloon": "RTID(BalloonHitRect@RectangleProps)",
+		"AttackRectWithBalloon": "RTID(BalloonAttackRect@RectangleProps)"
+      }
+    },
+    {
+      "aliases": [
+        "balloon_bucket"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(balloon_bucket@CurrentLevel)",
+        "ZombieBasedOn": "modern_balloon"
+      }
+    },
+    {
+      "aliases": [
+        "balloon_bucket"
+      ],
+      "objclass": "ZombieProperties",
+      "objdata": {
+		"ChooseToSpawnOnNonDeckRows": true,
+		"CannotBeTossedByCitron": false,
+		"StartingArmors": ["modern_armor2"],
+		"WalkSPS": 0.25,
+		"BalloonWalkSPS": 1.2,
+		"EatDPS": 100,
+		"Toughness": 250,
+		"BalloonToughness": 650,
+		"WavePointCost": 750,
+		"Weight": 3000,
+		"HitRect": "RTID(CommonHitRect@RectangleProps)",
+		"AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+		"HitRectWithBalloon": "RTID(BalloonHitRect@RectangleProps)",
+		"AttackRectWithBalloon": "RTID(BalloonAttackRect@RectangleProps)"
+      }
+    },
+	    {
+			"aliases": [
+				"CowboyRails"
+			],
+			"objclass": "RailcartProperties",
+			"objdata": {
+				"RailcartType": "railcart_sky",
+				"Railcarts": [
+					{
+						"Column": 2,
+						"Row": 2
+					},
+				],
+				"Rails": [				    
+					{
+						"Column": 2,
+						"RowStart": 0,
+						"RowEnd": 4,
+					},				
+				]
+			}
+		},
+{"aliases":["IPP"],
+"objclass": "InitialPlantProperties",
+"objdata": {
+    "InitialPlantPlacements": [
+		{"GridX": 0, "GridY": 2, "Level": -1, "TypeName":"bamboozle"},
+		{"GridX": 2, "GridY": 2, "Level": -1, "TypeName":"tallnut"},
+    ]
+}},
+	    {
+            "aliases": [
+                "ConveyorBelt"
+            ],
+            "objclass": "ConveyorSeedBankProperties",
+            "objdata": {
+                "DropDelayConditions": [
+                    {
+                        "Delay": 5,
+                        "MaxPackets": 0
+                    },
+                    {
+                        "Delay": 5,
+                        "MaxPackets": 1
+                    },
+                    {
+                        "Delay": 5,
+                        "MaxPackets": 4
+                    },
+                    {
+                        "Delay": 5,
+                        "MaxPackets": 8
+                    }
+                ],
+                "InitialPlantList": [
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 1,
+                        "PlantType": "bamboozle",
+                        "Weight": 100
+                    },					
+                ],
+                "SpeedConditions": [
+                    {
+                        "MaxPackets": 0,
+                        "Speed": 100
+                    }
+                ]
+            }
+        },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {	  
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 25, // Difficulty D, easiest
+            "StartingPoints": 25,
+            "StartingWave": 0,
+            "ZombiePool": [
+			"RTID(modern_balloon@ZombieTypes)",
+			"RTID(balloon_cone@CurrentLevel)",
+			"RTID(balloon_bucket@CurrentLevel)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 50, // Difficulty C, normal
+            "StartingPoints": 50,
+            "StartingWave": 0,
+            "ZombiePool": [
+			"RTID(modern_balloon@ZombieTypes)",
+			"RTID(balloon_cone@CurrentLevel)",
+			"RTID(balloon_bucket@CurrentLevel)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 75, // Difficulty B, advanced
+            "StartingPoints": 75,
+            "StartingWave": 0,
+            "ZombiePool": [
+			"RTID(modern_balloon@ZombieTypes)",
+			"RTID(balloon_cone@CurrentLevel)",
+			"RTID(balloon_bucket@CurrentLevel)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 100, // Difficulty AAAAAAAAA
+            "StartingPoints": 100,
+            "StartingWave": 0,
+            "ZombiePool": [
+			"RTID(modern_balloon@ZombieTypes)",
+			"RTID(balloon_cone@CurrentLevel)",
+			"RTID(balloon_bucket@CurrentLevel)",
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+	{
+			"aliases": [
+			"ChallengeModule"
+		],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+			"BeatTheLevel"
+		],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+				"Press N or click on Bamboozle to enter aiming",
+				"Shovel Bamboozle when out of ammo to get a fresh one",
+				"Pop all incoming Balloon Zombies to survive",
+				],
+				"DescriptionsMultiLanguage": [
+					{
+					"en": "123",
+					"zh": "112233"
+					}
+				]
+			}
+	    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 8,
+        "WaveCount": 24,
+        "Waves": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      }
+    },
+//This is the scripted Zombie Ambush setup, currently for waves 10, 20, 30, and 40
+       {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 6,
+				"LevelJam": "jam_rap",
+				"SuppressFlagZombie": true,
+                "SpawnColEnd": 9,
+                "SpawnColStart": 6,
+                "WaveCount": 12,
+                "WaveSpendingPointIncrement": 50,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    ["RTID(Wave1@CurrentLevel)"],
+                    ["RTID(Wave2@CurrentLevel)","RTID(SnowstormSmall@CurrentLevel)"],
+                    ["RTID(Wave3@CurrentLevel)"],
+                    ["RTID(Wave4@CurrentLevel)"],
+                    ["RTID(Wave5@CurrentLevel)"],
+                    ["RTID(Wave6@CurrentLevel)","RTID(SnowstormSmall@CurrentLevel)"],
+                    ["RTID(Wave7@CurrentLevel)"],
+                    ["RTID(Wave8@CurrentLevel)"],
+                    ["RTID(Wave9@CurrentLevel)","RTID(SnowstormSmall@CurrentLevel)"],
+                    ["RTID(Wave10@CurrentLevel)"],
+					["RTID(Wave11@CurrentLevel)"],
+					["RTID(Wave12@CurrentLevel)","RTID(SnowstormMed@CurrentLevel)"],
+                ]
+            }
+        },
+// There are 7 levels of difficulties: - - - D C B A
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(modern_balloon@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(balloon_cone@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(modern_balloon@ZombieTypes)"},
+		  {"Type": "RTID(balloon_cone@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(balloon_cone@CurrentLevel)"},
+		  {"Type": "RTID(balloon_bucket@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(balloon_cone@CurrentLevel)"},
+		  {"Type": "RTID(balloon_bucket@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(balloon_cone@CurrentLevel)"},
+		  {"Type": "RTID(balloon_bucket@CurrentLevel)"},
+		  {"Type": "RTID(balloon_cone@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(balloon_cone@CurrentLevel)"},
+		  {"Type": "RTID(balloon_bucket@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(balloon_bucket@CurrentLevel)"},
+		  {"Type": "RTID(balloon_bucket@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(balloon_cone@CurrentLevel)"},
+		  {"Type": "RTID(balloon_cone@CurrentLevel)"},
+		  {"Type": "RTID(balloon_cone@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(balloon_cone@CurrentLevel)"},
+		  {"Type": "RTID(balloon_bucket@CurrentLevel)"},
+		  {"Type": "RTID(balloon_cone@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(balloon_cone@CurrentLevel)"},
+		  {"Type": "RTID(balloon_bucket@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(balloon_cone@CurrentLevel)"},
+		  {"Type": "RTID(balloon_bucket@CurrentLevel)"},
+		  {"Type": "RTID(balloon_bucket@CurrentLevel)"},
+        ]
+      }
+    },
+	    {
+			"aliases": [
+				"SnowstormSmall"
+			],
+			"objclass": "StormZombieSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 6,
+				"ColumnStart": 4,
+				"GroupSize": 2,
+				"TimeBetweenGroups": 2.5,
+				"Type": "snowstorm",
+				"Zombies": [
+				{"Type": "RTID(modern_balloon@ZombieTypes)"},
+				{"Type": "RTID(modern_balloon@ZombieTypes)"},
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SnowstormMed"
+			],
+			"objclass": "StormZombieSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 6,
+				"ColumnStart": 4,
+				"GroupSize": 2,
+				"TimeBetweenGroups": 2.5,
+				"Type": "snowstorm",
+				"Zombies": [
+				{"Type": "RTID(modern_balloon@ZombieTypes)"},
+				{"Type": "RTID(modern_balloon@ZombieTypes)"},
+				{"Type": "RTID(modern_balloon@ZombieTypes)"},
+				]
+			}
+		},
+  ],
+  "version": 1
+}

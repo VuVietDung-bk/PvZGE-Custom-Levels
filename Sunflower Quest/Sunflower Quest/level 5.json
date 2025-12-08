@@ -1,0 +1,232 @@
+{
+	"#comment": "the illusion of free choice",
+	"Information": {
+		"name": {
+			"en": "",
+			"zh-CN": ""
+		},
+		"Author": "BlockAgent007",
+		"Introduction": {
+			"en": "",
+			"zh-CN": ""
+		},
+		"GameVersion": "",
+		"Version": "1.0",
+		"CreatedAt": "2025-07-31",
+		"UpdatedAt": "",
+		"Difficulty": "Hard",
+		"Category": "Survival"
+	},
+	"objects":[
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "<PLAYERNAME>'s Attempt to Get Sunflower!",
+				"LevelNumber": 5,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"FirstRewardType": "unlock_plant",
+				"FirstRewardParam": "sunflower",
+				"Modules": [
+        				"RTID(ZombiesDeadWinCon@LevelModules)",
+        				"RTID(DefaultZombieWinCondition@LevelModules)",
+        				"RTID(NewWaves@CurrentLevel)",
+        				"RTID(SeedBank@CurrentLevel)",
+						"RTID(StandardIntro@LevelModules)",
+						"RTID(DefaultSunDropper@LevelModules)",
+						"RTID(ModernMowers@LevelModules)"
+      				],
+				"Name": "Sunflower - Level 5",
+				"WritenBy": "BlockAgent007",
+				"NormalPresentTable": "egypt_normal_01",
+      				"ShinyPresentTable": "egypt_shiny_01",
+				"StageModule": "RTID(TutorialStage@LevelModules)"
+			}
+		},
+		{
+			"aliases": [
+				"SeedBank"
+			],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+                "SuppressObjectiveTip": true,
+				"UnlockAll": true,
+				"PresetPlantList": [
+					{
+						"PlantType": "sunflower",
+						"Level": -1
+					}
+				],
+				"PlantIncludeList": [
+					"sunflower",
+					"peashooter"
+				],
+				"SelectionMethod": "chooser"
+			}
+		},
+		{
+			"aliases": [
+				"NewWaves"
+			],
+			"objclass": "WaveManagerModuleProperties",
+    		"objdata": {
+        		"DynamicZombies": [
+        			{},
+        			{},
+        			{},
+        			{
+            			"PointIncrementPerWave": 60,
+            			"StartingPoints": 50,
+            			"StartingWave": 0,
+            			"ZombiePool": [
+            				"RTID(tutorial@ZombieTypes)",
+							"RTID(tutorial_armor1@ZombieTypes)"
+            			]
+        			},
+        			{
+            			"PointIncrementPerWave": 75,
+            			"StartingPoints": 100,
+            			"StartingWave": 0,
+            			"ZombiePool": [
+							"RTID(tutorial@ZombieTypes)",
+							"RTID(tutorial_armor1@ZombieTypes)",
+							"RTID(tutorial_armor2@ZombieTypes)"
+            			]
+        			},
+        			{
+            			"PointIncrementPerWave": 85,
+            			"StartingPoints": 150,
+            			"StartingWave": 0,
+            			"ZombiePool": [
+							"RTID(tutorial@ZombieTypes)",
+							"RTID(tutorial_armor1@ZombieTypes)",
+							"RTID(tutorial_armor2@ZombieTypes)"
+            			]
+        			},
+        			{
+            			"PointIncrementPerWave": 90,
+            			"StartingPoints": 180,
+            			"StartingWave": 0,
+            			"ZombiePool": [
+							"RTID(tutorial@ZombieTypes)",
+							"RTID(tutorial_armor1@ZombieTypes)",
+							"RTID(tutorial_armor2@ZombieTypes)"
+            			]
+        			}
+        		],
+        		"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+    		}
+		},
+		{
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 9,
+                "WaveCount": 18,
+                "Waves": [
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+					[],
+					["RTID(NewspaperWave1@CurrentLevel)"],
+					[],
+					[],
+					[],
+					["RTID(NewspaperWave2@CurrentLevel)"],
+					[],
+					[],
+					["RTID(NewspaperWave3@CurrentLevel)"],
+					[],
+					[],
+					[],
+					["RTID(NewspaperWave4@CurrentLevel)"]
+                ]
+            }
+        },
+		{
+			"aliases":[
+				"NewspaperWave1"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(modern_newspaper@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"NewspaperWave2"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(modern_newspaper@ZombieTypes)",
+						"Row": 2
+					},
+					{
+						"Type": "RTID(modern_newspaper@ZombieTypes)",
+						"Row": 4
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"NewspaperWave3"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(modern_newspaper@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(modern_newspaper@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"NewspaperWave4"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(modern_newspaper@ZombieTypes)",
+						"Row": 1
+					},
+					{
+						"Type": "RTID(modern_newspaper@ZombieTypes)",
+						"Row": 2
+					},
+					{
+						"Type": "RTID(modern_newspaper@ZombieTypes)",
+						"Row": 3
+					},
+					{
+						"Type": "RTID(modern_newspaper@ZombieTypes)",
+						"Row": 4
+					},
+					{
+						"Type": "RTID(modern_newspaper@ZombieTypes)",
+						"Row": 5
+					}
+				]
+			}
+		}
+	],
+	"version": 1
+}

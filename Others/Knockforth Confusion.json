@@ -1,0 +1,516 @@
+{"#comment": "eighties_gargantuar, cowboy_gargantuar, dino_bully, dino_bully_veteran, football_mech, lostcity_jane, kongfu_bomb, abbot_torch, lostcity_crystalskull, dark_gargantuar",
+"objects": [{
+    "objclass": "LevelDefinition",
+    "objdata": {
+      "Loot": "RTID(DefaultLoot@LevelModules)",
+      "MusicType": "MiniGame_B",
+      "Description": "Just a totally normal level, trust me...",
+      "Modules": [
+          "RTID(EightiesMowers@LevelModules)",
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ConveyorBelt@CurrentLevel)",
+	  "RTID(Rails@CurrentLevel)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(PlantMods@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)"
+      ],
+      "Name": "Knockforth Confusion",
+      "StageModule": "RTID(EightiesStage@LevelModules)",
+      "NormalPresentTable": "egypt_normal_01",
+      "ShinyPresentTable": "egypt_shiny_01"}
+    },
+
+   {
+       "aliases": ["Rails"],
+       "objclass": "RailcartProperties",
+       "objdata": {
+           "RailcartType": "railcart_wildwest",
+           "Railcarts": [],
+           "Railcarts": [
+		{
+                   "Column": 0,
+                   "Row": 2
+		}
+	       ],
+           "Rails": [
+               {
+                   "Column": 0,
+                   "RowEnd": 4,
+                   "RowStart": 0
+               }, 
+           ]
+       }
+   },
+
+{
+      "aliases": ["ChallengeModule"],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(ProtectThePlant@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },  
+
+{
+    "aliases": ["ProtectThePlant"],
+    "objclass": "ProtectThePlantChallengeProperties",
+    "objdata": {
+        "MustProtectCount": 1,
+        "Plants": [
+            {
+                "GridX": 0,
+                "GridY": 2,
+                "PlantType": "wintermelon"
+            },
+            {
+                "GridX": 1,
+                "GridY": 2,
+                "PlantType": "glaciershroom"
+            },
+        ]
+    }
+},
+
+{
+            "aliases": ["PlantMods"],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "HidePlantfood": true,
+                "SuppressParticle": true,
+                "List": [
+                    {
+                    "Type": "springbean",
+                    "NewObjdata": { 
+                        "KnockbackDistance": 1.0, 
+                        "RestTime": 69420, 
+                        "Toughness": 5000
+                        }
+                    },
+                    {
+                    "Type": "glaciershroom",
+                    "NewObjdata": { 
+                         "FreezeDuration": 15, 
+                         "ChillDuration": 15,  
+                         "FreezeDamage": 1200, 
+                         "EatFreezeDuration": 15, 
+                         "EatChillDuration": 15,  
+                         "WakeTime": 420,  
+                         "Toughness": 2000 
+                        }
+                    },
+                    {
+                    "Type": "wintermelon",
+                    "NewObjdata": {  
+                        "ThrowInterval": 2.5, 
+                        "ThrowIntervalAdditional": 0.0,
+                        "ChillDuration": 15  
+                        }
+                    },
+                    {
+                    "Type": "primalpeashooter",
+                    "NewObjdata": { 
+                        "ShootInterval": 3.0, 
+                        "ShootIntervalAdditional": 0.0, 
+                        "PeaType": "pea_primal",  
+                        "PlantfoodPeaCount": 10, 
+                        "KnockbackDistance": -0.5, 
+                        "KnockbackChance": 0.33, 
+                        "Damage": 100
+                        }
+                    },
+                    {
+                    "Type": "guacodile",
+                    "NewObjdata": { 
+                        "Toughness": 67, 
+                        "ShootInterval": 1.0, 
+                        "ShootIntervalAdditional": 0.0, 
+                        "PlantfoodTime": 5, 
+                        "ChildrenBiteDamage": 670
+                        }
+                    },
+                    {
+                    "Type": "chardguard",
+                    "NewObjdata": {  
+                        "BounceDistance": 3.0,  
+                        "Toughness": 750 
+                        }
+                    },
+                ]
+            }
+        },
+
+{
+      "aliases": ["ConveyorBelt"],
+      "objclass": "ConveyorSeedBankProperties",
+      "objdata": {
+                "DropDelayConditions": [
+                    {
+                        "Delay": 3,
+                        "MaxPackets": 0
+                    },
+                    {
+                        "Delay": 6,
+                        "MaxPackets": 2
+                    },
+                    {
+                        "Delay": 9,
+                        "MaxPackets": 4
+                    },
+                    {
+                        "Delay": 12,
+                        "MaxPackets": 8
+                    }
+        ],
+                "InitialPlantList": [
+		    {
+		     "MaxWeightFactor": 0,
+		     "MaxCount": 5,
+                     "PlantType": "springbean",
+                     "Weight": 35
+                    },
+		    {
+		     "MaxWeightFactor": 0,
+		     "MaxCount": 10,
+                     "PlantType": "guacodile",
+                     "Weight": 50
+                    },
+		    {
+		     "MaxWeightFactor": 0,
+		     "MaxCount": 5,
+                     "PlantType": "chardguard",
+                     "Weight": 40
+                    },
+		    {
+		     "MaxWeightFactor": 0,
+		     "MaxCount": 19,
+                     "PlantType": "primalpeashooter",
+                     "Weight": 60
+                    },
+		    {
+		     "MaxWeightFactor": 0,
+		     "MaxCount": 10,
+                     "PlantType": "pvine",
+                     "Weight": 60
+                    },
+		    {
+		     "MaxWeightFactor": 0,
+		     "MaxCount": 7,
+                     "PlantType": "pumpkin",
+                     "Weight": 50
+                    },
+		    {
+		     "MaxWeightFactor": 0,
+		     "MaxCount": 3,
+                     "PlantType": "hurrikale",
+                     "Weight": 40
+                    },
+		    {
+		     "MaxWeightFactor": 0,
+		     "MaxCount": 2,
+                     "PlantType": "thymewarp",
+                     "Weight": 40
+                    }
+                ],
+                "SpeedConditions": [
+                    {
+                        "MaxPackets": 0,
+                        "Speed": 125
+                    },
+                ],
+            },
+        },
+
+	
+
+    {"aliases": ["WaveManager", "NewWaves"],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 10,
+        "WaveCount": 20,
+        "FlagWaveVeteranOverrideTypes": [1, 1],
+        "Waves": [
+          ["RTID(Wave1@CurrentLevel)"],
+          ["RTID(Wave2@CurrentLevel)"],
+          ["RTID(Wave3@CurrentLevel)"],
+          ["RTID(Wave4@CurrentLevel)"],
+          ["RTID(Wave5@CurrentLevel)"],
+          ["RTID(Wave6@CurrentLevel)"],
+          ["RTID(Wave7@CurrentLevel)"],
+          ["RTID(Wave8@CurrentLevel)"],
+          ["RTID(Wave9@CurrentLevel)"],
+          ["RTID(Wave10@CurrentLevel)"],
+          ["RTID(Wave11@CurrentLevel)"],
+          ["RTID(Wave12@CurrentLevel)"],
+          ["RTID(Wave13@CurrentLevel)"],
+          ["RTID(Wave14@CurrentLevel)"],
+          ["RTID(Wave15@CurrentLevel)"],
+          ["RTID(Wave16@CurrentLevel)"],
+          ["RTID(Wave17@CurrentLevel)"],
+          ["RTID(Wave18@CurrentLevel)"],
+          ["RTID(Wave19@CurrentLevel)"],
+          ["RTID(Wave20@CurrentLevel)"]
+        ]
+      }
+    },
+{"aliases":["Wave1"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "Zombies": [
+        {"Type": "RTID(dino_bully@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave2"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "Zombies": [
+        {"Type": "RTID(dino_bully@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave3"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+  "Zombies": [
+        {"Type": "RTID(dino_bully@ZombieTypes)"},
+        {"Type": "RTID(lostcity_crystalskull@ZombieTypes)"}
+  ]
+}},
+
+{"aliases":["Wave4"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+"Zombies": [
+        {"Type": "RTID(dino_bully@ZombieTypes)"},
+        {"Type": "RTID(dino_bully_veteran@ZombieTypes)"}
+  ]
+}},
+
+{"aliases":["Wave5"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+"Zombies": [
+        {"Type": "RTID(lostcity_jane@ZombieTypes)"},
+        {"Type": "RTID(lostcity_crystalskull@ZombieTypes)"}
+  ]      
+}},
+
+{"aliases":["Wave6"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+"Zombies": [
+        {"Type": "RTID(lostcity_jane@ZombieTypes)"},
+        {"Type": "RTID(lostcity_jane@ZombieTypes)"},
+        {"Type": "RTID(lostcity_jane@ZombieTypes)"}
+  ]
+}},
+
+{"aliases":["Wave7"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+      "AdditionalPlantfood": 1,
+"Zombies": [
+        {"Type": "RTID(kongfu_bomb@ZombieTypes)"},
+        {"Type": "RTID(kongfu_bomb@ZombieTypes)"},
+        {"Type": "RTID(kongfu_bomb@ZombieTypes)"}
+  ]
+}},
+
+{"aliases":["Wave8"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+"Zombies": [
+        {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+        {"Type": "RTID(dino_bully_veteran@ZombieTypes)"}
+  ]
+}},
+
+{"aliases":["Wave9"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+      "AdditionalPlantfood": 1,
+"Zombies": [
+        {"Type": "RTID(abbot_torch@ZombieTypes)"},
+        {"Type": "RTID(abbot_torch@ZombieTypes)"},
+        {"Type": "RTID(lostcity_jane@ZombieTypes)"},
+        {"Type": "RTID(lostcity_jane@ZombieTypes)"},
+        {"Type": "RTID(lostcity_jane@ZombieTypes)"}
+  ]
+}},
+
+{"aliases":["Wave10"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+"Zombies": [
+       {"Type": "RTID(football_mech@ZombieTypes)"},
+       {"Type": "RTID(football_mech@ZombieTypes)"},
+       {"Type": "RTID(football_mech@ZombieTypes)"}
+  ]
+}},
+
+{"aliases":["Wave11"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+"Zombies": [
+       {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+       {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+       {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+       {"Type": "RTID(lostcity_crystalskull@ZombieTypes)"},
+       {"Type": "RTID(lostcity_crystalskull@ZombieTypes)"},
+       {"Type": "RTID(lostcity_crystalskull@ZombieTypes)"}
+  ]
+}},
+
+{"aliases":["Wave12"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+"Zombies": [
+       {"Type": "RTID(dark_gargantuar@ZombieTypes)"},
+       {"Type": "RTID(cowboy_gargantuar@ZombieTypes)"}
+  ]
+}},
+
+{"aliases":["Wave13"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+     NotificationEvents: ["jam_metal"],
+"Zombies": [
+       {"Type": "RTID(eighties_gargantuar@ZombieTypes)"},
+       {"Type": "RTID(eighties_gargantuar@ZombieTypes)"},
+       {"Type": "RTID(lostcity_jane@ZombieTypes)"},
+       {"Type": "RTID(lostcity_jane@ZombieTypes)"},
+       {"Type": "RTID(lostcity_jane@ZombieTypes)"}
+  ]
+}},
+
+{"aliases":["Wave14"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+      "AdditionalPlantfood": 1,
+"Zombies": [
+       {"Type": "RTID(dark_gargantuar@ZombieTypes)"},
+       {"Type": "RTID(dark_gargantuar@ZombieTypes)"},
+       {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+       {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+       {"Type": "RTID(abbot_torch@ZombieTypes)"},
+       {"Type": "RTID(abbot_torch@ZombieTypes)"}
+  ]
+}},
+
+{"aliases":["Wave15"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+"Zombies": [
+       {"Type": "RTID(kongfu_bomb@ZombieTypes)"},
+       {"Type": "RTID(kongfu_bomb@ZombieTypes)"},
+       {"Type": "RTID(kongfu_bomb@ZombieTypes)"},
+       {"Type": "RTID(kongfu_bomb@ZombieTypes)"},
+       {"Type": "RTID(kongfu_bomb@ZombieTypes)"},
+       {"Type": "RTID(dino_bully@ZombieTypes)"},
+       {"Type": "RTID(dino_bully@ZombieTypes)"},
+       {"Type": "RTID(dino_bully@ZombieTypes)"},
+       {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+       {"Type": "RTID(dino_bully_veteran@ZombieTypes)"}
+  ]
+}},
+
+{"aliases":["Wave16"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+"Zombies": [
+       {"Type": "RTID(lostcity_crystalskull@ZombieTypes)"},
+       {"Type": "RTID(lostcity_crystalskull@ZombieTypes)"},
+       {"Type": "RTID(lostcity_crystalskull@ZombieTypes)"},
+       {"Type": "RTID(lostcity_crystalskull@ZombieTypes)"},
+       {"Type": "RTID(abbot_torch@ZombieTypes)"},
+       {"Type": "RTID(abbot_torch@ZombieTypes)"},
+       {"Type": "RTID(abbot_torch@ZombieTypes)"}
+  ]
+}},
+
+{"aliases":["Wave17"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+      "AdditionalPlantfood": 1,
+"Zombies": [
+       {"Type": "RTID(football_mech@ZombieTypes)"},
+       {"Type": "RTID(football_mech@ZombieTypes)"},
+       {"Type": "RTID(football_mech@ZombieTypes)"},
+       {"Type": "RTID(football_mech@ZombieTypes)"},
+       {"Type": "RTID(football_mech@ZombieTypes)"},
+       {"Type": "RTID(lostcity_jane@ZombieTypes)"},
+       {"Type": "RTID(lostcity_jane@ZombieTypes)"},
+       {"Type": "RTID(lostcity_jane@ZombieTypes)"}
+  ]
+}},
+
+{"aliases":["Wave18"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+"Zombies": [
+       {"Type": "RTID(eighties_gargantuar@ZombieTypes)"},
+       {"Type": "RTID(eighties_gargantuar@ZombieTypes)"},
+       {"Type": "RTID(eighties_gargantuar@ZombieTypes)"},
+       {"Type": "RTID(eighties_gargantuar@ZombieTypes)"},
+       {"Type": "RTID(eighties_gargantuar@ZombieTypes)"}
+  ]
+}},
+
+{"aliases":["Wave19"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+      "AdditionalPlantfood": 1,
+"Zombies": [
+       {"Type": "RTID(eighties_gargantuar@ZombieTypes)"},
+       {"Type": "RTID(eighties_gargantuar@ZombieTypes)"},
+       {"Type": "RTID(eighties_gargantuar@ZombieTypes)"},
+       {"Type": "RTID(kongfu_bomb@ZombieTypes)"},
+       {"Type": "RTID(kongfu_bomb@ZombieTypes)"},
+       {"Type": "RTID(abbot_torch@ZombieTypes)"},
+       {"Type": "RTID(abbot_torch@ZombieTypes)"},
+       {"Type": "RTID(lostcity_crystalskull@ZombieTypes)"},
+       {"Type": "RTID(lostcity_crystalskull@ZombieTypes)"},
+       {"Type": "RTID(lostcity_crystalskull@ZombieTypes)"}
+  ]
+}},
+
+{"aliases":["Wave20"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+"Zombies": [
+       {"Type": "RTID(cowboy_gargantuar@ZombieTypes)"},
+       {"Type": "RTID(cowboy_gargantuar@ZombieTypes)"},
+       {"Type": "RTID(dark_gargantuar@ZombieTypes)"},
+       {"Type": "RTID(dark_gargantuar@ZombieTypes)"},
+       {"Type": "RTID(football_mech@ZombieTypes)"},
+       {"Type": "RTID(football_mech@ZombieTypes)"},
+       {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+       {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+       {"Type": "RTID(dino_bully_veteran@ZombieTypes)"}
+]
+}}],
+"version": 1
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

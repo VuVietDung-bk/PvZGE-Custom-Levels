@@ -1,0 +1,546 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "maido",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2024-12-06",
+    "UpdatedAt": "2024-12-06",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "<PLAYERNAME>'s Attempt to Survive Hallow's Eve!",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		  "RTID(StandardIntro@LevelModules)",
+		  "RTID(ChallengeModule@CurrentLevel)",
+		  "RTID(ModernMowers@LevelModules)",
+		  "RTID(Gravestones@CurrentLevel)",
+		  "RTID(ZombiePotions@CurrentLevel)",
+          "RTID(ConveyorBelt@CurrentLevel)"
+        ],
+        "Name": "Hallow's Eve - Night 10",
+        "NameMultiLanguage": {
+          "en": "Hallow's Eve - Night 10",
+          "zh": "Hallow's Eve - Night 10"
+        },
+        "WritenBy": "maido",
+		"MusicType": "MiniGame_B",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(HalloweenStage@LevelModules)"
+      }
+    },
+	{
+			"aliases": [
+				"Gravestones"
+			],
+			"objclass": "GravestoneProperties",
+			"objdata": {
+				"GravestoneCount": 12,
+				"SpawnColumnEnd": 9,
+				"SpawnColumnStart": 5
+		}
+    },
+        {
+            "aliases": [
+                "ZombiePotions"
+            ],
+            "objclass": "ZombiePotionModuleProperties",
+            "objdata": {
+                "InitialPotionCount": 8,
+                "MaxPotionCount": 12,
+                "PotionSpawnTimer": {
+                    "Max": 12,
+                    "Min": 8
+                },
+                "PotionTypes": [
+					"zombiepotion_invisibility",
+					"zombiepotion_speed",
+					"zombiepotion_toughness",
+                ]
+            }
+        },
+	    {
+            "aliases": [
+                "ConveyorBelt"
+            ],
+            "objclass": "ConveyorSeedBankProperties",
+            "objdata": {
+                "DropDelayConditions": [
+                    {
+                        "Delay": 3.5,
+                        "MaxPackets": 0
+                    },
+                    {
+                        "Delay": 5,
+                        "MaxPackets": 1
+                    },
+                    {
+                        "Delay": 7,
+                        "MaxPackets": 4
+                    },
+                    {
+                        "Delay": 12,
+                        "MaxPackets": 8
+                    }
+                ],
+                "InitialPlantList": [
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 5,
+                        "PlantType": "electricpeashooter",
+                        "Weight": 65
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 5,
+                        "PlantType": "guacodile",
+                        "Weight": 75
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 10,
+                        "PlantType": "chomper",
+                        "Weight": 75
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 10,
+                        "PlantType": "gloomvine",
+                        "Weight": 80
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 5,
+                        "PlantType": "vamporcini",
+                        "Weight": 75
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 5,
+                        "PlantType": "jackolantern",
+                        "Weight": 65
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 2,
+                        "PlantType": "plantern",
+                        "Weight": 65
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 1,
+                        "PlantType": "doomshroom",
+                        "Weight": 45
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 10,
+                        "PlantType": "dusklobber",
+                        "Weight": 85
+                    },	
+                ],
+                "SpeedConditions": [
+                    {
+                        "MaxPackets": 0,
+                        "Speed": 100
+                    }
+                ]
+            }
+        },
+	{
+			"aliases": [
+			"ChallengeModule"
+		],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+			"BeatTheLevel"
+		],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+				"Survive and witness the end of Hallow's Eve",
+				],
+				"DescriptionsMultiLanguage": [
+					{
+					"en": "123",
+					"zh": "112233"
+					}
+				]
+			}
+	    },	
+    	
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 130, // Difficulty D, easiest
+            "StartingPoints": 130,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(halloween@ZombieTypes)",
+                    "RTID(halloween_armor1@ZombieTypes)",
+                    "RTID(halloween_armor2@ZombieTypes)",
+					"RTID(iceage_armor4@ZombieTypes)",
+					"RTID(pharaoh@ZombieTypes)",
+					"RTID(tomb_raiser@ZombieTypes)",
+					"RTID(dino_bully_veteran@ZombieTypes)",
+					"RTID(beach_octopus@ZombieTypes)",
+					"RTID(dark_wizard@ZombieTypes)",
+					"RTID(dark_juggler@ZombieTypes)",
+					"RTID(dark_wizard_veteran@ZombieTypes)",
+					"RTID(halloween_gargantuar@ZombieTypes)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 160, // Difficulty C, normal
+            "StartingPoints": 160,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(halloween@ZombieTypes)",
+                    "RTID(halloween_armor1@ZombieTypes)",
+                    "RTID(halloween_armor2@ZombieTypes)",
+					"RTID(iceage_armor4@ZombieTypes)",
+					"RTID(pharaoh@ZombieTypes)",
+					"RTID(tomb_raiser@ZombieTypes)",
+					"RTID(dino_bully_veteran@ZombieTypes)",
+					"RTID(beach_octopus@ZombieTypes)",
+					"RTID(dark_wizard@ZombieTypes)",
+					"RTID(dark_juggler@ZombieTypes)",
+					"RTID(dark_wizard_veteran@ZombieTypes)",
+					"RTID(halloween_gargantuar@ZombieTypes)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 190, // Difficulty B, advanced
+            "StartingPoints": 190,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(halloween@ZombieTypes)",
+                    "RTID(halloween_armor1@ZombieTypes)",
+                    "RTID(halloween_armor2@ZombieTypes)",
+					"RTID(iceage_armor4@ZombieTypes)",
+					"RTID(pharaoh@ZombieTypes)",
+					"RTID(tomb_raiser@ZombieTypes)",
+					"RTID(dino_bully_veteran@ZombieTypes)",
+					"RTID(beach_octopus@ZombieTypes)",
+					"RTID(dark_wizard@ZombieTypes)",
+					"RTID(dark_juggler@ZombieTypes)",
+					"RTID(dark_wizard_veteran@ZombieTypes)",
+					"RTID(halloween_gargantuar@ZombieTypes)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 210, // Difficulty AAAAAAAAA
+            "StartingPoints": 210,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(halloween@ZombieTypes)",
+                    "RTID(halloween_armor1@ZombieTypes)",
+                    "RTID(halloween_armor2@ZombieTypes)",
+					"RTID(iceage_armor4@ZombieTypes)",
+					"RTID(pharaoh@ZombieTypes)",
+					"RTID(tomb_raiser@ZombieTypes)",
+					"RTID(dino_bully_veteran@ZombieTypes)",
+					"RTID(beach_octopus@ZombieTypes)",
+					"RTID(dark_wizard@ZombieTypes)",
+					"RTID(dark_juggler@ZombieTypes)",
+					"RTID(dark_wizard_veteran@ZombieTypes)",
+					"RTID(halloween_gargantuar@ZombieTypes)",
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 10,
+        "WaveCount": 40,
+        "Waves": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+          []
+        ]
+      }
+    },
+//This is the scripted Zombie Ambush setup, currently for waves 10, 20, 30, and 40
+       {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 10,
+                "SpawnColEnd": 9,
+                "SpawnColStart": 6,
+                "WaveCount": 40,
+                "WaveSpendingPointIncrement": 50,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    ["RTID(Wave1@CurrentLevel)"],
+                    ["RTID(Wave2@CurrentLevel)"],
+                    ["RTID(Wave3@CurrentLevel)","RTID(NecromancyMummySmall@CurrentLevel)"],
+                    ["RTID(Wave4@CurrentLevel)"],
+                    ["RTID(Wave5@CurrentLevel)"],
+                    ["RTID(Wave6@CurrentLevel)","RTID(NecromancyMummySmall@CurrentLevel)"],
+                    ["RTID(Wave7@CurrentLevel)"],
+                    ["RTID(Wave8@CurrentLevel)"],
+                    ["RTID(Wave9@CurrentLevel)"],
+                    ["RTID(Wave10@CurrentLevel)","RTID(SpawnTwoTutorialGravestones@CurrentLevel)","RTID(NecromancyMummySmall@CurrentLevel)"],
+					["RTID(Wave11@CurrentLevel)"],
+					["RTID(Wave12@CurrentLevel)"],
+					["RTID(Wave13@CurrentLevel)"],
+					["RTID(Wave14@CurrentLevel)","RTID(SpawnFourTutorialGravestones@CurrentLevel)","RTID(NecromancyMummyMid@CurrentLevel)"],
+					["RTID(Wave15@CurrentLevel)"],
+					["RTID(Wave16@CurrentLevel)"],
+					["RTID(Wave17@CurrentLevel)"],
+					["RTID(Wave18@CurrentLevel)","RTID(SpawnTwoTutorialGravestones@CurrentLevel)"],
+					["RTID(Wave19@CurrentLevel)"],
+					["RTID(Wave20@CurrentLevel)","RTID(SpawnFourTutorialGravestones@CurrentLevel)","RTID(NecromancyMummyMid@CurrentLevel)"],
+					["RTID(Wave21@CurrentLevel)"],
+					["RTID(Wave22@CurrentLevel)","RTID(SpawnTwoTutorialGravestones@CurrentLevel)"],
+					["RTID(Wave23@CurrentLevel)"],
+					["RTID(Wave24@CurrentLevel)"],
+					["RTID(Wave25@CurrentLevel)","RTID(SpawnTwoTutorialGravestones@CurrentLevel)"],
+					["RTID(Wave26@CurrentLevel)"],
+					["RTID(Wave27@CurrentLevel)","RTID(SpawnTwoTutorialGravestones@CurrentLevel)","RTID(NecromancyMummySmall@CurrentLevel)"],
+					["RTID(Wave28@CurrentLevel)"],
+					["RTID(Wave29@CurrentLevel)"],
+					["RTID(Wave30@CurrentLevel)","RTID(SpawnFourTutorialGravestones@CurrentLevel)","RTID(NecromancyMummyMid@CurrentLevel)"],
+					["RTID(Wave31@CurrentLevel)"],
+					["RTID(Wave32@CurrentLevel)"],
+					["RTID(Wave33@CurrentLevel)"],
+					["RTID(Wave34@CurrentLevel)","RTID(SpawnTwoTutorialGravestones@CurrentLevel)",],
+					["RTID(Wave35@CurrentLevel)"],
+					["RTID(Wave36@CurrentLevel)"],
+					["RTID(Wave37@CurrentLevel)","RTID(SpawnTwoTutorialGravestones@CurrentLevel)",],
+					["RTID(Wave38@CurrentLevel)"],
+					["RTID(Wave39@CurrentLevel)","RTID(SpawnFourTutorialGravestones@CurrentLevel)","RTID(NecromancyMummyMid@CurrentLevel)"],
+					["RTID(Wave40@CurrentLevel)"],
+                ]
+            }
+        },
+///WAVES	
+	{
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(halloween@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+		  {"Type": "RTID(halloween_armor2@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave25"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+		  {"Type": "RTID(pharaoh@ZombieTypes)"},
+        ]
+      }
+    },
+	    {
+            "aliases": [
+                "SpawnTwoTutorialGravestones"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {"Count": 3, "Type": "RTID(gravestone_dark@GridItemTypes)"},
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+				"SpawnPositionsPool": [
+					{"mX": 5,"mY": 0},
+                    {"mX": 5,"mY": 1},
+                    {"mX": 5,"mY": 2},
+					{"mX": 5,"mY": 3},
+                    {"mX": 5,"mY": 4},
+					{"mX": 6,"mY": 0},
+                    {"mX": 6,"mY": 1},
+                    {"mX": 6,"mY": 2},
+					{"mX": 6,"mY": 3},
+                    {"mX": 6,"mY": 4},
+					{"mX": 7,"mY": 0},
+                    {"mX": 7,"mY": 1},
+                    {"mX": 7,"mY": 2},
+					{"mX": 7,"mY": 3},
+                    {"mX": 7,"mY": 4},
+					{"mX": 8,"mY": 0},
+                    {"mX": 8,"mY": 1},
+                    {"mX": 8,"mY": 2},
+					{"mX": 8,"mY": 3},
+                    {"mX": 8,"mY": 4},						
+					],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+            }
+        },
+		{
+            "aliases": [
+                "SpawnFourTutorialGravestones"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {"Count": 5, "Type": "RTID(gravestone_dark@GridItemTypes)"},
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+				"SpawnPositionsPool": [
+					{"mX": 5,"mY": 0},
+                    {"mX": 5,"mY": 1},
+                    {"mX": 5,"mY": 2},
+					{"mX": 5,"mY": 3},
+                    {"mX": 5,"mY": 4},
+					{"mX": 6,"mY": 0},
+                    {"mX": 6,"mY": 1},
+                    {"mX": 6,"mY": 2},
+					{"mX": 6,"mY": 3},
+                    {"mX": 6,"mY": 4},
+					{"mX": 7,"mY": 0},
+                    {"mX": 7,"mY": 1},
+                    {"mX": 7,"mY": 2},
+					{"mX": 7,"mY": 3},
+                    {"mX": 7,"mY": 4},
+					{"mX": 8,"mY": 0},
+                    {"mX": 8,"mY": 1},
+                    {"mX": 8,"mY": 2},
+					{"mX": 8,"mY": 3},
+                    {"mX": 8,"mY": 4},							
+					],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+            }
+        },
+	    {
+            "aliases": [
+                "NecromancyMummySmall"
+            ],
+            "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+            "objdata": {
+                "AdditionalPlantfood": "0",
+                "GridTypes": [
+                    "RTID(gravestone_dark@GridItemTypes)",
+                ],
+                "ZombieSpawnWaitTime": 1,
+                "Zombies": [
+                    {"Type": "RTID(halloween_armor2@ZombieTypes)"},
+					{"Type": "RTID(egypt_imp@ZombieTypes)"},
+					{"Type": "RTID(egypt_imp@ZombieTypes)"},
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "NecromancyMummyMid"
+            ],
+            "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+            "objdata": {
+                "AdditionalPlantfood": "0",
+                "GridTypes": [
+                    "RTID(gravestone_dark@GridItemTypes)",
+                ],
+                "ZombieSpawnWaitTime": 1,
+                "Zombies": [
+                    {"Type": "RTID(halloween_flag@ZombieTypes)"},
+					{"Type": "RTID(pharaoh@ZombieTypes)"},
+					{"Type": "RTID(tomb_raiser@ZombieTypes)"},
+                ]
+            }
+        },
+///WAVES END
+  ],
+  "version": 1
+}

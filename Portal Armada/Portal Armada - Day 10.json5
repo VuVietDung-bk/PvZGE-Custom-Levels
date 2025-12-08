@@ -1,0 +1,841 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "maido",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2024-12-06",
+    "UpdatedAt": "2024-12-06",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "<PLAYERNAME>'s Clean Up Journey!",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		  "RTID(StandardIntro@LevelModules)",
+		  "RTID(ChallengeModule@CurrentLevel)",
+		  "RTID(FutureLinkedTileGroups@CurrentLevel)",
+		  "RTID(IPP@CurrentLevel)",
+          "RTID(ConveyorBelt@CurrentLevel)"
+        ],
+        "Name": "Portal Armada - Day 10",
+        "NameMultiLanguage": {
+          "en": "Portal Armada - Day 10",
+          "zh": "功夫世界-沙盒"
+        },
+        "WritenBy": "maido",
+		"MusicType": "MiniGame_B",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(PersuitStage@LevelModules)"
+      }
+    },
+{"aliases":["IPP"],
+"objclass": "InitialPlantProperties",
+"objdata": {
+    "InitialPlantPlacements": [
+		{"GridX": 1, "GridY": 1, "Level": -1, "TypeName":"moonflower"},
+		{"GridX": 1, "GridY": 3, "Level": -1, "TypeName":"moonflower"},
+		{"GridX": 4, "GridY": 1, "Level": -1, "TypeName":"moonflower"},
+		{"GridX": 4, "GridY": 3, "Level": -1, "TypeName":"moonflower"},
+    ]
+}},
+	    {
+            "aliases": [
+                "ConveyorBelt"
+            ],
+            "objclass": "ConveyorSeedBankProperties",
+            "objdata": {
+                "DropDelayConditions": [
+                    {
+                        "Delay": 2,
+                        "MaxPackets": 0
+                    },
+                    {
+                        "Delay": 4,
+                        "MaxPackets": 1
+                    },
+                    {
+                        "Delay": 6,
+                        "MaxPackets": 4
+                    },
+                    {
+                        "Delay": 8,
+                        "MaxPackets": 8
+                    }
+                ],
+                "InitialPlantList": [
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 10,
+                        "PlantType": "citron",
+                        "Weight": 85
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 10,
+                        "PlantType": "phatbeet",
+                        "Weight": 85
+                    },	
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 2,
+                        "PlantType": "hypnoshroom",
+                        "Weight": 65
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 2,
+                        "PlantType": "intensivecarrot",
+                        "Weight": 65
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 8,
+                        "PlantType": "dusklobber",
+                        "Weight": 85
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 10,
+                        "PlantType": "nightshade",
+                        "Weight": 75
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 2,
+                        "PlantType": "banana",
+                        "Weight": 50
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 3,
+                        "PlantType": "applemortar",
+                        "Weight": 65
+                    },	
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 1,
+                        "PlantType": "hurrikale",
+                        "Weight": 50
+                    },	
+                    {
+					    "MaxWeightFactor": 0,
+						"MaxCount": 1,
+                        "PlantType": "thymewarp",
+                        "Weight": 30
+                    },					
+                ],
+                "SpeedConditions": [
+                    {
+                        "MaxPackets": 0,
+                        "Speed": 150
+                    }
+                ]
+            }
+        },
+	{
+			"aliases": [
+			"ChallengeModule"
+		],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)",
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+			"BeatTheLevel"
+		],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+				"Survive and destroy the remaining portals from Project Paradox",
+				"Survive without any lawnmower",
+				"WARNING: Portal-infested time period",
+				],
+				"DescriptionsMultiLanguage": [
+					{
+					"en": "123",
+					"zh": "112233"
+					}
+				]
+			}
+	    },	
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 150, // Difficulty D, easiest
+            "StartingPoints": 150,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(future@ZombieTypes)",
+                    "RTID(future_armor1@ZombieTypes)",
+                    "RTID(future_armor2@ZombieTypes)",
+					"RTID(future_armor4@ZombieTypes)",
+					"RTID(future_imp@ZombieTypes)",
+					"RTID(future_jetpack@ZombieTypes)",
+					"RTID(future_jetpack_veteran@ZombieTypes)",
+					"RTID(mech_cone@ZombieTypes)",
+					"RTID(disco_mech@ZombieTypes)",
+					"RTID(football_mech@ZombieTypes)",
+					"RTID(future_protector@ZombieTypes)",
+					"RTID(future_gargantuar@ZombieTypes)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 175, // Difficulty C, normal
+            "StartingPoints": 175,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(future@ZombieTypes)",
+                    "RTID(future_armor1@ZombieTypes)",
+                    "RTID(future_armor2@ZombieTypes)",
+					"RTID(future_armor4@ZombieTypes)",
+					"RTID(future_imp@ZombieTypes)",
+					"RTID(future_jetpack@ZombieTypes)",
+					"RTID(future_jetpack_veteran@ZombieTypes)",
+					"RTID(mech_cone@ZombieTypes)",
+					"RTID(disco_mech@ZombieTypes)",
+					"RTID(football_mech@ZombieTypes)",
+					"RTID(future_protector@ZombieTypes)",
+					"RTID(future_gargantuar@ZombieTypes)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 200, // Difficulty B, advanced
+            "StartingPoints": 200,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(future@ZombieTypes)",
+                    "RTID(future_armor1@ZombieTypes)",
+                    "RTID(future_armor2@ZombieTypes)",
+					"RTID(future_armor4@ZombieTypes)",
+					"RTID(future_imp@ZombieTypes)",
+					"RTID(future_jetpack@ZombieTypes)",
+					"RTID(future_jetpack_veteran@ZombieTypes)",
+					"RTID(mech_cone@ZombieTypes)",
+					"RTID(disco_mech@ZombieTypes)",
+					"RTID(football_mech@ZombieTypes)",
+					"RTID(future_protector@ZombieTypes)",
+					"RTID(future_gargantuar@ZombieTypes)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 225, // Difficulty AAAAAAAAA
+            "StartingPoints": 225,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(future@ZombieTypes)",
+                    "RTID(future_armor1@ZombieTypes)",
+                    "RTID(future_armor2@ZombieTypes)",
+					"RTID(future_armor4@ZombieTypes)",
+					"RTID(future_imp@ZombieTypes)",
+					"RTID(future_jetpack@ZombieTypes)",
+					"RTID(future_jetpack_veteran@ZombieTypes)",
+					"RTID(mech_cone@ZombieTypes)",
+					"RTID(disco_mech@ZombieTypes)",
+					"RTID(football_mech@ZombieTypes)",
+					"RTID(future_protector@ZombieTypes)",
+					"RTID(future_gargantuar@ZombieTypes)",
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+        {
+            "objclass": "PortalType",
+            "aliases": [
+                "CustomEighties"
+            ],
+            "objdata": {
+                "Properties": "RTID(CustomEightiesProps@CurrentLevel)"
+            }
+        },
+        {
+            "objclass": "PortalProps",
+            "aliases": [
+                "CustomEightiesProps"
+            ],
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Min": 3,
+                    "Max": 5
+                },
+                "TimeBetween": {
+                    "Min": 10,
+                    "Max": 14
+                },
+                "Scale": 1.0,
+                "World": "eighties",
+                "ZombieTypesToSpawn": [
+                    {
+                        "Weight": 2,
+                        "ZombieTypeName": "eighties_mc"
+                    },
+                    {
+                        "Weight": 2,
+                        "ZombieTypeName": "eighties_punk"
+                    },
+                    {
+                        "Weight": 2,
+                        "ZombieTypeName": "eighties_breakdancer"
+                    },
+                    {
+                        "Weight": 2,
+                        "ZombieTypeName": "eighties_glitter"
+                    }
+                ]
+            }
+        },
+		
+		{
+            "objclass": "PortalType",
+            "aliases": [
+                "GargPortal"
+            ],
+            "objdata": {
+                "Properties": "RTID(GargPortalProps@CurrentLevel)"
+            }
+        },
+        {
+            "objclass": "PortalProps",
+            "aliases": [
+                "GargPortalProps"
+            ],
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Min": 5,
+                    "Max": 7
+                },
+                "TimeBetween": {
+                    "Min": 18,
+                    "Max": 22
+                },
+                "Scale": 1.5,
+                "World": "gargantuar",
+                "ZombieTypesToSpawn": [
+                    {
+                        "Weight": 4,
+                        "ZombieTypeName": "tutorial_gargantuar"
+                    },
+                    {
+                        "Weight": 1,
+                        "ZombieTypeName": "eighties_gargantuar"
+                    },
+                ]
+            }
+        },
+		{
+            "objclass": "PortalType",
+            "aliases": [
+                "DarkPortal"
+            ],
+            "objdata": {
+                "Properties": "RTID(DarkPortalProps@CurrentLevel)"
+            }
+        },
+        {
+            "objclass": "PortalProps",
+            "aliases": [
+                "DarkPortalProps"
+            ],
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Min": 3,
+                    "Max": 5
+                },
+                "TimeBetween": {
+                    "Min": 10,
+                    "Max": 14
+                },
+                "Scale": 1.0,
+                "World": "dark",
+                "ZombieTypesToSpawn": [
+                    {
+                        "Weight": 1,
+                        "ZombieTypeName": "dark_juggler"
+                    },
+                    {
+                        "Weight": 2,
+                        "ZombieTypeName": "dark_wizard"
+                    },
+                    {
+                        "Weight": 2,
+                        "ZombieTypeName": "dark_armor3"
+                    },
+                ]
+            }
+        },
+		{
+          "aliases": ["MESSAGE_PORTAL"],
+            "objclass": "WaveWarningProps",
+            "objdata": {
+            "LabelR": 175,
+            "LabelG": 255,
+            "LabelB": 255,
+            "LabelAInit": 4,
+            "OutLineR": 0,
+            "OutLineG": 0,
+            "OutLineB": 153,
+            "String": "PORTAL FORMING...",
+            "Sound": "Hugewave",
+            "LabelTargetScale": 0.5,
+            "LabelInitScale": 4,
+            "Duration": 2.5,
+            "InitTime": 0.33,
+            }
+        },
+		{
+          "aliases": ["MESSAGE_PORTAL2"],
+            "objclass": "WaveWarningProps",
+            "objdata": {
+            "LabelR": 175,
+            "LabelG": 255,
+            "LabelB": 255,
+            "LabelAInit": 4,
+            "OutLineR": 0,
+            "OutLineG": 0,
+            "OutLineB": 153,
+            "String": "MULTIPLE PORTALS FORMING...",
+            "Sound": "Hugewave",
+            "LabelTargetScale": 0.5,
+            "LabelInitScale": 4,
+            "Duration": 2.5,
+            "InitTime": 0.33,
+            }
+        },
+		{
+            "aliases": [
+                "GargPortalRow0Col7"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 7,
+                "PortalRow": "0",
+                "PortalType": "RTID(GargPortal@CurrentLevel)",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "GargPortalRow2Col7"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 7,
+                "PortalRow": "2",
+                "PortalType": "RTID(GargPortal@CurrentLevel)",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "GargPortalRow4Col7"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 7,
+                "PortalRow": "4",
+                "PortalType": "RTID(GargPortal@CurrentLevel)",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "FuturePortalRow1Col7"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 7,
+                "PortalRow": "1",
+                "PortalType": "future",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "FuturePortalRow2Col8"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 8,
+                "PortalRow": "2",
+                "PortalType": "future",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "FuturePortalRow4Col6"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 6,
+                "PortalRow": "4",
+                "PortalType": "future",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "FuturePortalRow3Col7"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 7,
+                "PortalRow": "3",
+                "PortalType": "future",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "EightiesPortalRow1Col8"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 8,
+                "PortalRow": "1",
+                "PortalType": "RTID(CustomEighties@CurrentLevel)",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "EightiesPortalRow0Col5"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 5,
+                "PortalRow": "0",
+                "PortalType": "RTID(CustomEighties@CurrentLevel)",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "EightiesPortalRow4Col6"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 6,
+                "PortalRow": "4",
+                "PortalType": "RTID(CustomEighties@CurrentLevel)",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+        {
+            "aliases": [
+                "ModernPortalEventRowOne"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 6,
+                "PortalRow": "1",
+                "PortalType": "modern",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "ModernPortalEventRowThree"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 6,
+                "PortalRow": "3",
+                "PortalType": "modern",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "EgyptPortalEventRowTwo"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 4,
+                "PortalRow": "2",
+                "PortalType": "egypt",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "EgyptPortalEventRowFour"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 4,
+                "PortalRow": "4",
+                "PortalType": "egypt",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "PiratePortalEventRowZero"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 5,
+                "PortalRow": "0",
+                "PortalType": "pirate",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "PiratePortalEventRowThree"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 5,
+                "PortalRow": "3",
+                "PortalType": "pirate",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "WestPortalEventRowOne"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 6,
+                "PortalRow": "1",
+                "PortalType": "west",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "LostCityPortalEventRowZero"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 5,
+                "PortalRow": "0",
+                "PortalType": "lostcity",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "FuturePortalEventRowFour"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 5,
+                "PortalRow": "4",
+                "PortalType": "future",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "DarkPortalEventRowFour"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 6,
+                "PortalRow": "4",
+                "PortalType": "RTID(DarkPortal@CurrentLevel)",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "DinoPortalEventRowThree"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 5,
+                "PortalRow": "3",
+                "PortalType": "dino",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "IceagePortalEventRowOne"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 5,
+                "PortalRow": "1",
+                "PortalType": "iceage",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+		{
+            "aliases": [
+                "BeachPortalEventRowThree"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 7,
+                "PortalRow": "3",
+                "PortalType": "beach",
+                "SpawnEffectAnimID": "",
+                "SpawnSoundID": ""
+            }
+        },
+//This is the scripted Zombie Ambush setup, currently for waves 10, 20, 30, and 40
+       {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 10,
+				"LevelJamList": ["jam_punk","jam_8bit","jam_pop","jam_rap","jam_metal"],
+                "SpawnColEnd": 9,
+                "SpawnColStart": 6,
+                "WaveCount": 20,
+                "WaveSpendingPointIncrement": 50,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    ["RTID(Wave1@CurrentLevel)","RTID(MESSAGE_PORTAL@CurrentLevel)"],
+                    ["RTID(Wave2@CurrentLevel)","RTID(FuturePortalRow1Col7@CurrentLevel)"],
+                    ["RTID(Wave3@CurrentLevel)"],
+                    ["RTID(Wave4@CurrentLevel)","RTID(MESSAGE_PORTAL@CurrentLevel)"],
+                    ["RTID(Wave5@CurrentLevel)","RTID(FuturePortalRow2Col8@CurrentLevel)"],
+                    ["RTID(Wave6@CurrentLevel)"],
+                    ["RTID(Wave7@CurrentLevel)","RTID(MESSAGE_PORTAL2@CurrentLevel)"],
+                    ["RTID(Wave8@CurrentLevel)","RTID(ModernPortalEventRowThree@CurrentLevel)","RTID(EightiesPortalRow0Col5@CurrentLevel)"],
+                    ["RTID(Wave9@CurrentLevel)","RTID(MESSAGE_PORTAL2@CurrentLevel)"],
+                    ["RTID(Wave10@CurrentLevel)","RTID(EightiesPortalRow4Col6@CurrentLevel)","RTID(GargPortalRow0Col7@CurrentLevel)"],
+					["RTID(Wave11@CurrentLevel)"],
+					["RTID(Wave12@CurrentLevel)"],
+					["RTID(Wave13@CurrentLevel)","RTID(MESSAGE_PORTAL2@CurrentLevel)"],
+					["RTID(Wave14@CurrentLevel)","RTID(LostCityPortalEventRowZero@CurrentLevel)","RTID(IceagePortalEventRowOne@CurrentLevel)"],
+					["RTID(Wave15@CurrentLevel)"],
+					["RTID(Wave16@CurrentLevel)","RTID(MESSAGE_PORTAL@CurrentLevel)"],
+					["RTID(Wave17@CurrentLevel)","RTID(GargPortalRow4Col7@CurrentLevel)"],
+					["RTID(Wave18@CurrentLevel)"],
+					["RTID(Wave19@CurrentLevel)","RTID(MESSAGE_PORTAL2@CurrentLevel)"],
+					["RTID(Wave20@CurrentLevel)","RTID(DarkPortalEventRowFour@CurrentLevel)","RTID(BeachPortalEventRowThree@CurrentLevel)","RTID(EightiesPortalRow1Col8@CurrentLevel)"],
+					["RTID(Wave21@CurrentLevel)"],
+					["RTID(Wave22@CurrentLevel)","RTID(MESSAGE_PORTAL2@CurrentLevel)"],
+					["RTID(Wave23@CurrentLevel)","RTID(WestPortalEventRowOne@CurrentLevel)","RTID(PiratePortalEventRowZero@CurrentLevel)"],
+					["RTID(Wave24@CurrentLevel)"],
+					["RTID(Wave25@CurrentLevel)","RTID(MESSAGE_PORTAL2@CurrentLevel)"],
+					["RTID(Wave26@CurrentLevel)","RTID(EgyptPortalEventRowFour@CurrentLevel)","RTID(DinoPortalEventRowThree@CurrentLevel)"],
+					["RTID(Wave27@CurrentLevel)"],
+					["RTID(Wave28@CurrentLevel)"],
+					["RTID(Wave29@CurrentLevel)","RTID(MESSAGE_PORTAL2@CurrentLevel)"],
+					["RTID(Wave30@CurrentLevel)","RTID(GargPortalRow2Col7@CurrentLevel)","RTID(FuturePortalRow1Col7@CurrentLevel)","RTID(ModernPortalEventRowThree@CurrentLevel)","RTID(DinoPortalEventRowThree@CurrentLevel)",
+					"RTID(DarkPortalEventRowFour@CurrentLevel)","RTID(LostCityPortalEventRowZero@CurrentLevel)","RTID(BeachPortalEventRowThree@CurrentLevel)","RTID(EightiesPortalRow0Col5@CurrentLevel)","RTID(IceagePortalEventRowOne@CurrentLevel)","RTID(PiratePortalEventRowZero@CurrentLevel)"],
+                ]
+            }
+        },
+///WAVES	
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+		  {"Type": "RTID(future_armor1@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+		  {"Type": "RTID(future_armor2@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 2,
+        "Zombies": [
+		  {"Type": "RTID(future_armor2@ZombieTypes)"},
+		  {"Type": "RTID(future_armor2@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave25"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+		  {"Type": "RTID(future_armor4@ZombieTypes)"},
+		  {"Type": "RTID(future_armor4@ZombieTypes)"},
+        ]
+      }
+    },
+///WAVES END
+  ],
+  "version": 1
+}

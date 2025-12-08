@@ -1,0 +1,646 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "maido",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2024-12-06",
+    "UpdatedAt": "2024-12-06",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "<PLAYERNAME>'s Piñata Party!",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		  "RTID(StandardIntro@LevelModules)",
+		  "RTID(ChallengeModule@CurrentLevel)",
+		  "RTID(ModernMowers@LevelModules)",
+		  "RTID(Gravestones@CurrentLevel)",
+		  "RTID(ConveyorBelt@CurrentLevel)"
+        ],
+        "Name": "Piñata Party - Bully Con",
+        "NameMultiLanguage": {
+          "en": "Piñata Party - Bully Con",
+          "zh": "功夫世界-沙盒"
+        },
+        "WritenBy": "maido",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(ModernStage@LevelModules)"
+      }
+    },
+	{
+			"aliases": [
+				"Gravestones"
+			],
+			"objclass": "GravestoneProperties",
+			"objdata": {
+				"GravestoneCount": 20,
+				"SpawnColumnEnd": 9,
+				"SpawnColumnStart": 6
+		}
+    },
+    {
+            "aliases": [
+                "ConveyorBelt"
+            ],
+            "objclass": "ConveyorSeedBankProperties",
+            "objdata": {
+                "DropDelayConditions": [
+                    {
+                        "Delay": 3,
+                        "MaxPackets": 0
+                    },
+                    {
+                        "Delay": 3,
+                        "MaxPackets": 2
+                    },
+                    {
+                        "Delay": 3,
+                        "MaxPackets": 4
+                    },
+                    {
+                        "Delay": 3,
+                        "MaxPackets": 6
+                    }
+                ],
+                "InitialPlantList": [
+                    {
+					    "MaxWeightFactor": 0,
+						"MaxCount": 2,
+                        "PlantType": "shrinkingviolet",
+                        "Weight": 75
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 15,
+                        "PlantType": "pepperpult",
+                        "Weight": 85
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 15,
+                        "PlantType": "primalpeashooter",
+                        "Weight": 65
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 15,
+                        "PlantType": "bonkchoy",
+                        "Weight": 75
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 5,
+                        "PlantType": "tallnut",
+                        "Weight": 75
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 2,
+                        "PlantType": "hotpotato",
+                        "Weight": 75
+                    },
+                ],
+                "SpeedConditions": [
+                    {
+                        "MaxPackets": 0,
+                        "Speed": 150
+                    }
+                ]
+            }
+        },
+	    {
+			"aliases": [
+			"ChallengeModule"
+		],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+            "aliases": [
+                "ChallengeModule"
+            ],
+            "objclass": "StarChallengeModuleProperties",
+            "objdata": {
+                "Challenges": [
+                    [
+                        "RTID(ZombieDistance@CurrentLevel)"
+                    ]
+                ],
+                "ChallengesAlwaysAvailable": true
+            }
+        },
+	    {
+            "aliases": [
+                "ZombieDistance"
+            ],
+            "objclass": "StarChallengeZombieDistanceProps",
+            "objdata": {
+                "TargetDistance": 4.5
+            }
+        },
+    	
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 100, // Difficulty D, easiest
+            "StartingPoints": 300,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(dino_bully@ZombieTypes)",
+					"RTID(dino_bully_veteran@ZombieTypes)",
+                    "RTID(iceage_troglobite@ZombieTypes)",
+					"RTID(iceage_troglobite_veteran@ZombieTypes)",
+                    "RTID(eighties_arcade@ZombieTypes)",
+					"RTID(beach_octopus@ZombieTypes)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 125, // Difficulty C, normal
+            "StartingPoints": 300,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(dino_bully@ZombieTypes)",
+					"RTID(dino_bully_veteran@ZombieTypes)",
+                    "RTID(iceage_troglobite@ZombieTypes)",
+					"RTID(iceage_troglobite_veteran@ZombieTypes)",
+                    "RTID(eighties_arcade@ZombieTypes)",
+					"RTID(beach_octopus@ZombieTypes)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 150, // Difficulty B, advanced
+            "StartingPoints": 300,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(dino_bully@ZombieTypes)",
+					"RTID(dino_bully_veteran@ZombieTypes)",
+                    "RTID(iceage_troglobite@ZombieTypes)",
+					"RTID(iceage_troglobite_veteran@ZombieTypes)",
+                    "RTID(eighties_arcade@ZombieTypes)",
+					"RTID(beach_octopus@ZombieTypes)",	
+            ]
+          },
+          {
+            "PointIncrementPerWave": 175, // Difficulty AAAAAAAAA
+            "StartingPoints": 350,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(dino_bully@ZombieTypes)",
+					"RTID(dino_bully_veteran@ZombieTypes)",
+                    "RTID(iceage_troglobite@ZombieTypes)",
+					"RTID(iceage_troglobite_veteran@ZombieTypes)",
+                    "RTID(eighties_arcade@ZombieTypes)",
+					"RTID(beach_octopus@ZombieTypes)",
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 10,
+        "WaveCount": 40,
+        "Waves": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+          []
+        ]
+      }
+    },
+//This is the scripted Zombie Ambush setup, currently for waves 10, 20, 30, and 40
+       {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 10,
+				"LevelJamList": ["jam_punk","jam_8bit","jam_pop","jam_rap","jam_metal"],
+                "SpawnColEnd": 9,
+                "SpawnColStart": 6,
+                "WaveCount": 20,
+                "WaveSpendingPointIncrement": 50,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    ["RTID(Wave1@CurrentLevel)"],
+                    ["RTID(Wave2@CurrentLevel)"],
+                    ["RTID(Wave3@CurrentLevel)"],
+                    ["RTID(Wave4@CurrentLevel)"],
+                    ["RTID(Wave5@CurrentLevel)"],
+                    ["RTID(Wave6@CurrentLevel)"],
+                    ["RTID(Wave7@CurrentLevel)"],
+                    ["RTID(Wave8@CurrentLevel)"],
+                    ["RTID(Wave9@CurrentLevel)"],
+                    ["RTID(Wave10@CurrentLevel)"],
+					["RTID(Wave11@CurrentLevel)"],
+					["RTID(Wave12@CurrentLevel)"],
+					["RTID(Wave13@CurrentLevel)"],
+					["RTID(Wave14@CurrentLevel)"],
+					["RTID(Wave15@CurrentLevel)"],
+					["RTID(Wave16@CurrentLevel)"],
+					["RTID(Wave17@CurrentLevel)"],
+					["RTID(Wave18@CurrentLevel)"],
+					["RTID(Wave19@CurrentLevel)"],
+					["RTID(Wave20@CurrentLevel)"],
+                ]
+            }
+        },
+///WAVES	
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(iceage_troglobite@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(iceage_troglobite@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+		  {"Type": "RTID(eighties_arcade@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+		  {"Type": "RTID(iceage_troglobite_veteran@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+		  {"Type": "RTID(iceage_troglobite@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+		  {"Type": "RTID(iceage_troglobite_veteran@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(eighties_arcade@ZombieTypes)"},
+		  {"Type": "RTID(eighties_arcade@ZombieTypes)"},
+		  {"Type": "RTID(eighties_arcade@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(eighties_arcade@ZombieTypes)"},
+		  {"Type": "RTID(iceage_troglobite@ZombieTypes)"},
+		  {"Type": "RTID(iceage_troglobite@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+		  {"Type": "RTID(eighties_arcade@ZombieTypes)"},
+		  {"Type": "RTID(eighties_arcade@ZombieTypes)"},
+		  {"Type": "RTID(eighties_arcade@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+		  {"Type": "RTID(iceage_troglobite_veteran@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+		  {"Type": "RTID(eighties_arcade@ZombieTypes)"},
+		  {"Type": "RTID(iceage_troglobite@ZombieTypes)"},{"Type": "RTID(eighties_arcade@ZombieTypes)"},
+		  {"Type": "RTID(iceage_troglobite_veteran@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave13"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave14"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(eighties_arcade@ZombieTypes)"},
+		  {"Type": "RTID(iceage_troglobite@ZombieTypes)"},{"Type": "RTID(eighties_arcade@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave16"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+		  {"Type": "RTID(eighties_arcade@ZombieTypes)"},
+		  {"Type": "RTID(eighties_arcade@ZombieTypes)"},
+		  {"Type": "RTID(iceage_troglobite@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+		  {"Type": "RTID(iceage_troglobite_veteran@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave17"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(iceage_troglobite@ZombieTypes)"},
+		  {"Type": "RTID(iceage_troglobite@ZombieTypes)"},
+		  {"Type": "RTID(iceage_troglobite@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+		  {"Type": "RTID(iceage_troglobite_veteran@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave18"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave19"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave20"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+		  {"Type": "RTID(dino_bully_veteran@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+		  {"Type": "RTID(eighties_arcade@ZombieTypes)"},
+		  {"Type": "RTID(eighties_arcade@ZombieTypes)"},
+		  {"Type": "RTID(iceage_troglobite@ZombieTypes)"},
+		  {"Type": "RTID(beach_octopus@ZombieTypes)"},
+		  {"Type": "RTID(iceage_troglobite_veteran@ZombieTypes)"},
+        ]
+      }
+    },
+///WAVES END
+  ],
+  "version": 1
+}

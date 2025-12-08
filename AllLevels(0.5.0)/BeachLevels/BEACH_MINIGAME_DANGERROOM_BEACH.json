@@ -1,0 +1,620 @@
+{
+  "#comment": "Egypt MiniGame Danger Room",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "[PLAYERS_TRIP_TO_DANGER_ROOM_MINIGAME]",
+        "ForceToRestart": true,
+        "IsDangerRoomMiniGame": true,
+        "LevelNumber": 666,
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(DangerRoomMinigameModule@CurrentLevel)",
+          "RTID(BowlingBulbMinigame@CurrentLevel)",
+          "RTID(ConveyorBelt@CurrentLevel)",
+          "RTID(BeachMowers@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(Tide@CurrentLevel)"
+        ],
+        "Name": "[DANGER_ROOM_BEACH_MINIGAME_LEVEL_NAME]",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(BeachStage@LevelModules)"
+      }
+    },
+    {
+      "aliases": [
+        "Tide"
+      ],
+      "objclass": "TideProperties",
+      "objdata": {
+        "StartingWaveLocation": 3
+      }
+    },
+    {
+      "objclass": "WaveManagerModuleProperties",
+      "aliases": [
+        "NewWaves"
+      ],
+      "objdata": {}
+    },
+    {
+      "aliases": [
+        "ConveyorBelt"
+      ],
+      "objclass": "ConveyorSeedBankProperties",
+      "objdata": {
+        "DropDelayConditions": [
+          {
+            "Delay": 2,
+            "MaxPackets": 0
+          },
+          {
+            "Delay": 3,
+            "MaxPackets": 2
+          },
+          {
+            "Delay": 4,
+            "MaxPackets": 4
+          },
+          {
+            "Delay": 5,
+            "MaxPackets": 8
+          }
+        ],
+        "InitialPlantList": [
+          {
+            "MaxCount": 3,
+            "MaxWeightFactor": 0,
+            "PlantType": "tool_projectile_bowlingbulb1",
+            "Weight": 30
+          }
+        ],
+        "SpeedConditions": [
+          {
+            "MaxPackets": 0,
+            "Speed": 100
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "BowlingBulbMinigame"
+      ],
+      "objclass": "BowlingMinigameProperties",
+      "objdata": {
+        "BowlingFoulLine": 2
+      }
+    },
+    {
+      "aliases": [
+        "ConveyorDesigner"
+      ],
+      "objclass": "DangerRoomConveyorDesignerProperties",
+      "objdata": {
+        "InitialPlantList": [
+          {
+            "MaxCount": {
+              "//": "Go from 3 to 1",
+              "SlopeCoefficient": -0.5,
+              "YIntercept": 7,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "3"
+              }
+            },
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowlingbulb1",
+            "Weight": {
+              "SlopeCoefficient": -2,
+              "YIntercept": 70,
+              "LowerLimit": {
+                "Value": "20"
+              },
+              "UpperLimit": {
+                "Value": "30"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "//": "Go from 3 to 1",
+              "SlopeCoefficient": -0.5,
+              "YIntercept": 7,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "3"
+              }
+            },
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowlingbulb2",
+            "Weight": {
+              "SlopeCoefficient": -2,
+              "YIntercept": 80,
+              "LowerLimit": {
+                "Value": "20"
+              },
+              "UpperLimit": {
+                "Value": "40"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "//": "Go from 3 to 4 at level 5",
+              "SlopeCoefficient": 1,
+              "YIntercept": 7,
+              "LowerLimit": {
+                "Value": "2"
+              },
+              "UpperLimit": {
+                "Value": "3"
+              }
+            },
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowlingbulb3",
+            "Weight": {
+              "SlopeCoefficient": 2,
+              "YIntercept": 10,
+              "LowerLimit": {
+                "Value": "30"
+              },
+              "UpperLimit": {
+                "Value": "50"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "//": "Go from 2 to 1 at level 10",
+              "SlopeCoefficient": -1,
+              "YIntercept": 12,
+              "LowerLimit": {
+                "Value": "1"
+              },
+              "UpperLimit": {
+                "Value": "2"
+              }
+            },
+            "MaxCountCooldownSeconds": 6,
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowlingbulb_explode",
+            "Weight": {
+              "SlopeCoefficient": 2,
+              "YIntercept": 10,
+              "LowerLimit": {
+                "Value": "30"
+              },
+              "UpperLimit": {
+                "Value": "50"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "//": "Go from 2 to 1 at level 10",
+              "SlopeCoefficient": 0.1,
+              "YIntercept": 0,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "10"
+              }
+            },
+            "MaxCountCooldownSeconds": 6,
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowling_wallnut",
+            "Weight": {
+              "SlopeCoefficient": 1,
+              "YIntercept": 10,
+              "LowerLimit": {
+                "Value": "30"
+              },
+              "UpperLimit": {
+                "Value": "50"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "//": "Go from 2 to 1 at level 10",
+              "SlopeCoefficient": 0.1,
+              "YIntercept": -1,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "4"
+              }
+            },
+            "MaxCountCooldownSeconds": 6,
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowling_explodeonut",
+            "Weight": {
+              "SlopeCoefficient": 1,
+              "YIntercept": 10,
+              "LowerLimit": {
+                "Value": "10"
+              },
+              "UpperLimit": {
+                "Value": "20"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "//": "Go from 2 to 1 at level 10",
+              "SlopeCoefficient": 0.1,
+              "YIntercept": -1,
+              "LowerLimit": {
+                "Value": "3"
+              },
+              "UpperLimit": {
+                "Value": "4"
+              }
+            },
+            "MaxCountCooldownSeconds": 6,
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowling_holonut",
+            "Weight": {
+              "SlopeCoefficient": 1,
+              "YIntercept": 10,
+              "LowerLimit": {
+                "Value": "40"
+              },
+              "UpperLimit": {
+                "Value": "50"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "//": "Go from 2 to 1 at level 10",
+              "SlopeCoefficient": 0.5,
+              "YIntercept": -10,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "4"
+              }
+            },
+            "MaxCountCooldownSeconds": 6,
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowling_primalwallnut",
+            "Weight": {
+              "SlopeCoefficient": 1,
+              "YIntercept": -10,
+              "LowerLimit": {
+                "Value": "10"
+              },
+              "UpperLimit": {
+                "Value": "20"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "//": "Go from 3 to 1",
+              "SlopeCoefficient": -0.5,
+              "YIntercept": 7,
+              "LowerLimit": {
+                "Value": "1"
+              },
+              "UpperLimit": {
+                "Value": "2"
+              }
+            },
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowlingbulb_iceburg",
+            "Weight": {
+              "SlopeCoefficient": 5,
+              "YIntercept": -50,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "30"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "//": "Go from 3 to 1",
+              "SlopeCoefficient": 0.5,
+              "YIntercept": -5,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "1"
+              }
+            },
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowling_tallnut",
+            "Weight": {
+              "SlopeCoefficient": 5,
+              "YIntercept": -50,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "20"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "DangerRoomMinigameModule"
+      ],
+      "objclass": "DangerRoomMiniGameModuleProperties",
+      "objdata": {
+        "WorldSpecificProperties": "RTID(BeachDangerRoomMiniGameProps@PropertySheets)",
+        "MaxFlagWave": 3,
+        "LevelDesigners": [
+          "RTID(BeachDangerRoomWaveGenerator@CurrentLevel)",
+          "RTID(BeachTideChanger@CurrentLevel)",
+          "RTID(ConveyorDesigner@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "BeachDangerRoomWaveGenerator"
+      ],
+      "objclass": "DangerRoomJitteredWaveGenerator",
+      "objdata": {
+        "StartingPoints": 400,
+        "BasePointIncrementPerWave": 40,
+        "BasePointIncrementPerLevel": 5,
+        "SuppressPlantfood": true,
+        "MustContainZombie": [
+          "RTID(beach@ZombieTypes)",
+          "RTID(beach_fem@ZombieTypes)"
+        ],
+        "MinDynamicZombieType": 6,
+        "ZombiePool": [
+          "RTID(beach_armor1@ZombieTypes)",
+          "RTID(beach_armor2@ZombieTypes)",
+          "RTID(beach_armor4@ZombieTypes)",
+          "RTID(beach_fem_armor1@ZombieTypes)",
+          "RTID(beach_fem_armor2@ZombieTypes)",
+          "RTID(beach_fem_armor4@ZombieTypes)",
+          "RTID(beach_snorkel@ZombieTypes)",
+          "RTID(beach_surfer@ZombieTypes)",
+          "RTID(beach_surfer_veteran@ZombieTypes)",
+          "RTID(beach_octopus@ZombieTypes)",
+          "RTID(beach_fisherman@ZombieTypes)",
+          "RTID(beach_gargantuar@ZombieTypes)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "BeachTideChanger"
+      ],
+      "objclass": "DangerRoomBeachTideChanger",
+      "objdata": {
+        "//": "Tide Motion Limits",
+        "StartingTideLevel": {
+          "LowerBound": {
+            "//": "Go from 3 to 2 at level 5",
+            "SlopeCoefficient": -1,
+            "YIntercept": 7,
+            "LowerLimit": {
+              "Value": "2"
+            },
+            "UpperLimit": {
+              "Value": "3"
+            }
+          },
+          "UpperBound": {
+            "//": "Go from 3 to 4 at level 10",
+            "SlopeCoefficient": 1,
+            "YIntercept": -6,
+            "LowerLimit": {
+              "Value": "3"
+            },
+            "UpperLimit": {
+              "Value": "4"
+            }
+          }
+        },
+        "FinalTideLevel": {
+          "LowerBound": {
+            "YIntercept": 3
+          },
+          "UpperBound": {
+            "YIntercept": 7
+          }
+        },
+        "MinimumTideLevel": {
+          "LowerBound": {
+            "YIntercept": 2
+          },
+          "UpperBound": {
+            "YIntercept": 2
+          }
+        },
+        "MaximumTideLevel": {
+          "LowerBound": {
+            "YIntercept": 4
+          },
+          "UpperBound": {
+            "//": "Start at 5. Go to 6 at level 20.  Go to 7 at level 40.",
+            "SlopeCoefficient": 0.05,
+            "YIntercept": 4.95,
+            "LowerLimit": {
+              "Value": "5"
+            },
+            "UpperLimit": {
+              "Value": "7"
+            }
+          }
+        },
+        "MinimumTideDelta": {
+          "LowerBound": {
+            "YIntercept": 1
+          },
+          "UpperBound": {
+            "YIntercept": 1
+          }
+        },
+        "MaximumTideDelta": {
+          "LowerBound": {
+            "YIntercept": 1
+          },
+          "UpperBound": {
+            "//": "Go from 1 to 4 between levels 10 and 40",
+            "SlopeCoefficient": 0.1,
+            "YIntercept": 0,
+            "LowerLimit": {
+              "Value": "1"
+            },
+            "UpperLimit": {
+              "Value": "4"
+            }
+          }
+        },
+        "//": "Low Tide Event Design",
+        "LowTideEventsPerFlagWave": {
+          "LowerBound": {
+            "//": "Zero for the first 30 levels, then min of one",
+            "SlopeCoefficient": 0.1,
+            "YIntercept": -2,
+            "LowerLimit": {
+              "Value": "0"
+            },
+            "UpperLimit": {
+              "Value": "1"
+            }
+          },
+          "UpperBound": {
+            "//": "None for the first five levels, then gradual increase every ten levels to max two",
+            "SlopeCoefficient": 0.1,
+            "YIntercept": 0.5,
+            "LowerLimit": {
+              "Value": "0"
+            },
+            "UpperLimit": {
+              "Value": "2"
+            }
+          }
+        },
+        "LowTideStartLevel": {
+          "LowerBound": {
+            "YIntercept": 4
+          },
+          "UpperBound": {
+            "YIntercept": 7
+          }
+        },
+        "LowTideRecedeAmount": {
+          "LowerBound": {
+            "//": "Always at least 2 after level 35",
+            "SlopeCoefficient": 1,
+            "YIntercept": -33,
+            "LowerLimit": {
+              "Value": "1"
+            },
+            "UpperLimit": {
+              "Value": "2"
+            }
+          },
+          "UpperBound": {
+            "//": "1 for the first ten levels, then increase every ten levels to max 4",
+            "SlopeCoefficient": 0.1,
+            "YIntercept": 0,
+            "LowerLimit": {
+              "Value": "1"
+            },
+            "UpperLimit": {
+              "Value": "4"
+            }
+          }
+        },
+        "//": "Low Tide Zombie Design",
+        "BasicLowTideZombieType": "beach_imp",
+        "BasicLowTideZombiesPerLowTideEvent": {
+          "LowerBound": {
+            "YIntercept": 3
+          },
+          "UpperBound": {
+            "//": "5 for the first 25 levels, then gradual increase every ten levels to max 10",
+            "SlopeCoefficient": 0.1,
+            "YIntercept": 3.5,
+            "LowerLimit": {
+              "Value": "5"
+            },
+            "UpperLimit": {
+              "Value": "10"
+            }
+          }
+        },
+        "SpecialLowTideZombieTypes": [
+          "beach_armor1",
+          "beach_armor2",
+          "beach_fem_armor1",
+          "beach_fem_armor2"
+        ],
+        "SpecialLowTideZombiesPerLowTideEvent": {
+          "LowerBound": {
+            "//": "Always at least 1 after level 15",
+            "SlopeCoefficient": 1,
+            "YIntercept": -14,
+            "LowerLimit": {
+              "Value": "0"
+            },
+            "UpperLimit": {
+              "Value": "1"
+            }
+          },
+          "UpperBound": {
+            "//": "0 for the first 15 levels, then increase every 10 levels to 5",
+            "SlopeCoefficient": 0.1,
+            "YIntercept": -0.5,
+            "LowerLimit": {
+              "Value": "0"
+            },
+            "UpperLimit": {
+              "Value": "5"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "version": 1
+}

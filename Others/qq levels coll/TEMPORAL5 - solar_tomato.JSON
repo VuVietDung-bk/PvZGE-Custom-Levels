@@ -1,0 +1,2509 @@
+{
+  "#comment": "Temporal_Strike",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "Prepare to withstand the pursuit of time!",
+        "FirstIntroNarrative": "TEMPORAL_Intro",
+        "LevelNumber": 6,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(ForzenPlantPlacement@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(LevelScheduler@CurrentLevel)",
+          "RTID(ConveyorBelt@CurrentLevel)",
+          "RTID(NewWaves@CurrentLevel)"
+        ],
+        "Name": "Temporal Strike-day5",
+        "NameMultiLanguage": {
+          "en": "Temporal Strike-day5",
+          "zh": "超时空追击-day5"
+        },
+        "WritenBy": "solar_tomato",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(PersuitStage@LevelModules)",
+        "MusicType": "MiniGame_A"
+      }
+    },
+    { 
+      "objclass": "NarrativeProperties",
+      "aliases": [
+        "TEMPORAL_Intro"
+      ],
+      "objdata": {
+        "AutoAdvance": true,
+        "DelayBetweenLines": 3,
+        "Flow": [
+          {
+            "Character": "winnie",
+            "Action": "NPC_ENTER",
+            "Delay": 0.5
+          },
+          {
+            "Character": "crazydave",
+            "Action": "NPC_ENTER",
+            "Delay": 0.5
+          },
+          {
+            "Character": "winnie",
+            "Action": "SAY",
+            "Lines": {
+              "en": "Large-scale offensive detected ahead",
+              "zh": "前方检测到大规模攻势"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "winnie",
+            "Action": "SAY",
+            "Lines": {
+              "en": "Emergency plant deployment activated",
+              "zh": "紧急植物调用已启动"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "crazydave",
+            "Action": "SAY",
+            "Lines": {
+              "en": "That's like 1.3333 drive-thrus operating at MAXIMUM TACOS-PER-SECOND!",
+              "zh": "那相当于1.3333条得来速在同时售卖玉米卷！"
+            },
+            "Delay": 0.3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(BeatTheLevel@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": [
+        "BeatTheLevel"
+      ],
+      "objclass": "StarChallengeBeatTheLevelProps",
+      "objdata": {
+        "DescriptionsMultilanguage": [
+          {
+            "en": "Survive for 300 seconds",
+            "zh": "坚持300秒"
+          }
+        ]
+      }
+    },
+    {
+			"aliases": [ 
+        "ConveyorBelt" 
+      ],
+			"objclass": "ConveyorSeedBankProperties",
+			"objdata": 
+      {
+				"DropDelayConditions": [ 
+          {
+						"Delay": 2.6,
+						"MaxPackets": 4
+					},
+          {
+						"Delay": 4,
+						"MaxPackets": 6
+					},
+          {
+						"Delay": 7,
+						"MaxPackets": 7
+					}
+        ],
+				"InitialPlantList": [
+          {
+            "MaxCount": 10,
+						"MaxWeightFactor": 0,
+						"PlantType": "fumeshroom",
+						"Weight": 10
+					}, 
+          {
+						"MaxCount": 5,
+						"MaxWeightFactor": 0,
+						"PlantType": "firepeashooter",
+						"Weight": 10
+					}, 
+          {
+						"MaxCount": 5,
+						"MaxWeightFactor": 0,
+						"PlantType": "bowlingbulb",
+						"Weight": 8
+					},
+          {
+						"MaxCount": 8,
+						"MaxWeightFactor": 0,
+						"PlantType": "endurian",
+						"Weight": 10
+					},
+          {
+						"MaxCount": 4,
+						"MaxWeightFactor": 0,
+						"MinCount": 1,
+						"MinWeightFactor": 1.2,
+						"PlantType": "stunion",
+						"Weight": 10
+					}
+        ],
+				"SpeedConditions": [ 
+          {
+						"MaxPackets": 0,
+						"Speed": 100
+					} 
+        ]
+			}
+		},
+    {
+      "aliases": [
+        "LevelScheduler"
+      ],
+      "objclass": "LevelSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 1,
+          "Min": 1
+        },
+        "TimeBetween": {
+          "Max": 30,
+          "Min": 30
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(SchedulerPortal1@CurrentLevel)",
+          "RTID(SchedulerPlant1@CurrentLevel)",
+          "RTID(SchedulerPortal2@CurrentLevel)",
+          "RTID(SchedulerPlant2@CurrentLevel)",
+          "RTID(SchedulerPortal3@CurrentLevel)",
+          "RTID(SchedulerPlant3@CurrentLevel)",
+          "RTID(SchedulerPortal4@CurrentLevel)",
+          "RTID(SchedulerPlant4@CurrentLevel)",
+          "RTID(SchedulerPortal5@CurrentLevel)",
+          "RTID(SchedulerPlant5@CurrentLevel)",
+          "RTID(SchedulerPortal6@CurrentLevel)",
+          "RTID(SchedulerHalf@CurrentLevel)",
+          "RTID(SchedulerFinally@CurrentLevel)",
+          "RTID(SchedulerDone@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal1"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 30,
+          "Min": 30
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent1-1@CurrentLevel)",
+          "RTID(PortalsEvent1-2@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent1-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "1",
+        "PortalType": "RTID(Portal1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent1-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "3",
+        "PortalType": "RTID(Portal1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal1"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal1props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal1props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 6,
+            "Max": 6
+          },
+          "Scale": 1,
+          "World": "",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "lostcity_jane"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "explorer"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dino_bully"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPlant1"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 45,
+          "Min": 45
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Plant1@CurrentLevel)",
+          "RTID(Talk1@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Plant1"
+      ],
+      "objclass": "ModifyConveyorWaveActionProps",
+      "objdata": {
+        "Add": [
+          {
+          "MaxDelivered": 1,
+          "Type": "RTID(cherry_bomb@PlantTypes)",
+          "Weight": 1000
+          },
+          {
+          "MaxDelivered": 5,
+          "Type": "RTID(lightningreed@PlantTypes)",
+          "Weight": 1000
+          },
+          {
+          "MaxDelivered": 5,
+          "Type": "RTID(applemortar@PlantTypes)",
+          "Weight": 1000
+          }
+        ],
+        "Remove": []
+      }
+    },
+    {
+      "aliases": [
+        "Talk1"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Expendable plant support delivered",
+          "zh": "一次性植物支援送达"
+        },
+        "LifeSpan": 8
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal2"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 70,
+          "Min": 70
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent2-1@CurrentLevel)",
+          "RTID(PortalsEvent2-2@CurrentLevel)",
+          "RTID(PortalsEvent2-3@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent2-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "2",
+        "PortalType": "RTID(Portal2-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal2-1"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal2-1props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal2-1props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 15,
+            "Max": 15
+          },
+          "Scale": 1.5,
+          "World": "gargantuar",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "lostcity_gargantuar"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "pirate_gargantuar"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent2-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "0",
+        "PortalType": "RTID(Portal2-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent2-3"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "4",
+        "PortalType": "RTID(Portal2-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal2-2"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal2-2props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal2-2props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 6,
+            "Max": 6
+          },
+          "Scale": 1,
+          "World": "",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark_wizard"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark_imp_dragon"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_drink"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "eighties_punk"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "modern_allstar"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "cowboy_armor4"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPlant2"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 115,
+          "Min": 115
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Plant2@CurrentLevel)",
+          "RTID(Talk2@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Plant2"
+      ],
+      "objclass": "ModifyConveyorWaveActionProps",
+      "objdata": {
+        "Add": [
+          {
+          "MaxDelivered": 5,
+          "Type": "RTID(firegourd@PlantTypes)",
+          "Weight": 1000
+          },
+          {
+          "MaxDelivered": 5,
+          "Type": "RTID(holonut@PlantTypes)",
+          "Weight": 1000
+          },
+          {
+          "MaxDelivered": 5,
+          "Type": "RTID(solartomato@PlantTypes)",
+          "Weight": 1000
+          },
+          {
+          "MaxDelivered": 5,
+          "Type": "RTID(coldsnapdragon@PlantTypes)",
+          "Weight": 1000
+          }
+        ],
+        "Remove": []
+      }
+    },
+    {
+      "aliases": [
+        "Talk2"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Expendable plant support delivered",
+          "zh": "一次性植物支援送达"
+        },
+        "LifeSpan": 8
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal3"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 120,
+          "Min": 120
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent3-1@CurrentLevel)",
+          "RTID(PortalsEvent3-2@CurrentLevel)",
+          "RTID(PortalsEvent3-3@CurrentLevel)",
+          "RTID(PortalsEvent3-4@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent3-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "0",
+        "PortalType": "RTID(Portal3-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent3-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "1",
+        "PortalType": "RTID(Portal3-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal3-1"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal3-1props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal3-1props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 6,
+            "Max": 6
+          },
+          "Scale": 1,
+          "World": "",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark_juggler"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "camel_threehump"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "barrelroller"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "future_protector"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_gong"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "eighties_glitter"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent3-3"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 5,
+        "PortalRow": "2",
+        "PortalType": "RTID(Portal3-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent3-4"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "4",
+        "PortalType": "RTID(Portal3-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal3-2"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal3-2props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal3-2props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 6,
+            "Max": 6
+          },
+          "Scale": 1,
+          "World": "",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark_juggler"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "camel_threehump"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "barrelroller"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "future_protector"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "monk_drink"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "eighties_mc"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerHalf"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 150,
+          "Min": 150
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Half@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Half"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Charge over half, countdown 150 seconds",
+          "zh": "充能过半，倒计时150秒"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPlant3"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 160,
+          "Min": 160
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Plant3@CurrentLevel)",
+          "RTID(Talk3@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Plant3"
+      ],
+      "objclass": "ModifyConveyorWaveActionProps",
+      "objdata": {
+        "Add": [
+          {
+          "MaxCount": 2,
+					"MaxWeightFactor": 0,
+          "Type": "RTID(hurrikale@PlantTypes)",
+          "Weight": 5
+          },
+          {
+          "MaxCount": 5,
+					"MaxWeightFactor": 0,
+          "Type": "RTID(sweetpotato@PlantTypes)",
+          "Weight": 8
+          },
+          {
+          "MaxCount": 3,
+					"MaxWeightFactor": 0,
+          "MinCount": 1,
+					"MinWeightFactor": 1.5,
+          "Type": "RTID(coconutcannon@PlantTypes)",
+          "Weight": 8
+          }
+        ],
+        "Remove": []
+      }
+    },
+    {
+      "aliases": [
+        "Talk3"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Sustained plant support delivered",
+          "zh": "长期供给植物支援送达"
+        },
+        "LifeSpan": 8
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal4"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 180,
+          "Min": 180
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent4-1@CurrentLevel)",
+          "RTID(PortalsEvent4-2@CurrentLevel)",
+          "RTID(PortalsEvent4-3@CurrentLevel)",
+          "RTID(PortalsEvent4-4@CurrentLevel)",
+          "RTID(PortalsEvent4-5@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent4-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "1",
+        "PortalType": "RTID(Portal4-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent4-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 5,
+        "PortalRow": "3",
+        "PortalType": "RTID(Portal4-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal4-1"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal4-1props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal4-1props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 6,
+            "Max": 6
+          },
+          "Scale": 1,
+          "World": "",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "explorer_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "football_mech"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark_king_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "eighties_breakdancer"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dino_bully_veteran"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent4-3"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "0",
+        "PortalType": "RTID(Portal4-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent4-4"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 8,
+        "PortalRow": "2",
+        "PortalType": "RTID(Portal4-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent4-5"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "4",
+        "PortalType": "RTID(Portal4-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal4-2"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal4-2props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal4-2props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 10,
+            "Max": 10
+          },
+          "Scale": 1.5,
+          "World": "gargantuar",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 100,
+            "ZombieTypeName": "future_gargantuar"
+          },
+          {
+            "Weight": 100,
+            "ZombieTypeName": "iceage_gargantuar"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_bronze_strong"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPlant4"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 225,
+          "Min": 225
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Plant4@CurrentLevel)",
+          "RTID(Talk4@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Plant4"
+      ],
+      "objclass": "ModifyConveyorWaveActionProps",
+      "objdata": {
+        "Add": [
+          {
+          "MaxDelivered": 3,
+          "Type": "RTID(wintermelon@PlantTypes)",
+          "Weight": 1000
+          },
+          {
+          "MaxDelivered": 1,
+          "Type": "RTID(doomshroom@PlantTypes)",
+          "Weight": 1000
+          },
+          {
+          "MaxDelivered": 3,
+          "Type": "RTID(banana@PlantTypes)",
+          "Weight": 1000
+          },
+          {
+          "MaxDelivered": 10,
+          "Type": "RTID(moonbean@PlantTypes)",
+          "Weight": 1000
+          }
+        ],
+        "Remove": []
+      }
+    },
+    {
+      "aliases": [
+        "Talk4"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Expendable plant support delivered",
+          "zh": "一次性植物支援送达"
+        },
+        "LifeSpan": 8
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal5"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 220,
+          "Min": 220
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent5-1@CurrentLevel)",
+          "RTID(PortalsEvent5-2@CurrentLevel)",
+          "RTID(PortalsEvent5-3@CurrentLevel)",
+          "RTID(PortalsEvent5-4@CurrentLevel)",
+          "RTID(PortalsEvent5-5@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 5,
+        "PortalRow": "0",
+        "PortalType": "RTID(Portal5-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 4,
+        "PortalRow": "1",
+        "PortalType": "RTID(Portal5-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-3"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "2",
+        "PortalType": "RTID(Portal5-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-4"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 3,
+        "PortalRow": "3",
+        "PortalType": "RTID(Portal5-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-5"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "4",
+        "PortalType": "RTID(Portal5-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal5-1"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal5-1props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal5-1props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 6,
+            "Max": 6
+          },
+          "Scale": 1,
+          "World": "",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "lostcity_excavator"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "abbot_chi"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dino_bully_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "eighties_arcade"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "west_bull_veteran"
+          }
+        ]
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal5-2"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal5-2props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal5-2props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 6,
+            "Max": 6
+          },
+          "Scale": 1,
+          "World": "",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark_king_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark_juggler"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dino_bully_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "eighties_arcade"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "newspaper_veteran"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerFinally"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 270,
+          "Min": 270
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Finally@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Finally"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "The elimination system is about to activate, countdown 30 seconds",
+          "zh": "抹杀系统即将启动，倒计时30秒"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPlant5"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 260,
+          "Min": 260
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Plant5@CurrentLevel)",
+          "RTID(Talk5@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Plant5"
+      ],
+      "objclass": "ModifyConveyorWaveActionProps",
+      "objdata": {
+        "Add": [
+          {
+          "MaxCount": 5,
+					"MaxWeightFactor": 0,
+          "Type": "RTID(primalwallnut@PlantTypes)",
+          "Weight": 20
+          },
+          {
+          "MaxCount": 5,
+					"MaxWeightFactor": 0,
+          "Type": "RTID(chardguard@PlantTypes)",
+          "Weight": 15
+          },
+          {
+          "MaxCount": 3,
+					"MaxWeightFactor": 0,
+          "Type": "RTID(iceweed@PlantTypes)",
+          "Weight": 15
+          }
+        ],
+        "Remove": [
+          {
+						"Type": "RTID(fumeshroom@PlantTypes)"
+					},
+          {
+						"Type": "RTID(firepeashooter@PlantTypes)"
+					},
+          {
+						"Type": "RTID(endurian@PlantTypes)"
+					},
+          {
+						"Type": "RTID(bowlingbulb@PlantTypes)"
+					} 
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Talk5"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Sustained plant support delivered",
+          "zh": "长期供给植物支援送达"
+        },
+        "LifeSpan": 8
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal6"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 260,
+          "Min": 260
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent6-1@CurrentLevel)",
+          "RTID(PortalsEvent6-2@CurrentLevel)",
+          "RTID(PortalsEvent6-3@CurrentLevel)",
+          "RTID(PortalsEvent6-4@CurrentLevel)",
+          "RTID(PortalsEvent6-5@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent6-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "0",
+        "PortalType": "RTID(Portal6@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent6-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 5,
+        "PortalRow": "1",
+        "PortalType": "RTID(Portal6@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent6-3"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "2",
+        "PortalType": "RTID(Portal6@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent6-4"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 5,
+        "PortalRow": "3",
+        "PortalType": "RTID(Portal6@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent6-5"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "4",
+        "PortalType": "RTID(Portal6@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal6"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal6props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal6props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 3,
+            "Max": 3
+          },
+          "Scale": 1.5,
+          "World": "gargantuar",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_gargantuar"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_bronze_chi"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "kongfu_bronze_hook"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "cowboy_gargantuar"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "summer_gargantuar"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dino_gargantuar"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "vase_gargantuar"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerDone"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 300,
+          "Min": 300
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": true,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(done@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "done"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "The offensive has ended!",
+          "zh": "攻势结束！"
+        },
+        "LifeSpan": 10
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 70,
+            "StartingPoints": 200,
+            "StartingWave": 9,
+            "ZombiePool": [
+            "RTID(tutorial@ZombieTypes)",
+            "RTID(tutorial_armor1@ZombieTypes)",
+            "RTID(tutorial_armor2@ZombieTypes)",
+            "RTID(tutorial_armor4@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 90,
+            "StartingPoints": 200,
+            "StartingWave": 9,
+            "ZombiePool": [
+            "RTID(tutorial@ZombieTypes)",
+            "RTID(tutorial_armor1@ZombieTypes)",
+            "RTID(tutorial_armor2@ZombieTypes)",
+            "RTID(tutorial_armor4@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 110,
+            "StartingPoints": 200,
+            "StartingWave": 9,
+            "ZombiePool": [
+            "RTID(tutorial@ZombieTypes)",
+            "RTID(tutorial_armor1@ZombieTypes)",
+            "RTID(tutorial_armor2@ZombieTypes)",
+            "RTID(tutorial_armor4@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 150,
+            "StartingPoints": 200,
+            "StartingWave": 9,
+            "ZombiePool": [
+            "RTID(tutorial@ZombieTypes)",
+            "RTID(tutorial_armor1@ZombieTypes)",
+            "RTID(tutorial_armor2@ZombieTypes)",
+            "RTID(tutorial_armor4@ZombieTypes)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "LevelJamList": [
+          "jam_rap",
+          "jam_pop",
+          "jam_metal",
+          "jam_8bit",
+          "jam_punk"
+        ],
+        "FlagWaveInterval": 5,
+        "WaveCount": 30,
+        "MinNextWaveHealthPercentage": 0.4,
+        "ZombieCountdownFirstWaveSecs": 7,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave11@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave12@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave13@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave14@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave15@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+				"DynamicPlantfood": [
+					1,
+					1,
+					1,
+					1,
+					1,
+					1,
+					1
+				],
+        "Zombies": [
+          {
+            "Row": "4",
+            "Type": "RTID(zomboni@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial_armor4@ZombieTypes)"
+          }
+          
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          } 
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(explorer_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(explorer@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(explorer_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(explorer_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(explorer@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(zomboni@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(explorer@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(explorer_veteran@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+				"DynamicPlantfood": [
+					1,
+					1,
+					1,
+					1,
+					1,
+					1,
+					1
+				],
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(zomboni@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(zomboni@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave13"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(explorer_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(explorer_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(explorer@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(explorer@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(explorer_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(explorer_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(explorer_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(explorer@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave14"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(tutorial_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(explorer_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(zomboni@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WaveEndless"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(zomboni@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(explorer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(explorer_veteran@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(explorer_veteran@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(tutorial_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(tutorial_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    }
+  ],
+  "version": 1
+}

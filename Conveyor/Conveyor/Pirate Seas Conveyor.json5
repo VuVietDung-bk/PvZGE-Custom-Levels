@@ -1,0 +1,515 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "maido",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2024-12-06",
+    "UpdatedAt": "2024-12-06",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "???",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		  "RTID(StandardIntro@LevelModules)",
+		  "RTID(ChallengeModule@CurrentLevel)",
+		  "RTID(PirateMowers@LevelModules)",
+		  "RTID(PiratePlanks@CurrentLevel)",
+          "RTID(ForzenPlantPlacement@CurrentLevel)",
+          "RTID(ConveyorBelt@CurrentLevel)"
+        ],
+        "Name": "Pirate Seas - Conveyor",
+        "NameMultiLanguage": {
+          "en": "Pirate Seas - Conveyor",
+          "zh": "功夫世界-沙盒"
+        },
+        "WritenBy": "maido",
+		"MusicType": "MiniGame_A",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(PirateStage@LevelModules)"
+      }
+    },
+		{
+			"aliases": [
+				"PiratePlanks"
+			],
+			"objclass": "PiratePlankProperties",
+			"objdata": {
+				"PlankRows": [
+					0,
+					1,
+					2,
+					4
+				]
+			}
+		},
+
+    {
+            "aliases": [
+                "ConveyorBelt"
+            ],
+            "objclass": "ConveyorSeedBankProperties",
+            "objdata": {
+                "DropDelayConditions": [
+                    {
+                        "Delay": 2,
+                        "MaxPackets": 0
+                    },
+                    {
+                        "Delay": 4,
+                        "MaxPackets": 2
+                    },
+                    {
+                        "Delay": 8,
+                        "MaxPackets": 4
+                    },
+                    {
+                        "Delay": 10,
+                        "MaxPackets": 6
+                    }
+                ],
+                "InitialPlantList": [
+                    {
+					    "MaxWeightFactor": 0,
+						"MaxCount": 8,
+                        "PlantType": "kernelpult",
+                        "Weight": 75
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 7,
+                        "PlantType": "snapdragon",
+                        "Weight": 90
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 4,
+                        "PlantType": "spikeweed",
+                        "Weight": 90
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 4,
+                        "PlantType": "spikerock",
+                        "Weight": 60
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 3,
+                        "PlantType": "springbean",
+                        "Weight": 35
+                    },
+					{
+					    "MaxWeightFactor": 0,
+					    "MaxCount": 1,
+                        "PlantType": "cherry_bomb",
+                        "Weight": 25
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 7,
+                        "PlantType": "threepeater",
+                        "Weight": 80
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 4,
+                        "PlantType": "applemortar",
+                        "Weight": 50
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 5,
+                        "PlantType": "coconutcannon",
+                        "Weight": 50
+                    }
+                ],
+                "SpeedConditions": [
+                    {
+                        "MaxPackets": 0,
+                        "Speed": 150
+                    }
+                ]
+            }
+        },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+	{
+			"aliases": [
+			"ChallengeModule"
+		],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+			"BeatTheLevel"
+		],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+				"Survive a buccaneering battle in Pirate Seas!"
+				],
+				"DescriptionsMultiLanguage": [
+					{
+					"en": "123",
+					"zh": "112233"
+					}
+				]
+			}
+		},
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 80, // Difficulty D, easiest
+            "StartingPoints": 50,
+            "StartingWave": 0,
+            "ZombiePool": [
+              "RTID(pirate@ZombieTypes)",
+              "RTID(pirate_armor1@ZombieTypes)",
+              "RTID(pirate_armor2@ZombieTypes)",
+              "RTID(swashbuckler@ZombieTypes)",
+              "RTID(seagull@ZombieTypes)",
+              "RTID(cannon@ZombieTypes)",
+              "RTID(pirate_captain@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 100, // Difficulty C, normal
+            "StartingPoints": 100,
+            "StartingWave": 0,
+            "ZombiePool": [
+              "RTID(pirate@ZombieTypes)",
+              "RTID(pirate_armor1@ZombieTypes)",
+              "RTID(pirate_armor2@ZombieTypes)",
+              "RTID(pirate_armor4@ZombieTypes)",
+              "RTID(swashbuckler@ZombieTypes)",
+              "RTID(seagull@ZombieTypes)",
+              "RTID(barrelroller@ZombieTypes)",
+              "RTID(cannon@ZombieTypes)",
+              "RTID(pirate_captain@ZombieTypes)",
+              "RTID(pirate_gargantuar@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 150, // Difficulty B, advanced
+            "StartingPoints": 200,
+            "StartingWave": 0,
+            "ZombiePool": [
+              "RTID(pirate@ZombieTypes)",
+              "RTID(pirate_armor1@ZombieTypes)",
+              "RTID(pirate_armor2@ZombieTypes)",
+              "RTID(pirate_armor4@ZombieTypes)",
+              "RTID(swashbuckler@ZombieTypes)",
+              "RTID(seagull@ZombieTypes)",
+              "RTID(pelican@ZombieTypes)",
+              "RTID(barrelroller@ZombieTypes)",
+              "RTID(cannon@ZombieTypes)",
+              "RTID(pirate_captain@ZombieTypes)",
+              "RTID(pirate_gargantuar@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 200, // Difficulty AAAAAAAAA
+            "StartingPoints": 250,
+            "StartingWave": 0,
+            "ZombiePool": [
+              "RTID(pirate@ZombieTypes)",
+              "RTID(pirate_armor1@ZombieTypes)",
+              "RTID(pirate_armor2@ZombieTypes)",
+              "RTID(pirate_armor4@ZombieTypes)",
+              "RTID(swashbuckler@ZombieTypes)",
+              "RTID(seagull@ZombieTypes)",
+              "RTID(pelican@ZombieTypes)",
+              "RTID(barrelroller@ZombieTypes)",
+              "RTID(cannon@ZombieTypes)",
+              "RTID(pirate_captain@ZombieTypes)",
+              "RTID(pirate_gargantuar@ZombieTypes)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 10,
+        "WaveCount": 40,
+        "Waves": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+          []
+        ]
+      }
+    },
+//This is the scripted Zombie Ambush setup, currently for waves 10, 20, 30, and 40
+// There are 7 levels of difficulties: - - - D C B A
+       {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 10,
+                "SpawnColEnd": 9,
+                "SpawnColStart": 6,
+                "WaveCount": 10,
+                "WaveSpendingPointIncrement": 50,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    [],
+                    [],
+                    [],
+                    [],
+                    ["RTID(PlantFoodSpawner0@CurrentLevel)","RTID(Wave10RaidingPartyEvent0@CurrentLevel)"],
+                    [],
+                    [],
+                    [],
+                    [],
+                    ["RTID(Wave10RaidingPartyEvent0@CurrentLevel)"],
+					[],
+                    [],
+                    [],
+                    [],
+                    ["RTID(PlantFoodSpawner1@CurrentLevel)","RTID(Wave20RaidingPartyEvent0@CurrentLevel)"],
+                    [],
+                    [],
+                    [],
+                    [],
+                    ["RTID(Wave20RaidingPartyEvent0@CurrentLevel)"],
+					[],
+                    [],
+                    [],
+                    [],
+                    ["RTID(PlantFoodSpawner2@CurrentLevel)","RTID(Wave30RaidingPartyEvent0@CurrentLevel)"],
+                    [],
+                    [],
+                    [],
+                    [],
+                    ["RTID(Wave30RaidingPartyEvent0@CurrentLevel)"],
+					[],
+                    [],
+                    [],
+                    [],
+                    ["RTID(PlantFoodSpawner3@CurrentLevel)","RTID(Wave30RaidingPartyEvent0@CurrentLevel)"],
+                    [],
+                    [],
+                    [],
+                    [],
+                    ["RTID(Wave40RaidingPartyEvent0@CurrentLevel)"]
+                ]
+            }
+        },
+// These blocks handle predetermined Plant Food; currently set up to use basics and their armored variants
+		{
+            "aliases": [
+                "PlantFoodSpawner0"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(swashbuckler@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PlantFoodSpawner1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(seagull@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PlantFoodSpawner2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    0,
+                    1
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(pirate_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PlantFoodSpawner3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(pirate_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave10RaidingPartyEvent0"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": 3,
+                "SwashbucklerCount": 3,
+                "TimeBetweenGroups": 1.0
+            }
+        },
+        {
+            "aliases": [
+                "Wave20RaidingPartyEvent0"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": 3,
+                "SwashbucklerCount": 6,
+                "TimeBetweenGroups": 1.0
+            }
+        },
+        {
+            "aliases": [
+                "Wave30RaidingPartyEvent0"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": 3,
+                "SwashbucklerCount": 8,
+                "TimeBetweenGroups": 1.0
+            }
+        },
+        {
+            "aliases": [
+                "Wave40RaidingPartyEvent0"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": 3,
+                "SwashbucklerCount": 10,
+                "TimeBetweenGroups": 1.0
+            }
+        }
+  ],
+  "version": 1
+}

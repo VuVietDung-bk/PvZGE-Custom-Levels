@@ -1,0 +1,709 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "maido",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2024-12-06",
+    "UpdatedAt": "2024-12-06",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "<PLAYERNAME>'s battle against Zomboss' experiments!",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		  "RTID(StandardIntro@LevelModules)",
+		  "RTID(ChallengeModule@CurrentLevel)",
+		  "RTID(ModernMowers@LevelModules)",
+		  "RTID(FastSunDropper@LevelModules)",
+          "RTID(SeedBank@CurrentLevel)"
+        ],
+        "Name": "Zombie Nimble, Zombie Quick",
+        "NameMultiLanguage": {
+          "en": "Zombie Nimble, Zombie Quick",
+          "zh": "功夫世界-沙盒"
+        },
+        "WritenBy": "maido",
+		"MusicType": "MiniGame_A",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(ModernStage@LevelModules)"
+      }
+    },	
+///CUSTOM ZOMBIES
+    {
+      "aliases": [
+        "taco_punk"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(taco_punk@CurrentLevel)",
+        "ZombieBasedOn": "eighties_punk"
+      }
+    },
+    {
+      "aliases": [
+        "taco_punk"
+      ],
+      "objclass": "ZombieProperties",
+      "objdata": {
+		"CannotBeTossedByCitron": false,
+		"WalkSPS": 0.9,
+		"EatDPS": 100,
+		"Toughness": 250,
+		"PushCooldown": 2,
+		"JamStyle": "jam_rap",
+      }
+    },
+    {
+      "aliases": [
+        "taco_dancer"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(taco_dancer@CurrentLevel)",
+        "ZombieBasedOn": "eighties_breakdancer"
+      }
+    },
+    {
+      "aliases": [
+        "taco_dancer"
+      ],
+      "objclass": "ZombieProperties",
+      "objdata": {
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.48,
+				"EatDPS": 100,
+				"Toughness": 250,
+				"JamWalkSpeedMult": 1.5,
+				"KickDistance": 1.5625,
+				"KickingTime": 0.5,
+				"JamStyle": "jam_rap",
+      }
+    },
+	{
+      "aliases": [
+        "taco_basic"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(taco_basic@CurrentLevel)",
+        "ZombieBasedOn": "tutorial"
+      }
+    },
+        {
+			"aliases": [
+				"taco_basic"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.37,
+				"Toughness": 190,
+				"EatDPS": 100,
+			}
+		},
+	{
+      "aliases": [
+        "taco_imp"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(taco_imp@CurrentLevel)",
+        "ZombieBasedOn": "tutorial_imp"
+      }
+    },
+        {
+			"aliases": [
+				"taco_imp"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"IgnoredInWaves": true,
+				"WalkSPS": 0.44,
+				"EatDPS": 100,
+				"Toughness": 150
+			}
+		},
+		{
+      "aliases": [
+        "taco_flag"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(taco_flag@CurrentLevel)",
+        "ZombieBasedOn": "tutorial_flag"
+      }
+    },
+        {
+			"aliases": [
+				"taco_flag"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.48,
+				"EatDPS": 100,
+				"Toughness": 190,
+			}
+		},
+	{
+      "aliases": [
+        "taco_cone"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(taco_cone@CurrentLevel)",
+        "ZombieBasedOn": "tutorial_armor1"
+      }
+    },
+		{
+			"aliases": [
+				"taco_cone"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.37,
+				"Toughness": 190,
+				"EatDPS": 100,
+				"StartingArmors": [
+					"modern_armor1"
+				],
+			}
+		},
+	{
+      "aliases": [
+        "taco_bucket"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(taco_bucket@CurrentLevel)",
+        "ZombieBasedOn": "tutorial_armor2"
+      }
+    },
+		{
+			"aliases": [
+				"taco_bucket"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.37,
+				"Toughness": 190,
+				"EatDPS": 100,
+				"StartingArmors": [
+					"modern_armor2"
+				],
+			}
+		},
+	{
+      "aliases": [
+        "taco_newspaper"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(taco_newspaper@CurrentLevel)",
+        "ZombieBasedOn": "modern_newspaper"
+      }
+    },
+		{
+			"aliases": [
+				"taco_newspaper"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.44,
+				"EatDPS": 100,
+				"Toughness": 460,
+				"EnragedDamageScale": 4,
+				"EnragedSpeedScale": 4,
+				"NewspaperHealth": 800,
+			}
+		},
+	{
+      "aliases": [
+        "taco_allstar"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(taco_allstar@CurrentLevel)",
+        "ZombieBasedOn": "modern_allstar"
+      }
+    },
+		{
+			"aliases": [
+				"taco_allstar"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"CannotBeTossedByCitron": false,
+				"SmashDamage": 1500,
+				"WalkSPS": 0.32,
+				"EatDPS": 100,
+				"Toughness": 1100,
+				"RunningSpeedScale": 6
+			}
+		},
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PresetPlantList": [
+          
+        ],
+        "SelectionMethod": "chooser"
+      }
+    },
+	{
+			"aliases": [
+			"ChallengeModule"
+		],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+			"BeatTheLevel"
+		],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+				"Defend your home against a regular, non-different, very ordinary wave of zombies",
+				],
+				"DescriptionsMultiLanguage": [
+					{
+					"en": "123",
+					"zh": "112233"
+					}
+				]
+			}
+	},	
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 25, // Difficulty D, easiest
+            "StartingPoints": 0,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(taco_basic@CurrentLevel)",
+					"RTID(taco_imp@CurrentLevel)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 25, // Difficulty C, normal
+            "StartingPoints": 25,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(taco_basic@CurrentLevel)",
+					"RTID(taco_imp@CurrentLevel)",
+                    "RTID(taco_cone@CurrentLevel)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 50, // Difficulty B, advanced
+            "StartingPoints": 25,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(taco_basic@CurrentLevel)",
+					"RTID(taco_imp@CurrentLevel)",
+                    "RTID(taco_cone@CurrentLevel)",
+					"RTID(taco_bucket@CurrentLevel)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 50, // Difficulty AAAAAAAAA
+            "StartingPoints": 50,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(taco_basic@CurrentLevel)",
+					"RTID(taco_imp@CurrentLevel)",
+                    "RTID(taco_cone@CurrentLevel)",
+					"RTID(taco_bucket@CurrentLevel)",
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },   	
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 10,
+		"LevelJam": "jam_rap",
+        "WaveCount": 40,
+        "Waves": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+          []
+        ]
+      }
+    },
+//This is the scripted Zombie Ambush setup, currently for waves 10, 20, 30, and 40
+       {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 8,
+				"SuppressFlagZombie": true,
+                "SpawnColEnd": 9,
+                "SpawnColStart": 6,
+                "WaveCount": 16,
+                "WaveSpendingPointIncrement": 50,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    ["RTID(Wave1@CurrentLevel)"],
+                    ["RTID(Wave2@CurrentLevel)"],
+                    ["RTID(Wave3@CurrentLevel)"],
+                    ["RTID(Wave4@CurrentLevel)"],
+                    ["RTID(Wave5@CurrentLevel)"],
+                    ["RTID(Wave6@CurrentLevel)"],
+                    ["RTID(Wave7@CurrentLevel)"],
+                    ["RTID(Wave8@CurrentLevel)"],
+                    ["RTID(Wave9@CurrentLevel)"],
+                    ["RTID(Wave10@CurrentLevel)"],
+					["RTID(Wave11@CurrentLevel)"],
+					["RTID(Wave12@CurrentLevel)"],
+					["RTID(Wave13@CurrentLevel)"],
+					["RTID(Wave14@CurrentLevel)"],
+					["RTID(Wave15@CurrentLevel)"],
+					["RTID(Wave16@CurrentLevel)"],
+                ]
+            }
+        },
+///WAVES	
+	{
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(taco_basic@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(taco_basic@CurrentLevel)"},
+		  {"Type": "RTID(taco_imp@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(taco_cone@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(taco_punk@CurrentLevel)"},
+		  {"Type": "RTID(taco_cone@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(taco_bucket@CurrentLevel)"},
+		  {"Type": "RTID(taco_cone@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {"Type": "RTID(taco_newspaper@CurrentLevel)"},
+		  {"Type": "RTID(taco_imp@CurrentLevel)"},
+		  {"Type": "RTID(taco_imp@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(taco_cone@CurrentLevel)"},
+		  {"Type": "RTID(taco_punk@CurrentLevel)"},
+		  {"Type": "RTID(taco_imp@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(taco_flag@CurrentLevel)"},
+		  {"Type": "RTID(taco_bucket@CurrentLevel)"},
+		  {"Type": "RTID(taco_newspaper@CurrentLevel)"},
+		  {"Type": "RTID(taco_punk@CurrentLevel)"},
+		  {"Type": "RTID(taco_cone@CurrentLevel)"},
+		  {"Type": "RTID(taco_cone@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(taco_dancer@CurrentLevel)"},
+		  {"Type": "RTID(taco_newspaper@CurrentLevel)"},
+		  {"Type": "RTID(taco_cone@CurrentLevel)"},
+		  {"Type": "RTID(taco_cone@CurrentLevel)"},
+		  {"Type": "RTID(taco_imp@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(taco_allstar@CurrentLevel)"},
+		  {"Type": "RTID(taco_bucket@CurrentLevel)"},
+		  {"Type": "RTID(taco_cone@CurrentLevel)"},
+		  {"Type": "RTID(taco_cone@CurrentLevel)"},
+		  {"Type": "RTID(taco_punk@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(taco_newspaper@CurrentLevel)"},
+		  {"Type": "RTID(taco_punk@CurrentLevel)"},
+		  {"Type": "RTID(taco_punk@CurrentLevel)"},
+		  {"Type": "RTID(taco_newspaper@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(taco_bucket@CurrentLevel)"},
+		  {"Type": "RTID(taco_allstar@CurrentLevel)"},
+		  {"Type": "RTID(taco_cone@CurrentLevel)"},
+		  {"Type": "RTID(taco_cone@CurrentLevel)"},
+		  {"Type": "RTID(taco_dancer@CurrentLevel)"},
+		  {"Type": "RTID(taco_punk@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave13"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(taco_allstar@CurrentLevel)"},
+		  {"Type": "RTID(taco_punk@CurrentLevel)"},
+		  {"Type": "RTID(taco_allstar@CurrentLevel)"},
+		  {"Type": "RTID(taco_punk@CurrentLevel)"},
+		  {"Type": "RTID(taco_cone@CurrentLevel)"},
+		  {"Type": "RTID(taco_cone@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave14"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {"Type": "RTID(taco_newspaper@CurrentLevel)"},
+		  {"Type": "RTID(taco_newspaper@CurrentLevel)"},
+		  {"Type": "RTID(taco_newspaper@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(taco_bucket@CurrentLevel)"},
+		  {"Type": "RTID(taco_allstar@CurrentLevel)"},
+		  {"Row":"3","Type": "RTID(taco_dancer@CurrentLevel)"},
+		  {"Type": "RTID(taco_cone@CurrentLevel)"},
+		  {"Type": "RTID(taco_cone@CurrentLevel)"},
+		  {"Type": "RTID(taco_cone@CurrentLevel)"},
+		  {"Type": "RTID(taco_punk@CurrentLevel)"},
+		  {"Type": "RTID(taco_punk@CurrentLevel)"},
+		  {"Row":"1","Type": "RTID(taco_dancer@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave16"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(taco_flag@CurrentLevel)"},
+		  {"Type": "RTID(taco_bucket@CurrentLevel)"},
+		  {"Type": "RTID(taco_newspaper@CurrentLevel)"},
+		  {"Type": "RTID(taco_newspaper@CurrentLevel)"},
+		  {"Type": "RTID(taco_allstar@CurrentLevel)"},
+		  {"Type": "RTID(taco_cone@CurrentLevel)"},
+		  {"Type": "RTID(taco_cone@CurrentLevel)"},
+		  {"Row":"5","Type": "RTID(taco_dancer@CurrentLevel)"},
+		  {"Type": "RTID(taco_cone@CurrentLevel)"},
+		  {"Type": "RTID(taco_cone@CurrentLevel)"},
+		  {"Type": "RTID(taco_punk@CurrentLevel)"},
+		  {"Type": "RTID(taco_punk@CurrentLevel)"},
+		  {"Type": "RTID(taco_punk@CurrentLevel)"},
+		  {"Type": "RTID(taco_dancer@CurrentLevel)"},
+        ]
+      }
+    },
+///WAVES END
+  ],
+  "version": 1
+}

@@ -1,0 +1,589 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "hinanarukami",
+    "Introduction": "Sandbox levels based on Blue Gutsy's",
+    "Version": "1.0",
+    "CreatedAt": "2025-07-16",
+    "UpdatedAt": "2025-07-16",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "Not animals abuse (trust this time)",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		  "RTID(StandardIntro@LevelModules)",
+      "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(SeedBank@CurrentLevel)",
+		  "RTID(ModernMowers@LevelModules)"
+        ],
+        "Name": "Plants VS Animals",
+        "WritenBy": "hinanarukami",
+		"MusicType": "MiniGame_B",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(ModernStage@LevelModules)"
+      }
+    },
+    {
+			"aliases": [
+			"ChallengeModule"
+		],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+			"BeatTheLevel"
+		],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+				"Survive with some of the plants picked for you",
+				],
+				"DescriptionsMultiLanguage": [
+					{
+					"en": "123",
+					"zh": "112233"
+					}
+				]
+			}
+		},
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+	    "ExcludeListSunProducers": "true",
+      "PlantExcludeList": ["blover", "glaciershroom", "lightningreed", "electricpeashooter", "laser_bean", "wintermelon", 
+      "spikerock", "spikeweed", "dusklobber", "moonflower", "plantern", "coldsnapdragon"],
+        "PresetPlantList": [
+                    {
+                        "PlantType": "snapdragon",
+                        "Level": -1
+                    },
+                    {
+                        "PlantType": "guacodile",
+                        "Level": -1
+                    },
+				            {
+                        "PlantType": "parsnip",
+                        "Level": -1
+                    },
+                    {
+                        "PlantType": "primalsunflower",
+                        "Level": -1
+                    }
+                ],
+        "SelectionMethod": "chooser"
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 85, // Difficulty D, easiest
+            "StartingPoints": 50,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(dark_imp_dragon@ZombieTypes)",
+					"RTID(iceage_weaselhoarder@ZombieTypes)",			
+					"RTID(seagull@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 130, // Difficulty C, normal
+            "StartingPoints": 100,
+            "StartingWave": 0,
+            "ZombiePool": [		
+				    "RTID(dark_imp_dragon@ZombieTypes)",
+					"RTID(chicken_farmer@ZombieTypes)",
+					"RTID(iceage_weaselhoarder@ZombieTypes)",			
+					"RTID(seagull@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 175, // Difficulty B, advanced
+            "StartingPoints": 150,
+            "StartingWave": 0,
+            "ZombiePool": [		
+				    "RTID(dark_imp_dragon@ZombieTypes)",
+					"RTID(chicken_farmer@ZombieTypes)",
+					"RTID(iceage_weaselhoarder@ZombieTypes)",			
+					"RTID(seagull@ZombieTypes)",
+          "RTID(pelican@ZombieTypes)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 220, // Difficulty AAAAAAAAA
+            "StartingPoints": 200,
+            "StartingWave": 0,
+            "ZombiePool": [		
+				    "RTID(dark_imp_dragon@ZombieTypes)",
+					"RTID(chicken_farmer@ZombieTypes)",
+					"RTID(iceage_weaselhoarder@ZombieTypes)",
+					"RTID(pirate_captain_parrot@ZombieTypes)",				
+					"RTID(seagull@ZombieTypes)",
+          "RTID(pelican@ZombieTypes)",
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+//This is the scripted Zombie Ambush setup, currently for waves 10, 20, 30, and 40
+// There are 7 levels of difficulties: - - - D C B A
+       {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 6,
+                "SpawnColEnd": 9,
+                "SpawnColStart": 6,
+                "WaveCount": 24,
+                "WaveSpendingPointIncrement": 100,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    [],
+                    [],
+                    ["RTID(PlantFoodSpawner0@CurrentLevel)", "RTID(Chicken2@CurrentLevel)"],
+                    ["RTID(Captain@CurrentLevel)", "RTID(Chicken2@CurrentLevel)"],
+                    ["RTID(Seagull@CurrentLevel)", "RTID(Weasel3@CurrentLevel)"],
+                    ["RTID(Snowstorm1@CurrentLevel)", "RTID(Bull2@CurrentLevel)"],
+                    ["RTID(Seagull@CurrentLevel)", "RTID(Pelican@CurrentLevel)", "RTID(Chicken2@CurrentLevel)", "RTID(Weasel3@CurrentLevel)"],
+                    ["RTID(PlantFoodSpawner1@CurrentLevel)", "RTID(Rodeo2@CurrentLevel)", "RTID(Chicken5@CurrentLevel)"],
+                    ["RTID(Weasel5@CurrentLevel)", "RTID(Seagull@CurrentLevel)", "RTID(Octo2@CurrentLevel)"],
+                    ["RTID(Captain@CurrentLevel)", "RTID(Captain@CurrentLevel)", "RTID(Bull2@CurrentLevel)"],
+					          ["RTID(Octo2@CurrentLevel)"],
+                    ["RTID(PlantFoodSpawner2@CurrentLevel)", "RTID(Additional2@CurrentLevel)", "RTID(Snowstorm2@CurrentLevel)", "RTID(Bull2@CurrentLevel)"],
+                    ["RTID(Weasel5@CurrentLevel)", "RTID(Chicken5@CurrentLevel)", "RTID(Captain@CurrentLevel)", "RTID(Seagull@CurrentLevel)"],
+                    ["RTID(Bull2@CurrentLevel)", "RTID(Rodeo2@CurrentLevel)", "RTID(Octo2@CurrentLevel)"],
+                    ["RTID(Bull5@CurrentLevel)", "RTID(Pelican@CurrentLevel)", "RTID(Pelican@CurrentLevel)", "RTID(Octo2@CurrentLevel)"],
+                    ["RTID(PlantFoodSpawner3@CurrentLevel)", "RTID(Rodeo2@CurrentLevel)", "RTID(Weasel5@CurrentLevel)", "RTID(Chicken5@CurrentLevel)"],
+                    ["RTID(Octo2@CurrentLevel)"],
+                    ["RTID(Snowstorm3@CurrentLevel)", "RTID(Rodeo5@CurrentLevel)"],
+                    ["RTID(Weasel5@CurrentLevel)", "RTID(Chicken5@CurrentLevel)", "RTID(Captain@CurrentLevel)", "RTID(Seagull@CurrentLevel)", "RTID(Rodeo2@CurrentLevel)"],
+                    ["RTID(Bull5@CurrentLevel)", "RTID(Rodeo2@CurrentLevel)", "RTID(Octo2@CurrentLevel)"],
+                    ["RTID(Bull5@CurrentLevel)", "RTID(Rodeo2@CurrentLevel)", "RTID(Pelican@CurrentLevel)", "RTID(Pelican@CurrentLevel)", "RTID(Octo5@CurrentLevel)"],
+                    ["RTID(Rodeo5@CurrentLevel)", "RTID(Weasel5@CurrentLevel)", "RTID(Chicken5@CurrentLevel)"],
+                    ["RTID(Bull5@CurrentLevel)", "RTID(Bull5@CurrentLevel)", "RTID(Octo5@CurrentLevel)", "RTID(Octo5@CurrentLevel)"],
+                    ["RTID(Snowstorm4@CurrentLevel)", "RTID(Rodeo5@CurrentLevel)", "RTID(Rodeo5@CurrentLevel)", "RTID(Captain@CurrentLevel)", "RTID(Captain@CurrentLevel)", "RTID(Bull5@CurrentLevel)"]
+                ]
+            }
+        },
+        {
+			"aliases": [
+				"Snowstorm1"
+			],
+			"objclass": "StormZombieSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 6,
+				"ColumnStart": 4,
+				"GroupSize": 2,
+				"TimeBetweenGroups": 0.5,
+				"Type": "snowstorm",
+				"Zombies": [
+				{"Type": "RTID(iceage_weaselhoarder@ZombieTypes)", "Row" : 1},
+				{"Type": "RTID(iceage_weaselhoarder@ZombieTypes)", "Row" : 2},
+        {"Type": "RTID(iceage_weaselhoarder@ZombieTypes)", "Row" : 4},
+        {"Type": "RTID(iceage_weaselhoarder@ZombieTypes)", "Row" : 5},
+        {"Type": "RTID(iceage_weaselhoarder@ZombieTypes)", "Row" : 1},
+				{"Type": "RTID(iceage_weaselhoarder@ZombieTypes)", "Row" : 2},
+        {"Type": "RTID(iceage_weaselhoarder@ZombieTypes)", "Row" : 4},
+        {"Type": "RTID(iceage_weaselhoarder@ZombieTypes)", "Row" : 5}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Snowstorm2"
+			],
+			"objclass": "StormZombieSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 5,
+				"ColumnStart": 3,
+				"GroupSize": 3,
+				"TimeBetweenGroups": 0.5,
+				"Type": "snowstorm",
+				"Zombies": [
+				{"Type": "RTID(dark_imp_dragon@ZombieTypes)", "Row" : 1},
+				{"Type": "RTID(dark_imp_dragon@ZombieTypes)", "Row" : 3},
+				{"Type": "RTID(dark_imp_dragon@ZombieTypes)", "Row" : 5},
+        {"Type": "RTID(dark_imp_dragon@ZombieTypes)"},
+				{"Type": "RTID(dark_imp_dragon@ZombieTypes)"},
+				{"Type": "RTID(dark_imp_dragon@ZombieTypes)"},
+        {"Type": "RTID(dark_imp_dragon@ZombieTypes)", "Row" : 2},
+				{"Type": "RTID(dark_imp_dragon@ZombieTypes)", "Row" : 3},
+				{"Type": "RTID(dark_imp_dragon@ZombieTypes)", "Row" : 4},
+        {"Type": "RTID(dark_imp_dragon@ZombieTypes)"},
+				{"Type": "RTID(dark_imp_dragon@ZombieTypes)"},
+				{"Type": "RTID(dark_imp_dragon@ZombieTypes)"}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Snowstorm3"
+			],
+			"objclass": "StormZombieSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 6,
+				"ColumnStart": 4,
+				"GroupSize": 2,
+				"TimeBetweenGroups": 0.5,
+				"Type": "snowstorm",
+				"Zombies": [
+				{"Type": "RTID(chicken_farmer@ZombieTypes)", "Row" : 1},
+				{"Type": "RTID(chicken_farmer@ZombieTypes)", "Row" : 2},
+				{"Type": "RTID(chicken_farmer@ZombieTypes)", "Row" : 3},
+        {"Type": "RTID(chicken_farmer@ZombieTypes)", "Row" : 4},
+				{"Type": "RTID(chicken_farmer@ZombieTypes)", "Row" : 5},
+				{"Type": "RTID(chicken_farmer@ZombieTypes)", "Row" : 1},
+				{"Type": "RTID(chicken_farmer@ZombieTypes)", "Row" : 2},
+				{"Type": "RTID(chicken_farmer@ZombieTypes)", "Row" : 3},
+        {"Type": "RTID(chicken_farmer@ZombieTypes)", "Row" : 4},
+				{"Type": "RTID(chicken_farmer@ZombieTypes)", "Row" : 5},
+				]
+			}
+		},
+    {
+			"aliases": [
+				"Snowstorm4"
+			],
+			"objclass": "StormZombieSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 5,
+				"ColumnStart": 3,
+				"GroupSize": 2,
+				"TimeBetweenGroups": 0.5,
+				"Type": "snowstorm",
+				"Zombies": [
+				{"Type": "RTID(beach_octopus@ZombieTypes)", "Row" : 1},
+				{"Type": "RTID(beach_octopus@ZombieTypes)", "Row" : 2},
+				{"Type": "RTID(beach_octopus@ZombieTypes)", "Row" : 3},
+        {"Type": "RTID(beach_octopus@ZombieTypes)", "Row" : 4},
+				{"Type": "RTID(beach_octopus@ZombieTypes)", "Row" : 5},
+				{"Type": "RTID(beach_octopus@ZombieTypes)", "Row" : 1},
+				{"Type": "RTID(beach_octopus@ZombieTypes)", "Row" : 2},
+				{"Type": "RTID(beach_octopus@ZombieTypes)", "Row" : 3},
+        {"Type": "RTID(beach_octopus@ZombieTypes)", "Row" : 4},
+				{"Type": "RTID(beach_octopus@ZombieTypes)", "Row" : 5},
+        {"Type": "RTID(beach_octopus@ZombieTypes)", "Row" : 1},
+				{"Type": "RTID(beach_octopus@ZombieTypes)", "Row" : 2},
+				{"Type": "RTID(beach_octopus@ZombieTypes)", "Row" : 3},
+        {"Type": "RTID(beach_octopus@ZombieTypes)", "Row" : 4},
+				{"Type": "RTID(beach_octopus@ZombieTypes)", "Row" : 5}
+				]
+			}
+		},
+// These blocks handle predetermined Plant Food; currently set up to use basics and their armored variants
+// There are 7 levels of difficulties: - - - D C B A
+		{
+            "aliases": [
+                "PlantFoodSpawner0"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(pirate_captain@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PlantFoodSpawner1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PlantFoodSpawner2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    0,
+                    1
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(west_bull_veteran@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PlantFoodSpawner3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(chicken@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+{
+  "aliases": [
+    "Chicken2"
+  ],
+  "objclass": "SpawnZombiesJitteredWaveActionProps",
+  "objdata": {
+    "Zombies": [
+      { "Type": "RTID(chicken_farmer@ZombieTypes)"},
+      { "Type": "RTID(chicken_farmer@ZombieTypes)"}
+    ]
+  }
+},
+{
+  "aliases": [
+    "Chicken5"
+  ],
+  "objclass": "SpawnZombiesJitteredWaveActionProps",
+  "objdata": {
+    "Zombies": [
+      { "Type": "RTID(chicken_farmer@ZombieTypes)", "Row" : "1"},
+      { "Type": "RTID(chicken_farmer@ZombieTypes)", "Row" : "3"},
+      { "Type": "RTID(chicken_farmer@ZombieTypes)", "Row" : "5"},
+      { "Type": "RTID(chicken_farmer@ZombieTypes)"},
+      { "Type": "RTID(chicken_farmer@ZombieTypes)"}
+    ]
+  }
+},
+{
+  "aliases": [
+    "Weasel5"
+  ],
+  "objclass": "SpawnZombiesJitteredWaveActionProps",
+  "objdata": {
+    "Zombies": [
+      { "Type": "RTID(iceage_weaselhoarder@ZombieTypes)", "Row" : "1"},
+      { "Type": "RTID(iceage_weaselhoarder@ZombieTypes)", "Row" : "3"},
+      { "Type": "RTID(iceage_weaselhoarder@ZombieTypes)", "Row" : "5"},
+      { "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"},
+      { "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"}
+    ]
+  }
+},
+{
+  "aliases": [
+    "Weasel3"
+  ],
+  "objclass": "SpawnZombiesJitteredWaveActionProps",
+  "objdata": {
+    "Zombies": [
+      { "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"},
+      { "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"},
+      { "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"}
+    ]
+  }
+},
+{
+  "aliases": [
+    "Octo2"
+  ],
+  "objclass": "SpawnZombiesJitteredWaveActionProps",
+  "objdata": {
+    "Zombies": [
+      { "Type": "RTID(beach_octopus@ZombieTypes)"},
+      { "Type": "RTID(beach_octopus@ZombieTypes)"}
+    ]
+  }
+},
+{
+  "aliases": [
+    "Octo5"
+  ],
+  "objclass": "SpawnZombiesJitteredWaveActionProps",
+  "objdata": {
+    "Zombies": [
+      { "Type": "RTID(beach_octopus@ZombieTypes)", "Row" : "1"},
+      { "Type": "RTID(beach_octopus@ZombieTypes)", "Row" : "3"},
+      { "Type": "RTID(beach_octopus@ZombieTypes)", "Row" : "5"},
+      { "Type": "RTID(beach_octopus@ZombieTypes)"},
+      { "Type": "RTID(beach_octopus@ZombieTypes)"}
+    ]
+  }
+},
+{
+  "aliases": [
+    "Seagull"
+  ],
+  "objclass": "SpawnZombiesJitteredWaveActionProps",
+  "objdata": {
+    "Zombies": [
+      { "Type": "RTID(seagull@ZombieTypes)"},
+      { "Type": "RTID(seagull@ZombieTypes)"},
+      { "Type": "RTID(seagull@ZombieTypes)"}
+    ]
+  }
+},
+{
+  "aliases": [
+    "Seagull"
+  ],
+  "objclass": "SpawnZombiesJitteredWaveActionProps",
+  "objdata": {
+    "Zombies": [
+      { "Type": "RTID(seagull@ZombieTypes)"},
+      { "Type": "RTID(seagull@ZombieTypes)"},
+      { "Type": "RTID(seagull@ZombieTypes)"}
+    ]
+  }
+},
+{
+  "aliases": [
+    "Pelican"
+  ],
+  "objclass": "SpawnZombiesJitteredWaveActionProps",
+  "objdata": {
+    "Zombies": [
+      { "Type": "RTID(pelican@ZombieTypes)"},
+      { "Type": "RTID(pelican@ZombieTypes)"},
+      { "Type": "RTID(pelican@ZombieTypes)"}
+    ]
+  }
+},
+{
+  "aliases": [
+    "Captain"
+  ],
+  "objclass": "SpawnZombiesJitteredWaveActionProps",
+  "objdata": {
+    "Zombies": [
+      { "Type": "RTID(pirate_captain@ZombieTypes)"},
+      { "Type": "RTID(pirate_captain@ZombieTypes)"},
+      { "Type": "RTID(pirate_captain@ZombieTypes)"}
+    ]
+  }
+},
+{
+  "aliases": [
+    "Bull2"
+  ],
+  "objclass": "SpawnZombiesJitteredWaveActionProps",
+  "objdata": {
+    "Zombies": [
+      { "Type": "RTID(west_bull@ZombieTypes)"},
+      { "Type": "RTID(west_bull@ZombieTypes)"},
+    ]
+  }
+},
+{
+  "aliases": [
+    "Bull5"
+  ],
+  "objclass": "SpawnZombiesJitteredWaveActionProps",
+  "objdata": {
+    "Zombies": [
+      { "Type": "RTID(west_bull@ZombieTypes)", "Row" : "1"},
+      { "Type": "RTID(west_bull@ZombieTypes)", "Row" : "3"},
+      { "Type": "RTID(west_bull@ZombieTypes)", "Row" : "5"},
+      { "Type": "RTID(west_bull@ZombieTypes)"},
+      { "Type": "RTID(west_bull@ZombieTypes)"}
+    ]
+  }
+},
+{
+  "aliases": [
+    "Rodeo2"
+  ],
+  "objclass": "SpawnZombiesJitteredWaveActionProps",
+  "objdata": {
+    "Zombies": [
+      { "Type": "RTID(west_bull_veteran@ZombieTypes)"},
+      { "Type": "RTID(west_bull_veteran@ZombieTypes)"},
+    ]
+  }
+},
+{
+  "aliases": [
+    "Rodeo5"
+  ],
+  "objclass": "SpawnZombiesJitteredWaveActionProps",
+  "objdata": {
+    "Zombies": [
+      { "Type": "RTID(west_bull_veteran@ZombieTypes)", "Row" : "1"},
+      { "Type": "RTID(west_bull_veteran@ZombieTypes)", "Row" : "3"},
+      { "Type": "RTID(west_bull_veteran@ZombieTypes)", "Row" : "5"},
+      { "Type": "RTID(west_bull_veteran@ZombieTypes)"},
+      { "Type": "RTID(west_bull_veteran@ZombieTypes)"}
+    ]
+  }
+}
+  ],
+  "version": 1
+}

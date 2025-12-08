@@ -1,0 +1,467 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "maido",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2024-12-06",
+    "UpdatedAt": "2024-12-06",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "<PLAYERNAME>'s Attempt to Survive Summer Nights Fight!",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		  "RTID(StandardIntro@LevelModules)",
+		  "RTID(ChallengeModule@CurrentLevel)",
+		  "RTID(ModernMowers@LevelModules)",
+		  "RTID(InitialGridItem@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)"
+        ],
+        "Name": "Summer Nights Fight - Night 2",
+        "NameMultiLanguage": {
+          "en": "Summer Nights Fight - Night 2",
+          "zh": "Summer Nights Fight - Night 2"
+        },
+        "WritenBy": "maido",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(SummerNightsStage@LevelModules)"
+      }
+    },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+            "objclass": "SeedBankProperties",
+			"objdata": {
+			"PresetPlantList": [
+                ],
+				"PlantIncludeList": [
+				"sunflower",
+				"peashooter",
+				"cherry_bomb",
+				"wallnut",
+				"potatomine",
+				"snowpea",
+				"chomper",
+				"repeater",
+				"iceburg",
+				"bonkchoy",
+				"sunshroom",
+				"sunbean",
+				],
+				"SelectionMethod": "chooser"
+			}
+		},
+		{
+            "aliases": [
+                "InitialGridItem"
+            ],
+            "objclass": "InitialGridItemProperties",
+            "objdata": {
+                "InitialGridItemPlacements": [									
+					{"GridX": 5,"GridY": 0,"TypeName": "potholepuddle"},
+					{"GridX": 6,"GridY": 0,"TypeName": "potholepuddle"},
+					{"GridX": 7,"GridY": 0,"TypeName": "potholepuddle"},
+					
+					{"GridX": 5,"GridY": 4,"TypeName": "potholepuddle"},
+					{"GridX": 6,"GridY": 4,"TypeName": "potholepuddle"},
+					{"GridX": 7,"GridY": 4,"TypeName": "potholepuddle"},
+                ]
+            }
+        },
+	{
+			"aliases": [
+			"ChallengeModule"
+		],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)",
+						"RTID(SunProduced@CurrentLevel)",
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+			"BeatTheLevel"
+		],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+				"Survive the sizzling Summer Nights Fight",
+				],
+				"DescriptionsMultiLanguage": [
+					{
+					"en": "123",
+					"zh": "112233"
+					}
+				]
+			}
+	    },	
+        {
+            "aliases": [
+                "SunProduced"
+            ],
+            "objclass": "StarChallengeSunProducedProps",
+            "objdata": {
+                "TargetSun": 4000
+            }
+        },	
+    	
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 28, // Difficulty D, easiest
+            "StartingPoints": 28,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(summer@ZombieTypes)",
+                    "RTID(summer_armor1@ZombieTypes)",
+                    "RTID(summer_armor2@ZombieTypes)",
+					"RTID(modern_newspaper@ZombieTypes)",
+					"RTID(summer_bug@ZombieTypes)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 55, // Difficulty C, normal
+            "StartingPoints": 55,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(summer@ZombieTypes)",
+                    "RTID(summer_armor1@ZombieTypes)",
+                    "RTID(summer_armor2@ZombieTypes)",
+					"RTID(modern_newspaper@ZombieTypes)",
+					"RTID(summer_bug@ZombieTypes)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 82, // Difficulty B, advanced
+            "StartingPoints": 82,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(summer@ZombieTypes)",
+                    "RTID(summer_armor1@ZombieTypes)",
+                    "RTID(summer_armor2@ZombieTypes)",
+					"RTID(modern_newspaper@ZombieTypes)",
+					"RTID(summer_bug@ZombieTypes)",
+					"RTID(summer_gargantuar@ZombieTypes)",	
+            ]
+          },
+          {
+            "PointIncrementPerWave": 110, // Difficulty AAAAAAAAA
+            "StartingPoints": 110,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(summer_basic@ZombieTypes)",
+					"RTID(summer_armor1@ZombieTypes)",
+                    "RTID(summer_armor2@ZombieTypes)",
+					"RTID(modern_newspaper@ZombieTypes)",
+					"RTID(summer_imp@ZombieTypes)",
+					"RTID(summer_bug@ZombieTypes)",
+					"RTID(summer_gargantuar@ZombieTypes)",
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 10,
+        "WaveCount": 40,
+        "Waves": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+          []
+        ]
+      }
+    },
+//This is the scripted Zombie Ambush setup, currently for waves 10, 20, 30, and 40
+       {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 10,
+                "SpawnColEnd": 9,
+                "SpawnColStart": 6,
+                "WaveCount": 20,
+                "WaveSpendingPointIncrement": 50,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    ["RTID(Wave1@CurrentLevel)","RTID(HUGE_WAVE@CurrentLevel)"],
+                    ["RTID(Wave2@CurrentLevel)"],
+                    ["RTID(Wave3@CurrentLevel)"],
+                    ["RTID(Wave4@CurrentLevel)"],
+                    ["RTID(Wave5@CurrentLevel)","RTID(HUGE_WAVE_SAUSAGE@CurrentLevel)","RTID(SausagePartySmall@CurrentLevel)"],
+                    ["RTID(Wave6@CurrentLevel)"],
+                    ["RTID(Wave7@CurrentLevel)"],
+                    ["RTID(Wave8@CurrentLevel)"],
+                    ["RTID(Wave9@CurrentLevel)","RTID(BugSwarm@CurrentLevel)"],
+                    ["RTID(Wave10@CurrentLevel)","RTID(HUGE_WAVE_SAUSAGE@CurrentLevel)","RTID(SausagePartyMed@CurrentLevel)"],
+					["RTID(Wave11@CurrentLevel)","RTID(BugSwarm@CurrentLevel)"],
+					["RTID(Wave12@CurrentLevel)"],
+					["RTID(Wave13@CurrentLevel)"],
+					["RTID(Wave14@CurrentLevel)","RTID(BugSwarm@CurrentLevel)"],
+					["RTID(Wave15@CurrentLevel)","RTID(HUGE_WAVE_SAUSAGE@CurrentLevel)","RTID(SausagePartyMed@CurrentLevel)","RTID(BugSwarm@CurrentLevel)"],
+					["RTID(Wave16@CurrentLevel)"],
+					["RTID(Wave17@CurrentLevel)"],
+					["RTID(Wave18@CurrentLevel)","RTID(BugSwarm@CurrentLevel)"],
+					["RTID(Wave19@CurrentLevel)"],
+					["RTID(Wave20@CurrentLevel)","RTID(HUGE_WAVE_SAUSAGE@CurrentLevel)","RTID(SausagePartyMed@CurrentLevel)","RTID(BugSwarm@CurrentLevel)"],
+                ]
+            }
+        },
+///WAVES	
+	{
+        "aliases": [
+                "Wave1"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 0.2,
+                    "Min": 0.5
+                },
+                "TimeBetween": {
+                    "Max": 0.3,
+                    "Min": 0.3
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": true,
+                "Events": [
+                    "RTID(Wave1prop@CurrentLevel)"
+                ]
+            }
+        },
+        {
+             "aliases": [
+                "Wave1prop"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {"Row": "1","Type": "RTID(summer_flag@ZombieTypes)"},
+					{"Row": "1","Type": "RTID(summer_armor2@ZombieTypes)"},
+					{"Row": "1","Type": "RTID(summer_armor1@ZombieTypes)"},
+					{"Row": "1","Type": "RTID(summer_armor1@ZombieTypes)"},
+					{"Type": "RTID(summer_basic@ZombieTypes)"},
+                ],
+                "MustKillAllToNextWave": true
+            }
+        },
+	{
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+		  {"Row":"1","Type": "RTID(duckytube_armor4@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Row":"5","Type": "RTID(duckytube_armor4@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "BugSwarm"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Row":"1","Type": "RTID(summer_bug@ZombieTypes)"},
+		  {"Row":"5","Type": "RTID(summer_bug@ZombieTypes)"},
+		  {"Row":"1","Type": "RTID(summer_bug@ZombieTypes)"},
+		  {"Row":"5","Type": "RTID(summer_bug@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+		  {"Row":"1","Type": "RTID(duckytube_armor4@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave20"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Row":"1","Type": "RTID(duckytube_armor4@ZombieTypes)"},
+		  {"Row":"5","Type": "RTID(duckytube_armor4@ZombieTypes)"},
+        ]
+      }
+    },
+		{
+          "aliases": ["HUGE_WAVE"],
+            "objclass": "WaveWarningProps",
+            "objdata": {
+            "LabelR": 255,
+            "LabelG": 0,
+            "LabelB": 0,
+            "LabelAInit": 4,
+            "OutLineR": 0,
+            "OutLineG": 0,
+            "OutLineB": 0,
+            "String": "A HUGE WAVE OF ZOMBIES IS COMING!",
+            "Sound": "Hugewave",
+            "LabelTargetScale": 0.5,
+            "LabelInitScale": 4,
+            "Duration": 2.5,
+            "InitTime": 0.33,
+            }
+        },
+		{
+          "aliases": ["HUGE_WAVE_SAUSAGE"],
+            "objclass": "WaveWarningProps",
+            "objdata": {
+            "LabelR": 255,
+            "LabelG": 153,
+            "LabelB": 0,
+            "LabelAInit": 4,
+            "OutLineR": 128,
+            "OutLineG": 0,
+            "OutLineB": 0,
+            "String": "SAUSAGE PARTY!",
+            "Sound": "Hugewave",
+            "LabelTargetScale": 0.5,
+            "LabelInitScale": 4,
+            "Duration": 2.5,
+            "InitTime": 0.33,
+            }
+        },
+		{
+            "aliases": [
+                "SausagePartySmall"
+            ],
+            "objclass": "ParachuteRainZombieSpawnerProps",
+            "objdata": {
+                "ColumnEnd": "6",
+                "ColumnStart": "4",
+                "GroupSize": "2",
+                "SpiderCount": "2",
+                "SpiderZombieName": "summer_imp",
+                "TimeBeforeFullSpawn": "1",
+                "TimeBetweenGroups": "0.2",
+                "ZombieFallTime": "1.5"
+            }
+        },
+		{
+            "aliases": [
+                "SausagePartyMed"
+            ],
+            "objclass": "ParachuteRainZombieSpawnerProps",
+            "objdata": {
+                "ColumnEnd": "6",
+                "ColumnStart": "4",
+                "GroupSize": "2",
+                "SpiderCount": "6",
+                "SpiderZombieName": "summer_imp",
+                "TimeBeforeFullSpawn": "1",
+                "TimeBetweenGroups": "0.2",
+                "ZombieFallTime": "1.5"
+            }
+        },
+///WAVES END
+  ],
+  "version": 1
+}

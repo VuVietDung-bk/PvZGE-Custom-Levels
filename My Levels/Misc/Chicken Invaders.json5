@@ -1,0 +1,976 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "hinanarukami",
+    "Introduction": "Sandbox levels based on Blue Gutsy's",
+    "Version": "1.0",
+    "CreatedAt": "2025-08-08",
+    "UpdatedAt": "2025-08-08",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "Now you are the hunted...",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)",
+		  "RTID(StandardIntro@LevelModules)",
+          "RTID(ConveyorBelt@CurrentLevel)",
+          "RTID(CowboyRails@CurrentLevel)",
+          "RTID(mold@CurrentLevel)",
+          "RTID(ProtectThePlant@CurrentLevel)"
+        ],
+        "Name": "Chicken Invaders",
+        "WritenBy": "hinanarukami",
+		"MusicType": "MiniGame_A",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(ModernStage@LevelModules)"
+      }
+    },
+    {
+			"aliases": [
+				"CowboyRails"
+			],
+			"objclass": "RailcartProperties",
+			"objdata": {
+				"RailcartType": "railcart_tutorial",
+				"Railcarts": [
+					{
+						"Column": 0,
+						"Row": 0
+					},
+          {
+						"Column": 0,
+						"Row": 1
+					},
+          {
+						"Column": 0,
+						"Row": 3
+					},
+          {
+						"Column": 0,
+						"Row": 4
+					},
+          {
+						"Column": 1,
+						"Row": 2
+					}
+				],
+				"Rails": [
+					{
+						"Column": 0,
+						"RowEnd": 4,
+						"RowStart": 0
+					},
+          {
+						"Column": 1,
+						"RowEnd": 4,
+						"RowStart": 0
+					}				
+				]
+			}
+		},
+    {
+            "aliases": [
+                "ProtectThePlant"
+            ],
+            "objclass": "ProtectThePlantChallengeProperties",
+            "objdata": {
+                "MustProtectCount": 4,
+                "Plants": [
+                    {
+                        "GridX": 0,
+                        "GridY": 0,
+                        "PlantType": "sapfling"
+                    },
+					          {
+                        "GridX": 0,
+                        "GridY": 1,
+                        "PlantType": "sapfling"
+                    },
+                    {
+                        "GridX": 0,
+                        "GridY": 3,
+                        "PlantType": "sapfling"
+                    },
+                    {
+                        "GridX": 0,
+                        "GridY": 4,
+                        "PlantType": "sapfling"
+                    },
+                ]
+            }
+        },
+    {
+            "objclass": "MoldColonyChallengeProps",
+            "aliases": [
+                "mold"
+            ],
+            "objdata": {
+            "SuppressObjectiveTip": true,
+            "MoldMatrix": [
+                "001111111",
+                "001111111",
+                "001111111",
+                "001111111",
+                "001111111"
+                ]
+            }
+        },
+        {
+      "aliases": [
+        "chicken_pumpkin_boss"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(chicken_pumpkin_boss@CurrentLevel)",
+        "ZombieBasedOn": "chicken_pumpkin"
+      }
+    },
+    {
+      "aliases": [
+        "chicken_pumpkin_boss"
+      ],
+      "objclass": "ZombieProperties",
+      "objdata": { "KilledByShrinkingViolet": true, "CannotBeGrabbedByPtero": true, "CannotBeTossedByCitron": false, "CanBeEasilySwallowedByChomper": true, "ImmuneToSporeShroom": true, "WalkSPS": 0.8, "WalkSPSVarience": 0, "EatDPS": 50, "Toughness": 100, "DoesNotDamageHeavilyToGarlic": true, "NormalDeathWhenMowed": true, "WavePointCost": 100, "Weight": 0, "HitRect": "RTID(CowboyChickenHitRect@RectangleProps)", "AttackRect": "RTID(CowboyChickenAttackRect@RectangleProps)" }
+    },
+    {
+			"aliases": [
+			"ChallengeModule"
+		],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+			"BeatTheLevel"
+		],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+				"Kill the chickens"
+				],
+				"DescriptionsMultiLanguage": [
+					{
+					"en": "123",
+					"zh": "112233"
+					}
+				]
+			}
+	},
+    {
+            "aliases": [
+                "ConveyorBelt"
+            ],
+            "objclass": "ConveyorSeedBankProperties",
+            "objdata": {
+                "DropDelayConditions": [
+                    {
+                        "Delay": 1,
+                        "MaxPackets": 0
+                    },
+                    {
+                        "Delay": 1,
+                        "MaxPackets": 3
+                    },
+                    {
+                        "Delay": 1,
+                        "MaxPackets": 5
+                    },
+                    {
+                        "Delay": 1,
+                        "MaxPackets": 10
+                    }
+                ],
+                "InitialPlantList": [
+                    {
+                        "MaxWeightFactor": 0,
+                        "MaxCount": 1,
+                        "PlantType": "peashooter",
+                        "Weight": 75
+                    },
+                    {
+                        "MaxWeightFactor": 0,
+                        "MaxCount": 1,
+                        "PlantType": "lychee",
+                        "Weight": 75
+                    },
+                    {
+                        "MaxWeightFactor": 0,
+                        "MaxCount": 1,
+                        "PlantType": "fumeshroom",
+                        "Weight": 75
+                    }
+                ],
+                "SpeedConditions": [
+                    {
+                        "MaxPackets": 0,
+                        "Speed": 150
+                    }
+                ]
+            }
+        },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+//This is the scripted Zombie Ambush setup, currently for waves 10, 20, 30, and 40
+// There are 7 levels of difficulties: - - - D C B A
+       {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 6,
+                "WaveCount": 30,
+                "WaveSpendingPointIncrement": 3,
+                "WaveSpendingPoints": 8,
+                "SuppressFlagZombie": true,
+                "Waves": [
+                    [
+                        "RTID(Wave1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave2@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave3@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave4@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave5@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave6@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave7@CurrentLevel)", "RTID(Phase1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave8@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave9@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave10@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave11@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave12@CurrentLevel)", "RTID(Phase2@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave13@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave14@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave15@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave16@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave17@CurrentLevel)", "RTID(Phase3@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave18@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave19@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave20@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave21@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave22@CurrentLevel)", "RTID(Phase4@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave23@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave24@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave25@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave26@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave27@CurrentLevel)", "RTID(Phase5@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave28@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave29@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave30@CurrentLevel)"
+                    ]
+                ]
+            }
+        },
+        {
+      "aliases": ["Wave1"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          { "Type": "RTID(chicken@ZombieTypes)"},
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave2"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          { "Type": "RTID(chicken@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave3"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 3},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave4"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave5"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 1},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 1},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 1}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave6"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 3},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 5},
+          { "Type": "RTID(chicken_pumpkin_boss@CurrentLevel)", "Row": 4},  
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave7"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 3},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 1},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 2}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave8"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 4},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 4},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 1}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave9"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 5},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 5},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 3},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 3}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave10"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 1},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 1},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 1},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 5}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave11"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 1},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 1},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 1},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 5}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave12"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          { "Type": "RTID(chicken_pumpkin_boss@CurrentLevel)", "Row": 2}, 
+          { "Type": "RTID(chicken_pumpkin_boss@CurrentLevel)", "Row": 1},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 3},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 2},
+          { "Type": "RTID(chicken@ZombieTypes)", "Row": 5}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave13"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": { "Zombies": [
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 }
+      ] }
+    },
+    {
+      "aliases": ["Wave14"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": { "Zombies": [
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 }
+      ] }
+    },
+    {
+      "aliases": ["Wave15"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": { "Zombies": [
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 }
+      ] }
+    },
+
+    {
+      "aliases": ["Wave16"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": { "Zombies": [
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 }
+      ] }
+    },
+    {
+      "aliases": ["Wave17"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": { "Zombies": [
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 }
+      ] }
+    },
+    {
+      "aliases": ["Wave18"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": { "Zombies": [
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken_pumpkin_boss@CurrentLevel)", "Row": 2 },
+        { "Type": "RTID(chicken_pumpkin_boss@CurrentLevel)", "Row": 4 },
+        { "Type": "RTID(chicken_pumpkin_boss@CurrentLevel)", "Row": 3 }
+      ] }
+    },
+
+    {
+      "aliases": ["Wave19"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": { "Zombies": [
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 }
+      ] }
+    },
+    {
+      "aliases": ["Wave20"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": { "Zombies": [
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 }
+      ] }
+    },
+    {
+      "aliases": ["Wave21"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": { "Zombies": [
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 }
+      ] }
+    },
+    {
+      "aliases": ["Wave22"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": { "Zombies": [
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 }
+      ] }
+    },
+
+    {
+      "aliases": ["Wave23"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": { "Zombies": [
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 }
+      ] }
+    },
+    {
+      "aliases": ["Wave24"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": { "Zombies": [
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken_pumpkin_boss@CurrentLevel)", "Row": 2 },
+        { "Type": "RTID(chicken_pumpkin_boss@CurrentLevel)", "Row": 3 },
+        { "Type": "RTID(chicken_pumpkin_boss@CurrentLevel)", "Row": 4 },
+        { "Type": "RTID(chicken_pumpkin_boss@CurrentLevel)", "Row": 5 }
+      ] }
+    },
+    {
+      "aliases": ["Wave25"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": { "Zombies": [
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 }
+      ] }
+    },
+    {
+      "aliases": ["Wave26"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": { "Zombies": [
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 }
+      ] }
+    },
+
+    {
+      "aliases": ["Wave27"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": { "Zombies": [
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 }
+      ] }
+    },
+    {
+      "aliases": ["Wave28"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": { "Zombies": [
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 }
+      ] }
+    },
+    {
+      "aliases": ["Wave29"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": { "Zombies": [
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 }
+      ] }
+    },
+    {
+      "aliases": ["Wave30"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": { "Zombies": [
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 1 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 4 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 2 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 3 },
+        { "Type": "RTID(chicken@ZombieTypes)", "Row": 5 },
+        { "Type": "RTID(chicken_pumpkin_boss@CurrentLevel)", "Row": 1 },
+        { "Type": "RTID(chicken_pumpkin_boss@CurrentLevel)", "Row": 2 },
+        { "Type": "RTID(chicken_pumpkin_boss@CurrentLevel)", "Row": 3 },
+        { "Type": "RTID(chicken_pumpkin_boss@CurrentLevel)", "Row": 4 },
+        { "Type": "RTID(chicken_pumpkin_boss@CurrentLevel)", "Row": 5 }
+      ] }
+    },
+        {
+            "aliases": [
+                "Phase1"
+            ],
+            "objclass": "ModifyConveyorWaveActionProps",
+            "objdata": {
+                "Add": [
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(repeater@PlantTypes)",
+                    "MaxCount": 1,
+                    "Weight": 75
+                  },
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(snapdragon@PlantTypes)",
+                    "MaxCount": 1,
+                    "Weight": 75
+                  },
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(bloomerang@PlantTypes)",
+                    "MaxCount": 1,
+                    "Weight": 75
+                  }
+                ],
+                "Remove": [
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(peashooter@PlantTypes)",
+                    "MaxCount": 0,
+                    "Weight": 0
+                  },
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(lychee@PlantTypes)",
+                    "MaxCount": 0,
+                    "Weight": 0
+                  },
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(fumeshroom@PlantTypes)",
+                    "MaxCount": 0,
+                    "Weight": 0
+                  }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Phase2"
+            ],
+            "objclass": "ModifyConveyorWaveActionProps",
+            "objdata": {
+                "Add": [
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(applemortar@PlantTypes)",
+                    "MaxCount": 1,
+                    "Weight": 75
+                  },
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(homingthistle@PlantTypes)",
+                    "MaxCount": 1,
+                    "Weight": 75
+                  },
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(spikeweed@PlantTypes)",
+                    "MaxCount": 1,
+                    "Weight": 75
+                  },
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(laser_bean@PlantTypes)",
+                    "MaxCount": 1,
+                    "Weight": 75
+                  }
+                ],
+                "Remove": [
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(bloomerang@PlantTypes)",
+                    "MaxCount": 0,
+                    "Weight": 0
+                  }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Phase3"
+            ],
+            "objclass": "ModifyConveyorWaveActionProps",
+            "objdata": {
+                "Add": [
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(gatling@PlantTypes)",
+                    "MaxCount": 1,
+                    "Weight": 75
+                  },
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(threepeater@PlantTypes)",
+                    "MaxCount": 1,
+                    "Weight": 75
+                  },
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(phatbeet@PlantTypes)",
+                    "MaxCount": 1,
+                    "Weight": 75
+                  },
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(bonkchoy@PlantTypes)",
+                    "MaxCount": 1,
+                    "Weight": 75
+                  },
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(bambooshoot@PlantTypes)",
+                    "MaxCount": 1,
+                    "Weight": 75
+                  }
+                ],
+                "Remove": [
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(applemortal@PlantTypes)",
+                    "MaxCount": 0,
+                    "Weight": 0
+                  },
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(laser_bean@PlantTypes)",
+                    "MaxCount": 0,
+                    "Weight": 0
+                  },
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(repeater@PlantTypes)",
+                    "MaxCount": 0,
+                    "Weight": 0
+                  },
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(snapdragon@PlantTypes)",
+                    "MaxCount": 0,
+                    "Weight": 0
+                  },
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(spikeweed@PlantTypes)",
+                    "MaxCount": 0,
+                    "Weight": 0
+                  }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Phase4"
+            ],
+            "objclass": "ModifyConveyorWaveActionProps",
+            "objdata": {
+                "Add": [
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(lightningreed@PlantTypes)",
+                    "MaxCount": 1,
+                    "Weight": 75
+                  },
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(electricpeashooter@PlantTypes)",
+                    "MaxCount": 1,
+                    "Weight": 75
+                  }
+                ],
+                "Remove": [
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(homingthistle@PlantTypes)",
+                    "MaxCount": 0,
+                    "Weight": 0
+                  },
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(laser_bean@PlantTypes)",
+                    "MaxCount": 0,
+                    "Weight": 0
+                  },
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Phase5"
+            ],
+            "objclass": "ModifyConveyorWaveActionProps",
+            "objdata": {
+                "Add": [
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(shootingstarfruit@PlantTypes)",
+                    "MaxCount": 1,
+                    "Weight": 75
+                  }
+                ],
+                "Remove": [
+                  {
+                    "MaxWeightFactor": 0.0,
+                    "MinWeightFactor": 0.0,
+                    "Type": "RTID(threepeater@PlantTypes)",
+                    "MaxCount": 0,
+                    "Weight": 0
+                  }
+                ]
+            }
+        }
+  ],
+  "version": 1
+}

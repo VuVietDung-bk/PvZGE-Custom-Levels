@@ -1,0 +1,318 @@
+{"#comment": "Epic Quest - Peawitched! - Step 1 | ELM: Ver-10.2-Pre1 [VNL v9.8]",
+"#zombies": "zcorp, zcorp_armor1, zcorp_armor2, zcorp_racer_chair, chicken_farmer, modern_newspaper, lostcity_gargantuar, lostcity_relichunter",
+"objects": [{
+    "objclass": "LevelDefinition",
+    "objdata": {
+    "Description": "[PLAYERS_EPIC]",
+    "FirstRewardParam": "moneybag",
+    "LevelPowerupSet": "LevelPowerupsDefault",
+    "NormalPresentTable": "egypt_normal_01",
+    "ShinyPresentTable": "egypt_shiny_01",
+    "Loot": "RTID(DefaultLoot@LevelModules)",
+    "ResourceGroupNames": [
+        "DelayLoad_Background_Beach",
+        "DelayLoad_Background_Beach_Compressed",
+        "Tombstone_Dark_Special",
+        "Tombstone_Dark_Effects"
+    ],
+    "Modules": [
+        "RTID(ZCorpMowers@LevelModules)",
+        "RTID(StandardIntro@LevelModules)",
+        "RTID(ZombieLevelSwaps@CurrentLevel)",
+        "RTID(Conveyor@CurrentLevel)",
+        "RTID(Escalation@CurrentLevel)",
+        "RTID(NewWaves@CurrentLevel)",
+        "RTID(ZombiesDeadWinCon@LevelModules)",
+        "RTID(DefaultZombieWinCondition@LevelModules)"
+    ],
+    "Name": "Epic Quest - Peawitched! - Step 1",
+    "StageModule": "RTID(ZCorpStage@LevelModules)"
+}},
+{"aliases": ["Conveyor"],
+"objclass": "ConveyorSeedBankProperties",
+"objdata": {
+    "ManualPacketSpawning": false,
+    "DropDelayConditions": [
+        { "Delay": 5, "MaxPackets": 0 }
+    ],
+    "SpeedConditions": [
+        { "Speed": 80, "MaxPackets": 0 }
+    ],
+    "InitialPlantList": [
+        { "PlantType": "lightningreed", "Weight": 16, "MaxCount": 10, "MaxWeightFactor": 0, "MaxCountCooldownSeconds": 4 },
+        { "PlantType": "peashooter", "Weight": 18, "MaxCount": 15, "MaxWeightFactor": 0, "MaxCountCooldownSeconds": 6 },
+        { "PlantType": "iceburg", "Weight": 12, "MaxCount": 1, "MaxWeightFactor": 0, "MaxCountCooldownSeconds": 16 }
+    ]
+}},
+{"aliases": ["ZombieLevelSwaps"],
+"objclass": "LevelDifficultyScalingModuleProperties",
+"objdata": {
+    "DifficultyRulesType": "RiftDifficulty",
+    "ZombieLevelSwaps": [
+        {
+            "Level": 0,
+            "Swaps": [
+                {
+                    "From": "RTID(zcorp@ZombieTypes)",
+                    "To": [
+                         "RTID(zcorp@ZombieTypes)",
+                         "RTID(zcorp_fem@ZombieTypes)"
+                    ]
+                },
+                {
+                    "From": "RTID(zcorp_armor1@ZombieTypes)",
+                    "To": [
+                         "RTID(zcorp_armor1@ZombieTypes)",
+                         "RTID(zcorp_fem_armor1@ZombieTypes)"
+                    ]
+                },
+                {
+                    "From": "RTID(zcorp_armor2@ZombieTypes)",
+                    "To": [
+                         "RTID(zcorp_armor2@ZombieTypes)",
+                         "RTID(zcorp_fem_armor2@ZombieTypes)"
+                    ]
+                }
+            ]
+        }
+    ]
+}},
+{"aliases": ["Escalation"],
+"objclass": "LevelEscalationModuleProperties",
+"objdata": {
+    "FlagCount": 2,
+    "WavesPerFlag": 6,
+    "PlantfoodToSpawnCount": 0,
+    "StartingPoints": 0,
+    "PointIncrementPerWave": 0,
+    "WaveManagerProps": "RTID(WaveManager@CurrentLevel)",
+    "ZombiePool": [
+
+    ]
+}},
+{"aliases": ["NewWaves"],
+"objclass": "WaveManagerModuleProperties",
+"objdata": {}
+},
+{"aliases": ["WaveManager"],
+"objclass": "WaveManagerProperties",
+"objdata": {
+    "FlagWaveInterval": 6,
+    "WaveCount": 12,
+    "SuppressFlagZombie": false,
+    "MinNextWaveHealthPercentage": 0.4,
+    "MaxNextWaveHealthPercentage": 0.5,
+    "Waves": [
+        ["RTID(Wave1@.)"],
+        ["RTID(Wave2@.)"],
+        ["RTID(Wave3@.)", "RTID(Conveyor3@.)"],
+        ["RTID(Wave4@.)"],
+        ["RTID(Wave5@.)"],
+        ["RTID(Wave6@.)", "RTID(Conveyor6@.)"],
+        ["RTID(Wave7@.)"],
+        ["RTID(Wave8@.)"],
+        ["RTID(Wave9@.)"],
+        ["RTID(Wave10@.)"],
+        ["RTID(Wave11@.)"],
+        ["RTID(Wave12@.)"]
+    ]
+}},
+{"aliases":["Wave1"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "4", "Type": "RTID(zcorp@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(zcorp@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave2"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "2", "Type": "RTID(zcorp@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(zcorp_armor1@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave3"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 1,
+    "Zombies": [
+        {"Row": "3", "Type": "RTID(chicken_farmer@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(zcorp@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(zcorp@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave4"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "1", "Type": "RTID(lostcity_relichunter@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(zcorp_armor1@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(zcorp@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(zcorp@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave5"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "2", "Type": "RTID(modern_newspaper@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(zcorp@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(zcorp_armor1@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(chicken_farmer@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(zcorp@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave6"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 1,
+    "Zombies": [
+        {"Row": "1", "Type": "RTID(zcorp_armor2@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(zcorp@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(zcorp_armor1@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(zcorp_racer_chair@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(zcorp_armor1@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(zcorp_armor1@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(zcorp_armor1@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(chicken_farmer@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave7"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "1", "Type": "RTID(lostcity_relichunter@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(zcorp_armor1@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(lostcity_gargantuar@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(modern_newspaper@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(zcorp@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(zcorp@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(zcorp@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave8"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "1", "Type": "RTID(chicken_farmer@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(zcorp_armor2@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(chicken_farmer@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(chicken_farmer@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(chicken_farmer@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(zcorp_armor1@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(zcorp_armor1@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave9"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "1", "Type": "RTID(zcorp_racer_chair@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(modern_newspaper@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(lostcity_relichunter@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(zcorp_armor1@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(zcorp_armor1@ZombieTypes)"},
+        {"Row": "1", "Type": "RTID(zcorp_armor1@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(zcorp@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(zcorp@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(zcorp@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave10"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 1,
+    "Zombies": [
+        {"Row": "1", "Type": "RTID(zcorp_armor2@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(zcorp_armor1@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(modern_newspaper@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(zcorp_armor2@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(zcorp_armor2@ZombieTypes)"},
+        {"Row": "1", "Type": "RTID(chicken_farmer@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(zcorp_armor1@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(zcorp@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(zcorp@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave11"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "1", "Type": "RTID(zcorp_armor1@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(zcorp_armor2@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(zcorp_racer_chair@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(lostcity_relichunter@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(lostcity_relichunter@ZombieTypes)"},
+        {"Row": "1", "Type": "RTID(zcorp@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(chicken_farmer@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(zcorp_armor1@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(chicken_farmer@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave12"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "1", "Type": "RTID(modern_newspaper@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(lostcity_relichunter@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(modern_newspaper@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(zcorp_armor2@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(zcorp_racer_chair@ZombieTypes)"},
+        {"Row": "1", "Type": "RTID(zcorp_armor2@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(zcorp_armor1@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(chicken_farmer@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(chicken_farmer@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(zcorp_armor1@ZombieTypes)"},
+        {"Row": "1", "Type": "RTID(zcorp@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(zcorp@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(lostcity_gargantuar@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(zcorp_armor1@ZombieTypes)"}
+    ]
+}},
+{"aliases":["Conveyor3"],
+"objclass": "ModifyConveyorWaveActionProps",
+"objdata": {
+    "Remove": [
+        
+    ],
+    "Add": [
+        {"Type": "RTID(magicpeashooter@PlantTypes)", "Weight": 20, "MaxCount": 5, "MaxWeightFactor": 0, "MaxCountCooldownSeconds": 8}
+    ]
+}},
+{"aliases":["Conveyor6"],
+"objclass": "ModifyConveyorWaveActionProps",
+"objdata": {
+    "Remove": [
+        
+    ],
+    "Add": [
+        {"Type": "RTID(lavaguava@PlantTypes)", "Weight": 14, "MaxCount": 1, "MaxWeightFactor": 0, "MaxCountCooldownSeconds": 18},
+        {"Type": "RTID(melonpult@PlantTypes)", "Weight": 16, "MaxCount": 5, "MaxWeightFactor": 0, "MaxCountCooldownSeconds": 12}
+    ]
+}},
+        {}
+    ],
+    "version": 1
+}

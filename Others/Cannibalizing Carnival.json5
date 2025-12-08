@@ -1,0 +1,370 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "maido",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2024-12-06",
+    "UpdatedAt": "2024-12-06",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "???",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		  "RTID(StandardIntro@LevelModules)",
+		  "RTID(ChallengeModule@CurrentLevel)",
+		  "RTID(ModernMowers@LevelModules)",
+		  "RTID(ProtectThePlant@CurrentLevel)",
+		  "RTID(CowboyRails@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)"
+        ],
+        "Name": "Cannibalizing Carnival",
+        "NameMultiLanguage": {
+          "en": "Cannibalizing Carnival",
+          "zh": "功夫世界-沙盒"
+        },
+        "WritenBy": "maido",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(CircusStage@LevelModules)"
+      }
+    },
+	    {
+			"aliases": [
+				"CowboyRails"
+			],
+			"objclass": "RailcartProperties",
+			"objdata": {
+				"RailcartType": "railcart_west",
+				"Railcarts": [
+				    {
+						"Column": 0,
+						"Row": 1
+					},
+					{
+						"Column": 0,
+						"Row": 3
+					},
+				],
+				"Rails": [	
+					{
+						"Column": 0,
+						"RowStart": 0,
+						"RowEnd": 4,
+					},				
+				]
+			}
+		},
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PresetPlantList": [
+					{
+                        "PlantType": "puffshroom",
+                        "Level": -1
+                    }, 					
+                    {
+                        "PlantType": "sunbean",
+                        "Level": -1
+                    },
+					{
+                        "PlantType": "iceburg",
+                        "Level": -1
+                    },
+					{
+                        "PlantType": "stallia",
+                        "Level": -1
+                    },
+					{
+                        "PlantType": "icebloom",
+                        "Level": -1
+                    }, 
+        ],
+        "SelectionMethod": "preset"
+      }
+    },
+	{
+			"aliases": [
+			"ChallengeModule"
+		],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+	    {
+            "aliases": [
+                "ProtectThePlant"
+            ],
+            "objclass": "ProtectThePlantChallengeProperties",
+            "objdata": {
+                "MustProtectCount": 5,
+                "Plants": [
+                    {
+                        "GridX": 0,
+                        "GridY": 1,
+                        "PlantType": "zoybeanpod"
+                    },
+					{
+                        "GridX": 0,
+                        "GridY": 3,
+                        "PlantType": "zoybeanpod"
+                    },
+                ]
+            }
+        },   	
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 10,
+        "WaveCount": 40,
+        "Waves": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+          []
+        ]
+      }
+    },
+//This is the scripted Zombie Ambush setup, currently for waves 10, 20, 30, and 40
+       {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 5,
+				"LevelJam": "jam_rap",
+                "SpawnColEnd": 9,
+                "SpawnColStart": 6,
+                "WaveCount": 10,
+                "WaveSpendingPointIncrement": 50,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    ["RTID(Wave1@CurrentLevel)"],
+                    ["RTID(Wave2@CurrentLevel)"],
+                    ["RTID(Wave3@CurrentLevel)"],
+                    ["RTID(Wave4@CurrentLevel)"],
+                    ["RTID(Wave5@CurrentLevel)"],
+                    ["RTID(Wave6@CurrentLevel)"],
+                    ["RTID(Wave7@CurrentLevel)"],
+                    ["RTID(Wave8@CurrentLevel)"],
+                    ["RTID(Wave9@CurrentLevel)"],
+                    ["RTID(Wave10@CurrentLevel)"],
+                ]
+            }
+        },
+///WAVES	
+	{
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(tutorial@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(tutorial@ZombieTypes)"},
+		  {"Type": "RTID(tutorial@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(tutorial_armor1@ZombieTypes)"},
+		  {"Type": "RTID(tutorial@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+		  {"Type": "RTID(modern_newspaper@ZombieTypes)"},
+		  {"Type": "RTID(tutorial_armor1@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(modern_balloon@ZombieTypes)"},
+		  {"Type": "RTID(modern_balloon@ZombieTypes)"},
+		  {"Type": "RTID(tutorial_armor2@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(eighties_breakdancer@ZombieTypes)"},
+		  {"Type": "RTID(tutorial_armor1@ZombieTypes)"},
+		  {"Type": "RTID(eighties_mc@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [		  
+		  {"Row":"3","Type": "RTID(modern_superfanimp@ZombieTypes)"},
+		  {"Row":"3","Type": "RTID(modern_allstar@ZombieTypes)"},
+		  {"Type": "RTID(eighties_mc@ZombieTypes)"},
+		  {"Type": "RTID(eighties_mc@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 2,
+        "Zombies": [
+		  {"Type": "RTID(tutorial_armor2@ZombieTypes)"},
+		  {"Type": "RTID(modern_balloon@ZombieTypes)"},
+		  {"Type": "RTID(tutorial_armor1@ZombieTypes)"},
+		  {"Type": "RTID(eighties_breakdancer@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood":0,
+        "Zombies": [ 
+		  
+		  {"Row":"2","Type": "RTID(modern_superfanimp@ZombieTypes)"},
+		  {"Row":"2","Type": "RTID(modern_allstar@ZombieTypes)"},	  
+		  {"Row":"4","Type": "RTID(modern_superfanimp@ZombieTypes)"},
+		  {"Row":"4","Type": "RTID(modern_allstar@ZombieTypes)"},
+		  {"Type": "RTID(eighties_mc@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood":0,
+        "Zombies": [	
+		  {"Row":"1","Type": "RTID(modern_superfanimp@ZombieTypes)"},
+		  {"Row":"1","Type": "RTID(modern_allstar@ZombieTypes)"},
+		  {"Type": "RTID(tutorial_armor2@ZombieTypes)"},
+		  {"Type": "RTID(modern_balloon@ZombieTypes)"},
+		  {"Type": "RTID(eighties_mc@ZombieTypes)"},
+		  {"Type": "RTID(eighties_breakdancer@ZombieTypes)"},
+		  {"Type": "RTID(vase_gargantuar@ZombieTypes)"},
+        ]
+      }
+    },
+///WAVES END
+  ],
+  "version": 1
+}

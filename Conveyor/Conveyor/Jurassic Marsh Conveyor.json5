@@ -1,0 +1,836 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "maido",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2024-12-06",
+    "UpdatedAt": "2024-12-06",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "???",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		  "RTID(StandardIntro@LevelModules)",
+		  "RTID(ChallengeModule@CurrentLevel)",
+		  "RTID(DinoMowers@LevelModules)",
+		  "RTID(ConveyorBelt@CurrentLevel)"
+        ],
+        "Name": "Jurassic Marsh - Conveyor",
+        "NameMultiLanguage": {
+          "en": "Jurassic Marsh - Conveyor",
+          "zh": "功夫世界-沙盒"
+        },
+        "WritenBy": "maido",
+		"MusicType": "MiniGame_A",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(DinoStage@LevelModules)"
+      }
+    },
+    {
+            "aliases": [
+                "ConveyorBelt"
+            ],
+            "objclass": "ConveyorSeedBankProperties",
+            "objdata": {
+                "DropDelayConditions": [
+                    {
+                        "Delay": 2,
+                        "MaxPackets": 0
+                    },
+                    {
+                        "Delay": 4,
+                        "MaxPackets": 2
+                    },
+                    {
+                        "Delay": 8,
+                        "MaxPackets": 4
+                    },
+                    {
+                        "Delay": 10,
+                        "MaxPackets": 6
+                    }
+                ],
+                "InitialPlantList": [
+				    {
+					    "MaxWeightFactor": 0,
+						"MaxCount": 10,
+                        "PlantType": "primalpeashooter",
+                        "Weight": 75
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 15,
+                        "PlantType": "splitpea",
+                        "Weight": 75
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 2,
+                        "PlantType": "umbrellaleaf",
+                        "Weight": 65
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 1,
+                        "PlantType": "meteorflower",
+                        "Weight": 60
+                    },
+					{
+					    "MaxWeightFactor": 0,
+					    "MaxCount": 10,
+                        "PlantType": "melonpult",
+                        "Weight": 65
+                    },
+					{
+					    "MaxWeightFactor": 0,
+					    "MaxCount": 5,
+                        "PlantType": "primalwallnut",
+                        "Weight": 75
+                    },
+					{
+					    "MaxWeightFactor": 0,
+					    "MaxCount": 7,
+                        "PlantType": "homingthistle",
+                        "Weight": 65
+                    },
+					{
+					    "MaxWeightFactor": 0,
+					    "MaxCount": 1,
+                        "PlantType": "perfumeshroom",
+                        "Weight": 50
+                    },
+					{
+					    "MaxWeightFactor": 0,
+					    "MaxCount": 2,
+                        "PlantType": "primalpotatomine",
+                        "Weight": 50
+                    }
+                ],
+                "SpeedConditions": [
+                    {
+                        "MaxPackets": 0,
+                        "Speed": 150
+                    }
+                ]
+            }
+        },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+	{
+			"aliases": [
+			"ChallengeModule"
+		],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+			"BeatTheLevel"
+		],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+				"Survive the marshstompers' extinction event!"
+				],
+				"DescriptionsMultiLanguage": [
+					{
+					"en": "123",
+					"zh": "112233"
+					}
+				]
+			}
+	},
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 80, // Difficulty D, easiest
+            "StartingPoints": 50,
+            "StartingWave": 0,
+            "ZombiePool": [
+              "RTID(dino@ZombieTypes)",
+              "RTID(dino_armor1@ZombieTypes)",
+              "RTID(dino_armor2@ZombieTypes)",
+			  "RTID(dino_armor3@ZombieTypes)",
+			  "RTID(dino_armor4@ZombieTypes)",
+			  "RTID(dino_bully@ZombieTypes)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 100, // Difficulty C, normal
+            "StartingPoints": 100,
+            "StartingWave": 0,
+            "ZombiePool": [
+              "RTID(dino@ZombieTypes)",
+              "RTID(dino_armor1@ZombieTypes)",
+              "RTID(dino_armor2@ZombieTypes)",
+			  "RTID(dino_armor3@ZombieTypes)",
+			  "RTID(dino_armor4@ZombieTypes)",
+			  "RTID(dino_bully@ZombieTypes)",
+              "RTID(dino_gargantuar@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 150, // Difficulty B, advanced
+            "StartingPoints": 200,
+            "StartingWave": 0,
+            "ZombiePool": [
+              "RTID(dino@ZombieTypes)",
+              "RTID(dino_armor1@ZombieTypes)",
+              "RTID(dino_armor2@ZombieTypes)",
+			  "RTID(dino_armor3@ZombieTypes)",
+			  "RTID(dino_armor4@ZombieTypes)",
+			  "RTID(dino_bully@ZombieTypes)",
+			  "RTID(dino_bully_veteran@ZombieTypes)",
+              "RTID(dino_gargantuar@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 200, // Difficulty AAAAAAAAA
+            "StartingPoints": 250,
+            "StartingWave": 0,
+            "ZombiePool": [
+              "RTID(dino@ZombieTypes)",
+              "RTID(dino_armor1@ZombieTypes)",
+              "RTID(dino_armor2@ZombieTypes)",
+			  "RTID(dino_armor3@ZombieTypes)",
+			  "RTID(dino_armor4@ZombieTypes)",
+			  "RTID(dino_bully@ZombieTypes)",
+			  "RTID(dino_bully_veteran@ZombieTypes)",
+              "RTID(dino_gargantuar@ZombieTypes)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 10,
+        "WaveCount": 40,
+        "Waves": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+          []
+        ]
+      }
+    },
+//This is the scripted Zombie Ambush setup, currently for waves 10, 20, 30, and 40
+       {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 10,
+                "SpawnColEnd": 9,
+                "SpawnColStart": 6,
+                "WaveCount": 10,
+                "WaveSpendingPointIncrement": 50,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    ["RTID(RaptorRow1@CurrentLevel)",],
+                    [],
+                    [],
+                    [],
+                    ["RTID(PlantFoodSpawner0@CurrentLevel)","RTID(StegoRow4@CurrentLevel)",],
+                    [],
+                    ["RTID(RaptorRow2@CurrentLevel)",],
+                    ["RTID(RaptorRow3@CurrentLevel)","RTID(StegoRow0@CurrentLevel)",],
+                    [],
+                    ["RTID(RAPTOR_MESSAGE@CurrentLevel)","RTID(RaptorRow0@CurrentLevel)","RTID(RaptorRow1@CurrentLevel)","RTID(RaptorRow2@CurrentLevel)","RTID(RaptorRow3@CurrentLevel)","RTID(RaptorRow4@CurrentLevel)",],
+					["RTID(PteroRow2@CurrentLevel)",],
+                    ["RTID(StegoRow4@CurrentLevel)","RTID(PteroRow1@CurrentLevel)",],
+                    ["RTID(RaptorRow1@CurrentLevel)",],
+                    ["RTID(PteroRow3@CurrentLevel)",],
+                    ["RTID(PlantFoodSpawner1@CurrentLevel)","RTID(STEGO_MESSAGE@CurrentLevel)","RTID(StegoRow0@CurrentLevel)","RTID(StegoRow2@CurrentLevel)","RTID(StegoRow3@CurrentLevel)",],
+                    ["RTID(RaptorRow3@CurrentLevel)",],
+                    ["RTID(StegoRow1@CurrentLevel)",],
+                    ["RTID(PteroRow0@CurrentLevel)",],
+                    ["RTID(PteroRow4@CurrentLevel)","RTID(PteroRow2@CurrentLevel)",],
+                    ["RTID(PTERO_MESSAGE@CurrentLevel)","RTID(PteroRow0@CurrentLevel)","RTID(PteroRow3@CurrentLevel)","RTID(PteroRow4@CurrentLevel)","RTID(PteroRow1@CurrentLevel)",],
+					["RTID(PteroRow2@CurrentLevel)","RTID(RaptorRow4@CurrentLevel)",],
+                    ["RTID(RaptorRow2@CurrentLevel)",],
+                    ["RTID(RaptorRow0@CurrentLevel)","RTID(PteroRow2@CurrentLevel)","RTID(PteroRow1@CurrentLevel)",],
+                    ["RTID(StegoRow4@CurrentLevel)","RTID(StegoRow0@CurrentLevel)",],
+                    ["RTID(PlantFoodSpawner2@CurrentLevel)","RTID(RAPTOR_MESSAGE@CurrentLevel)","RTID(RaptorRow1@CurrentLevel)","RTID(RaptorRow2@CurrentLevel)","RTID(RaptorRow3@CurrentLevel)",],
+                    ["RTID(STEGO_MESSAGE@CurrentLevel)","RTID(StegoRow0@CurrentLevel)","RTID(StegoRow1@CurrentLevel)",],
+                    ["RTID(TyrannoRow2@CurrentLevel)","RTID(RaptorRow2@CurrentLevel)",],
+                    ["RTID(TyrannoRow1@CurrentLevel)","RTID(StegoRow2@CurrentLevel)",],
+                    ["RTID(TyrannoRow4@CurrentLevel)","RTID(RaptorRow3@CurrentLevel)",],
+                    ["RTID(TYRANNO_MESSAGE@CurrentLevel)","RTID(TyrannoRow1@CurrentLevel)","RTID(TyrannoRow0@CurrentLevel)","RTID(TyrannoRow3@CurrentLevel)","RTID(TyrannoRow2@CurrentLevel)",],
+					["RTID(StegoRow3@CurrentLevel)","RTID(TyrannoRow4@CurrentLevel)",],
+                    ["RTID(TyrannoRow0@CurrentLevel)","RTID(PteroRow1@CurrentLevel)",],
+                    ["RTID(StegoRow0@CurrentLevel)","RTID(StegoRow4@CurrentLevel)",],
+                    ["RTID(RaptorRow2@CurrentLevel)","RTID(RaptorRow1@CurrentLevel)","RTID(PteroRow3@CurrentLevel)",],
+                    ["RTID(PlantFoodSpawner3@CurrentLevel)","RTID(TyrannoRow3@CurrentLevel)",],
+                    ["RTID(RaptorRow0@CurrentLevel)","RTID(RaptorRow3@CurrentLevel)",],
+                    ["RTID(ANKYLO_MESSAGE@CurrentLevel)","RTID(AnkyloRow0@CurrentLevel)","RTID(AnkyloRow4@CurrentLevel)",],
+                    ["RTID(PteroRow4@CurrentLevel)","RTID(PteroRow3@CurrentLevel)",],
+                    ["RTID(TyrannoRow4@CurrentLevel)","RTID(StegoRow1@CurrentLevel)",],
+                    ["RTID(STAMPEDE_MESSAGE@CurrentLevel)","RTID(TyrannoRow4@CurrentLevel)","RTID(TyrannoRow3@CurrentLevel)","RTID(StegoRow0@CurrentLevel)","RTID(StegoRow1@CurrentLevel)",
+					"RTID(PteroRow0@CurrentLevel)","RTID(PteroRow2@CurrentLevel)","RTID(PteroRow1@CurrentLevel)","RTID(RaptorRow1@CurrentLevel)","RTID(RaptorRow2@CurrentLevel)","RTID(RaptorRow3@CurrentLevel)",
+					"RTID(AnkyloRow2@CurrentLevel)",]
+                ]
+            }
+        },
+///DINOSAURS!!!
+		{
+          "aliases": ["RAPTOR_MESSAGE"],
+            "objclass": "WaveWarningProps",
+            "objdata": {
+            "LabelR": 51,
+            "LabelG": 51,
+            "LabelB": 255,
+            "LabelAInit": 4,
+            "OutLineR": 0,
+            "OutLineG": 0,
+            "OutLineB": 102,
+            "String": "Hunting Party!",
+            "Sound": "Hugewave",
+            "LabelTargetScale": 0.5,
+            "LabelInitScale": 4,
+            "Duration": 2.5,
+            "InitTime": 0.33,
+            }
+        },
+	    {
+            "aliases": [
+                "RaptorRow0"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 0,
+                "DinoType": "raptor",
+                "DinoWaveDuration": 3
+            }
+        },
+		{
+            "aliases": [
+                "RaptorRow1"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 1,
+                "DinoType": "raptor",
+                "DinoWaveDuration": 3
+            }
+        },
+		{
+            "aliases": [
+                "RaptorRow2"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 2,
+                "DinoType": "raptor",
+                "DinoWaveDuration": 3
+            }
+        },
+		{
+            "aliases": [
+                "RaptorRow3"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 3,
+                "DinoType": "raptor",
+                "DinoWaveDuration": 3
+            }
+        },
+		{
+            "aliases": [
+                "RaptorRow4"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 4,
+                "DinoType": "raptor",
+                "DinoWaveDuration": 3
+            }
+        },
+
+		{
+          "aliases": ["STEGO_MESSAGE"],
+            "objclass": "WaveWarningProps",
+            "objdata": {
+            "LabelR": 255,
+            "LabelG": 102,
+            "LabelB": 0,
+            "LabelAInit": 4,
+            "OutLineR": 153,
+            "OutLineG": 0,
+            "OutLineB": 153,
+            "String": "Threatening Thagomizer!",
+            "Sound": "Hugewave",
+            "LabelTargetScale": 0.5,
+            "LabelInitScale": 4,
+            "Duration": 2.5,
+            "InitTime": 0.33,
+            }
+        },		
+		{
+            "aliases": [
+                "StegoRow0"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 0,
+                "DinoType": "stego",
+                "DinoWaveDuration": 4
+            }
+        },{
+            "aliases": [
+                "StegoRow1"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 1,
+                "DinoType": "stego",
+                "DinoWaveDuration": 4
+            }
+        },{
+            "aliases": [
+                "StegoRow2"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 2,
+                "DinoType": "stego",
+                "DinoWaveDuration": 4
+            }
+        },{
+            "aliases": [
+                "StegoRow3"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 3,
+                "DinoType": "stego",
+                "DinoWaveDuration": 4
+            }
+        },{
+            "aliases": [
+                "StegoRow4"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 4,
+                "DinoType": "stego",
+                "DinoWaveDuration": 4
+            }
+        },
+
+		{
+          "aliases": ["PTERO_MESSAGE"],
+            "objclass": "WaveWarningProps",
+            "objdata": {
+            "LabelR": 0,
+            "LabelG": 203,
+            "LabelB": 138,
+            "LabelAInit": 4,
+            "OutLineR": 0,
+            "OutLineG": 0,
+            "OutLineB": 102,
+            "String": "Flock Migration!",
+            "Sound": "Hugewave",
+            "LabelTargetScale": 0.5,
+            "LabelInitScale": 4,
+            "Duration": 2.5,
+            "InitTime": 0.33,
+            }
+        },		
+		{
+            "aliases": [
+                "PteroRow0"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 0,
+                "DinoType": "ptero",
+                "DinoWaveDuration": 1
+            }
+        },
+		{
+            "aliases": [
+                "PteroRow1"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 1,
+                "DinoType": "ptero",
+                "DinoWaveDuration": 1
+            }
+        },
+		{
+            "aliases": [
+                "PteroRow2"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 2,
+                "DinoType": "ptero",
+                "DinoWaveDuration": 1
+            }
+        },
+		{
+            "aliases": [
+                "PteroRow3"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 3,
+                "DinoType": "ptero",
+                "DinoWaveDuration": 1
+            }
+        },
+		{
+            "aliases": [
+                "PteroRow4"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 4,
+                "DinoType": "ptero",
+                "DinoWaveDuration": 1
+            }
+        },
+
+		{
+          "aliases": ["TYRANNO_MESSAGE"],
+            "objclass": "WaveWarningProps",
+            "objdata": {
+            "LabelR": 172,
+            "LabelG": 230,
+            "LabelB": 0,
+            "LabelAInit": 4,
+            "OutLineR": 153,
+            "OutLineG": 0,
+            "OutLineB": 153,
+            "String": "Ravenous Rexes!",
+            "Sound": "Hugewave",
+            "LabelTargetScale": 0.5,
+            "LabelInitScale": 4,
+            "Duration": 2.5,
+            "InitTime": 0.33,
+            }
+        },		
+		{
+            "aliases": [
+                "TyrannoRow0"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 0,
+                "DinoType": "tyranno",
+                "DinoWaveDuration": 1
+            }
+        },
+		{
+            "aliases": [
+                "TyrannoRow1"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 1,
+                "DinoType": "tyranno",
+                "DinoWaveDuration": 1
+            }
+        },
+		{
+            "aliases": [
+                "TyrannoRow2"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 2,
+                "DinoType": "tyranno",
+                "DinoWaveDuration": 1
+            }
+        },
+		{
+            "aliases": [
+                "TyrannoRow3"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 3,
+                "DinoType": "tyranno",
+                "DinoWaveDuration": 1
+            }
+        },
+		{
+            "aliases": [
+                "TyrannoRow4"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 4,
+                "DinoType": "tyranno",
+                "DinoWaveDuration": 1
+            }
+        },
+
+		{
+          "aliases": ["ANKYLO_MESSAGE"],
+            "objclass": "WaveWarningProps",
+            "objdata": {
+            "LabelR": 255,
+            "LabelG": 255,
+            "LabelB": 179,
+            "LabelAInit": 4,
+            "OutLineR": 51,
+            "OutLineG": 102,
+            "OutLineB": 0,
+            "String": "Maces of Menace!",
+            "Sound": "Hugewave",
+            "LabelTargetScale": 0.5,
+            "LabelInitScale": 4,
+            "Duration": 2.5,
+            "InitTime": 0.33,
+            }
+        },
+		{
+            "aliases": [
+                "AnkyloRow0"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 0,
+                "DinoType": "ankylo",
+                "DinoWaveDuration": 0
+            }
+        },
+		{
+            "aliases": [
+                "AnkyloRow1"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 1,
+                "DinoType": "ankylo",
+                "DinoWaveDuration": 0
+            }
+        },
+		{
+            "aliases": [
+                "AnkyloRow2"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 2,
+                "DinoType": "ankylo",
+                "DinoWaveDuration": 0
+            }
+        },
+		{
+            "aliases": [
+                "AnkyloRow3"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 3,
+                "DinoType": "ankylo",
+                "DinoWaveDuration": 0
+            }
+        },
+		{
+            "aliases": [
+                "AnkyloRow4"
+            ],
+            "objclass": "DinoWaveActionProps",
+            "objdata": {
+                "DinoRow": 4,
+                "DinoType": "ankylo",
+                "DinoWaveDuration": 0
+            }
+        },
+		{
+          "aliases": ["STAMPEDE_MESSAGE"],
+            "objclass": "WaveWarningProps",
+            "objdata": {
+            "LabelR": 255,
+            "LabelG": 102,
+            "LabelB": 0,
+            "LabelAInit": 4,
+            "OutLineR": 128,
+            "OutLineG": 0,
+            "OutLineB": 0,
+            "String": "Saurian Stampede!",
+            "Sound": "Hugewave",
+            "LabelTargetScale": 0.5,
+            "LabelInitScale": 4,
+            "Duration": 2.5,
+            "InitTime": 0.33,
+            }
+        },
+// These blocks handle predetermined Plant Food; currently set up to use basics and their armored variants
+// There are 7 levels of difficulties: - - - D C B A
+		{
+            "aliases": [
+                "PlantFoodSpawner0"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(dino_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PlantFoodSpawner1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(dino_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PlantFoodSpawner2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    0,
+                    1
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(dino_armor3@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PlantFoodSpawner3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(dino_armor4@ZombieTypes)"
+                    }
+                ]
+            }
+        }
+  ],
+  "version": 1
+}

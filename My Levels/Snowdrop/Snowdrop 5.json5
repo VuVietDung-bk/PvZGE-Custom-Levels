@@ -1,0 +1,514 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "hinanarukami",
+    "Introduction": "Sandbox levels based on Blue Gutsy's",
+    "Version": "1.0",
+    "CreatedAt": "2025-07-21",
+    "UpdatedAt": "2025-07-21",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "A random quest for a random plant in a random world",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		  "RTID(StandardIntro@LevelModules)",
+		  "RTID(ModernMowers@LevelModules)",
+          "RTID(ConveyorBelt@CurrentLevel)"
+        ],
+        "Name": "Snowdrop - Level 5",
+        "WritenBy": "hinanarukami",
+		"MusicType": "MiniGame_A",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(ModernStage@LevelModules)"
+      }
+    },
+    {
+            "aliases": [
+                "ConveyorBelt"
+            ],
+            "objclass": "ConveyorSeedBankProperties",
+            "objdata": {
+                "DropDelayConditions": [
+                    {
+                        "Delay": 3,
+                        "MaxPackets": 0
+                    },
+                    {
+                        "Delay": 6,
+                        "MaxPackets": 3
+                    },
+                    {
+                        "Delay": 10,
+                        "MaxPackets": 5
+                    },
+                    {
+                        "Delay": 15,
+                        "MaxPackets": 7
+                    }
+                ],
+                "InitialPlantList": [
+                    {
+					    "MaxWeightFactor": 0,
+						"MaxCount": 30,
+                        "PlantType": "snowdrop",
+                        "Weight": 75
+                    }
+                ],
+                "SpeedConditions": [
+                    {
+                        "MaxPackets": 0,
+                        "Speed": 150
+                    }
+                ]
+            }
+        },
+	
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 260, // Difficulty D, easiest
+            "StartingPoints": 500,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(barrelroller@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 280, // Difficulty C, normal
+            "StartingPoints": 500,
+            "StartingWave": 0,
+            "ZombiePool": [		
+				    "RTID(barrelroller@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 300, // Difficulty B, advanced
+            "StartingPoints": 500,
+            "StartingWave": 0,
+            "ZombiePool": [		
+				    "RTID(barrelroller@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 320, // Difficulty AAAAAAAAA
+            "StartingPoints": 500,
+            "StartingWave": 0,
+            "ZombiePool": [		
+				    "RTID(barrelroller@ZombieTypes)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+//This is the scripted Zombie Ambush setup, currently for waves 10, 20, 30, and 40
+// There are 7 levels of difficulties: - - - D C B A
+       {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 10,
+                "WaveCount": 20,
+                "Waves": [
+                    [],
+                    ["RTID(Seagull1@CurrentLevel)", "RTID(Pelican1@CurrentLevel)"],
+                    ["RTID(Seagull1@CurrentLevel)", "RTID(Pelican1@CurrentLevel)"],
+                    ["RTID(Seagull2@CurrentLevel)", "RTID(Pelican2@CurrentLevel)"],
+                    ["RTID(PlantFoodSpawner0@CurrentLevel)", "RTID(Seagull2@CurrentLevel)", "RTID(Pelican2@CurrentLevel)"],
+                    ["RTID(Seagull3@CurrentLevel)", "RTID(Pelican3@CurrentLevel)"],
+                    ["RTID(Seagull3@CurrentLevel)", "RTID(Pelican3@CurrentLevel)"],
+                    ["RTID(Seagull4@CurrentLevel)", "RTID(Pelican4@CurrentLevel)"],
+                    ["RTID(Additional1@CurrentLevel)", "RTID(Seagull4@CurrentLevel)", "RTID(Pelican4@CurrentLevel)"],
+                    ["RTID(PlantFoodSpawner1@CurrentLevel)", "RTID(Additional2@CurrentLevel)", "RTID(Seagull5@CurrentLevel)", "RTID(Pelican5@CurrentLevel)"],
+                    ["RTID(Seagull5@CurrentLevel)", "RTID(Pelican5@CurrentLevel)"],
+                    ["RTID(Seagull5@CurrentLevel)", "RTID(Pelican5@CurrentLevel)", "RTID(Seagull1@CurrentLevel)", "RTID(Pelican1@CurrentLevel)"],
+                    ["RTID(Seagull5@CurrentLevel)", "RTID(Pelican5@CurrentLevel)", "RTID(Seagull1@CurrentLevel)", "RTID(Pelican1@CurrentLevel)"],
+                    ["RTID(PlantFoodSpawner2@CurrentLevel)", "RTID(Seagull5@CurrentLevel)", "RTID(Pelican5@CurrentLevel)", "RTID(Seagull2@CurrentLevel)", "RTID(Pelican2@CurrentLevel)"],
+                    ["RTID(Seagull5@CurrentLevel)", "RTID(Pelican5@CurrentLevel)", "RTID(Seagull2@CurrentLevel)", "RTID(Pelican2@CurrentLevel)"],
+                    ["RTID(Seagull5@CurrentLevel)", "RTID(Pelican5@CurrentLevel)", "RTID(Seagull3@CurrentLevel)", "RTID(Pelican3@CurrentLevel)"],
+                    ["RTID(Seagull5@CurrentLevel)", "RTID(Pelican5@CurrentLevel)", "RTID(Seagull3@CurrentLevel)", "RTID(Pelican3@CurrentLevel)"],
+                    ["RTID(Seagull5@CurrentLevel)", "RTID(Pelican5@CurrentLevel)", "RTID(Seagull4@CurrentLevel)", "RTID(Pelican4@CurrentLevel)"],
+                    ["RTID(Seagull5@CurrentLevel)", "RTID(Pelican5@CurrentLevel)", "RTID(Seagull4@CurrentLevel)", "RTID(Pelican4@CurrentLevel)"],
+                    ["RTID(Additional3@CurrentLevel)", "RTID(PlantFoodSpawner3@CurrentLevel)", "RTID(Seagull5@CurrentLevel)", "RTID(Pelican5@CurrentLevel)", "RTID(Seagull5@CurrentLevel)", "RTID(Pelican5@CurrentLevel)"],
+                ]
+            }
+        },
+    {
+        "aliases": [
+            "Seagull1"
+        ],
+        "objclass": "SpawnZombiesJitteredWaveActionProps",
+        "objdata": {
+            "Zombies": [
+                {
+                    "Type": "RTID(seagull@ZombieTypes)"
+                }
+            ]
+        }
+    },
+    {
+        "aliases": [
+            "Seagull2"
+        ],
+        "objclass": "SpawnZombiesJitteredWaveActionProps",
+        "objdata": {
+            "Zombies": [
+                {
+                    "Type": "RTID(seagull@ZombieTypes)"
+                },
+                {
+                    "Type": "RTID(seagull@ZombieTypes)", "Row": 3
+                }
+            ]
+        }
+    },
+    {
+        "aliases": [
+            "Seagull3"
+        ],
+        "objclass": "SpawnZombiesJitteredWaveActionProps",
+        "objdata": {
+            "Zombies": [
+                {
+                    "Type": "RTID(seagull@ZombieTypes)"
+                },
+                {
+                    "Type": "RTID(seagull@ZombieTypes)", "Row": 2
+                },
+                {
+                    "Type": "RTID(seagull@ZombieTypes)", "Row": 4
+                }
+            ]
+        }
+    },
+    {
+        "aliases": [
+            "Seagull4"
+        ],
+        "objclass": "SpawnZombiesJitteredWaveActionProps",
+        "objdata": {
+            "Zombies": [
+                {
+                    "Type": "RTID(seagull@ZombieTypes)"
+                },
+                {
+                    "Type": "RTID(seagull@ZombieTypes)", "Row": 1
+                },
+                {
+                    "Type": "RTID(seagull@ZombieTypes)", "Row": 3
+                },
+                {
+                    "Type": "RTID(seagull@ZombieTypes)", "Row": 5
+                }
+            ]
+        }
+    },
+    {
+        "aliases": [
+            "Seagull5"
+        ],
+        "objclass": "SpawnZombiesJitteredWaveActionProps",
+        "objdata": {
+            "Zombies": [
+                {
+                    "Type": "RTID(seagull@ZombieTypes)", "Row": 1
+                },
+                {
+                    "Type": "RTID(seagull@ZombieTypes)", "Row": 2
+                },
+                {
+                    "Type": "RTID(seagull@ZombieTypes)", "Row": 3
+                },
+                {
+                    "Type": "RTID(seagull@ZombieTypes)", "Row": 4
+                },
+                {
+                    "Type": "RTID(seagull@ZombieTypes)", "Row": 5
+                }
+            ]
+        }
+    },
+    {
+        "aliases": [
+            "Pelican1"
+        ],
+        "objclass": "SpawnZombiesJitteredWaveActionProps",
+        "objdata": {
+            "Zombies": [
+                {
+                    "Type": "RTID(pelican@ZombieTypes)"
+                }
+            ]
+        }
+    },
+    {
+        "aliases": [
+            "Pelican2"
+        ],
+        "objclass": "SpawnZombiesJitteredWaveActionProps",
+        "objdata": {
+            "Zombies": [
+                {
+                    "Type": "RTID(pelican@ZombieTypes)"
+                },
+                {
+                    "Type": "RTID(pelican@ZombieTypes)", "Row": 3
+                }
+            ]
+        }
+    },
+    {
+        "aliases": [
+            "Pelican3"
+        ],
+        "objclass": "SpawnZombiesJitteredWaveActionProps",
+        "objdata": {
+            "Zombies": [
+                {
+                    "Type": "RTID(pelican@ZombieTypes)"
+                },
+                {
+                    "Type": "RTID(pelican@ZombieTypes)", "Row": 2
+                },
+                {
+                    "Type": "RTID(pelican@ZombieTypes)", "Row": 4
+                }
+            ]
+        }
+    },
+    {
+        "aliases": [
+            "Pelican4"
+        ],
+        "objclass": "SpawnZombiesJitteredWaveActionProps",
+        "objdata": {
+            "Zombies": [
+                {
+                    "Type": "RTID(pelican@ZombieTypes)"
+                },
+                {
+                    "Type": "RTID(pelican@ZombieTypes)", "Row": 1
+                },
+                {
+                    "Type": "RTID(pelican@ZombieTypes)", "Row": 3
+                },
+                {
+                    "Type": "RTID(pelican@ZombieTypes)", "Row": 5
+                }
+            ]
+        }
+    },
+    {
+        "aliases": [
+            "Pelican5"
+        ],
+        "objclass": "SpawnZombiesJitteredWaveActionProps",
+        "objdata": {
+            "Zombies": [
+                {
+                    "Type": "RTID(pelican@ZombieTypes)", "Row": 1
+                },
+                {
+                    "Type": "RTID(pelican@ZombieTypes)", "Row": 2
+                },
+                {
+                    "Type": "RTID(pelican@ZombieTypes)", "Row": 3
+                },
+                {
+                    "Type": "RTID(pelican@ZombieTypes)", "Row": 4
+                },
+                {
+                    "Type": "RTID(pelican@ZombieTypes)", "Row": 5
+                }
+            ]
+        }
+    },
+        {
+            "aliases": [
+                "Additional1"
+            ],
+            "objclass": "ModifyConveyorWaveActionProps",
+            "objdata": {
+                "Add": [
+                    {
+					    "MaxWeightFactor": 0.0,
+                        "MinWeightFactor": 0.0,
+                        "Type": "RTID(powerlily@PlantTypes)",
+						            "MaxCount": 1,
+                        "Weight": 75
+                    }
+                ],
+                "Remove": []
+            }
+        },
+		{
+            "aliases": [
+                "Additional2"
+            ],
+            "objclass": "ModifyConveyorWaveActionProps",
+            "objdata": {
+                "Add": [
+                    {
+					    "MaxWeightFactor": 0.0,
+                        "MinWeightFactor": 0.0,
+                        "Type": "RTID(phatbeet@PlantTypes)",
+						"MaxCount": 5,
+                        "Weight": 65
+                    }
+                ],
+                "Remove": [
+                    {
+					    "MaxWeightFactor": 0.0,
+                        "MinWeightFactor": 0.0,
+                        "Type": "RTID(powerlily@PlantTypes)",
+						"MaxCount": 0,
+                        "Weight": 0
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Additional3"
+            ],
+            "objclass": "ModifyConveyorWaveActionProps",
+            "objdata": {
+                "Add": [
+                    {
+					    "MaxWeightFactor": 0.0,
+                        "MinWeightFactor": 0.0,
+                        "Type": "RTID(cherry_bomb@PlantTypes)",
+						"MaxCount": 1,
+                        "Weight": 65
+                    }
+                ],
+                "Remove": [
+                ]
+            }
+        },
+// These blocks handle predetermined Plant Food; currently set up to use basics and their armored variants
+// There are 7 levels of difficulties: - - - D C B A
+		{
+            "aliases": [
+                "PlantFoodSpawner0"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(barrelroller@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PlantFoodSpawner1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(barrelroller@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PlantFoodSpawner2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    0,
+                    1
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(barrelroller@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PlantFoodSpawner3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(barrelroller@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+  ],
+  "version": 1
+}

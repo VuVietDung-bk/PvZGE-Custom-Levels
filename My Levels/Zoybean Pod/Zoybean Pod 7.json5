@@ -1,0 +1,801 @@
+{
+  "Information": {
+    "Author": "hinanarukami",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2025-11-24",
+    "UpdatedAt": "2025-11-24",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "A random quest for a random plant in a random world",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(InitialPlant@CurrentLevel)"
+        ],
+        "Name": "Zoybean Pod - Level 7",
+        "WritenBy": "hinanarukami",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(EightiesStage@LevelModules)",
+        "MusicType": "MiniGame_B"
+      }
+    },
+    {
+      "aliases": [
+        "taco_mc"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(taco_mc@CurrentLevel)",
+        "ZombieBasedOn": "eighties_mc"
+      }
+    },
+    {
+      "aliases": [
+        "taco_mc"
+      ],
+      "objclass": "ZombieProperties",
+      "objdata": {
+		"CannotBeTossedByCitron": false,
+		"WalkSPS": 0.23125,
+		"EatDPS": 100,
+		"Toughness": 250,
+		"JamAttackDamage": 2001,
+		"JamStyle": "jam_8bit",
+		"WavePointCost": 450,
+        "Weight": 4000,
+		"HitRect": "RTID(CommonHitRect@RectangleProps)",
+		"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+      }
+    },
+	{
+      "aliases": [
+        "taco_metalgarg"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(taco_metalgarg@CurrentLevel)",
+        "ZombieBasedOn": "eighties_gargantuar"
+      }
+    },
+    {
+      "aliases": [
+        "taco_metalgarg"
+      ],
+      "objclass": "ZombieProperties",
+      "objdata": {
+		"ZombieSort": "Gargantuar",
+        "CannotBeDraggedByTangleKelp": true,
+        "CannotBeTossedByCitron": true,
+        "CannotBeSwallowedByChomper": true,
+        "CannotCarryPlantfoodsInWaves": true,
+        "WalkSPS": 0.24,
+		"EatDPS": 100,
+		"Toughness": 3600,
+		"LivesInDeepWater": true,
+		"NormalDeathWhenMowed": true,
+		"CannotCarryPlantfoodsInWaves": true,
+		"SmashDamage": 1500,
+		"JamStyle": "jam_8bit",
+		"WavePointCost": 1500,
+		"Weight": 3000,
+      }
+    },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PlantExcludeList": [
+          "glaciershroom"
+        ],
+        "PresetPlantList": [
+                    {
+                        "PlantType": "zoybeanpod",
+                        "Level": -1
+                    }
+                ],
+        "SelectionMethod": "chooser"
+      }
+    },
+    {
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(ZombieDistance@CurrentLevel)",
+            "RTID(SunUsed@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 100,
+            "StartingPoints": 150,
+            "StartingWave": 3,
+            "ZombiePool": [
+              "RTID(eighties_8bit@ZombieTypes)",
+              "RTID(eighties_8bit_armor1@ZombieTypes)",
+              "RTID(eighties_8bit_armor2@ZombieTypes)",
+              "RTID(taco_metalgarg@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 130,
+            "StartingPoints": 150,
+            "StartingWave": 3,
+            "ZombiePool": [
+              "RTID(eighties_8bit@ZombieTypes)",
+              "RTID(eighties_8bit_armor1@ZombieTypes)",
+              "RTID(eighties_8bit_armor2@ZombieTypes)",
+              "RTID(taco_metalgarg@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 170,
+            "StartingPoints": 150,
+            "StartingWave": 2,
+            "ZombiePool": [
+              "RTID(eighties_8bit@ZombieTypes)",
+              "RTID(eighties_8bit_armor1@ZombieTypes)",
+              "RTID(eighties_8bit_armor2@ZombieTypes)",
+              "RTID(taco_metalgarg@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 200,
+            "StartingPoints": 150,
+            "StartingWave": 1,
+            "ZombiePool": [
+              "RTID(eighties_8bit@ZombieTypes)",
+              "RTID(eighties_8bit_armor1@ZombieTypes)",
+              "RTID(eighties_8bit_armor2@ZombieTypes)",
+              "RTID(taco_metalgarg@CurrentLevel)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 8,
+        "WaveCount": 16,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)",
+            "RTID(SpawnArcade8@CurrentLevel)",
+            "RTID(Enter8bitEvent@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Arcade1@CurrentLevel)",
+            "RTID(PlantFoodSpawner0@CurrentLevel)"
+          ],
+          [
+            "RTID(Arcade2@CurrentLevel)"
+          ],
+          [
+            "RTID(Arcade3@CurrentLevel)",
+            "RTID(SpawnArcade8@CurrentLevel)", "RTID(MC1@CurrentLevel)"
+          ],
+          [
+            "RTID(Arcade4@CurrentLevel)",
+            "RTID(PlantFoodSpawner1@CurrentLevel)"
+          ],
+          [
+            
+          ],
+          [
+            "RTID(Arcade5@CurrentLevel)",
+            "RTID(SpawnArcade8@CurrentLevel)"
+          ],
+          [
+            "RTID(PlantFoodSpawner2@CurrentLevel)"
+          ],
+          [
+            "RTID(Arcade5@CurrentLevel)",
+            "RTID(SpawnArcade8@CurrentLevel)", "RTID(MC1@CurrentLevel)"
+          ],
+          [
+            "RTID(Arcade5@CurrentLevel)",
+            "RTID(SpawnArcade8@CurrentLevel)",
+            "RTID(SpawnArcade7@CurrentLevel)"
+          ],
+          [
+            "RTID(SpawnArcade8@CurrentLevel)",
+            "RTID(SpawnArcade7@CurrentLevel)"
+          ],
+          [
+            "RTID(Arcade5@CurrentLevel)",
+            "RTID(SpawnArcade8@CurrentLevel)",
+            "RTID(SpawnArcade7@CurrentLevel)",
+            "RTID(PlantFoodSpawner3@CurrentLevel)"
+          ],
+          [
+            "RTID(SpawnArcade8@CurrentLevel)",
+            "RTID(SpawnArcade7@CurrentLevel)",
+            "RTID(SpawnArcade6@CurrentLevel)"
+          ],
+          [
+            "RTID(Arcade5@CurrentLevel)",
+            "RTID(SpawnArcade8@CurrentLevel)",
+            "RTID(SpawnArcade7@CurrentLevel)",
+            "RTID(SpawnArcade6@CurrentLevel)"
+          ],
+          [
+            "RTID(Arcade5@CurrentLevel)",
+            "RTID(SpawnArcade8@CurrentLevel)",
+            "RTID(SpawnArcade7@CurrentLevel)",
+            "RTID(SpawnArcade6@CurrentLevel)", "RTID(MC3@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_8bit@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_8bit_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Arcade1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_arcade@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Arcade2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_arcade@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties_arcade@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Arcade3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_arcade@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_arcade@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties_arcade@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Arcade4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_arcade@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties_arcade@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties_arcade@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties_arcade@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Arcade5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_arcade@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties_arcade@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_arcade@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties_arcade@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties_arcade@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+			"aliases": [
+				"MC1"
+			],
+			"objclass": "StormZombieSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 8,
+				"ColumnStart": 7,
+				"GroupSize": 2,
+				"TimeBetweenGroups": 2.5,
+				"Type": "sandstorm",
+				"Zombies": [
+          {
+            "Type": "RTID(taco_mc@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(taco_mc@CurrentLevel)"
+          }
+				]
+			}
+		},
+    {
+			"aliases": [
+				"MC2"
+			],
+			"objclass": "StormZombieSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 7,
+				"ColumnStart": 6,
+				"GroupSize": 2,
+				"TimeBetweenGroups": 2.5,
+				"Type": "sandstorm",
+				"Zombies": [
+          {
+            "Type": "RTID(taco_mc@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(taco_mc@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(taco_mc@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(taco_mc@CurrentLevel)"
+          }
+				]
+			}
+		},
+    {
+			"aliases": [
+				"MC3"
+			],
+			"objclass": "StormZombieSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 6,
+				"ColumnStart": 5,
+				"GroupSize": 2,
+				"TimeBetweenGroups": 2.5,
+				"Type": "sandstorm",
+				"Zombies": [
+          {
+            "Type": "RTID(taco_mc@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(taco_mc@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(taco_mc@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(taco_mc@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(taco_mc@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(taco_mc@CurrentLevel)"
+          }
+				]
+			}
+		},
+    {
+      "aliases": [
+        "SpawnArcade8"
+      ],
+      "objclass": "SpawnGravestonesWaveActionProps",
+      "objdata": {
+        "GravestonePool": [
+          {
+            "Count": 1,
+            "Type": "RTID(eightiesarcadecabinet@GridItemTypes)"
+          },
+          {
+            "Count": 1,
+            "Type": "RTID(eightiesarcadecabinet@GridItemTypes)"
+          },
+          {
+            "Count": 1,
+            "Type": "RTID(eightiesarcadecabinet@GridItemTypes)"
+          },
+          {
+            "Count": 1,
+            "Type": "RTID(eightiesarcadecabinet@GridItemTypes)"
+          },
+          {
+            "Count": 1,
+            "Type": "RTID(eightiesarcadecabinet@GridItemTypes)"
+          }
+        ],
+        "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+        "SpawnPositionsPool": [
+          {
+            "mX": 8,
+            "mY": 4
+          },
+          {
+            "mX": 8,
+            "mY": 3
+          },
+          {
+            "mX": 8,
+            "mY": 2
+          },
+          {
+            "mX": 8,
+            "mY": 1
+          },
+          {
+            "mX": 8,
+            "mY": 0
+          }
+        ],
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+      }
+    },
+    {
+      "aliases": [
+        "SpawnArcade7"
+      ],
+      "objclass": "SpawnGravestonesWaveActionProps",
+      "objdata": {
+        "GravestonePool": [
+          {
+            "Count": 1,
+            "Type": "RTID(eightiesarcadecabinet@GridItemTypes)"
+          },
+          {
+            "Count": 1,
+            "Type": "RTID(eightiesarcadecabinet@GridItemTypes)"
+          },
+          {
+            "Count": 1,
+            "Type": "RTID(eightiesarcadecabinet@GridItemTypes)"
+          },
+          {
+            "Count": 1,
+            "Type": "RTID(eightiesarcadecabinet@GridItemTypes)"
+          },
+          {
+            "Count": 1,
+            "Type": "RTID(eightiesarcadecabinet@GridItemTypes)"
+          }
+        ],
+        "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+        "SpawnPositionsPool": [
+          {
+            "mX": 7,
+            "mY": 4
+          },
+          {
+            "mX": 7,
+            "mY": 3
+          },
+          {
+            "mX": 7,
+            "mY": 2
+          },
+          {
+            "mX": 7,
+            "mY": 1
+          },
+          {
+            "mX": 7,
+            "mY": 0
+          }
+        ],
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+      }
+    },
+    {
+      "aliases": [
+        "SpawnArcade6"
+      ],
+      "objclass": "SpawnGravestonesWaveActionProps",
+      "objdata": {
+        "GravestonePool": [
+          {
+            "Count": 1,
+            "Type": "RTID(eightiesarcadecabinet@GridItemTypes)"
+          },
+          {
+            "Count": 1,
+            "Type": "RTID(eightiesarcadecabinet@GridItemTypes)"
+          },
+          {
+            "Count": 1,
+            "Type": "RTID(eightiesarcadecabinet@GridItemTypes)"
+          },
+          {
+            "Count": 1,
+            "Type": "RTID(eightiesarcadecabinet@GridItemTypes)"
+          },
+          {
+            "Count": 1,
+            "Type": "RTID(eightiesarcadecabinet@GridItemTypes)"
+          }
+        ],
+        "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+        "SpawnPositionsPool": [
+          {
+            "mX": 6,
+            "mY": 4
+          },
+          {
+            "mX": 6,
+            "mY": 3
+          },
+          {
+            "mX": 6,
+            "mY": 2
+          },
+          {
+            "mX": 6,
+            "mY": 1
+          },
+          {
+            "mX": 6,
+            "mY": 0
+          }
+        ],
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+      }
+    },
+    {
+      "aliases": [
+        "PlantFoodSpawner0"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_8bit@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PlantFoodSpawner1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_8bit@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PlantFoodSpawner2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_8bit@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PlantFoodSpawner3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_8bit@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Enter8bitEvent"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "NotificationEvents": [
+          "jam_8bit"
+        ]
+      }
+    },
+    {
+      "objclass": "StarChallengeZombieDistanceProps",
+      "objdata": {
+        "TargetDistance": 4.5
+      },
+      "aliases": [
+        "ZombieDistance"
+      ]
+    },
+    {
+      "objclass": "StarChallengeSunUsedProps",
+      "objdata": {
+        "MaximumSun": 3000
+      },
+      "aliases": [
+        "SunUsed"
+      ]
+    },
+    {
+      "objclass": "InitialPlantProperties",
+      "objdata": {
+        "InitialPlantPlacements": [
+          {
+            "TypeName": "zoybeanpod",
+            "GridX": 0,
+            "GridY": 0
+          },
+          {
+            "TypeName": "zoybeanpod",
+            "GridX": 0,
+            "GridY": 1
+          },
+          {
+            "TypeName": "zoybeanpod",
+            "GridX": 0,
+            "GridY": 2
+          },
+          {
+            "TypeName": "zoybeanpod",
+            "GridX": 0,
+            "GridY": 3
+          },
+          {
+            "TypeName": "zoybeanpod",
+            "GridX": 0,
+            "GridY": 4
+          }
+        ]
+      },
+      "aliases": [
+        "InitialPlant"
+      ]
+    }
+  ],
+  "version": 1
+}

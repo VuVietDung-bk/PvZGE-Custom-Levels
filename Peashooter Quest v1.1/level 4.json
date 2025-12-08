@@ -1,0 +1,344 @@
+{
+	"#comment": "can you survive with just one Peashooter? :scream:",
+	"Information": {
+		"name": {
+			"en": "Peashooter quest level 4",
+			"zh-CN": ""
+		},
+		"Author": "BlockAgent007",
+		"Introduction": {
+			"en": "",
+			"zh-CN": ""
+		},
+		"GameVersion": "",
+		"Version": "1.0",
+		"CreatedAt": "2025-09-30",
+		"UpdatedAt": "",
+		"Difficulty": "Hard",
+		"Category": "Survival"
+	},
+	"objects":[
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "<PLAYERNAME>'s Attempt to Get Peashooter!",
+				"LevelNumber": 4,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+        				"RTID(ZombiesDeadWinCon@LevelModules)",
+        				"RTID(DefaultZombieWinCondition@LevelModules)",
+        				"RTID(NewWaves@CurrentLevel)",
+						"RTID(StandardIntro@LevelModules)",
+						"RTID(ModernMowers@LevelModules)",
+						"RTID(Rails@CurrentLevel)",
+						"RTID(AllByOneself@CurrentLevel)"
+      				],
+				"Name": "Peashooter - Level 4",
+				"WritenBy": "BlockAgent007",
+				"MusicType": "MiniGame_B",
+				"NormalPresentTable": "egypt_normal_01",
+      				"ShinyPresentTable": "egypt_shiny_01",
+				"StageModule": "RTID(TutorialStage@LevelModules)"
+			}
+		},
+		{
+			"aliases": [
+				"AllByOneself"
+			],
+			"objclass": "FutureMinigameProperties",
+			"objdata": {
+				"Position": {
+					"mX": 0,
+					"mY": 2
+				},
+				"PlantUpgradeList": [
+					{
+						"Type": "peashooter",
+						"FullPoint": 300,
+						"UpgradeDetails": {
+							"DamageScale": 1,
+							"ShootIntervalScale": 1
+						}
+					},
+					{
+						"Type": "peashooter",
+						"FullPoint": 700,
+						"UpgradeDetails": {
+							"DamageScale": 1,
+							"ShootIntervalScale": 0.66
+						}
+					},
+					{
+						"Type": "peashooter",
+						"FullPoint": 1000,
+						"UpgradeDetails": {
+							"DamageScale": 1,
+							"ShootIntervalScale": 0.33
+						}
+					},
+					{
+						"Type": "peashooter",
+						"FullPoint": 2200,
+						"UpgradeDetails": {
+							"DamageScale": 1,
+							"ShootIntervalScale": 0.15
+						}
+					},
+					{
+						"Type": "peashooter",
+						"FullPoint": 1200,
+						"UpgradeDetails": {
+							"DamageScale": 8,
+							"ShootIntervalScale": 1
+						}
+					},
+					{
+						"Type": "peashooter",
+						"FullPoint": 2500,
+						"UpgradeDetails": {
+							"DamageScale": 15,
+							"ShootIntervalScale": 1.25
+						}
+					},
+					{
+						"Type": "peashooter",
+						"FullPoint": 5000,
+						"UpgradeDetails": {
+							"DamageScale": 3,
+							"ShootIntervalScale": 0.1
+						}
+					},
+					{
+						"Type": "peashooter",
+						"UpgradeDetails": {
+							"DamageScale": 5,
+							"ShootIntervalScale": 0.1
+						}
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Rails"
+			],
+			"objclass": "RailcartProperties",
+			"objdata": {
+				"RailcartType": "railcart_modern",
+				"Rails": [
+					{
+						"Column": 0,
+						"RowStart": 0,
+						"RowEnd": 4
+					}
+				],
+				"Railcarts": [
+					{
+						"Column": 0,
+						"Row": 2
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Conehead"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(ConeheadProps@CurrentLevel)",
+				"ZombieBasedOn": "tutorial"
+			}
+		},
+		{
+			"aliases": [
+				"ConeheadProps"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.185,
+				"Toughness": 190,
+				"EatDPS": 100,
+				"StartingArmors": ["modern_armor1"],
+				"WavePointCost": 301,
+				"Weight": 3000,
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"Buckethead"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(BucketheadProps@CurrentLevel)",
+				"ZombieBasedOn": "tutorial"
+			}
+		},
+		{
+			"aliases": [
+				"BucketheadProps"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.185,
+				"Toughness": 190,
+				"EatDPS": 100,
+				"StartingArmors": ["modern_armor2"],
+				"WavePointCost": 650,
+				"Weight": 3000,
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"NewWaves"
+			],
+			"objclass": "WaveManagerModuleProperties",
+    		"objdata": {
+        		"DynamicZombies": [
+        			{},
+        			{},
+        			{},
+        			{
+            			"PointIncrementPerWave": 40,
+            			"StartingPoints": 120,
+            			"StartingWave": 0,
+            			"ZombiePool": [
+            				"RTID(tutorial@ZombieTypes)"
+            			]
+        			},
+        			{
+            			"PointIncrementPerWave": 50,
+            			"StartingPoints": 150,
+            			"StartingWave": 0,
+            			"ZombiePool": [
+							"RTID(tutorial@ZombieTypes)",
+							"RTID(Conehead@CurrentLevel)"
+            			]
+        			},
+        			{
+            			"PointIncrementPerWave": 70,
+            			"StartingPoints": 200,
+            			"StartingWave": 0,
+            			"ZombiePool": [
+							"RTID(tutorial@ZombieTypes)",
+							"RTID(Conehead@CurrentLevel)"
+            			]
+        			},
+        			{
+            			"PointIncrementPerWave": 80,
+            			"StartingPoints": 300,
+            			"StartingWave": 0,
+            			"ZombiePool": [
+							"RTID(tutorial@ZombieTypes)",
+							"RTID(Conehead@CurrentLevel)",
+							"RTID(Buckethead@CurrentLevel)"
+            			]
+        			}
+        		],
+        		"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+    		}
+		},
+		{
+			"aliases": [
+				"NewWaves"
+			],
+			"objclass": "WaveManagerModuleProperties",
+    		"objdata": {
+        		"DynamicZombies": [
+        			{},
+        			{},
+        			{},
+        			{
+            			"PointIncrementPerWave": 50,
+            			"StartingPoints": 200,
+            			"StartingWave": 12,
+            			"ZombiePool": [
+            				"RTID(tutorial@ZombieTypes)"
+            			]
+        			},
+        			{
+            			"PointIncrementPerWave": 80,
+            			"StartingPoints": 300,
+            			"StartingWave": 11,
+            			"ZombiePool": [
+							"RTID(tutorial@ZombieTypes)",
+							"RTID(tutorial_armor1@ZombieTypes)"
+            			]
+        			},
+        			{
+            			"PointIncrementPerWave": 100,
+            			"StartingPoints": 400,
+            			"StartingWave": 10,
+            			"ZombiePool": [
+							"RTID(tutorial@ZombieTypes)",
+							"RTID(tutorial_armor1@ZombieTypes)",
+							"RTID(tutorial_armor2@ZombieTypes)"
+            			]
+        			},
+        			{
+            			"PointIncrementPerWave": 125,
+            			"StartingPoints": 500,
+            			"StartingWave": 10,
+            			"ZombiePool": [
+							"RTID(tutorial@ZombieTypes)",
+							"RTID(tutorial_armor1@ZombieTypes)",
+							"RTID(tutorial_armor2@ZombieTypes)"
+            			]
+        			}
+        		],
+        		"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+    		}
+		},
+		{
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 8,
+                "WaveCount": 16,
+                "ZombieCountdownFirstWaveSecs" : 1,
+				"MinNextWaveHealthPercentage": 0,
+				"MaxNextWaveHealthPercentage": 0.1,
+                "Waves": [
+                    ["RTID(SlowWave@CurrentLevel)"],
+                    [],
+                    [],
+                    [],
+                    [],
+					[],
+					["RTID(SlowWave@CurrentLevel)"],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[]
+                ]
+            }
+        },
+		{
+			"aliases":[
+				"SlowWave"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [],
+				"MustKillAllToNextWave": true
+			}
+		}
+	],
+	"version": 1
+}

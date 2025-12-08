@@ -1,0 +1,615 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "maido",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2024-12-06",
+    "UpdatedAt": "2024-12-06",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "???",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		  "RTID(StandardIntro@LevelModules)",
+		  "RTID(ChallengeModule@CurrentLevel)",
+		  "RTID(ModernMowers@LevelModules)",
+		  "RTID(Speakers@CurrentLevel)",
+		  "RTID(FutureLinkedTileGroups@CurrentLevel)",
+		  "RTID(Gravestones@CurrentLevel)",
+		  "RTID(FastSunDropper@LevelModules)",
+		  "RTID(SeedBank@CurrentLevel)",
+        ],
+        "Name": "Unknown Space",
+        "NameMultiLanguage": {
+          "en": "Unknown Space",
+          "zh": "功夫世界-沙盒"
+        },
+        "WritenBy": "maido",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(PersuitStage@LevelModules)"
+      }
+    },
+	    {
+            "aliases": [
+                "Speakers"
+            ],
+            "objclass": "GravestoneProperties",
+            "objdata": {
+                "ForceSpawnData": [
+                    {
+                        "GridX": 4,
+                        "GridY": 0,
+                        "TypeName": "speaker"
+                    },
+                    {
+                        "GridX": 5,
+                        "GridY": 1,
+                        "TypeName": "speaker"
+                    },
+                    {
+                        "GridX": 4,
+                        "GridY": 4,
+                        "TypeName": "speaker"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "FutureLinkedTileGroups"
+            ],
+            "objclass": "PowerTileProperties",
+            "objdata": {
+                "LinkedTiles": [
+                    {
+                        "Group": "beta",
+                        "Location": {
+                            "mX": 5,
+                            "mY": 2
+                        },
+                        "PropagationDelay": 0.25
+                    },
+                    {
+                        "Group": "beta",
+                        "Location": {
+                            "mX": 2,
+                            "mY": 0
+                        },
+                        "PropagationDelay": 0.25
+                    },					
+					{
+                        "Group": "beta",
+                        "Location": {
+                            "mX": 2,
+                            "mY": 4
+                        },
+                        "PropagationDelay": 0.25
+					},				
+                ]
+            }
+        },
+    {
+			"aliases": [
+				"Gravestones"
+			],
+			"objclass": "GravestoneProperties",
+			"objdata": {
+				"GravestoneCount": 7,
+				"SpawnColumnEnd": 6,
+				"SpawnColumnStart": 3
+		}
+    },
+///CUSTOM NMT ZOMBIES
+    {
+      "aliases": [
+        "custom_zomboss"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(custom_zomboss@CurrentLevel)",
+        "ZombieBasedOn": "zombossmech_modern1"
+      }
+    },
+    {
+			"aliases": [
+				"custom_zomboss"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Zomboss",
+				"CannotBeDetectedByPowerToss": true,
+				"CannotBeDraggedByTangleKelp": true,
+				"CannotBeTossedByCitron": true,
+				"CannotBeDetectedBySapfling": true,
+				"CannotBeSwallowedByChomper": true,
+				"ChiliStunDurationMult": 0,
+				"CannotCarryPlantfoodsInWaves": true,
+				"FoeEatDamageReflectPct": 0.5,
+				"LivesInDeepWater": true,
+				"WalkSPS": 0.185,
+				"EatDPS": 100,
+				"Toughness": 190,
+				"ImmuneToGarlic": true,
+				"WavePointCost": 100,
+				"Weight": 0,
+				"IdleColumn": 6,
+				"HitRect": "RTID(ZombossMechHitRect@RectangleProps)",
+				"AttackRect": "RTID(ZombossMechAttackRect@RectangleProps)",
+				"ZombossMechLevel": 0,
+				"ZombossStages": [
+					{
+						"Actions": [
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"cowboy",
+										"tutorial_armor1",
+										"dark_armor3",
+										"pirate_armor2",
+										"mummy_armor4",
+										"kongfu_drink",
+										"tomb_raiser",
+										"kongfu_hammer",
+										"explorer",
+										"pharaoh",
+										"pelican",
+										"prospector",
+										"iceage_hunter",
+										"west_bull",
+										"dino_bully",
+										"chicken_farmer",
+										"modern_newspaper",
+										"modern_allstar",
+										"mech_cone",
+										"beach_surfer",
+									],
+									"pointMin": 3000,
+									"pointMax": 4000
+								},
+								"weight": 14,
+								"repeatMax": 2,
+								"repeatMin": 2,
+								"plantfoodchance": 0.4
+							},
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 3,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 4,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 4,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 0,
+						"DamageIndexHalf": 0,
+						"HitPoints": 20000,
+						"MaxIdleTime": 0.4,
+						"MinIdleTime": 0.3,
+						"StunDamageScale": 1.0,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 2
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 3,
+								"repeatMax": 2,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"tutorial_armor4",
+										"pirate_armor4",
+										"mummy_armor4",
+										"iceage_armor3",
+										"dark_armor3",
+										"dino_armor4",
+										"beach_armor4",
+										"beach_fem_armor4",
+										"dark_wizard",
+										"dark_juggler",
+										"pharaoh",
+										"dino_bully",
+										"monk_nunchaku",
+										"beach_octopus",
+										"barrelroller",
+										"iceage_hunter",
+										"abbot_torch",
+										"abbot_imp",
+										"lostcity_excavator",
+										"lostcity_jane",
+										"lostcity_impporter",
+										"newspaper_veteran",
+										"modern_allstar",
+										"football_mech",
+										"beach_fisherman",
+										"beach_surfer_veteran",
+										"kongfu_bomb",
+										"iceage_weaselhoarder",
+										"future_protector",
+										"future_jetpack_veteran",
+										"tutorial_gargantuar",
+										"future_gargantuar",
+									],
+									"pointMin": 4500,
+									"pointMax": 6000,
+									"plantfoodchance": 0.4
+								},
+								"weight": 12,
+								"repeatMax": 2,
+								"repeatMin": 2
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 6,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 12,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.1,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 3,
+						"DamageIndexHalf": 3,
+						"HitPoints": 27000,
+						"MaxIdleTime": 0.3,
+						"MinIdleTime": 0.2,
+						"StunDamageScale": 1.0,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 1.5
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 3,
+								"repeatMax": 2,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"tutorial_gargantuar",
+										"vase_gargantuar",
+										"pirate_gargantuar",
+										"cowboy_gargantuar",
+										"dark_gargantuar",
+										"future_gargantuar",
+										"beach_gargantuar",
+										"pirate_gargantuar",
+										"iceage_gargantuar",
+										"lostcity_gargantuar",
+										"dino_gargantuar",
+										"eighties_gargantuar",
+									],
+									"pointMin": 6000,
+									"pointMax": 9000,
+									"plantfoodchance": 0.6
+								},
+								"weight": 16,
+								"repeatMax": 2,
+								"repeatMin": 2
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 6,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 12,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.25,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 6,
+						"DamageIndexHalf": 6,
+						"HitPoints": 36000,
+						"MaxIdleTime": 0.2,
+						"MinIdleTime": 0.1,
+						"StunDamageScale": 1.0,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 1
+					}
+				]
+			}
+		},
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+	    "ExcludeListSunProducers": "false",
+        "PresetPlantList": [],
+		"PlantExcludeList": ["solarsage",],
+        "SelectionMethod": "chooser"
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 10,
+        "WaveCount": 40,
+        "Waves": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+          []
+        ]
+      }
+    },
+//This is the scripted Zombie Ambush setup, currently for waves 10, 20, 30, and 40
+       {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 2,
+				"SuppressFlagZombie": true,
+                "SpawnColEnd": 9,
+                "SpawnColStart": 6,
+                "WaveCount": 5,
+                "WaveSpendingPointIncrement": 50,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+				    ["RTID(Wave1@CurrentLevel)"],
+                    ["RTID(Wave2@CurrentLevel)"],
+                    ["RTID(Wave3@CurrentLevel)"],
+                    ["RTID(Wave4@CurrentLevel)"],
+                    ["RTID(Wave5@CurrentLevel)","RTID(HUGE_WAVE@CurrentLevel)",],
+                ]
+            }
+        },
+///WAVES	
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(tutorial@ZombieTypes)"},
+		  {"Type": "RTID(future@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(eighties_armor1@ZombieTypes)"},
+		  {"Type": "RTID(mummy@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(pirate_armor2@ZombieTypes)"},
+		  {"Type": "RTID(dark_armor3@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(cowboy_armor4@ZombieTypes)"},
+		  {"Type": "RTID(lostcity_armor2@ZombieTypes)"},
+		  {"Type": "RTID(iceage_armor3@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+        "aliases": [
+                "Wave5"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 0.8,
+                    "Min": 0.8
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": true,
+                "Events": [
+                    "RTID(Wave5prop@CurrentLevel)"
+                ]
+            }
+        },
+        {
+             "aliases": [
+                "Wave5prop"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "4",
+                        "Column": "7",
+                        "Type": "RTID(custom_zomboss@CurrentLevel)"
+                    }
+                ],
+                "MustKillAllToNextWave": true
+            }
+        },
+		{
+          "aliases": ["HUGE_WAVE"],
+            "objclass": "WaveWarningProps",
+            "objdata": {
+            "LabelR": 230,
+            "LabelG": 0,
+            "LabelB": 0,
+            "LabelAInit": 4,
+            "OutLineR": 0,
+            "OutLineG": 0,
+            "OutLineB": 0,
+            "String": "ZOMBOT RIFT-RAFT ROGUE-A-TRON!",
+            "Sound": "Hugewave",
+            "LabelTargetScale": 0.5,
+            "LabelInitScale": 4,
+            "Duration": 3.5,
+            "InitTime": 0.33,
+            }
+        },
+///WAVES END
+  ],
+  "version": 1
+}

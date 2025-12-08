@@ -1,0 +1,545 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "maido",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2024-12-06",
+    "UpdatedAt": "2024-12-06",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "<PLAYERNAME>'s Attempt to Survive Hallow's Eve!",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		  "RTID(StandardIntro@LevelModules)",
+		  "RTID(ChallengeModule@CurrentLevel)",
+		  "RTID(ModernMowers@LevelModules)",
+		  "RTID(Gravestones@CurrentLevel)",
+		  "RTID(ZombiePotions@CurrentLevel)",
+          "RTID(ConveyorBelt@CurrentLevel)"
+        ],
+        "Name": "Hallow's Eve - Night 3",
+        "NameMultiLanguage": {
+          "en": "Hallow's Eve - Night 3",
+          "zh": "Hallow's Eve - Night 3"
+        },
+        "WritenBy": "maido",
+		"MusicType": "MiniGame_A",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(HalloweenStage@LevelModules)"
+      }
+    },
+	{
+			"aliases": [
+				"Gravestones"
+			],
+			"objclass": "GravestoneProperties",
+			"objdata": {
+				"GravestoneCount": 5,
+				"SpawnColumnEnd": 9,
+				"SpawnColumnStart": 6
+		}
+    },
+        {
+            "aliases": [
+                "ZombiePotions"
+            ],
+            "objclass": "ZombiePotionModuleProperties",
+            "objdata": {
+                "InitialPotionCount": 4,
+                "MaxPotionCount": 8,
+                "PotionSpawnTimer": {
+                    "Max": 15,
+                    "Min": 10
+                },
+                "PotionTypes": [
+					"zombiepotion_invisibility"
+                ]
+            }
+        },
+	    {
+            "aliases": [
+                "ConveyorBelt"
+            ],
+            "objclass": "ConveyorSeedBankProperties",
+            "objdata": {
+                "DropDelayConditions": [
+                    {
+                        "Delay": 2.5,
+                        "MaxPackets": 0
+                    },
+                    {
+                        "Delay": 4,
+                        "MaxPackets": 2
+                    },
+                    {
+                        "Delay": 6,
+                        "MaxPackets": 4
+                    },
+                    {
+                        "Delay": 9,
+                        "MaxPackets": 8
+                    }
+                ],
+                "InitialPlantList": [
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 3,
+                        "PlantType": "garlic",
+                        "Weight": 85
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 5,
+                        "PlantType": "pumpkin",
+                        "Weight": 75
+                    },	
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 6,
+                        "PlantType": "chomper",
+                        "Weight": 90
+                    },	
+                    {
+					    "MaxWeightFactor": 0,
+						"MaxCount": 12,
+                        "PlantType": "guacodile",
+                        "Weight": 75
+                    },					
+					{
+					    "MaxWeightFactor": 0,
+					    "MaxCount": 8,
+                        "PlantType": "spikeweed",
+                        "Weight": 75
+                    },	
+					{
+					    "MaxWeightFactor": 0,
+					    "MaxCount": 1,
+                        "PlantType": "plantern",
+                        "Weight": 75
+                    },
+					{
+					    "MaxWeightFactor": 0,
+					    "MaxCount": 1,
+                        "PlantType": "gravebuster",
+                        "Weight": 85
+                    },
+					{
+					    "MaxWeightFactor": 0,
+					    "MaxCount": 2,
+                        "PlantType": "ghostpepper",
+                        "Weight": 75
+                    },
+                ],
+                "SpeedConditions": [
+                    {
+                        "MaxPackets": 0,
+                        "Speed": 100
+                    }
+                ]
+            }
+        },
+	{
+			"aliases": [
+			"ChallengeModule"
+		],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+			"BeatTheLevel"
+		],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+				"Survive the haunt-ifying Hallow's Eve assault",
+				"TIPS: Zombies reveal themselves when eating",
+				],
+				"DescriptionsMultiLanguage": [
+					{
+					"en": "123",
+					"zh": "112233"
+					}
+				]
+			}
+	    },	
+    	
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 100, // Difficulty D, easiest
+            "StartingPoints": 100,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(halloween@ZombieTypes)",
+                    "RTID(halloween_armor1@ZombieTypes)",
+                    "RTID(halloween_armor2@ZombieTypes)",
+					"RTID(dark_armor3@ZombieTypes)",
+					"RTID(dark_wizard@ZombieTypes)",
+					"RTID(tomb_raiser@ZombieTypes)",
+					"RTID(pirate_captain@ZombieTypes)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 125, // Difficulty C, normal
+            "StartingPoints": 125,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(halloween@ZombieTypes)",
+                    "RTID(halloween_armor1@ZombieTypes)",
+                    "RTID(halloween_armor2@ZombieTypes)",
+					"RTID(dark_armor3@ZombieTypes)",
+					"RTID(dark_wizard@ZombieTypes)",
+					"RTID(tomb_raiser@ZombieTypes)",
+					"RTID(pirate_captain@ZombieTypes)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 150, // Difficulty B, advanced
+            "StartingPoints": 150,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(halloween@ZombieTypes)",
+                    "RTID(halloween_armor1@ZombieTypes)",
+                    "RTID(halloween_armor2@ZombieTypes)",
+					"RTID(dark_armor3@ZombieTypes)",
+					"RTID(dark_wizard@ZombieTypes)",
+					"RTID(tomb_raiser@ZombieTypes)",
+					"RTID(pirate_captain@ZombieTypes)",
+            ]
+          },
+          {
+            "PointIncrementPerWave": 175, // Difficulty AAAAAAAAA
+            "StartingPoints": 175,
+            "StartingWave": 0,
+            "ZombiePool": [
+					"RTID(halloween@ZombieTypes)",
+                    "RTID(halloween_armor1@ZombieTypes)",
+                    "RTID(halloween_armor2@ZombieTypes)",
+					"RTID(dark_armor3@ZombieTypes)",
+					"RTID(dark_wizard@ZombieTypes)",
+					"RTID(tomb_raiser@ZombieTypes)",
+					"RTID(pirate_captain@ZombieTypes)",
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 10,
+        "WaveCount": 40,
+        "Waves": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+          []
+        ]
+      }
+    },
+//This is the scripted Zombie Ambush setup, currently for waves 10, 20, 30, and 40
+       {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 8,
+                "SpawnColEnd": 9,
+                "SpawnColStart": 6,
+                "WaveCount": 16,
+                "WaveSpendingPointIncrement": 50,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    ["RTID(Wave1@CurrentLevel)"],
+                    ["RTID(Wave2@CurrentLevel)","RTID(NecromancyAnubis@CurrentLevel)"],
+                    ["RTID(Wave3@CurrentLevel)","RTID(NecromancyMummySmall@CurrentLevel)"],
+                    ["RTID(Wave4@CurrentLevel)","RTID(NecromancyAnubis@CurrentLevel)"],
+                    ["RTID(Wave5@CurrentLevel)","RTID(SpawnTwoTutorialGravestones@CurrentLevel)",],
+                    ["RTID(Wave6@CurrentLevel)","RTID(NecromancyMummySmall@CurrentLevel)"],
+                    ["RTID(Wave7@CurrentLevel)"],
+                    ["RTID(Wave8@CurrentLevel)","RTID(SpawnTwoTutorialGravestones@CurrentLevel)","RTID(NecromancyMummySmall@CurrentLevel)"],
+                    ["RTID(Wave9@CurrentLevel)"],
+                    ["RTID(Wave10@CurrentLevel)","RTID(SpawnFourTutorialGravestones@CurrentLevel)","RTID(NecromancyMummyMid@CurrentLevel)"],
+					["RTID(Wave11@CurrentLevel)"],
+					["RTID(Wave12@CurrentLevel)","RTID(SpawnFourTutorialGravestones@CurrentLevel)",],
+					["RTID(Wave13@CurrentLevel)","RTID(NecromancyMummyMid@CurrentLevel)"],
+					["RTID(Wave14@CurrentLevel)"],
+					["RTID(Wave15@CurrentLevel)"],
+					["RTID(Wave16@CurrentLevel)","RTID(SpawnFourTutorialGravestones@CurrentLevel)","RTID(NecromancyMummyMid@CurrentLevel)"],
+                ]
+            }
+        },
+///WAVES	
+	{
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(tomb_raiser@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(tomb_raiser@ZombieTypes)"},
+		  {"Type": "RTID(tomb_raiser@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+		  {"Type": "RTID(halloween_armor2@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+		  {"Type": "RTID(halloween_armor2@ZombieTypes)"},
+        ]
+      }
+    },
+	    {
+            "aliases": [
+                "SpawnTwoTutorialGravestones"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {"Count": 2, "Type": "RTID(gravestone@GridItemTypes)"},
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+				"SpawnPositionsPool": [
+				    {"mX": 3,"mY": 0},
+                    {"mX": 3,"mY": 1},
+                    {"mX": 3,"mY": 2},
+					{"mX": 3,"mY": 3},
+                    {"mX": 3,"mY": 4},
+                    {"mX": 4,"mY": 0},
+                    {"mX": 4,"mY": 1},
+                    {"mX": 4,"mY": 0},
+                    {"mX": 4,"mY": 1},
+                    {"mX": 4,"mY": 2},
+					{"mX": 5,"mY": 0},
+                    {"mX": 5,"mY": 1},
+                    {"mX": 5,"mY": 2},
+					{"mX": 5,"mY": 3},
+                    {"mX": 5,"mY": 4},
+					{"mX": 6,"mY": 0},
+                    {"mX": 6,"mY": 1},
+                    {"mX": 6,"mY": 2},
+					{"mX": 6,"mY": 3},
+                    {"mX": 6,"mY": 4},
+					{"mX": 7,"mY": 0},
+                    {"mX": 7,"mY": 1},
+                    {"mX": 7,"mY": 2},
+					{"mX": 7,"mY": 3},
+                    {"mX": 7,"mY": 4},
+					{"mX": 8,"mY": 0},
+                    {"mX": 8,"mY": 1},
+                    {"mX": 8,"mY": 2},
+					{"mX": 8,"mY": 3},
+                    {"mX": 8,"mY": 4},						
+					],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+            }
+        },
+		{
+            "aliases": [
+                "SpawnFourTutorialGravestones"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {"Count": 4, "Type": "RTID(gravestone@GridItemTypes)"},
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+				"SpawnPositionsPool": [
+				    {"mX": 3,"mY": 0},
+                    {"mX": 3,"mY": 1},
+                    {"mX": 3,"mY": 2},
+					{"mX": 3,"mY": 3},
+                    {"mX": 3,"mY": 4},
+                    {"mX": 4,"mY": 0},
+                    {"mX": 4,"mY": 1},
+                    {"mX": 4,"mY": 0},
+                    {"mX": 4,"mY": 1},
+                    {"mX": 4,"mY": 2},
+					{"mX": 5,"mY": 0},
+                    {"mX": 5,"mY": 1},
+                    {"mX": 5,"mY": 2},
+					{"mX": 5,"mY": 3},
+                    {"mX": 5,"mY": 4},
+					{"mX": 6,"mY": 0},
+                    {"mX": 6,"mY": 1},
+                    {"mX": 6,"mY": 2},
+					{"mX": 6,"mY": 3},
+                    {"mX": 6,"mY": 4},
+					{"mX": 7,"mY": 0},
+                    {"mX": 7,"mY": 1},
+                    {"mX": 7,"mY": 2},
+					{"mX": 7,"mY": 3},
+                    {"mX": 7,"mY": 4},
+					{"mX": 8,"mY": 0},
+                    {"mX": 8,"mY": 1},
+                    {"mX": 8,"mY": 2},
+					{"mX": 8,"mY": 3},
+                    {"mX": 8,"mY": 4},							
+					],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+            }
+        },
+	    {
+            "aliases": [
+                "NecromancyMummySmall"
+            ],
+            "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+            "objdata": {
+                "AdditionalPlantfood": "0",
+                "GridTypes": [
+                    "RTID(gravestone@GridItemTypes)",
+                ],
+                "ZombieSpawnWaitTime": 1,
+                "Zombies": [
+                    {"Type": "RTID(egypt_imp@ZombieTypes)"},
+					{"Type": "RTID(egypt_imp@ZombieTypes)"},
+					{"Type": "RTID(egypt_imp@ZombieTypes)"},
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "NecromancyMummyMid"
+            ],
+            "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+            "objdata": {
+                "AdditionalPlantfood": "0",
+                "GridTypes": [
+                    "RTID(gravestone_west@GridItemTypes)",
+                ],
+                "ZombieSpawnWaitTime": 1,
+                "Zombies": [
+                    {"Type": "RTID(pirate_captain@ZombieTypes)"},
+					{"Type": "RTID(dark_wizard@ZombieTypes)"},
+					{"Type": "RTID(mummy_armor2@ZombieTypes)"},
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "NecromancyAnubis"
+            ],
+            "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+            "objdata": {
+                "AdditionalPlantfood": "0",
+                "GridTypes": [
+                    "RTID(gravestone_egypt@GridItemTypes)",
+                ],
+                "ZombieSpawnWaitTime": 1,
+                "Zombies": [
+                    {"Type": "RTID(tomb_raiser@ZombieTypes)"},
+					{"Type": "RTID(tomb_raiser@ZombieTypes)"},
+                ]
+            }
+        },
+///WAVES END
+  ],
+  "version": 1
+}

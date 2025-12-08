@@ -1,0 +1,199 @@
+{
+	"#comment": "show what you've learned :)",
+	"Information": {
+		"name": {
+			"en": "",
+			"zh-CN": ""
+		},
+		"Author": "BlockAgent007",
+		"Introduction": {
+			"en": "",
+			"zh-CN": ""
+		},
+		"GameVersion": "",
+		"Version": "1.0",
+		"CreatedAt": "2025-09-10",
+		"UpdatedAt": "",
+		"Difficulty": "Medium",
+		"Category": "Survival"
+	},
+	"objects":[
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "<PLAYERNAME>'s Attempt to Get Sunflower!",
+				"LevelNumber": 4,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+        				"RTID(ZombiesDeadWinCon@LevelModules)",
+        				"RTID(DefaultZombieWinCondition@LevelModules)",
+        				"RTID(NewWaves@CurrentLevel)",
+        				"RTID(SeedBank@CurrentLevel)",
+						"RTID(StandardIntro@LevelModules)",
+						"RTID(DefaultSunDropper@LevelModules)",
+						"RTID(ModernMowers@LevelModules)"
+      				],
+				"Name": "Sunflower - Level 4",
+				"WritenBy": "BlockAgent007",
+				"NormalPresentTable": "egypt_normal_01",
+      				"ShinyPresentTable": "egypt_shiny_01",
+				"StageModule": "RTID(TutorialStage@LevelModules)"
+			}
+		},
+		{
+			"aliases": [
+				"SeedBank"
+			],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+                "SuppressObjectiveTip": true,
+				"UnlockAll": true,
+				"PresetPlantList": [
+					{
+						"PlantType": "sunflower",
+						"Level": -1
+					},
+					{
+						"PlantType": "peashooter",
+						"Level": -1
+					}
+				],
+				"SelectionMethod": "preset"
+			}
+		},
+		{
+			"aliases": [
+				"NewWaves"
+			],
+			"objclass": "WaveManagerModuleProperties",
+    		"objdata": {
+        		"DynamicZombies": [
+        			{},
+        			{},
+        			{},
+        			{
+            			"PointIncrementPerWave": 60,
+            			"StartingPoints": 50,
+            			"StartingWave": 0,
+            			"ZombiePool": [
+            				"RTID(tutorial@ZombieTypes)"
+            			]
+        			},
+        			{
+            			"PointIncrementPerWave": 65,
+            			"StartingPoints": 100,
+            			"StartingWave": 0,
+            			"ZombiePool": [
+							"RTID(tutorial@ZombieTypes)",
+							"RTID(tutorial_armor1@ZombieTypes)"
+            			]
+        			},
+        			{
+            			"PointIncrementPerWave": 75,
+            			"StartingPoints": 110,
+            			"StartingWave": 0,
+            			"ZombiePool": [
+							"RTID(tutorial@ZombieTypes)",
+							"RTID(tutorial_armor1@ZombieTypes)",
+							"RTID(tutorial_armor2@ZombieTypes)"
+            			]
+        			},
+        			{
+            			"PointIncrementPerWave": 85,
+            			"StartingPoints": 120,
+            			"StartingWave": 0,
+            			"ZombiePool": [
+							"RTID(tutorial@ZombieTypes)",
+							"RTID(tutorial_armor1@ZombieTypes)",
+							"RTID(tutorial_armor2@ZombieTypes)"
+            			]
+        			}
+        		],
+        		"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+    		}
+		},
+		{
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 6,
+                "WaveCount": 18,
+                "Waves": [
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+					["RTID(ObliterateFront1@CurrentLevel)"],
+					[],
+					[],
+					["RTID(ObliterateBack1@CurrentLevel)"],
+					[],
+					[],
+					["RTID(ObliterateFront2@CurrentLevel)"],
+					[],
+					[],
+					["RTID(ObliterateBack2@CurrentLevel)"],
+					[],
+					[],
+					[]
+                ]
+            }
+        },
+		{
+			"aliases": [
+				"ObliterateFront1"
+			],
+			"objclass": "MissileLocateWaveActionProps",
+			"objdata": {
+				"ColumnStart": 3,
+				"ColumnEnd": 4,
+				"MissileCount": 10,
+				"MissileFallCountdown": 0,
+				"WaveStartMessage": "[WARNING_MISSILE]"
+			}
+		},
+		{
+			"aliases": [
+				"ObliterateFront2"
+			],
+			"objclass": "MissileLocateWaveActionProps",
+			"objdata": {
+				"ColumnStart": 5,
+				"ColumnEnd": 6,
+				"MissileCount": 10,
+				"MissileFallCountdown": 0,
+				"WaveStartMessage": "[WARNING_MISSILE]"
+			}
+		},
+		{
+			"aliases": [
+				"ObliterateBack1"
+			],
+			"objclass": "MissileLocateWaveActionProps",
+			"objdata": {
+				"ColumnStart": 2,
+				"ColumnEnd": 2,
+				"MissileCount": 5,
+				"MissileFallCountdown": 1,
+				"WaveStartMessage": "[WARNING_MISSILE]"
+			}
+		},
+		{
+			"aliases": [
+				"ObliterateBack2"
+			],
+			"objclass": "MissileLocateWaveActionProps",
+			"objdata": {
+				"ColumnStart": 0,
+				"ColumnEnd": 0,
+				"MissileCount": 5,
+				"MissileFallCountdown": 1,
+				"WaveStartMessage": "[WARNING_MISSILE]"
+			}
+		}
+	],
+	"version": 1
+}

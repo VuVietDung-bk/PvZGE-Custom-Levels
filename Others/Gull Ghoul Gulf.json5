@@ -1,0 +1,449 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "maido",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2024-12-06",
+    "UpdatedAt": "2024-12-06",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "???",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		  "RTID(StandardIntro@LevelModules)",
+		  "RTID(ChallengeModule@CurrentLevel)",
+		  "RTID(Speakers@CurrentLevel)",
+		  "RTID(IPP@CurrentLevel)",
+		  "RTID(InitialTide@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)"
+        ],
+        "Name": "Gull Ghoul Gulf",
+        "NameMultiLanguage": {
+          "en": "Gull Ghoul Gulf",
+          "zh": "功夫世界-沙盒"
+        },
+        "WritenBy": "maido",
+		"MusicType": "MiniGame_A",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(BeachStage@LevelModules)"
+      }
+    },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PresetPlantList": [
+          {
+            "PlantType": "stunion",
+            "Level": -1
+          },
+		  {
+            "PlantType": "stallia",
+            "Level": -1
+          },
+		  {
+            "PlantType": "primalwallnut",
+            "Level": -1
+          },
+		  {
+            "PlantType": "squash",
+            "Level": -1
+          },
+		  {
+            "PlantType": "cherry_bomb",
+            "Level": -1
+          },
+		  {
+            "PlantType": "hurrikale",
+            "Level": -1
+          },
+        ],
+        "SelectionMethod": "preset"
+      }
+    },
+{"aliases":["IPP"],
+"objclass": "InitialPlantProperties",
+"objdata": {
+    "InitialPlantPlacements": [
+		{"GridX": 0, "GridY": 0, "Level": -1, "TypeName":"banana"},
+		{"GridX": 0, "GridY": 1, "Level": -1, "TypeName":"banana"},
+		{"GridX": 0, "GridY": 2, "Level": -1, "TypeName":"banana"},
+		{"GridX": 0, "GridY": 3, "Level": -1, "TypeName":"banana"},
+		{"GridX": 0, "GridY": 4, "Level": -1, "TypeName":"banana"},
+    ]
+}},
+{"aliases": ["InitialTide"],
+"objclass": "TideProperties",
+"objdata": {
+    "StartingWaveLocation": 6
+}},
+	{
+			"aliases": [
+			"ChallengeModule"
+		],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+			"BeatTheLevel"
+		],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+				"Survive without any lawnmowers",
+				],
+				"DescriptionsMultiLanguage": [
+					{
+					"en": "123",
+					"zh": "112233"
+					}
+				]
+			}
+	    },			
+		{
+            "aliases": [
+                "ChallengeModule"
+            ],
+            "objclass": "StarChallengeModuleProperties",
+            "objdata": {
+                "Challenges": [
+                    [
+                        "RTID(SimultaneousPlants@CurrentLevel)",
+                    ]
+                ],
+                "ChallengesAlwaysAvailable": true
+            }
+        },		
+        {
+            "aliases": [
+                "SimultaneousPlants"
+            ],
+            "objclass": "StarChallengeSimultaneousPlantsProps",
+            "objdata": {
+                "MaximumPlants": 8
+            }
+        },
+    	
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 10,
+        "WaveCount": 40,
+        "Waves": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+          []
+        ]
+      }
+    },
+//This is the scripted Zombie Ambush setup, currently for waves 10, 20, 30, and 40
+       {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 5,
+				"SuppressFlagZombie": true,
+                "SpawnColEnd": 9,
+                "SpawnColStart": 6,
+                "WaveCount": 10,
+                "WaveSpendingPointIncrement": 50,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    ["RTID(Wave1@CurrentLevel)"],
+                    ["RTID(Wave2@CurrentLevel)"],
+                    ["RTID(Wave3@CurrentLevel)","RTID(LowTideSmall@CurrentLevel)"],
+                    ["RTID(Wave4@CurrentLevel)"],
+                    ["RTID(Wave5@CurrentLevel)","RTID(LowTidePelicanSmall@CurrentLevel)"],
+                    ["RTID(Wave6@CurrentLevel)"],
+                    ["RTID(Wave7@CurrentLevel)","RTID(LowTideMedium@CurrentLevel)"],
+                    ["RTID(Wave8@CurrentLevel)"],
+                    ["RTID(Wave9@CurrentLevel)","RTID(LowTideSmall@CurrentLevel)","RTID(LowTideSmall@CurrentLevel)"],
+                    ["RTID(Wave10@CurrentLevel)","RTID(LowTideBig@CurrentLevel)","RTID(LowTidePelicanSmall@CurrentLevel)"],
+                ]
+            }
+        },
+///WAVES	
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(seagull@ZombieTypes)","CarrySun":25},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(seagull@ZombieTypes)","CarrySun":25},
+		  {"Type": "RTID(seagull@ZombieTypes)","CarrySun":25},
+		  {"Type": "RTID(seagull@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {"Type": "RTID(seagull@ZombieTypes)","CarrySun":25},
+		  {"Type": "RTID(seagull@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(pelican@ZombieTypes)","CarrySun":50},
+		  {"Type": "RTID(seagull@ZombieTypes)"},
+		  {"Type": "RTID(seagull@ZombieTypes)","CarrySun":25},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(seagull@ZombieTypes)","CarrySun":25},
+		  {"Type": "RTID(seagull@ZombieTypes)","CarrySun":25},
+		  {"Type": "RTID(seagull@ZombieTypes)","CarrySun":25},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(pelican@ZombieTypes)","CarrySun":50},
+		  {"Type": "RTID(seagull@ZombieTypes)","CarrySun":25},
+		  {"Type": "RTID(seagull@ZombieTypes)","CarrySun":25},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(pelican@ZombieTypes)","CarrySun":50},
+		  {"Type": "RTID(pelican@ZombieTypes)"},
+		  {"Type": "RTID(seagull@ZombieTypes)"},
+		  {"Type": "RTID(seagull@ZombieTypes)","CarrySun":25},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {"Type": "RTID(pelican@ZombieTypes)"},
+		  {"Type": "RTID(pelican@ZombieTypes)"},
+		  {"Type": "RTID(seagull@ZombieTypes)","CarrySun":25},
+		  {"Type": "RTID(seagull@ZombieTypes)","CarrySun":25},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(pelican@ZombieTypes)"},
+		  {"Type": "RTID(seagull@ZombieTypes)"},
+		  {"Type": "RTID(seagull@ZombieTypes)"},
+		  {"Type": "RTID(seagull@ZombieTypes)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(pelican@ZombieTypes)"},
+		  {"Type": "RTID(pelican@ZombieTypes)"},
+		  {"Type": "RTID(pelican@ZombieTypes)"},
+		  {"Type": "RTID(seagull@ZombieTypes)"},
+		  {"Type": "RTID(seagull@ZombieTypes)"},
+		  {"Type": "RTID(seagull@ZombieTypes)"},
+		  {"Type": "RTID(seagull@ZombieTypes)"},
+        ]
+      }
+    },
+        {
+            "aliases": [
+                "LowTideSmall"
+            ],
+            "objclass": "BeachStageEventZombieSpawnerProps",
+            "objdata": {
+                "ColumnEnd": 8,
+                "ColumnStart": "5",
+                "GroupSize": 1,
+                "TimeBeforeFullSpawn": "0.5",
+                "TimeBetweenGroups": "0.25",
+				"WaveStartMessage": "[WARNING_LOW_TIDE]",
+                "ZombieCount": 2,
+                "ZombieName": "seagull"
+            }
+        },
+		{
+            "aliases": [
+                "LowTideMedium"
+            ],
+            "objclass": "BeachStageEventZombieSpawnerProps",
+            "objdata": {
+                "ColumnEnd": 7,
+                "ColumnStart": "5",
+                "GroupSize": 1,
+                "TimeBeforeFullSpawn": "0.5",
+                "TimeBetweenGroups": "0.25",
+				"WaveStartMessage": "[WARNING_LOW_TIDE]",
+                "ZombieCount": 3,
+                "ZombieName": "seagull"
+            }
+        },
+		{
+            "aliases": [
+                "LowTideBig"
+            ],
+            "objclass": "BeachStageEventZombieSpawnerProps",
+            "objdata": {
+                "ColumnEnd": 6,
+                "ColumnStart": "5",
+                "GroupSize": 1,
+                "TimeBeforeFullSpawn": "0.5",
+                "TimeBetweenGroups": "0.25",
+				"WaveStartMessage": "[WARNING_LOW_TIDE]",
+                "ZombieCount": 4,
+                "ZombieName": "seagull"
+            }
+        },
+		{
+            "aliases": [
+                "LowTidePelicanSmall"
+            ],
+            "objclass": "BeachStageEventZombieSpawnerProps",
+            "objdata": {
+                "ColumnEnd": 7,
+                "ColumnStart": "5",
+                "GroupSize": 1,
+                "TimeBeforeFullSpawn": "0.5",
+                "TimeBetweenGroups": "0.25",
+				"WaveStartMessage": "[WARNING_LOW_TIDE]",
+                "ZombieCount": 1,
+                "ZombieName": "pelican"
+            }
+        },
+///WAVES END
+  ],
+  "version": 1
+}

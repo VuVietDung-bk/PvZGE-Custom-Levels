@@ -1,0 +1,777 @@
+{
+  "#comment": "Ice Age Danger Room",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "[PLAYERS_TRIP_TO_DANGER_ROOM_MINIGAME]",
+        "ForceToRestart": true,
+        "IsDangerRoomMiniGame": true,
+        "LevelNumber": 666,
+        "Loot": "RTID(DangerRoomLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(IceageMowers@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(DangerRoomMinigameModule@CurrentLevel)",
+          "RTID(BowlingBulbMinigame@CurrentLevel)",
+          "RTID(ConveyorBelt@CurrentLevel)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(_GooPlacement@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)"
+        ],
+        "Name": "[DANGER_ROOM_ICEAGE_LEVEL_NAME]",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(IceageStage@LevelModules)"
+      }
+    },
+    {
+      "objclass": "WaveManagerModuleProperties",
+      "aliases": [
+        "NewWaves"
+      ],
+      "objdata": {}
+    },
+    {
+      "objclass": "DangerRoomMiniGameModuleProperties",
+      "aliases": [
+        "DangerRoomMinigameModule"
+      ],
+      "objdata": {
+        "WorldSpecificProperties": "RTID(BeachDangerRoomMiniGameProps@PropertySheets)",
+        "MaxFlagWave": 3,
+        "LevelDesigners": [
+          "RTID(IceageDangerRoomMiniGameWaveGenerator@CurrentLevel)",
+          "RTID(SliderTileDesigner@CurrentLevel)",
+          "RTID(FreezingWindDesigner@CurrentLevel)",
+          "RTID(IceBlockDesigner@CurrentLevel)",
+          "RTID(IceageSnowstormGenerator@CurrentLevel)",
+          "RTID(ConveyorDesigner@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "DangerRoomIntro"
+      ],
+      "objclass": "DangerRoomLevelIntroProperties",
+      "objdata": {}
+    },
+    {
+      "aliases": [
+        "ConveyorDesigner"
+      ],
+      "objclass": "DangerRoomConveyorDesignerProperties",
+      "objdata": {
+        "InitialPlantList": [
+          {
+            "MaxCount": {
+              "SlopeCoefficient": -0.5,
+              "YIntercept": 7,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "3"
+              }
+            },
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowlingbulb1",
+            "Weight": {
+              "SlopeCoefficient": -2,
+              "YIntercept": 70,
+              "LowerLimit": {
+                "Value": "20"
+              },
+              "UpperLimit": {
+                "Value": "30"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "SlopeCoefficient": -0.5,
+              "YIntercept": 7,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "3"
+              }
+            },
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowlingbulb2",
+            "Weight": {
+              "SlopeCoefficient": -2,
+              "YIntercept": 80,
+              "LowerLimit": {
+                "Value": "20"
+              },
+              "UpperLimit": {
+                "Value": "40"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "SlopeCoefficient": 1,
+              "YIntercept": 7,
+              "LowerLimit": {
+                "Value": "2"
+              },
+              "UpperLimit": {
+                "Value": "3"
+              }
+            },
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowlingbulb3",
+            "Weight": {
+              "SlopeCoefficient": 2,
+              "YIntercept": 10,
+              "LowerLimit": {
+                "Value": "30"
+              },
+              "UpperLimit": {
+                "Value": "50"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "SlopeCoefficient": -1,
+              "YIntercept": 12,
+              "LowerLimit": {
+                "Value": "1"
+              },
+              "UpperLimit": {
+                "Value": "2"
+              }
+            },
+            "MaxCountCooldownSeconds": 6,
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowlingbulb_explode",
+            "Weight": {
+              "SlopeCoefficient": 2,
+              "YIntercept": 10,
+              "LowerLimit": {
+                "Value": "30"
+              },
+              "UpperLimit": {
+                "Value": "50"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "SlopeCoefficient": 0.1,
+              "YIntercept": 0,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "10"
+              }
+            },
+            "MaxCountCooldownSeconds": 6,
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowling_wallnut",
+            "Weight": {
+              "SlopeCoefficient": 1,
+              "YIntercept": 10,
+              "LowerLimit": {
+                "Value": "30"
+              },
+              "UpperLimit": {
+                "Value": "50"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "SlopeCoefficient": 0.1,
+              "YIntercept": -1,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "4"
+              }
+            },
+            "MaxCountCooldownSeconds": 6,
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowling_explodeonut",
+            "Weight": {
+              "SlopeCoefficient": 1,
+              "YIntercept": 10,
+              "LowerLimit": {
+                "Value": "10"
+              },
+              "UpperLimit": {
+                "Value": "20"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "SlopeCoefficient": 0.1,
+              "YIntercept": -1,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "4"
+              }
+            },
+            "MaxCountCooldownSeconds": 6,
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowling_holonut",
+            "Weight": {
+              "SlopeCoefficient": 1,
+              "YIntercept": 10,
+              "LowerLimit": {
+                "Value": "10"
+              },
+              "UpperLimit": {
+                "Value": "20"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "SlopeCoefficient": 0.5,
+              "YIntercept": -10,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "4"
+              }
+            },
+            "MaxCountCooldownSeconds": 6,
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowling_primalwallnut",
+            "Weight": {
+              "SlopeCoefficient": 1,
+              "YIntercept": -10,
+              "LowerLimit": {
+                "Value": "10"
+              },
+              "UpperLimit": {
+                "Value": "20"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "SlopeCoefficient": -0.5,
+              "YIntercept": 7,
+              "LowerLimit": {
+                "Value": "1"
+              },
+              "UpperLimit": {
+                "Value": "2"
+              }
+            },
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowlingbulb_iceburg",
+            "Weight": {
+              "SlopeCoefficient": 5,
+              "YIntercept": -50,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "30"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "SlopeCoefficient": 0.5,
+              "YIntercept": -5,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "1"
+              }
+            },
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowling_tallnut",
+            "Weight": {
+              "SlopeCoefficient": 5,
+              "YIntercept": -50,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "20"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ConveyorBelt"
+      ],
+      "objclass": "ConveyorSeedBankProperties",
+      "objdata": {
+        "DropDelayConditions": [
+          {
+            "Delay": 2,
+            "MaxPackets": 0
+          },
+          {
+            "Delay": 3,
+            "MaxPackets": 2
+          },
+          {
+            "Delay": 4,
+            "MaxPackets": 4
+          },
+          {
+            "Delay": 5,
+            "MaxPackets": 8
+          }
+        ],
+        "InitialPlantList": [
+          {
+            "MaxCount": 3,
+            "MaxWeightFactor": 0,
+            "PlantType": "tool_projectile_bowlingbulb1",
+            "Weight": 30
+          }
+        ],
+        "SpeedConditions": [
+          {
+            "MaxPackets": 0,
+            "Speed": 100
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "BowlingBulbMinigame"
+      ],
+      "objclass": "BowlingMinigameProperties",
+      "objdata": {
+        "BowlingFoulLine": 2
+      }
+    },
+    {
+      "aliases": [
+        "IceageDangerRoomMiniGameWaveGenerator"
+      ],
+      "objclass": "DangerRoomJitteredWaveGenerator",
+      "objdata": {
+        "StartingPoints": 400,
+        "BasePointIncrementPerWave": 40,
+        "BasePointIncrementPerLevel": 5,
+        "SuppressPlantfood": true,
+        "MustContainZombie": [
+          "RTID(iceage@ZombieTypes)"
+        ],
+        "MinDynamicZombieType": 4,
+        "ZombiePool": [
+          "RTID(iceage_armor1@ZombieTypes)",
+          "RTID(iceage_armor2@ZombieTypes)",
+          "RTID(iceage_armor3@ZombieTypes)",
+          "RTID(iceage_armor4@ZombieTypes)",
+          "RTID(iceage_hunter@ZombieTypes)",
+          "RTID(iceage_dodo@ZombieTypes)",
+          "RTID(iceage_troglobite@ZombieTypes)",
+          "RTID(iceage_gargantuar@ZombieTypes)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SliderTileDesigner"
+      ],
+      "objclass": "DangerRoomSliderTileDesigner",
+      "objdata": {
+        "SliderTileLayouts": [
+          {
+            "Layout": [
+              {
+                "GridX": 6,
+                "GridY": 0,
+                "TypeName": "slider_down"
+              },
+              {
+                "GridX": 6,
+                "GridY": 4,
+                "TypeName": "slider_up"
+              }
+            ]
+          },
+          {
+            "Layout": [
+              {
+                "GridX": 5,
+                "GridY": 1,
+                "TypeName": "slider_down"
+              },
+              {
+                "GridX": 5,
+                "GridY": 3,
+                "TypeName": "slider_up"
+              }
+            ]
+          },
+          {
+            "Layout": [
+              {
+                "GridX": 1,
+                "GridY": 1,
+                "TypeName": "slider_up"
+              },
+              {
+                "GridX": 3,
+                "GridY": 2,
+                "TypeName": "slider_up"
+              },
+              {
+                "GridX": 5,
+                "GridY": 3,
+                "TypeName": "slider_up"
+              },
+              {
+                "GridX": 7,
+                "GridY": 4,
+                "TypeName": "slider_up"
+              }
+            ]
+          },
+          {
+            "Layout": [
+              {
+                "GridX": 4,
+                "GridY": 0,
+                "TypeName": "slider_down"
+              },
+              {
+                "GridX": 4,
+                "GridY": 4,
+                "TypeName": "slider_up"
+              }
+            ]
+          },
+          {
+            "Layout": [
+              {
+                "GridX": 5,
+                "GridY": 0,
+                "TypeName": "slider_down"
+              },
+              {
+                "GridX": 7,
+                "GridY": 1,
+                "TypeName": "slider_up"
+              },
+              {
+                "GridX": 7,
+                "GridY": 3,
+                "TypeName": "slider_down"
+              },
+              {
+                "GridX": 5,
+                "GridY": 4,
+                "TypeName": "slider_up"
+              }
+            ]
+          },
+          {
+            "Layout": [
+              {
+                "GridX": 7,
+                "GridY": 0,
+                "TypeName": "slider_down"
+              },
+              {
+                "GridX": 5,
+                "GridY": 1,
+                "TypeName": "slider_down"
+              },
+              {
+                "GridX": 3,
+                "GridY": 2,
+                "TypeName": "slider_down"
+              },
+              {
+                "GridX": 1,
+                "GridY": 3,
+                "TypeName": "slider_down"
+              }
+            ]
+          },
+          {
+            "Layout": [
+              {
+                "GridX": 6,
+                "GridY": 0,
+                "TypeName": "slider_down"
+              },
+              {
+                "GridX": 3,
+                "GridY": 1,
+                "TypeName": "slider_down"
+              },
+              {
+                "GridX": 3,
+                "GridY": 3,
+                "TypeName": "slider_up"
+              },
+              {
+                "GridX": 6,
+                "GridY": 4,
+                "TypeName": "slider_up"
+              }
+            ]
+          },
+          {
+            "Layout": [
+              {
+                "GridX": 5,
+                "GridY": 0,
+                "TypeName": "slider_down"
+              },
+              {
+                "GridX": 5,
+                "GridY": 4,
+                "TypeName": "slider_up"
+              }
+            ]
+          },
+          {
+            "Layout": [
+              {
+                "GridX": 6,
+                "GridY": 1,
+                "TypeName": "slider_down"
+              },
+              {
+                "GridX": 6,
+                "GridY": 3,
+                "TypeName": "slider_up"
+              }
+            ]
+          },
+          {
+            "Layout": [
+              {
+                "GridX": 6,
+                "GridY": 0,
+                "TypeName": "slider_down"
+              },
+              {
+                "GridX": 5,
+                "GridY": 1,
+                "TypeName": "slider_down"
+              },
+              {
+                "GridX": 4,
+                "GridY": 2,
+                "TypeName": "slider_down"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "FreezingWindDesigner"
+      ],
+      "objclass": "DangerRoomFreezingWindDesigner",
+      "objdata": {
+        "LevelRange": {
+          "Min": 1,
+          "Max": 30
+        },
+        "LaneCountMin": {
+          "Min": 1,
+          "Max": 2
+        },
+        "LaneCountMax": {
+          "Min": 3,
+          "Max": 5
+        },
+        "WavePercent": {
+          "Min": 15,
+          "Max": 50
+        },
+        "DoubleBlastPercent": {
+          "Min": 0,
+          "Max": 0
+        }
+      }
+    },
+    {
+      "aliases": [
+        "IceBlockDesigner"
+      ],
+      "objclass": "DangerRoomIceBlockDesigner",
+      "objdata": {
+        "LevelRange": {
+          "Min": 1,
+          "Max": 60
+        },
+        "PlantColumnMin": {
+          "Min": 0,
+          "Max": 0
+        },
+        "PlantColumnMax": {
+          "Min": 2,
+          "Max": 7
+        },
+        "ZombieColumnMin": {
+          "Min": 6,
+          "Max": 1
+        },
+        "ZombieColumnMax": {
+          "Min": 8,
+          "Max": 8
+        },
+        "BlocksMin": {
+          "Min": 0,
+          "Max": 5
+        },
+        "BlocksMax": {
+          "Min": 3,
+          "Max": 15
+        },
+        "PctGoodBlocks": {
+          "Min": 0,
+          "Max": 0
+        },
+        "PlantTypeNames": [
+          "sunflower",
+          "bonkchoy",
+          "wallnut",
+          "repeater",
+          "chardguard",
+          "xshot",
+          "stunion",
+          "cherry_bomb"
+        ],
+        "ZombieTypeNames": [
+          "iceage_armor1",
+          "iceage_armor2",
+          "iceage_armor3",
+          "iceage_hunter",
+          "iceage_imp",
+          "iceage_dodo"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "GooPlacement"
+      ],
+      "objclass": "InitialGridItemProperties",
+      "objdata": {
+        "InitialGridItemPlacements": [
+          {
+            "GridX": 2,
+            "GridY": 0,
+            "TypeName": "goopuddle"
+          },
+          {
+            "GridX": 2,
+            "GridY": 1,
+            "TypeName": "goopuddle"
+          },
+          {
+            "GridX": 2,
+            "GridY": 2,
+            "TypeName": "goopuddle"
+          },
+          {
+            "GridX": 2,
+            "GridY": 3,
+            "TypeName": "goopuddle"
+          },
+          {
+            "GridX": 2,
+            "GridY": 4,
+            "TypeName": "goopuddle"
+          },
+          {
+            "GridX": 3,
+            "GridY": 0,
+            "TypeName": "goopuddle"
+          },
+          {
+            "GridX": 3,
+            "GridY": 1,
+            "TypeName": "goopuddle"
+          },
+          {
+            "GridX": 3,
+            "GridY": 2,
+            "TypeName": "goopuddle"
+          },
+          {
+            "GridX": 3,
+            "GridY": 3,
+            "TypeName": "goopuddle"
+          },
+          {
+            "GridX": 3,
+            "GridY": 4,
+            "TypeName": "goopuddle"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "IceageSnowstormGenerator"
+      ],
+      "objclass": "DangerRoomSnowstormDesigner",
+      "objdata": {
+        "BaseSandstormCount": 0,
+        "BaseSandstormCountPerLevel": 0.5,
+        "MinSandstormCountPerLevel": 0.2,
+        "MaxSandstormsPerFlagWave": 2,
+        "BaseSandstormZombiesCount": 1,
+        "BaseSandstormZombiesCountPerLevel": 0.5,
+        "MinSandstormZombiesCountPerLevel": 0.25,
+        "MaxSandstormZombies": 10,
+        "MinStartingSandstormSpawnCol": 3,
+        "MaxStartingSandstormSpawnCol": 9,
+        "MaxStartingSandstormSpawnColOffsetPerLevel": -0.3,
+        "MinEndingSandstormSpawnCol": 5,
+        "MaxEndingSandstormSpawnCol": 9,
+        "MaxEndingSandstormSpawnColOffsetPerLevel": -0.1,
+        "BaseSandstormStartWave": 5
+      }
+    }
+  ],
+  "version": 1
+}

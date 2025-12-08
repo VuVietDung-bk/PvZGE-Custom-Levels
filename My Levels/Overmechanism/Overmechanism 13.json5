@@ -1,0 +1,581 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "hinanarukami",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2025-07-19",
+    "UpdatedAt": "2025-07-19",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "Something is wrong...",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		  "RTID(StandardIntro@LevelModules)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(SlowSunDropper@LevelModules)",
+          "RTID(EightiesMowers@LevelModules)"
+        ],
+        "Name": "Overmechanism - Level 13",
+        "WritenBy": "hinanarukami",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(EightiesStage@LevelModules)"
+      }
+    },   
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PlantExcludeList": [
+          "blover", "glaciershroom", "icebloom"
+        ],
+        "SelectionMethod": "chooser"
+      }
+    },
+    {
+			"aliases": [
+			"ChallengeModule"
+		],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+			"BeatTheLevel"
+		],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+				"Survive the overmechanism!",
+				],
+				"DescriptionsMultiLanguage": [
+					{
+					"en": "123",
+					"zh": "112233"
+					}
+				]
+			}
+		},
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 80, // Difficulty D, easiest
+            "StartingPoints": 150,
+            "StartingWave": 1,
+            "ZombiePool": [
+                "RTID(eighties@ZombieTypes)",
+                "RTID(eighties_armor1@ZombieTypes)",
+                "RTID(eighties_armor2@ZombieTypes)",
+                "RTID(eighties_imp@ZombieTypes)",
+                "RTID(eighties_gargantuar@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 120, // Difficulty C, normal
+            "StartingPoints": 150,
+            "StartingWave": 1,
+            "ZombiePool": [
+                "RTID(eighties@ZombieTypes)",
+                "RTID(eighties_armor1@ZombieTypes)",
+                "RTID(eighties_armor2@ZombieTypes)",
+                "RTID(eighties_imp@ZombieTypes)",
+                "RTID(eighties_gargantuar@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 160, // Difficulty B, advanced
+            "StartingPoints": 150,
+            "StartingWave": 1,
+            "ZombiePool": [
+                "RTID(eighties@ZombieTypes)",
+                "RTID(eighties_armor1@ZombieTypes)",
+                "RTID(eighties_armor2@ZombieTypes)",
+                "RTID(eighties_imp@ZombieTypes)",
+                "RTID(eighties_gargantuar@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 200, // Difficulty AAAAAAAAA
+            "StartingPoints": 150,
+            "StartingWave": 1,
+            "ZombiePool": [
+                "RTID(eighties@ZombieTypes)",
+                "RTID(eighties_armor1@ZombieTypes)",
+                "RTID(eighties_armor2@ZombieTypes)",
+                "RTID(eighties_imp@ZombieTypes)",
+                "RTID(eighties_gargantuar@ZombieTypes)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 4,
+        "WaveCount": 24,
+        "Waves": [
+            ["RTID(EnterPopEvent@CurrentLevel)", "RTID(Wave1@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)"],
+            ["RTID(Octo1@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(Wizard1@CurrentLevel)", "RTID(King@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(PlantFoodSpawner0@CurrentLevel)", "RTID(Octo2@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(Wizard2@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(Octo3@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(King@CurrentLevel)", "RTID(Wizard3@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Octo4@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Wizard4@CurrentLevel)", "RTID(PlantFoodSpawner1@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Octo5@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(King@CurrentLevel)", "RTID(Wizard5@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(Octo3@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Wizard3@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(Octo3@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(King@CurrentLevel)", "RTID(Wizard3@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(PlantFoodSpawner2@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Octo4@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Wizard4@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(Octo4@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(King@CurrentLevel)", "RTID(Wizard4@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(Octo5@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(King@CurrentLevel)", "RTID(Wizard5@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(Octo5@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(King@CurrentLevel)", "RTID(Wizard5@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(Octo5@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Octo5@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(King@CurrentLevel)", "RTID(Octo2@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Wizard5@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Wizard5@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(King@CurrentLevel)", "RTID(PlantFoodSpawner3@CurrentLevel)", "RTID(Wizard2@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Octo5@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Octo5@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(King@CurrentLevel)", "RTID(Octo4@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Wizard5@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Wizard5@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(King@CurrentLevel)", "RTID(Wizard4@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(King@CurrentLevel)", "RTID(Octo5@CurrentLevel)", "RTID(Wizard5@CurrentLevel)", "RTID(Octo3@CurrentLevel)", "RTID(Wizard3@CurrentLevel)"],
+            ["RTID(Glitter@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(Glitter@CurrentLevel)", "RTID(King@CurrentLevel)", "RTID(Octo5@CurrentLevel)", "RTID(Wizard5@CurrentLevel)", "RTID(Octo5@CurrentLevel)", "RTID(Wizard5@CurrentLevel)"]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_imp@ZombieTypes)"
+          }
+        ]
+      }
+    },
+		{
+      "aliases": [
+        "Glitter"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_glitter@ZombieTypes)", "Row": 1
+          },
+          {
+            "Type": "RTID(eighties_glitter@ZombieTypes)", "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_glitter@ZombieTypes)", "Row": 3
+          },
+          {
+            "Type": "RTID(eighties_glitter@ZombieTypes)", "Row": 4
+          },
+          {
+            "Type": "RTID(eighties_glitter@ZombieTypes)", "Row": 5
+          }
+        ]
+      }
+    },
+		{
+      "aliases": [
+        "Octo1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Octo2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Octo3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Octo4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Octo5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)", "Row": 1
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)", "Row": 2
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)", "Row": 3
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)", "Row": 4
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)", "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "King"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)", "Row": 1
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)", "Row": 2
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)", "Row": 3
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)", "Row": 4
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)", "Row": 5
+          }
+        ]
+      }
+    },
+    {
+        "aliases": [
+            "Wizard1"
+        ],
+        "objclass": "SpawnZombiesJitteredWaveActionProps",
+        "objdata": {
+            "Zombies": [
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)"
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)"
+                }
+            ]
+        }
+    },
+    {
+        "aliases": [
+            "Wizard2"
+        ],
+        "objclass": "SpawnZombiesJitteredWaveActionProps",
+        "objdata": {
+            "Zombies": [
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)"
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)"
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)"
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)"
+                }
+            ]
+        }
+    },
+    {
+        "aliases": [
+            "Wizard3"
+        ],
+        "objclass": "SpawnZombiesJitteredWaveActionProps",
+        "objdata": {
+            "Zombies": [
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 1
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 2
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 3
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 4
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 5
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)"
+                }
+            ]
+        }
+    },
+    {
+        "aliases": [
+            "Wizard4"
+        ],
+        "objclass": "SpawnZombiesJitteredWaveActionProps",
+        "objdata": {
+            "Zombies": [
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 1
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 2
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 3
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 4
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 5
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)"
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)"
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)"
+                }
+            ]
+        }
+    },
+    {
+        "aliases": [
+            "Wizard5"
+        ],
+        "objclass": "SpawnZombiesJitteredWaveActionProps",
+        "objdata": {
+            "Zombies": [
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 1
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 1
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 2
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 2
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 3
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 3
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 4
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 4
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 5
+                },
+                {
+                    "Type": "RTID(dark_wizard_veteran@ZombieTypes)", "Row": 5
+                }
+            ]
+        }
+    },
+
+        {
+            "aliases": [
+                "PlantFoodSpawner0"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(dark_wizard_veteran@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PlantFoodSpawner1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(beach_octopus@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PlantFoodSpawner2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    0,
+                    1
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(beach_octopus@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PlantFoodSpawner3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(beach_octopus@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "EnterPopEvent"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "NotificationEvents": [
+                    "jam_pop"
+                ]
+            }
+        }
+  ],
+  "version": 1
+}

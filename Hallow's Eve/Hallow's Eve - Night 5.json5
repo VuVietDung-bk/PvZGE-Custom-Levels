@@ -1,0 +1,556 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "maido",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2024-12-06",
+    "UpdatedAt": "2024-12-06",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "<PLAYERNAME>'s Attempt to Survive Hallow's Eve!",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		  "RTID(StandardIntro@LevelModules)",
+		  "RTID(ChallengeModule@CurrentLevel)",
+		  "RTID(ModernMowers@LevelModules)",
+		  "RTID(Gravestones@CurrentLevel)",
+          "RTID(ConveyorBelt@CurrentLevel)"
+        ],
+        "Name": "Hallow's Eve - Night 5",
+        "NameMultiLanguage": {
+          "en": "Hallow's Eve - Night 5",
+          "zh": "Hallow's Eve - Night 5"
+        },
+        "WritenBy": "maido",
+		"MusicType": "MiniGame_B",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(HalloweenStage@LevelModules)"
+      }
+    },
+	{
+			"aliases": [
+				"Gravestones"
+			],
+			"objclass": "GravestoneProperties",
+			"objdata": {
+				"GravestoneCount": 18,
+				"SpawnColumnEnd": 9,
+				"SpawnColumnStart": 4
+		}
+    },
+	    {
+            "aliases": [
+                "ConveyorBelt"
+            ],
+            "objclass": "ConveyorSeedBankProperties",
+            "objdata": {
+                "DropDelayConditions": [
+                    {
+                        "Delay": 2,
+                        "MaxPackets": 1
+                    },
+                    {
+                        "Delay": 5,
+                        "MaxPackets": 2
+                    },
+                    {
+                        "Delay": 6,
+                        "MaxPackets": 3
+                    },
+                    {
+                        "Delay": 7,
+                        "MaxPackets": 5
+                    }
+                ],
+                "InitialPlantList": [
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 2,
+                        "PlantType": "jackolantern",
+                        "Weight": 100
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 1,
+                        "PlantType": "stunion",
+                        "Weight": 45
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 1,
+                        "PlantType": "gravebuster",
+                        "Weight": 45
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 2,
+                        "PlantType": "potatomine",
+                        "Weight": 45
+                    },
+                ],
+                "SpeedConditions": [
+                    {
+                        "MaxPackets": 0,
+                        "Speed": 150
+                    }
+                ]
+            }
+        },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+	{
+			"aliases": [
+			"ChallengeModule"
+		],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+			"BeatTheLevel"
+		],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+				"Survive a game of Scorch-a-Zombie by planting and shoveling Jack O' Lanterns"
+				],
+				"DescriptionsMultiLanguage": [
+					{
+					"en": "123",
+					"zh": "112233"
+					}
+				]
+			}
+	},
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 10,
+        "WaveCount": 40,
+        "Waves": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      }
+    },
+//This is the scripted Zombie Ambush setup, currently for waves 10, 20, 30, and 40
+       {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 7,
+                "SpawnColEnd": 9,
+                "SpawnColStart": 6,
+                "WaveCount": 14,
+                "WaveSpendingPointIncrement": 50,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    ["RTID(SpawnOnePlantFoodGrave@CurrentLevel)","RTID(NecromancyModernEasy@CurrentLevel)"],
+                    ["RTID(SpawnSixTutorialGravestones@CurrentLevel)","RTID(NecromancyModernEasy@CurrentLevel)","RTID(NecromancyModernMedium@CurrentLevel)"],
+                    ["RTID(SpawnSixTutorialGravestones@CurrentLevel)","RTID(NecromancyModernHard@CurrentLevel)","RTID(NecromancyEgyptEasy@CurrentLevel)"],
+                    ["RTID(SpawnSixTutorialGravestones@CurrentLevel)","RTID(NecromancyEgyptHard@CurrentLevel)","RTID(SpawnOnePlantFoodGrave@CurrentLevel)",],
+                    ["RTID(SpawnSixTutorialGravestones@CurrentLevel)","RTID(NecromancyEgyptEasy@CurrentLevel)","RTID(NecromancyPirates@CurrentLevel)"],
+                    ["RTID(SpawnSixTutorialGravestones@CurrentLevel)","RTID(NecromancyDino@CurrentLevel)","RTID(NecromancyModernMedium@CurrentLevel)","RTID(NecromancyModernEasy@CurrentLevel)",],
+                    ["RTID(SpawnSixTutorialGravestones@CurrentLevel)","RTID(NecromancyBug@CurrentLevel)","RTID(NecromancyEgyptEasy@CurrentLevel)",],
+                    ["RTID(EnterPunkEvent@CurrentLevel)","RTID(SpawnTenTutorialGravestones@CurrentLevel)","RTID(NecromancyNeon@CurrentLevel)","RTID(NecromancyPirates@CurrentLevel)"],
+                    ["RTID(SpawnOnePlantFoodGrave@CurrentLevel)","RTID(SpawnTenTutorialGravestones@CurrentLevel)","RTID(NecromancyDino@CurrentLevel)","RTID(NecromancyNeon@CurrentLevel)"],
+                    ["RTID(SpawnTenTutorialGravestones@CurrentLevel)","RTID(NecromancyModernHard@CurrentLevel)","RTID(NecromancyEgyptHard@CurrentLevel)","RTID(NecromancyNeon@CurrentLevel)","RTID(NecromancyPirates@CurrentLevel)"],
+					["RTID(SpawnSixTutorialGravestones@CurrentLevel)","RTID(NecromancyDinoBully@CurrentLevel)","RTID(NecromancyModernHard@CurrentLevel)","RTID(NecromancyModernExtra@CurrentLevel)","RTID(NecromancyModernEasy@CurrentLevel)","RTID(NecromancyModernMedium@CurrentLevel)"],
+					["RTID(SpawnSixTutorialGravestones@CurrentLevel)","RTID(NecromancyBug@CurrentLevel)","RTID(NecromancyEgyptHard@CurrentLevel)",],
+					["RTID(SpawnOnePlantFoodGrave@CurrentLevel)","RTID(SpawnTenTutorialGravestones@CurrentLevel)","RTID(NecromancyPirates@CurrentLevel)","RTID(NecromancyNeon@CurrentLevel)","RTID(NecromancyDinoBully@CurrentLevel)",],
+					["RTID(SpawnTenTutorialGravestones@CurrentLevel)","RTID(NecromancyModernHard@CurrentLevel)","RTID(NecromancyPirates@CurrentLevel)","RTID(NecromancyNeon@CurrentLevel)","RTID(NecromancyEgyptHard@CurrentLevel)","RTID(NecromancyDinoBully@CurrentLevel)",],
+                ]
+            }
+        },
+// There are 7 levels of difficulties: - - - D C B A
+        {
+            "aliases": [
+                "NecromancyModernEasy"
+            ],
+            "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+            "objdata": {
+                "AdditionalPlantfood": "0",
+                "GridTypes": [
+                    "RTID(gravestone_tutorial@GridItemTypes)","RTID(gravestonePlantfoodOnDestruction@GridItemTypes)",
+                ],
+                "ZombieSpawnWaitTime": 1,
+                "Zombies": [
+                    {"Type": "RTID(halloween@ZombieTypes)"},
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "NecromancyModernMedium"
+            ],
+            "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+            "objdata": {
+                "AdditionalPlantfood": "0",
+                "GridTypes": [
+                    "RTID(gravestone_tutorial@GridItemTypes)","RTID(gravestonePlantfoodOnDestruction@GridItemTypes)",
+                ],
+                "ZombieSpawnWaitTime": 1,
+                "Zombies": [
+                    {"Type": "RTID(halloween_armor1@ZombieTypes)"},
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "NecromancyModernHard"
+            ],
+            "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+            "objdata": {
+                "AdditionalPlantfood": "0",
+                "GridTypes": [
+                    "RTID(gravestone_tutorial@GridItemTypes)","RTID(gravestonePlantfoodOnDestruction@GridItemTypes)",
+                ],
+                "ZombieSpawnWaitTime": 1,
+                "Zombies": [
+					{"Type": "RTID(halloween_armor2@ZombieTypes)"},
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "NecromancyModernExtra"
+            ],
+            "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+            "objdata": {
+                "AdditionalPlantfood": "0",
+                "GridTypes": [
+                    "RTID(gravestone_tutorial@GridItemTypes)","RTID(gravestonePlantfoodOnDestruction@GridItemTypes)",
+                ],
+                "ZombieSpawnWaitTime": 1,
+                "Zombies": [
+					{"Type": "RTID(modern_balloon@ZombieTypes)"},
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "NecromancyEgyptEasy"
+            ],
+            "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+            "objdata": {
+                "AdditionalPlantfood": "0",
+                "GridTypes": [
+                    "RTID(gravestone_tutorial@GridItemTypes)","RTID(gravestonePlantfoodOnDestruction@GridItemTypes)",
+                ],
+                "ZombieSpawnWaitTime": 1,
+                "Zombies": [
+                    {"Type": "RTID(ra@ZombieTypes)"},
+					{"Type": "RTID(mummy_armor1@ZombieTypes)"}
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "NecromancyEgyptHard"
+            ],
+            "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+            "objdata": {
+                "AdditionalPlantfood": "0",
+                "GridTypes": [
+                    "RTID(gravestone_tutorial@GridItemTypes)","RTID(gravestonePlantfoodOnDestruction@GridItemTypes)",
+                ],
+                "ZombieSpawnWaitTime": 1,
+                "Zombies": [
+                    {"Type": "RTID(tomb_raiser@ZombieTypes)"},
+					{"Type": "RTID(mummy_armor2@ZombieTypes)"},
+					{"Type": "RTID(pharaoh@ZombieTypes)"},
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "NecromancyPirates"
+            ],
+            "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+            "objdata": {
+                "AdditionalPlantfood": "0",
+                "GridTypes": [
+                    "RTID(gravestone_tutorial@GridItemTypes)","RTID(gravestonePlantfoodOnDestruction@GridItemTypes)",
+                ],
+                "ZombieSpawnWaitTime": 1,
+                "Zombies": [
+                    {"Type": "RTID(seagull@ZombieTypes)"},
+					{"Type": "RTID(swashbuckler@ZombieTypes)"},
+					{"Type": "RTID(pirate_captain@ZombieTypes)"}
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "NecromancyBug"
+            ],
+            "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+            "objdata": {
+                "AdditionalPlantfood": "0",
+                "GridTypes": [
+                    "RTID(gravestone_tutorial@GridItemTypes)","RTID(gravestonePlantfoodOnDestruction@GridItemTypes)",
+                ],
+                "ZombieSpawnWaitTime": 1,
+                "Zombies": [
+                    {"Type": "RTID(lostcity_bug@ZombieTypes)"},
+					{"Type": "RTID(lostcity_bug@ZombieTypes)"},
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "NecromancyDino"
+            ],
+            "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+            "objdata": {
+                "AdditionalPlantfood": "0",
+                "GridTypes": [
+                    "RTID(gravestone_tutorial@GridItemTypes)","RTID(gravestonePlantfoodOnDestruction@GridItemTypes)",
+                ],
+                "ZombieSpawnWaitTime": 1,
+                "Zombies": [
+                    {"Type": "RTID(dino_armor3@ZombieTypes)"},
+					{"Type": "RTID(dino_imp@ZombieTypes)"},
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "NecromancyDinoBully"
+            ],
+            "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+            "objdata": {
+                "AdditionalPlantfood": "0",
+                "GridTypes": [
+                    "RTID(gravestone_tutorial@GridItemTypes)","RTID(gravestonePlantfoodOnDestruction@GridItemTypes)",
+                ],
+                "ZombieSpawnWaitTime": 1,
+                "Zombies": [
+                    {"Type": "RTID(dino_bully@ZombieTypes)"},
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "NecromancyNeon"
+            ],
+            "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+            "objdata": {
+                "AdditionalPlantfood": "0",
+                "GridTypes": [
+                    "RTID(gravestone_tutorial@GridItemTypes)","RTID(gravestonePlantfoodOnDestruction@GridItemTypes)",
+                ],
+                "ZombieSpawnWaitTime": 1,
+                "Zombies": [
+                    {"Type": "RTID(eighties_punk@ZombieTypes)"},
+					{"Type": "RTID(eighties_punk@ZombieTypes)"},
+					{"Type": "RTID(eighties_imp@ZombieTypes)"},
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "SpawnSixTutorialGravestones"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {"Count": 6, "Type": "RTID(gravestone_tutorial@GridItemTypes)"},
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+				"SpawnPositionsPool": [
+				    {"mX": 3,"mY": 0},
+                    {"mX": 3,"mY": 1},
+                    {"mX": 3,"mY": 2},
+					{"mX": 3,"mY": 3},
+                    {"mX": 3,"mY": 4},
+                    {"mX": 4,"mY": 0},
+                    {"mX": 4,"mY": 1},
+                    {"mX": 4,"mY": 0},
+                    {"mX": 4,"mY": 1},
+                    {"mX": 4,"mY": 2},
+					{"mX": 5,"mY": 0},
+                    {"mX": 5,"mY": 1},
+                    {"mX": 5,"mY": 2},
+					{"mX": 5,"mY": 3},
+                    {"mX": 5,"mY": 4},
+					{"mX": 6,"mY": 0},
+                    {"mX": 6,"mY": 1},
+                    {"mX": 6,"mY": 2},
+					{"mX": 6,"mY": 3},
+                    {"mX": 6,"mY": 4},
+					{"mX": 7,"mY": 0},
+                    {"mX": 7,"mY": 1},
+                    {"mX": 7,"mY": 2},
+					{"mX": 7,"mY": 3},
+                    {"mX": 7,"mY": 4},
+					{"mX": 8,"mY": 0},
+                    {"mX": 8,"mY": 1},
+                    {"mX": 8,"mY": 2},
+					{"mX": 8,"mY": 3},
+                    {"mX": 8,"mY": 4},						
+					],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+            }
+        },
+		{
+            "aliases": [
+                "SpawnTenTutorialGravestones"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {"Count": 10, "Type": "RTID(gravestone_tutorial@GridItemTypes)"},
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+				"SpawnPositionsPool": [
+				    {"mX": 3,"mY": 0},
+                    {"mX": 3,"mY": 1},
+                    {"mX": 3,"mY": 2},
+					{"mX": 3,"mY": 3},
+                    {"mX": 3,"mY": 4},
+                    {"mX": 4,"mY": 0},
+                    {"mX": 4,"mY": 1},
+                    {"mX": 4,"mY": 0},
+                    {"mX": 4,"mY": 1},
+                    {"mX": 4,"mY": 2},
+					{"mX": 5,"mY": 0},
+                    {"mX": 5,"mY": 1},
+                    {"mX": 5,"mY": 2},
+					{"mX": 5,"mY": 3},
+                    {"mX": 5,"mY": 4},
+					{"mX": 6,"mY": 0},
+                    {"mX": 6,"mY": 1},
+                    {"mX": 6,"mY": 2},
+					{"mX": 6,"mY": 3},
+                    {"mX": 6,"mY": 4},
+					{"mX": 7,"mY": 0},
+                    {"mX": 7,"mY": 1},
+                    {"mX": 7,"mY": 2},
+					{"mX": 7,"mY": 3},
+                    {"mX": 7,"mY": 4},
+					{"mX": 8,"mY": 0},
+                    {"mX": 8,"mY": 1},
+                    {"mX": 8,"mY": 2},
+					{"mX": 8,"mY": 3},
+                    {"mX": 8,"mY": 4},							
+					],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+            }
+        },
+		{
+            "aliases": [
+                "SpawnOnePlantFoodGrave"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {"Count": 1, "Type": "RTID(gravestonePlantfoodOnDestruction@GridItemTypes)"},
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+				"SpawnPositionsPool": [
+				    {"mX": 3,"mY": 0},
+                    {"mX": 3,"mY": 1},
+                    {"mX": 3,"mY": 2},
+					{"mX": 3,"mY": 3},
+                    {"mX": 3,"mY": 4},
+                    {"mX": 4,"mY": 0},
+                    {"mX": 4,"mY": 1},
+                    {"mX": 4,"mY": 0},
+                    {"mX": 4,"mY": 1},
+                    {"mX": 4,"mY": 2},
+					{"mX": 5,"mY": 0},
+                    {"mX": 5,"mY": 1},
+                    {"mX": 5,"mY": 2},
+					{"mX": 5,"mY": 3},
+                    {"mX": 5,"mY": 4},
+					{"mX": 6,"mY": 0},
+                    {"mX": 6,"mY": 1},
+                    {"mX": 6,"mY": 2},
+					{"mX": 6,"mY": 3},
+                    {"mX": 6,"mY": 4},
+					{"mX": 7,"mY": 0},
+                    {"mX": 7,"mY": 1},
+                    {"mX": 7,"mY": 2},
+					{"mX": 7,"mY": 3},
+                    {"mX": 7,"mY": 4},
+					{"mX": 8,"mY": 0},
+                    {"mX": 8,"mY": 1},
+                    {"mX": 8,"mY": 2},
+					{"mX": 8,"mY": 3},
+                    {"mX": 8,"mY": 4},							
+					],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+            }
+        },
+		{
+            "aliases": [
+                "EnterPunkEvent"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "NotificationEvents": [
+                    "jam_punk"
+                ]
+            }
+        },
+  ],
+  "version": 1
+}
