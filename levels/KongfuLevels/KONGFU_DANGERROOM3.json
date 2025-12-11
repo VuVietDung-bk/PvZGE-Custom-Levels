@@ -1,0 +1,222 @@
+{
+  "#comment": "Kongfu Danger Room",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "[PLAYERS_TRIP_TO_DANGER_ROOM]",
+        "ForceToRestart": true,
+        "IsDangerRoom": true,
+        "LevelNumber": 666,
+        "Loot": "RTID(DangerRoomLoot@LevelModules)",
+        "Modules": [
+          "RTID(DangerRoomIntro@CurrentLevel)",
+          "RTID(DangerRoomModule@CurrentLevel)",
+          "RTID(KongfuMowers@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)"
+        ],
+        "Name": "[DANGER_ROOM_KONGFU_LEVEL_NAME]",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(AbbotStage@LevelModules)"
+      }
+    },
+    {
+      "objclass": "WaveManagerModuleProperties",
+      "aliases": [
+        "NewWaves"
+      ],
+      "objdata": {}
+    },
+    {
+      "objclass": "DangerRoomModuleProperties",
+      "aliases": [
+        "DangerRoomModule"
+      ],
+      "objdata": {
+        "WorldSpecificProperties": "RTID(KongfuDangerRoomProps@PropertySheets)",
+        "LevelDesigners": [
+          "RTID(KongfuDangerRoomWaveGenerator@CurrentLevel)",
+          "RTID(KongfuRackGenerator@CurrentLevel)",
+          "RTID(KongfuWaveRackEventGenerator@CurrentLevel)",
+          "RTID(KongfuQigongStrikeGenerator@CurrentLevel)"
+        ],
+        "InitialPlants": [
+          "sunflower",
+          "firegourd",
+          "cabbagepult",
+          "peashooter",
+          "turnip"
+        ],
+        "ExcludePlants": [
+          "gravebuster",
+          "lilypad",
+          "tanglekelp",
+          "empea",
+          "hotpotato"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "DangerRoomIntro"
+      ],
+      "objclass": "DangerRoomLevelIntroProperties",
+      "objdata": {}
+    },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PlantBlackList": [],
+        "SelectionMethod": "chooser",
+        "AlwaysUseChooser": true
+      }
+    },
+    {
+      "aliases": [
+        "KongfuDangerRoomWaveGenerator"
+      ],
+      "objclass": "DangerRoomJitteredWaveGenerator",
+      "objdata": {
+        "StartingPoints": 100,
+        "BasePointIncrementPerWave": 30,
+        "BasePointIncrementPerLevel": 5,
+        "MustContainZombie": [
+          "RTID(abbot@ZombieTypes)"
+        ],
+        "MinDynamicZombieType": 4,
+        "ZombiePool": [
+          "RTID(abbot_armor1@ZombieTypes)",
+          "RTID(abbot_armor2@ZombieTypes)",
+          "RTID(abbot_3section_staff@ZombieTypes)",
+          "RTID(abbot_fan@ZombieTypes)",
+          "RTID(monk_imp@ZombieTypes)",
+          "RTID(abbot_torch@ZombieTypes)",
+          "RTID(monk_drink@ZombieTypes)",
+          "RTID(kongfu_chi@ZombieTypes)",
+          "RTID(kongfu_bomb@ZombieTypes)",
+          "RTID(kongfu_bronze_strong@ZombieTypes)",
+          "RTID(kongfu_bronze_hook@ZombieTypes)",
+          "RTID(kongfu_bronze_chi_without_torch@ZombieTypes)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "KongfuRackGenerator"
+      ],
+      "objclass": "DangerRoomKongfuRackGenerator",
+      "objdata": {
+        "Types": [
+          "kongfu_rack_torch",
+          "kongfu_rack_3section_staff",
+          "kongfu_rack_fan",
+          "kongfu_rack_flag",
+          "kongfu_rack_helmet"
+        ],
+        "MinGravestoneCount": 3,
+        "BaseGravestoneCountPerLevel": 1,
+        "MaxGeneratedGravestones": 12,
+        "MinStartingGravestoneSpawnCol": 5,
+        "MaxStartingGravestoneSpawnCol": 4,
+        "MaxStartingGravestoneSpawnColOffsetPerLevel": -0.25,
+        "MinEndingGravestoneSpawnCol": 7,
+        "MaxEndingGravestoneSpawnCol": 6,
+        "MaxEndingGravestoneSpawnColOffsetPerLevel": 0
+      }
+    },
+    {
+      "aliases": [
+        "KongfuWaveRackEventGenerator"
+      ],
+      "objclass": "DangerRoomKongfuRackEventGenerator",
+      "objdata": {
+        "Types": [
+          "kongfu_rack_torch",
+          "kongfu_rack_3section_staff",
+          "kongfu_rack_fan",
+          "kongfu_rack_flag",
+          "kongfu_rack_helmet"
+        ],
+        "WaveMinPerFlag": 0,
+        "WaveMaxPerFlagBase": 0,
+        "WaveMaxPerFlagIncrementPerLevel": 0.5,
+        "WaveMaxPerFlagSlope": 3,
+        "GravestonesMinPerSpawnEvent": 1,
+        "GravestonesMaxPerSpawnEventBase": 1,
+        "GravestonesMaxPerSpawnEventIncrementPerLevel": 0.5,
+        "GravestonesMaxPerSpawnEventSlope": 10,
+        "BeneficialGravestonesPerSpawnEventMin": 0,
+        "BeneficialGravestonesPerSpawnEventMax": 0,
+        "ChanceThatBeneficialGravestoneIsPlantfoodNotSun": 0,
+        "GravestoneSpawnColumnMax": 7,
+        "GravestoneSpawnColumnMinBase": 6,
+        "GravestoneSpawnColumnMinIncrementPerLevel": -0.2,
+        "GravestoneSpawnColumnMinLowerLimit": 4,
+        "GravestoneSpawnColumnMinUpperLimit": 6
+      }
+    },
+    {
+      "aliases": [
+        "KongfuQigongStrikeGenerator"
+      ],
+      "objclass": "DangerRoomQigongStrikeDesigner",
+      "objdata": {
+        "ZombieType": "abbot_imp",
+        "LevelRange": {
+          "Min": 1,
+          "Max": 15
+        },
+        "StrikeCountMin": {
+          "Min": 1,
+          "Max": 2
+        },
+        "StrikeCountMax": {
+          "Min": 2,
+          "Max": 4
+        },
+        "StrikeStartWaveMin": {
+          "Min": 4,
+          "Max": 3
+        },
+        "StrikeStartWaveMax": {
+          "Min": 7,
+          "Max": 5
+        },
+        "StrikeIntervalWaveMin": {
+          "Min": 4,
+          "Max": 3
+        },
+        "StrikeIntervalWaveMax": {
+          "Min": 7,
+          "Max": 5
+        },
+        "ZombieCountMax": {
+          "Min": 1,
+          "Max": 3
+        },
+        "ZombieCountMin": {
+          "Min": 1,
+          "Max": 1
+        },
+        "MinColumn": {
+          "Min": 4,
+          "Max": 3
+        },
+        "MaxColumn": {
+          "Min": 6,
+          "Max": 5
+        },
+        "WaveStartMessage": "[WARNING_QIGONG_STRIKE]"
+      }
+    }
+  ],
+  "version": 1
+}
