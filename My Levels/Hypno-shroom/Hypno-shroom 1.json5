@@ -1,0 +1,938 @@
+{
+  "Information": {
+    "Author": "hinanarukami",
+    "Introduction": "An epic quest",
+    "Version": "1.0",
+    "CreatedAt": "2025-12-12",
+    "UpdatedAt": "2025-12-12",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "A random quest for a random plant in a random world",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(PlantMods@CurrentLevel)"
+        ],
+        "Name": "Hypno-shroom - Level 1",
+        "WritenBy": "hinanarukami",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(ArenaStage@LevelModules)",
+        "MusicType": "MiniGame_B"
+      }
+    },
+    {
+      "objclass": "MoldColonyChallengeProps",
+      "aliases": [
+          "mold"
+      ],
+      "objdata": {
+      "SuppressObjectiveTip": true,
+      "MoldMatrix": [
+          "111001111",
+          "111001111",
+          "100001111",
+          "111001111",
+          "111001111"
+          ]
+      }
+    },
+    {
+        "objclass": "StarChallengeSimultaneousPlantsProps",
+        "aliases": [
+            "SimultaneousPlants"
+        ],
+        "objdata": {
+            "MaximumPlants": 6
+        }
+    },
+    {
+      "aliases": [
+        "ProtectThePlant"
+      ],
+      "objclass": "ProtectThePlantChallengeProperties",
+      "objdata": {
+        "MustProtectCount": 3,
+        "Plants": [
+          {
+            "GridX": 2,
+            "GridY": 2,
+            "PlantType": "twinsunflower"
+          },
+          {
+            "GridX": 2,
+            "GridY": 2,
+            "PlantType": "shinevine"
+          },
+          {
+            "GridX": 1,
+            "GridY": 2,
+            "PlantType": "umbrellaleaf"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(ProtectThePlant@CurrentLevel)",
+            "RTID(SimultaneousPlants@CurrentLevel)",
+            "RTID(mold@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": ["PlantMods"],
+      "objclass": "PlantModifierProperties",
+      "objdata": {
+        "HidePlantfood": true,
+        "SuppressParticle": true,
+        "List": [
+            {
+            "Type": "springbean",
+            "NewObjdata": { 
+                "KnockbackDistance": 2.0, 
+                "RestTime": 20,
+                "Cooldown": 10, 
+                "CooldownFrom": 0.5, 
+                "SunCost": 50, 
+                "BeghouledCost": 1000, 
+                "Toughness": 300, 
+                "Family": "Slow"
+                }
+            }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PresetPlantList": [
+          {
+            "PlantType": "hypnoshroom",
+            "Level": -1
+          },
+          {
+            "PlantType": "imitater",
+            "Level": -1
+          },
+          {
+            "PlantType": "springbean",
+            "Level": -1
+          },
+          {
+            "PlantType": "gravebuster",
+            "Level": -1
+          },
+          {
+            "PlantType": "floawerPot",
+            "Level": -1
+          }
+        ],
+        "SelectionMethod": "preset"
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 1,
+        "WaveCount": 20,
+        "SuppressFlagZombie": true,
+        "Waves": [
+          ["RTID(Wave1@CurrentLevel)",
+          "RTID(Wave2@CurrentLevel)",
+          "RTID(Wave3@CurrentLevel)",
+          "RTID(Wave4@CurrentLevel)",
+          "RTID(Wave5@CurrentLevel)",
+          "RTID(Wave6@CurrentLevel)",
+          "RTID(Wave7@CurrentLevel)",
+          "RTID(Wave8@CurrentLevel)",
+          "RTID(Wave9@CurrentLevel)",
+          "RTID(Wave10@CurrentLevel)",
+          "RTID(Wave11@CurrentLevel)",
+          "RTID(Wave12@CurrentLevel)"]
+        ],
+        "FlagWaveVeteranOverrideTypes": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    { 
+      "aliases": ["Wave1"],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {"Max": 0.0, "Min": 0.0},
+        "TimeBetween": {"Max": 2, "Min": 2},
+        "Repeat": {"Max": 1, "Min": 1},
+        "RewardWhenEnded": false,
+        "SuppressRewardState": true,
+        "Events": [
+          "RTID(Wave1Zombies@CurrentLevel)",
+          "RTID(Wave1Text@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1Zombies"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)",
+            "Row": 3,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(tutorial@ZombieTypes)",
+            "Row": 3,
+            "Column": 9
+          },
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)",
+            "Row": 2,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)",
+            "Row": 2,
+            "Column": 8
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave1Text"],
+        "objclass": "WaveWarningProps",
+        "objdata": {
+        "LabelR": 242,
+        "LabelG": 242,
+        "LabelB": 242,
+        "LabelAInit": 4,
+        "OutLineR": 64,
+        "OutLineG": 224,
+        "OutLineB": 208,
+        "String": "1/12",
+        "Sound": "Hugewave",
+        "LabelTargetScale": 0.5,
+        "LabelInitScale": 4,
+        "Duration": 2.5,
+        "InitTime": 0.33,
+        }
+    },
+    { 
+      "aliases": ["Wave2"],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {"Max": 21.0, "Min": 21.0},
+        "TimeBetween": {"Max": 2, "Min": 2},
+        "Repeat": {"Max": 1, "Min": 1},
+        "RewardWhenEnded": false,
+        "SuppressRewardState": true,
+        "Events": [
+          "RTID(Wave2Zombies@CurrentLevel)",
+          "RTID(Wave2Text@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave2Zombies"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(dino_imp@ZombieTypes)",
+            "Row": 4,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(eighties_imp@ZombieTypes)",
+            "Row": 4,
+            "Column": 9
+          },
+          {
+            "Type": "RTID(dark_juggler@ZombieTypes)",
+            "Row": 5,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 5,
+            "Column": 8
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave2Text"],
+      "objclass": "WaveWarningProps",
+      "objdata": {
+        "LabelR": 242,
+        "LabelG": 242,
+        "LabelB": 242,
+        "LabelAInit": 4,
+        "OutLineR": 64,
+        "OutLineG": 224,
+        "OutLineB": 208,
+        "String": "2/12",
+        "Sound": "Hugewave",
+        "LabelTargetScale": 0.5,
+        "LabelInitScale": 4,
+        "Duration": 2.5,
+        "InitTime": 0.33,
+        }
+    },
+    { 
+      "aliases": ["Wave3"],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {"Max": 42.0, "Min": 42.0},
+        "TimeBetween": {"Max": 2, "Min": 2},
+        "Repeat": {"Max": 1, "Min": 1},
+        "RewardWhenEnded": false,
+        "SuppressRewardState": true,
+        "Events": [
+          "RTID(Wave3Zombies@CurrentLevel)",
+          "RTID(Wave3Text@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave3Zombies"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(future_imp@ZombieTypes)",
+            "Row": 1,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 1,
+            "Column": 9
+          },
+          {
+            "Type": "RTID(tomb_raiser@ZombieTypes)",
+            "Row": 2,
+            "Column": 6
+          },
+          {
+            "Type": "RTID(egypt_imp@ZombieTypes)",
+            "Row": 2,
+            "Column": 8
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave3Text"],
+      "objclass": "WaveWarningProps",
+      "objdata": {
+        "LabelR": 242,
+        "LabelG": 242,
+        "LabelB": 242,
+        "LabelAInit": 4,
+        "OutLineR": 64,
+        "OutLineG": 224,
+        "OutLineB": 208,
+        "String": "3/12",
+        "Sound": "Hugewave",
+        "LabelTargetScale": 0.5,
+        "LabelInitScale": 4,
+        "Duration": 2.5,
+        "InitTime": 0.33,
+        }
+    },
+    { 
+      "aliases": ["Wave4"],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {"Max": 63.0, "Min": 63.0},
+        "TimeBetween": {"Max": 2, "Min": 2},
+        "Repeat": {"Max": 1, "Min": 1},
+        "RewardWhenEnded": false,
+        "SuppressRewardState": true,
+        "Events": [
+          "RTID(Wave4Zombies@CurrentLevel)",
+          "RTID(Wave4Text@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave4Zombies"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(mummy_armor2@ZombieTypes)",
+            "Row": 3,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(pharaoh@ZombieTypes)",
+            "Row": 3,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(pirate@ZombieTypes)",
+            "Row": 4,
+            "Column": 9
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave4Text"],
+      "objclass": "WaveWarningProps",
+      "objdata": {
+        "LabelR": 242,
+        "LabelG": 242,
+        "LabelB": 242,
+        "LabelAInit": 4,
+        "OutLineR": 64,
+        "OutLineG": 224,
+        "OutLineB": 208,
+        "String": "4/12",
+        "Sound": "Hugewave",
+        "LabelTargetScale": 0.5,
+        "LabelInitScale": 4,
+        "Duration": 2.5,
+        "InitTime": 0.33,
+        }
+    },
+    { 
+      "aliases": ["Wave5"],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {"Max": 84.0, "Min": 84.0},
+        "TimeBetween": {"Max": 2, "Min": 2},
+        "Repeat": {"Max": 1, "Min": 1},
+        "RewardWhenEnded": false,
+        "SuppressRewardState": true,
+        "Events": [
+          "RTID(Wave5Zombies@CurrentLevel)",
+          "RTID(Wave5Text@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave5Zombies"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(future_imp@ZombieTypes)",
+            "Row": 5,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5,
+            "Column": 9
+          },
+          {
+            "Type": "RTID(mech_cone@ZombieTypes)",
+            "Row": 1,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 1,
+            "Column": 9
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave5Text"],
+      "objclass": "WaveWarningProps",
+      "objdata": {
+        "LabelR": 242,
+        "LabelG": 242,
+        "LabelB": 242,
+        "LabelAInit": 4,
+        "OutLineR": 64,
+        "OutLineG": 224,
+        "OutLineB": 208,
+        "String": "5/12",
+        "Sound": "Hugewave",
+        "LabelTargetScale": 0.5,
+        "LabelInitScale": 4,
+        "Duration": 2.5,
+        "InitTime": 0.33,
+        }
+    },
+    { 
+      "aliases": ["Wave6"],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {"Max": 105.0, "Min": 105.0},
+        "TimeBetween": {"Max": 2, "Min": 2},
+        "Repeat": {"Max": 1, "Min": 1},
+        "RewardWhenEnded": false,
+        "SuppressRewardState": true,
+        "Events": [
+          "RTID(Wave6Zombies@CurrentLevel)",
+          "RTID(Wave6Text@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave6Zombies"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)",
+            "Row": 2,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)",
+            "Row": 2,
+            "Column": 6
+          },
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)",
+            "Row": 2,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(tutorial_armor4@ZombieTypes)",
+            "Row": 2,
+            "Column": 9
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave6Text"],
+      "objclass": "WaveWarningProps",
+      "objdata": {
+        "LabelR": 242,
+        "LabelG": 242,
+        "LabelB": 242,
+        "LabelAInit": 4,
+        "OutLineR": 64,
+        "OutLineG": 224,
+        "OutLineB": 208,
+        "String": "6/12",
+        "Sound": "Hugewave",
+        "LabelTargetScale": 0.5,
+        "LabelInitScale": 4,
+        "Duration": 2.5,
+        "InitTime": 0.33,
+        }
+    },
+    { 
+      "aliases": ["Wave7"],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {"Max": 126.0, "Min": 126.0},
+        "TimeBetween": {"Max": 2, "Min": 2},
+        "Repeat": {"Max": 1, "Min": 1},
+        "RewardWhenEnded": false,
+        "SuppressRewardState": true,
+        "Events": [
+          "RTID(Wave7Zombies@CurrentLevel)",
+          "RTID(Wave7Text@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave7Zombies"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(iceage_troglobite@ZombieTypes)",
+            "Row": 3,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(dino_bully@ZombieTypes)",
+            "Row": 3,
+            "Column": 9
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 4,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(dino_armor3@ZombieTypes)",
+            "Row": 4,
+            "Column": 8
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave7Text"],
+      "objclass": "WaveWarningProps",
+      "objdata": {
+        "LabelR": 242,
+        "LabelG": 242,
+        "LabelB": 242,
+        "LabelAInit": 4,
+        "OutLineR": 64,
+        "OutLineG": 224,
+        "OutLineB": 208,
+        "String": "7/12",
+        "Sound": "Hugewave",
+        "LabelTargetScale": 0.5,
+        "LabelInitScale": 4,
+        "Duration": 2.5,
+        "InitTime": 0.33,
+        }
+    },
+    { 
+      "aliases": ["Wave8"],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {"Max": 147.0, "Min": 147.0},
+        "TimeBetween": {"Max": 2, "Min": 2},
+        "Repeat": {"Max": 1, "Min": 1},
+        "RewardWhenEnded": false,
+        "SuppressRewardState": true,
+        "Events": [
+          "RTID(Wave8Zombies@CurrentLevel)",
+          "RTID(Wave8Text@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave8Zombies"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 5,
+            "Column": 6
+          },
+          {
+            "Type": "RTID(dino_bully@ZombieTypes)",
+            "Row": 5,
+            "Column": 7
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave8Text"],
+      "objclass": "WaveWarningProps",
+      "objdata": {
+        "LabelR": 242,
+        "LabelG": 242,
+        "LabelB": 242,
+        "LabelAInit": 4,
+        "OutLineR": 64,
+        "OutLineG": 224,
+        "OutLineB": 208,
+        "String": "8/12",
+        "Sound": "Hugewave",
+        "LabelTargetScale": 0.5,
+        "LabelInitScale": 4,
+        "Duration": 2.5,
+        "InitTime": 0.33,
+        }
+    },
+    { 
+      "aliases": ["Wave9"],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {"Max": 168.0, "Min": 168.0},
+        "TimeBetween": {"Max": 2, "Min": 2},
+        "Repeat": {"Max": 1, "Min": 1},
+        "RewardWhenEnded": false,
+        "SuppressRewardState": true,
+        "Events": [
+          "RTID(Wave9Zombies@CurrentLevel)",
+          "RTID(Wave9Text@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave9Zombies"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(iceage_armor3@ZombieTypes)",
+            "Row": 1,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(dino_armor3@ZombieTypes)",
+            "Row": 1,
+            "Column": 9
+          },
+          {
+            "Type": "RTID(west_bull@ZombieTypes)",
+            "Row": 2
+          },
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave9Text"],
+      "objclass": "WaveWarningProps",
+      "objdata": {
+        "LabelR": 242,
+        "LabelG": 242,
+        "LabelB": 242,
+        "LabelAInit": 4,
+        "OutLineR": 64,
+        "OutLineG": 224,
+        "OutLineB": 208,
+        "String": "9/12",
+        "Sound": "Hugewave",
+        "LabelTargetScale": 0.5,
+        "LabelInitScale": 4,
+        "Duration": 2.5,
+        "InitTime": 0.33,
+        }
+    },
+    { 
+      "aliases": ["Wave10"],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {"Max": 189.0, "Min": 189.0},
+        "TimeBetween": {"Max": 2, "Min": 2},
+        "Repeat": {"Max": 1, "Min": 1},
+        "RewardWhenEnded": false,
+        "SuppressRewardState": true,
+        "Events": [
+          "RTID(Wave10Zombies@CurrentLevel)",
+          "RTID(Wave10Text@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave10Zombies"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_impporter@ZombieTypes)",
+            "Row": 3,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(future_imp@ZombieTypes)",
+            "Row": 3,
+            "Column": 9
+          },
+          {
+            "Type": "RTID(dark_wizard@ZombieTypes)",
+            "Row": 4,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(dark_juggler@ZombieTypes)",
+            "Row": 4,
+            "Column": 8
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave10Text"],
+      "objclass": "WaveWarningProps",
+      "objdata": {
+        "LabelR": 242,
+        "LabelG": 242,
+        "LabelB": 242,
+        "LabelAInit": 4,
+        "OutLineR": 64,
+        "OutLineG": 224,
+        "OutLineB": 208,
+        "String": "10/12",
+        "Sound": "Hugewave",
+        "LabelTargetScale": 0.5,
+        "LabelInitScale": 4,
+        "Duration": 2.5,
+        "InitTime": 0.33,
+        }
+    },
+    { 
+      "aliases": ["Wave11"],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {"Max": 210.0, "Min": 210.0},
+        "TimeBetween": {"Max": 2, "Min": 2},
+        "Repeat": {"Max": 1, "Min": 1},
+        "RewardWhenEnded": false,
+        "SuppressRewardState": true,
+        "Events": [
+          "RTID(Wave11Zombies@CurrentLevel)",
+          "RTID(Wave11Text@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave11Zombies"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(dark_wizard_veteran@ZombieTypes)",
+            "Row": 5,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(iceage_troglobite_veteran@ZombieTypes)",
+            "Row": 1,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 1,
+            "Column": 6
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave11Text"],
+      "objclass": "WaveWarningProps",
+      "objdata": {
+        "LabelR": 242,
+        "LabelG": 242,
+        "LabelB": 242,
+        "LabelAInit": 4,
+        "OutLineR": 64,
+        "OutLineG": 224,
+        "OutLineB": 208,
+        "String": "11/12",
+        "Sound": "Hugewave",
+        "LabelTargetScale": 0.5,
+        "LabelInitScale": 4,
+        "Duration": 2.5,
+        "InitTime": 0.33,
+        }
+    },
+    { 
+      "aliases": ["Wave12"],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {"Max": 231.0, "Min": 231.0},
+        "TimeBetween": {"Max": 2, "Min": 2},
+        "Repeat": {"Max": 1, "Min": 1},
+        "RewardWhenEnded": false,
+        "SuppressRewardState": true,
+        "Events": [
+          "RTID(Wave12Zombies@CurrentLevel)",
+          "RTID(Wave12Text@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave12Zombies"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(iceage_hunter@ZombieTypes)",
+            "Row": 2,
+            "Column": 6
+          },
+          {
+            "Type": "RTID(iceage_troglobite@ZombieTypes)",
+            "Row": 2,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(iceage_dodo@ZombieTypes)",
+            "Row": 3,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(abbot_imp@ZombieTypes)",
+            "Row": 3,
+            "Column": 6
+          },
+          {
+            "Type": "RTID(eighties_arcade@ZombieTypes)",
+            "Row": 3,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 3,
+            "Column": 9
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave12Text"],
+      "objclass": "WaveWarningProps",
+      "objdata": {
+        "LabelR": 242,
+        "LabelG": 242,
+        "LabelB": 242,
+        "LabelAInit": 4,
+        "OutLineR": 64,
+        "OutLineG": 224,
+        "OutLineB": 208,
+        "String": "12/12",
+        "Sound": "Hugewave",
+        "LabelTargetScale": 0.5,
+        "LabelInitScale": 4,
+        "Duration": 2.5,
+        "InitTime": 0.33,
+        }
+    }
+  ],
+  "version": 1
+}
