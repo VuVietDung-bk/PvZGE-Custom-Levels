@@ -1,0 +1,1859 @@
+{
+    "#comment": "Iceage Challenge 1",
+    "objects": [
+        {
+            "objclass": "LevelDefinition",
+            "objdata": {
+                "DescriptionMultiLanguage": {
+                    "en": "Shiny Pippi",
+                    "zh": "闪光皮皮"
+                },
+                "ForceToWorldMap": true,
+                "Loot": "RTID(DefaultLoot@LevelModules)",
+                "Modules": [
+                    "RTID(DefaultSunDropper@LevelModules)",
+                    "RTID(StandardIntro@LevelModules)",
+                    "RTID(ZombiesDeadWinCon@LevelModules)",
+                    "RTID(EgyptMowers@LevelModules)",
+                    "RTID(SeedBank@CurrentLevel)",
+                    "RTID(ChallengeModule@CurrentLevel)",
+                    "RTID(LevelScheduler@CurrentLevel)",
+                    "RTID(DefaultZombieWinCondition@LevelModules)",
+                    "RTID(FrozenZombiePlacement@CurrentLevel)",
+                    "RTID(NewWaves@CurrentLevel)"
+                ],
+                "MusicType": "MiniGame_A",
+                "NameMultiLanguage": {
+                    "en": "Shiny Pippi",
+                    "zh": "闪光皮皮"
+                },
+                "StageModule": "RTID(EgyptStage@LevelModules)"  
+
+        }
+        },
+        {
+            "aliases": [
+                "abbot_torch"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(abbot_torch@CurrentLevel)",
+                "ZombieBasedOn": "abbot_torch"
+            }
+		},
+		{
+			"aliases": [
+				"abbot_torch"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+                "ArmDroppingHealthPct": -1,
+				"WalkSPS": 0.25,
+				"EatDPS": 100,
+				"FireDPS": 1000,
+				"Toughness": 500,
+				"WavePointCost": 350,
+				"Weight": 3000,
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+				"HitRectWithFire": "RTID(ExplorerWithFireHitRect@RectangleProps)",
+				"AttackRectWithFire": "RTID(ExplorerWithFireAttackRect@RectangleProps)",
+				"FlameDistaDetectnce": 4,
+				"FlameAttackDistance": 4,
+				"FireDuration": 3 
+            
+            }
+        },
+        {
+            "aliases": [
+                "monk_torch"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(monk_torch@CurrentLevel)",
+                "ZombieBasedOn": "monk_torch"
+            }
+		},
+		{
+			"aliases": [
+				"monk_torch"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+                "ArmDroppingHealthPct": -1,
+				"CannotBeCarriedByFanStorm": true,
+				"WalkSPS": 0.3,
+				"EatDPS": 100,
+				"FireDPS": 1000,
+				"Toughness": 500,
+				"WavePointCost": 250,
+				"Weight": 3000,
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+				"HitRectWithFire": "RTID(MonkTorchWithFireHitRect@RectangleProps)",
+				"AttackRectWithFire": "RTID(MonkTorchWithFireAttackRect@RectangleProps)"  
+
+        }
+    },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PresetPlantList": [],
+        "SelectionMethod": "chooser"
+
+            }
+        },
+        {
+            "aliases": [
+                "NewWaves"
+            ],
+            "objclass": "WaveManagerModuleProperties",
+            "objdata": {
+                "DynamicZombies": [
+                    {},
+                    {},
+                    {},
+                    {
+                        "PointIncrementPerWave": 20,
+                        "StartingPoints": 100,
+                        "StartingWave": 5,
+                        "ZombiePool": [
+                            "RTID(mummy@ZombieTypes)",
+                            "RTID(mummy_armor1@ZombieTypes)",
+                            "RTID(mummy_armor2@ZombieTypes)",                           
+                            "RTID(kongfu_torch@ZombieTypes)", 
+                            "RTID(monk_torch@CurrentLevel)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 40,
+                        "StartingPoints": 200,
+                        "StartingWave": 5,
+                        "ZombiePool": [
+                            "RTID(mummy_armor1@ZombieTypes)",
+                            "RTID(mummy_armor2@ZombieTypes)",
+                            "RTID(mummy_armor1@ZombieTypes)",
+                            "RTID(explorer@ZombieTypes)",
+                            "RTID(kongfu_torch@ZombieTypes)", 
+                            "RTID(monk_torch@CurrentLevel)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 50,
+                        "StartingPoints": 300,
+                        "StartingWave": 4,
+                        "ZombiePool": [
+                            "RTID(mummy_armor2@ZombieTypes)",
+                            "RTID(mummy_armor1@ZombieTypes)",
+                            "RTID(mummy_armor4@ZombieTypes)",
+                            "RTID(abbot_torch@CurrentLevel)",
+                            "RTID(kongfu_torch@ZombieTypes)", 
+                            "RTID(monk_torch@CurrentLevel)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 60,
+                        "StartingPoints": 400,
+                        "StartingWave": 3,
+                        "ZombiePool": [
+                            "RTID(eighties_glitter@ZombieTypes)",
+                            "RTID(mummy_armor4@ZombieTypes)",
+                            "RTID(abbot_torch@CurrentLevel)",
+                            "RTID(mummy@ZombieTypes)",
+                            "RTID(kongfu_torch@ZombieTypes)", 
+                            "RTID(monk_torch@CurrentLevel)"
+                        ]
+                    }
+                ],
+                "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 6,
+                "WaveCount": 18,
+                "FlagWaveVeteranOverrideTypes": [ 1, 1, 1 ],
+                "LevelJamList":[
+                    "jam_rap",
+			        "jam_8bit",
+                    "jam_metal",
+                    "jam_punk",
+                    "jam_pop"  
+                ],
+                "WaveSpendingPointIncrement": 100,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    [
+                        "RTID(Wave1@CurrentLevel)", 
+                        "RTID(WaveGravestonesEvent0@CurrentLevel)" 
+                    ],
+                    [
+                        "RTID(Wave2@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave3@CurrentLevel)", 
+                        "RTID(WaveGravestonesEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave4@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave5@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave6@CurrentLevel)", 
+                        "RTID(Warning3@CurrentLevel)", 
+                        "RTID(WaveGravestonesEvent0@CurrentLevel)", 
+                        "RTID(WaveGraveSpawnEvent0@CurrentLevel)"
+                    ],
+
+                    [
+                        "RTID(Wave7@CurrentLevel)",
+                        "RTID(WaveSandstormEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave8@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave9@CurrentLevel)", 
+                        "RTID(Warning1@CurrentLevel)",
+                        "RTID(WaveEvent1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave10@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave11@CurrentLevel)", 
+                        "RTID(Warning2@CurrentLevel)",
+                        "RTID(WaveEvent2@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave12@CurrentLevel)", 
+                        "RTID(Warning3@CurrentLevel)", 
+                        "RTID(WaveGravestonesEvent0@CurrentLevel)", 
+                        "RTID(WaveGraveSpawnEvent0@CurrentLevel)"
+                    ],
+
+                    [
+                        "RTID(Wave13@CurrentLevel)",
+                        "RTID(WaveSandstormEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave14@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave15@CurrentLevel)", 
+                        "RTID(Warning1@CurrentLevel)",
+                        "RTID(WaveEvent1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave16@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave17@CurrentLevel)", 
+                        "RTID(Warning2@CurrentLevel)",
+                        "RTID(WaveEvent2@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave18@CurrentLevel)", 
+                        "RTID(Warning3@CurrentLevel)", 
+                        "RTID(WaveGravestonesEvent0@CurrentLevel)", 
+                        "RTID(WaveGraveSpawnEvent0@CurrentLevel)",
+                        "RTID(WaveSandstormEvent0@CurrentLevel)"
+                    ],
+
+                    [
+                        "RTID(Wave19@CurrentLevel)",
+                        "RTID(WaveSandstormEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave20@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave21@CurrentLevel)", 
+                        "RTID(Warning1@CurrentLevel)",
+                        "RTID(WaveEvent1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave22@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave23@CurrentLevel)", 
+                        "RTID(Warning2@CurrentLevel)",
+                        "RTID(WaveEvent2@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave24@CurrentLevel)", 
+                        "RTID(Warning3@CurrentLevel)", 
+                        "RTID(WaveGravestonesEvent0@CurrentLevel)", 
+                        "RTID(WaveGraveSpawnEvent0@CurrentLevel)",
+                        "RTID(WaveSandstormEvent0@CurrentLevel)"
+                    ]
+                ]
+
+            }
+        },
+        {
+            "aliases": [
+                "Wave1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                       
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,               
+                "Zombies": [
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                   
+                    },
+                    {
+                        "Type": "RTID(explorer@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave4"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+
+                "Zombies": [                                          
+                    {
+                        "Type": "RTID(abbot_torch@CurrentLevel)"                    
+                    },
+                    {
+                        "Type": "RTID(monk_torch@CurrentLevel)"
+                    },
+                    {
+
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    },
+                    {
+
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave5"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {               
+                "Zombies": [
+                    {
+                        "Type": "RTID(explorer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_torch@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"
+                    },
+                    {
+
+                        "Type": "RTID(ra@ZombieTypes)"  
+                    	    
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave6"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": { 
+                "AdditionalPlantfood": 1,               
+                "Zombies": [
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"      
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor4@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(explorer_veteran@ZombieTypes)"                                                                                                                          
+                                                                                                                        
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                 
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave7"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {              
+                "Zombies": [
+                    {                       
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"      
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(explorer@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(explorer@ZombieTypes)"                                                                                                         
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave8"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"      
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_torch@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(kongfu_torch@ZombieTypes)"                       	                      
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave9"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": { 
+                "AdditionalPlantfood": 1,             
+                "Zombies": [
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"      
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor4@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(explorer_veteran@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(explorer_veteran@ZombieTypes)"                                 
+                    },
+                    {
+                        "Type": "RTID(egypt_gargantuar@ZombieTypes)"                                 
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave10"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {                               
+                "Zombies": [
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"      
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(monk_torch@CurrentLevel)"                                                   
+                    },
+                    {
+                        "Type": "RTID(monk_torch@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave11"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {                                
+                "Zombies": [
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"      
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(abbot_torch@CurrentLevel)"                                                   
+                    },
+                    {
+                        "Type": "RTID(monk_torch@CurrentLevel)"                  
+                    },
+                    {
+                        "Type": "RTID(kongfu_torch@ZombieTypes)"                  
+                    },
+                    {
+                        "Type": "RTID(explorer@ZombieTypes)"                  
+                    },
+                    {
+                        "Type": "RTID(explorer_veteran@ZombieTypes)"                          
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave12"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,               
+                "Zombies": [
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"      
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor4@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(abbot_torch@CurrentLevel)"                                                   
+                    },
+                    {
+                        "Type": "RTID(monk_torch@CurrentLevel)"                  
+                    },
+                    {
+                        "Type": "RTID(kongfu_torch@ZombieTypes)"                  
+                    },
+                    {
+                        "Type": "RTID(explorer@ZombieTypes)"                  
+                    },
+                    {
+                        "Type": "RTID(explorer_veteran@ZombieTypes)"                  
+                    },
+                    {
+                        "Type": "RTID(lostcity_gargantuar@ZombieTypes)"                  
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave13"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {              
+                "Zombies": [
+                    {                       
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"      
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(explorer@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(explorer@ZombieTypes)"                                                                                                         
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave14"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"      
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_torch@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(kongfu_torch@ZombieTypes)"                       	                      
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave15"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": { 
+                "AdditionalPlantfood": 1,             
+                "Zombies": [
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"      
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor4@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(explorer_veteran@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(explorer_veteran@ZombieTypes)"                                 
+                    },
+                    {
+                        "Type": "RTID(egypt_gargantuar@ZombieTypes)"                                 
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave16"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {                               
+                "Zombies": [
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"      
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(monk_torch@CurrentLevel)"                                                   
+                    },
+                    {
+                        "Type": "RTID(monk_torch@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave17"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {                                
+                "Zombies": [
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"      
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(abbot_torch@CurrentLevel)"                                                   
+                    },
+                    {
+                        "Type": "RTID(monk_torch@CurrentLevel)"                  
+                    },
+                    {
+                        "Type": "RTID(kongfu_torch@ZombieTypes)"                  
+                    },
+                    {
+                        "Type": "RTID(explorer@ZombieTypes)"                  
+                    },
+                    {
+                        "Type": "RTID(explorer_veteran@ZombieTypes)"                          
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave18"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,               
+                "Zombies": [
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"      
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor4@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(abbot_torch@CurrentLevel)"                                                   
+                    },
+                    {
+                        "Type": "RTID(monk_torch@CurrentLevel)"                  
+                    },
+                    {
+                        "Type": "RTID(kongfu_torch@ZombieTypes)"                  
+                    },
+                    {
+                        "Type": "RTID(explorer@ZombieTypes)"                  
+                    },
+                    {
+                        "Type": "RTID(explorer_veteran@ZombieTypes)"                  
+                    },
+                    {
+                        "Type": "RTID(lostcity_gargantuar@ZombieTypes)"                  
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave19"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {              
+                "Zombies": [
+                    {                       
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"      
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(explorer@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(explorer@ZombieTypes)"                                                                                                         
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave20"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"      
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_torch@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(kongfu_torch@ZombieTypes)"                       	                      
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave21"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": { 
+                "AdditionalPlantfood": 1,             
+                "Zombies": [
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"      
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor4@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(explorer_veteran@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(explorer_veteran@ZombieTypes)"                                 
+                    },
+                    {
+                        "Type": "RTID(egypt_gargantuar@ZombieTypes)"                                 
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave22"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {                               
+                "Zombies": [
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"      
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(monk_torch@CurrentLevel)"                                                   
+                    },
+                    {
+                        "Type": "RTID(monk_torch@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave23"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {                                
+                "Zombies": [
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"      
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(abbot_torch@CurrentLevel)"                                                   
+                    },
+                    {
+                        "Type": "RTID(monk_torch@CurrentLevel)"                  
+                    },
+                    {
+                        "Type": "RTID(kongfu_torch@ZombieTypes)"                  
+                    },
+                    {
+                        "Type": "RTID(explorer@ZombieTypes)"                  
+                    },
+                    {
+                        "Type": "RTID(explorer_veteran@ZombieTypes)"                          
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave24"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,               
+                "Zombies": [
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"      
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor2@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(mummy_armor4@ZombieTypes)"                                                                                                                          
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(ra@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"                                                   
+                    },
+                    {
+                        "Type": "RTID(eighties_glitter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(abbot_torch@CurrentLevel)"                                                   
+                    },
+                    {
+                        "Type": "RTID(monk_torch@CurrentLevel)"                  
+                    },
+                    {
+                        "Type": "RTID(kongfu_torch@ZombieTypes)"                  
+                    },
+                    {
+                        "Type": "RTID(explorer@ZombieTypes)"                  
+                    },
+                    {
+                        "Type": "RTID(explorer_veteran@ZombieTypes)"                                                                     
+                    },
+                    {
+                        "Type": "RTID(lostcity_gargantuar@ZombieTypes)"                  
+                    },
+                    {
+                        "Type": "RTID(egypt_gargantuar@ZombieTypes)"                  
+                    }
+                ]
+            
+                        
+        }
+    },
+    {
+            "aliases": [
+                "Warning1"
+            ],
+            "objclass": "WaveWarningProps",
+            "objdata": {
+                "LabelR": 255,
+                "LabelG": 0,
+                "LabelB": 216,
+                "LabelAInit": 0.1,
+                "OutLineR": 255,
+                "OutLineG": 255,
+                "OutLineB": 230,
+                "String": "Shining Phantom!",
+				"StringMultiLanguage": {
+                    "en": "Shining Phantom!",
+                    "zh": "闪耀魅影！"
+                },
+                "Sound": "Necromancy",
+                "LabelTargetScale": 0.5,
+                "LabelInitScale": 4,
+                "Duration": 3,
+                "InitTime": 0.5  
+        }
+	}, 
+    {
+			"aliases": [ "WaveEvent1" ],
+			"objclass": "SpawnZombiesFromGroundSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 8,
+				"ColumnStart": 5,
+				"Zombies": [ 
+          {
+			"Type": "RTID(eighties_glitter@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(eighties_glitter@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(eighties_glitter@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(eighties_glitter@ZombieTypes)"      
+          },
+          {
+            "Type": "RTID(eighties_glitter@ZombieTypes)"                                                 
+		  } 
+        ] 
+
+        }
+    },
+    {
+            "aliases": [
+                "Warning2"
+            ],
+            "objclass": "WaveWarningProps",
+            "objdata": {
+                "LabelR": 241,
+                "LabelG": 171,
+                "LabelB": 93,
+                "LabelAInit": 0.1,
+                "OutLineR": 255,
+                "OutLineG": 242,
+                "OutLineB": 114,
+                "String": "Praise the sun!",
+				"StringMultiLanguage": {
+                    "en": "Praise the sun!",
+                    "zh": "赞美太阳！"
+                },
+                "Sound": "Necromancy",
+                "LabelTargetScale": 0.5,
+                "LabelInitScale": 4,
+                "Duration": 3,
+                "InitTime": 0.5  
+        }
+	}, 
+    {
+			"aliases": [ "WaveEvent2" ],
+			"objclass": "SpawnZombiesFromGroundSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 8,
+				"ColumnStart": 5,
+				"Zombies": [ 
+          {
+			"Type": "RTID(ra@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(ra@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(ra@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(ra@ZombieTypes)"      
+          },
+          {
+            "Type": "RTID(ra@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(ra@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(ra@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(ra@ZombieTypes)"                                                 
+		  } 
+        ]                                                
+        
+        }
+    },
+    {
+      "aliases": [
+        "WaveSandstormEvent0"
+      ],
+      "objclass": "StormZombieSpawnerProps",
+      "objdata": {
+        "ColumnEnd": 8,
+        "ColumnStart": 5,
+        "GroupSize": 1,
+        "TimeBetweenGroups": 0.5,
+        "Waves": "",
+        "Type": "sandstorm",
+        "Zombies": [
+          {
+            "Type": "RTID(ra@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(ra@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(explorer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(explorer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(explorer_veteran@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(explorer_veteran@ZombieTypes)"
+          }
+        ]
+        
+        }
+    },
+    {
+            "aliases": [
+                "Warning3"
+            ],
+            "objclass": "WaveWarningProps",
+            "objdata": {
+                "LabelR": 241,
+                "LabelG": 171,
+                "LabelB": 93,
+                "LabelAInit": 0.1,
+                "OutLineR": 154,
+                "OutLineG": 35,
+                "OutLineB": 36,
+                "String": "Curse of Misfortune!",
+				"StringMultiLanguage": {
+                    "en": "Curse of Misfortune!",
+                    "zh": "厄运诅咒！"
+                },
+                "Sound": "Necromancy",
+                "LabelTargetScale": 0.5,
+                "LabelInitScale": 4,
+                "Duration": 3,
+                "InitTime": 0.5  
+        }
+    },
+    {
+            "aliases": [
+                "WaveGravestonesEvent0"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "DisplacePlants": false,
+                "GravestonePool": [
+                    {
+                        "Count": 10,
+                        "Type": "RTID(gravestone_egypt@GridItemTypes)"   
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                  {
+                        "mX": 8,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 8,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 8,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 8,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 8,
+                        "mY": 4
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 4
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 4
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 4                   
+                    }
+                ],
+                "SpawnSoundID": "",
+                "maxX": 8,
+                "minX": 0   
+        }
+    },
+    {
+      "aliases": [
+        "WaveGraveSpawnEvent0"
+      ],
+      "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+      "objdata": {
+        "AdditionalPlantfood": "0",
+        "GridTypes": [
+          "RTID(gravestone_egypt@GridItemTypes)"
+        ],
+        "ZombieSpawnWaitTime": "1",
+        "Zombies": [
+          {
+            "Type": "RTID(ra@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(ra@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(explorer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(explorer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(explorer_veteran@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(explorer_veteran@ZombieTypes)"
+          }
+        ]            
+            }
+        }
+    ],
+    "version": 1
+}

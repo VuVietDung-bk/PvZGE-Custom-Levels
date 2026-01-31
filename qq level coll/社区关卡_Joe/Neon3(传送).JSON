@@ -1,0 +1,1278 @@
+{
+    "#comment": "Neon 3",
+    "objects": [
+        {
+            "objclass": "LevelDefinition",
+            "objdata": {
+                "Description": "[PLAYERS_TRIP_TO_WEST]",
+                "LevelNumber": 3,
+                "FirstIntroNarrative": "Phantom_Intro",
+                "Loot": "RTID(DefaultLoot@LevelModules)",
+                "Modules": [
+                    "RTID(StandardIntro@LevelModules)",
+                    "RTID(ModPlants@CurrentLevel)",
+                    "RTID(ZombiesDeadWinCon@LevelModules)",
+                    "RTID(ConveyorBelt@CurrentLevel)",
+                    "RTID(NewWaves@CurrentLevel)",
+                    "RTID(ChallengeModule@CurrentLevel)",
+                    "RTID(DefaultZombieWinCondition@LevelModules)"
+                ],
+                "MusicType": "MiniGame_A",
+                "Name": "Neon Dreamscape - Day 3",
+                "NameMultiLanguage": {
+                    "en": "Neon Dreamscape - Day 3",
+                    "zh": "霓虹幻境 - 第 3 天"
+                },
+
+                "NormalPresentTable": "egypt_normal_01",
+                "ShinyPresentTable": "egypt_shiny_01",
+                "StageModule": "RTID(WestStage@LevelModules)"
+            }
+        },
+        {
+            "objclass": "NarrativeProperties",
+            "aliases": [
+                "Phantom_Intro"
+            ],
+            "objdata": {
+                "AutoAdvance": true,
+                "DelayBetweenLines": 2.5,
+                "Flow": [
+                    {
+                        "Character": "winnie",
+                        "Action": "NPC_ENTER",
+                        "Delay": 0.5
+                    },
+                    {
+                        "Character": "winnie",
+                        "Action": "SAY",
+                        "Lines": {
+                            "en": "Zomboni crush plants and leave ice trails behind them",
+                            "zh": "冰车僵尸会碾压植物并在其身后留下冰道 "
+                        },
+                        "Delay": 0.3
+                    },
+                    {
+                        "Character": "winnie",
+                        "Action": "SAY",
+                        "Lines": {
+                            "en": "Zombie Bobsled Team will glide out of Iceland, which stretches beyond the lawn",
+                            "zh": "雪橇小队会从延伸到草坪外的冰岛滑出"
+                        },
+                        "Delay": 0.3
+                    },
+                    {
+                        "Character": "winnie",
+                        "Action": "SAY",
+                        "Lines": {
+                            "en": "Y.. said that using laser beans to deal with them might be a good choice choose",
+                            "zh": "Y..说，用激光豆对付他们或许是一个不错的选择"
+                        },
+                        "Delay": 0.3
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ConveyorBelt"
+            ],
+            "objclass": "ConveyorSeedBankProperties",
+            "objdata": {
+                "DropDelayConditions": [
+                    {
+                        "Delay": 4.5,
+                        "MaxPackets": 0
+                    },
+                    {
+                        "Delay": 7,
+                        "MaxPackets": 5
+                    },
+                    {
+                        "Delay": 9,
+                        "MaxPackets": 7
+                    },
+                    {
+                        "Delay": 12,
+                        "MaxPackets": 9
+                    }
+                ],
+                "InitialPlantList": [
+                    {
+                        "MaxCount": 5,
+                        "MaxWeightFactor": 0,
+                        "PlantType": "laser_bean",
+                        "Weight": 40
+                    },
+                    {
+                        "MaxCount": 10,
+                        "MaxWeightFactor": 0,
+                        "PlantType": "kernelpult",
+                        "Weight": 30
+                    }
+                ],
+                "SpeedConditions": [
+                    {
+                        "MaxPackets": 0,
+                        "Speed": 100
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ChallengeModule"
+            ],
+            "objclass": "StarChallengeModuleProperties",
+            "objdata": {
+                "Challenges": [
+                    [
+                        "RTID(BeatTheLevel@CurrentLevel)"
+                    ]
+                ],
+                "ChallengesAlwaysAvailable": true
+            }
+        },
+        {
+            "aliases": [
+                "BeatTheLevel"
+            ],
+            "objclass": "StarChallengeBeatTheLevelProps",
+            "objdata": {
+                "Description": "[STARCHALLENGE_ICEAGE_FINALE]",
+                "DescriptiveName": "[STARCHALLENGE_ICEAGE_FINALE_NAME]"
+            }
+        },
+        {
+            "aliases": [
+                "NewWaves"
+            ],
+            "objclass": "WaveManagerModuleProperties",
+            "objdata": {
+                "DynamicZombies": [
+                    {},
+                    {},
+                    {},
+                    {},
+                    {
+                        "PointIncrementPerWave": 40,
+                        "StartingPoints": 100,
+                        "StartingWave": 5,
+                        "ZombiePool": [
+                            "RTID(modern_allstar@ZombieTypes)",
+                            "RTID(modern_newspaper@ZombieTypes)",
+                            "RTID(modern_balloon@ZombieTypes)",
+                            "RTID(cowboy_armor2@ZombieTypes)",
+                            "RTID(cowboy_armor1@ZombieTypes)",
+                            "RTID(west_bull@ZombieTypes)",
+                            "RTID(future_protector@ZombieTypes)",
+                            "RTID(football_mech@ZombieTypes)",
+                            "RTID(poncho@ZombieTypes)",
+                            "RTID(zomboni@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 40,
+                        "StartingPoints": 200,
+                        "StartingWave": 4,
+                        "ZombiePool": [
+                            "RTID(modern_allstar@ZombieTypes)",
+                            "RTID(modern_newspaper@ZombieTypes)",
+                            "RTID(modern_balloon@ZombieTypes)",
+                            "RTID(cowboy_armor2@ZombieTypes)",
+                            "RTID(cowboy_armor1@ZombieTypes)",
+                            "RTID(west_bull@ZombieTypes)",
+                            "RTID(future_protector@ZombieTypes)",
+                            "RTID(football_mech@ZombieTypes)",
+                            "RTID(poncho@ZombieTypes)",
+                            "RTID(zomboni@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 60,
+                        "StartingPoints": 300,
+                        "StartingWave": 3,
+                        "ZombiePool": [
+                            "RTID(modern_allstar@ZombieTypes)",
+                            "RTID(modern_newspaper@ZombieTypes)",
+                            "RTID(modern_balloon@ZombieTypes)",
+                            "RTID(cowboy_armor2@ZombieTypes)",
+                            "RTID(cowboy_armor4@ZombieTypes)",
+                            "RTID(west_bull@ZombieTypes)",
+                            "RTID(future_protector@ZombieTypes)",
+                            "RTID(football_mech@ZombieTypes)",
+                            "RTID(poncho@ZombieTypes)",
+                            "RTID(cowboy_gargantuar@ZombieTypes)",
+                            "RTID(zomboni@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 80,
+                        "StartingPoints": 400,
+                        "StartingWave": 3,
+                        "ZombiePool": [
+                            "RTID(modern_allstar@ZombieTypes)",
+                            "RTID(modern_newspaper@ZombieTypes)",
+                            "RTID(modern_balloon@ZombieTypes)",
+                            "RTID(cowboy_armor2@ZombieTypes)",
+                            "RTID(cowboy_armor4@ZombieTypes)",
+                            "RTID(west_bull@ZombieTypes)",
+                            "RTID(future_protector@ZombieTypes)",
+                            "RTID(football_mech@ZombieTypes)",
+                            "RTID(poncho@ZombieTypes)",
+                            "RTID(cowboy_gargantuar@ZombieTypes)",
+                            "RTID(zomboni@ZombieTypes)"
+                        ]
+                    }
+                ],
+                "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 5,
+                "FlagWaveVeteranOverrideTypes": [
+                    1,
+                    1
+                ],
+                "WaveCount": 15,
+                "WaveSpendingPointIncrement": 100,
+                "WaveSpendingPoints": 200,
+                "Waves": [
+                    [
+                        "RTID(Wave1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave2@CurrentLevel)",
+                        "RTID(Wave2ModConveyor0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave3@CurrentLevel)",
+                        "RTID(Wave3ModConveyor0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave4@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave5@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave6@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave7@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave8@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave9@CurrentLevel)",
+                        "RTID(Wave9ModConveyor0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave10@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave11@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave12@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave13@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave14@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave15@CurrentLevel)"
+                    ]
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(camel_manyhump@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(cowboy_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(cowboy_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(cowboy_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(cowboy_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_balloon@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(poncho_plate@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave4"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(piano@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave5"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(prospector@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(prospector@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(camel_manyhump@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(camel_manyhump@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(football_mech@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(prospector@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(cowboy_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(cowboy_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(cowboy_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave6"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "Zombies": [
+                    {
+                        "Type": "RTID(piano@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(camel_manyhump@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(camel_manyhump@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_balloon@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(football_mech@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave7"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(poncho_plate@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(cowboy_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(football_mech@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(piano@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave8"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(piano@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(piano@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(prospector@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave9"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(future_protector@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(future_protector@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_balloon@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(cowboy_gargantuar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave10"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(camel_manyhump@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(camel_manyhump@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_balloon@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_balloon@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(piano@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(cowboy_gargantuar@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave11"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(camel_manyhump@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_balloon@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_balloon@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(piano@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave12"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "Zombies": [
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(football_mech@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(camel_manyhump@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(camel_manyhump@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_balloon@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(football_mech@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(football_mech@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(future_protector@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave13"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(piano@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(piano@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(piano@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(cowboy_gargantuar@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave14"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(cowboy_gargantuar@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave15"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(camel_manyhump@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(camel_manyhump@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_balloon@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_balloon@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(zomboni@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(cowboy_gargantuar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(cowboy_gargantuar@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave2ModConveyor0"
+            ],
+            "objclass": "ModifyConveyorWaveActionProps",
+            "objdata": {
+                "Add": [
+                    {
+                        "MaxCount": 7,
+                        "MaxCountCooldownSeconds": 3,
+                        "MaxWeightFactor": 0,
+                        "Type": "RTID(phatbeet@PlantTypes)",
+                        "Weight": 15
+                    }
+                ],
+                "Remove": []
+            }
+        },
+        {
+            "aliases": [
+                "Wave3ModConveyor0"
+            ],
+            "objclass": "ModifyConveyorWaveActionProps",
+            "objdata": {
+                "Add": [
+                    {
+                        "MaxCount": 5,
+                        "MaxCountCooldownSeconds": 3,
+                        "MaxWeightFactor": 0,
+                        "Type": "RTID(primalwallnut@PlantTypes)",
+                        "Weight": 10
+                    }
+                ],
+                "Remove": []
+            }
+        },
+        {
+            "aliases": [
+                "Wave9ModConveyor0"
+            ],
+            "objclass": "ModifyConveyorWaveActionProps",
+            "objdata": {
+                "Add": [
+                    {
+                        "MaxCount": 2,
+                        "MaxCountCooldownSeconds": 3,
+                        "MaxWeightFactor": 0,
+                        "Type": "RTID(squash@PlantTypes)",
+                        "Weight": 5
+                    }
+                ],
+                "Remove": []
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "HidePlantfood": true,
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "laser_bean"
+                        ],
+                        "NewObjdata": {
+                            "Damage": 10,
+                            "ShootInterval": 0.3,
+                            "ShootIntervalAdditional": 0.15,
+                            "DamagePlantfood": 1800,
+                            "Cooldown": 7.5,
+                            "CooldownFrom": 1,
+                            "SunCost": 200,
+                            "BeghouledCost": 2000,
+                            "Toughness": 500,
+                            "Family": "Sharp"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "HidePlantfood": true,
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "sunshroom"
+                        ],
+                        "NewObjdata": {
+                            "PlantfoodTime": 3,
+                            "SunValue": 25,
+                            "ProduceInterval": 24,
+                            "ProduceIntervalAdditional": 1.8,
+                            "ProduceCountdownStart": 5,
+                            "ProduceCountdownStartAdditional": 5,
+                            "ProduceInterval_AtNight": 20,
+                            "ProduceIntervalAdditional_AtNight": 1.5,
+                            "ProduceCountdownStart_AtNight": 5,
+                            "ProduceCountdownStartAdditional_AtNight": 5,
+                            "SunValueList": [
+                                25,
+                                50,
+                                75
+                            ],
+                            "GrowTime0_1": 18,
+                            "GrowTime1_2": 54,
+                            "Cooldown": 5,
+                            "CooldownFrom": 0,
+                            "SunCost": 25,
+                            "BeghouledCost": 1000,
+                            "Toughness": 300,
+                            "Family": "Sun"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "HidePlantfood": true,
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "moonflower"
+                        ],
+                        "NewObjdata": {
+                            "PlantfoodTime": 1,
+                            "SunValue": 25,
+                            "ProduceInterval": 23.5,
+                            "ProduceIntervalAdditional": 1.5,
+                            "ProduceCountdownStart": 5,
+                            "ProduceCountdownStartAdditional": 5,
+                            "SunValueList": [
+                                25,
+                                50,
+                                75,
+                                100
+                            ],
+                            "Cooldown": 7,
+                            "CooldownFrom": 0,
+                            "SunCost": 50,
+                            "BeghouledCost": 1500,
+                            "Toughness": 300,
+                            "Family": "Shadow"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "HidePlantfood": true,
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "snowpea"
+                        ],
+                        "NewObjdata": {
+                            "PeaType": "pea_snow",
+                            "PeaTypePlantfood": "pea_snow",
+                            "PeaFreezeType": "snowdrop_freeze",
+                            "ShootInterval": 1.35,
+                            "ShootIntervalAdditional": 0.15,
+                            "PlantfoodPeaCount": 60,
+                            "ChanceToFreeze": 0.1,
+                            "Cooldown": 5,
+                            "CooldownFrom": 0.5,
+                            "SunCost": 150,
+                            "BeghouledCost": 2500,
+                            "Toughness": 300,
+                            "Family": "Cold",
+                            "ImmuneToIceblock": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "HidePlantfood": true,
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "kernelpult"
+                        ],
+                        "NewObjdata": {
+                            "CabbageType": "corn",
+                            "CabbageTypePlantfood": "butter",
+                            "ThrowInterval": 2.4,
+                            "ThrowIntervalAdditional": 0.15,
+                            "ChanceToButter": 0.4,
+                            "Cooldown": 5,
+                            "CooldownFrom": 0.5,
+                            "SunCost": 100,
+                            "BeghouledCost": 1500,
+                            "Toughness": 300,
+                            "Family": "Lobber"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "glaciershroom"
+                        ],
+                        "NewObjdata": {
+                            "FreezeDuration": 3,
+                            "ChillDuration": 4,
+                            "ChillDurationAmbience": 2,
+                            "FreezeDamage": 20,
+                            "EatFreezeDuration": 3,
+                            "EatChillDuration": 3,
+                            "EatFreezeInterval": 3.5,
+                            "WakeTime": 35,
+                            "Cooldown": 60,
+                            "CooldownFrom": 0.5,
+                            "SunCost": 300,
+                            "BeghouledCost": 4000,
+                            "Toughness": 700,
+                            "Family": "Cold",
+                            "ImmuneToIceblock": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "coldsnapdragon"
+                        ],
+                        "NewObjdata": {
+                            "AttackInterval": 1.85,
+                            "AttackIntervalAdditional": 0.15,
+                            "Damage": 25,
+                            "DamagePlantfood": 1200,
+                            "Cooldown": 5,
+                            "CooldownFrom": 1,
+                            "SunCost": 150,
+                            "BeghouledCost": 2000,
+                            "Toughness": 300,
+                            "Family": "Cold",
+                            "ImmuneToIceblock": true,
+                            "ChillDuration": 10,
+                            "FreezeDuration": 0,
+                            "ChillDurationPlantfood": 10,
+                            "FreezeDurationPlantfood": 10
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "powerlily"
+                        ],
+                        "NewObjdata": {
+                            "CannotBeSheepenedByWizard": true,
+                            "ProduceCount": 1,
+                            "Cooldown": 75,
+                            "CooldownFrom": 1,
+                            "SunCost": 175,
+                            "BeghouledCost": 1000,
+                            "Toughness": 300,
+                            "Family": "Nope"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "pepperpult"
+                        ],
+                        "NewObjdata": {
+                            "CabbageType": "pepper",
+                            "CabbageTypePlantfood": "pepper_pf",
+                            "ThrowInterval": 2.35,
+                            "Cooldown": 7,
+                            "CooldownFrom": 1,
+                            "SunCost": 200,
+                            "Toughness": 300,
+                            "Family": "Fire",
+                            "ImmuneToIceblock": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "guacodile"
+                        ],
+                        "NewObjdata": {
+                            "CannotBeSheepenedByWizard": true,
+                            "PeaType": "guacodile",
+                            "PeaTypeChild": "guacodile_child",
+                            "Cooldown": 7,
+                            "CooldownFrom": 1,
+                            "SunCost": 125,
+                            "BeghouledCost": 1000,
+                            "Toughness": 50,
+                            "Family": "Melee",
+                            "ShootInterval": 1.45,
+                            "ShootIntervalAdditional": 0.15,
+                            "PlantfoodTime": 2,
+                            "ChildrenBiteDamage": 140,
+                            "KnockbackDistance": 2
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "goldleaf"
+                        ],
+                        "NewObjdata": {
+                            "Cooldown": 15,
+                            "CooldownFrom": 0.5,
+                            "SunCost": 50,
+                            "BeghouledCost": 0,
+                            "Toughness": 300,
+                            "Family": "Nope",
+                            "SunCostIncrement": 50
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "sporeshroom"
+                        ],
+                        "NewObjdata": {
+                            "CabbageType": "sporeshroom_spore",
+                            "CabbageTypePlantfood": "sporeshroom_spore_pf",
+                            "Cooldown": 5,
+                            "CooldownFrom": 1,
+                            "SunCost": 150,
+                            "BeghouledCost": 2000,
+                            "Toughness": 450,
+                            "Family": "Poison",
+                            "ShootInterval": 2.35,
+                            "ShootIntervalAdditional": 0.15
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "goldleaf"
+                        ],
+                        "NewObjdata": {
+                            "Cooldown": 15,
+                            "CooldownFrom": 0.5,
+                            "SunCost": 50,
+                            "BeghouledCost": 0,
+                            "Toughness": 300,
+                            "Family": "Nope",
+                            "SunCostIncrement": 50
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "version": 1
+}

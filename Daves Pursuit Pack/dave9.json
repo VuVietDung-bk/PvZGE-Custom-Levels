@@ -1,0 +1,443 @@
+{
+  "Information": {
+    "Author": "ScatterPattern",
+    "Introduction": "",
+    "Version": "1.0",
+    "CreatedAt": "23.01.2026",
+    "UpdatedAt": "23.01.2026",
+    "Difficulty": "Easy",
+    "Category": "Adventure"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "<PLAYERNAME>'s Pursuit",
+        "LevelNumber": 9,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(BeachMowers@LevelModules)",
+          "RTID(WaveManager@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(Tide@CurrentLevel)"
+        ],
+        "Name": "Dave's Pursuit - Day 9",
+        "WritenBy": "ScatterPattern",
+        "FirstIntroNarrative": "INTRO",
+"FirstOutroNarrative": "OUTRO",
+"ReplayIntroNarrative": "INTRO",
+"ReplayOutroNarrative": "OUTRO",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(BeachStage@LevelModules)"
+      }
+    },
+      {
+      "aliases": [
+              "Tide"
+      ],
+      "objclass": "TideProperties",
+      "objdata": {
+              "StartingWaveLocation": 8
+      }
+},
+{
+      "aliases": [
+              "TideDecrease"
+      ],
+      "objclass": "TidalChangeWaveActionProps",
+      "objdata": {
+              "TidalChange": {
+                      "ChangeAmount": 5,
+                      "ChangeType": "absolute"
+              }
+      }
+},  
+{
+      "aliases": [
+              "TideIncrease"
+      ],
+      "objclass": "TidalChangeWaveActionProps",
+      "objdata": {
+              "TidalChange": {
+                      "ChangeAmount": 8,
+                      "ChangeType": "absolute"
+              }
+      }
+},    
+    {
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 8,
+        "WaveCount": 8,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)",
+            "RTID(TideDecrease@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)",
+            "RTID(TideIncrease@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ]
+        ],
+        "MaxNextWaveHealthPercentage": 0.5,
+        "MinNextWaveHealthPercentage": 0.5
+      },
+      "aliases": [
+        "WaveManager"
+      ]
+    },
+    {
+    "aliases": [
+        "INTRO"
+    ],
+    "objclass": "NarrativeProperties",
+    "objdata": {
+        "Flow": [
+        {
+                "Character": "winnie",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "Lots of surfers coming our way.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "And fishermen. They really want us to get soaked.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "User Dave... yet to be found.",
+                    "zh": "???"
+                }
+            }
+        ]
+    }
+},
+{
+    "aliases": [
+        "OUTRO"
+    ],
+    "objclass": "NarrativeProperties",
+    "objdata": {
+        "Flow": [
+        {
+                "Character": "winnie",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "...No tracks.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "zombossicon",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "zombossicon",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "Might I ask... What are you two doing?!",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "Dr Edgar Zomboss. You will not have User Dave for long.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "zombossicon",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "I humbly request your exit from time-altering traversal!",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "zombossicon",
+                "Action": "NPC_EXIT"
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "You will not fool us!",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "I believe we are getting close.",
+                    "zh": "???"
+                }
+            }
+        ]
+    }
+},
+    {
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "SelectionMethod": "chooser"
+      },
+      "aliases": [
+        "SeedBank"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 2
+          }
+        ],
+        "MustKillAllToNextWave": true
+      },
+      "aliases": [
+        "Wave1"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 5
+          }
+        ],
+        "MustKillAllToNextWave": true
+      },
+      "aliases": [
+        "Wave2"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 1
+          }
+        ],
+        "MustKillAllToNextWave": true
+      },
+      "aliases": [
+        "Wave3"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 1
+          }
+        ],
+        "MustKillAllToNextWave": true
+      },
+      "aliases": [
+        "Wave4"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(beach_surfer_veteran@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_surfer_veteran@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 2
+          }
+        ],
+        "MustKillAllToNextWave": true
+      },
+      "aliases": [
+        "Wave5"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_fisherman@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 3
+          }
+        ],
+        "AdditionalPlantfood": 1,
+        "MustKillAllToNextWave": true
+      },
+      "aliases": [
+        "Wave6"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(beach_surfer_veteran@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_surfer_veteran@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_surfer_veteran@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 5
+          }
+        ],
+        "MustKillAllToNextWave": true
+      },
+      "aliases": [
+        "Wave7"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(beach_surfer_veteran@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_surfer_veteran@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_surfer_veteran@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_fisherman@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_fisherman@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      },
+      "aliases": [
+        "Wave8"
+      ]
+    }
+  ],
+  "version": 1
+}

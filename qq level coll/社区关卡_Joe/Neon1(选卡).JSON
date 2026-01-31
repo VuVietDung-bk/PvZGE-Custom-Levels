@@ -1,0 +1,1335 @@
+{
+    "#comment": "Neon 1",
+    "objects": [
+        {
+            "objclass": "LevelDefinition",
+            "objdata": {
+                "Description": "[PLAYERS_TRIP_TO_EGYPT]",
+                "LevelNumber": 1,
+                "FirstIntroNarrative": "Neon_Intro",
+                "Loot": "RTID(DefaultLoot@LevelModules)",
+                "Modules": [
+                    "RTID(StandardIntro@LevelModules)",
+                    "RTID(DefaultSunDropper@LevelModules)",
+                    "RTID(ModPlants@CurrentLevel)",
+                    "RTID(ChallengeModule@CurrentLevel)",
+                    "RTID(ZombiesDeadWinCon@LevelModules)",
+                    "RTID(SeedBank@CurrentLevel)",
+                    "RTID(DefaultZombieWinCondition@LevelModules)",
+                    "RTID(NewWaves@CurrentLevel)"
+                ],
+                "Name": "Neon Dreamscape - Day 1",
+                "NameMultiLanguage": {
+                    "en": "Neon Dreamscape - Day 1",
+                    "zh": "霓虹幻境 - 第 1 天"
+                },
+                "NormalPresentTable": "egypt_normal_01",
+                "ShinyPresentTable": "egypt_shiny_01",
+                "StageModule": "RTID(EgyptStage@LevelModules)"
+            }
+        },
+        {
+            "objclass": "NarrativeProperties",
+            "aliases": [
+                "Neon_Intro"
+            ],
+            "objdata": {
+                "AutoAdvance": true,
+                "DelayBetweenLines": 2.5,
+                "Flow": [
+                    {
+                        "Character": "crazydave",
+                        "Action": "NPC_ENTER",
+                        "Delay": 0.5
+                    },
+                    {
+                        "Character": "winnie",
+                        "Action": "NPC_ENTER",
+                        "Delay": 0.5
+                    },
+                    {
+                        "Character": "winnie",
+                        "Action": "SAY",
+                        "Lines": {
+                            "en": "No, ggfyyw was taken away by Dr. ZombieBoss",
+                            "zh": "不好，ggfyyw被僵尸博士抓走了"
+                        },
+                        "Delay": 0.3
+                    },
+                    {
+                        "Character": "winnie",
+                        "Action": "SAY",
+                        "Lines": {
+                            "en": "We have to get him out of here quickly.",
+                            "zh": "我们必须赶紧把他救出来"
+                        },
+                        "Delay": 0.3
+                    },
+                    {
+                        "Character": "crazydave",
+                        "Action": "SAY",
+                        "Lines": {
+                            "en": "Tacos?",
+                            "zh": "玉米卷吗？"
+                        },
+                        "Delay": 0.3
+                    },
+                    {
+                        "Character": "winnie",
+                        "Action": "SAY",
+                        "Lines": {
+                            "en": "Dave, our neighbor has been kidnapped!",
+                            "zh": "戴夫，我们的邻居已经被人绑架了！"
+                        },
+                        "Delay": 0.3
+                    },
+                    {
+                        "Character": "winnie",
+                        "Action": "SAY",
+                        "Lines": {
+                            "en": "Stop thinking about tacos, okay?",
+                            "zh": "别再想玉米卷了，好吗？"
+                        },
+                        "Delay": 0.3
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ChallengeModule"
+            ],
+            "objclass": "StarChallengeModuleProperties",
+            "objdata": {
+                "Challenges": [
+                    [
+                        "RTID(DoNotPlantBeforeLine@CurrentLevel)"
+                    ]
+                ],
+                "ChallengesAlwaysAvailable": true
+            }
+        },
+        {
+            "aliases": [
+                "DoNotPlantBeforeLine"
+            ],
+            "objclass": "MoldColonyChallengeProps",
+            "objdata": {
+                "Locations": "RTID(Column0_To_Column8@BoardGridMaps)",
+                "MoldMatrix": [
+                    "111111111",
+                    "100010001",
+                    "100010001",
+                    "100010001",
+                    "111111111"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ChallengeModule"
+            ],
+            "objclass": "StarChallengeModuleProperties",
+            "objdata": {
+                "Challenges": [
+                    [
+                        "RTID(BeatTheLevel@CurrentLevel)"
+                    ]
+                ],
+                "ChallengesAlwaysAvailable": true
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "HidePlantfood": true,
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "laser_bean"
+                        ],
+                        "NewObjdata": {
+                            "Damage": 10,
+                            "ShootInterval": 0.3,
+                            "ShootIntervalAdditional": 0.15,
+                            "DamagePlantfood": 1800,
+                            "Cooldown": 7.5,
+                            "CooldownFrom": 1,
+                            "SunCost": 200,
+                            "BeghouledCost": 2000,
+                            "Toughness": 500,
+                            "Family": "Sharp"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "HidePlantfood": true,
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "sunshroom"
+                        ],
+                        "NewObjdata": {
+                            "PlantfoodTime": 3,
+                            "SunValue": 25,
+                            "ProduceInterval": 24,
+                            "ProduceIntervalAdditional": 1.8,
+                            "ProduceCountdownStart": 5,
+                            "ProduceCountdownStartAdditional": 5,
+                            "ProduceInterval_AtNight": 20,
+                            "ProduceIntervalAdditional_AtNight": 1.5,
+                            "ProduceCountdownStart_AtNight": 5,
+                            "ProduceCountdownStartAdditional_AtNight": 5,
+                            "SunValueList": [
+                                25,
+                                50,
+                                75
+                            ],
+                            "GrowTime0_1": 18,
+                            "GrowTime1_2": 54,
+                            "Cooldown": 5,
+                            "CooldownFrom": 0,
+                            "SunCost": 25,
+                            "BeghouledCost": 1000,
+                            "Toughness": 300,
+                            "Family": "Sun"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "HidePlantfood": true,
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "moonflower"
+                        ],
+                        "NewObjdata": {
+                            "PlantfoodTime": 1,
+                            "SunValue": 25,
+                            "ProduceInterval": 23.5,
+                            "ProduceIntervalAdditional": 1.5,
+                            "ProduceCountdownStart": 5,
+                            "ProduceCountdownStartAdditional": 5,
+                            "SunValueList": [
+                                25,
+                                50,
+                                75,
+                                100
+                            ],
+                            "Cooldown": 7,
+                            "CooldownFrom": 0,
+                            "SunCost": 50,
+                            "BeghouledCost": 1500,
+                            "Toughness": 300,
+                            "Family": "Shadow"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "HidePlantfood": true,
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "snowpea"
+                        ],
+                        "NewObjdata": {
+                            "PeaType": "pea_snow",
+                            "PeaTypePlantfood": "pea_snow",
+                            "PeaFreezeType": "snowdrop_freeze",
+                            "ShootInterval": 1.35,
+                            "ShootIntervalAdditional": 0.15,
+                            "PlantfoodPeaCount": 60,
+                            "ChanceToFreeze": 0.1,
+                            "Cooldown": 5,
+                            "CooldownFrom": 0.5,
+                            "SunCost": 150,
+                            "BeghouledCost": 2500,
+                            "Toughness": 300,
+                            "Family": "Cold",
+                            "ImmuneToIceblock": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "HidePlantfood": true,
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "kernelpult"
+                        ],
+                        "NewObjdata": {
+                            "CabbageType": "corn",
+                            "CabbageTypePlantfood": "butter",
+                            "ThrowInterval": 2.4,
+                            "ThrowIntervalAdditional": 0.15,
+                            "ChanceToButter": 0.4,
+                            "Cooldown": 5,
+                            "CooldownFrom": 0.5,
+                            "SunCost": 100,
+                            "BeghouledCost": 1500,
+                            "Toughness": 300,
+                            "Family": "Lobber"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "glaciershroom"
+                        ],
+                        "NewObjdata": {
+                            "FreezeDuration": 3,
+                            "ChillDuration": 4,
+                            "ChillDurationAmbience": 2,
+                            "FreezeDamage": 20,
+                            "EatFreezeDuration": 3,
+                            "EatChillDuration": 3,
+                            "EatFreezeInterval": 3.5,
+                            "WakeTime": 35,
+                            "Cooldown": 60,
+                            "CooldownFrom": 0.5,
+                            "SunCost": 300,
+                            "BeghouledCost": 4000,
+                            "Toughness": 700,
+                            "Family": "Cold",
+                            "ImmuneToIceblock": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "coldsnapdragon"
+                        ],
+                        "NewObjdata": {
+                            "AttackInterval": 1.85,
+                            "AttackIntervalAdditional": 0.15,
+                            "Damage": 25,
+                            "DamagePlantfood": 1200,
+                            "Cooldown": 5,
+                            "CooldownFrom": 1,
+                            "SunCost": 150,
+                            "BeghouledCost": 2000,
+                            "Toughness": 300,
+                            "Family": "Cold",
+                            "ImmuneToIceblock": true,
+                            "ChillDuration": 10,
+                            "FreezeDuration": 0,
+                            "ChillDurationPlantfood": 10,
+                            "FreezeDurationPlantfood": 10
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "powerlily"
+                        ],
+                        "NewObjdata": {
+                            "CannotBeSheepenedByWizard": true,
+                            "ProduceCount": 1,
+                            "Cooldown": 75,
+                            "CooldownFrom": 1,
+                            "SunCost": 175,
+                            "BeghouledCost": 1000,
+                            "Toughness": 300,
+                            "Family": "Nope"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "pepperpult"
+                        ],
+                        "NewObjdata": {
+                            "CabbageType": "pepper",
+                            "CabbageTypePlantfood": "pepper_pf",
+                            "ThrowInterval": 2.35,
+                            "Cooldown": 7,
+                            "CooldownFrom": 1,
+                            "SunCost": 200,
+                            "Toughness": 300,
+                            "Family": "Fire",
+                            "ImmuneToIceblock": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "guacodile"
+                        ],
+                        "NewObjdata": {
+                            "CannotBeSheepenedByWizard": true,
+                            "PeaType": "guacodile",
+                            "PeaTypeChild": "guacodile_child",
+                            "Cooldown": 7,
+                            "CooldownFrom": 1,
+                            "SunCost": 125,
+                            "BeghouledCost": 1000,
+                            "Toughness": 50,
+                            "Family": "Melee",
+                            "ShootInterval": 1.45,
+                            "ShootIntervalAdditional": 0.15,
+                            "PlantfoodTime": 2,
+                            "ChildrenBiteDamage": 140,
+                            "KnockbackDistance": 2
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "goldleaf"
+                        ],
+                        "NewObjdata": {
+                            "Cooldown": 15,
+                            "CooldownFrom": 0.5,
+                            "SunCost": 50,
+                            "BeghouledCost": 0,
+                            "Toughness": 300,
+                            "Family": "Nope",
+                            "SunCostIncrement": 50
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "sporeshroom"
+                        ],
+                        "NewObjdata": {
+                            "CabbageType": "sporeshroom_spore",
+                            "CabbageTypePlantfood": "sporeshroom_spore_pf",
+                            "Cooldown": 5,
+                            "CooldownFrom": 1,
+                            "SunCost": 150,
+                            "BeghouledCost": 2000,
+                            "Toughness": 450,
+                            "Family": "Poison",
+                            "ShootInterval": 2.35,
+                            "ShootIntervalAdditional": 0.15
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "goldleaf"
+                        ],
+                        "NewObjdata": {
+                            "Cooldown": 15,
+                            "CooldownFrom": 0.5,
+                            "SunCost": 50,
+                            "BeghouledCost": 0,
+                            "Toughness": 300,
+                            "Family": "Nope",
+                            "SunCostIncrement": 50
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Gravestones"
+            ],
+            "objclass": "GravestoneProperties",
+            "objdata": {
+                "GravestoneCount": 25,
+                "SpawnColumnEnd": 9,
+                "SpawnColumnStart": 3
+            }
+        },
+        {
+            "aliases": [
+                "SeedBank"
+            ],
+            "objclass": "SeedBankProperties",
+            "objdata": {
+                "SelectionMethod": "chooser"
+            }
+        },
+        {
+            "aliases": [
+                "NewWaves"
+            ],
+            "objclass": "WaveManagerModuleProperties",
+            "objdata": {
+                "DynamicZombies": [
+                    {
+                        "PointIncrementPerWave": -10,
+                        "StartingPoints": -100,
+                        "StartingWave": 3,
+                        "ZombiePool": [
+                            "RTID(lostcity_excavator@ZombieTypes)",
+                            "RTID(barrelroller@ZombieTypes)",
+                            "RTID(lostcity_jane@ZombieTypes)",
+                            "RTID(mummy@ZombieTypes)",
+                            "RTID(mummy_armor1@ZombieTypes)",
+                            "RTID(mummy_armor2@ZombieTypes)",
+                            "RTID(pharaoh@ZombieTypes)",
+                            "RTID(chicken_farmer@ZombieTypes)",
+                            "RTID(eighties_breakdancer@ZombieTypes)",
+                            "RTID(ra@ZombieTypes)",
+                            "RTID(tomb_raiser@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": -10,
+                        "StartingPoints": -50,
+                        "StartingWave": 4,
+                        "ZombiePool": [
+                            "RTID(lostcity_excavator@ZombieTypes)",
+                            "RTID(barrelroller@ZombieTypes)",
+                            "RTID(lostcity_jane@ZombieTypes)",
+                            "RTID(mummy@ZombieTypes)",
+                            "RTID(mummy_armor1@ZombieTypes)",
+                            "RTID(mummy_armor2@ZombieTypes)",
+                            "RTID(pharaoh@ZombieTypes)",
+                            "RTID(chicken_farmer@ZombieTypes)",
+                            "RTID(eighties_breakdancer@ZombieTypes)",
+                            "RTID(ra@ZombieTypes)",
+                            "RTID(tomb_raiser@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": -10,
+                        "StartingPoints": -1,
+                        "StartingWave": 5,
+                        "ZombiePool": [
+                            "RTID(lostcity_excavator@ZombieTypes)",
+                            "RTID(barrelroller@ZombieTypes)",
+                            "RTID(lostcity_jane@ZombieTypes)",
+                            "RTID(mummy@ZombieTypes)",
+                            "RTID(mummy_armor1@ZombieTypes)",
+                            "RTID(mummy_armor2@ZombieTypes)",
+                            "RTID(pharaoh@ZombieTypes)",
+                            "RTID(chicken_farmer@ZombieTypes)",
+                            "RTID(eighties_breakdancer@ZombieTypes)",
+                            "RTID(ra@ZombieTypes)",
+                            "RTID(tomb_raiser@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 20,
+                        "StartingPoints": 200,
+                        "StartingWave": 5,
+                        "ZombiePool": [
+                            "RTID(lostcity_excavator@ZombieTypes)",
+                            "RTID(barrelroller@ZombieTypes)",
+                            "RTID(lostcity_jane@ZombieTypes)",
+                            "RTID(mummy@ZombieTypes)",
+                            "RTID(mummy_armor1@ZombieTypes)",
+                            "RTID(mummy_armor2@ZombieTypes)",
+                            "RTID(pharaoh@ZombieTypes)",
+                            "RTID(eighties_breakdancer@ZombieTypes)",
+                            "RTID(ra@ZombieTypes)",
+                            "RTID(tomb_raiser@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 40,
+                        "StartingPoints": 300,
+                        "StartingWave": 4,
+                        "ZombiePool": [
+                            "RTID(lostcity_excavator@ZombieTypes)",
+                            "RTID(barrelroller@ZombieTypes)",
+                            "RTID(lostcity_jane@ZombieTypes)",
+                            "RTID(mummy@ZombieTypes)",
+                            "RTID(mummy_armor1@ZombieTypes)",
+                            "RTID(mummy_armor2@ZombieTypes)",
+                            "RTID(pharaoh@ZombieTypes)",
+                            "RTID(eighties_breakdancer@ZombieTypes)",
+                            "RTID(ra@ZombieTypes)",
+                            "RTID(tomb_raiser@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 60,
+                        "StartingPoints": 500,
+                        "StartingWave": 3,
+                        "ZombiePool": [
+                            "RTID(lostcity_excavator@ZombieTypes)",
+                            "RTID(barrelroller@ZombieTypes)",
+                            "RTID(lostcity_jane@ZombieTypes)",
+                            "RTID(mummy_armor1@ZombieTypes)",
+                            "RTID(mummy_armor2@ZombieTypes)",
+                            "RTID(pharaoh@ZombieTypes)",
+                            "RTID(eighties_breakdancer@ZombieTypes)",
+                            "RTID(ra@ZombieTypes)",
+                            "RTID(tomb_raiser@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 80,
+                        "StartingPoints": 600,
+                        "StartingWave": 3,
+                        "ZombiePool": [
+                            "RTID(lostcity_excavator@ZombieTypes)",
+                            "RTID(barrelroller@ZombieTypes)",
+                            "RTID(lostcity_jane@ZombieTypes)",
+                            "RTID(mummy_armor2@ZombieTypes)",
+                            "RTID(pharaoh@ZombieTypes)",
+                            "RTID(eighties_breakdancer@ZombieTypes)",
+                            "RTID(tomb_raiser@ZombieTypes)",
+                            "RTID(mech_cone@ZombieTypes)",
+                            "RTID(ra@ZombieTypes)"
+                        ]
+                    }
+                ],
+                "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 4,
+                "LevelJam": "jam_rap",
+                "SpawnColEnd": 9,
+                "SpawnColStart": 3,
+                "WaveCount": 16,
+                "WaveSpendingPointIncrement": 100,
+                "WaveSpendingPoints": 200,
+                "Waves": [
+                    [
+                        "RTID(Wave1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave2@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave3@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave4@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave5@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave6@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave7@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave8@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave9@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave10@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave11@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave12@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave13@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave14@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave15@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave16@CurrentLevel)"
+                    ]
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(dark_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "3",
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "4",
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pirate_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(dino_armor3@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave4"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "4",
+                        "Type": "RTID(beach_fisherman@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(cannon@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(cannon@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(piano@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(abbot_fan@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(abbot_fan@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_jane@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(dark_juggler@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave5"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(lostcity_jane@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(lostcity_jane@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_excavator@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_excavator@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_excavator@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(lostcity_jane@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave6"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(beach_fisherman@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_excavator@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_jane@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pirate armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave7"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(newspaper_veteran@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(newspaper_veteran@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(piano@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(abbot_fan@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(abbot_fan@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(newspaper_veteran@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave8"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(beach@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(dark_armor3@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(dark_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave9"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(dark_gargantuar@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(cannon@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(cannon@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(piano@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(piano@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave10"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(iceage_hunter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(iceage_hunter@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(iceage_hunter@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(beach_fisherman@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(beach_fisherman@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave11"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(dark_juggler@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(dark_juggler@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(piano@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(lostcity_jane@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(lostcity_jane@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(lostcity_jane@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(lostcity_excavator@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(lostcity_excavator@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(abbot_fan@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave12"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(dark_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(dark_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(future_armor4@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(dark_gargantuar@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(dark_gargantuar@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave13"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "4",
+                        "Type": "RTID(cannon@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(beach@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(beach@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(cannon@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(piano@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(dark@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(dark@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave14"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave15"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(dark@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(newspaper_veteran@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(beach_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave16"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "4",
+                        "Type": "RTID(cowboy_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(mummy_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(dark_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(dark_armor4@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(west_bull@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(dark@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(dark_gargantuar@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+{
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "HidePlantfood": true,
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "icebloom"
+                        ],
+                        "NewObjdata": {
+                            "CannotBeSheepenedByWizard": true,
+				"Cooldown": 35,
+				"CooldownFrom": 0.5,
+				"SunCost": 150,
+				"BeghouledCost": 1000,
+				"Toughness": 300,
+				"Family": "Cold",
+				"ImmuneToBoomBox": true,
+				"ImmuneToIceblock": true,
+				"HypnotizingProjectileCount": 0,
+				"FreezeDuration": 15,
+				"ChillDuration": 5,
+				"DamageFullBoard": 50,
+				"Damage3x3": 50
+                        }
+                    }
+                ]
+            }
+        }
+
+    ],
+    "version": 1
+}

@@ -1,0 +1,703 @@
+{
+	"#comment": "Bird's crafting",
+	"objects": [
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "遗忘之前：<PLAYERNAME>",
+				"LevelNumber": 5,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+					"RTID(StandardIntro@LevelModules)",
+					"RTID(SeedBank@CurrentLevel)",
+					"RTID(Wave1GraveSpawn@CurrentLevel)",
+					"RTID(ProtectThePlant@CurrentLevel)",
+					"RTID(ModPlants@CurrentLevel)",
+					"RTID(BeatTheLevel0@CurrentLevel)",
+					"RTID(ChallengeModule@CurrentLevel)",
+					"RTID(LostCityTrapTileGroups@CurrentLevel)",
+					"RTID(NewWaves@CurrentLevel)"
+				],
+				"Name": "七影蝶：记忆-<LEVELNUMBER>",
+				"NameMultiLanguage": {
+					"en": "七影蝶：ForNever",
+					"zh": "七影蝶：ForNever"
+				},
+				"WritenBy": "Birdscraft",
+				"NormalPresentTable": "egypt_normal_01",
+				"ShinyPresentTable": "egypt_shiny_01",
+				"StartingSun":225,
+				"Sandbox":false,
+				"StageModule": "RTID(SummerNightsStage@LevelModules)"
+			}
+		},
+		
+		{
+			"aliases":["BeatTheLevel0"],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+					"好好保护她吧……至少在这个暑假被烧成灰之前"
+				] 
+			}
+		},
+		
+		{
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "HidePlantfood": true,
+                "SuppressParticle": true,
+                "List": [
+					{
+						"Type": "zoybeanpod",
+						"NewObjdata": {
+							"Cooldown": 10.0,
+							"CooldownFrom": 0.5,
+							"SunCost": 200,
+							"BeghouledCost": 2000,
+							"Toughness": 300,
+							"Family": "Magic",
+							"GrowthInterval": {
+								"Min": 3.5,
+								"Max": 3.5
+							},
+							"SummonType": [
+								{
+									"Weight": 114514,
+									"Type": "zoybean_armor2"
+								}
+							],
+							"SummonTypePlantfood": [
+								{
+									"Weight": 1,
+									"Type": "zoybean"
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		
+		{
+			"aliases": [
+				"SeedBank"
+			],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+				"PresetPlantList": [
+				{
+					"Level": -1,
+					"PlantType": "sunshroom"
+				},{
+					"Level": -1,
+					"PlantType": "zoybeanpod"
+				}
+				],
+				"SelectionMethod": "preset"
+			}
+		},
+		
+		
+		
+		{
+			"aliases": ["WaveManagerProps"],
+			"objclass": "WaveManagerProperties",
+			"objdata": {
+				"SuppressFlagZombie":true,
+				"FlagWaveInterval": 100,
+				"WaveCount": 1,
+				"Waves": [
+					["RTID(Wave0GravestoneEvent0@CurrentLevel)","RTID(Wave0GravestoneEvent1@CurrentLevel)"],
+					["RTID(Wave1@CurrentLevel)"],
+					["RTID(Wave2@CurrentLevel)"],
+					["RTID(Wave3@CurrentLevel)"],
+					["RTID(Wave4@CurrentLevel)"],
+					[],
+					["RTID(Wave5@CurrentLevel)"],
+					["RTID(Wave6@CurrentLevel)","RTID(butterfly2@CurrentLevel)"],
+					["RTID(Wave7@CurrentLevel)"],
+					[],
+					[],
+					["RTID(Wave8@CurrentLevel)"],
+					[],
+					["RTID(Wave9@CurrentLevel)","RTID(butterfly4@CurrentLevel)"],
+					["RTID(Wave10@CurrentLevel)"]
+				]
+			}
+		},
+		
+		{
+            "aliases": [
+                "Wave0GravestoneEvent0"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {
+                        "Count": 5,
+                        "Type": "RTID(slider_up_modern@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {"mX": 8, "mY": 2},
+                    {"mX": 8, "mY": 4}
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+                "maxX": 8,
+                "minX": 3
+            }
+        },
+		{
+            "aliases": [
+                "Wave0GravestoneEvent1"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {
+                        "Count": 5,
+                        "Type": "RTID(kongfu_rack_torch@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {"mX": 6, "mY": 2},
+                    {"mX": 6, "mY": 4}
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+                "maxX": 8,
+                "minX": 3
+            }
+        },
+		
+		{
+			"aliases":[
+				"ChallengeModule"
+			],
+			"objclass":"StarChallengeModuleProperties",
+			"objdata":{
+				"Challenges":[
+					["RTID(DoNotPlantBeforeLine@CurrentLevel)"]
+				],
+				"ChallengesAlwaysAvailable":true
+				}
+		},
+		{
+			"aliases": [
+				"DoNotPlantBeforeLine"
+			],
+            "objclass": "MoldColonyChallengeProps",
+            "objdata": {
+                "Locations": "RTID(nothingness@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "nothingness"
+            ],
+            "objclass": "BoardGridMapProps",
+            "objdata": {
+                "Values": [
+                    [0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,1,0],
+                    [0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,1,0]
+                ]
+            }
+        },
+		
+		{
+			"aliases":[
+				"ProtectThePlant"
+			],
+			"objclass":"ProtectThePlantChallengeProperties",
+			"objdata":{
+				"MustProtectCount":3,
+				"Plants":[
+				{
+					"Level":-1,
+					"GridX":0,
+					"GridY":0,
+					"PlantType":"lilypad"
+				},
+				{
+					"Level":-1,
+					"GridX":1,
+					"GridY":2,
+					"PlantType":"lilypad"
+				},
+				{
+					"Level":-1,
+					"GridX":0,
+					"GridY":4,
+					"PlantType":"lilypad"
+				}
+				]
+			}
+		},
+		
+		{
+			"aliases": [
+				"NewWaves"
+			],
+			"objclass": "WaveManagerModuleProperties",
+			"objdata": {
+				"DynamicZombies": [
+				],
+				"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+			}
+		},
+		{
+            "aliases": [
+                "LostCityTrapTileGroups"
+            ],
+            "objclass": "TrapTileProperties",
+            "objdata": {
+                "TrapTiles": [
+                    {
+                        "Group": "flame",
+                        "Location": {
+                            "mX": 7,
+                            "mY": 2
+                        },
+                        "RecoverDelay": 7.5
+                    },
+                    {
+                        "Group": "flame",
+                        "Location": {
+                            "mX": 7,
+                            "mY": 4
+                        },
+                        "RecoverDelay": 7.5
+                    }
+                ]
+            }
+        },
+		
+		{
+			"aliases": [
+				"Wave0"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(abbot_torch@ZombieTypes)"
+					}
+					
+				]
+			}
+		},
+		
+		{
+			"aliases": [
+				"Wave1"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					}
+					
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave2"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					}
+					
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave3"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 1,
+				"Zombies": [
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					}
+					
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave4"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(summer_imp@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					}
+					
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave5"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(summer_imp@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_imp@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					}
+					
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave6"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(summer_imp@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_imp@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					}
+					
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave7"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(summer_imp@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_imp@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_imp@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					}
+					
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave8"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(summer_gargantuar@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					}
+					
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave9"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_basic@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					}
+					
+				]
+			}
+		},
+		
+		{
+			"aliases": [
+				"Wave10"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					}
+					
+				]
+			}
+		},
+		
+		{
+			"objclass": "PortalType",
+			"aliases": [
+				"butterfly50"
+			],
+			"objdata": {
+				"Properties": "RTID(butterfly50props@CurrentLevel)"
+			}
+		},
+		
+		{
+			"objclass": "PortalProps",
+			"aliases": [
+				"butterfly50props"
+			],
+			"objdata": {
+				"TimeBeforeFirst": {
+				"Min": 22,
+				"Max": 22
+				},
+				"TimeBetween": {
+				"Min": 1,
+				"Max": 1
+				},
+				"Scale": 1,
+				"World": "summer_pockets",
+				"ZombieTypesToSpawn": [
+					{
+						"Weight": 1000,
+						"ZombieTypeName": "abbot"
+					},
+				]
+			}
+		},
+		{
+			"aliases": [
+				"butterfly2"
+			],
+			"objclass": "SpawnModernPortalsWaveActionProps",
+			"objdata": {
+				"PortalColumn": 6,
+				"PortalRow": "2",
+				"PortalType": "RTID(butterfly50@CurrentLevel)",
+				"SpawnEffectAnimID": "",
+				"SpawnSoundID": ""
+			}
+		},
+		{
+			"aliases": [
+				"butterfly4"
+			],
+			"objclass": "SpawnModernPortalsWaveActionProps",
+			"objdata": {
+				"PortalColumn": 6,
+				"PortalRow": "4",
+				"PortalType": "RTID(butterfly50@CurrentLevel)",
+				"SpawnEffectAnimID": "",
+				"SpawnSoundID": ""
+			}
+		}
+		
+	],
+	"version": 1
+}

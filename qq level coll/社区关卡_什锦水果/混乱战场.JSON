@@ -1,0 +1,1039 @@
+{
+    "objects": [
+        {
+            "objclass": "LevelDefinition",
+            "objdata": {
+                "LevelNumber": 1,
+                "Loot": "RTID(DefaultLoot@LevelModules)",
+                "Modules": [
+                    "RTID(DefaultZombieWinCondition@LevelModules)",
+                    "RTID(KongfuMowers@LevelModules)",
+                    "RTID(KongfuRacks@CurrentLevel)",
+                    "RTID(LevelEscalation@CurrentLevel)",
+                    "RTID(NewWaves@CurrentLevel)",
+                    "RTID(RandomPlants@CurrentLevel)",
+                    "RTID(SeedBank@CurrentLevel)",
+                    "RTID(StandardIntro@LevelModules)",
+                    "RTID(SunDropper@LevelModules)",
+                    "RTID(ZombiesDeadWinCon@LevelModules)"
+                ],
+                "NameMultiLanguage": {
+                    "en": "Chaotic Battlefield",
+                    "zh": "混乱战场"
+                },
+                "StageModule": "RTID(KongfuStage@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "KongfuStage"
+            ],
+            "objclass": "LawnType",
+            "objdata": {
+                "LawnBaseOn": "KongfuStage",
+                "Properties": "RTID(KongfuStageProps@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "KongfuStageProps"
+            ],
+            "objclass": "LawnProperties",
+            "objdata": {
+                "Basic_Zombie": [
+                    "kongfu"
+                ],
+                "Flag_Zombie": [
+                    "kongfu_flag",
+                    "monk_flag",
+                    "abbot_flag"
+                ],
+                "Rally_Zombie": [
+                    "kongfu_flag_veteran",
+                    "monk_flag_veteran",
+                    "abbot_flag_veteran"
+                ],
+                "Armor1_Zombie": [
+                    "kongfu_armor1"
+                ],
+                "Armor2_Zombie": [
+                    "kongfu_armor2"
+                ],
+                "Armor3_Zombie": [
+                    "kongfu_armor3"
+                ],
+                "Armor4_Zombie": [
+                    "kongfu_armor3"
+                ],
+                "Gravestone": [
+                    "kongfu_rack_helmet",
+                    "kongfu_rack_flag",
+                    "kongfu_rack_torch",
+                    "kongfu_rack_bomb",
+                    "kongfu_rack_hammer",
+                    "kongfu_rack_blade",
+                    "kongfu_rack_nunchaku",
+                    "kongfu_rack_fan",
+                    "kongfu_rack_3section_staff"
+                ],
+                "RailCart": "railcart_kongfu",
+                "Music": "Kongfu"
+            }
+        },
+        {
+            "aliases": [
+                "KongfuRacks"
+            ],
+            "objclass": "GravestoneProperties",
+            "objdata": {
+                "GravestoneCount": 18,
+                "SpawnColumnEnd": 9,
+                "SpawnColumnStart": 1
+            }
+        },
+        {
+            "aliases": [
+                "RandomPlants"
+            ],
+            "objclass": "ZombiePotionModuleProperties",
+            "objdata": {
+                "InitialPotionCount": 0,
+                "MaxPotionCount": 45,
+                "PotionSpawnTimer": {
+                    "Max": 5,
+                    "Min": 5
+                },
+                "PotionTypes": [
+                    "seedling"
+                ],
+                "SuppressObjectiveTip": true
+            }
+        },
+        {
+            "aliases": [
+                "seedling"
+            ],
+            "objclass": "PlantType",
+            "objdata": {
+                "PlantBasedOn": "seedling",
+                "Properties": "RTID(seedling@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "seedling"
+            ],
+            "objclass": "PlantProperties",
+            "objdata": {
+                "Explode0Damage": 40,
+                "Explode0SeedlingCount": 0,
+                "Explode1Damage": 40,
+                "Explode1SeedlingCount": 0,
+                "GrowingTime": 5,
+                "GrowUpType": "imitater",
+                "ExplodeProjectileType": "",
+                "SeedlingType": "",
+                "PlantfoodCallingType": [],
+                "Cooldown": 0,
+                "CooldownFrom": 0,
+                "SunCost": 0,
+                "BeghouledCost": 0,
+                "Toughness": 300
+            }
+        },
+        {
+            "aliases": [
+                "atombomb"
+            ],
+            "objclass": "PlantType",
+            "objdata": {
+                "PlantBasedOn": "atombomb",
+                "Properties": "RTID(atombomb@CurrentLevel)",
+                "ShiftedPlantFeatures": {
+                    "ALMANAC": "RTID(atombomb_almanac@CurrentLevel)"
+                }
+            }
+        },
+        {
+            "aliases": [
+                "atombomb"
+            ],
+            "objclass": "PlantProperties",
+            "objdata": {
+                "Cooldown": 20,
+                "CooldownFrom": 0.75,
+                "SunCost": 275,
+                "BeghouledCost": 2000,
+                "Toughness": 300,
+                "Family": "Explosive",
+                "ExplodeDamage": 1800,
+                "ExplodeSeedlingCount": 0,
+                "ExplodeProjectileType": "",
+                "SeedlingType": "",
+                "PlantfoodCallingType": [
+                    "atombomb",
+                    "atombomb"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "atombomb_almanac"
+            ],
+            "objclass": "PlantAlmanacProperties",
+            "objdata": {
+                "Introduction": {
+                    "en": "图鉴",
+                    "zh": "图鉴"
+                },
+                "BriefIntroduction": {
+                    "en": "Explodes on contact",
+                    "zh": "在僵尸触碰时爆炸"
+                }
+            }
+        },
+        {
+            "aliases": [
+                "SeedBank"
+            ],
+            "objclass": "SeedBankProperties",
+            "objdata": {
+                "OverrideSeedSlotsCount": 8,
+                "PlantIncludeList": [
+                    "sunflower",
+                    "peashooter",
+                    "wallnut",
+                    "potatomine",
+                    "cabbagepult",
+                    "bloomerang",
+                    "iceburg",
+                    "gravebuster",
+                    "twinsunflower",
+                    "bonkchoy",
+                    "repeater",
+                    "iceweed",
+                    "snowdrop",
+                    "squash",
+                    "dandelion",
+                    "pvine",
+                    "kernelpult",
+                    "snapdragon",
+                    "spikeweed",
+                    "coconutcannon",
+                    "cherry_bomb",
+                    "springbean",
+                    "spikerock",
+                    "threepeater",
+                    "buttercup",
+                    "splitpea",
+                    "chilibean",
+                    "lightningreed",
+                    "tallnut",
+                    "jalapeno",
+                    "peapod",
+                    "melonpult",
+                    "wintermelon",
+                    "imitater",
+                    "electricpeashooter",
+                    "sapfling",
+                    "electriccurrant",
+                    "marigold",
+                    "marigold_red",
+                    "marigold_orange",
+                    "marigold_yellow",
+                    "marigold_green",
+                    "marigold_blue",
+                    "marigold_pink",
+                    "marigold_purple",
+                    "laser_bean",
+                    "blover",
+                    "citron",
+                    "empea",
+                    "starfruit",
+                    "pinkstarfruit",
+                    "shootingstarfruit",
+                    "holonut",
+                    "magnifyinggrass",
+                    "powerplant_alpha",
+                    "powerplant_beta",
+                    "powerplant_gamma",
+                    "powerplant_delta",
+                    "powerplant_epsilon",
+                    "applemortar",
+                    "solartomato",
+                    "hypnoshroom",
+                    "sunshroom",
+                    "puffshroom",
+                    "fumeshroom",
+                    "sunbean",
+                    "peanut",
+                    "magnetshroom",
+                    "scaredyshroom",
+                    "plantern",
+                    "vamporcini",
+                    "glaciershroom",
+                    "doomshroom",
+                    "bowlingbulb",
+                    "homingthistle",
+                    "guacodile",
+                    "banana",
+                    "seashroom",
+                    "chomper",
+                    "missiletoe",
+                    "ghostpepper",
+                    "parsnip",
+                    "icebloom",
+                    "hurrikale",
+                    "hotpotato",
+                    "pepperpult",
+                    "chardguard",
+                    "firepeashooter",
+                    "stunion",
+                    "xshot",
+                    "pyrevine",
+                    "jackolantern",
+                    "sweetpotato",
+                    "hotdate",
+                    "gatling",
+                    "megagatling",
+                    "torchwood",
+                    "floawerPot",
+                    "lavaguava",
+                    "redstinger",
+                    "akee",
+                    "endurian",
+                    "toadstool",
+                    "stallia",
+                    "goldleaf",
+                    "zoybeanpod",
+                    "shinevine",
+                    "skyshooter",
+                    "moonbean",
+                    "strawburst",
+                    "firegourd",
+                    "snowpea",
+                    "bambooshoot",
+                    "turnip",
+                    "peach",
+                    "powerlily",
+                    "lychee",
+                    "solarsage",
+                    "cantaloupe",
+                    "bamboozle",
+                    "atombomb",
+                    "cactus",
+                    "phatbeet",
+                    "celerystalker",
+                    "thymewarp",
+                    "electricblueberry",
+                    "garlic",
+                    "sporeshroom",
+                    "intensivecarrot",
+                    "bloominghearts",
+                    "grapeshot",
+                    "primalpeashooter",
+                    "primalwallnut",
+                    "perfumeshroom",
+                    "coldsnapdragon",
+                    "primalsunflower",
+                    "primalpotatomine",
+                    "shrinkingviolet",
+                    "meteorflower",
+                    "explodeonut",
+                    "moonflower",
+                    "nightshade",
+                    "shadowshroom",
+                    "dusklobber",
+                    "grimrose",
+                    "goldbloom",
+                    "escaperoot",
+                    "gloomvine",
+                    "gloomshroom",
+                    "umbrellaleaf",
+                    "pumpkin",
+                    "dragonbruit",
+                    "cranjelly"
+                ],
+                "SelectionMethod": "chooser",
+                "UnlockAll": true
+            }
+        },
+        {
+            "aliases": [
+                "LevelEscalation"
+            ],
+            "objclass": "LevelEscalationModuleProperties",
+            "objdata": {
+                "FlagCount": 4,
+                "PlantfoodToSpawnCount": 4,
+                "PointIncrementPerWave": 400,
+                "StartingPoints": 400,
+                "WaveManagerProps": "RTID(WaveManager@CurrentLevel)",
+                "WavesPerFlag": 5,
+                "ZombiePool": [
+                    "RTID(kongfu@ZombieTypes)",
+                    "RTID(kongfu_armor1@ZombieTypes)",
+                    "RTID(kongfu_armor2@ZombieTypes)",
+                    "RTID(monk@ZombieTypes)",
+                    "RTID(monk_armor1@ZombieTypes)",
+                    "RTID(monk_armor2@ZombieTypes)",
+                    "RTID(abbot@ZombieTypes)",
+                    "RTID(abbot_armor1@ZombieTypes)",
+                    "RTID(abbot_armor2@ZombieTypes)",
+                    "RTID(kongfu_gong@CurrentLevel)",
+                    "RTID(kongfu_bronze_chi@CurrentLevel)",
+                    "RTID(modern_allstar@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "NewWaves"
+            ],
+            "objclass": "WaveManagerModuleProperties",
+            "objdata": {}
+        },
+        {
+            "aliases": [
+                "kongfu_gong"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(kongfu_gong@CurrentLevel)",
+                "ZombieBasedOn": "kongfu_gong"
+            }
+        },
+        {
+            "aliases": [
+                "kongfu_gong"
+            ],
+            "objclass": "ZombieProperties",
+            "objdata": {
+                "ArmDroppingHealthPct": 0.001,
+                "SummonCount": {
+                    "Min": 2,
+                    "Max": 4
+                },
+                "TimeBeforeSummon": {
+                    "Min": 4.93,
+                    "Max": 4.93
+                },
+                "TimeBetweenSummon": {
+                    "Min": 4.93,
+                    "Max": 4.93
+                },
+                "ZombieSummonDistance": {
+                    "Min": 0,
+                    "Max": 2
+                },
+                "ZombiesToSummon": [
+                    "kongfu",
+                    "kongfu_armor1",
+                    "kongfu_armor2",
+                    "monk",
+                    "monk_armor1",
+                    "monk_armor2",
+                    "abbot",
+                    "abbot_armor1",
+                    "abbot_armor2",
+                    "explorer",
+                    "tomb_raiser",
+                    "pharaoh",
+                    "seagull",
+                    "barrelroller",
+                    "pirate_captain",
+                    "prospector",
+                    "poncho",
+                    "chicken_farmer",
+                    "mech_cone",
+                    "football_mech",
+                    "future_protector",
+                    "dark_armor4",
+                    "dark_juggler",
+                    "dark_wizard",
+                    "beach_surfer",
+                    "beach_octopus",
+                    "beach_fisherman",
+                    "iceage_hunter",
+                    "iceage_dodo",
+                    "iceage_weaselhoarder",
+                    "lostcity_excavator",
+                    "lostcity_jane",
+                    "lostcity_crystalskull",
+                    "eighties_punk",
+                    "eighties_glitter",
+                    "eighties_mc",
+                    "dino_armor3",
+                    "dino_bully",
+                    "dino_imp",
+                    "modern_newspaper",
+                    "newspaper_veteran",
+                    "modern_superfanimp"
+                ],
+                "WalkSPS": 0.185,
+                "EatDPS": 100,
+                "Toughness": 500,
+                "WavePointCost": 450,
+                "Weight": 3000,
+                "HitRect": "RTID(CommonHitRect@RectangleProps)",
+                "AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+            }
+        },
+        {
+            "aliases": [
+                "kongfu_bronze_chi"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(kongfu_bronze_chi@CurrentLevel)",
+                "ZombieBasedOn": "kongfu_bronze_chi"
+            }
+        },
+        {
+            "aliases": [
+                "kongfu_bronze_chi"
+            ],
+            "objclass": "ZombieProperties",
+            "objdata": {
+                "CannotBeEnlightenedBySolarSage": true,
+                "ZombieSort": "Gargantuar",
+                "CannotBeGrabbedByPtero": true,
+                "CannotChangeLaneByPowerToss": true,
+                "CannotBeFlickedByPowerToss": true,
+                "CannotBeDraggedByTangleKelp": true,
+                "CannotBeTossedByCitron": true,
+                "CannotBeSwallowedByChomper": true,
+                "CannotCarryPlantfoodsInWaves": true,
+                "SmashDamage": 2000,
+                "LivesInDeepWater": true,
+                "WalkSPS": 0.2,
+                "EatDPS": 100,
+                "Toughness": 6000,
+                "NormalDeathWhenMowed": true,
+                "WavePointCost": 2000,
+                "Weight": 2000,
+                "HitRect": "RTID(GargantuarHitRect@RectangleProps)",
+                "AttackRect": "RTID(GargantuarAttackRect@RectangleProps)",
+                "TimeBeforeSkills": {
+                    "Min": 8,
+                    "Max": 12
+                },
+                "TimeBetweenSkills": {
+                    "Min": 8,
+                    "Max": 12
+                },
+                "ZombiesToSummon": [
+                    "monk",
+                    "monk_armor1",
+                    "monk_armor2",
+                    "monk_armor3",
+                    "monk_imp",
+                    "monk_blade",
+                    "monk_torch",
+                    "monk_nunchaku",
+                    "monk_drink"
+                ],
+                "SummonCount": 3,
+                "SummonColume": {
+                    "Min": 6,
+                    "Max": 7
+                },
+                "SummonTime": 1.5
+            }
+        },
+        {
+            "aliases": [
+                "modern_allstar"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(modern_allstar@CurrentLevel)",
+                "ZombieBasedOn": "modern_allstar"
+            }
+        },
+        {
+            "aliases": [
+                "modern_allstar"
+            ],
+            "objclass": "ZombieProperties",
+            "objdata": {
+                "CannotBeTossedByCitron": false,
+                "SmashDamage": 1500,
+                "WalkSPS": 0.2,
+                "EatDPS": 150,
+                "Toughness": 1600,
+                "RunningSpeedScale": 7.5,
+                "WavePointCost": 900,
+                "Weight": 3000,
+                "HitRect": "RTID(BullyHitRect@RectangleProps)",
+                "AttackRect": "RTID(BullyAttackRect@RectangleProps)"
+            }
+        },
+        {
+            "aliases": [
+                "monk_blade"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(monk_blade@CurrentLevel)",
+                "ZombieBasedOn": "monk_blade"
+            }
+        },
+        {
+            "aliases": [
+                "monk_blade"
+            ],
+            "objclass": "ZombieProperties",
+            "objdata": {
+                "CannotBeTossedByCitron": false,
+                "BladeDamage": 1500,
+                "WalkSPS": 0.25,
+                "EatDPS": 100,
+                "Toughness": 600,
+                "WavePointCost": 300,
+                "Weight": 1500,
+                "HitRect": "RTID(CommonHitRect@RectangleProps)",
+                "AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+                "AttackRectWithBlade": "RTID(BladeAttackRect@RectangleProps)"
+            }
+        },
+        {
+            "aliases": [
+                "WaveManager"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 5,
+                "FlagWaveVeteranOverrideTypes": [
+                    0,
+                    0,
+                    1,
+                    1
+                ],
+                "LevelJamList": [
+                    "jam_punk",
+                    "jam_pop",
+                    "jam_rap"
+                ],
+                "WaveCount": 20,
+                "Waves": [
+                    [
+                        "RTID(None@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(None@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(None@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Gong@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Bronze@CurrentLevel)",
+                        "RTID(SpawnRacks@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Gong@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(None@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Allstar@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Basic@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Gong@CurrentLevel)",
+                        "RTID(Bronze@CurrentLevel)",
+                        "RTID(SpawnSeeds@CurrentLevel)",
+                        "RTID(SpawnRacks@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(MissileLocate@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Gong@CurrentLevel)",
+                        "RTID(Allstar@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(MissileLocate@CurrentLevel)",
+                        "RTID(MissileLocate2@CurrentLevel)",
+                        "RTID(Bronze@CurrentLevel)",
+                        "RTID(SpawnRacks@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Gong@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Basic@CurrentLevel)",
+                        "RTID(MissileLocate@CurrentLevel)",
+                        "RTID(MissileLocate@CurrentLevel)",
+                        "RTID(Bronze@CurrentLevel)",
+                        "RTID(Allstar@CurrentLevel)",
+                        "RTID(SpawnRacks@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Basic@CurrentLevel)",
+                        "RTID(Gong@CurrentLevel)",
+                        "RTID(Gong@CurrentLevel)",
+                        "RTID(Bronze@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Basic@CurrentLevel)",
+                        "RTID(MissileLocate@CurrentLevel)",
+                        "RTID(MissileLocate2@CurrentLevel)",
+                        "RTID(MissileLocate3@CurrentLevel)",
+                        "RTID(SpawnRacks@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Basic@CurrentLevel)",
+                        "RTID(Gong@CurrentLevel)",
+                        "RTID(Gong@CurrentLevel)",
+                        "RTID(Bronze@CurrentLevel)",
+                        "RTID(SpawnRacks@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Basic@CurrentLevel)",
+                        "RTID(MissileLocate@CurrentLevel)",
+                        "RTID(MissileLocate2@CurrentLevel)",
+                        "RTID(MissileLocate3@CurrentLevel)",
+                        "RTID(Allstar@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Basic@CurrentLevel)",
+                        "RTID(Basic@CurrentLevel)",
+                        "RTID(Gong@CurrentLevel)",
+                        "RTID(Gong@CurrentLevel)",
+                        "RTID(Bronze@CurrentLevel)",
+                        "RTID(Bronze@CurrentLevel)",
+                        "RTID(Allstar@CurrentLevel)",
+                        "RTID(Allstar@CurrentLevel)",
+                        "RTID(Allstar@CurrentLevel)",
+                        "RTID(SpawnSeeds@CurrentLevel)",
+                        "RTID(SpawnRacks@CurrentLevel)"
+                    ]
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "None"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": []
+            }
+        },
+        {
+            "aliases": [
+                "Basic"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(kongfu@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(monk@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(monk_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(monk_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(kongfu@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(monk@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(monk_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(monk_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(abbot@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(abbot_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(abbot_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Allstar"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(modern_allstar@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(modern_allstar@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Bronze"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(kongfu_bronze_chi@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Gong"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(kongfu_gong@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_gong@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "MissileLocate"
+            ],
+            "objclass": "MissileLocateWaveActionProps",
+            "objdata": {
+                "ColumnEnd": 1,
+                "ColumnStart": 0,
+                "MissileCount": 1,
+                "MissileFallCountdown": 3,
+                "WaveStartMessage": "[WARNING_MISSILE]",
+                "ProjectileType": "zomboss_missile_future"
+            }
+        },
+        {
+            "aliases": [
+                "MissileLocate2"
+            ],
+            "objclass": "MissileLocateWaveActionProps",
+            "objdata": {
+                "ColumnEnd": 1,
+                "ColumnStart": 0,
+                "MissileCount": 1,
+                "MissileFallCountdown": 6,
+                "ProjectileType": "zomboss_missile_future"
+            }
+        },
+        {
+            "aliases": [
+                "MissileLocate3"
+            ],
+            "objclass": "MissileLocateWaveActionProps",
+            "objdata": {
+                "ColumnEnd": 1,
+                "ColumnStart": 0,
+                "MissileCount": 1,
+                "MissileFallCountdown": 9,
+                "ProjectileType": "zomboss_missile_future"
+            }
+        },
+        {
+            "aliases": [
+                "SpawnSeeds"
+            ],
+            "objclass": "SpawnPlantsWaveActionProps",
+            "objdata": {
+                "RandomSpawnMatrix": [
+                    "000011111",
+                    "000011111",
+                    "000011111",
+                    "000011111",
+                    "000011111"
+                ],
+                "TypeName": "seedling",
+                "SpawnAnim": "grow"
+            }
+        },
+        {
+            "aliases": [
+                "SpawnRacks"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {
+                        "Count": 1,
+                        "Type": "RTID(kongfu_rack_helmet@GridItemTypes)"
+                    },
+                    {
+                        "Count": 1,
+                        "Type": "RTID(kongfu_rack_flag@GridItemTypes)"
+                    },
+                    {
+                        "Count": 1,
+                        "Type": "RTID(kongfu_rack_torch@GridItemTypes)"
+                    },
+                    {
+                        "Count": 1,
+                        "Type": "RTID(kongfu_rack_bomb@GridItemTypes)"
+                    },
+                    {
+                        "Count": 1,
+                        "Type": "RTID(kongfu_rack_hammer@GridItemTypes)"
+                    },
+                    {
+                        "Count": 1,
+                        "Type": "RTID(kongfu_rack_blade@GridItemTypes)"
+                    },
+                    {
+                        "Count": 1,
+                        "Type": "RTID(kongfu_rack_nunchaku@GridItemTypes)"
+                    },
+                    {
+                        "Count": 1,
+                        "Type": "RTID(kongfu_rack_fan@GridItemTypes)"
+                    },
+                    {
+                        "Count": 1,
+                        "Type": "RTID(kongfu_rack_3section_staff@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {
+                        "mX": 4,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 4,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 4,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 4,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 4,
+                        "mY": 4
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 4
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 4
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 4
+                    },
+                    {
+                        "mX": 8,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 8,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 8,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 8,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 8,
+                        "mY": 4
+                    }
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+            }
+        }
+    ],
+    "version": 1
+}

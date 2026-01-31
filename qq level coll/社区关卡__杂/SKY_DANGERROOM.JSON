@@ -1,0 +1,125 @@
+{
+  "#comment": "Cowboy Danger Room",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "[PLAYERS_TRIP_TO_DANGER_ROOM]",
+        "ForceToRestart": true,
+        "IsDangerRoom": true,
+        "LevelNumber": 666,
+        "Loot": "RTID(DangerRoomLoot@LevelModules)",
+        "Modules": [
+          "RTID(DangerRoomIntro@CurrentLevel)",
+          "RTID(DangerRoomModule@CurrentLevel)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)"
+        ],
+                "NameMultiLanguage": {
+                    "en": "Aircraft Graveyard",
+                    "zh": "飞行器坟场"
+                },
+        "NormalPresentTable": "sky_normal_01",
+        "ShinyPresentTable": "sky_shiny_01",
+        "SuppressAwardScreen": true,
+        "StageModule": "RTID(SkyStage@LevelModules)"
+      }
+    },
+    {
+      "objclass": "WaveManagerModuleProperties",
+      "aliases": [
+        "NewWaves"
+      ],
+      "objdata": {}
+    },
+    {
+      "objclass": "DangerRoomModuleProperties",
+      "aliases": [
+        "DangerRoomModule"
+      ],
+      "objdata": {
+        "WorldSpecificProperties": "RTID(CowboyDangerRoomProps@PropertySheets)",
+        "LevelDesigners": [
+          "RTID(CowboyDangerRoomWaveGenerator@CurrentLevel)",
+          "RTID(RailcartDesigner@LevelModules)"
+        ],
+        "InitialPlants": [
+          "sunflower",
+          "skyshooter",
+          "floawerPot",
+          "wallnut"
+        ],
+        "ExcludePlants": [
+          "lilypad",
+          "tanglekelp",
+          "gravebuster",
+          "blover",
+          "hotpotato"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "DangerRoomIntro"
+      ],
+      "objclass": "DangerRoomLevelIntroProperties",
+      "objdata": {}
+    },
+    {
+      "aliases": [
+        "Rails"
+      ],
+      "objclass": "RailcartProperties",
+      "objdata": {
+        "RailcartType": "railcart_cowboy",
+        "Railcarts": [],
+        "Rails": []
+      }
+    },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "SelectionMethod": "chooser",
+        "AlwaysUseChooser": true
+      }
+    },
+    {
+      "aliases": [
+        "CowboyDangerRoomWaveGenerator"
+      ],
+      "objclass": "DangerRoomJitteredWaveGenerator",
+      "objdata": {
+        "StartingPoints": 100,
+        "BasePointIncrementPerWave": 30,
+        "BasePointIncrementPerLevel": 5,
+        "MustContainZombie": [
+          "RTID(cowboy@ZombieTypes)"
+        ],
+        "MinDynamicZombieType": 4,
+        "ZombiePool": [
+          "RTID(seagull@ZombieTypes)",
+          "RTID(pelican@ZombieTypes)",
+          "RTID(sky_armor1@ZombieTypes)",
+          "RTID(kongfu_rocket_imp@ZombieTypes)",
+          "RTID(modern_balloon@ZombieTypes)",
+          "RTID(sky_armor2@ZombieTypes)",
+          "RTID(summer_bug@ZombieTypes)",
+          "RTID(summer_bug_armor1@ZombieTypes)",
+          "RTID(summer_bug_armor2@ZombieTypes)",
+          "RTID(lostcity_bug@ZombieTypes)",
+          "RTID(lostcity_bug_armor1@ZombieTypes)",
+          "RTID(lostcity_bug_armor2@ZombieTypes)",
+          "RTID(lostcity_bug_armor4@ZombieTypes)",
+          "RTID(sky@ZombieTypes)"
+        ]
+      }
+    }
+  ],
+  "version": 1
+}

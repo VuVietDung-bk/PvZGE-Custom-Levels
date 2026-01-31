@@ -1,0 +1,1224 @@
+{
+  "#comment": "Temporal_Strike",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "Prepare to withstand the pursuit of time!",
+        "FirstIntroNarrative": "TEMPORAL_Intro",
+        "LevelNumber": 15,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(ForzenPlantPlacement@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(LevelScheduler@CurrentLevel)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)"
+        ],
+        "Name": "Temporal Strike-day14",
+        "NameMultiLanguage": {
+          "en": "Temporal Strike-day14",
+          "zh": "超时空追击-day14"
+        },
+        "WritenBy": "solar_tomato",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(PersuitStage@LevelModules)",
+        "MusicType": "MiniGame_B"
+      }
+    },
+    { 
+      "objclass": "NarrativeProperties",
+      "aliases": [
+        "TEMPORAL_Intro"
+      ],
+      "objdata": {
+        "AutoAdvance": true,
+        "DelayBetweenLines": 3,
+        "Flow": [
+          {
+            "Character": "winnie",
+            "Action": "NPC_ENTER",
+            "Delay": 0.5
+          },
+          {
+            "Character": "winnie",
+            "Action": "SAY",
+            "Lines": {
+              "en": "Sensors detect anomalous temporal flow in current sector",
+              "zh": "探测器显示当前区域时间流速异常"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "winnie",
+            "Action": "SAY",
+            "Lines": {
+              "en": "This will render the eradication system highly unpredictable",
+              "zh": "这将导致抹杀系统变得极其不可控"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "winnie",
+            "Action": "SAY",
+            "Lines": {
+              "en": "Maximize combat efficiency - expedite enemy neutralization immediately",
+              "zh": "务必提升战斗效率，加速消灭敌人"
+            },
+            "Delay": 0.3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(BeatTheLevel@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": [
+        "BeatTheLevel"
+      ],
+      "objclass": "StarChallengeBeatTheLevelProps",
+      "objdata": {
+        "DescriptionsMultilanguage": [
+          {
+            "en": "Complete within 240 seconds",
+            "zh": "240秒内通关"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "LevelScheduler"
+      ],
+      "objclass": "LevelSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 1,
+          "Min": 1
+        },
+        "TimeBetween": {
+          "Max": 30,
+          "Min": 30
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(SchedulerHalf@CurrentLevel)",
+          "RTID(SchedulerFinally@CurrentLevel)",
+          "RTID(SchedulerDeath@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerHalf"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 120,
+          "Min": 120
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Half@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Half"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Countdown 120 seconds",
+          "zh": "倒计时120秒"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerFinally"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 210,
+          "Min": 210
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Finally@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Finally"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Countdown 30 seconds",
+          "zh": "倒计时30秒"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerDeath"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 240,
+          "Min": 240
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Death@CurrentLevel)"
+        ]
+      }
+    },{
+      "aliases": [
+        "Death"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(death@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(death@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(death@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(death@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(death@CurrentLevel)"
+          },
+          {
+            "Row": "6",
+            "Type": "RTID(death@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+			"aliases": [ 
+        "SeedBank" 
+      ],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+        "PlantExcludeList":
+          [
+            "blover","doomshroom","thymewarp"
+          ],
+				"SelectionMethod": "chooser"
+			}
+		},
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "SuppressFlagZombie": true,
+        "FlagWaveInterval": 5,
+        "WaveCount": 10,
+        "MaxNextWaveHealthPercentage": 0.1,
+        "MinNextWaveHealthPercentage": 0.05,
+        "ZombieCountdownFirstWaveSecs": 15,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "2",
+            "Column": "5",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "7",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "5",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Column": "6",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "6",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "6",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "6",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Column": "6",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Column": "7",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "7",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "7",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "7",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Column": "7",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Column": "3",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "5",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "5",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Column": "3",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "3",
+            "Column": "3",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "4",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "4",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Column": "5",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Column": "5",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "6",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "6",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "7",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Column": "6",
+            "Type": "RTID(catapult@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "7",
+            "Type": "RTID(catapult@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "6",
+            "Type": "RTID(catapult@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "7",
+            "Type": "RTID(catapult@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Column": "6",
+            "Type": "RTID(catapult@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "2",
+            "Type": "RTID(tutorial_flag_veteran@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "4",
+            "Type": "RTID(tutorial_armor4@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "5",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "5",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Column": "2",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "3",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "2",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "3",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Column": "2",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "5",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "5",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Column": "7",
+            "Type": "RTID(catapult@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "5",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "6",
+            "Type": "RTID(tutorial_gargantuar@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "7",
+            "Type": "RTID(catapult@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Column": "4",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "7",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "5",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Column": "4",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "4",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "4",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "4",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Column": "4",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Column": "8",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "8",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "8",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "8",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Column": "8",
+            "Type": "RTID(tutorial_imp@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Column": "5",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "5",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "5",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "5",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Column": "5",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Column": "7",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "7",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "7",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "7",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Column": "7",
+            "Type": "RTID(tutorial@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Column": "6",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "6",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "6",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "6",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Column": "6",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          }
+
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Column": "1",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "3",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "5",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "3",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Column": "1",
+            "Type": "RTID(modern_balloon@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Column": "9",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "7",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "5",
+            "Type": "RTID(tutorial_armor4@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "7",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Column": "9",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "3",
+            "Column": "3",
+            "Type": "RTID(tutorial_flag_veteran@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Column": "8",
+            "Type": "RTID(tutorial_gargantuar@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "6",
+            "Type": "RTID(tutorial_gargantuar@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "4",
+            "Type": "RTID(tutorial_gargantuar@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "6",
+            "Type": "RTID(tutorial_gargantuar@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Column": "8",
+            "Type": "RTID(tutorial_gargantuar@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Column": "9",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Column": "9",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "8",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Column": "7",
+            "Type": "RTID(catapult@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "8",
+            "Type": "RTID(tutorial_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Column": "7",
+            "Type": "RTID(catapult@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "5",
+            "Type": "RTID(tutorial_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "6",
+            "Type": "RTID(tutorial_armor4@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Column": "7",
+            "Type": "RTID(catapult@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+			"aliases": [
+				"tutorial_imp"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tutorial_imp@CurrentLevel)",
+				"ZombieBasedOn": "tutorial_imp"
+			}
+		},
+		{
+			"aliases": [
+				"tutorial_imp"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"KilledByShrinkingViolet": true,
+				"CannotBeGrabbedByPtero": true,
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"IgnoredInWaves": true,
+				"WalkSPS": 0,
+				"EatDPS": 250,
+				"Toughness": 190,
+				"StartingArmors": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"tutorial"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tutorial@CurrentLevel)",
+				"ZombieBasedOn": "tutorial"
+			}
+		},
+		{
+			"aliases": [
+				"tutorial"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0,
+				"EatDPS": 250,
+				"Toughness": 190,
+				"StartingArmors": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"tutorial_armor1"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tutorial_armor1@CurrentLevel)",
+				"ZombieBasedOn": "tutorial_armor1"
+			}
+		},
+		{
+			"aliases": [
+				"tutorial_armor1"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0,
+				"EatDPS": 250,
+				"Toughness": 190,
+        "StartingArmors": [
+					"modern_armor1"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"tutorial_armor2"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tutorial_armor2@CurrentLevel)",
+				"ZombieBasedOn": "tutorial_armor2"
+			}
+		},
+		{
+			"aliases": [
+				"tutorial_armor2"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0,
+				"EatDPS": 250,
+				"Toughness": 190,
+        "StartingArmors": [
+					"modern_armor2"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"tutorial_armor4"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tutorial_armor4@CurrentLevel)",
+				"ZombieBasedOn": "tutorial_armor4"
+			}
+		},
+		{
+			"aliases": [
+				"tutorial_armor4"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0,
+				"EatDPS": 250,
+				"Toughness": 190,
+        "StartingArmors": [
+					"modern_armor4"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"tutorial_flag_veteran"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tutorial_flag_veteran@CurrentLevel)",
+				"ZombieBasedOn": "tutorial_flag_veteran"
+			}
+		},
+		{
+			"aliases": [
+				"tutorial_flag_veteran"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0,
+				"EatDPS": 600,
+				"Toughness": 350,
+        "StartingArmors": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"catapult"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(catapult@CurrentLevel)",
+				"ZombieBasedOn": "catapult"
+			}
+		},
+		{
+			"aliases": [
+				"catapult"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"BallType": "busketball",
+				"CannotBeEnlightenedBySolarSage": true,
+				"CannotBeGrabbedByPtero": true,
+				"ImmuneToSweetPotato": true,
+				"CannotBeDraggedByTangleKelp": true,
+				"CannotBeTossedByCitron": true,
+				"CannotBeSwallowedByChomper": true,
+				"WalkSPS": 0,
+				"EatDPS": 1000,
+				"Toughness": 750,
+				"LivesInDeepWater": true,
+				"NormalDeathWhenMowed": true,
+				"LobInterval": 4,
+				"LobIntervalAdditional": 0.5,
+				"MaxBallCount": 100,
+				"ImmuneToGarlic": true,
+        "StartingArmors": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"modern_balloon"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(modern_balloon@CurrentLevel)",
+				"ZombieBasedOn": "modern_balloon"
+			}
+		},
+		{
+			"aliases": [
+				"modern_balloon"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"ChooseToSpawnOnNonDeckRows": true,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0,
+				"BalloonWalkSPS": 0,
+				"EatDPS": 250,
+				"Toughness": 250,
+				"BalloonToughness": 650
+			}
+		},
+    {
+			"aliases": [
+				"tutorial_gargantuar"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tutorial_gargantuar@CurrentLevel)",
+				"ZombieBasedOn": "tutorial_gargantuar"
+			}
+		},
+		{
+			"aliases": [
+				"tutorial_gargantuar"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Gargantuar",
+				"CannotBeGrabbedByPtero": true,
+				"CannotChangeLaneByPowerToss": true,
+				"CannotBeFlickedByPowerToss": true,
+				"CannotBeDraggedByTangleKelp": true,
+				"CannotBeTossedByCitron": true,
+				"CannotBeSwallowedByChomper": true,
+				"CannotCarryPlantfoodsInWaves": true,
+				"SmashDamage": 1500,
+				"WalkSPS": 0,
+				"EatDPS": 100,
+				"Toughness": 3600,
+				"LivesInDeepWater": true,
+				"NormalDeathWhenMowed": true
+			}
+		},
+    {
+			"aliases": [
+				"death"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(death@CurrentLevel)",
+				"ZombieBasedOn": "chicken"
+			}
+		},
+		{
+			"aliases": [
+				"death"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"KilledByShrinkingViolet": false,
+				"CannotBeGrabbedByPtero": true,
+				"CannotBeTossedByCitron": true,
+        "CannotBeDraggedByTangleKelp": true,
+        "CannotBeSwallowedByChomper": true,
+				"ImmuneToSporeShroom": true,
+        "ImmuneToSweetPotato": true,
+        "CannotChangeLaneByPowerToss": true,
+        "CannotBeFlickedByPowerToss": true,
+        "ChiliStunDurationMult": 0,
+				"WalkSPS": 100,
+				"WalkSPSVarience": 0,
+				"EatDPS": 30000,
+				"Toughness": 114514,
+				"DoesNotDamageHeavilyToGarlic": false,
+        "ImmuneToGarlic": true,
+				"NormalDeathWhenMowed": false
+			}
+		}
+  ],
+  "version": 1
+}

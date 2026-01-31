@@ -1,0 +1,291 @@
+{
+  "#comment": "Pirate Challenge Laststand C",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "[PLAYERS_TRIP_TO_PIRATE_SHIP]",
+        "LevelNumber": 2,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(PiratePlanks@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(LastStand@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(InitialZombiePlacement@CurrentLevel)"
+        ],
+        "MusicType": "MiniGame_A",
+        "NameMultiLanguage": {
+            "en": "I,Botany - Level <LEVELNUMBER>",
+            "zh": "我是植物 - 第 <LEVELNUMBER> 关"
+        },
+        "StageModule": "RTID(PirateStage@LevelModules)"
+      }
+    },
+    {
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(BeatTheLevel@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": [
+        "BeatTheLevel"
+      ],
+      "objclass": "StarChallengeBeatTheLevelProps",
+      "objdata": {
+        "DescriptionsMultilanguage": [
+          {
+            "en": "Avoiding from using the sun shovel for better experience",
+            "zh": "避免使用阳光铲以获得更佳游戏体验"
+          }    
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "LastStand"
+      ],
+      "objclass": "LastStandMinigameProperties",
+      "objdata": {
+        "StartingPlantfood": 0,
+        "StartingSun": 2400
+      }
+    },
+    {
+      "aliases": [
+        "PiratePlanks"
+      ],
+      "objclass": "PiratePlankProperties",
+      "objdata": {
+        "PlankRows": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "InitialZombiePlacement"
+      ],
+      "objclass": "InitialZombieProperties",
+      "objdata": {
+        "InitialZombiePlacements": [
+          {
+            "GridX": 5,
+            "GridY": 2,
+            "TypeName": "barrelroller"
+          },
+          {
+            "GridX": 6,
+            "GridY": 2,
+            "TypeName": "barrelroller"
+          },
+          {
+            "GridX": 6,
+            "GridY": 1,
+            "TypeName": "barrelroller"
+          },
+          {
+            "GridX": 7,
+            "GridY": 2,
+            "TypeName": "barrelroller"
+          },
+          {
+            "GridX": 7,
+            "GridY": 1,
+            "TypeName": "pirate_armor1"
+          },
+          {
+            "GridX": 7,
+            "GridY": 3,
+            "TypeName": "seagull"
+          },
+          {
+            "GridX": 8,
+            "GridY": 0,
+            "TypeName": "seagull"
+          },
+          {
+            "GridX": 8,
+            "GridY": 1,
+            "TypeName": "pirate_armor2"
+          },
+          {
+            "GridX": 8,
+            "GridY": 2,
+            "TypeName": "pirate_armor4"
+          },
+          {
+            "GridX": 8,
+            "GridY": 3,
+            "TypeName": "seagull"
+          },
+          {
+            "GridX": 8,
+            "GridY": 4,
+            "TypeName": "seagull"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PresetPlantList": [
+          {
+            "Level": -1,
+            "PlantType": "threepeater"
+          },
+          {
+            "Level": -1,
+            "PlantType": "snapdragon"
+          },
+          {
+            "Level": -1,
+            "PlantType": "spikeweed"
+          },
+          {
+            "Level": -1,
+            "PlantType": "spikerock"
+          }
+        ],
+        "SelectionMethod": "preset"
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "ManualStartup": true,
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },      
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "FlagWaveInterval": 2,
+      "WaveCount": 2,
+      "WaveSpendingPointIncrement": 0,
+      "WaveSpendingPoints": 200,
+      "objdata": {
+        "Waves": [
+          [ 
+            "RTID(Wave1@CurrentLevel)",
+            "RTID(Wave1RaidingPartyEvent0@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ]
+        ],
+        "ZombieCountdownFirstWaveSecs": 0.1  
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(cannon@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(swashbuckler@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(swashbuckler@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(cannon@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(swashbuckler@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(swashbuckler@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(swashbuckler@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(swashbuckler@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(cannon@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(cannon@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(swashbuckler@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(swashbuckler@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(swashbuckler@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1RaidingPartyEvent0"
+      ],
+      "objclass": "RaidingPartyZombieSpawnerProps",
+      "objdata": {
+        "GroupSize": 0,
+        "SwashbucklerCount": 0,
+        "TimeBetweenGroups": 0
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+        ]
+      }
+    }
+  ],
+  
+  "version": 1
+}

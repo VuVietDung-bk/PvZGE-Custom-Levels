@@ -1,0 +1,600 @@
+{
+  "Information": {
+    "Author": "ScatterPattern",
+    "Introduction": "",
+    "Version": "1.0",
+    "CreatedAt": "21.01.2026",
+    "UpdatedAt": "21.01.2026",
+    "Difficulty": "Easy",
+    "Category": "Adventure"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "<PLAYERNAME>'s Pursuit",
+        "LevelNumber": 6,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(WaveManager@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(Wave11@CurrentLevel)",
+          "RTID(PiratePlank@CurrentLevel)",
+          "RTID(InitialPlant@CurrentLevel)"
+        ],
+        "Name": "Dave's Pursuit - Day 6",
+        "WritenBy": "ScatterPattern",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(PirateStage@LevelModules)",
+        "FirstIntroNarrative": "INTRO",
+"FirstOutroNarrative": "OUTRO",
+"ReplayIntroNarrative": "INTRO",
+"ReplayOutroNarrative": "OUTRO"
+      }
+    },
+    {
+    "aliases": [
+        "INTRO"
+    ],
+    "objclass": "NarrativeProperties",
+    "objdata": {
+        "Flow": [
+        {
+                "Character": "winnie",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "An enemy ship has arrived. More zombies are here.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "Additionally, we are nearing an iceberg. Prepare for frost winds from it.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "We may travel to Lost City after this. Calculations show 60% probability of User Dave's presence.",
+                    "zh": "???"
+                }
+            }
+        ]
+    }
+},
+{
+    "aliases": [
+        "OUTRO"
+    ],
+    "objclass": "NarrativeProperties",
+    "objdata": {
+        "Flow": [
+        {
+                "Character": "winnie",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "We need to depart in haste.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "We are now headed for Lost City.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "Most of Lost City's adventurers have left, we should face no problems there.",
+                    "zh": "???"
+                }
+            }
+        ]
+    }
+},
+{
+      "objclass": "InitialPlantProperties",
+      "objdata": {
+        "InitialPlantPlacements": [
+          {
+            "TypeName": "pyrevine",
+            "GridX": 1,
+            "GridY": 1
+          },
+          {
+            "TypeName": "pyrevine",
+            "GridX": 1,
+            "GridY": 3
+          }
+        ]
+      },
+      "aliases": [
+        "InitialPlant"
+      ]
+    },
+{
+      "aliases": [
+        "FrostWind01234"
+      ],
+      "objclass": "FrostWindWaveActionProps",
+      "objdata": {
+        "Winds": [
+          {
+            "Direction": "right",
+            "Row": 0
+          },
+          {
+            "Direction": "right",
+            "Row": 1
+          },
+          {
+            "Direction": "right",
+            "Row": 2
+          },
+          {
+            "Direction": "right",
+            "Row": 3
+          },
+          {
+            "Direction": "right",
+            "Row": 4
+          }
+        ]
+      }
+    },{
+      "aliases": [
+        "FrostWind0123"
+      ],
+      "objclass": "FrostWindWaveActionProps",
+      "objdata": {
+        "Winds": [
+          {
+            "Direction": "right",
+            "Row": 0
+          },
+          {
+            "Direction": "right",
+            "Row": 1
+          },
+          {
+            "Direction": "right",
+            "Row": 2
+          },
+          {
+            "Direction": "right",
+            "Row": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "FrostWind234"
+      ],
+      "objclass": "FrostWindWaveActionProps",
+      "objdata": {
+        "Winds": [
+          {
+            "Direction": "right",
+            "Row": 2
+          },
+          {
+            "Direction": "right",
+            "Row": 3
+          },
+          {
+            "Direction": "right",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 11,
+        "WaveCount": 11,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)",
+            "RTID(FrostWind234@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)",
+            "RTID(FrostWind0123@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave11@CurrentLevel)",
+            "RTID(FrostWind01234@CurrentLevel)"
+          ]
+        ],
+        "FlagWaveVeteranOverrideTypes": [
+          0
+        ],
+        "MaxNextWaveHealthPercentage": 0.5,
+        "MinNextWaveHealthPercentage": 0.5
+      },
+      "aliases": [
+        "WaveManager"
+      ]
+    },
+    {
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "SelectionMethod": "chooser"
+      },
+      "aliases": [
+        "SeedBank"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(pirate@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(kongfu@ZombieTypes)",
+            "Row": 2
+          }
+        ]
+      },
+      "aliases": [
+        "Wave1"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(kongfu@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pirate@ZombieTypes)",
+            "Row": 3
+          }
+        ]
+      },
+      "aliases": [
+        "Wave2"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(pirate@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pirate@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(kongfu@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      },
+      "aliases": [
+        "Wave3"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(kongfu_torch@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      },
+      "aliases": [
+        "Wave4"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(kongfu_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pirate_armor1@ZombieTypes)",
+            "Row": 1
+          }
+        ],
+        "AdditionalPlantfood": 1
+      },
+      "aliases": [
+        "Wave5"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(kongfu_bomb@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pirate@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      },
+      "aliases": [
+        "Wave6"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(pirate_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(kongfu_torch@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(kongfu@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      },
+      "aliases": [
+        "Wave7"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(kongfu_armor3@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(kongfu_gong@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(swashbuckler@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 5
+          }
+        ],
+        "AdditionalPlantfood": 1
+      },
+      "aliases": [
+        "Wave8"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(kongfu_torch@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(kongfu_torch@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(kongfu_torch@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(kongfu_torch@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(swashbuckler@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      },
+      "aliases": [
+        "Wave9"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(kongfu_torch@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(swashbuckler@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pirate_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pirate@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pirate@ZombieTypes)",
+            "Row": 3
+          }
+        ],
+        "AdditionalPlantfood": 1
+      },
+      "aliases": [
+        "Wave10"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(pirate@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pirate_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pirate_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(kongfu_gong@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(kongfu_bomb@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(kongfu_drink@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(swashbuckler@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(swashbuckler@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(kongfu_armor3@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pirate_armor4@ZombieTypes)",
+            "Row": 3
+          }
+        ]
+      },
+      "aliases": [
+        "Wave11"
+      ]
+    },
+    {
+      "objclass": "PiratePlankProperties",
+      "objdata": {
+        "PlankRows": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "aliases": [
+        "PiratePlank"
+      ]
+    }
+  ],
+  "version": 1
+}

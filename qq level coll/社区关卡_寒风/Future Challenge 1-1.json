@@ -1,0 +1,943 @@
+{
+	"#comment": "Future Challenge 1",
+	"objects": [ {
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"DescriptionMultiLanguage": {
+                    "en": "Fly-by-wire flight control",
+                    "zh": "电传飞控"
+                },
+				"LevelNumber": 1,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [ "RTID(StandardIntro@LevelModules)", "RTID(SunDropper@CurrentLevel)", "RTID(ZombiesDeadWinCon@LevelModules)", "RTID(FutureMowers@LevelModules)", "RTID(FutureLinkedTileGroups@CurrentLevel)", "RTID(SeedBank@CurrentLevel)", "RTID(SunBombs@CurrentLevel)", "RTID(DefaultZombieWinCondition@LevelModules)", "RTID(ChallengeModule@CurrentLevel)", "RTID(NewWaves@CurrentLevel)" ],
+				"MusicType": "MiniGame_B",
+				"NameMultiLanguage": {
+                    "en": "Fly-by-wire flight control",
+                    "zh": "电传飞控"
+                },
+				"NormalPresentTable": "future_normal_01",
+				"ShinyPresentTable": "future_shiny_01",
+				"StageModule": "RTID(FutureStage@LevelModules)"
+			}
+		}, {
+			"aliases": [ "SunDropper" ],
+			"objclass": "SunDropperProperties",
+			"objdata": {
+				"InitialSunDropDelay": 2,
+				"SunCountdownBase": 4,
+				"SunCountdownIncreasePerSun": 0,
+				"SunCountdownMax": 4,
+				"SunCountdownRange": 0		
+			}
+		}, {
+			"aliases": [ "ChallengeModule" ],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [ [ "RTID(BeatTheLevel@CurrentLevel)" ] ],
+				"ChallengesAlwaysAvailable": true
+			}
+		}, {
+			"aliases": [ "BeatTheLevel" ],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Description": "[STARCHALLENGE_SUNBOMBS]",
+				"DescriptiveName": "[STARCHALLENGE_SUNBOMBS_NAME]"
+			}
+		}, {
+			"aliases": [ "SunBombs" ],
+			"objclass": "SunBombChallengeProperties",
+			"objdata": {
+				"PlantBombExplosionRadius": 25,
+				"PlantDamage": 1000,
+				"ZombieBombExplosionRadius": 80,
+				"ZombieDamage": 500
+			}
+		}, {
+			"aliases": [ "SeedBank" ],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+				"SelectionMethod": "chooser"
+			}
+		}, {
+			"aliases": [ "NewWaves" ],
+			"objclass": "WaveManagerModuleProperties",
+			"objdata": {
+				"DynamicZombies": [ {
+						"PointIncrementPerWave": -40,
+						"StartingPoints": -100,
+						"StartingWave": 3,
+						"ZombiePool": ["RTID(future_jetpack@ZombieTypes)", "RTID(future_jetpack_armor1@CurrentLevel)", "RTID(future_jetpack_armor2@CurrentLevel)", "RTID(future_jetpack_armor4@CurrentLevel)", "RTID(future_protector@ZombieTypes)", "RTID(future_gargantuar@ZombieTypes)" ]
+					}, {
+						"PointIncrementPerWave": -25,
+						"StartingPoints": -100,
+						"StartingWave": 4,
+						"ZombiePool": ["RTID(future_jetpack@ZombieTypes)", "RTID(future_jetpack_armor1@CurrentLevel)", "RTID(future_jetpack_armor2@CurrentLevel)", "RTID(future_jetpack_armor4@CurrentLevel)", "RTID(future_protector@ZombieTypes)", "RTID(future_gargantuar@ZombieTypes)" ]
+					}, {
+						"PointIncrementPerWave": -10,
+						"StartingPoints": -100,
+						"StartingWave": 5,
+						"ZombiePool": ["RTID(future_jetpack@ZombieTypes)", "RTID(future_jetpack_armor1@CurrentLevel)", "RTID(future_jetpack_armor2@CurrentLevel)", "RTID(future_jetpack_armor4@CurrentLevel)", "RTID(future_protector@ZombieTypes)", "RTID(future_gargantuar@ZombieTypes)" ]
+					}, {}, {
+						"PointIncrementPerWave": 20,
+						"StartingPoints": 100,
+						"StartingWave": 5,
+						"ZombiePool": ["RTID(future_jetpack@ZombieTypes)", "RTID(future_jetpack_armor1@CurrentLevel)", "RTID(future_jetpack_armor2@CurrentLevel)", "RTID(future_jetpack_armor4@CurrentLevel)", "RTID(future_protector@ZombieTypes)", "RTID(future_gargantuar@ZombieTypes)" ]
+					}, {
+						"PointIncrementPerWave": 40,
+						"StartingPoints": 200,
+						"StartingWave": 4,
+						"ZombiePool": ["RTID(future_jetpack@ZombieTypes)", "RTID(future_jetpack_armor1@CurrentLevel)", "RTID(future_jetpack_armor2@CurrentLevel)", "RTID(future_jetpack_armor4@CurrentLevel)", "RTID(future_protector@ZombieTypes)", "RTID(future_gargantuar@ZombieTypes)" ]
+					}, {
+						"PointIncrementPerWave": 60,
+						"StartingPoints": 400,
+						"StartingWave": 3,
+						"ZombiePool": ["RTID(future_jetpack@ZombieTypes)", "RTID(future_jetpack_armor1@CurrentLevel)", "RTID(future_jetpack_armor2@CurrentLevel)", "RTID(future_jetpack_armor4@CurrentLevel)", "RTID(future_protector@ZombieTypes)", "RTID(future_gargantuar@ZombieTypes)" ]
+					} ],
+				"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+			}
+        }, {
+            "aliases": [
+                "future_jetpack_armor1"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(future_jetpack_armor1@CurrentLevel)",
+                "ZombieBasedOn": "future_jetpack"
+            }
+        }, {
+            "aliases": [
+                "future_jetpack_armor1"
+            ],
+            "objclass": "ZombieProperties",
+            "objdata": {
+                "ImmuneToSweetPotato": true,
+				"ChooseToSpawnOnNonDeckRows": true,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.3,
+				"EatDPS": 100,
+				"Toughness": 380,
+				"NormalDeathWhenMowed": true,
+				"WavePointCost": 150,
+				"Weight": 4000,
+				"HitRect": "RTID(FutureJetpackHitRect@RectangleProps)",
+				"AttackRect": "RTID(FutureJetpackAttackRect@RectangleProps)",
+				"StartingArmors": [
+					"future_armor1"
+				]
+			}
+        }, {
+            "aliases": [
+                "future_jetpack_armor2"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(future_jetpack_armor2@CurrentLevel)",
+                "ZombieBasedOn": "future_jetpack"
+            }
+        }, {
+            "aliases": [
+                "future_jetpack_armor2"
+            ],
+            "objclass": "ZombieProperties",
+            "objdata": {
+                "ImmuneToSweetPotato": true,
+				"ChooseToSpawnOnNonDeckRows": true,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.3,
+				"EatDPS": 100,
+				"Toughness": 380,
+				"NormalDeathWhenMowed": true,
+				"WavePointCost": 150,
+				"Weight": 4000,
+				"HitRect": "RTID(FutureJetpackHitRect@RectangleProps)",
+				"AttackRect": "RTID(FutureJetpackAttackRect@RectangleProps)",
+				"StartingArmors": [
+					"future_armor2"
+				]
+			}
+        }, {
+            "aliases": [
+                "future_jetpack_armor4"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(future_jetpack_armor4@CurrentLevel)",
+                "ZombieBasedOn": "future_jetpack"
+            }
+        }, {
+            "aliases": [
+                "future_jetpack_armor4"
+            ],
+            "objclass": "ZombieProperties",
+            "objdata": {
+                "ImmuneToSweetPotato": true,
+				"ChooseToSpawnOnNonDeckRows": true,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.3,
+				"EatDPS": 100,
+				"Toughness": 380,
+				"NormalDeathWhenMowed": true,
+				"WavePointCost": 150,
+				"Weight": 4000,
+				"HitRect": "RTID(FutureJetpackHitRect@RectangleProps)",
+				"AttackRect": "RTID(FutureJetpackAttackRect@RectangleProps)",
+				"StartingArmors": [
+					"future_armor4"
+				]
+            }
+        }, {
+            "aliases": [
+                "future_jetpack_veteran"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(future_jetpack_veteran@CurrentLevel)",
+                "ZombieBasedOn": "future_jetpack_veteran"
+			}
+		}, {
+			"aliases": [
+				"future_jetpack_veteran"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ImmuneToSweetPotato": true,
+				"ChooseToSpawnOnNonDeckRows": true,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.75,
+				"EatDPS": 150,
+				"Toughness": 500,
+				"NormalDeathWhenMowed": true,
+				"WavePointCost": 450,
+				"Weight": 4000,
+				"HitRect": "RTID(FutureJetpackHitRect@RectangleProps)",
+				"AttackRect": "RTID(FutureJetpackAttackRect@RectangleProps)"		
+			}
+		}, {
+			"aliases": [ "WaveManagerProps" ],
+			"objclass": "WaveManagerProperties",
+			"objdata": {
+				"FlagWaveInterval": 6,
+				"FlagWaveVeteranOverrideTypes": [ 1, 1, 1 ],
+				"WaveCount": 18,
+				"WaveSpendingPointIncrement": 50,
+				"WaveSpendingPoints": 100,
+				"Waves": [ 
+				 [ "RTID(Wave1@CurrentLevel)" ],
+				 [ "RTID(Wave2@CurrentLevel)" ], 
+				 [ "RTID(Wave3@CurrentLevel)" ], 
+				 [ "RTID(Wave4@CurrentLevel)" ], 
+				 [ "RTID(Wave5@CurrentLevel)" ], 
+				 [ "RTID(Wave6@CurrentLevel)",  "RTID(Wave6JetpackSpawnEvent0@CurrentLevel)" ], 
+				 [ "RTID(Wave7@CurrentLevel)" ], 
+				 [ "RTID(Wave8@CurrentLevel)" ], 
+				 [ "RTID(Wave9@CurrentLevel)",  "RTID(Wave9JetpackSpawnEvent0@CurrentLevel)" ], 
+				 [ "RTID(Wave10@CurrentLevel)" ], 
+				 [ "RTID(Wave11@CurrentLevel)" ], 
+				 [ "RTID(Wave12@CurrentLevel)", "RTID(Wave12JetpackSpawnEvent0@CurrentLevel)" ], 
+				 [ "RTID(Wave13@CurrentLevel)" ], 
+				 [ "RTID(Wave14@CurrentLevel)" ], 
+				 [ "RTID(Wave15@CurrentLevel)", "RTID(Wave15JetpackSpawnEvent0@CurrentLevel)" ], 
+				 [ "RTID(Wave16@CurrentLevel)" ], 
+				 [ "RTID(Wave17@CurrentLevel)" ], 
+				 [ "RTID(Wave18@CurrentLevel)", "RTID(Wave18JetpackSpawnEvent0@CurrentLevel)" ] 
+				]
+			}
+		}, {
+			"aliases": [ "Wave1" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [ {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave2" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [ {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave3" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 1,
+				"Zombies": [ {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave4" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 1,				
+				"Zombies": [ {
+						"Type": "RTID(future_protector@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"					
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave5" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [ {
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"		
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave6" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 1,
+				"Zombies": [ {
+						"Row": 5,
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Row": 4,
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+                    }, {
+						"Row": 3,
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+						"Row": 1,
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Row": 2,
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Column": 6,
+						"Type": "RTID(future_protector@ZombieTypes)"
+					}, {
+						"Column": 6,
+						"Type": "RTID(future_protector@ZombieTypes)"			
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave7" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [ {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"		
+					}, {
+
+						"Type": "RTID(future_protector@ZombieTypes)"
+					}, {
+
+						"Type": "RTID(future_protector@ZombieTypes)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"								
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave8" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [ 
+					{					
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+                        "Row": 1,
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+                        "Row": 2,
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {
+                        "Row": 3,
+						"Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+					}, {
+                        "Row": 4,
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {
+                        "Row": 5,
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Column": 7,
+						"Type": "RTID(future_protector@ZombieTypes)"					
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave9" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 1,
+				"Zombies": [ {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"				
+						
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave10" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [ 
+					{					
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+					
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+						"Column": 6,
+                        "Row": 3,						
+						"Type": "RTID(future_protector@ZombieTypes)"				
+
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave11" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [ {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"	
+					}, {
+
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"						
+
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave12" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 1,
+				"Zombies": [ {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+                        "Row": 3,	
+						"Type": "RTID(future_gargantuar@ZombieTypes)"	
+					}, {
+
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"		
+					}, {
+
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"	
+					}, {
+	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+						"Column": 6,
+                        "Row": 2,						
+						"Type": "RTID(future_protector@ZombieTypes)"
+					}, {
+						"Column": 6,
+                        "Row": 4,						
+						"Type": "RTID(future_protector@ZombieTypes)"			
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave13" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [ {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"	
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+					}, {						
+						"Type": "RTID(future_protector@ZombieTypes)"
+					}, {						
+						"Type": "RTID(future_protector@ZombieTypes)"							
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave14" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [ {
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+						"Column": 6,
+                        "Row": 2,						
+						"Type": "RTID(future_protector@ZombieTypes)"
+					}, {
+						"Column": 6,
+                        "Row": 4,						
+						"Type": "RTID(future_protector@ZombieTypes)"
+					}, {
+                        "Row": 2,	
+						"Type": "RTID(future_gargantuar@ZombieTypes)"
+					}, {
+                        "Row": 4,	
+						"Type": "RTID(future_gargantuar@ZombieTypes)"							
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave15" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 1,
+				"Zombies": [ {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"	
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave16" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [ 
+					{
+	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+	
+						"Type": "RTID(future_gargantuar@ZombieTypes)"
+					}, {
+	
+						"Type": "RTID(future_gargantuar@ZombieTypes)"
+					}, {
+						"Column": 6,
+                        "Row": 1,						
+						"Type": "RTID(future_protector@ZombieTypes)"
+					}, {
+						"Column": 6,
+                        "Row": 5,						
+						"Type": "RTID(future_protector@ZombieTypes)"
+													
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave17" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [ {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"	
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+					}, {	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {												
+						"Type": "RTID(future_protector@ZombieTypes)"
+					}, {												
+						"Type": "RTID(future_protector@ZombieTypes)"	
+					}, {												
+						"Type": "RTID(future_protector@ZombieTypes)"			
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave18" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 1,
+				"Zombies": [ {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"	
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+					}, {	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {
+	                    "Column": 6,
+                        "Row": 3,
+						"Type": "RTID(future_gargantuar@ZombieTypes)"
+					}, {
+	
+						"Type": "RTID(future_gargantuar@ZombieTypes)"	
+					}, {
+	
+						"Type": "RTID(future_gargantuar@ZombieTypes)"
+					}, {					
+						"Type": "RTID(future_protector@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_protector@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_protector@ZombieTypes)"				
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave6JetpackSpawnEvent0" ],
+			"objclass": "SpawnZombiesFromGroundSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 7,
+				"ColumnStart": 5,
+				"WaveStartMessage": "[WARNING_JETPACKRAIN]",
+				"Zombies": [ {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+				    }, {	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"		
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave9JetpackSpawnEvent0" ],
+			"objclass": "SpawnZombiesFromGroundSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 8,
+				"ColumnStart": 5,
+				"WaveStartMessage": "[WARNING_JETPACKRAIN]",
+				"Zombies": [ {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"			
+					} ]	
+			}
+		}, {
+			"aliases": [ "Wave12JetpackSpawnEvent0" ],
+			"objclass": "SpawnZombiesFromGroundSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 8,
+				"ColumnStart": 5,
+				"WaveStartMessage": "[WARNING_JETPACKRAIN]",
+				"Zombies": [ {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"				
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave15JetpackSpawnEvent0" ],
+			"objclass": "SpawnZombiesFromGroundSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 8,
+				"ColumnStart": 5,
+				"WaveStartMessage": "[WARNING_JETPACKRAIN]",
+				"Zombies": [ {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"		
+					}, {
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor4@CurrentLevel)"	
+					}, {	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"		
+					} ]
+			}
+		}, {
+			"aliases": [ "Wave18JetpackSpawnEvent0" ],
+			"objclass": "SpawnZombiesFromGroundSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 8,
+				"ColumnStart": 5,
+				"WaveStartMessage": "[WARNING_JETPACKRAIN]",
+				"Zombies": [ {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					}, {
+						"Type": "RTID(future_jetpack@ZombieTypes)"		
+					}, {
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+					}, {
+						"Type": "RTID(future_jetpack_armor4@CurrentLevel)"		
+					}, {	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"
+					}, {	
+						"Type": "RTID(future_jetpack_veteran@CurrentLevel)"		
+					} ]									
+			}
+		} ],
+	"version": 1
+}

@@ -1,0 +1,66 @@
+{
+	"objects": [{
+			"objclass": "LevelDefinition", //关卡设置
+			"objdata": {
+				"StageModule": "RTID(EgyptStage@LevelModules)", //场景
+				"Modules": [
+					"RTID(NewWaves@CurrentLevel)" //出怪
+				]
+			}
+		},
+		{
+			"aliases": "NewWaves", //出怪点数
+			"objclass": "WaveManagerModuleProperties",
+			"objdata": {
+				"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+			}
+		},
+		{
+			"aliases": "WaveManagerProps", //具体出怪
+			"objclass": "WaveManagerProperties",
+			"objdata": {
+				"ZombieCountdownFirstWaveSecs": 0.01, //开局出怪时间(s)，填0的时候代表默认15
+				"FlagWaveInterval": 10, //多少波一旗，默认1
+				"Waves": [
+					[
+						"RTID(Wave1@CurrentLevel)",
+						"RTID(Wave1SandstormEvent0@CurrentLevel)"
+					]
+				]
+			}
+		},
+		{
+			"aliases": "Wave1",
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [{
+					"Type": "RTID(ra@ZombieTypes)"
+				}]
+			}
+		},
+		{
+			"aliases": "Wave1SandstormEvent0", //沙尘暴事件
+			"objclass": "StormZombieSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 8, //竖线0~9
+				"ColumnStart": 8,
+				"GroupSize": 1, //一组沙尘暴带来的僵尸数量，默认为2
+				"TimeBetweenGroups": 3, //每组沙尘暴之间的时间间隔
+				"Type": "sandstorm",
+				"Zombies": [{
+						"Type": "RTID(mummy@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(mummy_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(mummy_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(mummy_armor4@ZombieTypes)"
+					}
+				]
+			}
+		}
+	]
+}

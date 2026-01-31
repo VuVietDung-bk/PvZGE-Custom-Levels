@@ -1,0 +1,500 @@
+{
+	"#comment": "Sky City Minigame",
+	"objects": [ {
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "Level Made By Zmyz6515",
+				"LevelNumber": 3,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+					"RTID(StandardIntro@LevelModules)",
+					"RTID(DefaultZombieWinCondition@LevelModules)",
+					"RTID(ZombiesDeadWinCon@LevelModules)",
+					"RTID(FutureMinigame@CurrentLevel)",
+					"RTID(Rails@CurrentLevel)",
+					"RTID(NewWaves@CurrentLevel)" ],
+				"Name": "High Asplantrations - Day 3",
+				"NameMultiLanguage": {
+		        	"en": "High Asplantrations - Day 3",
+		        	"zh": "壮植凌云 - 第3天"
+		        },
+				"NormalPresentTable": "future_normal_01",
+				"ShinyPresentTable": "future_shiny_01",
+				"ForceToWorldMap": true,
+				"RepeatPlayForceToWorldMap": true,
+				"StageModule": "RTID(SkyStage@LevelModules)"
+			}
+		},
+		{
+      "aliases": [ "Rails" ],
+      "objclass": "RailcartProperties",
+      "objdata": {
+        "Railcarts": [
+          {
+            "Column": 0,
+            "Row": 2
+          }
+        ],
+        "Rails": [
+          {
+            "Column": 0,
+            "RowEnd": 4,
+            "RowStart": 0
+          }
+        ]
+      }
+    },
+		{
+      "aliases": [ "FutureMinigame" ],
+      "objclass": "FutureMinigameProperties",
+      "objdata": {
+        "Position": {
+          "mX": 0,
+          "mY": 2
+        },
+        "PlantUpgradeList": [
+          {
+            "Type": "firegourd",
+            "UpgradeDetails": {
+              "DamageScale": 2,
+              "ShootIntervalScale": 0.3
+            },
+            "FullPoint": 100
+          },
+          {
+            "Type": "xshot",
+            "UpgradeDetails": {
+              "DamageScale": 2.8,
+              "ShootIntervalScale": 0.2
+            },
+            "FullPoint": 2500
+          },
+          {
+            "Type": "starfruit",
+            "UpgradeDetails": {
+              "DamageScale": 4,
+              "ShootIntervalScale": 0.2
+            },
+            "FullPoint": 3600
+          },
+          {
+            "Type": "shootingstarfruit",
+            "UpgradeDetails": {
+              "DamageScale": 4.5,
+              "ShootIntervalScale": 0.15
+            },
+            "FullPoint": 5000
+          },
+          {
+            "Type": "megagatling",
+            "UpgradeDetails": {
+              "DamageScale": 3,
+              "ShootIntervalScale": 0.6
+            },
+            "FullPoint": 20000
+          }
+        ]
+      }
+    },
+    {
+        "aliases": [
+            "sky_4"
+        ],
+        "objclass": "ZombieType",
+        "objdata": {
+            "Properties": "RTID(sky_4@CurrentLevel)",
+            "ZombieBasedOn": "sky"
+        }
+    },
+    {
+			"aliases": [
+				"sky_4"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.165,
+				"Toughness": 190,
+				"EatDPS": 100,
+				"StartingArmors": [
+					"egypt_armor4"
+				],
+				"WavePointCost": 400,
+				"Weight": 3000,
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+    {
+        "aliases": [
+            "sky_knight"
+        ],
+        "objclass": "ZombieType",
+        "objdata": {
+            "Properties": "RTID(sky_knight@CurrentLevel)",
+            "ZombieBasedOn": "sky"
+        }
+    },
+    {
+			"aliases": [
+				"sky_knight"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.205,
+				"Toughness": 190,
+				"EatDPS": 100,
+				"StartingArmors": [
+					"dark_armor3"
+				],
+				"WavePointCost": 550,
+				"Weight": 2500,
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [ "NewWaves" ],
+			"objclass": "WaveManagerModuleProperties",
+			"objdata": {
+				"DynamicZombies": [
+					{
+						"PointIncrementPerWave": -1,
+						"StartingPoints": 4,
+						"StartingWave": 3,
+						"ZombiePool": [ "RTID(lostcity_bug@ZombieTypes)",
+							"RTID(sky_armor1@ZombieTypes)",
+							"RTID(sky_armor2@ZombieTypes)",
+							"RTID(sky_armor2@ZombieTypes)",
+							"RTID(future_jetpack@ZombieTypes)",
+							"RTID(sky_4@CurrentLevel)",
+							"RTID(future_jetpack@ZombieTypes)" ]
+					},
+					{
+						"PointIncrementPerWave": 1,
+						"StartingPoints": 1,
+						"StartingWave": 4,
+						"ZombiePool": [ "RTID(lostcity_bug@ZombieTypes)",
+							"RTID(sky_armor1@ZombieTypes)",
+							"RTID(sky_armor2@ZombieTypes)",
+							"RTID(sky_armor2@ZombieTypes)",
+							"RTID(sky_4@CurrentLevel)",
+							"RTID(sky_knight@CurrentLevel)",
+							"RTID(future_jetpack_veteran@ZombieTypes)",
+							"RTID(future_jetpack_veteran@ZombieTypes)"
+						]
+					},
+					{
+						"PointIncrementPerWave": 2,
+						"StartingPoints": 1,
+						"StartingWave": 2,
+						"ZombiePool": [ "RTID(lostcity_bug@ZombieTypes)",
+							"RTID(sky_armor1@ZombieTypes)",
+							"RTID(sky_armor2@ZombieTypes)",
+							"RTID(summer_bug@ZombieTypes)",
+							"RTID(sky_knight@CurrentLevel)",
+							"RTID(future_jetpack@ZombieTypes)"
+						]
+					},
+					{},
+					{
+						"PointIncrementPerWave": 1,
+						"StartingPoints": 1,
+						"StartingWave": 1,
+						"ZombiePool": [ "RTID(lostcity_bug@ZombieTypes)",
+							"RTID(sky_armor1@ZombieTypes)",
+							"RTID(sky_armor2@ZombieTypes)",
+							"RTID(sky_armor2@ZombieTypes)",
+							"RTID(summer_bug@ZombieTypes)",
+							"RTID(sky_knight@CurrentLevel)",
+							"RTID(future_jetpack@ZombieTypes)",
+							"RTID(future_jetpack@ZombieTypes)" ]
+					},
+					{
+						"PointIncrementPerWave": 1,
+						"StartingPoints": 1,
+						"StartingWave": 2,
+						"ZombiePool": [ "RTID(sky_armor1@ZombieTypes)",
+							"RTID(sky_armor2@ZombieTypes)",
+							"RTID(sky_armor2@ZombieTypes)",
+							"RTID(summer_bug@ZombieTypes)",
+							"RTID(sky_4@CurrentLevel)",
+							"RTID(summer_bug@ZombieTypes)",
+							"RTID(future_jetpack_veteran@ZombieTypes)",
+							"RTID(future_jetpack@ZombieTypes)" ]
+					},
+					{
+						"PointIncrementPerWave": 1,
+						"StartingPoints": 1,
+						"StartingWave": 3,
+						"ZombiePool": [ "RTID(sky_armor2@ZombieTypes)",
+							"RTID(sky_armor2@ZombieTypes)",
+							"RTID(sky_knight@CurrentLevel)",
+							"RTID(summer_bug@ZombieTypes)",
+							"RTID(summer_bug@ZombieTypes)",
+							"RTID(future_jetpack_veteran@ZombieTypes)",
+							"RTID(future_jetpack@ZombieTypes)" ]
+					}
+				],
+				"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+			}
+		},
+{
+			"aliases": [ "WaveManagerProps" ],
+			"objclass": "WaveManagerProperties",
+			"objdata": {
+				"FlagWaveInterval": 3,
+				"FlagWaveVeteranOverrideTypes": [ 1,1,1 ],
+				"WaveCount": 9,
+				"WaveSpendingPointIncrement": 200,
+				"WaveSpendingPoints": 700,
+				"Waves": [
+					[ "RTID(Wave1@CurrentLevel)" ],
+					[ "RTID(Wave2@CurrentLevel)" ],
+					[ "RTID(Wave3@CurrentLevel)" ],
+					[ "RTID(Wave4@CurrentLevel)" ],
+					[ "RTID(Wave5@CurrentLevel)" ],
+					[ "RTID(Wave6@CurrentLevel)" ],
+					[ "RTID(Wave7@CurrentLevel)" ],
+					[ "RTID(Wave8@CurrentLevel)" ],
+					[ "RTID(Wave9@CurrentLevel)" ]
+				]
+			}
+		},
+{
+			"aliases": [ "Wave1" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"DynamicPlantfood": [
+					1,
+					1,
+					1,
+					1,
+					0,
+					0,
+					0
+				],
+				"Zombies": [
+					{
+						"Type": "RTID(sky_knight@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(sky_armor1@ZombieTypes)"
+					}
+				]
+			}
+		},
+{
+			"aliases": [ "Wave2" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 1,
+				"Zombies": [
+					{
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_bug@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_bug@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(sky_4@CurrentLevel)"
+					} ]
+			}
+		},
+{
+			"aliases": [ "Wave3" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Type": "RTID(sky_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(sky_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(sky_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_bug@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(sky_armor2@ZombieTypes)"
+					},
+					{
+						"Row": "1",
+						"Type": "RTID(lostcity_bug@ZombieTypes)"
+					} ]
+			}
+		},
+{
+			"aliases": [ "Wave4" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 1,
+				"Zombies": [
+					{
+						"Row": "4",
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					},
+					{
+						"Row": "2",
+						"Type": "RTID(future_jetpack_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(sky_4@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(sky_armor2@ZombieTypes)"
+					} ]
+			}
+		},
+{
+			"aliases": [ "Wave5" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 1,
+				"Zombies": [
+					{
+						"Type": "RTID(future_jetpack_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(future_jetpack_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(sky_knight@CurrentLevel)"
+					},
+					{
+						"Row": "3",
+						"Type": "RTID(future_jetpack_veteran@ZombieTypes)"
+					} ]
+			}
+		},
+{
+			"aliases": [ "Wave6" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 1,
+				"Zombies": [
+					{
+						"Row": "3",
+						"Type": "RTID(future_jetpack_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_bug@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_bug@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_bug@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_bug@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(sky_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(sky_4@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(sky_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(future_jetpack_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(future_jetpack_veteran@ZombieTypes)"
+					} ]
+			}
+		},
+{
+			"aliases": [ "Wave7" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [ {
+						"Type": "RTID(sky_knight@CurrentLevel)"
+					},
+{
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					},
+{
+						"Type": "RTID(future_jetpack_veteran@ZombieTypes)"
+					},
+{
+						"Row": "4",
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					},
+{
+						"Row": "2",
+						"Type": "RTID(future_jetpack@ZombieTypes)"
+					} ]
+			}
+		},
+{
+			"aliases": [ "Wave8" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 1,
+				"Zombies": [ {
+						"Row": "3",
+						"Type": "RTID(lostcity_bug@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(sky_knight@CurrentLevel)"
+					},
+          {
+						"Row": "5",
+						"Type": "RTID(sky_4@CurrentLevel)"
+					},
+          {
+						"Row": "1",
+						"Type": "RTID(sky_armor2@ZombieTypes)"
+					} ]
+			}
+		},
+{
+			"aliases": [ "Wave9" ],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [ {
+						"Row": "3",
+						"Type": "RTID(lostcity_bug@ZombieTypes)"
+					},
+                         {
+						"Type": "RTID(sky_armor1@ZombieTypes)"
+					},
+                         {
+						"Type": "RTID(sky_4@CurrentLevel)"
+					},
+                         {
+						"Type": "RTID(sky_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(sky_knight@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(summer_bug@ZombieTypes)"
+					},
+                         {
+						"Type": "RTID(sky_knight@CurrentLevel)"
+					} ]
+			}
+		} ],
+	"version": 1
+}

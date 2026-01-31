@@ -1,0 +1,120 @@
+{
+	"objects": [{
+			"objclass": "LevelDefinition",//关卡设置
+			"objdata": {
+				"Name": "不毛之地",//关卡名称
+				"StageModule": "RTID(EgyptStage@LevelModules)",//场景
+				"Modules": [
+					"RTID(StandardIntro@LevelModules)",//必备
+					"RTID(SeedBank@CurrentLevel)",//选卡
+					"RTID(NewWaves@CurrentLevel)",//出怪
+					"RTID(DefaultSunDropper@LevelModules)",//阳光掉落
+					"RTID(Gravestones@CurrentLevel)",//墓碑
+					"RTID(EgyptMowers@LevelModules)",//小推车
+					"RTID(ModPlants@CurrentLevel)",//修改
+					"RTID(ChallengeModule@CurrentLevel)",//额外挑战
+				],
+			}
+		},
+		{
+			"aliases": "SeedBank",//选卡模式
+			"objclass": "SeedBankProperties",
+			"objdata": {
+				"SelectionMethod": "chooser"
+			}
+		},
+		{
+			"aliases": "Gravestones",//墓碑
+			"objclass": "GravestoneProperties",
+			"objdata": {
+				"GravestoneCount": 0,//墓碑数量
+				"SpawnColumnEnd": 9,//终止列
+				"SpawnColumnStart": 6,//起始列
+			}
+		},
+		{
+			"aliases": "NewWaves",//出怪点数
+			"objclass": "WaveManagerModuleProperties",
+			"objdata": {
+				"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)",
+				"DynamicZombies": [{}, {}, {}, {}, {}, {},
+					{
+						"PointIncrementPerWave": 34,//每波出怪点数增长
+						"StartingPoints": 100,//第0波出怪点数
+						"StartingWave": 0,//波次从0计数
+						"ZombiePool": [
+							"RTID(mummy@ZombieTypes)",
+							"RTID(mummy_armor1@ZombieTypes)",
+							"RTID(mummy_armor2@ZombieTypes)",
+						]
+					}
+				]
+			}
+		},
+		{
+			"aliases": "WaveManagerProps",//具体出怪
+			"objclass": "WaveManagerProperties",
+			"objdata": {
+				"FlagWaveInterval": 10,
+				"Waves": [
+					[],[],[],[],[],[],[],[],[],[],
+					[],[],[],[],[],[],[],[],[],[],
+					[],[],[],[],[],[],[],[],[],[]
+				]
+			}
+		},
+		{
+			"aliases": "ChallengeModule",//挑战设置
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(DoNotPlantBeforeLine@CurrentLevel)"
+					]
+				],
+				// "ChallengesAlwaysAvailable": true,
+			}
+		},
+		{
+			"aliases": "DoNotPlantBeforeLine",//霉菌
+			"objclass": "MoldColonyChallengeProps",
+			"objdata": {
+				// "Locations": "RTID(Column0_To_Column1@BoardGridMaps)",
+				"MoldMatrix": [
+					"111111111",
+					"000000000",
+					"000000000",
+					"000000000",
+					"111111111",
+				]
+			}
+		},
+		{
+			"aliases": "SunDropper",//修改阳光
+			"objclass": "SunDropperProperties",
+			"objdata": {
+				// "InitialSunDropDelay": 5,
+				// "SunCountdownBase": 5,
+				// "SunCountdownIncreasePerSun": 1,
+				// "SunCountdownMax": 9.5,
+				// "SunCountdownRange": 0.5,
+				"Value": 25
+			}
+		},
+		{
+			"aliases": "ModPlants",//修改植物
+			"objclass": "PlantModifierProperties",
+			"objdata": {
+				"List":
+				[
+					{
+						"Type": "sunflower",
+						"NewObjdata": {
+							"SunValue": 25
+						}
+					}
+				]
+			}
+		},
+	],
+}

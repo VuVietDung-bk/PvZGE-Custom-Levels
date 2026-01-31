@@ -1,0 +1,1123 @@
+{
+  "#comment": "ContingencyContract",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "面对天灾，我们并非无计可施!",
+        "LevelNumber": 4,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(DefaultSunDropper@CurrentLevel)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(FutureMowers@LevelModules)",
+          "RTID(FutureLinkedTileGroups@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(SunBombs@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(LevelScheduler@CurrentLevel)",
+          "RTID(NewWaves@CurrentLevel)"
+        ],
+        "Name": "ContingencyContract-FF-4",
+        "NameMultiLanguage": {
+          "en": "ContingencyContract-FF-4",
+          "zh": "危机合约-遥远未来-day4"
+        },
+        "WritenBy": "solar_tomato",
+        "NormalPresentTable": "future_normal_01",
+        "ShinyPresentTable": "future_shiny_01",
+        "StageModule": "RTID(FutureStage@LevelModules)",
+        "MusicType": "MiniGame_B"
+      }
+    },
+    {
+      "aliases": [
+        "DefaultSunDropper"
+      ],
+      "objclass": "SunDropperProperties",
+      "objdata": {
+        "InitialSunDropDelay": 2,
+        "SunCountdownBase": 4,
+        "SunCountdownIncreasePerSun": 0,
+        "SunCountdownMax": 4,
+        "SunCountdownRange": 0
+      }
+    },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PlantBlackList": [
+          "sunflower",
+          "twinsunflower",
+          "sunshroom",
+          "primalsunflower",
+          "moonflower",
+          "blover",
+          "hurrikale"
+        ],
+        "SelectionMethod": "chooser"
+      }
+    },
+    {
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(BeatTheLevel@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": [
+        "BeatTheLevel"
+      ],
+      "objclass": "StarChallengeBeatTheLevelProps",
+      "objdata": {
+        "DescriptionsMultilanguage": [
+          {
+            "en": "All zombies gain +100% health and attack damage, and +50% armor durability",
+            "zh": "所有僵尸的生命值和攻击力+100%，防具耐久度+50%"
+          },
+          {
+            "en": "All Jetpack gain +100% movement speed and +1000% attack damage",
+            "zh": "所有喷气背包僵尸的移动速度+100%，攻击力+1000%"
+          },
+          {
+            "en": "All Protector gain +200% health, and EMP shield recharge time is significantly reduced",
+            "zh": "所有电磁盾僵尸的生命值+200%，力场盾恢复时间大幅缩短"
+          },
+          {
+            "en": "Sun Bombs deal increased damage to zombies, but their plant-affecting radius is greatly expanded",
+            "zh": "阳光炸弹对僵尸造成的伤害提升，但是波及植物的范围大幅提升"
+          },
+          {
+            "en": "Complete the level within 340 seconds, with additional plants disabled",
+            "zh": "340秒内通关，额外禁用部分植物"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SunBombs"
+      ],
+      "objclass": "SunBombChallengeProperties",
+      "objdata": {
+        "SuppressObjectiveTip": true,
+        "PlantBombExplosionRadius": 180,
+        "PlantDamage": 1000,
+        "ZombieBombExplosionRadius": 80,
+        "ZombieDamage": 750
+      }
+    },
+    {
+      "aliases": [
+        "FutureLinkedTileGroups"
+      ],
+      "objclass": "PowerTileProperties",
+      "objdata": {
+        "LinkedTiles": [
+          {
+            "Group": "delta",
+            "Location": {
+              "mX": 1,
+              "mY": 0
+            },
+            "PropagationDelay": 0.2
+          },
+          {
+            "Group": "alpha",
+            "Location": {
+              "mX": 0,
+              "mY": 1
+            },
+            "PropagationDelay": 0.2
+          },
+          {
+            "Group": "delta",
+            "Location": {
+              "mX": 1,
+              "mY": 2
+            },
+            "PropagationDelay": 0.2
+          },
+          {
+            "Group": "alpha",
+            "Location": {
+              "mX": 0,
+              "mY": 3
+            },
+            "PropagationDelay": 0.2
+          },
+          {
+            "Group": "delta",
+            "Location": {
+              "mX": 1,
+              "mY": 4
+            },
+            "PropagationDelay": 0.2
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "LevelScheduler"
+      ],
+      "objclass": "LevelSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 1,
+          "Min": 1
+        },
+        "TimeBetween": {
+          "Max": 30,
+          "Min": 30
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(SchedulerHalf@CurrentLevel)",
+          "RTID(SchedulerFinally@CurrentLevel)",
+          "RTID(SchedulerDeath@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerHalf"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 170,
+          "Min": 170
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Half@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Half"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Countdown 170 seconds",
+          "zh": "倒计时170秒"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerFinally"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 310,
+          "Min": 310
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Finally@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Finally"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Countdown 30 seconds",
+          "zh": "倒计时30秒"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerDeath"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 340,
+          "Min": 340
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Death@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Death"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(death@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(death@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(death@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(death@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(death@CurrentLevel)"
+          },
+          {
+            "Row": "6",
+            "Type": "RTID(death@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {
+            "PointIncrementPerWave": -40,
+            "StartingPoints": -100,
+            "StartingWave": 3,
+            "ZombiePool": [
+              "RTID(future@CurrentLevel)",
+              "RTID(future_armor1@CurrentLevel)",
+              "RTID(future_armor2@CurrentLevel)",
+              "RTID(future_jetpack@CurrentLevel)",
+              "RTID(future_protector@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": -25,
+            "StartingPoints": -100,
+            "StartingWave": 4,
+            "ZombiePool": [
+              "RTID(future@CurrentLevel)",
+              "RTID(future_armor1@CurrentLevel)",
+              "RTID(future_armor2@CurrentLevel)",
+              "RTID(future_jetpack@CurrentLevel)",
+              "RTID(future_protector@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": -10,
+            "StartingPoints": -100,
+            "StartingWave": 5,
+            "ZombiePool": [
+              "RTID(future@CurrentLevel)",
+              "RTID(future_armor1@CurrentLevel)",
+              "RTID(future_armor2@CurrentLevel)",
+              "RTID(future_jetpack@CurrentLevel)",
+              "RTID(future_protector@CurrentLevel)"
+            ]
+          },
+          {},
+          {
+            "PointIncrementPerWave": 20,
+            "StartingPoints": 100,
+            "StartingWave": 5,
+            "ZombiePool": [
+              "RTID(future@CurrentLevel)",
+              "RTID(future_armor1@CurrentLevel)",
+              "RTID(future_armor2@CurrentLevel)",
+              "RTID(future_jetpack@CurrentLevel)",
+              "RTID(future_protector@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 40,
+            "StartingPoints": 200,
+            "StartingWave": 4,
+            "ZombiePool": [
+              "RTID(future_armor1@CurrentLevel)",
+              "RTID(future_armor2@CurrentLevel)",
+              "RTID(future_jetpack@CurrentLevel)",
+              "RTID(future_protector@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 60,
+            "StartingPoints": 400,
+            "StartingWave": 3,
+            "ZombiePool": [
+              "RTID(future_armor2@CurrentLevel)",
+              "RTID(future_jetpack@CurrentLevel)",
+              "RTID(future_protector@CurrentLevel)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 8,
+        "WaveCount": 16,
+        "WaveSpendingPointIncrement": 50,
+        "WaveSpendingPoints": 100,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave11@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave12@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave13@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave14@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave15@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave16@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(future@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(future@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(future@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(future@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(future@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(future_jetpack@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(future_armor1@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(future_jetpack@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "3",
+            "Type": "RTID(future_protector@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(future@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(future@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "Zombies": [
+          {
+            "Row": "5",
+            "Type": "RTID(future_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(future_armor1@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(future_jetpack@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(future_jetpack@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(future_jetpack@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(future_jetpack@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(future_jetpack@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(future_armor2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(future_protector@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(future@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(future@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Row": "4",
+            "Type": "RTID(future_protector@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(future@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(future@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "Zombies": [
+          {
+            "Row": "3",
+            "Type": "RTID(future_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(future_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(future_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(future_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(future_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(future_armor1@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(future_jetpack@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(future_jetpack@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(future_jetpack@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave13"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(future_protector@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(future_armor2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave14"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Row": "5",
+            "Type": "RTID(future_protector@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(future_armor2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "Zombies": [
+          {
+            "Row": "3",
+            "Type": "RTID(future_protector@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(future@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(future_armor1@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave16"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Row": "5",
+            "Type": "RTID(future_jetpack@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(future_jetpack@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(future_jetpack@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(future_jetpack@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(future_jetpack@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(future_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(future_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(future_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(future_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(future_armor2@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(future_armor2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "future_armor1"
+      ],
+      "objclass": "ArmorType",
+      "objdata": {
+        "Properties": "RTID(future_armor1@CurrentLevel)",
+        "ArmorBaseOn": "future_armor1"
+      }
+    },
+		{
+      "aliases": [
+        "future_armor1"
+      ],
+      "objclass": "ArmorProperties",
+      "objdata": {
+        "isMetal": false,
+        "isIce": false,
+        "Toughness": 370,
+        "BowlingLevel": 1
+      }
+    },
+    {
+      "aliases": [
+        "future_armor2"
+      ],
+      "objclass": "ArmorType",
+      "objdata": {
+        "Properties": "RTID(future_armor2@CurrentLevel)",
+        "ArmorBaseOn": "future_armor2"
+      }
+    },
+		{
+      "aliases": [
+        "future_armor2"
+      ],
+      "objclass": "ArmorProperties",
+      "objdata": {
+        "isMetal": true,
+        "isIce": false,
+        "Toughness": 1100,
+        "BowlingLevel": 2
+      }
+    },
+    {
+			"aliases": [
+				"future"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(future@CurrentLevel)",
+				"ZombieBasedOn": "future"
+			}
+		},
+		{
+			"aliases": [
+				"future"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.185,
+				"EatDPS": 200,
+				"Toughness": 380,
+				"WavePointCost": 100,
+				"Weight": 1000
+      }
+		},
+    {
+			"aliases": [
+				"future_armor1"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(future_armor1@CurrentLevel)",
+				"ZombieBasedOn": "future_armor1"
+			}
+		},
+		{
+			"aliases": [
+				"future_armor1"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.185,
+				"EatDPS": 200,
+				"Toughness": 380,
+				"StartingArmors": [
+					"future_armor1"
+				],
+				"WavePointCost": 200,
+				"Weight": 3000
+      }
+		},
+    {
+			"aliases": [
+				"future_armor2"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(future_armor2@CurrentLevel)",
+				"ZombieBasedOn": "future_armor2"
+			}
+		},
+		{
+			"aliases": [
+				"future_armor2"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.185,
+				"EatDPS": 200,
+				"Toughness": 380,
+				"StartingArmors": [
+					"future_armor2"
+				],
+				"WavePointCost": 400,
+				"Weight": 4000
+      }
+		},
+    {
+			"aliases": [
+				"future_jetpack"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(future_jetpack@CurrentLevel)",
+				"ZombieBasedOn": "future_jetpack"
+			}
+		},
+		{
+			"aliases": [
+				"future_jetpack"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "ImmuneToSweetPotato": true,
+				"ChooseToSpawnOnNonDeckRows": true,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.6,
+				"EatDPS": 2200,
+				"Toughness": 760,
+				"NormalDeathWhenMowed": true,
+				"WavePointCost": 150,
+				"Weight": 4000
+      }
+		},
+    {
+			"aliases": [
+				"future_protector"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(future_protector@CurrentLevel)",
+				"ZombieBasedOn": "future_protector"
+			}
+		},
+		{
+			"aliases": [
+				"future_protector"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "CannotBeGrabbedByPtero": true,
+				"CannotBeEnlightenedBySolarSage": true,
+				"CannotBeDraggedByTangleKelp": true,
+				"CannotBeTossedByCitron": true,
+				"CannotBeSwallowedByChomper": true,
+				"ChiliStunDurationMult": 0,
+				"EMPStunTimeScale": 1,
+				"ShieldRecoverTime": 2.5,
+				"ShieldKillStunTime": 2,
+				"WalkSPS": 0.185,
+				"EatDPS": 200,
+				"Toughness": 3000,
+				"LivesInDeepWater": true,
+				"NormalDeathWhenMowed": true,
+				"ImmuneToGarlic": true,
+				"WavePointCost": 500,
+				"Weight": 1500
+      }
+		},
+    {
+			"aliases": [
+				"death"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(death@CurrentLevel)",
+				"ZombieBasedOn": "chicken"
+			}
+		},
+		{
+			"aliases": [
+				"death"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"KilledByShrinkingViolet": false,
+				"CannotBeGrabbedByPtero": true,
+				"CannotBeTossedByCitron": true,
+        "CannotBeDraggedByTangleKelp": true,
+        "CannotBeSwallowedByChomper": true,
+				"ImmuneToSporeShroom": true,
+        "ImmuneToSweetPotato": true,
+        "CannotChangeLaneByPowerToss": true,
+        "CannotBeFlickedByPowerToss": true,
+        "ChiliStunDurationMult": 0,
+				"WalkSPS": 100,
+				"WalkSPSVarience": 0,
+				"EatDPS": 30000,
+				"Toughness": 114514,
+				"DoesNotDamageHeavilyToGarlic": false,
+        "ImmuneToGarlic": true,
+				"NormalDeathWhenMowed": false
+			}
+		}
+  ],
+  "version": 1
+}

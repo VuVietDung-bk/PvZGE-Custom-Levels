@@ -1,0 +1,1465 @@
+{
+  "#comment": "Temporal_Strike",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "Prepare to withstand the pursuit of time!",
+        "FirstIntroNarrative": "TEMPORAL_Intro",
+        "LevelNumber": 4,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(ForzenPlantPlacement@CurrentLevel)",
+          "RTID(LostCityTrapTileGroups@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(LevelScheduler@CurrentLevel)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)"
+        ],
+        "Name": "Temporal Strike-day3",
+        "NameMultiLanguage": {
+          "en": "Temporal Strike-day3",
+          "zh": "超时空追击-day3"
+        },
+        "WritenBy": "solar_tomato",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(PersuitStage@LevelModules)"
+      }
+    },
+    { 
+      "objclass": "NarrativeProperties",
+      "aliases": [
+        "TEMPORAL_Intro"
+      ],
+      "objdata": {
+        "AutoAdvance": true,
+        "DelayBetweenLines": 3,
+        "Flow": [
+          {
+            "Character": "winnie",
+            "Action": "NPC_ENTER",
+            "Delay": 0.5
+          },
+          {
+            "Character": "winnie",
+            "Action": "SAY",
+            "Lines": {
+              "en": "Current weather conditions: overcast with intermittent snowball precipitation",
+              "zh": "今日天气：阴夹杂雪球"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "winnie",
+            "Action": "TIRED",
+            "Lines": {
+                "en": "Visibility range: 9 tiles",
+                "zh": "能见度：9格"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "winnie",
+            "Action": "TIRED",
+            "Lines": {
+                "en": "Not advisable for medieval combat reenactments",
+                "zh": "不适宜进行中世纪战争重演活动"
+            },
+            "Delay": 0.3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(BeatTheLevel@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": [
+        "BeatTheLevel"
+      ],
+      "objclass": "StarChallengeBeatTheLevelProps",
+      "objdata": {
+        "DescriptionsMultilanguage": [
+          {
+            "en": "Survive for 170 seconds",
+            "zh": "坚持170秒"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "LevelScheduler"
+      ],
+      "objclass": "LevelSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 1,
+          "Min": 1
+        },
+        "TimeBetween": {
+          "Max": 30,
+          "Min": 30
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(SchedulerPortal1@CurrentLevel)",
+          "RTID(SchedulerPortal2@CurrentLevel)",
+          "RTID(SchedulerPortal3@CurrentLevel)",
+          "RTID(SchedulerPortal4@CurrentLevel)",
+          "RTID(SchedulerPortal5@CurrentLevel)",
+          "RTID(SchedulerHalf@CurrentLevel)",
+          "RTID(SchedulerFinally@CurrentLevel)",
+          "RTID(SchedulerDone@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal1"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 25,
+          "Min": 25
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent1@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "3",
+        "PortalType": "RTID(Portal1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal1"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal1props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal1props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 8,
+            "Max": 7
+          },
+          "Scale": 1,
+          "World": "dark",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 5,
+            "ZombieTypeName": "dark_armor1"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark"
+          },
+          {
+            "Weight": 100,
+            "ZombieTypeName": "dark_king_veteran"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal2"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 50,
+          "Min": 50
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent2-1@CurrentLevel)",
+          "RTID(PortalsEvent2-2@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent2-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "4",
+        "PortalType": "RTID(Portal2-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal2-1"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal2-1props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal2-1props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 8,
+            "Max": 8
+          },
+          "Scale": 1,
+          "World": "iceage",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 10,
+            "ZombieTypeName": "iceage_hunter"
+          },
+          {
+            "Weight": 10,
+            "ZombieTypeName": "iceage_hunter"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_hunter_veteran"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent2-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 5,
+        "PortalRow": "0",
+        "PortalType": "RTID(Portal2-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal2-2"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal2-2props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal2-2props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 8,
+            "Max": 8
+          },
+          "Scale": 1,
+          "World": "dark",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 100,
+            "ZombieTypeName": "dark_king_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal3"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 80,
+          "Min": 80
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent3-1@CurrentLevel)",
+          "RTID(PortalsEvent3-2@CurrentLevel)",
+          "RTID(PortalsEvent3-3@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent3-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "0",
+        "PortalType": "RTID(Portal3-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent3-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "2",
+        "PortalType": "RTID(Portal3-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal3-1"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal3-1props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal3-1props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 8,
+            "Max": 8
+          },
+          "Scale": 1,
+          "World": "iceage",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_hunter"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_hunter_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_hunter_veteran"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent3-3"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "1",
+        "PortalType": "RTID(Portal3-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal3-2"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal3-2props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal3-2props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 8,
+            "Max": 8
+          },
+          "Scale": 1,
+          "World": "dark",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 100,
+            "ZombieTypeName": "dark_king_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark_armor1"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark_armor1"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerHalf"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 85,
+          "Min": 85
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Half@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Half"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Charge over half, countdown 120 seconds",
+          "zh": "充能过半，倒计时85秒"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal4"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 110,
+          "Min": 110
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent4-1@CurrentLevel)",
+          "RTID(PortalsEvent4-2@CurrentLevel)",
+          "RTID(PortalsEvent4-3@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent4-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 5,
+        "PortalRow": "2",
+        "PortalType": "RTID(Portal4-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent4-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "4",
+        "PortalType": "RTID(Portal4-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal4-1"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal4-1props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal4-1props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 8,
+            "Max": 8
+          },
+          "Scale": 1,
+          "World": "iceage",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_hunter_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_hunter_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_hunter_veteran"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent4-3"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "3",
+        "PortalType": "RTID(Portal4-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal4-2"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal4-2props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal4-2props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 8,
+            "Max": 8
+          },
+          "Scale": 1,
+          "World": "dark",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 100,
+            "ZombieTypeName": "dark_king_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark_armor1"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark_armor1"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerFinally"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 140,
+          "Min": 140
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Finally@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Finally"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "The elimination system is about to activate, countdown 30 seconds",
+          "zh": "抹杀系统即将启动，倒计时30秒"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal5"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 140,
+          "Min": 140
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent5-1@CurrentLevel)",
+          "RTID(PortalsEvent5-2@CurrentLevel)",
+          "RTID(PortalsEvent5-3@CurrentLevel)",
+          "RTID(PortalsEvent5-4@CurrentLevel)",
+          "RTID(PortalsEvent5-5@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 5,
+        "PortalRow": "0",
+        "PortalType": "RTID(Portal5-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "1",
+        "PortalType": "RTID(Portal5-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-3"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "2",
+        "PortalType": "RTID(Portal5-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-4"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "3",
+        "PortalType": "RTID(Portal5-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-5"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 5,
+        "PortalRow": "4",
+        "PortalType": "RTID(Portal5-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal5-1"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal5-1props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal5-1props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 3,
+            "Max": 3
+          },
+          "TimeBetween": {
+            "Min": 3,
+            "Max": 5
+          },
+          "Scale": 1,
+          "World": "iceage",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_hunter_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_hunter_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_hunter_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_hunter_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_hunter_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "iceage_hunter_veteran"
+          }
+        ]
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal5-2"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal5-2props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal5-2props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 3,
+            "Max": 3
+          },
+          "TimeBetween": {
+            "Min": 3,
+            "Max": 5
+          },
+          "Scale": 1,
+          "World": "dark",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 100,
+            "ZombieTypeName": "dark_king_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark_armor1"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark_armor1"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark_armor1"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark_armor1"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "dark_armor1"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerDone"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 170,
+          "Min": 170
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": true,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(done@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "done"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "The offensive has ended!",
+          "zh": "攻势结束！"
+        },
+        "LifeSpan": 10
+      }
+    },
+    {
+			"aliases": [ 
+        "SeedBank" 
+      ],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+				"SelectionMethod": "chooser"
+			}
+		},
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 100,
+            "StartingPoints": 200,
+            "StartingWave": 6,
+            "ZombiePool": [
+            "RTID(dark@ZombieTypes)",
+            "RTID(dark_armor1@ZombieTypes)",
+            "RTID(iceage_hunter@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 140,
+            "StartingPoints": 200,
+            "StartingWave": 6,
+            "ZombiePool": [
+            "RTID(dark@ZombieTypes)",
+            "RTID(dark_armor1@ZombieTypes)",
+            "RTID(iceage_hunter@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 180,
+            "StartingPoints": 200,
+            "StartingWave": 6,
+            "ZombiePool": [
+            "RTID(dark@ZombieTypes)",
+            "RTID(dark_armor1@ZombieTypes)",
+            "RTID(iceage_hunter@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 250,
+            "StartingPoints": 200,
+            "StartingWave": 6,
+            "ZombiePool": [
+            "RTID(dark@ZombieTypes)",
+            "RTID(dark_armor1@ZombieTypes)",
+            "RTID(iceage_hunter@ZombieTypes)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 8,
+        "WaveCount": 16,
+        "MinNextWaveHealthPercentage": 0.7,
+        "ZombieCountdownFirstWaveSecs": 3,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_king@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_king@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+				"DynamicPlantfood": [
+					1,
+					1,
+					1,
+					1,
+					1,
+					1,
+					1
+				],
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(dark_king@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_king@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(dark_king@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_king@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_king@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"2",
+            "Type": "RTID(dark_king@ZombieTypes)"
+          },
+          {
+            "Row":"3",
+            "Type": "RTID(dark_king@ZombieTypes)"
+          },
+          {
+            "Row":"4",
+            "Type": "RTID(dark_king@ZombieTypes)"
+          },
+          {
+            "Row":"1",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WaveEndless"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(dark_king@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_hunter@ZombieTypes)"
+          }
+        ]
+      }
+    }
+  ],
+  "version": 1
+}

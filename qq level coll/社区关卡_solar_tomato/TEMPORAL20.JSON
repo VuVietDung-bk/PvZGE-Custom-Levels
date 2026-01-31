@@ -1,0 +1,2383 @@
+{
+  "#comment": "Temporal_Strike",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "Prepare to withstand the pursuit of time!",
+        "FirstIntroNarrative": "TEMPORAL_Intro",
+        "LevelNumber": 21,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(ForzenPlantPlacement@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(Shallowpuddle@CurrentLevel)",
+          "RTID(Potholepuddle@CurrentLevel)",
+          "RTID(SliderPlacement@CurrentLevel)",
+          "RTID(Gravestones@CurrentLevel)",
+          "RTID(GoldTiles@CurrentLevel)",
+          "RTID(BeachRails@CurrentLevel)",
+          "RTID(LevelDeadLine@CurrentLevel)",
+          "RTID(LevelScheduler@CurrentLevel)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)"
+        ],
+        "Name": "Temporal Strike-day20",
+        "NameMultiLanguage": {
+          "en": "Temporal Strike-day20",
+          "zh": "超时空追击-day20"
+        },
+        "WritenBy": "solar_tomato",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(PersuitStage@LevelModules)",
+        "MusicType": "MiniGame_B"
+      }
+    },
+    { 
+      "objclass": "NarrativeProperties",
+      "aliases": [
+        "TEMPORAL_Intro"
+      ],
+      "objdata": {
+        "AutoAdvance": true,
+        "DelayBetweenLines": 3,
+        "Flow": [
+          {
+            "Character": "crazydave",
+            "Action": "NPC_ENTER",
+            "Delay": 0.5
+          },
+          {
+            "Character": "winnie",
+            "Action": "NPC_ENTER",
+            "Delay": 0.5
+          },
+          {
+            "Character": "crazydave",
+            "Action": "SAY",
+            "Lines": {
+            "en": "Oh my dear Penny, there's a question that's been rattling around my taco-loving brain...",
+            "zh": "哦我亲爱的潘妮，我一直想问你一个问题"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "crazydave",
+            "Action": "SAY",
+            "Lines": {
+            "en": "What do you think is the ULTIMATE goal of our travels?",
+            "zh": "你认为我们旅行的终极目标是什么呢"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "crazydave",
+            "Action": "SAY",
+            "Lines": {
+            "en": "I don't think it can be measured by a physical thing... like, say, a SUPER-DELUXE TACO.",
+            "zh": "我想它不能用一个具体的物体去衡量，例如豪华玉米卷"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "crazydave",
+            "Action": "SAY",
+            "Lines": {
+            "en": "Take a premium corn tortilla, lovingly bathed in olive oil and toasted to perfection...",
+            "zh": "选用上好的玉米饼，浸润在橄榄油中烘烤"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "crazydave",
+            "Action": "SAY",
+            "Lines": {
+            "en": "Grilled meat seared golden on both sides, rolled inside with freshly chopped onions and tomato slices...",
+            "zh": "烤肉煎至两面金黄卷入其中，再加入现采现切的洋葱丁和番茄片"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "crazydave",
+            "Action": "SAY",
+            "Lines": {
+            "en": "Finally, drizzled with the soul sauce – MAYONNAISE...",
+            "zh": "最后淋上灵魂酱料美乃滋...."
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "crazydave",
+            "Action": "SAY",
+            "Lines": {
+            "en": "One bite... and it's a flavor EXPLOSION that echoes through eternity!",
+            "zh": "一口下去回味无穷口牙"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "winnie",
+            "Action": "SAY",
+            "Lines": {
+            "en": "Do you recall the topic of discussion prior to your mention of 'super-deluxe tacos,' User Dave?",
+            "zh": "您还记得自己提到'豪华玉米卷'之前的话题吗，用户戴夫"
+            },
+            "Delay": 0.3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(BeatTheLevel@CurrentLevel)",
+            "RTID(DoNotPlantBeforeLine@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": [
+        "BeatTheLevel"
+      ],
+      "objclass": "StarChallengeBeatTheLevelProps",
+      "objdata": {
+        "DescriptionsMultilanguage": [
+          {
+            "en": "Escape the temporal recursion after the final wave",
+            "zh": "从最后一个大波后的循环中逃脱"
+          },
+          {
+            "en": "(Tip: Press F10 to check Recurrent Waves status)",
+            "zh": "(提示：按下F10以查看循环波次情况)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "DoNotPlantBeforeLine"
+        ],
+        "objclass": "MoldColonyChallengeProps",
+        "objdata": {
+          "SuppressObjectiveTip": true,
+          "Locations": "RTID(TEMPORAL@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "TEMPORAL"
+      ],
+        "objclass": "BoardGridMapProps",
+        "objdata": {
+          "Values": [
+            [0,0,0,0,1,0,0,0,0],
+            [0,0,0,0,1,0,0,0,0],
+            [0,0,0,0,0,1,1,1,1],
+            [1,1,1,1,0,0,0,0,0],
+            [0,0,0,0,1,0,0,0,0]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Shallowpuddle"
+      ],
+      "objclass": "InitialGridItemProperties",
+      "objdata": {
+        "InitialGridItemMatrixes": [
+          {
+            "GridMatrix": [
+              "000001111",
+              "000001111",
+              "000000000",
+              "000000000",
+              "000000000"
+            ],
+            "TypeName": "shallowpuddle"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Potholepuddle"
+      ],
+      "objclass": "InitialGridItemProperties",
+      "objdata": {
+        "InitialGridItemMatrixes": [
+          {
+            "GridMatrix": [
+              "000000000",
+              "000000000",
+              "000000000",
+              "000000000",
+              "111100000"
+            ],
+            "TypeName": "potholepuddle"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "gravestone_future"
+      ],
+      "objclass": "TombstoneType",
+      "objdata": {
+        "Properties": "RTID(gravestone_future@CurrentLevel)",
+        "TombstoneBasedOn": "gravestone_future"
+      }
+    },
+    {
+      "aliases": [
+        "gravestone_future"
+      ],
+      "objclass": "TombstoneProperties",
+      "objdata": {
+        "Toughness": 7000,
+        "Flying": true,
+        "HotPotatoMeltable": false,
+        "GraveBusterPlantable": true,
+        "HitRect": "RTID(TombstoneRect@RectangleProps)"
+      }
+    },
+    {
+      "aliases": [
+        "Gravestones"
+      ],
+      "objclass": "GravestoneProperties",
+      "objdata": {
+        "ForceSpawnData": [
+          {
+            "GridX": 6,
+            "GridY": 3,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 7,
+            "GridY": 3,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 6,
+            "GridY": 4,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 7,
+            "GridY": 4,
+            "TypeName": "gravestone_future"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SliderPlacement"
+      ],
+      "objclass": "InitialGridItemProperties",
+      "objdata": {
+        "InitialGridItemPlacements": [
+          {
+            "GridX": 1,
+            "GridY": 0,
+            "TypeName": "slider_down_modern"
+          },
+          {
+            "GridX": 1,
+            "GridY": 2,
+            "TypeName": "slider_up_modern"
+          },
+          {
+            "GridX": 4,
+            "GridY": 2,
+            "TypeName": "slider_up_modern"
+          },
+          {
+            "GridX": 4,
+            "GridY": 3,
+            "TypeName": "slider_down_modern"
+          }
+        ]
+      }
+    },
+    {
+			"aliases": [ 
+        "GoldTiles"
+      ],
+			"objclass": "InitialGridItemProperties",
+			"objdata": {
+				"InitialGridItemPlacements": [ 
+          {
+						"GridX": 3,
+						"GridY": 0,
+						"TypeName": "goldtile"
+					},
+          {
+						"GridX": 3,
+						"GridY": 1,
+						"TypeName": "goldtile"
+					},
+          {
+						"GridX": 2,
+						"GridY": 1,
+						"TypeName": "goldtile"
+					},
+          {
+						"GridX": 3,
+						"GridY": 2,
+						"TypeName": "goldtile"
+					}
+        ]
+			}
+    },
+    {
+			"aliases": [
+        "BeachRails" 
+      ],
+			"objclass": "RailcartProperties",
+			"objdata": {
+				"RailcartType": "railcart_beach",
+				"Railcarts": 
+        [ 
+          {
+						"Column": 6,
+						"Row": 0
+					},
+          {
+						"Column": 6,
+						"Row": 1
+					},
+          {
+						"Column": 1,
+						"Row": 4
+					} 
+        ],
+				"Rails": 
+        [ 
+          
+        ]
+			}
+		},
+    {
+      "aliases": [
+        "LevelDeadLine"
+      ],
+      "objclass": "LevelDeadLineProps",
+      "objdata": {
+        "SuppressObjectiveTip": false,
+        "Countdown": 400,
+        "Events": [
+          "RTID(Deadline@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "LevelScheduler"
+      ],
+      "objclass": "LevelSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 1,
+          "Min": 1
+        },
+        "TimeBetween": {
+          "Max": 30,
+          "Min": 30
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(SchedulerWarningCycle1@CurrentLevel)",
+          "RTID(SchedulerCycle1@CurrentLevel)",
+          "RTID(SchedulerWarningCycle2@CurrentLevel)",
+          "RTID(SchedulerCycle2@CurrentLevel)",
+          "RTID(SchedulerWarningCycle3@CurrentLevel)",
+          "RTID(SchedulerCycle3@CurrentLevel)",
+          "RTID(SchedulerWarningCycle4@CurrentLevel)",
+          "RTID(SchedulerCycle4@CurrentLevel)",
+          "RTID(SchedulerWarningCycle5@CurrentLevel)",
+          "RTID(SchedulerCycle5@CurrentLevel)",
+          "RTID(SchedulerHalf@CurrentLevel)",
+          "RTID(SchedulerFinally@CurrentLevel)",
+          "RTID(SchedulerDeath@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerWarningCycle1"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 30,
+          "Min": 30
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(WarningCycle1@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WarningCycle1"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Tutorial Wave 1 commencing (3 waves/15s)",
+          "zh": "普通循环波次1即将开始（3波/15s）"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerCycle1"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 35,
+          "Min": 35
+        },
+        "TimeBetween": {
+          "Max": 15,
+          "Min": 15
+        },
+        "Repeat": {
+          "Max": 3,
+          "Min": 3
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Cycle1@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Cycle1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "?",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerWarningCycle2"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 85,
+          "Min": 85
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(WarningCycle2@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WarningCycle2"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Tutorial Wave 2 commencing (3 waves/20s)",
+          "zh": "普通循环波次2即将开始（3波/20s）"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerCycle2"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 90,
+          "Min": 90
+        },
+        "TimeBetween": {
+          "Max": 20,
+          "Min": 20
+        },
+        "Repeat": {
+          "Max": 3,
+          "Min": 3
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Cycle2@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Cycle2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "?",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerWarningCycle3"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 135,
+          "Min": 135
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(WarningCycle3@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WarningCycle3"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Tutorial Wave 3 commencing (4 waves/35s)",
+          "zh": "普通循环波次3即将开始（4波/35s）"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerCycle3"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 140,
+          "Min": 140
+        },
+        "TimeBetween": {
+          "Max": 35,
+          "Min": 35
+        },
+        "Repeat": {
+          "Max": 4,
+          "Min": 4
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Cycle3@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Cycle3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "?",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerWarningCycle4"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 195,
+          "Min": 195
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(WarningCycle4@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WarningCycle4"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Tutorial Wave 4 commencing (5 waves/30s)",
+          "zh": "普通循环波次4即将开始（5波/30s）"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerCycle4"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 200,
+          "Min": 200
+        },
+        "TimeBetween": {
+          "Max": 30,
+          "Min": 30
+        },
+        "Repeat": {
+          "Max": 5,
+          "Min": 5
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Cycle4@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Cycle4"
+      ],
+      "objclass": "RandomEventsProps",
+      "objdata": {
+        "EventCount": {
+          "Min": 1,
+          "Max": 1
+        },
+        "Events": [
+          "RTID(Cycle4-1@CurrentLevel)",
+          "RTID(Cycle4-2@CurrentLevel)",
+          "RTID(Cycle4-3@CurrentLevel)",
+          "RTID(Cycle4-4@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Cycle4-1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "?",
+            "Type": "RTID(future_jetpack@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(future_jetpack_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(future_jetpack@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(future_jetpack@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(future_jetpack@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Cycle4-2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "?",
+            "Type": "RTID(lostcity_bug@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(lostcity_bug@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(lostcity_bug@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(future_jetpack@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(future_jetpack@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Cycle4-3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "?",
+            "Type": "RTID(modern_balloon@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(modern_balloon@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(modern_balloon@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(future_jetpack@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(future_jetpack@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Cycle4-4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "?",
+            "Type": "RTID(lostcity_bug@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(lostcity_bug@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(lostcity_bug@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(modern_balloon@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(modern_balloon@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerWarningCycle5"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 255,
+          "Min": 255
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(WarningCycle5@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WarningCycle5"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Tutorial Wave 5 commencing (6 waves/25s)",
+          "zh": "普通循环波次5即将开始（6波/25s）"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerCycle5"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 260,
+          "Min": 260
+        },
+        "TimeBetween": {
+          "Max": 25,
+          "Min": 25
+        },
+        "Repeat": {
+          "Max": 6,
+          "Min": 6
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Cycle5@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Cycle5"
+      ],
+      "objclass": "RandomEventsProps",
+      "objdata": {
+        "EventCount": {
+          "Min": 1,
+          "Max": 1
+        },
+        "Events": [
+          "RTID(Cycle5-1@CurrentLevel)",
+          "RTID(Cycle5-2@CurrentLevel)",
+          "RTID(Cycle5-3@CurrentLevel)",
+          "RTID(Cycle5-4@CurrentLevel)",
+          "RTID(Cycle5-2@CurrentLevel)",
+          "RTID(Cycle5-3@CurrentLevel)",
+          "RTID(Cycle5-4@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Cycle5-1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "?",
+            "Type": "RTID(future_gargantuar@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(catapult@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(catapult@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(catapult@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Cycle5-2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "?",
+            "Type": "RTID(future_jetpack_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(future_jetpack_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(future_jetpack_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Cycle5-3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "?",
+            "Type": "RTID(iceage_hunter_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(iceage_hunter_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(iceage_hunter_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(mech_cone@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(mech_cone@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Cycle5-4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "?",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "?",
+            "Type": "RTID(duckytube_armor4@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerHalf"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 200,
+          "Min": 200
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Half@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Half"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Countdown 200 seconds",
+          "zh": "倒计时200秒"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerFinally"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 370,
+          "Min": 370
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Finally@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Finally"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Countdown 30 seconds",
+          "zh": "倒计时30秒"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerDeath"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 401,
+          "Min": 401
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(LoseGameImmediately@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "LoseGameImmediately"
+      ],
+      "objclass": "LoseGameWaveActionProps",
+      "objdata": {
+        "Tip": {
+          "en": "YOUR TAKING TOO LONG!",
+          "zh": "你耗时已长！"
+        },
+        "SmallTip": {
+          "en": "",
+          "zh": ""
+        }
+      }
+    },
+    {
+			"aliases": [ 
+        "SeedBank" 
+      ],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+        "PlantExcludeList":
+          [
+            "blover","doomshroom","gravebuster"
+          ],
+          "CardDecks": {
+          "Recommended": [
+            {
+              "Name": {
+                "en": "Author deck",
+                "zh": "作者卡组"
+              },
+              "Leader": 3,
+              "Plants": [
+                "sunflower",
+                "solarsage",
+                "guacodile",
+                "cherry_bomb",
+                "coconutcannon",
+                "stallia"
+              ]
+            }
+          ]
+			},
+				"SelectionMethod": "chooser"
+			}
+		},
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "SuppressFlagZombie": false,
+        "FlagWaveInterval": 5,
+        "WaveCount": 10,
+        "MaxNextWaveHealthPercentage": 0.4,
+        "MinNextWaveHealthPercentage": 0.3,
+        "ZombieCountdownFirstWaveSecs": 10,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)",
+            "RTID(SchedulerWarningRaid1@CurrentLevel)",
+            "RTID(SchedulerRaid1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)",
+            "RTID(SchedulerWarningRaid2@CurrentLevel)",
+            "RTID(SchedulerRaid2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)",
+            "RTID(SchedulerWarningRaid3@CurrentLevel)",
+            "RTID(SchedulerRaid3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)",
+            "RTID(SchedulerWarningRaid4@CurrentLevel)",
+            "RTID(SchedulerRaid4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)",
+            "RTID(SchedulerWarningRaid5@CurrentLevel)",
+            "RTID(SchedulerRaid5@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_imp@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial_imp@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(tutorial_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(future_protector@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(abbot_chi@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(abbot_chi@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(future_protector@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(abbot_chi@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(abbot_chi@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(future_protector@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(duckytube_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(tutorial_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerWarningRaid1"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 5,
+          "Min": 5
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(WarningRaid1@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WarningRaid1"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Raid Wave 1 commencing (3 waves/25s)",
+          "zh": "突袭循环波次1即将开始（3波/25s）"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerRaid1"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 10,
+          "Min": 10
+        },
+        "TimeBetween": {
+          "Max": 25,
+          "Min": 25
+        },
+        "Repeat": {
+          "Max": 3,
+          "Min": 3
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Raid1@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Raid1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Column": "9",
+            "Type": "RTID(beach_snorkel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Column": "9",
+            "Type": "RTID(beach_snorkel@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerWarningRaid2"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 5,
+          "Min": 5
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(WarningRaid2@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WarningRaid2"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Raid Wave 2 commencing (4 waves/30s)",
+          "zh": "突袭循环波次2即将开始（4波/30s）"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerRaid2"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 10,
+          "Min": 10
+        },
+        "TimeBetween": {
+          "Max": 30,
+          "Min": 30
+        },
+        "Repeat": {
+          "Max": 4,
+          "Min": 4
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Raid2@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Raid2"
+      ],
+      "objclass": "RandomEventsProps",
+      "objdata": {
+        "EventCount": {
+          "Min": 1,
+          "Max": 1
+        },
+        "Events": [
+          "RTID(Raid2-1@CurrentLevel)",
+          "RTID(Raid2-2@CurrentLevel)",
+          "RTID(Raid2-3@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Raid2-1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Column": "4",
+            "Type": "RTID(lostcity_impporter@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Column": "4",
+            "Type": "RTID(lostcity_impporter@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Raid2-2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "2",
+            "Column": "4",
+            "Type": "RTID(lostcity_impporter@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Column": "4",
+            "Type": "RTID(lostcity_impporter@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Raid2-3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Column": "4",
+            "Type": "RTID(lostcity_impporter@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Column": "4",
+            "Type": "RTID(lostcity_impporter@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerWarningRaid3"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 5,
+          "Min": 5
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(WarningRaid3@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WarningRaid3"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "(Gravestone)Raid Wave 3 commencing (4 waves/40s)",
+          "zh": "(墓碑)突袭循环波次3即将开始（4波/40s）"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerRaid3"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 10,
+          "Min": 10
+        },
+        "TimeBetween": {
+          "Max": 40,
+          "Min": 40
+        },
+        "Repeat": {
+          "Max": 4,
+          "Min": 4
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Raid3@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Raid3"
+      ],
+      "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+      "objdata": {
+        "GridTypes": [
+          "RTID(gravestone_future@CurrentLevel)"
+        ],
+        "WaveStartMessage": "[WARNING_GRAVESTONE_SPAWN]",
+        "ZombieSpawnWaitTime": "1",
+        "Zombies": [
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerWarningRaid4"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 5,
+          "Min": 5
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(WarningRaid4@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WarningRaid4"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Raid Wave 4 commencing (6 waves/35s)",
+          "zh": "突袭循环波次4即将开始（6波/35s）"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerRaid4"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 10,
+          "Min": 10
+        },
+        "TimeBetween": {
+          "Max": 35,
+          "Min": 35
+        },
+        "Repeat": {
+          "Max": 6,
+          "Min": 6
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Raid4@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Raid4"
+      ],
+      "objclass": "RandomEventsProps",
+      "objdata": {
+        "EventCount": {
+          "Min": 1,
+          "Max": 1
+        },
+        "Events": [
+          "RTID(Raid4-1@CurrentLevel)",
+          "RTID(Raid4-2@CurrentLevel)",
+          "RTID(Raid4-3@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Raid4-1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Column": "8",
+            "Type": "RTID(beach_snorkel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Column": "8",
+            "Type": "RTID(beach_snorkel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Column": "9",
+            "Type": "RTID(beach_snorkel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Column": "9",
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Column": "4",
+            "Type": "RTID(beach_snorkel@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Raid4-2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Column": "8",
+            "Type": "RTID(beach_snorkel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Column": "8",
+            "Type": "RTID(beach_snorkel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Column": "9",
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Column": "9",
+            "Type": "RTID(beach_snorkel@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Column": "4",
+            "Type": "RTID(beach_snorkel@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Raid4-3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Column": "8",
+            "Type": "RTID(beach_snorkel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Column": "8",
+            "Type": "RTID(beach_snorkel@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Column": "9",
+            "Type": "RTID(beach_snorkel@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Column": "9",
+            "Type": "RTID(beach_snorkel@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Column": "4",
+            "Type": "RTID(beach_octopus@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerWarningRaid5"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 5,
+          "Min": 5
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(WarningRaid5@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WarningRaid5"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "(Gravestone)Raid Wave 5 commencing (6 waves/35s)",
+          "zh": "(墓碑)突袭循环波次5即将开始（6波/35s）"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerRaid5"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 10,
+          "Min": 10
+        },
+        "TimeBetween": {
+          "Max": 35,
+          "Min": 35
+        },
+        "Repeat": {
+          "Max": 6,
+          "Min": 6
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Raid2@CurrentLevel)",
+          "RTID(Raid5@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Raid5"
+      ],
+      "objclass": "RandomEventsProps",
+      "objdata": {
+        "EventCount": {
+          "Min": 1,
+          "Max": 1
+        },
+        "Events": [
+          "RTID(Raid5-1@CurrentLevel)",
+          "RTID(Raid5-2@CurrentLevel)",
+          "RTID(Raid5-3@CurrentLevel)",
+          "RTID(Raid5-4@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Raid5-1"
+      ],
+      "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+      "objdata": {
+        "GridTypes": [
+          "RTID(gravestone_future@CurrentLevel)"
+        ],
+        "WaveStartMessage": "[WARNING_GRAVESTONE_SPAWN]",
+        "ZombieSpawnWaitTime": "1",
+        "Zombies": [
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Raid5-2"
+      ],
+      "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+      "objdata": {
+        "GridTypes": [
+          "RTID(gravestone_future@CurrentLevel)"
+        ],
+        "WaveStartMessage": "[WARNING_GRAVESTONE_SPAWN]",
+        "ZombieSpawnWaitTime": "1",
+        "Zombies": [
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Raid5-3"
+      ],
+      "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+      "objdata": {
+        "GridTypes": [
+          "RTID(gravestone_future@CurrentLevel)"
+        ],
+        "WaveStartMessage": "[WARNING_GRAVESTONE_SPAWN]",
+        "ZombieSpawnWaitTime": "1",
+        "Zombies": [
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Raid5-4"
+      ],
+      "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+      "objdata": {
+        "GridTypes": [
+          "RTID(gravestone_future@CurrentLevel)"
+        ],
+        "WaveStartMessage": "[WARNING_GRAVESTONE_SPAWN]",
+        "ZombieSpawnWaitTime": "1",
+        "Zombies": [
+          {
+            "Type": "RTID(football_mech@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          }
+        ]
+      }
+    }
+  ],
+  "version": 1
+}

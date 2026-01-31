@@ -1,0 +1,2254 @@
+{
+    "#comment": "Utopian 54",
+    "objects": [
+        {
+            "objclass": "LevelDefinition",
+            "objdata": {
+                "DescriptionMultiLanguage": {
+                    "en": "Joe's trip to Sky City",
+                    "zh": "Joe 的天空之城之旅"
+                },
+                "LevelNumber": 54,
+                "FirstIntroNarrative": "UTOPIAN_Intro",
+                "Loot": "RTID(DefaultLoot@LevelModules)",
+                "Modules": [
+                    "RTID(StandardIntro@LevelModules)",
+                    "RTID(ZombiesDeadWinCon@LevelModules)",
+                    "RTID(ModPlants@CurrentLevel)",
+                    "RTID(ProtectThePlant@CurrentLevel)",
+                    "RTID(DefaultZombieWinCondition@LevelModules)",
+                    "RTID(ConveyorBelt@CurrentLevel)",
+                    "RTID(Rails@CurrentLevel)",
+                    "RTID(ChallengeModule@CurrentLevel)",
+                    "RTID(FrozenPlantPlacement@CurrentLevel)",
+                    "RTID(NewWaves@CurrentLevel)"
+                ],
+                "NameMultiLanguage": {
+                    "en": "Utopian Day - Day 54",
+                    "zh": "理想时光 - 第 54 天"
+                },
+                "MusicType": "MiniGame_B",
+                "NormalPresentTable": "future_normal_01",
+                "ShinyPresentTable": "future_shiny_01",
+                "StageModule": "RTID(SkyStage@LevelModules)"
+            }
+        },
+        {
+            "objclass": "NarrativeProperties",
+            "aliases": [
+                "UTOPIAN_Intro"
+            ],
+            "objdata": {
+                "AutoAdvance": true,
+                "DelayBetweenLines": 2.5,
+                "Flow": [
+                    {
+                        "Character": "winnie",
+                        "Action": "NPC_ENTER",
+                        "Delay": 0.5
+                    },
+                    {
+                        "Character": "winnie",
+                        "Action": "SAY",
+                        "Lines": {
+                            "en": "After using plantfood on the flying flower pot, click on the flower pot to move it to any grid on the screen",
+                            "zh": "给飞天花盆使用叶绿素后，点击花盆，可使其往屏幕任意格子移动"
+                        },
+                        "Delay": 0.3
+                    },
+                    {
+                        "Character": "winnie",
+                        "Action": "SAY",
+                        "Lines": {
+                            "en": "Protect them well, we have no chance to make mistakes!",
+                            "zh": "保护好它们，我们没有失误的机会！"
+                        },
+                        "Delay": 0.3
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "BeatTheLevel"
+            ],
+            "objclass": "StarChallengeBeatTheLevelProps",
+            "objdata": {
+                "Description": "[STARCHALLENGE_PROTECT_THE_PLANT]",
+                "DescriptiveName": "[STARCHALLENGE_PROTECT_THE_PLANT_NAME]"
+            }
+        },
+        {
+            "aliases": [
+                "ProtectThePlant"
+            ],
+            "objclass": "ProtectThePlantChallengeProperties",
+            "objdata": {
+                "MustProtectCount": 5,
+                "Plants": [
+                    {
+                        "GridX": 1,
+                        "GridY": 0,
+                        "PlantType": "sapfling"
+                    },
+                    {
+                        "GridX": 1,
+                        "GridY": 1,
+                        "PlantType": "sapfling"
+                    },
+                    {
+                        "GridX": 1,
+                        "GridY": 3,
+                        "PlantType": "sapfling"
+                    },
+                    {
+                        "GridX": 1,
+                        "GridY": 2,
+                        "PlantType": "sapfling"
+                    },
+                    {
+                        "GridX": 1,
+                        "GridY": 4,
+                        "PlantType": "sapfling"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "FrozenPlantPlacement"
+            ],
+            "objclass": "InitialPlantProperties",
+            "objdata": {
+                "InitialPlantPlacements": [
+                    {
+                        "GridX": 3,
+                        "GridY": 1,
+                        "TypeName": "floawerPot",
+                        "Level": -1
+                    },
+                    {
+                        "GridX": 3,
+                        "GridY": 3,
+                        "TypeName": "floawerPot",
+                        "Level": -1
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "seagull_armor1"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(seagull_armor1@CurrentLevel)",
+                "ZombieBasedOn": "seagull"
+            }
+        },
+        {
+            "aliases": [
+                "seagull_armor1"
+            ],
+            "objclass": "ZombieProperties",
+            "objdata": {
+                "ChooseToSpawnOnNonDeckRows": true,
+                "CannotBeTossedByCitron": false,
+                "WalkSPS": 0.355,
+                "EatDPS": 100,
+                "Toughness": 270,
+                "WavePointCost": 300,
+                "Weight": 4000,
+                "StartingArmors": [
+                    "pirate_armor1"
+                ],
+                "HitRect": "RTID(CommonHitRect@RectangleProps)",
+                "AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+            }
+        },
+        {
+            "aliases": [
+                "seagull_armor2"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(seagull_armor2@CurrentLevel)",
+                "ZombieBasedOn": "seagull"
+            }
+        },
+        {
+            "aliases": [
+                "seagull_armor2"
+            ],
+            "objclass": "ZombieProperties",
+            "objdata": {
+                "ChooseToSpawnOnNonDeckRows": true,
+                "CannotBeTossedByCitron": false,
+                "WalkSPS": 0.355,
+                "EatDPS": 100,
+                "Toughness": 270,
+                "WavePointCost": 300,
+                "Weight": 4000,
+                "StartingArmors": [
+                    "pirate_armor2"
+                ],
+                "HitRect": "RTID(CommonHitRect@RectangleProps)",
+                "AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+            }
+        },
+        {
+            "aliases": [
+                "seagull_armor4"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(seagull_armor4@CurrentLevel)",
+                "ZombieBasedOn": "seagull"
+            }
+        },
+        {
+            "aliases": [
+                "seagull_armor4"
+            ],
+            "objclass": "ZombieProperties",
+            "objdata": {
+                "ChooseToSpawnOnNonDeckRows": true,
+                "CannotBeTossedByCitron": false,
+                "WalkSPS": 0.355,
+                "EatDPS": 100,
+                "Toughness": 270,
+                "WavePointCost": 600,
+                "Weight": 4000,
+                "StartingArmors": [
+                    "pirate_armor4"
+                ],
+                "HitRect": "RTID(CommonHitRect@RectangleProps)",
+                "AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+            }
+        },
+        {
+            "aliases": [
+                "pelican_armor1"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(pelican_armor1@CurrentLevel)",
+                "ZombieBasedOn": "pelican"
+            }
+        },
+        {
+            "aliases": [
+                "pelican_armor1"
+            ],
+            "objclass": "ZombieProperties",
+            "objdata": {
+                "ChooseToSpawnOnNonDeckRows": true,
+                "CannotBeTossedByCitron": false,
+                "StartingArmors": [
+                    "pirate_armor1"
+                ],
+                "WalkSPS": 0.6,
+                "EatDPS": 100,
+                "Toughness": 270,
+                "WavePointCost": 400,
+                "Weight": 4000,
+                "HitRect": "RTID(CommonHitRect@RectangleProps)",
+                "AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+            }
+        },
+        {
+            "aliases": [
+                "pelican_armor2"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(pelican_armor2@CurrentLevel)",
+                "ZombieBasedOn": "pelican"
+            }
+        },
+        {
+            "aliases": [
+                "pelican_armor2"
+            ],
+            "objclass": "ZombieProperties",
+            "objdata": {
+                "ChooseToSpawnOnNonDeckRows": true,
+                "CannotBeTossedByCitron": false,
+                "StartingArmors": [
+                    "pirate_armor2"
+                ],
+                "WalkSPS": 0.6,
+                "EatDPS": 100,
+                "Toughness": 270,
+                "WavePointCost": 450,
+                "Weight": 4000,
+                "HitRect": "RTID(CommonHitRect@RectangleProps)",
+                "AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+            }
+        },
+        {
+            "aliases": [
+                "pelican_armor4"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(pelican_armor4@CurrentLevel)",
+                "ZombieBasedOn": "pelican"
+            }
+        },
+        {
+            "aliases": [
+                "pelican_armor4"
+            ],
+            "objclass": "ZombieProperties",
+            "objdata": {
+                "ChooseToSpawnOnNonDeckRows": true,
+                "CannotBeTossedByCitron": false,
+                "StartingArmors": [
+                    "pirate_armor4"
+                ],
+                "WalkSPS": 0.6,
+                "EatDPS": 100,
+                "Toughness": 270,
+                "WavePointCost": 600,
+                "Weight": 4000,
+                "HitRect": "RTID(CommonHitRect@RectangleProps)",
+                "AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+            }
+        },
+        {
+            "aliases": [
+                "future_jetpack_armor1"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(future_jetpack_armor1@CurrentLevel)",
+                "ZombieBasedOn": "future_jetpack"
+            }
+        },
+        {
+            "aliases": [
+                "future_jetpack_armor1"
+            ],
+            "objclass": "ZombieProperties",
+            "objdata": {
+                "ImmuneToSweetPotato": true,
+                "ChooseToSpawnOnNonDeckRows": true,
+                "CannotBeTossedByCitron": false,
+                "StartingArmors": [
+                    "future_armor1"
+                ],
+                "WalkSPS": 0.3,
+                "EatDPS": 100,
+                "Toughness": 380,
+                "NormalDeathWhenMowed": true,
+                "WavePointCost": 200,
+                "Weight": 4000,
+                "HitRect": "RTID(FutureJetpackHitRect@RectangleProps)",
+                "AttackRect": "RTID(FutureJetpackAttackRect@RectangleProps)"
+            }
+        },
+        {
+            "aliases": [
+                "future_jetpack_armor2"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(future_jetpack_armor2@CurrentLevel)",
+                "ZombieBasedOn": "future_jetpack"
+            }
+        },
+        {
+            "aliases": [
+                "future_jetpack_armor2"
+            ],
+            "objclass": "ZombieProperties",
+            "objdata": {
+                "ImmuneToSweetPotato": true,
+                "ChooseToSpawnOnNonDeckRows": true,
+                "CannotBeTossedByCitron": false,
+                "StartingArmors": [
+                    "future_armor2"
+                ],
+                "WalkSPS": 0.3,
+                "EatDPS": 100,
+                "Toughness": 380,
+                "NormalDeathWhenMowed": true,
+                "WavePointCost": 400,
+                "Weight": 4000,
+                "HitRect": "RTID(FutureJetpackHitRect@RectangleProps)",
+                "AttackRect": "RTID(FutureJetpackAttackRect@RectangleProps)"
+            }
+        },
+        {
+            "aliases": [
+                "future_jetpack_armor4"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(future_jetpack_armor4@CurrentLevel)",
+                "ZombieBasedOn": "future_jetpack"
+            }
+        },
+        {
+            "aliases": [
+                "future_jetpack_armor4"
+            ],
+            "objclass": "ZombieProperties",
+            "objdata": {
+                "ImmuneToSweetPotato": true,
+                "ChooseToSpawnOnNonDeckRows": true,
+                "CannotBeTossedByCitron": false,
+                "StartingArmors": [
+                    "future_armor4"
+                ],
+                "WalkSPS": 0.3,
+                "EatDPS": 100,
+                "Toughness": 380,
+                "NormalDeathWhenMowed": true,
+                "WavePointCost": 600,
+                "Weight": 4000,
+                "HitRect": "RTID(FutureJetpackHitRect@RectangleProps)",
+                "AttackRect": "RTID(FutureJetpackAttackRect@RectangleProps)"
+            }
+        },
+        {
+            "aliases": [
+                "sky_armor4"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(sky_armor4@CurrentLevel)",
+                "ZombieBasedOn": "sky"
+            }
+        },
+        {
+            "aliases": [
+                "sky_armor4"
+            ],
+            "objclass": "ZombieProperties",
+            "objdata": {
+                "ZombieSort": "Normal",
+                "ChooseToSpawnOnNonDeckRows": true,
+                "CannotBeTossedByCitron": false,
+                "WalkSPS": 0.24,
+                "EatDPS": 100,
+                "Toughness": 190,
+                "StartingArmors": [
+                    "future_armor4"
+                ],
+                "WavePointCost": 600,
+                "Weight": 4000,
+                "HitRect": "RTID(CommonHitRect@RectangleProps)",
+                "AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+            }
+        },
+        {
+            "aliases": [
+                "NewWaves"
+            ],
+            "objclass": "WaveManagerModuleProperties",
+            "objdata": {
+                "DynamicZombies": [
+                    {
+                        "PointIncrementPerWave": -40,
+                        "StartingPoints": -100,
+                        "StartingWave": 3,
+                        "ZombiePool": [
+                            "RTID(future_jetpack_armor1@CurrentLevel)",
+                            "RTID(future_jetpack@ZombieTypes)",
+                            "RTID(future_jetpack_armor2@CurrentLevel)",
+                            "RTID(seagull@ZombieTypes)",
+                            "RTID(seagull_armor1@CurrentLevel)",
+                            "RTID(seagull_armor2@CurrentLevel)",
+                            "RTID(pelican_armor1@CurrentLevel)",
+                            "RTID(pelican_armor2@CurrentLevel)",
+                            "RTID(pelican@ZombieTypes)",
+                            "RTID(sky_armor1@ZombieTypes)",
+                            "RTID(sky_armor2@ZombieTypes)",
+                            "RTID(sky_armor4@CurrentLevel)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": -25,
+                        "StartingPoints": -100,
+                        "StartingWave": 4,
+                        "ZombiePool": [
+                            "RTID(future_jetpack_armor1@CurrentLevel)",
+                            "RTID(future_jetpack@ZombieTypes)",
+                            "RTID(future_jetpack_armor2@CurrentLevel)",
+                            "RTID(seagull@ZombieTypes)",
+                            "RTID(seagull_armor1@CurrentLevel)",
+                            "RTID(seagull_armor2@CurrentLevel)",
+                            "RTID(pelican_armor1@CurrentLevel)",
+                            "RTID(pelican_armor2@CurrentLevel)",
+                            "RTID(pelican@ZombieTypes)",
+                            "RTID(sky_armor1@ZombieTypes)",
+                            "RTID(sky_armor2@ZombieTypes)",
+                            "RTID(sky_armor4@CurrentLevel)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": -10,
+                        "StartingPoints": -100,
+                        "StartingWave": 5,
+                        "ZombiePool": [
+                            "RTID(future_jetpack_armor1@CurrentLevel)",
+                            "RTID(future_jetpack@ZombieTypes)",
+                            "RTID(future_jetpack_armor2@CurrentLevel)",
+                            "RTID(seagull@ZombieTypes)",
+                            "RTID(seagull_armor1@CurrentLevel)",
+                            "RTID(seagull_armor2@CurrentLevel)",
+                            "RTID(pelican_armor1@CurrentLevel)",
+                            "RTID(pelican_armor2@CurrentLevel)",
+                            "RTID(pelican@ZombieTypes)",
+                            "RTID(sky_armor1@ZombieTypes)",
+                            "RTID(sky_armor2@ZombieTypes)",
+                            "RTID(sky_armor4@CurrentLevel)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 30,
+                        "StartingPoints": 150,
+                        "StartingWave": 5,
+                        "ZombiePool": [
+                            "RTID(future_jetpack_armor1@CurrentLevel)",
+                            "RTID(future_jetpack@ZombieTypes)",
+                            "RTID(future_jetpack_armor2@CurrentLevel)",
+                            "RTID(seagull@ZombieTypes)",
+                            "RTID(seagull_armor1@CurrentLevel)",
+                            "RTID(seagull_armor2@CurrentLevel)",
+                            "RTID(pelican_armor1@CurrentLevel)",
+                            "RTID(pelican_armor2@CurrentLevel)",
+                            "RTID(pelican@ZombieTypes)",
+                            "RTID(sky_armor1@ZombieTypes)",
+                            "RTID(sky_armor2@ZombieTypes)",
+                            "RTID(sky_armor4@CurrentLevel)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 50,
+                        "StartingPoints": 300,
+                        "StartingWave": 4,
+                        "ZombiePool": [
+                            "RTID(future_jetpack_armor1@CurrentLevel)",
+                            "RTID(future_jetpack@ZombieTypes)",
+                            "RTID(future_jetpack_armor2@CurrentLevel)",
+                            "RTID(future_jetpack_armor4@CurrentLevel)",
+                            "RTID(seagull@ZombieTypes)",
+                            "RTID(seagull_armor1@CurrentLevel)",
+                            "RTID(seagull_armor2@CurrentLevel)",
+                            "RTID(pelican_armor1@CurrentLevel)",
+                            "RTID(pelican_armor2@CurrentLevel)",
+                            "RTID(pelican@ZombieTypes)",
+                            "RTID(sky_armor1@ZombieTypes)",
+                            "RTID(sky_armor2@ZombieTypes)",
+                            "RTID(sky_armor4@CurrentLevel)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 60,
+                        "StartingPoints": 400,
+                        "StartingWave": 3,
+                        "ZombiePool": [
+                            "RTID(future_jetpack_armor1@CurrentLevel)",
+                            "RTID(future_jetpack_armor2@CurrentLevel)",
+                            "RTID(future_jetpack_armor4@CurrentLevel)",
+                            "RTID(seagull_armor1@CurrentLevel)",
+                            "RTID(seagull_armor2@CurrentLevel)",
+                            "RTID(pelican_armor1@CurrentLevel)",
+                            "RTID(pelican_armor2@CurrentLevel)",
+                            "RTID(pelican@ZombieTypes)",
+                            "RTID(sky_armor2@ZombieTypes)",
+                            "RTID(sky_armor4@CurrentLevel)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 80,
+                        "StartingPoints": 600,
+                        "StartingWave": 3,
+                        "ZombiePool": [
+                            "RTID(future_jetpack_armor2@CurrentLevel)",
+                            "RTID(future_jetpack_armor4@CurrentLevel)",
+                            "RTID(seagull_armor2@CurrentLevel)",
+                            "RTID(pelican_armor1@CurrentLevel)",
+                            "RTID(pelican_armor2@CurrentLevel)",
+                            "RTID(pelican_armor4@CurrentLevel)",
+                            "RTID(sky_armor2@ZombieTypes)",
+                            "RTID(sky_armor4@CurrentLevel)"
+                        ]
+                    }
+                ],
+                "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 8,
+                "WaveCount": 32,
+                "WaveSpendingPointIncrement": 200,
+                "WaveSpendingPoints": 150,
+                "Waves": [
+                    [
+                        "RTID(Wave1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave2@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave3@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave4@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave5@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave6@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave7@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave8@CurrentLevel)",
+                        "RTID(Wave8ModConveyor0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave9@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave10@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave11@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave12@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave13@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave14@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave15@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave16@CurrentLevel)",
+                        "RTID(Wave16ModConveyor0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave17@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave18@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave19@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave20@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave21@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave22@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave23@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave24@CurrentLevel)",
+                        "RTID(Wave24ModConveyor0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave25@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave26@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave27@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave28@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave29@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave30@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave31@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave32@CurrentLevel)"
+                    ]
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 2,
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(pelican_armor1@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave4"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "5",
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(seagull@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave5"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(future_jetpack@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(pelican_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave6"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(pelican_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(modern_balloon@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(seagull@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(modern_balloon@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(seagull_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(future_jetpack@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave7"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(pelican_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(seagull@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave8"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(modern_balloon@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(seagull_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor1@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave9"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(future_jetpack@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_balloon@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor2@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave10"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave11"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave12"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_balloon@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(modern_balloon@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor1@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave13"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave14"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave15"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(seagull@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(seagull@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(seagull@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(seagull@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(seagull@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave16"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(seagull@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave17"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave18"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(seagull@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave19"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor2@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave20"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(pelican_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave21"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(seagull_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave22"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave23"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(seagull_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave24"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(pelican_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave25"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave26"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor2@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave27"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor2@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave28"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(pelican_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave29"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(seagull_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave30"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave31"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave32"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(future_jetpack_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sky_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(pelican_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor4@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(seagull_armor2@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Rails"
+            ],
+            "objclass": "RailcartProperties",
+            "objdata": {
+                "RailcartType": "railcart_beach",
+                "Railcarts": [],
+                "Rails": [
+                    {
+                        "Column": 0,
+                        "RowEnd": 4,
+                        "RowStart": 0
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Rails"
+            ],
+            "objclass": "RailcartProperties",
+            "objdata": {
+                "RailcartType": "railcart_beach",
+                "Railcarts": [],
+                "Rails": [
+                    {
+                        "Column": 2,
+                        "RowEnd": 4,
+                        "RowStart": 0
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ConveyorBelt"
+            ],
+            "objclass": "ConveyorSeedBankProperties",
+            "objdata": {
+                "DropDelayConditions": [
+                    {
+                        "Delay": 4,
+                        "MaxPackets": 5
+                    },
+                    {
+                        "Delay": 8,
+                        "MaxPackets": 8
+                    },
+                    {
+                        "Delay": 16,
+                        "MaxPackets": 10
+                    }
+                ],
+                "InitialPlantList": [
+                    {
+                        "MaxCount": 5,
+                        "MaxWeightFactor": 0,
+                        "PlantType": "snowpea",
+                        "Weight": 500
+                    }
+                ],
+                "SpeedConditions": [
+                    {
+                        "MaxPackets": 0,
+                        "Speed": 175
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "projectile0"
+            ],
+            "objclass": "ProjectileType",
+            "objdata": {
+                "ProjectileBasedOn": "pea_snow",
+                "Props": "RTID(projectile0@ProjectileProps)"
+            }
+        },
+        {
+            "aliases": [
+                "projectile0"
+            ],
+            "objclass": "ProjectileProperties",
+            "objdata": {
+                "Damage": 120,
+                "ChillDuration": 10,
+                "IceBlockLevel": 1
+            }
+        },
+        {
+            "aliases": [
+                "projectile1"
+            ],
+            "objclass": "ProjectileType",
+            "objdata": {
+                "ProjectileBasedOn": "winter_melon",
+                "Props": "RTID(projectile1@ProjectileProps)"
+            }
+        },
+        {
+            "aliases": [
+                "projectile1"
+            ],
+            "objclass": "ProjectileProperties",
+            "objdata": {
+                "Damage": 165,
+                "SplashDamage": [
+                    {
+                        "Damage": 90,
+                        "Range": {
+                            "w": 3,
+                            "h": 3
+                        },
+                        "ChillDuration": 5
+                    }
+                ],
+                "Size": {
+                    "w": 18,
+                    "h": 18
+                },
+                "ChillDuration": 5,
+                "IceBlockLevel": 1
+            }
+        },
+        {
+            "aliases": [
+                "projectile3"
+            ],
+            "objclass": "ProjectileType",
+            "objdata": {
+                "ProjectileBasedOn": "cantaloupe",
+                "Props": "RTID(projectile3@ProjectileProps)"
+            }
+        },
+        {
+            "aliases": [
+                "projectile3"
+            ],
+            "objclass": "ProjectileProperties",
+            "objdata": {
+                "Damage": 200,
+                "SplashDamage": [
+                    {
+                        "Damage": 145,
+                        "Range": {
+                            "w": 3,
+                            "h": 3
+                        }
+                    }
+                ],
+                "Size": {
+                    "w": 18,
+                    "h": 18
+                }
+            }
+        },
+        {
+            "aliases": [
+                "projectile2"
+            ],
+            "objclass": "ProjectileType",
+            "objdata": {
+                "ProjectileBasedOn": "pea_flame_yellow",
+                "Props": "RTID(projectile2@ProjectileProps)"
+            }
+        },
+        {
+            "aliases": [
+                "projectile2"
+            ],
+            "objclass": "ProjectileProperties",
+            "objdata": {
+                "Damage": 160,
+                "BlueIgnitedType": "pea_flame_yellow",
+                "SuppressArmorImpactSound": true,
+                "SuppressZombieImpactSound": true,
+                "MeltsIceTile": true,
+                "DamageScale": 2,
+                "Size": {
+                    "w": 16,
+                    "h": 16
+                },
+                "DamageType": "fire"
+            }
+        },
+        {
+            "aliases": [
+                "projectile4"
+            ],
+            "objclass": "ProjectileType",
+            "objdata": {
+                "ProjectileBasedOn": "winter_melon",
+                "Props": "RTID(projectile1@ProjectileProps)"
+            }
+        },
+        {
+            "aliases": [
+                "projectile4"
+            ],
+            "objclass": "ProjectileProperties",
+            "objdata": {
+                "Damage": 400,
+                "SplashDamage": [
+                    {
+                        "Damage": 265,
+                        "Range": {
+                            "w": 3,
+                            "h": 3
+                        },
+                        "ChillDuration": 5
+                    }
+                ],
+                "Size": {
+                    "w": 18,
+                    "h": 18
+                },
+                "ChillDuration": 5,
+                "IceBlockLevel": 1
+            }
+        },
+        {
+            "aliases": [
+                "projectile5"
+            ],
+            "objclass": "ProjectileType",
+            "objdata": {
+                "ProjectileBasedOn": "cantaloupe",
+                "Props": "RTID(projectile3@ProjectileProps)"
+            }
+        },
+        {
+            "aliases": [
+                "projectile5"
+            ],
+            "objclass": "ProjectileProperties",
+            "objdata": {
+                "Damage": 400,
+                "SplashDamage": [
+                    {
+                        "Damage": 315,
+                        "Range": {
+                            "w": 3,
+                            "h": 3
+                        }
+                    }
+                ],
+                "Size": {
+                    "w": 18,
+                    "h": 18
+                }
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "snowpea"
+                        ],
+                        "NewObjdata": {
+                            "PeaType": "projectile0",
+                            "PeaTypePlantfood": "projectile0",
+                            "PeaFreezeType": "projectile0",
+                            "ShootInterval": 0.2,
+                            "ShootIntervalAdditional": 0.10,
+                            "PlantfoodPeaCount": 80,
+                            "ChanceToFreeze": 0.2,
+                            "Cooldown": 5,
+                            "CooldownFrom": 0.5,
+                            "SunCost": 150,
+                            "BeghouledCost": 2500,
+                            "Toughness": 800,
+                            "Family": "Cold",
+                            "ImmuneToIceblock": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "firepeashooter"
+                        ],
+                        "NewObjdata": {
+                            "ShootInterval": 0.2,
+                            "ShootIntervalAdditional": 0.10,
+                            "PeaType": "projectile2",
+                            "PlantfoodDuration": 5,
+                            "PlantfoodDamageInterval": 0.25,
+                            "PlantfoodDamagePerHit": 80,
+                            "Cooldown": 5,
+                            "CooldownFrom": 1,
+                            "SunCost": 175,
+                            "BeghouledCost": 2000,
+                            "Toughness": 800,
+                            "Family": "Fire",
+                            "ImmuneToIceblock": true,
+                            "WarmingRadius": {
+                                "PulseInitialDelay": 0.5,
+                                "PulseCooldown": 6,
+                                "GridItemDamage": 200
+                            },
+                            "WarmingRadiusPlantfood": {
+                                "PulseInitialDelay": 0.25,
+                                "PulseCooldown": 1.5,
+                                "GridItemDamage": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "cantaloupe"
+                        ],
+                        "NewObjdata": {
+                            "CabbageType": "projectile3",
+                            "CabbageTypePlantfood": "projectile5",
+                            "ThrowInterval": 0.3,
+                            "ThrowIntervalAdditional": 0.15,
+                            "Cooldown": 5,
+                            "CooldownFrom": 0.5,
+                            "SunCost": 500,
+                            "BeghouledCost": 2500,
+                            "Toughness": 800,
+                            "Family": "Lobber",
+                            "ExtraHeightAboveTargets": 200
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "LevelScope": "CurrentLevel",
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": [
+                            "wintermelon"
+                        ],
+                        "NewObjdata": {
+                            "CabbageType": "projectile1",
+                            "CabbageTypePlantfood": "projectile4",
+                            "DetectsTNTSpark": true,
+                            "ThrowInterval": 0.25,
+                            "ThrowIntervalAdditional": 0.15,
+                            "Cooldown": 5,
+                            "CooldownFrom": 0.5,
+                            "SunCost": 500,
+                            "BeghouledCost": 5000,
+                            "Toughness": 800,
+                            "Family": "Cold",
+                            "ImmuneToIceblock": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave8ModConveyor0"
+            ],
+            "objclass": "ModifyConveyorWaveActionProps",
+            "objdata": {
+                "Add": [
+                    {
+                        "MaxCount": 7,
+                        "MaxWeightFactor": 0,
+                        "Type": "RTID(firepeashooter@PlantTypes)",
+                        "Weight": 500
+                    }
+                ],
+                "Remove": [
+                    {
+                        "Type": "RTID(snowpea@PlantTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave16ModConveyor0"
+            ],
+            "objclass": "ModifyConveyorWaveActionProps",
+            "objdata": {
+                "Add": [
+                    {
+                        "MaxCount": 4,
+                        "MaxWeightFactor": 0,
+                        "Type": "RTID(cantaloupe@PlantTypes)",
+                        "Weight": 500
+                    }
+                ],
+                "Remove": [
+                    {
+                        "Type": "RTID(firepeashooter@PlantTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave24ModConveyor0"
+            ],
+            "objclass": "ModifyConveyorWaveActionProps",
+            "objdata": {
+                "Add": [
+                    {
+                        "MaxCount": 6,
+                        "MaxWeightFactor": 0,
+                        "Type": "RTID(wintermelon@PlantTypes)",
+                        "Weight": 500
+                    }
+                ],
+                "Remove": [
+                    {
+                        "Type": "RTID(cantaloupe@PlantTypes)"
+                    }
+                ]
+            }
+        }
+    ],
+    "version": 1
+}

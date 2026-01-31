@@ -1,0 +1,592 @@
+{
+	"#comment": "Bird's crafting",
+	"objects": [
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "<PLAYERNAME>'s Running",
+				"LevelNumber": 1,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+					"RTID(StandardIntro@LevelModules)",
+					"RTID(SeedBank@CurrentLevel)",
+					"RTID(ZombiesDeadWinCon@LevelModules)",
+					"RTID(DefaultZombieWinCondition@LevelModules)",
+					"RTID(NewWaves@CurrentLevel)",
+					"RTID(DefaultSunDropper@LevelModules)",
+					"RTID(Gravestones@CurrentLevel)"
+				],
+				"Name": "cranjelly's_running_<LEVELNUMBER>",
+				"NameMultiLanguage": {
+					"en": "Cranjelly's Running Day <LEVELNUMBER>",
+					"zh": "蔓越莓果冻奔驰的第 <LEVELNUMBER> 天"
+				},
+				"WritenBy": "Birdscraft",
+				"NormalPresentTable": "egypt_normal_01",
+				"ShinyPresentTable": "egypt_shiny_01",
+				"StartingSun":125,
+				"StageModule": "RTID(FallsStage@LevelModules)"
+			}
+		},
+		{
+			"aliases": [
+				"SeedBank"
+			],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+				"PresetPlantList": [
+				{
+					"Level": -1,
+					"PlantType": "sunshroom"
+				},{
+					"Level": -1,
+					"PlantType": "bloomerang"
+				},{
+					"Level": -1,
+					"PlantType": "repeater"
+				},{
+					"Level": -1,
+					"PlantType": "gravebuster"
+				},{
+					"Level": -1,
+					"PlantType": "cranjelly"
+				},{
+					"Level": -1,
+					"PlantType": "wallnut"
+				},{
+					"Level": -1,
+					"PlantType": "iceburg"
+				},{
+					"Level": -1,
+					"PlantType": "stallia"
+				}
+				],
+				"SelectionMethod": "preset"
+			}
+		},
+		{
+			"aliases": ["WaveManagerProps"],
+			"objclass": "WaveManagerProperties",
+			"objdata": {
+				"FlagWaveInterval": 100,
+				"WaveCount": 1,
+				"Waves": [
+					["RTID(Wave1@CurrentLevel)"],
+					["RTID(Wave2@CurrentLevel)"],
+					["RTID(Wave3@CurrentLevel)"],
+					["RTID(Wave4@CurrentLevel)","RTID(Wave4StormSpawn@CurrentLevel)"],
+					["RTID(Wave5@CurrentLevel)"],
+					["RTID(Wave6@CurrentLevel)","RTID(Wave6StormSpawn@CurrentLevel)"],
+					["RTID(Wave7@CurrentLevel)","RTID(Wave7JetpackSpawnEvent0@CurrentLevel)"],
+					["RTID(Wave8@CurrentLevel)"],
+					["RTID(Wave9@CurrentLevel)","RTID(Wave9StormSpawn@CurrentLevel)"],
+					["RTID(Wave10@CurrentLevel)","RTID(Wave10StormSpawn@CurrentLevel)"],
+				]
+			}
+		},
+		{
+			"aliases": [
+				"NewWaves"
+			],
+			"objclass": "WaveManagerModuleProperties",
+			"objdata": {
+				"DynamicZombies": [
+				{},
+				{
+					"PointIncrementPerWave": 72,
+					"StartingPoints": 350,
+					"StartingWave": 3,
+					"ZombiePool": [
+						"RTID(cowboy@ZombieTypes)",
+						"RTID(cowboy_armor1@ZombieTypes)",
+						"RTID(cowboy_armor4@ZombieTypes)",
+						"RTID(cowboy_armor2@ZombieTypes)"
+					]
+				},
+				{
+					"PointIncrementPerWave": 96,
+					"StartingPoints": 650,
+					"StartingWave": 5,
+					"ZombiePool": [
+						"RTID(cowboy_flag@ZombieTypes)",
+						"RTID(west_bull@ZombieTypes)",
+						"RTID(prospector@ZombieTypes)",
+						"RTID(cowboy_flag_veteran@ZombieTypes)"
+					]
+				},
+				],
+				"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+			}
+		},
+		{
+			"aliases": [
+				"Wave1"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_armor2@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave2"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy_armor4@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_armor2@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave3"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(west_bull@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(poncho_plate@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave4"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(west_bull_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_gargantuar@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave5"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(chicken_farmer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(west_bull@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(west_bull_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(prospector@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave6"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(explorer_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(explorer_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(explorer_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(explorer_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(poncho@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(chicken_farmer@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave7"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy_gargantuar@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(piano@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(prospector@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(prospector@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(poncho@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(poncho@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(poncho@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(prospector@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(prospector@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(chicken_farmer@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave8"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy_armor4@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(camel_manyhump@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(camel_manyhump@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tomb_raiser@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tomb_raiser@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tomb_raiser@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tomb_raiser@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tomb_raiser@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(poncho@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(poncho@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(west_bull@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_armor4@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_armor4@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave9"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(poncho@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(explorer_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(camel_manyhump@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tomb_raiser@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tomb_raiser@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_gargantuar@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(piano@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave10"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(prospector@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(poncho@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(prospector@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tomb_raiser@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tomb_raiser@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tomb_raiser@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(prospector@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_gargantuar@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_gargantuar@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_relichunter@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_relichunter@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_relichunter@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_relichunter@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave4StormSpawn"
+			],
+			"objclass": "StormZombieSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 7,
+				"ColumnStart": 5,
+				"GroupSize": 1,
+				"TimeBetweenGroups": 1,
+				"Type": "sandstorm",
+				"Waves": "",
+				"Zombies": [
+					{
+						"Type": "RTID(explorer_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(piano@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave6StormSpawn"
+			],
+			"objclass": "StormZombieSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 8,
+				"ColumnStart": 4,
+				"GroupSize": 1,
+				"TimeBetweenGroups": 1,
+				"Type": "sandstorm",
+				"Waves": "",
+				"Zombies": [
+					{
+						"Type": "RTID(explorer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(chicken_farmer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(chicken_farmer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(chicken@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(chicken@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+            "aliases": [
+                "Wave7JetpackSpawnEvent0"
+            ],
+            "objclass": "SpawnZombiesFromGroundSpawnerProps",
+            "objdata": {
+                "ColumnEnd": 9,
+                "ColumnStart": 5,
+                "WaveStartMessage": "[WARNING_JETPACKRAIN]",
+                "Zombies": [
+                    {
+                        "Type": "RTID(future_jetpack@ZombieTypes)"
+                    },
+					{
+                        "Type": "RTID(future_jetpack_disco@ZombieTypes)"
+                    },
+					{
+                        "Type": "RTID(future_jetpack@ZombieTypes)"
+                    },
+					{
+                        "Type": "RTID(future_imp@ZombieTypes)"
+                    },
+					{
+                        "Type": "RTID(future_protector@ZombieTypes)"
+                    },
+					{
+                        "Type": "RTID(future_protector@ZombieTypes)"
+                    },
+					{
+                        "Type": "RTID(future_jetpack_veteran@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(future_imp@ZombieTypes)"
+                    },
+					{
+                        "Type": "RTID(future_imp@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+		{
+			"aliases": [
+				"Wave9StormSpawn"
+			],
+			"objclass": "StormZombieSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 8,
+				"ColumnStart": 4,
+				"GroupSize": 1,
+				"TimeBetweenGroups": 1,
+				"Type": "sandstorm",
+				"Waves": "",
+				"Zombies": [
+					{
+						"Type": "RTID(camel_manyhump@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(camel_onehump@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(chicken_farmer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(chicken_farmer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_armor2@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave10StormSpawn"
+			],
+			"objclass": "StormZombieSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 8,
+				"ColumnStart": 5,
+				"GroupSize": 1,
+				"TimeBetweenGroups": 1,
+				"Type": "sandstorm",
+				"Waves": "",
+				"Zombies": [
+					{
+						"Type": "RTID(explorer_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(camel_onehump@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(poncho@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(chicken_farmer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(piano@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(west_bull@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(poncho@ZombieTypes)"
+					}
+				]
+			}
+		}
+	],
+	"version": 1
+}

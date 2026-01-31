@@ -1,0 +1,499 @@
+{
+	"#comment": "Bird's crafting",
+	"objects": [
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "<PLAYERNAME>'s Exploring",
+				"LevelNumber": 3,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+					"RTID(StandardIntro@LevelModules)",
+					"RTID(SeedBank@CurrentLevel)",
+					"RTID(ZombiesDeadWinCon@LevelModules)",
+					"RTID(DefaultZombieWinCondition@LevelModules)",
+					"RTID(NewWaves@CurrentLevel)",
+					"RTID(FrozenPlantPlacement@CurrentLevel)",
+					"RTID(DefaultSunDropper@LevelModules)"
+				],
+				"Name": "Lostcraft_<LEVELNUMBER>",
+				"NameMultiLanguage": {
+					"en": "LostLabyrinth Track-<LEVELNUMBER>",
+					"zh": "古迹迷踪 第<LEVELNUMBER>迹"
+				},
+				"WritenBy": "Birdscraft",
+				"NormalPresentTable": "egypt_normal_01",
+				"ShinyPresentTable": "egypt_shiny_01",
+				"StartingSun":75,
+				"StageModule": "RTID(LostCityStage@LevelModules)"
+			}
+		},
+		{
+			"aliases": [
+				"FrozenPlantPlacement"
+			],
+			"objclass": "InitialPlantProperties",
+			"objdata":{
+				"InitialPlantPlacements": [
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SeedBank"
+			],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+				"PresetPlantList": [
+				{
+					"Level": -1,
+					"PlantType": "goldleaf"
+				},{
+					"Level": -1,
+					"PlantType": "akee"
+				},{
+					"Level": -1,
+					"PlantType": "endurian"
+				},{
+					"Level": -1,
+					"PlantType": "springbean"
+				},{
+					"Level": -1,
+					"PlantType": "empea"
+				},{
+					"Level": -1,
+					"PlantType": "lilypad"
+				}
+				],
+				"SelectionMethod": "preset"
+			}
+		},
+		{
+			"aliases": ["WaveManagerProps"],
+			"objclass": "WaveManagerProperties",
+			"objdata": {
+				"FlagWaveInterval": 6,
+				"WaveCount": 1,
+				"Waves": [
+					["RTID(Wave1@CurrentLevel)"],
+					["RTID(Wave2@CurrentLevel)"],
+					["RTID(Wave3@CurrentLevel)"],
+					["RTID(Wave4@CurrentLevel)"],
+					["RTID(Wave5@CurrentLevel)"],
+					["RTID(Wave6@CurrentLevel)"],
+					["RTID(Wave7@CurrentLevel)"],
+					["RTID(Wave8@CurrentLevel)"],
+					["RTID(Wave9@CurrentLevel)","RTID(SmokeBlowing@CurrentLevel)"],
+					["RTID(Wave10@CurrentLevel)"],
+				]
+			}
+		},
+		{
+			"aliases": [
+				"NewWaves"
+			],
+			"objclass": "WaveManagerModuleProperties",
+			"objdata": {
+				"DynamicZombies": [
+				{},
+				{},
+				{},
+				{},
+				{
+					"PointIncrementPerWave": 15,
+					"StartingPoints": 42,
+					"StartingWave": 5,
+					"ZombiePool": [
+						"RTID(lostcity@ZombieTypes)",
+						"RTID(lostcity_armor1@ZombieTypes)"
+					]
+				},
+				{
+					"PointIncrementPerWave": 46,
+					"StartingPoints": 56,
+					"StartingWave": 5,
+					"ZombiePool": [
+						"RTID(lostcity_bug@ZombieTypes)",
+						"RTID(lostcity@ZombieTypes)",
+						"RTID(lostcity_armor1@ZombieTypes)"
+					]
+				},
+				{
+					"PointIncrementPerWave": 88,
+					"StartingPoints": 74,
+					"StartingWave": 4,
+					"ZombiePool": [
+						"RTID(lostcity_bug@ZombieTypes)",
+						"RTID(lostcity_bug_armor1@ZombieTypes)",
+						"RTID(lostcity@ZombieTypes)",
+						"RTID(lostcity_armor1@ZombieTypes)",
+						"RTID(lostcity_armor2@ZombieTypes)"
+					]
+				}
+				],
+				"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+			}
+		},
+		{
+			"aliases": [
+				"Wave1"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave2"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_armor1@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave3"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 1,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_armor2@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave4"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_excavator@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_jane@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave5"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_bug_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(dark_wizard@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave6"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(dark_wizard_veteran@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave7"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 1,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_crystalskull@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_crystalskull@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_crystalskull@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_impporter@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_impporter@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(dark_wizard@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave8"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_excavator@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_excavator@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_jane@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_jane@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_jane@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_bug@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(dark_juggler@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave9"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(dark_wizard@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(dark_wizard@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave10"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_impporter@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_excavator@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_impporter@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_crystalskull@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_bug@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(dark_juggler@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"FireShow"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+				"Max": 0,
+				"Min": 0
+				},
+				"TimeBetween": {
+				"Max": 0,
+				"Min": 0
+				},
+				"Repeat": {
+				"Max": 1,
+				"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": true,
+				"Events": [
+					"RTID(FireShowWarning@CurrentLevel)",
+					"RTID(FireShowSpawn@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases":[
+				"FireShowSpawn"
+			],
+			"objclass":"BeachStageEventZombieSpawnerProps",
+			"objdata":{
+				"ColumnEnd":8,
+				"ColumnStart":6,
+				"GroupSize":"1",
+				"TimeBeforeFullSpawn":"0.1",
+				"TimeBetweenGroups":"0",
+				"WaveStartMessage":"", 
+				"ZombieCount":"4",
+				"ZombieName":"explorer_veteran"
+			}
+		},
+		{
+			"aliases": [
+				"FireShowWarning"
+			],
+			"objclass": "WaveWarningProps",
+			"objdata":{
+				"LabelR":255,
+				"LabelG":0,
+				"LabelB":0,
+				"LabelAInit":7,
+				"OutlineR":0,
+				"OutlineG":0,
+				"OutlineB":0,
+				"String":"Fire Show!",
+				"StringMultiLanguage":{
+					"en":"Fire Show!",
+					"zh":"火光冲天！"
+				},
+				"Sound":"HugeWave",
+				"LabelTargetScale":0.5,
+				"Duration":3,
+				"InitTime":0.33
+			}
+		},
+		{
+			"aliases": [
+				"SmokeBlowing"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+				"Max": 0,
+				"Min": 0
+				},
+				"TimeBetween": {
+				"Max": 5.0,
+				"Min": 4.9
+				},
+				"Repeat": {
+				"Max": 1,
+				"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": true,
+				"Events": [
+					"RTID(SmokeBlowingSpawn@CurrentLevel)",
+					"RTID(SmokeBlowingWarning@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases":[
+				"SmokeBlowingSpawn"
+			],
+			"objclass":"StormZombieSpawnerProps",
+			"objdata":{
+				"ColumnEnd":5,
+				"ColumnStart":4,
+				"Count":6,
+				"GroupSize":1,
+				"TimeBetweenGroups":"0",
+				"Type":"sandstorm",
+				"WaveStartMessage":"",
+				"Zombies":[
+					{
+						"Type":"RTID(dark_wizard_veteran@ZombieTypes)"
+					},
+					{
+						"Type":"RTID(dark_wizard_veteran@ZombieTypes)"
+					},
+					{
+						"Type":"RTID(dark_wizard_veteran@ZombieTypes)"
+					},
+					{
+						"Type":"RTID(dark_wizard_veteran@ZombieTypes)"
+					},
+					{
+						"Type":"RTID(dark_wizard_veteran@ZombieTypes)"
+					},
+					{
+						"Type":"RTID(dark_wizard_veteran@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SmokeBlowingWarning"
+			],
+			"objclass": "WaveWarningProps",
+			"objdata":{
+				"LabelR":255,
+				"LabelG":0,
+				"LabelB":0,
+				"LabelAInit":7,
+				"OutlineR":0,
+				"OutlineG":0,
+				"OutlineB":0,
+				"String":"Smoke Blowing!",
+				"StringMultiLanguage":{
+					"en":"Smoke Blowing!",
+					"zh":"狼烟四起！"
+				},
+				"Sound":"HugeWave",
+				"LabelTargetScale":0.5,
+				"Duration":3,
+				"InitTime":0.33
+			}
+		}
+	],
+	"version": 1
+}

@@ -1,0 +1,681 @@
+{
+  "#comment": "Modern 1",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "（加速更难）",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(FrozenPlantPlacement@CurrentLevel)"
+        ],
+        "Name": "阻捷",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StartingSun":625,
+        "StageModule": "RTID(ModernStage@LevelModules)"
+      }
+    },
+      {
+            "aliases": [
+                "abbot_chi2"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(abbot_chi2@CurrentLevel)",
+                "ZombieBasedOn": "tutorial"
+            }
+        },
+           {
+            "aliases": [
+                "abbot_chi3"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(abbot_chi3@CurrentLevel)",
+                "ZombieBasedOn": "tutorial"
+            }
+        },
+          {
+            "aliases": [
+                "r"
+            ],
+            "objclass": "PlantType",
+            "objdata": {
+                "Properties":  "RTID(r@CurrentLevel)",
+                "PlantBasedOn": "bamboozle"
+            }
+        },
+         {
+      "aliases": [
+        "FrozenPlantPlacement"
+      ],
+      "objclass": "InitialPlantProperties",
+      "objdata": {
+        "InitialPlantPlacements": [
+           {
+            "Condition": "icecubed",
+            "GridX": 0,
+            "GridY": 1,
+            "Level": "-1",
+            "TypeName": "sunflower"
+          },
+           {
+            "GridX": 0,
+            "GridY": 3,
+            "Level": "-1",
+            "TypeName": "sunflower"
+          }
+        ]
+      }
+    },
+        	{
+			"aliases": [
+				"abbot_chi2"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.7,
+				"Toughness": 190,
+				"EatDPS": 100,
+				"WavePointCost": 100,
+				"Weight": 1000,
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+    	{
+			"aliases": [
+				"abbot_chi3"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 1,
+				"Toughness": 190,
+				"EatDPS": 100,
+				"WavePointCost": 100,
+				"Weight": 1000,
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+    	{
+			"aliases": [
+				"r"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"BambooshotType": "bamboozle",
+				"Cooldown": 8.1,
+				"CooldownFrom": 0.5,
+				"SunCost": 225,
+				"BeghouledCost": 2000,
+				"Toughness": 1000,
+				"Family": "Defence"
+			}
+		},
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PresetPlantList": [
+          {
+            "PlantType": "r",
+            "Level": -1
+          }
+        ],
+        "SelectionMethod": "preset"
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {
+            "PointIncrementPerWave": -40,
+            "StartingPoints": -100,
+            "StartingWave": 3,
+            "ZombiePool": [
+              "RTID(abbot_chi3@CurrentLevel)",
+              "RTID(abbot_chi2@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": -25,
+            "StartingPoints": -100,
+            "StartingWave": 4,
+            "ZombiePool": [
+          "RTID(abbot_chi3@CurrentLevel)",
+              "RTID(abbot_chi2@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": -10,
+            "StartingPoints": -100,
+            "StartingWave": 5,
+            "ZombiePool": [
+           "RTID(abbot_chi3@CurrentLevel)",
+              "RTID(abbot_chi2@CurrentLevel)"
+            ]
+          },
+          {},
+          {
+            "PointIncrementPerWave": 20,
+            "StartingPoints": 100,
+            "StartingWave": 5,
+            "ZombiePool": [
+             "RTID(abbot_chi3@CurrentLevel)",
+              "RTID(abbot_chi2@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 40,
+            "StartingPoints": 200,
+            "StartingWave": 4,
+            "ZombiePool": [
+             "RTID(abbot_chi3@CurrentLevel)",
+              "RTID(abbot_chi2@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 60,
+            "StartingPoints": 400,
+            "StartingWave": 3,
+            "ZombiePool": [
+             "RTID(abbot_chi3@CurrentLevel)",
+              "RTID(abbot_chi2@CurrentLevel)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 9,
+        "WaveCount": 18,
+        "WaveSpendingPointIncrement": 100,
+        "WaveSpendingPoints": 100,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)"
+          ],
+           [
+            "RTID(Wave11@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave12@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave13@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave14@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave15@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave16@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave17@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave18@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+             {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+           {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi3@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(abbot_chi3@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi3@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+         {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi3@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+           {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi3@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(abbot_chi3@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+           {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+             {
+            "Type": "RTID(abbot_chi3@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi3@CurrentLevel)"
+          }
+        ]
+      }
+    },
+      {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+             {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+     {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+             {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi3@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+      {
+      "aliases": [
+        "Wave13"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+             {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+      {
+      "aliases": [
+        "Wave14"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+             {
+            "Type": "RTID(abbot_chi3@CurrentLevel)"
+          }
+        ]
+      }
+    },
+      {
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(abbot_chi3@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi3@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi3@CurrentLevel)"
+          }
+        ]
+      }
+    },
+      {
+      "aliases": [
+        "Wave16"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi3@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi3@CurrentLevel)"
+          }
+        ]
+      }
+    },
+     {
+      "aliases": [
+        "Wave17"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+     {
+      "aliases": [
+        "Wave18"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi2@CurrentLevel)"
+          },
+           {
+            "Type": "RTID(abbot_chi3@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(abbot_chi3@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5PortalsEvent0"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 3,
+        "PortalRow": "2",
+        "PortalType": "egypt",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "Wave8PortalsEvent0"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": "5",
+        "PortalRow": 1,
+        "PortalType": "pirate",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "Wave10PortalsEvent0"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 4,
+        "PortalRow": 0,
+        "PortalType": "future",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    }
+  ],
+  "version": 1
+}

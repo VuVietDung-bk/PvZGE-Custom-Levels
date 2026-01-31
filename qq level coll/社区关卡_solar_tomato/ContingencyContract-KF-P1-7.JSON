@@ -1,0 +1,1618 @@
+{
+    "#comment": "ContingencyContract",
+    "objects": [
+        {
+            "objclass": "LevelDefinition",
+            "objdata": {
+                "Description": "Contingency Contract!",
+                "LevelNumber": 7,
+                "Loot": "RTID(DefaultLoot@LevelModules)",
+                "Modules": [
+                    "RTID(StandardIntro@LevelModules)",
+                    "RTID(DefaultSunDropper@LevelModules)",
+                    "RTID(ZombiesDeadWinCon@LevelModules)",
+                    "RTID(KongfuMowers@LevelModules)",
+                    "RTID(KongfuRack@CurrentLevel)",
+                    "RTID(TaichiTile@CurrentLevel)",
+                    "RTID(SeedBank@CurrentLevel)",
+                    "RTID(ChallengeModule@CurrentLevel)",
+                    "RTID(DefaultZombieWinCondition@LevelModules)",
+                    "RTID(NewWaves@CurrentLevel)"
+                ],
+                "Name": "ContingencyContract-KF-P1-7",
+                "NameMultiLanguage": {
+                "en": "ContingencyContract-KF-P1-7",
+                "zh": "危机合约-武林寺庙第一部分-day7"
+                },
+                "WritenBy": "保罗_刘(solar_tomato修改)",
+                "StageModule": "RTID(KongfuStage@LevelModules)"
+            }
+        },
+        {
+        "aliases": [
+            "ChallengeModule"
+        ],
+        "objclass": "StarChallengeModuleProperties",
+        "objdata": {
+            "Challenges": [
+            [
+                "RTID(BeatTheLevel@CurrentLevel)"
+            ]
+            ],
+            "ChallengesAlwaysAvailable": true
+        }
+        },
+        {
+        "aliases": [
+            "BeatTheLevel"
+        ],
+        "objclass": "StarChallengeBeatTheLevelProps",
+        "objdata": {
+            "DescriptionsMultilanguage": [
+            {
+                "en": "All zombies gain +30% movement speed, +30% health, +30% attack damage, and +30% armor durability",
+                "zh": "所有僵尸的移动速度，生命值，攻击力和防具耐久度+30%"
+            },
+            {
+                "en": "All Hammer Zombies gain +80% health, with significantly increased parry duration and reflected projectile damage",
+                "zh": "所有捶鼓僵尸的生命值+80%，反弹时间和反弹子弹伤害大幅提升"
+            },
+            {
+                "en": "All Torch Zombies and Bomb Zombies gain +40% movement speed and +20% health",
+                "zh": "所有习武火把和自爆僵尸的移动速度+40%，生命值+20%"
+            },
+            {
+                "en": "All Rocket Imps gain +80% health, +80% movement speed, and +80% attack damage, with significantly reduced rocket speed multiplier but increased quantity",
+                "zh": "所有火箭小鬼的生命值，移动速度和攻击力+80%，火箭速度倍率大幅降低但是数量增加"
+            },
+            {
+                "en": "Certain plants are disabled, and additional Kongfu Racks appear",
+                "zh": "禁用部分植物，出现额外兵器架"
+            }
+            ]
+        }
+        },
+        {
+            "aliases": [
+                "KongfuRack"
+            ],
+            "objclass": "GravestoneProperties",
+            "objdata": {
+                "ForceSpawnData": [
+                    {
+                        "GridX": 4,
+                        "GridY": 0,
+                        "TypeName": "kongfu_rack_bomb"
+                    },
+                    {
+                        "GridX": 4,
+                        "GridY": 2,
+                        "TypeName": "kongfu_rack_bomb"
+                    },
+                    {
+                        "GridX": 4,
+                        "GridY": 4,
+                        "TypeName": "kongfu_rack_bomb"
+                    },
+                    {
+                        "GridX": 6,
+                        "GridY": 0,
+                        "TypeName": "kongfu_rack_helmet"
+                    },
+                    {
+                        "GridX": 6,
+                        "GridY": 2,
+                        "TypeName": "kongfu_rack_bomb"
+                    },
+                    {
+                        "GridX": 6,
+                        "GridY": 4,
+                        "TypeName": "kongfu_rack_helmet"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "TaichiTile"
+            ],
+            "objclass": "InitialGridItemProperties",
+            "objdata": {
+                "InitialGridItemPlacements": [
+                    {
+                        "GridX": 5,
+                        "GridY": 1,
+                        "TypeName": "taichitile"
+                    },
+                    {
+                        "GridX": 5,
+                        "GridY": 4,
+                        "TypeName": "taichitile"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "SeedBank"
+            ],
+            "objclass": "SeedBankProperties",
+            "objdata": {
+                "PlantExcludeList": [
+          "blover","hurrikale","wintermelon","snowpea",
+          "glaciershroom","iceweed","icebloom","iceburg",
+          "coldsnapdragon","snowdrop","missiletoe"
+        ],
+                "SelectionMethod": "chooser"
+            }
+        },
+        {
+            "aliases": [
+                "NewWaves"
+            ],
+            "objclass": "WaveManagerModuleProperties",
+            "objdata": {
+                "DynamicZombies": [
+                    {
+                        "PointIncrementPerWave": -40,
+                        "StartingPoints": -100,
+                        "StartingWave": 3,
+                        "ZombiePool": [
+                            "RTID(kongfu_hammer@CurrentLevel)",
+                            "RTID(kongfu_bomb@CurrentLevel)",
+                            "RTID(kongfu_torch@CurrentLevel)",
+                            "RTID(kongfu_armor1@CurrentLevel)",
+                            "RTID(kongfu_armor2@CurrentLevel)",
+                            "RTID(kongfu@CurrentLevel)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": -25,
+                        "StartingPoints": -100,
+                        "StartingWave": 4,
+                        "ZombiePool": [
+                            "RTID(kongfu_hammer@CurrentLevel)",
+                            "RTID(kongfu_bomb@CurrentLevel)",
+                            "RTID(kongfu_torch@CurrentLevel)",
+                            "RTID(kongfu_armor1@CurrentLevel)",
+                            "RTID(kongfu_armor2@CurrentLevel)",
+                            "RTID(kongfu@CurrentLevel)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": -10,
+                        "StartingPoints": -100,
+                        "StartingWave": 5,
+                        "ZombiePool": [
+                            "RTID(kongfu_hammer@CurrentLevel)",
+                            "RTID(kongfu_bomb@CurrentLevel)",
+                            "RTID(kongfu_torch@CurrentLevel)",
+                            "RTID(kongfu_armor1@CurrentLevel)",
+                            "RTID(kongfu_armor2@CurrentLevel)",
+                            "RTID(kongfu@CurrentLevel)"
+                        ]
+                    },
+                    {},
+                    {
+                        "PointIncrementPerWave": 20,
+                        "StartingPoints": 100,
+                        "StartingWave": 5,
+                        "ZombiePool": [
+                            "RTID(kongfu_hammer@CurrentLevel)",
+                            "RTID(kongfu_bomb@CurrentLevel)",
+                            "RTID(kongfu_torch@CurrentLevel)",
+                            "RTID(kongfu_armor1@CurrentLevel)",
+                            "RTID(kongfu@CurrentLevel)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 40,
+                        "StartingPoints": 200,
+                        "StartingWave": 4,
+                        "ZombiePool": [
+                            "RTID(kongfu_hammer@CurrentLevel)",
+                            "RTID(kongfu_bomb@CurrentLevel)",
+                            "RTID(kongfu_torch@CurrentLevel)",
+                            "RTID(kongfu_armor1@CurrentLevel)",
+                            "RTID(kongfu_armor2@CurrentLevel)",
+                            "RTID(kongfu@CurrentLevel)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 60,
+                        "StartingPoints": 400,
+                        "StartingWave": 3,
+                        "ZombiePool": [
+                            "RTID(kongfu_hammer@CurrentLevel)",
+                            "RTID(kongfu_bomb@CurrentLevel)",
+                            "RTID(kongfu_torch@CurrentLevel)",
+                            "RTID(kongfu_armor2@CurrentLevel)",
+                            "RTID(kongfu@CurrentLevel)"
+                        ]
+                    }
+                ],
+                "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 8,
+                "WaveCount": 16,
+                "WaveSpendingPointIncrement": 100,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    [
+                        "RTID(Wave1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave2@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave3@CurrentLevel)",
+                        "RTID(Wave3GravestoneEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave4@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave5@CurrentLevel)",
+                        "RTID(Wave5GravestoneEvent0@CurrentLevel)",
+                        "RTID(Wave5GravestoneEvent1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave6@CurrentLevel)",
+                        "RTID(Wave6Event0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave7@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave8@CurrentLevel)",
+                        "RTID(Wave8TaichiTileEvent@CurrentLevel)",
+                        "RTID(Wave8GravestoneEvent0@CurrentLevel)",
+                        "RTID(Wave8GravestoneEvent1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave9@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave10@CurrentLevel)",
+                        "RTID(Wave10GravestoneEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave11@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave12@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave13@CurrentLevel)",
+                        "RTID(Wave13GravestoneEvent0@CurrentLevel)",
+                        "RTID(Wave13GravestoneEvent1@CurrentLevel)",
+                        "RTID(Wave13Event0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave14@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave15@CurrentLevel)",
+                        "RTID(Wave15GravestoneEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave16@CurrentLevel)",
+                        "RTID(Wave16Event0@CurrentLevel)"
+                    ]
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(kongfu@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(kongfu@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(kongfu@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave3GravestoneEvent0"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {
+                        "Count": 2,
+                        "Type": "RTID(kongfu_rack_hammer@GridItemTypes)"
+                    },
+                    {
+                        "Count": 3,
+                        "Type": "RTID(kongfu_rack_torch@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {
+                        "mX": 3,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 4
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 2
+                    }
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+                "maxX": 8,
+                "minX": 3
+            }
+        },
+        {
+            "aliases": [
+                "Wave3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(kongfu_bomb@CurrentLevel)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave4"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    1,
+                    1,
+                    1,
+                    0,
+                    1,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(kongfu_torch@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_torch@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave5GravestoneEvent0"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {
+                        "Count": 3,
+                        "Type": "RTID(kongfu_rack_bomb@GridItemTypes)"
+                    },
+                    {
+                        "Count": 2,
+                        "Type": "RTID(kongfu_rack_torch@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {
+                        "mX": 6,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 4,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 4,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 4,
+                        "mY": 3
+                    }
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+                "maxX": 8,
+                "minX": 3
+            }
+        },
+        {
+            "aliases": [
+                "Wave5GravestoneEvent1"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {
+                        "Count": 1,
+                        "Type": "RTID(kongfu_rack_torch@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {
+                        "mX": 7,
+                        "mY": 0
+                    }
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+                "maxX": 8,
+                "minX": 3
+            }
+        },
+        {
+            "aliases": [
+                "Wave5"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "3",
+                        "Type": "RTID(kongfu_bomb@CurrentLevel)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_torch@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave6"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave7"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(kongfu_torch@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(kongfu_torch@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave8GravestoneEvent0"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {
+                        "Count": 5,
+                        "Type": "RTID(kongfu_rack_bomb@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {
+                        "mX": 5,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 1
+                    },
+                     {
+                        "mX": 5,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 3
+                    },
+                     {
+                        "mX": 5,
+                        "mY": 4
+                    }
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+                "maxX": 8,
+                "minX": 3
+            }
+        },
+        {
+            "aliases": [
+                "Wave8GravestoneEvent1"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {
+                        "Count": 2,
+                        "Type": "RTID(kongfu_rack_torch@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {
+                        "mX": 7,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 3
+                    }
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+                "maxX": 8,
+                "minX": 3
+            }
+        },
+        {
+            "aliases": [
+                "Wave8TaichiTileEvent"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "DisplacePlants": false,
+                "GravestonePool": [
+                    {
+                        "Count": 2,
+                        "Type": "RTID(taichitile@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {
+                        "mX": 4,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 4,
+                        "mY": 3
+                    }
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+                "maxX": 8,
+                "minX": 3
+            }
+        },
+        {
+            "aliases": [
+                "Wave8"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(kongfu_bomb@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_torch@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave9"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave10GravestoneEvent0"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {
+                        "Count": 1,
+                        "Type": "RTID(kongfu_rack_torch@GridItemTypes)"
+                    },
+                    {
+                        "Count": 3,
+                        "Type": "RTID(kongfu_rack_helmet@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {
+                        "mX": 4,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 4,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 4
+                    }
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+                "maxX": 8,
+                "minX": 3
+            }
+        },
+        {
+            "aliases": [
+                "Wave10"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_torch@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(kongfu_torch@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave11"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave12"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_bomb@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(kongfu_bomb@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(kongfu_bomb@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(kongfu_bomb@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_bomb@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave13GravestoneEvent0"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {
+                        "Count": 5,
+                        "Type": "RTID(kongfu_rack_helmet@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {
+                        "mX": 6,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 4
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 8,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 8,
+                        "mY": 3
+                    }
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+                "maxX": 8,
+                "minX": 3
+            }
+        },
+        {
+            "aliases": [
+                "Wave13GravestoneEvent1"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {
+                        "Count": 4,
+                        "Type": "RTID(kongfu_rack_bomb@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {
+                        "mX": 6,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 4
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 0
+                    }
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+                "maxX": 8,
+                "minX": 3
+            }
+        },
+        {
+            "aliases": [
+                "Wave13"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Row": "4",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_torch@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(kongfu_torch@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(kongfu_torch@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(kongfu_torch@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_torch@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave14"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave15GravestoneEvent0"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {
+                        "Count": 6,
+                        "Type": "RTID(kongfu_rack_helmet@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {
+                        "mX": 7,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 4
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 2,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 2,
+                        "mY": 3
+                    }
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+                "maxX": 8,
+                "minX": 3
+            }
+        },
+        {
+            "aliases": [
+                "Wave15"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave16"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_hammer@CurrentLevel)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_bomb@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_bomb@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(kongfu_bomb@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave6Event0"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": 2,
+                "SwashbucklerCount": 8,
+                "TimeBetweenGroups": 2,
+                "ZombieType": "RTID(kongfu_rocket_imp@CurrentLevel)",
+                "WaveStartMessage": "[WARNING_ROCKET_STRIKE]"
+            }
+        },
+        {
+            "aliases": [
+                "Wave13Event0"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": 2,
+                "SwashbucklerCount": 10,
+                "TimeBetweenGroups": 2,
+                "ZombieType": "RTID(kongfu_rocket_imp@CurrentLevel)",
+                "WaveStartMessage": "[WARNING_ROCKET_STRIKE]"
+            }
+        },
+        {
+            "aliases": [
+                "Wave16Event0"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": 4,
+                "SwashbucklerCount": 16,
+                "TimeBetweenGroups": 2,
+                "ZombieType": "RTID(kongfu_rocket_imp@CurrentLevel)",
+                "WaveStartMessage": "[WARNING_ROCKET_STRIKE]"
+            }
+        },
+        {
+      "aliases": [
+        "kongfu_armor1"
+      ],
+      "objclass": "ArmorType",
+      "objdata": {
+        "Properties": "RTID(kongfu_armor1@CurrentLevel)",
+        "ArmorBaseOn": "kongfu_armor1"
+      }
+    },
+		{
+      "aliases": [
+        "kongfu_armor1"
+      ],
+      "objclass": "ArmorProperties",
+      "objdata": {
+        "isMetal": false,
+        "isIce": false,
+        "Toughness": 481,
+        "BowlingLevel": 1
+      }
+    },
+    {
+      "aliases": [
+        "kongfu_armor2"
+      ],
+      "objclass": "ArmorType",
+      "objdata": {
+        "Properties": "RTID(kongfu_armor2@CurrentLevel)",
+        "ArmorBaseOn": "kongfu_armor2"
+      }
+    },
+		{
+      "aliases": [
+        "kongfu_armor2"
+      ],
+      "objclass": "ArmorProperties",
+      "objdata": {
+        "isMetal": true,
+        "isIce": false,
+        "Toughness": 1430,
+        "BowlingLevel": 2
+      }
+    },
+    {
+      "aliases": [
+        "kongfu_armor3"
+      ],
+      "objclass": "ArmorType",
+      "objdata": {
+        "Properties": "RTID(kongfu_armor3@CurrentLevel)",
+        "ArmorBaseOn": "kongfu_armor3"
+      }
+    },
+		{
+      "aliases": [
+        "kongfu_armor3"
+      ],
+      "objclass": "ArmorProperties",
+      "objdata": {
+        "isMetal": true,
+        "isIce": false,
+        "Toughness": 2080,
+        "BowlingLevel": 3
+      }
+    },
+    {
+			"aliases": [
+				"kongfu"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(kongfu@CurrentLevel)",
+				"ZombieBasedOn": "kongfu"
+			}
+		},
+		{
+			"aliases": [
+				"kongfu"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+                "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.2405,
+				"EatDPS": 130,
+				"Toughness": 247,
+				"WavePointCost": 100,
+				"Weight": 1000,
+				"ZombieTypesToSummonBecomingFlag": [
+					"kongfu",
+					"kongfu_armor1",
+					"kongfu_armor2"
+				],
+				"ZombieCountToSummon": 3
+      }
+		},
+    {
+			"aliases": [
+				"kongfu_armor1"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(kongfu_armor1@CurrentLevel)",
+				"ZombieBasedOn": "kongfu_armor1"
+			}
+		},
+		{
+			"aliases": [
+				"kongfu_armor1"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.2405,
+				"EatDPS": 130,
+				"Toughness": 247,
+				"StartingArmors": [
+					"kongfu_armor1"
+				],
+				"WavePointCost": 200,
+				"Weight": 3000
+      }
+		},
+    {
+			"aliases": [
+				"kongfu_armor2"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(kongfu_armor2@CurrentLevel)",
+				"ZombieBasedOn": "kongfu_armor2"
+			}
+		},
+		{
+			"aliases": [
+				"kongfu_armor2"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+                "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.2405,
+				"EatDPS": 130,
+				"Toughness": 247,
+				"StartingArmors": [
+					"kongfu_armor2"
+				],
+				"WavePointCost": 400,
+				"Weight": 4000
+      }
+		},
+    {
+			"aliases": [
+				"kongfu_armor3"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(kongfu_armor3@CurrentLevel)",
+				"ZombieBasedOn": "kongfu_armor3"
+			}
+		},
+		{
+			"aliases": [
+				"kongfu_armor3"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+                "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.2405,
+				"EatDPS": 130,
+				"Toughness": 247,
+				"StartingArmors": [
+					"kongfu_armor3"
+				],
+				"WavePointCost": 550,
+				"Weight": 4500
+      }
+		},
+    {
+			"aliases": [
+				"kongfu_hammer"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(kongfu_hammer@CurrentLevel)",
+				"ZombieBasedOn": "kongfu_hammer"
+			}
+		},
+		{
+			"aliases": [
+				"kongfu_hammer"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"CannotBeTossedByCitron": false,
+				"HammerDuration": 10,
+				"RestDuration": 3,
+				"ProjectileDamageMult": 50,
+				"WalkSPS": 0.2405,
+				"EatDPS": 130,
+				"Toughness": 1404,
+				"WavePointCost": 200,
+				"Weight": 2000
+      }
+		},
+    {
+			"aliases": [
+				"kongfu_torch"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(kongfu_torch@CurrentLevel)",
+				"ZombieBasedOn": "kongfu_torch"
+			}
+		},
+		{
+			"aliases": [
+				"kongfu_torch"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"CannotBeCarriedByFanStorm": true,
+				"CannotBeTossedByCitron": false,
+				"HammerDuration": 3,
+				"RestDuration": 0,
+				"WalkSPS": 0.455,
+				"EatDPS": 130,
+				"FireDPS": 1000,
+				"Toughness": 390,
+				"WavePointCost": 250,
+				"Weight": 3000
+      }
+		},
+    {
+			"aliases": [
+				"kongfu_bomb"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(kongfu_bomb@CurrentLevel)",
+				"ZombieBasedOn": "kongfu_bomb"
+			}
+		},
+		{
+			"aliases": [
+				"kongfu_bomb"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"CannotBeTossedByCitron": false,
+				"ExplodeDamageToPlants": 4001,
+				"ExplodeDamageToZombies": 1800,
+				"WalkSPS": 0.6097,
+				"EatDPS": 130,
+				"Toughness": 780,
+				"WavePointCost": 400,
+				"Weight": 800
+      }
+		},
+    {
+			"aliases": [
+				"kongfu_rocket_imp"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(kongfu_rocket_imp@CurrentLevel)",
+				"ZombieBasedOn": "kongfu_rocket_imp"
+			}
+		},
+		{
+			"aliases": [
+				"kongfu_rocket_imp"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"KilledByShrinkingViolet": true,
+				"CannotBeGrabbedByPtero": true,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.936,
+				"WalkSpeedMultFlying": 1.5,
+				"EatDPS": 234,
+				"Toughness": 444.6,
+				"WavePointCost": 100,
+				"Weight": 1000
+      }
+		}
+    ],
+    "version": 1
+}

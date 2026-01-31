@@ -1,0 +1,2681 @@
+{
+  "#comment": "Dark Challenge 1",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "DescriptionMultiLanguage": {
+                    "en": "An eye for an eye",
+                    "zh": "以牙还牙"
+                },
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(WestMowers@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(Gravestones@CurrentLevel)",
+          "RTID(ConveyorBelt@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)"             
+        ],
+        "MusicType": "MiniGame_A",
+        "NameMultiLanguage": {
+                    "en": "An eye for an eye",
+                    "zh": "以牙还牙"
+                },
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(DarkTutorialStage@LevelModules)"
+
+            }
+		},
+		{
+			"aliases": [
+				"atombomb"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "atombomb",
+				"Properties": "RTID(atombomb@CurrentLevel)"
+            }
+		},
+		{
+			"aliases": [
+				"atombomb"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 20,
+				"CooldownFrom": 0.75,
+				"SunCost": 275,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Explosive",
+				"ExplodeDamage": 1800,
+				"ExplodeSeedlingCount": 2,
+				"ExplodeProjectileType": "atombomb",
+				"SeedlingType": "RTID(seedling@CurrentLevel)",
+				"PlantfoodCallingType": [
+					"atombomb",
+					"RTID(seedling@CurrentLevel)"
+				]
+            }
+		},
+        {
+			"aliases": [
+				"seedling"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling@CurrentLevel)"
+			}
+		},
+        {
+			"aliases": [
+				"seedling"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 20,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Sun",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "hypnoshroom",
+                "GrowingTime": 2,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]    
+
+            }
+        },
+        {
+            "aliases": [
+                "ConveyorBelt"
+            ],
+            "objclass": "ConveyorSeedBankProperties",
+            "objdata": {
+                "DropDelayConditions": [
+                    {
+                        "Delay": 2,
+                        "MaxPackets": 0
+                    },
+                    {
+                        "Delay": 4,
+                        "MaxPackets": 4
+                    },
+                    {
+                        "Delay": 6,
+                        "MaxPackets": 8
+                    },
+                    {
+                        "Delay": 8,
+                        "MaxPackets": 12
+                    }
+                ],
+                "InitialPlantList": [
+                    {
+                        "MaxCount": 2,
+                        "MaxWeightFactor": 0,
+                        "MinCount": 0,
+                        "MinWeightFactor": 1,
+                        "PlantType": "RTID(atombomb@CurrentLevel)",
+                        "Weight": 5                    
+                    },
+                    {
+                        "PlantType": "hypnoshroom",
+                        "Weight": 20                                     
+                    }
+                ],
+                "SpeedConditions": [
+                    {
+                        "MaxPackets": 0,
+                        "Speed": 150
+                    }
+                ]
+                                   
+        }
+    },
+    {
+      "aliases": [
+        "Gravestones"
+      ],
+      "objclass": "GravestoneProperties",
+      "objdata": {
+        "ForceSpawnData": [
+          {           
+            "GridX": 2,
+            "GridY": 0,
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": 2,
+            "GridY": 4,
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": 3,
+            "GridY": 1,
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": 3,
+            "GridY": 3,
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": 4,
+            "GridY": 2,
+            "TypeName": "gravestonePlantfoodOnDestruction"
+          },
+          {
+            "GridX": 5,
+            "GridY": 1,
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": 5,
+            "GridY": 3,
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": 6,
+            "GridY": 0,
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": 6,
+            "GridY": 4,
+            "TypeName": "gravestone_dark"            
+          }
+        ]              
+ 
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {
+            "PointIncrementPerWave": -40,
+            "StartingPoints": -100,
+            "StartingWave": 3,
+            "ZombiePool": [
+              "RTID(dark@ZombieTypes)",
+              "RTID(dark_armor1@ZombieTypes)",
+              "RTID(dark_armor2@ZombieTypes)",
+              "RTID(dark_armor3@ZombieTypes)",
+              "RTID(dark_armor4@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": -25,
+            "StartingPoints": -100,
+            "StartingWave": 4,
+            "ZombiePool": [
+              "RTID(dark@ZombieTypes)",
+              "RTID(dark_armor1@ZombieTypes)",
+              "RTID(dark_armor2@ZombieTypes)",
+              "RTID(dark_armor3@ZombieTypes)",
+              "RTID(dark_armor4@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": -10,
+            "StartingPoints": -100,
+            "StartingWave": 5,
+            "ZombiePool": [
+              "RTID(dark@ZombieTypes)",
+              "RTID(dark_armor1@ZombieTypes)",
+              "RTID(dark_armor2@ZombieTypes)",
+              "RTID(dark_armor3@ZombieTypes)",
+              "RTID(dark_armor4@ZombieTypes)"
+            ]
+          },
+          {},
+          {
+            "PointIncrementPerWave": 20,
+            "StartingPoints": 100,
+            "StartingWave": 5,
+            "ZombiePool": [
+              "RTID(dark@ZombieTypes)",
+              "RTID(dark_armor1@ZombieTypes)",
+              "RTID(dark_armor2@ZombieTypes)",
+              "RTID(dark_armor3@ZombieTypes)",
+              "RTID(dark_armor4@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 40,
+            "StartingPoints": 200,
+            "StartingWave": 4,
+            "ZombiePool": [
+              "RTID(dark@ZombieTypes)",
+              "RTID(dark_armor1@ZombieTypes)",
+              "RTID(dark_armor2@ZombieTypes)",
+              "RTID(dark_armor3@ZombieTypes)",
+              "RTID(dark_armor4@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 60,
+            "StartingPoints": 400,
+            "StartingWave": 3,
+            "ZombiePool": [
+              "RTID(dark@ZombieTypes)",
+              "RTID(dark_armor1@ZombieTypes)",
+              "RTID(dark_armor2@ZombieTypes)",
+              "RTID(dark_armor3@ZombieTypes)",
+              "RTID(dark_armor4@ZombieTypes)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 6,
+        "WaveCount": 24,
+        "FlagWaveVeteranOverrideTypes": [ 0, 1, 1, 1 ],
+        "LevelJamList":[
+                    "jam_rap",
+			        "jam_8bit",
+                    "jam_metal",
+                    "jam_punk",
+                    "jam_pop"  
+                ],
+        "WaveSpendingPointIncrement": 200,
+        "WaveSpendingPoints": 200,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)",
+            "RTID(Scheduler0@CurrentLevel)",
+            "RTID(Scheduler1@CurrentLevel)",
+            "RTID(WaveDinoTimeEvent2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)",
+            "RTID(Scheduler3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)",
+            "RTID(RandomEvents1@CurrentLevel)"
+          ],
+
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave11@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave12@CurrentLevel)",
+            "RTID(RandomEvents2@CurrentLevel)",  
+            "RTID(RandomEvents1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave13@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave14@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave15@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave16@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave17@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave18@CurrentLevel)", 
+            "RTID(RandomEvents2@CurrentLevel)",  
+            "RTID(RandomEvents1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave19@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave20@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave21@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave22@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave23@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave24@CurrentLevel)", 
+            "RTID(RandomEvents1@CurrentLevel)",                  
+            "RTID(RandomEvents2@CurrentLevel)",                  
+            "RTID(WaveGravestonesEvent0@CurrentLevel)",                  
+            "RTID(WaveGraveSpawnEvent0@CurrentLevel)",
+            "RTID(WaveDinoTimeEvent2@CurrentLevel)"
+          ]
+        ]
+
+      }
+    },
+    {
+            "aliases": [
+                "Scheduler0"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 10,
+                    "Min": 10
+                },
+                "TimeBetween": {
+                    "Max": 30,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 100,
+                    "Min": 100
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "EndingWave": 23 ,                
+                "Events": [    
+                    "RTID(RandomEvents1@CurrentLevel)"
+                ] 
+        }
+    },
+    {
+            "aliases": [
+                "Scheduler1"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 30,
+                    "Min": 30
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 60
+                },
+                "Repeat": {
+                    "Max": 100,
+                    "Min": 100
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "EndingWave": 23 ,                
+                "Events": [   
+                   "RTID(RandomEvents2@CurrentLevel)"                     
+                ] 
+        }
+    },
+    {
+            "aliases": [
+                "Scheduler2"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 0,
+                    "Min": 0
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 60
+                },
+                "Repeat": {
+                    "Max": 100,
+                    "Min": 100
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "EndingWave": 23 ,                
+                "Events": [   
+                    "RTID(Warning0@CurrentLevel)",                  
+                    "RTID(WaveEvent0@CurrentLevel)"           
+                ] 
+        }
+    },
+    {
+            "aliases": [
+                "Scheduler3"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 0,
+                    "Min": 0
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 60
+                },
+                "Repeat": {
+                    "Max": 100,
+                    "Min": 100
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "EndingWave": 23 ,                
+                "Events": [   
+                    "RTID(WaveGravestonesEvent0@CurrentLevel)",                  
+                    "RTID(WaveGraveSpawnEvent0@CurrentLevel)"                
+                ]   
+                
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"      
+
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor4@ZombieTypes)"
+          
+          
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)"  
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"          
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"            
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"                 
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"             
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"                          
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"     
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"  
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"            
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"                 
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)"                                
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)"   
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"      
+
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor4@ZombieTypes)"
+          
+          
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)"  
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"          
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"            
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"                 
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"             
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"                          
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"     
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"  
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+           
+           
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"                 
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)"   
+               
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)"   
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave13"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"      
+
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave14"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor4@ZombieTypes)"
+          
+          
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)"    
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"          
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"            
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"                 
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"             
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"                          
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave16"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"     
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"  
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave17"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave18"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+           
+           
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"                 
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)"   
+               
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)"   
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave19"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"      
+
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave20"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor4@ZombieTypes)"
+          
+          
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)"  
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave21"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"          
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"            
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"                 
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"             
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"                          
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave22"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"     
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"  
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave23"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave24"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(modern_newspaper@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"  
+          },
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"            
+           
+           
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)" 
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_chi@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)"                 
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)"                  
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(abbot_fan@ZombieTypes)"   
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)"   
+          }
+        ] 
+      
+            }
+        },
+        {
+            "aliases": [
+                "Warning0"
+            ],
+            "objclass": "WaveWarningProps",
+            "objdata": {
+                "LabelR": 219,
+                "LabelG": 71,
+                "LabelB": 79,
+                "LabelAInit": 0.1,
+                "OutLineR": 201,
+                "OutLineG": 174,
+                "OutLineB": 69,
+                "String": "Clash Royale!",
+				        "StringMultiLanguage": {
+                    "en": "Clash Royale!",
+                    "zh": "皇室战争！"
+                },
+                "LabelTargetScale": 0.5,
+                "LabelInitScale": 4,
+                "Duration": 3,
+                "InitTime": 0.5	
+            }
+	    }, 
+        {
+			"aliases": [ "WaveEvent0" ],
+			"objclass": "SpawnZombiesFromGroundSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 7,
+				"ColumnStart": 4,
+				"Zombies": [ {
+						"Type": "RTID(dark_king_veteran@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(dark_king_veteran@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(dark_king_veteran@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(dark_king_veteran@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(dark_king_veteran@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(dark_king_veteran@ZombieTypes)"                                           
+                    },
+                    {
+                        "Type": "RTID(dark_king_veteran@ZombieTypes)" 
+                    },
+                    {
+                        "Type": "RTID(dark_king_veteran@ZombieTypes)"                                           
+					} ]
+      
+        }
+    },
+    {
+      "aliases": [
+        "RandomEvents1"
+      ],
+      "objclass": "RandomEventsProps",
+      "objdata": {
+        "EventCount": {
+          "Min": 1,
+          "Max": 1
+        },
+        "Events": [
+          "RTID(WaveDinoTimeEvent0@CurrentLevel)",
+          "RTID(WaveDinoTimeEvent1@CurrentLevel)",
+          "RTID(WaveDinoTimeEvent2@CurrentLevel)",
+          "RTID(WaveDinoTimeEvent3@CurrentLevel)",
+          "RTID(WaveDinoTimeEvent4@CurrentLevel)"         
+        ]  
+
+        }
+    },
+    {
+      "aliases": [
+        "WaveDinoTimeEvent0"
+      ],
+      "objclass": "DinoWaveActionProps",
+      "objdata": {
+        "DinoRow": 0,
+        "DinoType": "ankylo",
+        "DinoWaveDuration": "0"
+        }
+    },
+    {
+      "aliases": [
+        "WaveDinoTimeEvent1"
+      ],
+      "objclass": "DinoWaveActionProps",
+      "objdata": {
+        "DinoRow": 1,
+        "DinoType": "ankylo",
+        "DinoWaveDuration": "0"
+        }
+    },
+    {
+      "aliases": [
+        "WaveDinoTimeEvent2"
+      ],
+      "objclass": "DinoWaveActionProps",
+      "objdata": {
+        "DinoRow": 2,
+        "DinoType": "ankylo",
+        "DinoWaveDuration": "0"
+        }
+    },
+    {
+      "aliases": [
+        "WaveDinoTimeEvent3"
+      ],
+      "objclass": "DinoWaveActionProps",
+      "objdata": {
+        "DinoRow": 3,
+        "DinoType": "ankylo",
+        "DinoWaveDuration": "0"
+        }
+    },
+    {
+      "aliases": [
+        "WaveDinoTimeEvent4"
+      ],
+      "objclass": "DinoWaveActionProps",
+      "objdata": {
+        "DinoRow": 4,
+        "DinoType": "ankylo",
+        "DinoWaveDuration": "0"
+
+        }
+    },
+    {
+      "aliases": [
+        "RandomEvents2"
+      ],
+      "objclass": "RandomEventsProps",
+      "objdata": {
+        "EventCount": {
+          "Min": 3,
+          "Max": 2
+        },
+        "Events": [
+          "RTID(WavePortalsEvent0@CurrentLevel)",
+          "RTID(WavePortalsEvent1@CurrentLevel)",
+          "RTID(WavePortalsEvent2@CurrentLevel)",
+          "RTID(WavePortalsEvent3@CurrentLevel)",
+          "RTID(WavePortalsEvent4@CurrentLevel)",         
+          "RTID(WavePortalsEvent5@CurrentLevel)",
+          "RTID(WavePortalsEvent6@CurrentLevel)",
+          "RTID(WavePortalsEvent7@CurrentLevel)",
+          "RTID(WavePortalsEvent8@CurrentLevel)",
+          "RTID(WavePortalsEvent9@CurrentLevel)"         
+        ]  
+
+            }
+        },
+        {
+            "objclass": "PortalType",
+            "aliases": [
+                "kongfu"
+            ],
+            "objdata": {
+                "Properties": "RTID(Portal_kongfu@CurrentLevel)"
+            }
+        },
+        {
+            "objclass": "PortalProps",
+            "aliases": [
+                "Portal_kongfu"
+            ],
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Min": 5,
+                    "Max": 6
+                },
+                "TimeBetween": {
+                    "Min": 10,
+                    "Max": 12
+                },
+                "World": "kongfu",
+                "ZombieTypesToSpawn": [
+                    {
+                        "Weight": 20,
+                        "ZombieTypeName": "abbot_fan"
+                    },
+                    {
+                        "Weight": 5,
+                        "ZombieTypeName": "abbot_3section_staff"
+                    },
+                    {
+                        "Weight": 20,
+                        "ZombieTypeName": "abbot_chi"
+                    }
+                ]
+                
+            }
+        },
+        {
+            "aliases": [
+                "WavePortalsEvent0"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 6,
+                "PortalRow": 0,
+                "PortalType": "RTID(kongfu@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "WavePortalsEvent1"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 6,
+                "PortalRow": 1,
+                "PortalType": "RTID(kongfu@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "WavePortalsEvent2"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 6,
+                "PortalRow": 2,
+                "PortalType": "RTID(kongfu@CurrentLevel)" 
+            }
+        },
+        {
+            "aliases": [
+                "WavePortalsEvent3"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 6,
+                "PortalRow": 3,
+                "PortalType": "RTID(kongfu@CurrentLevel)" 
+            }
+        },
+        {
+            "aliases": [
+                "WavePortalsEvent4"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 6,
+                "PortalRow": 4,
+                "PortalType": "RTID(kongfu@CurrentLevel)"         
+            }
+        },
+        {
+            "aliases": [
+                "WavePortalsEvent5"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 7,
+                "PortalRow": 0,
+                "PortalType": "RTID(kongfu@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "WavePortalsEvent6"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 7,
+                "PortalRow": 1,
+                "PortalType": "RTID(kongfu@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "WavePortalsEvent7"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 7,
+                "PortalRow": 2,
+                "PortalType": "RTID(kongfu@CurrentLevel)" 
+            }
+        },
+        {
+            "aliases": [
+                "WavePortalsEvent8"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 7,
+                "PortalRow": 3,
+                "PortalType": "RTID(kongfu@CurrentLevel)" 
+            }
+        },
+        {
+            "aliases": [
+                "WavePortalsEvent9"
+            ],
+            "objclass": "SpawnModernPortalsWaveActionProps",
+            "objdata": {
+                "PortalColumn": 7,
+                "PortalRow": 4,
+                "PortalType": "RTID(kongfu@CurrentLevel)"         
+
+        }
+    },
+    {
+            "aliases": [
+                "WaveGravestonesEvent0"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "DisplacePlants": false,
+                "GravestonePool": [
+                    {
+                        "Count": 10,
+                        "Type": "RTID(gravestone_dark@GridItemTypes)"
+                    },
+                    {
+                        "Count": 1,
+                        "Type": "RTID(gravestonePlantfoodOnDestruction@GridItemTypes)"    
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                  {
+                        "mX": 4,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 4,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 4,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 4,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 4,
+                        "mY": 4
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 4
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 4
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 4                   
+                    }
+                ],
+                "SpawnSoundID": "",
+                "maxX": 8,
+                "minX": 0   
+        }
+    },
+    {
+      "aliases": [
+        "WaveGraveSpawnEvent0"
+      ],
+      "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+      "objdata": {
+        "AdditionalPlantfood": "0",
+        "GridTypes": [
+          "RTID(gravestone_dark@GridItemTypes)",
+          "RTID(gravestoneSunOnDestruction@GridItemTypes)",
+          "RTID(gravestonePlantfoodOnDestruction@GridItemTypes)"
+        ],
+        "WaveStartMessage": "[WARNING_GRAVESTONE_SPAWN]",
+        "ZombieSpawnWaitTime": "1",
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor4@ZombieTypes)"
+          }
+        ]                       
+      }
+    }
+  ],
+  "version": 1
+}

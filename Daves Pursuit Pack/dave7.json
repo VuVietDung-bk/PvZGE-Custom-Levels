@@ -1,0 +1,699 @@
+{
+  "Information": {
+    "Author": "ScatterPattern",
+    "Introduction": "",
+    "Version": "1.0",
+    "CreatedAt": "22.01.2026",
+    "UpdatedAt": "22.01.2026",
+    "Difficulty": "Easy",
+    "Category": "Adventure"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "<PLAYERNAME>'s Pursuit",
+        "LevelNumber": 7,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(WaveManager@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(InitialPlant@CurrentLevel)",
+          "RTID(ZombieDistance@CurrentLevel)",
+          "RTID(InitialGridItem@CurrentLevel)"
+        ],
+        "Name": "Dave's Pursuit - Night 7",
+        "WritenBy": "ScatterPattern",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "FirstIntroNarrative": "INTRO",
+"FirstOutroNarrative": "OUTRO",
+"ReplayIntroNarrative": "INTRO",
+"ReplayOutroNarrative": "OUTRO",
+        "StageModule": "RTID(LostCityNightStage@LevelModules)"
+      }
+    },
+    {
+    "aliases": [
+        "INTRO"
+    ],
+    "objclass": "NarrativeProperties",
+    "objdata": {
+        "Flow": [
+        {
+                "Character": "winnie",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "Area appears abandoned.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "It is possible I simply cannot see the zombies due to the darkness of the night, however.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "I require some time to create camp. Keep the flowers safe too, please, I will take them in a moment.",
+                    "zh": "???"
+                }
+            }
+        ]
+    }
+},
+{
+    "aliases": [
+        "OUTRO"
+    ],
+    "objclass": "NarrativeProperties",
+    "objdata": {
+        "Flow": [
+        {
+                "Character": "winnie",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "Threat detected! Wild, agitated animals have been detected!",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "...I see. It's dealt with.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "You require rest. I will scan for User Dave's presence.",
+                    "zh": "???"
+                }
+            }
+        ]
+    }
+},
+{
+      "aliases": [
+        "chicken_tough"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(chicken_tough@CurrentLevel)",
+        "ZombieBasedOn": "foodfight_turkey"
+      }
+    },
+    {
+      "aliases": [
+        "chicken_tough"
+      ],
+      "objclass": "ZombieProperties",
+      "objdata": {
+			"Toughness": 600,
+      "WalkSPS": 0.2,
+      "EatDPS": 300,
+      "StartingArmors": [ "lostcity_armor1" ]
+      }
+},
+{
+      "aliases": [
+        "chicken_tougher"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(chicken_tougher@CurrentLevel)",
+        "ZombieBasedOn": "chicken_pumpkin"
+      }
+    },
+    {
+      "aliases": [
+        "chicken_tougher"
+      ],
+      "objclass": "ZombieProperties",
+      "objdata": {
+			"Toughness": 1800,
+      "WalkSPS": 0.12,
+      "EatDPS": 300,
+      "StartingArmors": [ "modern_armor4", "modern_armor4" ],
+      "CannotBeEnlightenedBySolarSage": true, "CannotBeGrabbedByPtero": true, "CannotChangeLaneByPowerToss": true, "CannotBeFlickedByPowerToss": true, "CannotBeDraggedByTangleKelp": true, "CannotBeTossedByCitron": true, "CannotBeSwallowedByChomper": true, "ChillInsteadOfFreeze": true, "CannotBeKnockedBackByProjectiles": true
+      }
+},
+{
+      "objclass": "StarChallengeZombieDistanceProps",
+      "objdata": {
+        "SuppressObjectiveTip": true,
+        "TargetDistance": 3.1
+      },
+      "aliases": [
+        "ZombieDistance"
+      ]
+    },
+    {
+      "objclass": "InitialGridItemProperties",
+      "objdata": {
+        "InitialGridItemPlacements": [
+          {
+            "GridX": 1,
+            "GridY": 4,
+            "TypeName": "backpack"
+          },
+          {
+            "GridX": 4,
+            "GridY": 2,
+            "TypeName": "backpack"
+          },
+          {
+            "GridX": 5,
+            "GridY": 1,
+            "TypeName": "backpack"
+          },
+          {
+            "GridX": 7,
+            "GridY": 0,
+            "TypeName": "backpack"
+          },
+          {
+            "GridX": 8,
+            "GridY": 0,
+            "TypeName": "gravestone_lostcity"
+          },
+          {
+            "GridX": 8,
+            "GridY": 1,
+            "TypeName": "gravestone_lostcity"
+          },
+          {
+            "GridX": 8,
+            "GridY": 2,
+            "TypeName": "gravestone_lostcity"
+          },
+          {
+            "GridX": 8,
+            "GridY": 3,
+            "TypeName": "gravestone_lostcity"
+          },
+          {
+            "GridX": 8,
+            "GridY": 4,
+            "TypeName": "gravestone_lostcity"
+          },
+          {
+            "GridX": 7,
+            "GridY": 3,
+            "TypeName": "gravestone_lostcity"
+          },
+          {
+            "GridX": 7,
+            "GridY": 2,
+            "TypeName": "gravestone_lostcity"
+          },
+          {
+            "GridX": 4,
+            "GridY": 0,
+            "TypeName": "gravestone_lostcity"
+          }
+        ]
+      },
+      "aliases": [
+        "InitialGridItem"
+      ]
+    },
+    {
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 8,
+        "WaveCount": 8,
+        "SuppressFlagZombie": true,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ]
+        ],
+        "MaxNextWaveHealthPercentage": 0.5,
+        "MinNextWaveHealthPercentage": 0.5
+      },
+      "aliases": [
+        "WaveManager"
+      ]
+    },
+    {
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "SelectionMethod": "chooser"
+      },
+      "aliases": [
+        "SeedBank"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(chicken_tough@CurrentLevel)",
+            "Row": 1
+          }
+        ]
+      },
+      "aliases": [
+        "Wave1"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      },
+      "aliases": [
+        "Wave2"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 2
+          }
+        ]
+      },
+      "aliases": [
+        "Wave3"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(chicken_tough@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(chicken_tough@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(chicken_tough@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 1
+          }
+        ],
+        "AdditionalPlantfood": 1
+      },
+      "aliases": [
+        "Wave4"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(chicken_tough@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(chicken_tough@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(chicken_tough@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 3
+          }
+        ]
+      },
+      "aliases": [
+        "Wave5"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(chicken_tough@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(chicken_tough@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(chicken_tough@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(chicken_tough@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(chicken_tough@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 5
+          }
+        ],
+        "AdditionalPlantfood": 1
+      },
+      "aliases": [
+        "Wave6"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(chicken_tough@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(chicken_tough@CurrentLevel)",
+            "Row": 5
+          }
+        ]
+      },
+      "aliases": [
+        "Wave7"
+      ]
+    },
+    {
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(chicken_tough@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(chicken_tougher@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(chicken_tough@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(chicken_tougher@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(chicken_tough@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(chicken@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(iceage_weasel@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      },
+      "aliases": [
+        "Wave8"
+      ]
+    },
+    {
+      "objclass": "InitialPlantProperties",
+      "objdata": {
+        "InitialPlantPlacements": [
+          {
+            "TypeName": "marigold_pink",
+            "GridX": 6,
+            "GridY": 0
+          }
+        ]
+      },
+      "aliases": [
+        "InitialPlant"
+      ]
+    }
+  ],
+  "version": 1
+}

@@ -1,0 +1,563 @@
+{
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "PLAYERS_TRIP_TO_SKYCITY",
+        "FirstIntroNarrative": "SKYCITY_1_INTRO",
+        "FirstRewardParam": "skyshooter",
+        "FirstRewardType": "unlock_plant",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(GoldTiles@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(NewWaves@CurrentLevel)"
+        ],
+        "Name": "SKYCITY - Day 1",
+        "NameMultiLanguage": {
+            "en": "SKYCITY - Day 1",
+            "zh": "天空之城 - 第 1 天"
+        },
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(SkyStage@LevelModules)"
+      }
+    },
+    { 
+      "objclass": "NarrativeProperties",
+      "aliases": [
+        "SKYCITY_1_INTRO"
+      ],
+      "objdata": {
+        "AutoAdvance": true,
+        "DelayBetweenLines": 1.5,
+        "Flow": [
+            {
+                "Character": "crazydave",
+                "Action": "NPC_ENTER",
+                "Delay": 0.5
+            },
+            {
+                "Character": "winnie",
+                "Action": "NPC_ENTER",
+                "Delay": 0.5
+            },
+            {
+                "Character": "crazydave",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "It's so cold, where is this?",
+                    "zh": "好冷，这是哪里？"
+                },
+                "Delay": 0.3
+            },
+            {
+              "Character": "crazydave",
+              "Action": "SAY",
+              "Lines": {
+                  "en": "The wind here is so strong that I can't keep my eyes open",
+                  "zh": "这里的风好大，我的眼睛都睁不开了"
+              },
+              "Delay": 0.3
+            },
+            {
+                "Character": "winnie",
+                "Action": "TIRED",
+                "Lines": {
+                    "en": "We are now at a high altitude of 114,514 meters above the ground",
+                    "zh": "我们现在位于距地面114514米处的高空"
+                },
+                "Delay": 0.3
+            },
+            {
+                "Character": "crazydave",
+                "Action": "SHOUT",
+                "Lines": {
+                    "en": "What?! Are you trying to stink me out (sad)?",
+                    "zh": "什么？！你这家伙是想臭死我吗（悲）"
+                },
+                "Delay": 0.3
+            },            
+            {
+              "Character": "winnie",
+              "Action": "TIRED",
+              "Lines": {
+                  "en": "To be honest, I want it very much, even nine-tenths.",
+                  "zh": "说实话，我十分甚至九分地想"
+              },
+              "Delay": 0.3
+          },           
+          {
+            "Character": "crazydave",
+            "Action": "SAY",
+            "Lines": {
+                "en": "It doesn't look like there will be any tacos here...",
+                "zh": "这里看起来不像是会有玉米卷的样子......"
+            },
+            "Delay": 0.3
+          },            
+          {
+            "Character": "winnie",
+            "Action": "TIRED",
+            "Lines": {
+                "en": "Maybe, but it seems we can get a 'new type' of Peashooter.",
+                "zh": "也许吧，但是我们似乎可以得到一种“新型”豌豆射手"
+            },
+            "Delay": 0.3
+        },            
+        {
+          "Character": "crazydave",
+          "Action": "SHOUT",
+          "Lines": {
+              "en": "That's really exciting, I think I might be able to add it to the taco.",
+              "zh": "那真是太令人振奋了，我想我也许可以把它加到玉米卷里"
+          },
+          "Delay": 0.3
+        },          
+        {
+          "Character": "winnie",
+          "Action": "TIRED",
+          "Lines": {
+              "en": "...",
+              "zh": "......"
+          },
+          "Delay": 0.3
+        },        
+        {
+          "Character": "winnie",
+          "Action": "TIRED",
+          "Lines": {
+              "en": "But, user Dave, since you like eating tacos so much, why don't you go buy another one?",
+              "zh": "不过，用户戴夫，既然你这么喜欢吃玉米卷，为什么你不去再买一个呢？"
+          },
+          "Delay": 0.3
+        }
+        ]
+      }
+    },
+    {
+      "aliases": ["SeedBank"],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "SelectionMethod": "chooser",
+        "ForbiddenPlants": [
+          "RTID(gold_card_any@PlantTypes)",
+          "RTID(clover@PlantTypes)"
+        ]
+      }
+    },
+    {
+      "aliases": ["NewWaves"],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {
+            "PointIncrementPerWave": -30,
+            "StartingPoints": -80,
+            "StartingWave": 3,
+            "ZombiePool": [
+              "RTID(sky@ZombieTypes)",
+              "RTID(sky_armor1@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": -20,
+            "StartingPoints": -90,
+            "StartingWave": 4,
+            "ZombiePool": [
+              "RTID(sky@ZombieTypes)",
+              "RTID(sky_armor1@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": -15,
+            "StartingPoints": -70,
+            "StartingWave": 5,
+            "ZombiePool": [
+              "RTID(sky@ZombieTypes)",
+              "RTID(sky_armor1@ZombieTypes)",
+              "RTID(sky_armor2@ZombieTypes)"
+            ]
+          },
+          {},
+          {
+            "PointIncrementPerWave": 25,
+            "StartingPoints": 120,
+            "StartingWave": 6,
+            "ZombiePool": [
+              "RTID(sky@ZombieTypes)",
+              "RTID(sky_armor1@ZombieTypes)",
+              "RTID(sky_armor2@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 35,
+            "StartingPoints": 200,
+            "StartingWave": 7,
+            "ZombiePool": [
+              "RTID(sky@ZombieTypes)",
+              "RTID(sky_armor1@ZombieTypes)",
+              "RTID(sky_armor2@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 45,
+            "StartingPoints": 300,
+            "StartingWave": 8,
+            "ZombiePool": [
+              "RTID(sky@ZombieTypes)",
+              "RTID(sky_armor2@ZombieTypes)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": ["WaveManagerProps"],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 10,
+        "WaveCount": 20,
+        "WaveSpendingPointIncrement": 80,
+        "WaveSpendingPoints": 80,
+        "Waves": [
+          ["RTID(Wave1@CurrentLevel)"],
+          ["RTID(Wave2@CurrentLevel)"],
+          ["RTID(Wave3@CurrentLevel)"],
+          ["RTID(Wave4@CurrentLevel)"],
+          ["RTID(Wave5@CurrentLevel)"],
+          ["RTID(Wave6@CurrentLevel)"],
+          ["RTID(Wave7@CurrentLevel)"],
+          ["RTID(Wave8@CurrentLevel)"],
+          ["RTID(Wave9@CurrentLevel)"],
+          ["RTID(Wave10@CurrentLevel)"],
+          ["RTID(Wave11@CurrentLevel)"],
+          ["RTID(Wave12@CurrentLevel)"],
+          ["RTID(Wave13@CurrentLevel)"],
+          ["RTID(Wave14@CurrentLevel)"],
+          ["RTID(Wave15@CurrentLevel)"],
+          ["RTID(Wave16@CurrentLevel)"],
+          ["RTID(Wave17@CurrentLevel)"],
+          ["RTID(Wave18@CurrentLevel)"],
+          ["RTID(Wave19@CurrentLevel)"],
+          ["RTID(Wave20@CurrentLevel)"]
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave1"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {"Row": "3", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave2"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {"Row": "2", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "4", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "1", "Type": "RTID(sky_armor1@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave3"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [1,1,1,1,0,0,0],
+        "Zombies": [
+          {"Row": "5", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "3", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "2", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "4", "Type": "RTID(sky@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave4"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Row": "3", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "2", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "1", "Type": "RTID(sky@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave5"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [1,1,1,1,1,0,0],
+        "Zombies": [
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "4", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "1", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky_armor2@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave6"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "3", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "2", "Type": "RTID(sky_armor2@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave7"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [1,1,1,1,1,0,0],
+        "Zombies": [
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "4", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "2", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "1", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "3", "Type": "RTID(sky_armor2@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave8"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Row": "4", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "2", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "1", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "3", "Type": "RTID(sky_armor2@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave9"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [1,1,1,1,0,0,0],
+        "Zombies": [
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "3", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "2", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "4", "Type": "RTID(sky_armor2@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave10"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "4", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "3", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky_armor2@ZombieTypes)"},
+          {"Row": "1", "Type": "RTID(sky_armor2@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave11"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {"Row": "2", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "4", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "1", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "3", "Type": "RTID(sky_armor1@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave12"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {"Row": "3", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "1", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "2", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "4", "Type": "RTID(sky_armor1@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave13"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [1,1,1,0,1,0,0],
+        "Zombies": [
+          {"Row": "4", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "2", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "1", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "3", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky_armor1@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave14"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Row": "2", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "4", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "3", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "1", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "2", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "4", "Type": "RTID(sky_armor1@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave15"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [1,1,1,1,1,0,0],
+        "Zombies": [
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "3", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "1", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "4", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "2", "Type": "RTID(sky@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave16"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "2", "Type": "RTID(sky_armor2@ZombieTypes)"},
+          {"Row": "4", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "1", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "3", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky_armor1@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave17"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [1,1,1,1,0,0,0],
+        "Zombies": [
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "3", "Type": "RTID(sky_armor2@ZombieTypes)"},
+          {"Row": "1", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "2", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "4", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky_armor1@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave18"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Row": "3", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "3", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "2", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "1", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "4", "Type": "RTID(sky_armor2@ZombieTypes)"},
+          {"Row": "1", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "2", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "4", "Type": "RTID(sky@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave19"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [1,1,1,0,0,0,0],
+        "Zombies": [
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "4", "Type": "RTID(sky_armor2@ZombieTypes)"},
+          {"Row": "2", "Type": "RTID(sky_armor2@ZombieTypes)"},
+          {"Row": "1", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "3", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "2", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "4", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "1", "Type": "RTID(sky@ZombieTypes)"}
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave20"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky_armor2@ZombieTypes)"},
+          {"Row": "4", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "4", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "3", "Type": "RTID(sky_armor2@ZombieTypes)"},
+          {"Row": "2", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "1", "Type": "RTID(sky_armor2@ZombieTypes)"},
+          {"Row": "1", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "2", "Type": "RTID(sky@ZombieTypes)"},
+          {"Row": "3", "Type": "RTID(sky_armor1@ZombieTypes)"},
+          {"Row": "5", "Type": "RTID(sky@ZombieTypes)"}
+        ]
+      }
+    }
+  ],
+  "version": 1
+}

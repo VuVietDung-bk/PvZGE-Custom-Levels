@@ -1,0 +1,231 @@
+{
+  "#comment": "Pirate Challenge Laststand C",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "[PLAYERS_TRIP_TO_LOSTCITY]",
+        "LevelNumber": 4,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(ModPlants@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(LastStand@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(InitialZombiePlacement@CurrentLevel)"
+        ],
+        "MusicType": "MiniGame_A",
+        "NameMultiLanguage": {
+            "en": "I,Botany - Level <LEVELNUMBER>",
+            "zh": "我是植物 - 第 <LEVELNUMBER> 关"
+        },
+        "StageModule": "RTID(LostCityNightStage@LevelModules)"
+      }
+    },
+        {
+      "aliases": [
+        "ModPlants"
+      ],
+      "objclass": "PlantModifierProperties",
+      "objdata": {
+        "SuppressParticle": true,
+        "List": [
+          {
+             "Type": "melonpult",
+             "NewObjdata": {
+                 "ThrowInterval": 2.7,
+                 "ThrowIntervalAdditional": 0.01
+             }
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(BeatTheLevel@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": [
+        "BeatTheLevel"
+      ],
+      "objclass": "StarChallengeBeatTheLevelProps",
+      "objdata": {
+        "DescriptionsMultilanguage": [
+          {
+            "en": "Avoiding from using the sun shovel for better experience",
+            "zh": "避免使用阳光铲以获得更佳游戏体验"
+          }    
+        ]
+      }
+    },
+    {
+			"aliases": [
+				"lostcity_jane"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(lostcity_jane@CurrentLevel)",
+				"ZombieBasedOn": "lostcity_jane"
+			}
+		},
+    {
+			"aliases": [
+				"lostcity_jane"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"CannotBeTossedByCitron": false,
+				"CannotBeDetectedBySapfling": true,
+				"WalkSPS": 0.25,
+				"EatDPS": 100,
+				"Toughness": 350,
+				"WavePointCost": 200,
+				"Weight": 3000,
+				"HitRect": "RTID(LostcityJaneHitRect@RectangleProps)",
+				"AttackRect": "RTID(LostcityJaneAttackRect@RectangleProps)"
+			}
+		},
+    {
+      "aliases": [
+        "LastStand"
+      ],
+      "objclass": "LastStandMinigameProperties",
+      "objdata": {
+        "StartingPlantfood": 0,
+        "StartingSun": 1000
+      }
+    },
+    {
+      "aliases": [
+        "InitialZombiePlacement"
+      ],
+      "objclass": "InitialZombieProperties",
+      "objdata": {
+        "InitialZombiePlacements": [
+          {
+            "GridX": 8,
+            "GridY": 1,
+            "TypeName": "lostcity_impporter"
+          },
+          {
+            "GridX": 8,
+            "GridY": 2,
+            "TypeName": "lostcity_armor1"
+          },
+          {
+            "GridX": 8,
+            "GridY": 3,
+            "TypeName": "lostcity_impporter"
+          },
+          {
+            "GridX": 7,
+            "GridY": 4,
+            "TypeName": "lostcity_gargantuar"
+          },
+          {
+            "GridX": 8,
+            "GridY": 4,
+            "TypeName": "lostcity_armor1"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PresetPlantList": [
+          {
+            "Level": -1,
+            "PlantType": "melonpult"
+          },
+          {
+            "Level": -1,
+            "PlantType": "kernelpult"
+          },
+          {
+            "Level": -1,
+            "PlantType": "goldleaf"
+          }
+        ],
+        "SelectionMethod": "preset"
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "ManualStartup": true,
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },      
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "FlagWaveInterval": 1,
+      "WaveCount": 1,
+      "SuppressFlagZombie": true,
+      "WaveSpendingPointIncrement": 0,
+      "WaveSpendingPoints": 200,
+      "objdata": {
+        "Waves": [
+          [ 
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ]
+        ],
+        "ZombieCountdownFirstWaveSecs": 0.01  
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(lostcity_jane@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          
+        ]
+      }
+    }
+  ],
+  "version": 1
+}

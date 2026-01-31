@@ -1,0 +1,1004 @@
+{
+  "#comment": "ContingencyContract",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "面对天灾，放火烧山牢底坐穿",
+        "LevelNumber": 30,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(LostCityMowers@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(GoldTiles@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)"
+        ],
+        "Name": "ContingencyContract-LC-30",
+        "NameMultiLanguage": {
+          "en": "ContingencyContract-LC-30",
+          "zh": "危机合约-遗落都市-day30"
+        },
+        "WritenBy": "solar_tomato",
+        "NormalPresentTable": "lostcity_normal_01",
+        "ShinyPresentTable": "lostcity_shiny_01",
+        "StageModule": "RTID(LostCityStage@LevelModules)"
+      }
+    },
+    {
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(BeatTheLevel@CurrentLevel)",
+            "RTID(DoNotPlantBeforeLine@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": [
+        "BeatTheLevel"
+      ],
+      "objclass": "StarChallengeBeatTheLevelProps",
+      "objdata": {
+        "DescriptionsMultilanguage": [
+          {
+            "en": "All zombies have -25% movement speed but gain +150% health, +50% attack damage, and +30% armor durability",
+            "zh": "所有僵尸的移动速度-25%，但是生命值+150%，攻击力+50%，防具耐久度+30%"
+          },
+          {
+            "en": "All Relic Hunter have -30% health but gain +80% attack damage, and land at column 4",
+            "zh": "所有遗迹猎人的生命值-30%，但是攻击力+80%，落地位置固定为4列"
+          },
+          {
+            "en": "All Imp Porter gain +200% attack damage and movement speed",
+            "zh": "所有搬运小鬼的攻击力和移动速度+200%"
+          },
+          {
+            "en": "Some Crystal Skull are equipped with fragile level 2 armor, gain +60% movement speed, and have reduced attack range and charge cooldown;Some Crystal Skull have -20% movement speed but gain +160% health, and have increased attack range and charge time",
+            "zh": "部分考古学家携带脆弱二级防具，移动速度+60%，攻击距离和蓄力冷却时间缩短；部分考古学家的移动速度-20%，但是生命值+160%，攻击距离和蓄力时间变长"
+          },
+          {
+            "en": "Some waves and dynamic spawning are modified, with certain plants disabled",
+            "zh": "部分波次和动态出怪有所不同，禁用部分植物"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "DoNotPlantBeforeLine"
+      ],
+      "objclass": "MoldColonyChallengeProps",
+      "objdata": {
+        "SuppressObjectiveTip": true,
+        "Locations": "RTID(Column0_To_Column2@BoardGridMaps)",
+        "MoldMatrix":[
+          "111",
+          "111",
+          "111",
+          "111",
+          "111"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PlantExcludeList": [
+          "blover","hurrikale"
+        ],
+        "SelectionMethod": "chooser"
+      }
+    },
+    {
+      "aliases": [
+        "GoldTiles"
+      ],
+      "objclass": "InitialGridItemProperties",
+      "objdata": {
+        "InitialGridItemPlacements": [
+          {
+            "GridX": 3,
+            "GridY": 0,
+            "TypeName": "goldtile"
+          },
+          {
+            "GridX": 6,
+            "GridY": 0,
+            "TypeName": "goldtile"
+          },
+          {
+            "GridX": 7,
+            "GridY": 1,
+            "TypeName": "goldtile"
+          },
+          {
+            "GridX": 3,
+            "GridY": 1,
+            "TypeName": "goldtile"
+          },
+          {
+            "GridX": 5,
+            "GridY": 1,
+            "TypeName": "goldtile"
+          },
+          {
+            "GridX": 8,
+            "GridY": 2,
+            "TypeName": "goldtile"
+          },
+          {
+            "GridX": 3,
+            "GridY": 2,
+            "TypeName": "goldtile"
+          },
+          {
+            "GridX": 4,
+            "GridY": 2,
+            "TypeName": "goldtile"
+          },
+          {
+            "GridX": 7,
+            "GridY": 3,
+            "TypeName": "goldtile"
+          },
+          {
+            "GridX": 3,
+            "GridY": 3,
+            "TypeName": "goldtile"
+          },
+          {
+            "GridX": 5,
+            "GridY": 3,
+            "TypeName": "goldtile"
+          },
+          {
+            "GridX": 3,
+            "GridY": 4,
+            "TypeName": "goldtile"
+          },
+          {
+            "GridX": 6,
+            "GridY": 4,
+            "TypeName": "goldtile"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {
+            "PointIncrementPerWave": -40,
+            "StartingPoints": -100,
+            "StartingWave": 3,
+            "ZombiePool": [
+              "RTID(lostcity@CurrentLevel)",
+              "RTID(lostcity_armor1@CurrentLevel)",
+              "RTID(lostcity_armor2@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": -25,
+            "StartingPoints": -100,
+            "StartingWave": 4,
+            "ZombiePool": [
+              "RTID(lostcity@CurrentLevel)",
+              "RTID(lostcity_armor1@CurrentLevel)",
+              "RTID(lostcity_armor2@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": -10,
+            "StartingPoints": -100,
+            "StartingWave": 5,
+            "ZombiePool": [
+              "RTID(lostcity@CurrentLevel)",
+              "RTID(lostcity_armor1@CurrentLevel)",
+              "RTID(lostcity_armor2@CurrentLevel)"
+            ]
+          },
+          {},
+          {
+            "PointIncrementPerWave": 20,
+            "StartingPoints": 100,
+            "StartingWave": 5,
+            "ZombiePool": [
+              "RTID(lostcity@CurrentLevel)",
+              "RTID(lostcity_armor1@CurrentLevel)",
+              "RTID(lostcity_armor2@CurrentLevel)",
+              "RTID(lostcity_jane@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 40,
+            "StartingPoints": 200,
+            "StartingWave": 4,
+            "ZombiePool": [
+              "RTID(lostcity@CurrentLevel)",
+              "RTID(lostcity_armor1@CurrentLevel)",
+              "RTID(lostcity_armor2@CurrentLevel)",
+              "RTID(lostcity_jane@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 60,
+            "StartingPoints": 400,
+            "StartingWave": 3,
+            "ZombiePool": [
+              "RTID(lostcity@CurrentLevel)",
+              "RTID(lostcity_armor1@CurrentLevel)",
+              "RTID(lostcity_armor2@CurrentLevel)",
+              "RTID(lostcity_jane@CurrentLevel)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 5,
+        "WaveCount": 10,
+        "WaveSpendingPointIncrement": 50,
+        "WaveSpendingPoints": 100,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_jane@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(lostcity_jane@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_impporter@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(lostcity_impporter@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_excavator@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(lostcity@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(lostcity_excavator@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_bug@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(lostcity_bug@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(lostcity_impporter@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(lostcity_crystalskull_long@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(lostcity_relichunter@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(lostcity_impporter@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(lostcity_relichunter@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(lostcity_impporter@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(lostcity_impporter@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(lostcity_crystalskull_fast@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(lostcity_crystalskull_long@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(lostcity_crystalskull_fast@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(lostcity_bug@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(lostcity_bug@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(lostcity_bug_armor1@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(lostcity@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(lostcity@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(lostcity_relichunter@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(lostcity_relichunter@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(lostcity_relichunter@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(lostcity_impporter@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(lostcity_impporter@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(lostcity_impporter@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "4",
+            "Type": "RTID(lostcity_excavator@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(lostcity_crystalskull_long@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(lostcity_crystalskull_fast@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(lostcity_crystalskull_fast@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(lostcity_jane@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(lostcity_bug@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(lostcity@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(lostcity_crystalskull_fast@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(lostcity_crystalskull_fast@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(lostcity_excavator@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(lostcity_excavator@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(lostcity_impporter@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(lostcity_impporter@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(lostcity_bug_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(lostcity_bug@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(lostcity_bug_armor1@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(lostcity_bug@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(lostcity_excavator@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(lostcity_crystalskull_long@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(lostcity_crystalskull_long@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(lostcity_crystalskull_fast@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(lostcity_crystalskull_fast@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(lostcity_crystalskull_fast@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(lostcity_bug@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(lostcity_jane@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "lostcity_armor1"
+      ],
+      "objclass": "ArmorType",
+      "objdata": {
+        "Properties": "RTID(lostcity_armor1@CurrentLevel)",
+        "ArmorBaseOn": "lostcity_armor1"
+      }
+    },
+		{
+      "aliases": [
+        "lostcity_armor1"
+      ],
+      "objclass": "ArmorProperties",
+      "objdata": {
+        "isMetal": false,
+        "isIce": false,
+        "Toughness": 481,
+        "BowlingLevel": 1
+      }
+    },
+    {
+      "aliases": [
+        "lostcity_armor2_weak"
+      ],
+      "objclass": "ArmorType",
+      "objdata": {
+        "Properties": "RTID(lostcity_armor2_weak@CurrentLevel)",
+        "ArmorBaseOn": "lostcity_armor2"
+      }
+    },
+		{
+      "aliases": [
+        "lostcity_armor2_weak"
+      ],
+      "objclass": "ArmorProperties",
+      "objdata": {
+        "isMetal": false,
+        "isIce": false,
+        "Toughness": 280,
+        "BowlingLevel": 1
+      }
+    },
+    {
+      "aliases": [
+        "lostcity_armor2"
+      ],
+      "objclass": "ArmorType",
+      "objdata": {
+        "Properties": "RTID(lostcity_armor2@CurrentLevel)",
+        "ArmorBaseOn": "lostcity_armor2"
+      }
+    },
+		{
+      "aliases": [
+        "lostcity_armor2"
+      ],
+      "objclass": "ArmorProperties",
+      "objdata": {
+        "isMetal": true,
+        "isIce": false,
+        "Toughness": 1430,
+        "BowlingLevel": 2
+      }
+    },
+    {
+			"aliases": [
+				"lostcity"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(lostcity@CurrentLevel)",
+				"ZombieBasedOn": "lostcity"
+			}
+		},
+		{
+			"aliases": [
+				"lostcity"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"BugToughness": 0,
+				"WalkSPS": 0.13875,
+				"EatDPS": 150,
+				"Toughness": 475,
+				"WavePointCost": 100,
+				"Weight": 1000
+      }
+		},
+    {
+			"aliases": [
+				"lostcity_armor1"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(lostcity_armor1@CurrentLevel)",
+				"ZombieBasedOn": "lostcity_armor1"
+			}
+		},
+		{
+			"aliases": [
+				"lostcity_armor1"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+        "BugToughness": 0,
+				"WalkSPS": 0.13875,
+				"EatDPS": 150,
+				"Toughness": 475,
+				"StartingArmors": [
+					"lostcity_armor1"
+				],
+				"WavePointCost": 200,
+				"Weight": 3000
+      }
+		},
+    {
+			"aliases": [
+				"lostcity_armor2"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(lostcity_armor2@CurrentLevel)",
+				"ZombieBasedOn": "lostcity_armor2"
+			}
+		},
+		{
+			"aliases": [
+				"lostcity_armor2"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+        "BugToughness": 0,
+				"WalkSPS": 0.13875,
+				"EatDPS": 150,
+				"Toughness": 475,
+				"StartingArmors": [
+					"lostcity_armor2"
+				],
+				"WavePointCost": 400,
+				"Weight": 4000
+      }
+		},
+    {
+			"aliases": [
+				"lostcity_bug"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(lostcity_bug@CurrentLevel)",
+				"ZombieBasedOn": "lostcity_bug"
+			}
+		},
+		{
+			"aliases": [
+				"lostcity_bug"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.13875,
+				"EatDPS": 150,
+				"Toughness": 475,
+				"BugToughness": 350,
+				"BuggedSPS": 0.4,
+				"WavePointCost": 350,
+				"Weight": 2000
+      }
+		},
+    {
+			"aliases": [
+				"lostcity_bug_armor1"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(lostcity_bug_armor1@CurrentLevel)",
+				"ZombieBasedOn": "lostcity_bug_armor1"
+			}
+		},
+		{
+			"aliases": [
+				"lostcity_bug_armor1"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.13875,
+				"EatDPS": 150,
+				"Toughness": 475,
+				"BugToughness": 350,
+				"BuggedSPS": 0.4,
+				"StartingArmors": [
+					"lostcity_armor1"
+				],
+				"WavePointCost": 500,
+				"Weight": 3000
+      }
+		},
+    {
+			"aliases": [
+				"lostcity_excavator"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(lostcity_excavator@CurrentLevel)",
+				"ZombieBasedOn": "lostcity_excavator"
+			}
+		},
+		{
+			"aliases": [
+				"lostcity_excavator"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "CannotBeTossedByCitron": false,
+				"ShovelDamage": 150,
+				"WalkSPS": 0.225,
+				"EatDPS": 150,
+				"Toughness": 875,
+				"WavePointCost": 300,
+				"Weight": 3000
+      }
+		},
+    {
+			"aliases": [
+				"lostcity_jane"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(lostcity_jane@CurrentLevel)",
+				"ZombieBasedOn": "lostcity_jane"
+			}
+		},
+		{
+			"aliases": [
+				"lostcity_jane"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "CannotBeTossedByCitron": false,
+				"CannotBeDetectedBySapfling": true,
+				"WalkSPS": 0.1875,
+				"EatDPS": 150,
+				"Toughness": 875,
+				"WavePointCost": 200,
+				"Weight": 3000
+      }
+		},
+    {
+			"aliases": [
+				"lostcity_relichunter"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(lostcity_relichunter@CurrentLevel)",
+				"ZombieBasedOn": "lostcity_relichunter"
+			}
+		},
+		{
+			"aliases": [
+				"lostcity_relichunter"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "ChooseToSpawnOnNonDeckRows": true,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.11625,
+				"EatDPS": 270,
+				"Toughness": 1330,
+				"LandingColumns": [
+					3
+				],
+				"WavePointCost": 550,
+				"Weight": 3000
+      }
+		},
+    {
+			"aliases": [
+				"lostcity_impporter"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(lostcity_impporter@CurrentLevel)",
+				"ZombieBasedOn": "lostcity_impporter"
+			}
+		},
+		{
+			"aliases": [
+				"lostcity_impporter"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "KilledByShrinkingViolet": true,
+				"CannotBeGrabbedByPtero": true,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.41625,
+				"EatDPS": 450,
+				"Toughness": 875,
+				"WavePointCost": 450,
+				"Weight": 3000
+      }
+		},
+    {
+			"aliases": [
+				"lostcity_crystalskull_long"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(lostcity_crystalskull_long@CurrentLevel)",
+				"ZombieBasedOn": "lostcity_crystalskull"
+			}
+		},
+		{
+			"aliases": [
+				"lostcity_crystalskull_long"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "CannotBeTossedByCitron": false,
+				"MaxAbsorbValue": 250,
+				"WalkSPS": 0.111,
+				"EatDPS": 150,
+				"Toughness": 1625,
+				"LaserBeamDamage": 4001,
+				"LaserBeamLength": 440,
+				"LaserCooldownTime": 5,
+				"ChargingTime": 13,
+				"ChargingTimeDecrementPer50Sun": 0.2,
+				"WavePointCost": 500,
+				"Weight": 3000
+      }
+		},
+    {
+			"aliases": [
+				"lostcity_crystalskull_fast"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(lostcity_crystalskull_fast@CurrentLevel)",
+				"ZombieBasedOn": "lostcity_crystalskull"
+			}
+		},
+		{
+			"aliases": [
+				"lostcity_crystalskull_fast"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "CannotBeTossedByCitron": false,
+				"MaxAbsorbValue": 250,
+				"WalkSPS": 0.222,
+				"EatDPS": 150,
+				"Toughness": 625,
+				"LaserBeamDamage": 4001,
+				"LaserBeamLength": 90,
+				"LaserCooldownTime": 2,
+				"ChargingTime": 2,
+				"ChargingTimeDecrementPer50Sun": 0.2,
+        "StartingArmors": [
+					"lostcity_armor2_weak"
+				],
+				"WavePointCost": 500,
+				"Weight": 3000
+      }
+		}
+  ],
+  "version": 1
+}

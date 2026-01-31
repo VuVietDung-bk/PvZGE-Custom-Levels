@@ -1,0 +1,1038 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "hinanarukami",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2025-08-13",
+    "UpdatedAt": "2025-08-13",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "A random quest for a random plant in a random world",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		      "RTID(StandardIntro@LevelModules)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(SunUsed@CurrentLevel)",
+          "RTID(ProtectThePlant@CurrentLevel)"
+        ],
+        "Name": "Caulipower - Level 5",
+        "WritenBy": "hinanarukami",
+        "MusicType": "MiniGame_B",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(FallsStage@LevelModules)"
+      }
+    },
+    {
+      "aliases": [
+        "garg_with_pf"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(garg_with_pf@CurrentLevel)",
+        "ZombieBasedOn": "tutorial_gargantuar"
+      }
+    },
+    {
+      "aliases": [
+        "garg_with_pf"
+      ],
+      "objclass": "ZombieProperties",
+      "objdata": { "CowboyPianoDancingSpeedScale": 0.7, "ZombieSort": "Gargantuar", "CannotBeEnlightenedBySolarSage": true, "CannotBeGrabbedByPtero": true, "CannotChangeLaneByPowerToss": true, "CannotBeFlickedByPowerToss": true, "CannotBeDraggedByTangleKelp": true, "CannotBeTossedByCitron": true, "CannotBeSwallowedByChomper": true, "CannotCarryPlantfoodsInWaves": false, "SmashDamage": 1500, "WalkSPS": 0.24, "EatDPS": 100, "Toughness": 3600, "LivesInDeepWater": true, "NormalDeathWhenMowed": true, "WavePointCost": 1500, "Weight": 3000, "HitRect": "RTID(GargantuarHitRect@RectangleProps)", "AttackRect": "RTID(GargantuarAttackRect@RectangleProps)" }
+    },
+    {
+      "objclass": "StarChallengeSunUsedProps",
+      "objdata": {
+        "MaximumSun": 2500
+      },
+      "aliases": [
+        "SunUsed"
+      ]
+    },
+    {
+            "aliases": [
+                "ProtectThePlant"
+            ],
+            "objclass": "ProtectThePlantChallengeProperties",
+            "objdata": {
+                "MustProtectCount": 2,
+                "Plants": [
+                    {
+                        "GridX": 4,
+                        "GridY": 2,
+                        "PlantType": "caulipower"
+                    },
+					          {
+                        "GridX": 3,
+                        "GridY": 2,
+                        "PlantType": "caulipower"
+                    }
+                ]
+            }
+        },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PlantExcludeList": [
+          "electriccurrant", "glaciershroom"
+        ],
+        "PresetPlantList": [
+            {
+                "PlantType": "caulipower",
+                "Level": -1
+            }
+        ],
+        "SelectionMethod": "chooser",
+        "CardDecks": {
+          "Recommended": [
+            {
+              "Name": {
+                "en": "Recommended",
+                "zh": "受到推崇的"
+              },
+              "Leader": 1,
+              "Plants": [
+                "caulipower",
+                "sapfling",
+                "puffshroom",
+                "goldbloom",
+                "coldsnapdragon",
+                "iceburg",
+                "squash",
+                "stunion"
+              ]
+            }
+          ],
+          "ChallengingLocked": false,
+          "Challenging": [
+            {
+              "Name": {
+                "en": "Challenge",
+                "zh": "挑战"
+              },
+              "Leader": 5,
+              "HugeWaveGem": 2,
+              "Plants": [
+                "caulipower",
+                "stunion",
+                "seashroom",
+                "puffshroom",
+                "stallia",
+                "plantern"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 200,
+            "StartingPoints": 1500,
+            "StartingWave": 8,
+            "ZombiePool": [
+              "RTID(tutorial_gargantuar@ZombieTypes)",
+              "RTID(feastivus_gargantuar@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 230,
+            "StartingPoints": 1500,
+            "StartingWave": 7,
+            "ZombiePool": [
+              "RTID(tutorial_gargantuar@ZombieTypes)",
+              "RTID(feastivus_gargantuar@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 270,
+            "StartingPoints": 1500,
+            "StartingWave": 6,
+            "ZombiePool": [
+              "RTID(tutorial_gargantuar@ZombieTypes)",
+              "RTID(feastivus_gargantuar@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 300,
+            "StartingPoints": 1500,
+            "StartingWave": 6,
+            "ZombiePool": [
+              "RTID(tutorial_gargantuar@ZombieTypes)",
+              "RTID(feastivus_gargantuar@ZombieTypes)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 8,
+        "WaveCount": 16,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)", "RTID(PlantFoodSpawner0@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)", "RTID(PlantFoodSpawner1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave11@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave12@CurrentLevel)", "RTID(PlantFoodSpawner2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave13@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave14@CurrentLevel)", "RTID(PlantFoodSpawner3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave15@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave16@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+		{
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(dino_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 3,
+            "Column": 2
+          },
+          {
+            "Type": "RTID(dino_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 5,
+            "Column": 4
+          },
+          {
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave2"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(egypt_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 2,
+            "Column": 3
+          },
+          {
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pirate_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(cowboy_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 4,
+            "Column": 2
+          },
+          {
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave3"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 1,
+            "Column": 3
+          },
+          {
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 5,
+            "Column": 2
+          },
+          {
+            "Type": "RTID(lostcity_gargantuar@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave4"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dino_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(summer_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 2,
+            "Column": 4
+          },
+          {
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(halloween_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 4,
+            "Column": 3
+          },
+          {
+            "Type": "RTID(pirate_gargantuar@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave5"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(feastivus_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 1,
+            "Column": 2
+          },
+          {
+            "Type": "RTID(egypt_gargantuar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(holiday_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(kongfu_bronze_strong@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 3,
+            "Column": 3
+          },
+          {
+            "Type": "RTID(cowboy_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave6"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 2,
+            "Column": 4
+          },
+          {
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dino_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 4,
+            "Column": 2
+          },
+          {
+            "Type": "RTID(summer_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(halloween_gargantuar@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave7"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(feastivus_gargantuar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(holiday_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 1,
+            "Column": 3
+          },
+          {
+            "Type": "RTID(egypt_gargantuar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pirate_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(cowboy_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(kongfu_bronze_strong@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 5,
+            "Column": 4
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave8"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 2,
+            "Column": 3
+          },
+          {
+            "Type": "RTID(lostcity_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dino_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(summer_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 4,
+            "Column": 2
+          },
+          {
+            "Type": "RTID(halloween_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(feastivus_gargantuar@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave9"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(holiday_gargantuar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(egypt_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 1,
+            "Column": 4
+          },
+          {
+            "Type": "RTID(pirate_gargantuar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(cowboy_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(kongfu_bronze_strong@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 3,
+            "Column": 3
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 5,
+            "Column": 2
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_gargantuar@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave10"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dino_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 2,
+            "Column": 3
+          },
+          {
+            "Type": "RTID(summer_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(halloween_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(feastivus_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 4,
+            "Column": 4
+          },
+          {
+            "Type": "RTID(holiday_gargantuar@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave11"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(egypt_gargantuar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pirate_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 1,
+            "Column": 2
+          },
+          {
+            "Type": "RTID(cowboy_gargantuar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(kongfu_bronze_strong@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 3,
+            "Column": 2
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 5,
+            "Column": 3
+          },
+          {
+            "Type": "RTID(eighties_gargantuar@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave12"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(dino_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(summer_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(halloween_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 2,
+            "Column": 4
+          },
+          {
+            "Type": "RTID(feastivus_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(holiday_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 4,
+            "Column": 2
+          },
+          {
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(egypt_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pirate_gargantuar@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave13"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(cowboy_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 1,
+            "Column": 3
+          },
+          {
+            "Type": "RTID(kongfu_bronze_strong@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 1,
+            "Column": 5
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 3,
+            "Column": 3
+          },
+          {
+            "Type": "RTID(eighties_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dino_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 5,
+            "Column": 2
+          },
+          {
+            "Type": "RTID(summer_gargantuar@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave14"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(halloween_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(feastivus_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(holiday_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 2,
+            "Column": 3
+          },
+          {
+            "Type": "RTID(egypt_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pirate_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 4,
+            "Column": 4
+          },
+          {
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(cowboy_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(kongfu_bronze_strong@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 4,
+            "Column": 2
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave15"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 1,
+            "Column": 4
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 3,
+            "Column": 3
+          },
+          {
+            "Type": "RTID(dino_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(summer_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(halloween_gargantuar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(feastivus_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 5,
+            "Column": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": ["Wave16"],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(holiday_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(egypt_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 2,
+            "Column": 2
+          },
+          {
+            "Type": "RTID(pirate_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(cowboy_gargantuar@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 2,
+            "Column": 4
+          },
+          {
+            "Type": "RTID(kongfu_bronze_strong@ZombieTypes)",
+            "Style": "sandstorm",
+            "Row": 4,
+            "Column": 3
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(tutorial_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+        {
+            "aliases": [
+                "PlantFoodSpawner0"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(garg_with_pf@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PlantFoodSpawner1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(garg_with_pf@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PlantFoodSpawner2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    0,
+                    1
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(garg_with_pf@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PlantFoodSpawner3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Type": "RTID(garg_with_pf@CurrentLevel)"
+                    }
+                ]
+            }
+        }
+  ],
+  "version": 1
+}

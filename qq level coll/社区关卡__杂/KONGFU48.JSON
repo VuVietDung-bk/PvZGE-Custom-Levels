@@ -1,0 +1,773 @@
+{
+  "#comment": "Cowboy Zomboss",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "[PLAYERS_TRIP_TO_KONGFU]",
+        "FirstIntroNarrative": "KONGFU_48_INTRO",
+        "FirstOutroNarrative": "KONGFU_48_OUTRO",
+        "FirstRewardType": "worldtrophy",
+        "ForceToWorldMap": true,
+        "GameFeaturesToUnlock": [
+          "world_trophy_cowboy"
+        ],
+        "LevelNumber": 48,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombossIntro@LevelModules)",
+          "RTID(KongfuMowers@LevelModules)",
+          "RTID(KongfuRack@CurrentLevel)",
+          "RTID(ConveyorBelt@CurrentLevel)",
+          "RTID(ZombossBattle@CurrentLevel)",
+          "RTID(CowboyRails@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)"
+        ],
+        "MusicType": "MiniGame_A",
+        "Name": "[KONGFU_LEVEL_NAME]",
+        "NormalPresentTable": "cowboy_normal_01",
+        "RepeatPlayForceToWorldMap": true,
+        "ShinyPresentTable": "cowboy_shiny_01",
+        "StageModule": "RTID(KongfuBossStage@LevelModules)",
+        "VictoryModule": "RTID(ZombossVictoryOutro@LevelModules)",
+        "LoadDefaultMusic": false
+      }
+    },
+      {
+            "objclass": "NarrativeProperties",
+            "aliases": [
+                "KONGFU_48_INTRO"
+            ],
+            "objdata": {
+                "Flow": [
+                    {
+                        "Character": "zombossicon",
+                        "Action": "NPC_ENTER"
+                    },
+                    {
+                        "Character": "zombossicon",
+                        "Action": "SAY",
+                        "Lines": {
+                            "en": "Upon a time.",
+                            "zh": "从前有座山，山中有座庙。"
+                        }
+                    },
+                    {
+                        "Character": "zombossicon",
+                        "Action": "SAY",
+                        "Lines": {
+                            "en": "There is a chi master.",
+                            "zh": "庙中有一位气功大师。"
+                        }
+                    },
+                    {
+                        "Character": "zombossicon",
+                        "Action": "SAY",
+                        "Lines": {
+                            "en": "He will save zombies in danger.",
+                            "zh": "他会拯救僵尸们于水火之中。"
+                        }
+                    }
+                ]
+            }
+        },
+      {
+            "objclass": "NarrativeProperties",
+            "aliases": [
+                "KONGFU_48_OUTRO"
+            ],
+            "objdata": {
+                "Flow": [
+                    {
+                        "Character": "crazydave",
+                        "Action": "NPC_ENTER"
+                    },
+                    {
+                        "Character": "crazydave",
+                        "Action": "SAY",
+                        "Lines": {
+                            "en": "That is unblievable!",
+                            "zh": "难以置信!"
+                        }
+                    },
+                    {
+                        "Character": "crazydave",
+                        "Action": "SAY",
+                        "Lines": {
+                            "en": "We do that.",
+                            "zh": "我们击败他了。"
+                        }
+                    },
+                    {
+                        "Character": "winnie",
+                        "Action": "NPC_ENTER"
+                    },
+                    {
+                        "Character": "winnie",
+                        "Action": "TIRED",
+                        "Lines": {
+                            "en": "User Dave,the ending is coming.",
+                            "zh": "用户戴夫，这里的旅途结束了。"
+                        }
+                    },
+                    {
+                        "Character": "winnie",
+                        "Action": "SAY",
+                        "Lines": {
+                            "en": "It seems that there is no corn tortilla.",
+                            "zh": "看来这个时空没有玉米卷。"
+                        }
+                    },
+                    {
+                        "Character": "zombossicon",
+                        "Action": "NPC_ENTER"
+                    },
+                    {
+                        "Character": "zombossicon",
+                        "Action": "SAY",
+                        "Lines": {
+                            "en": "Bad...none can help me get your brain in this timeline.",
+                            "zh": "可恶...没人给我交房租了。"
+                        }
+                    },
+                    {
+                        "Character": "zombossicon",
+                        "Action": "SAY",
+                        "Lines": {
+                            "en": "But.",
+                            "zh": "但别得意。"
+                        }
+                    },
+                    {
+                        "Character": "zombossicon",
+                        "Action": "SAY",
+                        "Lines": {
+                            "en": "We will meet again,the sky is the destination.",
+                            "zh": "我们还会再见面,天空即为极限。"
+                        }
+                    }
+                ]
+            }
+        },
+    {
+      "aliases": [
+        "CowboyRails"
+      ],
+      "objclass": "RailcartProperties",
+      "objdata": {
+        "RailcartType": "railcart_kongfu",
+        "Railcarts": [
+          {
+            "Column": 0,
+            "Row": 0
+          }
+        ],
+        "Rails": [
+          {
+            "Column": 0,
+            "RowEnd": 4,
+            "RowStart": 0
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ConveyorBelt"
+      ],
+      "objclass": "ConveyorSeedBankProperties",
+      "objdata": {
+        "DropDelayConditions": [
+          {
+            "Delay": 2,
+            "MaxPackets": 0
+          },
+          {
+            "Delay": 3,
+            "MaxPackets": 2
+          },
+          {
+            "Delay": 5,
+            "MaxPackets": 4
+          },
+          {
+            "Delay": 8,
+            "MaxPackets": 8
+          }
+        ],
+        "InitialPlantList": [
+          {
+            "MaxCount": 5,
+            "MaxWeightFactor": 0,
+            "PlantType": "cantaloupe",
+            "Weight": 15
+          },
+          {
+            "MaxCount": 3,
+            "MaxWeightFactor": 0,
+            "PlantType": "lychee",
+            "Weight": 20
+          },
+          {
+            "MaxCount": 6,
+            "MaxWeightFactor": 0,
+            "PlantType": "turnip",
+            "Weight": 15
+          },
+          {
+            "MaxCount": 10,
+            "MaxWeightFactor": 0.1,
+            "PlantType": "firegourd",
+            "Weight": 15
+          },
+          {
+            "MaxCount": 1,
+            "MaxWeightFactor": 0.1,
+            "PlantType": "hypnoshroom",
+            "Weight": 10
+          },
+          {
+            "MaxCount": 4,
+            "MaxWeightFactor": 0,
+            "PlantType": "bamboozle",
+            "Weight": 10
+          }
+        ],
+        "SpeedConditions": [
+          {
+            "MaxPackets": 0,
+            "Speed": 100
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ZombossBattle"
+      ],
+      "objclass": "ZombossBattleModuleProperties",
+      "objdata": {
+        "ReservedColumnCount": 2,
+        "ZombossDeathColumn": 5,
+        "ZombossDeathRow": 3,
+        "ZombossMechType": "kongfu_boss_chi",
+        "ZombossSpawnGridPosition": {
+          "mX": 6,
+          "mY": 3
+        }
+      }
+    },
+     {
+               "aliases": [
+                    "kongfu_boss_chi"
+               ],
+               "objclass": "ZombieType",
+               "objdata": {
+                    "Properties": "RTID(kongfu_boss_chi@CurrentLevel)",
+                    "ZombieBasedOn": "kongfu_boss_blade"
+               }
+          },
+          {
+			"aliases": [
+				"kongfu_boss_chi"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ChiType": "eighties_speaker_wave",
+				"CannotBeEnlightenedBySolarSage": true,
+				"ImmuneToSweetPotato": true,
+				"ImmuneToShrinkingViolet": true,
+				"ZombieSort": "Zomboss",
+				"CannotBeGrabbedByPtero": true,
+				"CannotBeDetectedByPowerToss": true,
+				"CannotBeDraggedByTangleKelp": true,
+				"CannotBeTossedByCitron": true,
+				"CannotBeDetectedBySapfling": true,
+				"CannotBeSwallowedByChomper": true,
+				"ChiliStunDurationMult": 0,
+				"CannotCarryPlantfoodsInWaves": true,
+				"FoeEatDamageReflectPct": 0.5,
+				"LivesInDeepWater": true,
+				"WalkSPS": 0.185,
+				"EatDPS": 100,
+				"Toughness": 190,
+				"ImmuneToGarlic": true,
+				"WavePointCost": 100,
+				"Weight": 0,
+				"HitRect": "RTID(GargantuarHitRect@RectangleProps)",
+				"AttackRect": "RTID(GargantuarHitRect@RectangleProps)",
+				"ZombossMechLevel": 0,
+				"SummonColumn": 5,
+				"SmashDistance": 150,
+				"SmashDamage": 1200,
+				"ZombossStages": [
+					{
+						"Actions": [
+							{
+								"actionName": "jump",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 6,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"abbot",
+										"abbot_armor1",
+										"abbot_armor2",
+										"abbot_torch"
+									],
+									"pointMin": 600,
+									"pointMax": 2000
+								},
+								"weight": 20,
+								"repeatMax": 2,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 4,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1,
+						"ChilledDurationFromFrozen": 10,
+						"DamageIndexFull": 0,
+						"DamageIndexHalf": 0,
+						"HitPoints": 9000,
+						"MaxIdleTime": 2.5,
+						"MinIdleTime": 1.5,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 3,
+						"BoomerangCount": {
+							"Min": 1,
+							"Max": 1
+						},
+						"BoomerangMovingTime": 4
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "jump",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 10,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"abbot_armor1",
+										"abbot_armor2",
+										"abbot_armor3",
+										"monk_nunchaku",
+										"monk_torch",
+										"monk_imp",
+										"kongfu_bomb"
+									],
+									"pointMin": 1200,
+									"pointMax": 2400
+								},
+								"weight": 20,
+								"repeatMax": 2,
+								"repeatMin": 2
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 8,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.1,
+						"ChilledDurationFromFrozen": 10,
+						"DamageIndexFull": 3,
+						"DamageIndexHalf": 3,
+						"HitPoints": 11000,
+						"MaxIdleTime": 2,
+						"MinIdleTime": 1,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 2.5,
+						"BoomerangCount": {
+							"Min": 1,
+							"Max": 1
+						},
+						"BoomerangMovingTime": 4
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "jump",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 10,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"abbot_armor2",
+										"abbot_armor3",
+										"abbot_3section_staff",
+										"kongfu_torch",
+										"abbot_fan",
+										"abbot_imp",
+										"kongfu_bomb"
+									],
+									"pointMin": 1200,
+									"pointMax": 2500
+								},
+								"weight": 20,
+								"repeatMax": 2,
+								"repeatMin": 2
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 8,
+								"repeatMax": 2,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "imps",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 9,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.1,
+						"ChilledDurationFromFrozen": 10,
+						"DamageIndexFull": 3,
+						"DamageIndexHalf": 3,
+						"HitPoints": 12000,
+						"MaxIdleTime": 2,
+						"MinIdleTime": 1,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 2.5,
+						"BoomerangCount": {
+							"Min": 1,
+							"Max": 1
+						},
+						"BoomerangMovingTime": 4
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "jump",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 10,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"abbot_armor1",
+										"abbot_armor2",
+										"abbot_armor3",
+										"abbot_chi",
+										"kongfu_chi",
+										"abbot_fan",
+										"kongfu_gong"
+									],
+									"pointMin": 1200,
+									"pointMax": 2600
+								},
+								"weight": 20,
+								"repeatMax": 2,
+								"repeatMin": 2
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 10,
+								"repeatMax": 2,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 8,
+								"repeatMax": 2,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "imps",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 9,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.1,
+						"ChilledDurationFromFrozen": 10,
+						"DamageIndexFull": 3,
+						"DamageIndexHalf": 3,
+						"HitPoints": 13000,
+						"MaxIdleTime": 2,
+						"MinIdleTime": 1,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 2.5,
+						"BoomerangCount": {
+							"Min": 2,
+							"Max": 2
+						},
+						"BoomerangMovingTime": 4
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "jump",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 10,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"abbot_armor3",
+										"abbot_armor1",
+										"monk_blade",
+										"abbot_chi",
+										"abbot_armor2",
+										"kongfu_bronze_chi"
+									],
+									"pointMin": 1600,
+									"pointMax": 4000
+								},
+								"weight": 10,
+								"repeatMax": 2,
+								"repeatMin": 1,
+								"plantfoodchance": 0.6
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"abbot_imp",
+										"kongfu_bronze_statue"
+									],
+									"pointMin": 1600,
+									"pointMax": 2500
+								},
+								"weight": 5,
+								"repeatMax": 2,
+								"repeatMin": 1,
+								"plantfoodchance": 0.6
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"monk_armor3",
+										"monk_blade",
+										"kongfu_chi",
+										"abbot_3section_staff",
+										"abbot_armor2",
+										"kongfu_bronze_hook"
+									],
+									"pointMin": 1600,
+									"pointMax": 4000
+								},
+								"weight": 10,
+								"repeatMax": 2,
+								"repeatMin": 1,
+								"plantfoodchance": 0.6
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"kongfu_armor1",
+										"monk_blade",
+										"abbot_fan",
+										"kongfu_torch",
+										"kongfu_armor2",
+										"kongfu_bronze_strong"
+									],
+									"pointMin": 1600,
+									"pointMax": 4000
+								},
+								"weight": 10,
+								"repeatMax": 2,
+								"repeatMin": 1,
+								"plantfoodchance": 0.6
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 4,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 8,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "imps",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 12,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.25,
+						"ChilledDurationFromFrozen": 10,
+						"DamageIndexFull": 6,
+						"DamageIndexHalf": 6,
+						"HitPoints": 15000,
+						"MaxIdleTime": 1.5,
+						"MinIdleTime": 1,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 2,
+						"BoomerangCount": {
+							"Min": 6,
+							"Max": 5
+						},
+						"BoomerangMovingTime": 3
+					}
+				]
+                                                       }
+                                     },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "Waves": []
+      }
+    },
+    {
+      "aliases": [
+        "KongfuRack"
+      ],
+      "objclass": "GravestoneProperties",
+      "objdata": {
+        "ForceSpawnData": [
+          {
+            "GridX": 3,
+            "GridY": 0,
+            "TypeName": "kongfu_rack_helmet"
+          },
+          {
+            "GridX": 3,
+            "GridY": 1,
+            "TypeName": "kongfu_rack_torch"
+          },
+          {
+            "GridX": 3,
+            "GridY": 2,
+            "TypeName": "kongfu_rack_flag"
+          },
+          {
+            "GridX": 3,
+            "GridY": 3,
+            "TypeName": "kongfu_rack_torch"
+          },
+          {
+            "GridX": 3,
+            "GridY": 4,
+            "TypeName": "kongfu_rack_helmet"
+          }
+        ]
+      }
+     }
+  ],
+  "version": 1
+}

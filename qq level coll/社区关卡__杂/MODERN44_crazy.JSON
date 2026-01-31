@@ -1,0 +1,1707 @@
+{
+  "#comment": "Modern 44",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "[PLAYERS_TRIP_TO_MODERN]",
+        "FirstIntroNarrative": "MODERN_44_INTRO",
+        "FirstOutroNarrative": "MODERN_44_OUTRO",
+        "ForceToWorldMap": true,
+        "LevelNumber": 44,
+        "LoadDefaultMusic": false,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombossIntro@LevelModules)",
+          "RTID(ConveyorBelt@CurrentLevel)",
+          "RTID(ZombossBattle@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(LilypadPlacement@CurrentLevel)",
+          "RTID(Tide@CurrentLevel)"
+        ],
+        "MusicType": "MiniGame_A",
+        "Name": "[MODERN_LEVEL_NAME]",
+        "WritenBy": "YU*4",
+        "NormalPresentTable": "egypt_normal_01",
+        "RepeatPlayForceToWorldMap": true,
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(ModernNightStage@LevelModules)",
+        "SuppressSunSpawn": true,
+        "VictoryModule": "RTID(ZombossVictoryOutro@LevelModules)"
+      }
+    },
+    {
+      "aliases": [
+        "Tide"
+      ],
+      "objclass": "TideProperties",
+      "objdata": {
+        "StartingWaveLocation": 5
+      }
+    },
+    {
+      "aliases": [
+        "LilypadPlacement"
+      ],
+      "objclass": "InitialGridItemProperties",
+      "objdata": {
+        "InitialGridItemPlacements": [
+          {
+            "GridX": 2,
+            "GridY": 0,
+            "TypeName": "lilypad"
+          },
+          {
+            "GridX": 2,
+            "GridY": 2,
+            "TypeName": "lilypad"
+          },
+          {
+            "GridX": 2,
+            "GridY": 4,
+            "TypeName": "lilypad"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ConveyorBelt"
+      ],
+      "objclass": "ConveyorSeedBankProperties",
+      "objdata": {
+        "DropDelayConditions": [
+          {
+            "Delay": 3,
+            "MaxPackets": 0
+          },
+          {
+            "Delay": 4,
+            "MaxPackets": 2
+          },
+          {
+            "Delay": 6,
+            "MaxPackets": 4
+          },
+          {
+            "Delay": 9,
+            "MaxPackets": 8
+          }
+        ],
+        "InitialPlantList": [
+          {
+            "MaxCount": 10,
+            "MaxWeightFactor": 0.1,
+            "MinCount": 2,
+            "MinWeightFactor": 2,
+            "PlantType": "imitater",
+            "Weight": 10
+          }
+        ],
+        "SpeedConditions": [
+          {
+            "MaxPackets": 0,
+            "Speed": 100
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ZombossBattle"
+      ],
+      "objclass": "ZombossBattleModuleProperties",
+      "objdata": {
+        "ReservedColumnCount": 3,
+        "ZombossDeathColumn": 5,
+        "ZombossDeathRow": 3,
+        "ZombossMechType": "zombossmech_modern2",
+        "ZombossSpawnGridPosition": {
+          "mX": 2,
+          "mY": 2
+        }
+      }
+    },
+   {
+               "aliases": [
+                    "zombossmech_modern2"
+               ],
+               "objclass": "ZombieType",
+               "objdata": {
+                    "Properties": "RTID(zombossmech_modern2@CurrentLevel)",
+                    "ZombieBasedOn": "zombossmech_modern1"
+               }
+          },
+          {
+			"aliases": [
+				"zombossmech_modern2"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"MissileType": "kongfu_boss_explode_bomb",
+				"CannotBeEnlightenedBySolarSage": true,
+				"ImmuneToSweetPotato": true,
+				"ImmuneToShrinkingViolet": true,
+				"ZombieSort": "Zomboss",
+				"CannotBeGrabbedByPtero": true,
+				"CannotBeDetectedByPowerToss": true,
+				"CannotBeDraggedByTangleKelp": true,
+				"CannotBeTossedByCitron": true,
+				"CannotBeDetectedBySapfling": true,
+				"CannotBeSwallowedByChomper": true,
+				"ChiliStunDurationMult": 0,
+				"CannotCarryPlantfoodsInWaves": true,
+				"FoeEatDamageReflectPct": 0.5,
+				"LivesInDeepWater": true,
+				"WalkSPS": 0.185,
+				"EatDPS": 100,
+				"Toughness": 190,
+				"ImmuneToGarlic": true,
+				"WavePointCost": 100,
+				"Weight": 0,
+				"IdleColumn": 7,
+				"HitRect": "RTID(ZombossMechHitRect@RectangleProps)",
+				"AttackRect": "RTID(ZombossMechAttackRect@RectangleProps)",
+				"ZombossMechLevel": 0,
+				"ZombossStages": [
+					{
+						"Actions": [
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"tutorial",
+										"tutorial_armor1",
+										"tutorial_armor2",
+										"tutorial_armor4",
+										"tutorial_imp",
+										"tutorial_zomboni",
+										"bobsled_team",
+										"catapult",
+										"tutorial_gargantuar",
+										"modern_balloon",
+										"newspaper",
+										"modern_superfanimp",
+										"modern_allstar",
+										"beghouled_newspaper",
+										"newspaper_veteran"
+									],
+									"pointMin": 2200,
+									"pointMax": 6000
+								},
+								"weight": 14,
+								"repeatMax": 2,
+								"repeatMin": 2,
+								"plantfoodchance": 0.6
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"duckytube",
+										"vase_gargantuar",
+										"duckytube_armor1",
+										"duckytube_armor2",
+										"duckytube_armor4"
+									],
+									"pointMin": 2000,
+									"pointMax": 6000
+								},
+								"weight": 14,
+								"repeatMax": 2,
+								"repeatMin": 2,
+								"plantfoodchance": 0.6
+							},
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 3,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 4,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 4,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 0,
+						"DamageIndexHalf": 0,
+						"HitPoints": 14400,
+						"MaxIdleTime": 0.5,
+						"MinIdleTime": 0.5,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 2
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 3,
+								"repeatMax": 2,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"mummy_armor1",
+										"mummy",
+										"mummy_armor2",
+										"mummy_armor4",
+										"mummy_imp",
+										"explorer",
+										"tomb_raiser",
+										"camel_manyhump",
+										"explorer_veteran",
+										"pharaoh_weak",
+										"pharaoh",
+										"egypt_gargantuar"
+									],
+									"pointMin": 2000,
+									"pointMax": 7600
+								},
+								"weight": 18,
+								"repeatMax": 2,
+								"repeatMin": 2
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 6,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 8,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.1,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 3,
+						"DamageIndexHalf": 3,
+						"HitPoints": 15600,
+						"MaxIdleTime": 0.5,
+						"MinIdleTime": 0.5,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 1.5
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 3,
+								"repeatMax": 2,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"pirate_gargantuar",
+										"barrelroller",
+										"pirate_armor4",
+										"pirate_armor2",
+										"pirate_imp",
+										"swashbuckler",
+										"seagull",
+										"pelican",
+										"barrelroller",
+										"pirate_barrel",
+										"cannon",
+										"pirate",
+										"pirate_armor1",
+										"pirate_captain"
+									],
+									"pointMin": 6000,
+									"pointMax": 6000
+								},
+								"weight": 10,
+								"repeatMax": 3,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 6,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 4,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.25,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 6,
+						"DamageIndexHalf": 6,
+						"HitPoints": 15800,
+						"MaxIdleTime": 0.3,
+						"MinIdleTime": 0.1,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 1
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 3,
+								"repeatMax": 2,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"cowboy_gargantuar",
+										"piano",
+										"cowboy_armor4",
+										"cowboy_armor2",
+										"cowboy_imp",
+										"chicken_farmer",
+										"prospector",
+										"poncho",
+										"west_bull",
+										"west_bull_veteran",
+										"west_bullrider",
+										"cowboy",
+										"cowboy_armor1"
+									],
+									"pointMin": 3500,
+									"pointMax": 4500
+								},
+								"weight": 12,
+								"repeatMax": 3,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 6,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 6,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.25,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 6,
+						"DamageIndexHalf": 6,
+						"HitPoints": 19000,
+						"MaxIdleTime": 0.3,
+						"MinIdleTime": 0.1,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 1
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 3,
+								"repeatMax": 2,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"future_gargantuar",
+										"future_armor4",
+										"future_armor2",
+										"future_imp",
+										"future",
+										"future_jetpack_veteran",
+										"future_jetpack",
+										"future_jetpack_disco",
+										"mech_cone",
+										"football_mech",
+										"disco_mech",
+										"future_armor1"
+									],
+									"pointMin": 3500,
+									"pointMax": 6500
+								},
+								"weight": 12,
+								"repeatMax": 3,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 6,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 8,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.25,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 6,
+						"DamageIndexHalf": 6,
+						"HitPoints": 22200,
+						"MaxIdleTime": 0.3,
+						"MinIdleTime": 0.1,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 1
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 3,
+								"repeatMax": 2,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"dark_gargantuar",
+										"dark_armor4",
+										"dark_armor3",
+										"dark_armor2",
+										"dark_imp",
+										"dark_king",
+										"dark_king_veteran",
+										"dark_imp_dragon",
+										"dark_wizard_veteran",
+										"dark_wizard",
+										"dark_juggler",
+										"dark",
+										"dark_armor1"
+									],
+									"pointMin": 3200,
+									"pointMax": 4400
+								},
+								"weight": 16,
+								"repeatMax": 3,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 8,
+								"repeatMax": 2,
+								"repeatMin": 2
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 6,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.25,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 6,
+						"DamageIndexHalf": 6,
+						"HitPoints": 14400,
+						"MaxIdleTime": 0.3,
+						"MinIdleTime": 0.1,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 1
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 3,
+								"repeatMax": 2,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"beach_gargantuar",
+										"beach_armor4",
+										"beach_armor2",
+										"beach_imp",
+										"beach",
+										"beach_armor1",
+										"beach_fem_armor4",
+										"beach_fem_armor2",
+										"beach_fem",
+										"beach_fisherman",
+										"beach_octopus",
+										"beach_surfer_veteran",
+										"beach_surfer",
+										"beach_surfer",
+										"beach_fem_armor1"
+									],
+									"pointMin": 4000,
+									"pointMax": 5800
+								},
+								"weight": 10,
+								"repeatMax": 3,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 4,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 9,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.25,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 6,
+						"DamageIndexHalf": 6,
+						"HitPoints": 14400,
+						"MaxIdleTime": 0.3,
+						"MinIdleTime": 0.1,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 1
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 3,
+								"repeatMax": 2,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"iceage_gargantuar",
+										"iceage_armor4",
+										"iceage_armor3",
+										"iceage_armor2",
+										"iceage_imp",
+										"iceage_weaselhoarder",
+										"iceage_troglobite_veteran",
+										"iceage_troglobite",
+										"iceage_dodo",
+										"iceage_hunter_veteran_modern",
+										"iceage_hunter_modern",
+										"iceage",
+										"iceage_armor1"
+									],
+									"pointMin": 3000,
+									"pointMax": 5000
+								},
+								"weight": 5,
+								"repeatMax": 3,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 6,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.25,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 6,
+						"DamageIndexHalf": 6,
+						"HitPoints": 12800,
+						"MaxIdleTime": 0.3,
+						"MinIdleTime": 0.1,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 1
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 3,
+								"repeatMax": 2,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"summer",
+										"summer_imp",
+										"summer_gargantuar",
+										"summer_armor2",
+										"summer_armor1",
+										"summer_bug",
+										"summer_bug_armor2",
+										"summer_bug_armor1",
+										"halloween",
+										"halloween_imp",
+										"halloween_gargantuar",
+										"halloween_armor2",
+										"halloween_armor1",
+										"halloween_armor3"
+									],
+									"pointMin": 3000,
+									"pointMax": 6000
+								},
+								"weight": 10,
+								"repeatMax": 3,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 6,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 5,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.25,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 6,
+						"DamageIndexHalf": 6,
+						"HitPoints": 17000,
+						"MaxIdleTime": 0.3,
+						"MinIdleTime": 0.1,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 1
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 3,
+								"repeatMax": 2,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"sky",
+										"sky_armor2",
+										"sky_armor1"
+									],
+									"pointMin": 3000,
+									"pointMax": 4000
+								},
+								"weight": 10,
+								"repeatMax": 3,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 6,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 12,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.25,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 6,
+						"DamageIndexHalf": 6,
+						"HitPoints": 13200,
+						"MaxIdleTime": 0.3,
+						"MinIdleTime": 0.1,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 1
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 3,
+								"repeatMax": 2,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"lostcity_gargantuar",
+										"lostcity_armor2",
+										"lostcity_imp",
+										"lostcity",
+										"lostcity_lostpilot",
+										"lostcity_excavator",
+										"lostcity_relichunter",
+										"lostcity_impporter",
+										"lostcity_crystalskull",
+										"lostcity_jane",
+										"lostcity_bug_armor2",
+										"lostcity_bug",
+										"lostcity_bug_armor1"
+									],
+									"pointMin": 3000,
+									"pointMax": 5000
+								},
+								"weight": 12,
+								"repeatMax": 3,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 6,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 7,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.25,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 6,
+						"DamageIndexHalf": 6,
+						"HitPoints": 15600,
+						"MaxIdleTime": 0.3,
+						"MinIdleTime": 0.1,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 1
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 3,
+								"repeatMax": 2,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"kongfu_bronze_strong",
+										"kongfu_armor3",
+										"kongfu_armor2",
+										"kongfu_rocket_imp",
+										"kongfu",
+										"kongfu_gong",
+										"kongfu_bomb",
+										"kongfu_drink",
+										"kongfu_torch",
+										"kongfu_hammer",
+										"kongfu_chi",
+										"kongfu_armor1"
+									],
+									"pointMin": 3200,
+									"pointMax": 6000
+								},
+								"weight": 10,
+								"repeatMax": 2,
+								"repeatMin": 2
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 6,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.25,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 6,
+						"DamageIndexHalf": 6,
+						"HitPoints": 14400,
+						"MaxIdleTime": 0.3,
+						"MinIdleTime": 0.1,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 1
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 6,
+								"repeatMax": 2,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"kongfu_bronze_hook",
+										"monk_armor3",
+										"monk_armor2",
+										"monk_imp",
+										"monk",
+										"monk_blade",
+										"monk_nunchaku",
+										"monk_drink",
+										"monk_torch",
+										"monk_armor1"
+									],
+									"pointMin": 3200,
+									"pointMax": 6000
+								},
+								"weight": 10,
+								"repeatMax": 3,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 4,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 8,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.25,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 6,
+						"DamageIndexHalf": 6,
+						"HitPoints": 21600,
+						"MaxIdleTime": 0.3,
+						"MinIdleTime": 0.1,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 1
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 3,
+								"repeatMax": 2,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"kongfu_bronze_chi",
+										"abbot_armor3",
+										"abbot_armor2",
+										"abbot_imp",
+										"abbot",
+										"abbot_torch",
+										"abbot_chi",
+										"abbot_fan",
+										"abbot_armor1",
+										"abbot_3section_staff"
+									],
+									"pointMin": 3200,
+									"pointMax": 6000
+								},
+								"weight": 10,
+								"repeatMax": 3,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "shoot",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 6,
+								"repeatMax": 1,
+								"repeatMin": 1
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 8,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.25,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 6,
+						"DamageIndexHalf": 6,
+						"HitPoints": 28800,
+						"MaxIdleTime": 0.3,
+						"MinIdleTime": 0.1,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 1
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 3,
+								"repeatMax": 2,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"eighties_gargantuar",
+										"eighties_armor2",
+										"eighties_imp",
+										"eighties",
+										"eighties_mc",
+										"eighties_punk",
+										"eighties_glitter",
+										"eighties_armor1"
+									],
+									"pointMin": 2000,
+									"pointMax": 6000
+								},
+								"weight": 7,
+								"repeatMax": 3,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"eighties_gargantuar",
+										"eighties_8bit_armor2",
+										"eighties_8bit",
+										"eighties_breakdancer",
+										"eighties_arcade",
+										"eighties_boombox",
+										"eighties_8bit_armor1"
+									],
+									"pointMin": 2000,
+									"pointMax": 6000
+								},
+								"weight": 7,
+								"repeatMax": 3,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 10,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.25,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 6,
+						"DamageIndexHalf": 6,
+						"HitPoints": 28400,
+						"MaxIdleTime": 0.3,
+						"MinIdleTime": 0.1,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 1
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 3,
+								"repeatMax": 2,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"dino_gargantuar",
+										"dino_armor4",
+										"dino_armor3",
+										"dino_armor2",
+										"dino_imp",
+                                                                                                                                                                "dino_bully_veteran",
+                                                                                                                                                                "dino_bully",
+										"dino",
+										"dino_armor1"
+									],
+									"pointMin": 4000,
+									"pointMax": 6000
+								},
+								"weight": 12,
+								"repeatMax": 2,
+								"repeatMin": 2
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 7,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.25,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 6,
+						"DamageIndexHalf": 6,
+						"HitPoints": 16800,
+						"MaxIdleTime": 0.3,
+						"MinIdleTime": 0.1,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 1
+					},
+					{
+						"Actions": [
+							{
+								"actionName": "walk",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 3,
+								"repeatMax": 2,
+								"repeatMin": 3
+							},
+							{
+								"actionName": "summon",
+								"summonProps": {
+									"zombieList": [
+										"dino_gargantuar",
+										"dino_armor4",
+										"dino_armor3",
+										"dino_armor2",
+										"dino_imp",
+                                                                                                                                                                "dino_bully_veteran",
+                                                                                                                                                                "dino_bully",
+										"dino",
+										"dino_armor1",
+										"eighties_gargantuar",
+										"eighties_8bit_armor2",
+										"eighties_8bit",
+										"eighties_breakdancer",
+										"eighties_arcade",
+										"eighties_boombox",
+										"eighties_8bit_armor1",
+										"eighties_armor2",
+										"eighties_imp",
+										"eighties",
+										"eighties_mc",
+										"eighties_punk",
+										"eighties_glitter",
+										"eighties_armor1",
+										"kongfu_bronze_chi",
+										"abbot_armor3",
+										"abbot_armor2",
+										"abbot_imp",
+										"abbot",
+										"abbot_torch",
+										"abbot_chi",
+										"abbot_fan",
+										"abbot_armor1",
+										"kongfu_bronze_hook",
+										"monk_armor3",
+										"monk_armor2",
+										"monk_imp",
+										"monk",
+										"monk_blade",
+										"monk_nunchaku",
+										"monk_drink",
+										"monk_torch",
+										"monk_armor1",
+										"kongfu_bronze_strong",
+										"kongfu_armor3",
+										"kongfu_armor2",
+										"kongfu_rocket_imp",
+										"kongfu",
+										"kongfu_gong",
+										"kongfu_bomb",
+										"kongfu_drink",
+										"kongfu_torch",
+										"kongfu_hammer",
+										"kongfu_chi",
+										"kongfu_armor1",
+										"lostcity_gargantuar",
+										"lostcity_armor2",
+										"lostcity_imp",
+										"lostcity",
+										"lostcity_lostpilot",
+										"lostcity_excavator",
+										"lostcity_relichunter",
+										"lostcity_impporter",
+										"lostcity_crystalskull",
+										"lostcity_jane",
+										"lostcity_bug_armor2",
+										"lostcity_bug",
+										"lostcity_bug_armor1",
+										"sky",
+										"sky_armor2",
+										"sky_armor1",
+										"summer",
+										"summer_imp",
+										"summer_gargantuar",
+										"summer_armor2",
+										"summer_armor1",
+										"summer_bug",
+										"summer_bug_armor2",
+										"summer_bug_armor1",
+										"iceage_gargantuar",
+										"iceage_armor4",
+										"iceage_armor3",
+										"iceage_armor2",
+										"iceage_imp",
+										"iceage_weaselhoarder",
+										"iceage_troglobite_veteran",
+										"iceage_troglobite",
+										"iceage_dodo",
+										"iceage_hunter_veteran_modern",
+										"iceage_hunter_modern",
+										"iceage",
+										"iceage_armor1",
+										"beach_gargantuar",
+										"beach_armor4",
+										"beach_armor2",
+										"beach_imp",
+										"beach",
+										"beach_armor1",
+										"beach_fem_armor4",
+										"beach_fem_armor2",
+										"beach_fem",
+										"beach_fisherman",
+										"beach_octopus",
+										"beach_surfer_veteran",
+										"beach_surfer",
+										"beach_surfer",
+										"beach_fem_armor1",
+										"dark_gargantuar",
+										"dark_armor4",
+										"dark_armor3",
+										"dark_armor2",
+										"dark_imp",
+										"dark_king",
+										"dark_king_veteran",
+										"dark_imp_dragon",
+										"dark_wizard_veteran",
+										"dark_wizard",
+										"dark_juggler",
+										"dark",
+										"dark_armor1",
+										"future_gargantuar",
+										"future_armor4",
+										"future_armor2",
+										"future_imp",
+										"future",
+										"future_jetpack_veteran",
+										"future_jetpack",
+										"future_jetpack_disco",
+										"mech_cone",
+										"football_mech",
+										"disco_mech",
+										"future_armor1",
+										"cowboy_gargantuar",
+										"piano",
+										"cowboy_armor4",
+										"cowboy_armor2",
+										"cowboy_imp",
+										"chicken_farmer",
+										"prospector",
+										"poncho",
+										"west_bull",
+										"west_bull_veteran",
+										"west_bullrider",
+										"cowboy",
+										"cowboy_armor1",
+										"pirate_gargantuar",
+										"barrelroller",
+										"pirate_armor4",
+										"pirate_armor2",
+										"pirate_imp",
+										"swashbuckler",
+										"seagull",
+										"pelican",
+										"barrelroller",
+										"pirate_barrel",
+										"cannon",
+										"pirate",
+										"pirate_armor1",
+										"pirate_captain",
+										"mummy_armor1",
+										"mummy",
+										"mummy_armor2",
+										"mummy_armor4",
+										"mummy_imp",
+										"explorer",
+										"tomb_raiser",
+										"camel_manyhump",
+										"explorer_veteran",
+										"pharaoh_weak",
+										"pharaoh",
+										"egypt_gargantuar",
+										"duckytube",
+										"vase_gargantuar",
+										"duckytube_armor1",
+										"duckytube_armor2",
+										"duckytube_armor4",
+										"tutorial",
+										"tutorial_armor1",
+										"tutorial_armor2",
+										"tutorial_armor4",
+										"tutorial_imp",
+										"tutorial_zomboni",
+										"bobsled_team",
+										"catapult",
+										"tutorial_gargantuar",
+										"modern_balloon",
+										"newspaper",
+										"modern_superfanimp",
+										"modern_allstar",
+										"beghouled_newspaper",
+										"newspaper_veteran",
+										"halloween",
+										"halloween_imp",
+										"halloween_gargantuar",
+										"halloween_armor2",
+										"halloween_armor1",
+										"halloween_armor3",
+										"abbot_3section_staff"
+									],
+									"pointMin": 8000,
+									"pointMax": 24000
+								},
+								"weight": 12,
+								"repeatMax": 2,
+								"repeatMin": 2
+							},
+							{
+								"actionName": "rush",
+								"summonProps": {
+									"zombieList": [],
+									"pointMin": 1000,
+									"pointMax": 2000
+								},
+								"weight": 10,
+								"repeatMax": 1,
+								"repeatMin": 1
+							}
+						],
+						"AnimRateModifier": 1.25,
+						"ChilledDurationFromFrozen": 5,
+						"DamageIndexFull": 6,
+						"DamageIndexHalf": 6,
+						"HitPoints": 70000,
+						"MaxIdleTime": 0.3,
+						"MinIdleTime": 0.1,
+						"StunDamageScale": 1.25,
+						"StunStaggerBackMovement": 1,
+						"StunStaggerBackTime": 0.4,
+						"StunTime": 1
+					}
+				]
+			}
+          },
+{
+      "aliases": [
+        "iceage_hunter_modern"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(iceage_hunter_modern@CurrentLevel)",
+        "ZombieBasedOn": "iceage_hunter"
+      }
+    },
+    {
+			"aliases": [
+				"iceage_hunter_modern"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"CannotBeTossedByCitron": false,
+				"ChillInsteadOfFreeze": true,
+				"WalkSPS": 0.12,
+				"EatDPS": 100,
+				"Toughness": 700,
+				"FarAttackRange": 4,
+				"SnowballsPerBarrage": 3,
+				"WavePointCost": 500,
+				"Weight": 3500,
+				"SnowballType": "snowdrop",
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+{
+      "aliases": [
+        "iceage_hunter_veteran_modern"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(iceage_hunter_veteran_modern@CurrentLevel)",
+        "ZombieBasedOn": "iceage_hunter_veteran"
+      }
+      },
+		{
+			"aliases": [
+				"iceage_hunter_modern"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"SnowballType": "snowdrop_freeze",
+				"CannotBeTossedByCitron": false,
+				"ChillInsteadOfFreeze": true,
+				"WalkSPS": 0.2,
+				"EatDPS": 150,
+				"Toughness": 1100,
+				"LobInterval": 3,
+				"LobIntervalAdditional": 0.5,
+				"WavePointCost": 700,
+				"Weight": 2500,
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+{
+      "aliases": [
+        "halloween_armor3"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(halloween_armor3@CurrentLevel)",
+        "ZombieBasedOn": "halloween"
+      }
+    },
+		{
+			"aliases": [
+				"halloween_armor3"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.185,
+				"Toughness": 190,
+				"StartingArmors": [
+					"halloween_armor3"
+				],
+				"EatDPS": 100,
+				"WavePointCost": 500,
+				"Weight": 1000,
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "LevelJam": "jam_pop",
+        "Waves": []
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "LevelJam": "jam_rap",
+        "Waves": []
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "LevelJam": "jam_8bit",
+        "Waves": []
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "LevelJam": "jam_punk",
+        "Waves": []
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "LevelJam": "jam_metal",
+        "Waves": []
+      }
+    }
+  ],
+  "version": 1
+}

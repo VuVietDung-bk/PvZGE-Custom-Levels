@@ -1,0 +1,531 @@
+{
+	"#comment": "Bird's crafting",
+	"objects": [
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "<PLAYERNAME>'s Running",
+				"LevelNumber": 3,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+					"RTID(StandardIntro@LevelModules)",
+					"RTID(SeedBank@CurrentLevel)",
+					"RTID(ZombiesDeadWinCon@LevelModules)",
+					"RTID(DefaultZombieWinCondition@LevelModules)",
+					"RTID(NewWaves@CurrentLevel)",
+					"RTID(DefaultSunDropper@LevelModules)"
+				],
+				"Name": "cranjelly's_running_<LEVELNUMBER>",
+				"NameMultiLanguage": {
+					"en": "Cranjelly's Running Day <LEVELNUMBER>",
+					"zh": "蔓越莓果冻奔驰的第 <LEVELNUMBER> 天"
+				},
+				"WritenBy": "Birdscraft",
+				"NormalPresentTable": "egypt_normal_01",
+				"ShinyPresentTable": "egypt_shiny_01",
+				"StartingSun":425,
+				"StageModule": "RTID(LunarStage@LevelModules)"
+			}
+		},
+		{
+			"aliases": [
+				"SeedBank"
+			],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+				"PresetPlantList": [
+				{
+					"Level": -1,
+					"PlantType": "cranjelly"
+				},{
+					"Level": -1,
+					"PlantType": "sunflower"
+				},{
+					"Level": -1,
+					"PlantType": "twinsunflower"
+				},{
+					"Level": -1,
+					"PlantType": "sunshroom"
+				},{
+					"Level": -1,
+					"PlantType": "goldleaf"
+				},{
+					"Level": -1,
+					"PlantType": "primalsunflower"
+				},{
+					"Level": -1,
+					"PlantType": "sunbean"
+				}
+				],
+				"SelectionMethod": "chooser"
+			}
+		},
+		{
+			"aliases": ["WaveManagerProps"],
+			"objclass": "WaveManagerProperties",
+			"objdata": {
+				"FlagWaveInterval": 10000,
+				"WaveCount": 1,
+				"Waves": [
+					["RTID(Wave1@CurrentLevel)"],
+					["RTID(Wave1.1@CurrentLevel)"],
+					["RTID(Wave2@CurrentLevel)"],
+					["RTID(Wave2.1@CurrentLevel)","RTID(LowTideEvent-1@CurrentLevel)"],
+					["RTID(Wave3@CurrentLevel)"],
+					["RTID(Wave3.2@CurrentLevel)"],
+					["RTID(Wave5@CurrentLevel)","RTID(LowTideEvent0@CurrentLevel)"],
+					["RTID(Wave6@CurrentLevel)"],
+					[],
+					["RTID(Wave4@CurrentLevel)"],
+					["RTID(LowTideEvent1@CurrentLevel)"],
+					["RTID(Wave7@CurrentLevel)"],
+					["RTID(Wave8@CurrentLevel)","RTID(LowTideEvent2@CurrentLevel)"],
+				]
+			}
+		},
+		{
+			"aliases": [
+				"NewWaves"
+			],
+			"objclass": "WaveManagerModuleProperties",
+			"objdata": {
+				"DynamicZombies": [
+					{},
+					{},
+					{},
+					{},
+					{
+						"PointIncrementPerWave": 64,
+						"StartingPoints": 375,
+						"StartingWave": 1,
+						"ZombiePool": [
+							"RTID(lostcity_bug@ZombieTypes)",
+							"RTID(lostcity_bug_armor1@ZombieTypes)",
+							"RTID(lostcity_bug_armor2@ZombieTypes)"
+						]
+					},
+					{
+						"PointIncrementPerWave": 128,
+						"StartingPoints": 375,
+						"StartingWave": 1,
+						"ZombiePool": [
+							"RTID(lostcity_bug@ZombieTypes)",
+							"RTID(lostcity_bug_armor1@ZombieTypes)",
+							"RTID(lostcity_bug_armor2@ZombieTypes)"
+						]
+					},
+					{
+						"PointIncrementPerWave": 172,
+						"StartingPoints": 425,
+						"StartingWave": 1,
+						"ZombiePool": [
+							"RTID(lostcity_relichunter@ZombieTypes)",
+							"RTID(lostcity_excavator@ZombieTypes)",
+							"RTID(lostcity_bug@ZombieTypes)",
+							"RTID(lostcity_bug_armor1@ZombieTypes)",
+							"RTID(lostcity_bug_armor2@ZombieTypes)",
+							"RTID(lostcity_jane@ZombieTypes)"
+						]
+					}
+				],
+				"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+			}
+		},
+		{
+			"aliases": [
+				"Wave1"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_bug_veteran@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave1.1"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_bug_veteran@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave2"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_bug_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_bug_armor1_veteran@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave2.1"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_bug_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_bug_armor2_veteran@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave3"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_bug_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_bug_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_bug_armor1_veteran@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave3.2"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_bug_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_bug_armor1_veteran@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave4"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_relichunter_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_relichunter_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_relichunter_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_bug_armor1_veteran@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave5"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(camel_manyhump@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(camel_manyhump@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(camel_manyhump@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_relichunter_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_relichunter_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_bug_armor1_veteran@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave6"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_bug_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_relichunter_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_bug_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_bug_armor1_veteran@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave7"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_bug_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_relichunter_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_relichunter_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_bug_armor1_veteran@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave8"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_bug_armor2_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_relichunter_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_relichunter_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_bug_armor1_veteran@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(lostcity_bug_armor1_veteran@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"LowTideEvent-1"
+			],
+			"objclass":"BeachStageEventZombieSpawnerProps",
+			"objdata":{
+				"ColumnEnd":8,
+				"ColumnStart":5,
+				"GroupSize":"1",
+				"TimeBeforeFullSpawn":"0.1",
+				"TimeBetweenGroups":"0",
+				"WaveStartMessage":"[WARNING_LOW_TIDE]", 
+				"ZombieCount":"2",
+				"ZombieName":"explorer_veteran"
+			}
+		},
+		{
+			"aliases":[
+				"LowTideEvent0"
+			],
+			"objclass":"BeachStageEventZombieSpawnerProps",
+			"objdata":{
+				"ColumnEnd":8,
+				"ColumnStart":5,
+				"GroupSize":"1",
+				"TimeBeforeFullSpawn":"0.1",
+				"TimeBetweenGroups":"0",
+				"WaveStartMessage":"[WARNING_LOW_TIDE]", 
+				"ZombieCount":"2",
+				"ZombieName":"explorer_veteran"
+			}
+		},
+		{
+			"aliases":[
+				"LowTideEvent1"
+			],
+			"objclass":"BeachStageEventZombieSpawnerProps",
+			"objdata":{
+				"ColumnEnd":8,
+				"ColumnStart":5,
+				"GroupSize":"1",
+				"TimeBeforeFullSpawn":"0.1",
+				"TimeBetweenGroups":"0",
+				"WaveStartMessage":"[WARNING_LOW_TIDE]", 
+				"ZombieCount":"3",
+				"ZombieName":"explorer_veteran"
+			}
+		},
+		{
+			"aliases":[
+				"LowTideEvent2"
+			],
+			"objclass":"BeachStageEventZombieSpawnerProps",
+			"objdata":{
+				"ColumnEnd":8,
+				"ColumnStart":6,
+				"GroupSize":"1",
+				"TimeBeforeFullSpawn":"0.1",
+				"TimeBetweenGroups":"0",
+				"WaveStartMessage":"[WARNING_LOW_TIDE]", 
+				"ZombieCount":"3",
+				"ZombieName":"explorer_veteran"
+			}
+		},
+		{
+			"aliases": [
+				"lostcity_relichunter_veteran"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(lostcity_relichunter_veteran@CurrentLevel)",
+				"ZombieBasedOn": "lostcity_relichunter"
+			}
+		},
+		{
+			"aliases": [
+				"lostcity_relichunter_veteran"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ChooseToSpawnOnNonDeckRows": true,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.185,
+				"EatDPS": 120,
+				"Toughness": 920,
+				"LandingColumns": [
+					2,
+					3
+				]
+			}
+		},
+		{
+		"aliases": [
+				"lostcity_bug_veteran"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(lostcity_bug_veteran@CurrentLevel)",
+				"ZombieBasedOn": "lostcity_bug"
+			}
+		},
+		{
+			"aliases": [
+				"lostcity_bug_veteran"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.185,
+				"EatDPS": 100,
+				"Toughness": 190,
+				"BugToughness": 700,
+				"BuggedSPS": 0.7
+			}
+		},
+		{
+			"aliases": [
+				"lostcity_bug_armor1_veteran"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(lostcity_bug_armor1_veteran@CurrentLevel)",
+				"ZombieBasedOn": "lostcity_bug"
+			}
+		},
+		{
+			"aliases": [
+				"lostcity_bug_armor1_veteran"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.185,
+				"EatDPS": 100,
+				"Toughness": 190,
+				"BugToughness": 750,
+				"BuggedSPS": 0.6,
+				"StartingArmors": [
+					"lostcity_armor1"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"lostcity_bug_armor2_veteran"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(lostcity_bug_armor2_veteran@CurrentLevel)",
+				"ZombieBasedOn": "lostcity_bug"
+			}
+		},
+		{
+			"aliases": [
+				"lostcity_bug_armor2_veteran"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.185,
+				"EatDPS": 100,
+				"Toughness": 190,
+				"BugToughness": 800,
+				"BuggedSPS": 0.5,
+				"StartingArmors": [
+					"lostcity_armor2"
+				]
+			}
+		}
+	],
+	"version": 1
+}

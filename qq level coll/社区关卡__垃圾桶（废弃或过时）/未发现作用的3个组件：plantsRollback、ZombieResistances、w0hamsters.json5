@@ -1,0 +1,60 @@
+{
+	"objects": [{
+			"objclass": "LevelDefinition",//关卡设置
+			"objdata": {
+				"StageModule": "RTID(EgyptStage@LevelModules)",//场景
+				"Modules": [//CurrentLevel可以写为'.'
+					"RTID(StandardIntro@LevelModules)",//必备
+					"RTID(NewWaves@.)",//出怪
+					"RTID(plantsRollback@.)",//覆写植物？
+					"RTID(ZombieResistances@.)",/* 不知道 */	
+				],
+			}
+		},
+		{//未发现作用
+			"aliases": "plantsRollback",
+			"objclass": "PlantCooldownModifierProperties",
+			"objdata": {
+				"Cooldown": 0,//Seed cooldown time multiplier (0 - no cooldown, 1 - no change, 2 - double time)
+			}
+		},
+		{//未发现作用
+			"aliases": "ZombieResistances",//Buffz and Bruisez
+			"objclass": "ZombieResistancesModuleProperties",
+			"objdata": {
+				"FamilyResistances": {
+					"global": [{
+						"ConditionResistance": 30,
+						"DamageResistance": 30,
+						"FamilyType": "appeasemint",//豌豆家族
+					}]
+				}
+			}
+		},
+		
+		{
+			"aliases": "WaveManagerProps",//具体出怪
+			"objclass": "WaveManagerProperties",
+			"objdata": {
+				"ZombieCountdownFirstWaveSecs": -30,//开局出怪时间，默认为0
+				"FlagWaveInterval": 10,//多少波一旗
+				"Waves": [
+					[
+						"RTID(w0hamsters@.)",//Zombies in a ball
+					],
+				],
+			}
+		},
+		{//未发现作用
+			"aliases": "w0hamsters",//Zombies in a ball
+			"objclass": "HamsterZombieSpawnerProps",
+			"objdata": {
+				"Zombies": [{
+					"Behavior": 2,
+					"HasPlantfood": true,
+					"SpeedBeforeImpact": 0.5,
+					"Type": "RTID(hamster_ball@ZombieTypes)",
+					"ZombieInsideBallType": "RTID(cowboy@ZombieTypes)",
+				}]
+			}
+		},

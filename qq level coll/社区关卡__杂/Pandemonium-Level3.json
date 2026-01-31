@@ -1,0 +1,661 @@
+{
+   "objects": [
+      {
+         "objclass": "LevelDefinition",
+         "objdata": {
+            "Description": "The Return Of Harmony???",
+            "Loot": "RTID(DefaultLoot@LevelModules)",
+            "FirstRewardType": "unlock_plant",
+            "FirstRewardParam": "phatbeet_rhythm",
+            "Modules": [
+               "RTID(StandardIntro@LevelModules)",
+               "RTID(IceageMowers@LevelModules)",
+               "RTID(SeedBank@CurrentLevel)",
+               "RTID(NewWaves@CurrentLevel)",
+               "RTID(DefaultZombieWinCondition@LevelModules)",
+               "RTID(ZombiesDeadWinCon@LevelModules)",
+               "RTID(ModPlants@CurrentLevel)",
+               "RTID(InitialTide@CurrentLevel)",
+"RTID(ChallengeModule@CurrentLevel)",
+"RTID(DefaultSunDropper@LevelModules)"
+            ],
+            "Name": "Pandemonium-Level 3",
+            "WritenBy": "laowu",
+            "MusicType": "MiniGame_A",
+            "StageModule": "RTID(LostCityNightStage@LevelModules)"
+         }
+      },
+      {"aliases": ["InitialTide"],
+"objclass": "TideProperties",
+"objdata": {
+    "StartingWaveLocation": 3
+}},
+{
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(BeatTheLevel@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": [
+        "BeatTheLevel"
+      ],
+      "objclass": "StarChallengeBeatTheLevelProps",
+      "objdata": {
+        "Descriptions": ["Survive the Pandemonium !","Zombies are boosted by Discord's magic of disharmony.Use Twilight's bloominghearts to weaken zombies."
+      ]
+      }
+    },
+       {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "HidePlantfood": true,
+                "SuppressParticle": true,
+                "List": [
+                    {
+                        "Type": "zoybeanpod",
+                        "NewObjdata": {
+"Cooldown": 10,
+				"CooldownFrom": 0.5,
+				"SunCost": 150,
+				"BeghouledCost": 2000,
+				"Toughness": 600,
+				"Family": "Magic",
+				"GrowthInterval": {
+					"Min": 4,
+					"Max": 4
+				},
+				"SummonType": [
+					{
+						"Weight": 30,
+						"Type": "pirate_armor4"
+					},
+					{
+						"Weight": 25,
+						"Type": "dark_king_veteran"
+					},
+					{
+						"Weight": 20,
+						"Type": "vase_gargantuar"
+					},
+                    {
+						"Weight": 25,
+						"Type": "eighties_glitter"
+					},
+               {
+						"Weight": 25,
+						"Type": "abbot_3section_staff"
+					}
+				],
+				"SummonTypePlantfood": [
+                    					{
+						"Weight": 100,
+						"Type": "zombossmech_lostcity2"
+					}
+                ]
+                        }
+                    },
+                            {
+                        "Type": "iceweed",
+                        "NewObjdata": {
+"ImmuneToIceblock": true,
+				"Damage": 0.01,
+				"DamagePowered": 20,
+				"ImmuneToBoomBox": true,
+				"AttackInterval": 0.001,
+				"PlantfoodDPS": 1000,
+				"PlantfoodDragSPS": 10,
+				"Cooldown": 5,
+				"CooldownFrom": 0.5,
+				"SawType": "eighties_speaker_wave",
+				"PlantfoodMaxSpike": 3,
+				"SunCost": 100,
+				"BeghouledCost": 1000,
+				"Toughness": 300,
+				"Family": "Cold",
+				"ChillDuration": 3,
+				"FreezeDuration": 0,
+				"PlantfoodDamageReceiveMult": 0.2
+                        }
+                    },
+                    {
+                        "Type": "bloominghearts",
+                        "NewObjdata": {
+"CabbageType": "blooming_heart_pf",
+				"CabbageTypePlantfood": "blooming_heart_pf",
+				"DefenceRateList": [
+					1.9
+				],
+				"DefenceRateListPlantfood": [
+					1.8,
+					1.8,
+					2.8
+				],
+				"ImmuneToBoomBox": true,
+				"ThrowInterval": 2.85,
+				"ThrowIntervalAdditional": 0.15,
+				"Cooldown": 5,
+				"CooldownFrom": 1,
+				"SunCost": 100,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Poison"
+
+                        }
+                    }
+                                    ]
+            }
+        },
+      {
+         "aliases": [
+            "SeedBank"
+         ],
+         "objclass": "SeedBankProperties",
+         "objdata": {
+            "PresetPlantList": [
+               {
+                  "Level": -1,
+                  "PlantType": "primalsunflower"
+               },
+               {
+                  "Level": -1,
+                  "PlantType": "iceweed"
+               },
+                              {
+                  "Level": -1,
+                  "PlantType": "bloominghearts"
+               },
+               {
+                  "Level": -1,
+                  "PlantType": "zoybeanpod"
+               },
+               {
+                  "Level": -1,
+                  "PlantType": "stallia"
+               },
+               {
+                  "Level": -1,
+                  "PlantType": "primalwallnut"
+               }
+            ],
+            "SelectionMethod": "preset"
+         }
+      },
+      {
+         "aliases": [
+            "NewWaves"
+         ],
+         "objclass": "WaveManagerModuleProperties",
+         "objdata": {
+            "DynamicZombies": [
+               {},
+               {},
+               {},
+               {
+                  "PointIncrementPerWave": 20,
+                  "StartingPoints": 100,
+                  "StartingWave": 5,
+                  "ZombiePool": [
+                     "RTID(mummy_armor1@ZombieTypes)",
+                     "RTID(dark_king_veteran@ZombieTypes)",
+                     "RTID(dino_gargantuar@ZombieTypes)",
+                     "RTID(zoybean_gargantuar@ZombieTypes)",
+                     "RTID(mech_cone@ZombieTypes)"
+                  ]
+               },
+               {
+                  "PointIncrementPerWave": 40,
+                  "StartingPoints": 200,
+                  "StartingWave": 5,
+                  "ZombiePool": [
+                     "RTID(mummy_armor1@ZombieTypes)",
+                     "RTID(dark_king_veteran@ZombieTypes)",
+                     "RTID(dino_gargantuar@ZombieTypes)",
+                     "RTID(zoybean_gargantuar@ZombieTypes)",
+                     "RTID(mech_cone@ZombieTypes)"
+                  ]
+               },
+               {
+                  "PointIncrementPerWave": 50,
+                  "StartingPoints": 300,
+                  "StartingWave": 4,
+                  "ZombiePool": [
+                     "RTID(mummy_armor1@ZombieTypes)",
+                     "RTID(dark_king_veteran@ZombieTypes)",
+                     "RTID(dino_gargantuar@ZombieTypes)",
+                     "RTID(zoybean_gargantuar@ZombieTypes)",
+                     "RTID(mech_cone@ZombieTypes)"
+                  ]
+               },
+               {
+                  "PointIncrementPerWave": 500,
+                  "StartingPoints": 500,
+                  "StartingWave": 1,
+                  "ZombiePool": [
+                     "RTID(dino_gargantuar@ZombieTypes)",
+                     "RTID(dark_king_veteran@ZombieTypes)",
+                     "RTID(kongfu_bronze_strong@ZombieTypes)",
+                     "RTID(eighties_boombox@ZombieTypes)",
+                     "RTID(mech_cone@ZombieTypes)",
+                     "RTID(beach_surfer_veteran@ZombieTypes)"
+                  ]
+               }
+            ],
+            "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+         }
+      },
+      {
+         "aliases": [
+            "WaveManagerProps"
+         ],
+         "objclass": "WaveManagerProperties",
+         "objdata": {
+            "FlagWaveInterval": 3,
+            "WaveCount": 12,
+            "LevelJamList": ["jam_punk","jam_8bit","jam_pop","jam_rap","jam_metal"],
+            "WaveSpendingPointIncrement": 100,
+            "WaveSpendingPoints": 150,
+            "Waves": [
+               [
+                  "RTID(Wave1@CurrentLevel)"
+               ],
+               [
+                  "RTID(Wave2@CurrentLevel)"
+               ],
+               [
+                  "RTID(Wave3@CurrentLevel)","RTID(king@CurrentLevel)"
+               ],
+               [
+                  "RTID(Wave4@CurrentLevel)"
+               ],
+               [
+                  "RTID(Wave5@CurrentLevel)","RTID(king@CurrentLevel)"
+               ],
+               [
+                  "RTID(Wave6@CurrentLevel)"
+               ],
+               [
+                  "RTID(Wave7@CurrentLevel)","RTID(king@CurrentLevel)"
+               ],
+               [
+                  "RTID(Wave8@CurrentLevel)"
+               ],
+               [
+                  "RTID(Wave9@CurrentLevel)","RTID(king@CurrentLevel)"
+               ],
+               [
+                  "RTID(Wave10@CurrentLevel)"
+               ],
+               [
+                  "RTID(Wave11@CurrentLevel)","RTID(king@CurrentLevel)"
+               ],
+               [
+                  "RTID(Wave12@CurrentLevel)"
+               ]
+            ]
+         }
+      },
+      {
+      "aliases": [
+        "king"
+      ],
+      "objclass": "SpiderRainZombieSpawnerProps",
+      "objdata": {
+        "ColumnEnd": 8,
+        "ColumnStart": 6,
+        "GroupSize": 8,
+        "SpiderCount": 8,
+        "SpiderZombieName": "dark_king_veteran",
+        "TimeBeforeFullSpawn": 2,
+        "TimeBetweenGroups": 0.5,
+        "WaveStartMessage": "[WARNING_LOW_TIDE]",
+        "ZombieFallTime": "0.5"
+      }
+    },
+      {
+         "aliases": [
+            "Wave1"
+         ],
+         "objclass": "SpawnZombiesJitteredWaveActionProps",
+         "objdata": {
+            "Zombies": [
+               {
+                  "Row": "4",
+                  "Type": "RTID(mech_cone@ZombieTypes)"
+               }
+            ]
+         }
+      },
+      {
+         "aliases": [
+            "Wave2"
+         ],
+         "objclass": "SpawnZombiesJitteredWaveActionProps",
+         "objdata": {
+            "Zombies": [
+               {
+                  "Row": "1",
+                  "Type": "RTID(mech_cone@ZombieTypes)"
+               }
+            ]
+         }
+      },
+      {
+         "aliases": [
+            "Wave3"
+         ],
+         "objclass": "SpawnZombiesJitteredWaveActionProps",
+         "objdata": {
+            "Zombies": [
+               {
+                  "Row": "5",
+                  "Type": "RTID(dino_gargantuar@ZombieTypes)"
+               }
+            ]
+         }
+      },
+      {
+         "aliases": [
+            "Wave4"
+         ],
+         "objclass": "SpawnZombiesJitteredWaveActionProps",
+         "objdata": {
+            "AdditionalPlantfood": 1,
+            "DynamicPlantfood": [
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               0
+            ],
+            "Zombies": [
+               {
+                  "Row": "3",
+                  "Type": "RTID(dino_gargantuar@ZombieTypes)"
+               },
+               {
+                  "Row": "3",
+                  "Type": "RTID(dark_king_veteran@ZombieTypes)"
+               },
+               {
+                  "Row": "2",
+                  "Type": "RTID(mech_cone@ZombieTypes)"
+               }
+            ]
+         }
+      },
+      {
+         "aliases": [
+            "Wave5"
+         ],
+         "objclass": "SpawnZombiesJitteredWaveActionProps",
+         "objdata": {
+            "Zombies": [
+               {
+                  "Row": "4",
+                  "Type": "RTID(mech_cone@ZombieTypes)"
+               },
+               {
+                  "Row": "2",
+                  "Type": "RTID(dark_king_veteran@ZombieTypes)"
+               },
+               {
+                  "Row": "1",
+                  "Type": "RTID(mech_cone@ZombieTypes)"
+               }
+            ]
+         }
+      },
+      {
+         "aliases": [
+            "Wave6"
+         ],
+         "objclass": "SpawnZombiesJitteredWaveActionProps",
+         "objdata": {
+            "AdditionalPlantfood": 1,
+            "DynamicPlantfood": [
+               1,
+               1,
+               1,
+               1,
+               1,
+               1,
+               1
+            ],
+            "Zombies": [
+               {
+                  "Row": "5",
+                  "Type": "RTID(mech_cone@ZombieTypes)"
+               },
+               {
+                  "Row": "4",
+                  "Type": "RTID(dark_king_veteran@ZombieTypes)"
+               },
+               {
+                  "Row": "1",
+                  "Type": "RTID(dino_gargantuar@ZombieTypes)"
+               }
+            ]
+         }
+      },
+      {
+         "aliases": [
+            "Wave7"
+         ],
+         "objclass": "SpawnZombiesJitteredWaveActionProps",
+         "objdata": {
+            "Zombies": [
+               {
+                  "Row": "1",
+                  "Type": "RTID(dark_king_veteran@ZombieTypes)"
+               },
+               {
+                  "Row": "3",
+                  "Type": "RTID(mech_cone@ZombieTypes)"
+               },
+               {
+                  "Row": "5",
+                  "Type": "RTID(abbot_torch@ZombieTypes)"
+               }
+            ]
+         }
+      },
+      {
+         "aliases": [
+            "Wave8"
+         ],
+         "objclass": "SpawnZombiesJitteredWaveActionProps",
+         "objdata": {
+            "Zombies": [
+               {
+                  "Row": "1",
+                  "Type": "RTID(dino_gargantuar@ZombieTypes)"
+               },
+               {
+                  "Row": "3",
+                  "Type": "RTID(dino_gargantuar@ZombieTypes)"
+               },
+               {
+                  "Row": "5",
+                  "Type": "RTID(mech_cone@ZombieTypes)"
+               },
+               {
+                  "Row": "2",
+                  "Type": "RTID(kongfu_bronze_chi@ZombieTypes)"
+               },
+               {
+                  "Row": "4",
+                  "Type": "RTID(zoybean_gargantuar@ZombieTypes)"
+               }
+            ]
+         }
+      },
+      {
+         "aliases": [
+            "Wave9"
+         ],
+         "objclass": "SpawnZombiesJitteredWaveActionProps",
+         "objdata": {
+            "Zombies": [
+               {
+                  "Row": "1",
+                  "Type": "RTID(dark_king_veteran@ZombieTypes)"
+               },
+               {
+                  "Row": "3",
+                  "Type": "RTID(dark_king_veteran@ZombieTypes)"
+               },
+               {
+                  "Row": "5",
+                  "Type": "RTID(dark_king_veteran@ZombieTypes)"
+               },
+               {
+                  "Row": "3",
+                  "Type": "RTID(mech_cone@ZombieTypes)"
+               },
+               {
+                  "Row": "5",
+                  "Type": "RTID(mech_cone@ZombieTypes)"
+               },
+               {
+                  "Row": "4",
+                  "Type": "RTID(dino_gargantuar@ZombieTypes)"
+               }
+            ]
+         }
+      },
+      {
+         "aliases": [
+            "Wave10"
+         ],
+         "objclass": "SpawnZombiesJitteredWaveActionProps",
+         "objdata": {
+            "AdditionalPlantfood": 1,
+            "DynamicPlantfood": [
+               1,
+               1,
+               1,
+               1,
+               1,
+               0,
+               0
+            ],
+            "Zombies": [
+               {
+                  "Row": "1",
+                  "Type": "RTID(kongfu_bronze_chi@ZombieTypes)"
+               },
+               {
+                  "Row": "3",
+                  "Type": "RTID(zoybean_gargantuar@ZombieTypes)"
+               },
+               {
+                  "Row": "5",
+                  "Type": "RTID(dark_king_veteran@ZombieTypes)"
+               },
+               {
+                  "Row": "4",
+                  "Type": "RTID(mech_cone@ZombieTypes)"
+               },
+               {
+                  "Row": "5",
+                  "Type": "RTID(mech_cone@ZombieTypes)"
+               },
+               {
+                  "Row": "2",
+                  "Type": "RTID(dino_gargantuar@ZombieTypes)"
+               }
+            ]
+         }
+      },
+      {
+         "aliases": [
+            "Wave11"
+         ],
+         "objclass": "SpawnZombiesJitteredWaveActionProps",
+         "objdata": {
+            "Zombies": [
+               {
+                  "Row": "1",
+                  "Type": "RTID(dino_gargantuar@ZombieTypes)"
+               },
+               {
+                  "Row": "2",
+                  "Type": "RTID(dark_king_veteran@ZombieTypes)"
+               },
+               {
+                  "Row": "3",
+                  "Type": "RTID(dino_gargantuar@ZombieTypes)"
+               },
+               {
+                  "Row": "4",
+                  "Type": "RTID(dark_king_veteran@ZombieTypes)"
+               },
+               {
+                  "Row": "5",
+                  "Type": "RTID(dino_gargantuar@ZombieTypes)"
+               },
+               {
+                  "Type": "RTID(kongfu_bronze_strong@ZombieTypes)"
+               }
+            ]
+         }
+      },
+      {
+         "aliases": [
+            "Wave12"
+         ],
+         "objclass": "SpawnZombiesJitteredWaveActionProps",
+         "objdata": {
+            "Zombies": [
+               {
+                  "Row": "1",
+                  "Type": "RTID(dino_gargantuar@ZombieTypes)"
+               },
+               {
+                  "Row": "2",
+                  "Type": "RTID(dino_gargantuar@ZombieTypes)"
+               },
+               {
+                  "Row": "3",
+                  "Type": "RTID(dino_gargantuar@ZombieTypes)"
+               },
+               {
+                  "Row": "4",
+                  "Type": "RTID(dino_gargantuar@ZombieTypes)"
+               },
+               {
+                  "Row": "5",
+                  "Type": "RTID(dino_gargantuar@ZombieTypes)"
+               },
+               {
+                  "Row": "1",
+                  "Type": "RTID(zoybean_gargantuar@ZombieTypes)"
+               },
+               {
+                  "Row": "3",
+                  "Type": "RTID(zoybean_gargantuar@ZombieTypes)"
+               },
+               {
+                  "Row": "5",
+                  "Type": "RTID(kongfu_bronze_strong@ZombieTypes)"
+               }
+            ]
+         }
+      }
+   ],
+   "version": 1
+}

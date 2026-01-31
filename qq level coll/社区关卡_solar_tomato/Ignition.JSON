@@ -1,0 +1,967 @@
+{
+  "#comment": "Ignition",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "Ignition",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(LostCityTrapTileGroups@CurrentLevel)",
+          "RTID(ForzenPlantPlacement@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(SliderPlacement@CurrentLevel)",
+          "RTID(GoldTiles@CurrentLevel)",
+          "RTID(NewWaves@CurrentLevel)"
+        ],
+        "Name": "Ignition",
+        "NameMultiLanguage": {
+          "en": "Ignition",
+          "zh": "饲竹"
+        },
+        "WritenBy": "solar_tomato",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(HeroesStage@LevelModules)",
+        "MusicType": "MiniGame_B"
+      }
+    },
+    {
+			"aliases": [ 
+        "SeedBank" 
+      ],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+        "PresetPlantList": 
+        [ 
+          {
+						"PlantType": "bamboozle",
+						"Level": -1
+					},
+          {
+						"PlantType": "peach",
+						"Level": -1
+					}
+        ],
+        "PlantIncludeList": [
+        "sunflower","iceburg","twinsunflower",
+				"repeater","springbean",
+        "chilibean","sapfling",
+        "empea","holonut","powerplant",
+        "sunshroom","sunbean","magnetshroom",
+        "hurrikale","chardguard","stunion",
+				"stallia","turnip","thymewarp",
+				"intensivecarrot","primalwallnut","perfumeshroom",
+				"primalsunflower","moonflower","goldbloom",
+        "umbrellaleaf"
+				],
+				"SelectionMethod": "chooser"
+			}
+		},
+    {
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(ProtectThePlant@CurrentLevel)",
+            "RTID(DoNotPlantBeforeLine@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": [
+        "ProtectThePlant"
+      ],
+      "objclass":"ProtectThePlantChallengeProperties",
+      "objdata":{
+      "MustProtectCount":5,
+      "Plants":[
+          {
+            "Level":-1,
+            "GridX":1,
+            "GridY":0,
+            "PlantType":"tallnut"
+          },
+          {
+            "Level":-1,
+            "GridX":0,
+            "GridY":1,
+            "PlantType":"wallnut"
+          },
+          {
+            "Level":-1,
+            "GridX":1,
+            "GridY":2,
+            "PlantType":"bamboozle"
+          },
+          {
+            "Level":-1,
+            "GridX":0,
+            "GridY":3,
+            "PlantType":"wallnut"
+          },
+          {
+            "Level":-1,
+            "GridX":1,
+            "GridY":4,
+            "PlantType":"tallnut"
+          }
+        ]
+      }  
+    },
+    {
+      "aliases": [
+        "DoNotPlantBeforeLine"
+        ],
+        "objclass": "MoldColonyChallengeProps",
+        "objdata": {
+          "Locations": "RTID(LSW@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "LSW"
+        ],
+        "objclass": "BoardGridMapProps",
+        "objdata": {
+          "Values": [
+            [0,0,1,0,0,0,0,0,0],
+            [0,0,0,1,0,0,0,0,0],
+            [0,0,0,0,1,0,0,0,0],
+            [0,0,0,0,0,1,0,0,0],
+            [0,0,0,0,0,0,1,0,0]
+        ]
+      }
+    },
+    {
+			"aliases": [ 
+        "GoldTiles"
+       ],
+			"objclass": "InitialGridItemProperties",
+			"objdata": {
+				"InitialGridItemPlacements": [ 
+          {
+						"GridX": 3,
+						"GridY": 0,
+						"TypeName": "goldtile"
+					},
+          {
+						"GridX": 5,
+						"GridY": 0,
+						"TypeName": "goldtile"
+					},
+          {
+						"GridX": 8,
+						"GridY": 0,
+						"TypeName": "goldtile"
+					},
+          {
+						"GridX": 7,
+						"GridY": 1,
+						"TypeName": "goldtile"
+					},
+          {
+						"GridX": 6,
+						"GridY": 2,
+						"TypeName": "goldtile"
+					},
+          {
+						"GridX": 8,
+						"GridY": 3,
+						"TypeName": "goldtile"
+					}
+        ]
+			}
+    },
+    {
+      "aliases": [
+        "LostCityTrapTileGroups"
+      ],
+      "objclass": "TrapTileProperties",
+      "objdata": {
+        "TrapTiles": [
+          {
+            "Group": "flame",
+            "Location": { 
+              "mX": 1,
+              "mY": 1 
+            },
+            "RecoverDelay": 25
+          },
+          {
+            "Group": "flame",
+            "Location": { 
+              "mX": 2,
+              "mY": 2 
+            },
+            "RecoverDelay": 20
+          },
+          {
+            "Group": "flame",
+            "Location": { 
+              "mX": 3,
+              "mY": 3 
+            },
+            "RecoverDelay": 15
+          },
+          {
+            "Group": "thunder",
+            "Location": {
+               "mX": 2,
+               "mY": 4 
+            },
+            "RecoverDelay": 60
+          },
+          {
+            "Group": "thunder",
+            "Location": {
+               "mX": 3,
+               "mY": 4 
+            },
+            "RecoverDelay": 30
+          },
+          {
+            "Group": "flame",
+            "Location": { 
+              "mX": 4,
+              "mY": 4 
+            },
+            "RecoverDelay": 10
+          }
+          
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SliderPlacement"
+      ],
+      "objclass": "InitialGridItemProperties",
+      "objdata": {
+        "InitialGridItemPlacements": [
+          {
+            "GridX": 2,
+            "GridY": 1,
+            "TypeName": "slider_up_modern"
+          },
+          {
+            "GridX": 3,
+            "GridY": 2,
+            "TypeName": "slider_up_modern"
+          },
+          {
+            "GridX": 4,
+            "GridY": 3,
+            "TypeName": "slider_up_modern"
+          },
+          {
+            "GridX": 5,
+            "GridY": 4,
+            "TypeName": "slider_up_modern"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 60,
+            "StartingPoints": 150,
+            "StartingWave": 6,
+            "ZombiePool": [
+            "RTID(dark@ZombieTypes)",
+            "RTID(dark_armor1@ZombieTypes)",
+            "RTID(dark_armor2@ZombieTypes)",
+            "RTID(dark_juggler@ZombieTypes)",
+            "RTID(iceage_dodo@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 80,
+            "StartingPoints": 200,
+            "StartingWave": 6,
+            "ZombiePool": [
+            "RTID(dark@ZombieTypes)",
+            "RTID(dark_armor1@ZombieTypes)",
+            "RTID(dark_armor2@ZombieTypes)",
+            "RTID(dark_juggler@ZombieTypes)",
+            "RTID(iceage_dodo@ZombieTypes)",
+            "RTID(pharaoh@ZombieTypes)",
+            "RTID(summer_bug@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 100,
+            "StartingPoints": 250,
+            "StartingWave": 6,
+            "ZombiePool": [
+            "RTID(dark@ZombieTypes)",
+            "RTID(dark_armor1@ZombieTypes)",
+            "RTID(dark_armor2@ZombieTypes)",
+            "RTID(dark_juggler@ZombieTypes)",
+            "RTID(dark_imp_dragon@ZombieTypes)",
+            "RTID(iceage_dodo@ZombieTypes)",
+            "RTID(pharaoh@ZombieTypes)",
+            "RTID(summer_bug@ZombieTypes)",
+            "RTID(summer_bug_armor1@ZombieTypes)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 5,
+        "WaveCount": 15,
+        "ZombieCountdownFirstWaveSecs": 5,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave11@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave12@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave13@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave14@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave15@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Row":"1",
+            "Type": "RTID(pharaoh@ZombieTypes)"
+          },
+          {
+            "Row":"1",
+            "Type": "RTID(pharaoh@ZombieTypes)"
+          },
+          {
+            "Row":"1",
+            "Type": "RTID(pharaoh@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"2",
+            "Type": "RTID(zomboni@ZombieTypes)"
+          },
+          {
+            "Row":"4",
+            "Type": "RTID(dark@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(kongfu_bronze_strong@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "NotificationEvents": [ 
+          
+        ],
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(future_gargantuar@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"1",
+            "Type":"RTID(zomboni@ZombieTypes)"
+          },
+          {
+            "Row":"3",
+						"Type": "RTID(zomboni@ZombieTypes)"
+					},
+          {
+            "Row":"4",
+						"Type": "RTID(zomboni@ZombieTypes)"
+					},
+          {
+            "Row":"2",
+						"Type": "RTID(dark_imp_dragon@ZombieTypes)"
+					},
+          {
+            "Row":"4",
+            "Type":"RTID(dark_imp_dragon@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"1",
+						"Type": "RTID(summer_bug@ZombieTypes)"
+					},
+          {
+            "Row":"2",
+            "Type":"RTID(summer_bug_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(summer_bug_armor1@ZombieTypes)"
+          },
+          {
+            "Row":"4",
+						"Type": "RTID(summer_bug@ZombieTypes)"
+					},
+          {
+            "Row":"4",
+            "Type":"RTID(summer_bug_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+						"Type": "RTID(dark_juggler@ZombieTypes)"
+					},
+          {
+            "Row":"3",
+            "Type":"RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(kongfu_bronze_strong@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"2",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          },
+          {
+            "Row":"1",
+            "Type": "RTID(summer_bug_armor2@ZombieTypes)"
+          },
+          {
+            "Row":"4",
+						"Type": "RTID(summer_bug_armor1@ZombieTypes)"
+					},
+          {
+            "Row":"4",
+            "Type": "RTID(summer_bug_armor1@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+						"Type": "RTID(dark_imp_dragon@ZombieTypes)"
+					},
+          {
+            "Row":"3",
+            "Type": "RTID(dark_imp_dragon@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(future_gargantuar@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(zomboni@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark_imp_dragon@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(kongfu_bronze_strong@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(kongfu_bronze_hook@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(kongfu_bronze_hook@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(future_gargantuar@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(kongfu_bronze_strong@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          },
+          {
+            "Row":"3",
+						"Type": "RTID(iceage_dodo@ZombieTypes)"
+					},
+          {
+            "Row":"5",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"2",
+						"Type": "RTID(future_gargantuar@ZombieTypes)"
+					},
+          {
+            "Row":"1",
+						"Type": "RTID(zomboni@ZombieTypes)"
+					},
+          {
+            "Row": "3",
+            "Type": "RTID(zomboni@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(zomboni@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(dark_imp_dragon@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark_imp_dragon@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_imp_dragon@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(summer_bug_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(summer_bug_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(summer_bug_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(summer_bug_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(iceage_dodo@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave13"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(pharaoh@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(pharaoh@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(pharaoh@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(future_gargantuar@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave14"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"1",
+						"Type": "RTID(summer_bug_armor2@ZombieTypes)"
+					},
+          {
+            "Row":"1",
+						"Type": "RTID(summer_bug_armor1@ZombieTypes)"
+					},
+          {
+            "Row":"5",
+						"Type": "RTID(summer_bug_armor1@ZombieTypes)"
+					},
+          {
+            "Row": "5",
+            "Type": "RTID(summer_bug_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(kongfu_bronze_hook@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(pharaoh@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_imp_dragon@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(kongfu_bronze_strong@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(kongfu_bronze_strong@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(kongfu_bronze_hook@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(kongfu_bronze_strong@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(kongfu_bronze_hook@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(future_gargantuar@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(kongfu_bronze_strong@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(kongfu_bronze_strong@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(future_gargantuar@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark_imp_dragon@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_imp_dragon@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_imp_dragon@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_imp_dragon@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(summer_bug_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(summer_bug_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(summer_bug_armor2@ZombieTypes)"
+          }
+        ]
+      }
+    }
+  ],
+  "version": 1
+}

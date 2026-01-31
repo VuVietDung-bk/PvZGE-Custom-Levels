@@ -1,0 +1,3448 @@
+{
+  "#comment": "Making_atomicbomb",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "什么叫物资会从炸弹里蹦出来",
+        "FirstIntroNarrative": "Intro",
+        "LevelNumber": 6,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(Gravestones@CurrentLevel)",
+          "RTID(ForzenPlantPlacement@CurrentLevel)",
+          "RTID(NewWaves@CurrentLevel)"
+        ],
+        "Name": "Making_atomicbomb_day6",
+        "NameMultiLanguage": {
+          "en": "Making_atomicbomb_day6",
+          "zh": "石榴生产商_第六天"
+        },
+        "WritenBy": "solar_tomato",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(DarkStage@LevelModules)",
+        "MusicType": "MiniGame_A",
+        "StartingSun": 200
+      }
+    },
+    { 
+      "objclass": "NarrativeProperties",
+      "aliases": [
+        "Intro"
+      ],
+      "objdata": {
+        "AutoAdvance": true,
+        "DelayBetweenLines": 3,
+        "Flow": [
+          {
+            "Character": "winnie",
+            "Action": "NPC_ENTER",
+            "Delay": 0.5
+          },
+          {
+            "Character": "winnie",
+            "Action": "TIRED",
+            "Lines": {
+                "en": "更多卡槽已解锁，请注意查收",
+                "zh": "更多卡槽已解锁，请注意查收"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "winnie",
+            "Action": "TIRED",
+            "Lines": {
+                "en": "除此之外，育种中心也产出了更多品种的石榴",
+                "zh": "除此之外，育种中心也产出了更多品种的石榴"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "winnie",
+            "Action": "TIRED",
+            "Lines": {
+                "en": "为了让黑夜的播种工作有条不紊，我存储了一些预备阳光",
+                "zh": "为了让黑夜的播种工作有条不紊，我存储了一些预备阳光"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "winnie",
+            "Action": "TIRED",
+            "Lines": {
+                "en": "接下来的育种工作会越发困难，请保持精力",
+                "zh": "接下来的育种工作会越发困难，请保持精力"
+            },
+            "Delay": 0.3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Gravestones"
+      ],
+      "objclass": "GravestoneProperties",
+      "objdata": {
+        "ForceSpawnData": [
+          {
+            "GridX": 4,
+            "GridY": 0,
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": 4,
+            "GridY": 3,
+            "TypeName": "gravestoneSunOnDestruction"
+          },
+          {
+            "GridX": 5,
+            "GridY": 2,
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": 6,
+            "GridY": 1,
+            "TypeName": "gravestoneSunOnDestruction"
+          },
+          {
+            "GridX": 6,
+            "GridY": 4,
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": 7,
+            "GridY": 2,
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": 7,
+            "GridY": 3,
+            "TypeName": "gravestoneSunOnDestruction"
+          }
+        ]
+      }
+    },
+    {
+			"aliases": [
+				"escaperoot"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "escaperoot",
+				"Properties": "RTID(escaperoot@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "ID": 1,
+          "NAME": {"zh":"器材搬运工LV2","en":"器材搬运工LV2"},
+          "_CARDSPRITENAME": "escaperoot",
+          "CODENAME": "escaperoot",
+          "TYPE": [
+            "plant"
+          ],
+          "OBTAINWORLD": "epic",
+          "ZENGARDEN": {
+            "PlantPlace": "dirt"
+          },
+          "BOOST": 1,
+          "COSTUME": 1,
+          "PROPS": "RTID(escaperoot@PlantProps)",
+          "ALMANAC": "RTID(escaperootAlmanac@CurrentLevel)"
+        }
+			}
+		},
+    {
+      "aliases": [
+        "escaperootAlmanac"
+      ],
+      "objclass": "PlantAlmanacProperties",
+      "objdata": {
+        "Introduction": {"zh":"图鉴","en":"图鉴"},
+        "BriefIntroduction": {"zh":"帮助你搬运散落的种子","en":"帮助你搬运散落的种子"}
+      }
+    },
+    {
+			"aliases": [
+				"escaperoot"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"GrapeType": "grapeshot",
+				"ChargeTime": 8,
+				"Damage": 2200,
+				"Cooldown": 500,
+				"CooldownFrom": 0,
+				"SunCost": 0,
+				"BeghouledCost": 1000,
+				"Toughness": 300,
+				"Family": "Explosive"
+			}
+		},
+    {
+			"aliases": [
+				"puffshroom"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "puffshroom",
+				"Properties": "RTID(puffshroom@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "ID": 2,
+          "NAME": {"zh":"迷你垫材LV2","en":"迷你垫材LV2"},
+          "_CARDSPRITENAME": "puffshroom",
+          "CODENAME": "puffshroom",
+          "TYPE": [
+            "plant"
+          ],
+          "OBTAINWORLD": "epic",
+          "ZENGARDEN": {
+            "PlantPlace": "dirt"
+          },
+          "BOOST": 1,
+          "COSTUME": 1,
+          "PROPS": "RTID(puffshroom@PlantProps)",
+          "ALMANAC": "RTID(puffshroomAlmanac@CurrentLevel)"
+        }
+      }
+		},
+    {
+      "aliases": [
+        "puffshroomAlmanac"
+      ],
+      "objclass": "PlantAlmanacProperties",
+      "objdata": {
+        "Introduction": {"zh":"图鉴","en":"图鉴"},
+        "BriefIntroduction": {"zh":"可以配合搬运工搬运种子，有极其微弱的攻击力","en":"可以配合搬运工搬运种子，有极其微弱的攻击力"}
+      }
+    },
+    {
+			"aliases": [
+				"puffshroom"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"PeaType": "puffshroom_spore",
+				"PeaTypePlantfood": "puffshroom_spore",
+				"ShootInterval": 2.6,
+				"ShootIntervalAdditional": 0,
+				"PlantfoodPeaCount": 0,
+				"LifeSpan": 60,
+				"Cooldown": 11,
+				"CooldownFrom": 1,
+				"SunCost": 0,
+				"BeghouledCost": 300,
+				"Toughness": 150,
+				"Family": "Poison"
+			}
+		},
+    {
+			"aliases": [
+				"gravebuster"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "gravebuster",
+				"Properties": "RTID(gravebuster@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "ID": 3,
+          "NAME": {"zh":"墓碑清扫者MAX","en":"墓碑清扫者MAX"},
+          "_CARDSPRITENAME": "gravebuster",
+          "CODENAME": "gravebuster",
+          "TYPE": [
+            "plant"
+          ],
+          "OBTAINWORLD": "epic",
+          "ZENGARDEN": {
+            "PlantPlace": "dirt"
+          },
+          "BOOST": 1,
+          "COSTUME": 1,
+          "PROPS": "RTID(gravebuster@PlantProps)",
+          "ALMANAC": "RTID(gravebusterAlmanac@CurrentLevel)"
+        }
+			}
+		},
+    {
+      "aliases": [
+        "gravebusterAlmanac"
+      ],
+      "objclass": "PlantAlmanacProperties",
+      "objdata": {
+        "Introduction": {"zh":"图鉴","en":"图鉴"},
+        "BriefIntroduction": {"zh":"帮助你清理场上的墓碑，本关后该植物将被移除","en":"帮助你清理场上的墓碑，本关后该植物将被移除"}
+      }
+    },
+    {
+			"aliases": [
+				"gravebuster"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"CannotBeSheepenedByWizard": true,
+				"CannotBePushedByFootballMech": true,
+				"BustTime": 2.5,
+				"Cooldown": 12,
+				"CooldownFrom": 1,
+				"SunCost": 0,
+				"BeghouledCost": 1000,
+				"Toughness": 500,
+				"Family": "Slow",
+				"ImmuneToIceblock": true
+			}
+		},
+    {
+			"aliases": [
+				"goldbloom"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "goldbloom",
+				"Properties": "RTID(goldbloom@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "ID": 4,
+          "NAME": {"zh":"阳光补给员","en":"阳光补给员"},
+          "_CARDSPRITENAME": "goldbloom",
+          "CODENAME": "goldbloom",
+          "TYPE": [
+            "plant"
+          ],
+          "OBTAINWORLD": "epic",
+          "ZENGARDEN": {
+            "PlantPlace": "dirt"
+          },
+          "BOOST": 1,
+          "COSTUME": 1,
+          "PROPS": "RTID(goldbloom@PlantProps)",
+          "ALMANAC": "RTID(goldbloomAlmanac@CurrentLevel)"
+        }
+			}
+		},
+    {
+      "aliases": [
+        "goldbloomAlmanac"
+      ],
+      "objclass": "PlantAlmanacProperties",
+      "objdata": {
+        "Introduction": {"zh":"图鉴","en":"图鉴"},
+        "BriefIntroduction": {"zh":"为你紧急提供巨量阳光","en":"为你紧急提供巨量阳光"}
+      }
+    },
+    {
+			"aliases": [
+				"goldbloom"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"CannotBeSheepenedByWizard": true,
+				"Cooldown": 130,
+				"CooldownFrom": 0,
+				"SunCost": 0,
+				"BeghouledCost": 1000,
+				"Toughness": 300,
+				"Family": "Sun",
+				"ImmuneToBoomBox": true,
+				"ImmuneToIceblock": true,
+				"ProduceValue0": 250,
+				"ProduceValue1": 275,
+				"ProduceValue2": 300
+			}
+		},
+    {
+			"aliases": [
+				"atombomb_Sun"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "atombomb",
+				"Properties": "RTID(atombomb_Sun@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "ID": 5,
+          "NAME": {"zh":"阳光石榴LV3","en":"阳光石榴LV3"},
+          "_CARDSPRITENAME": "atombomb",
+          "CODENAME": "atombomb",
+          "TYPE": [
+            "plant"
+          ],
+          "OBTAINWORLD": "frontyard",
+          "ZENGARDEN": {
+            "PlantPlace": "dirt"
+          },
+          "BOOST": 1,
+          "COSTUME": 1,
+          "PROPS": "RTID(atombomb@PlantProps)",
+          "ALMANAC": "RTID(sun1Almanac@CurrentLevel)"
+        }
+			}
+		},
+    {
+      "aliases": [
+        "sun1Almanac"
+      ],
+      "objclass": "PlantAlmanacProperties",
+      "objdata": {
+        "Introduction": {"zh":"图鉴","en":"图鉴"},
+        "BriefIntroduction": {"zh":"造成135伤害，可获得两株向日葵，双胞向日葵","en":"造成135伤害，可获得两株向日葵，双胞向日葵"}
+      }
+    },
+    {
+			"aliases": [
+				"atombomb_Sun"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 33,
+				"CooldownFrom": 0,
+				"SunCost": 100,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Sun",
+				"ExplodeDamage": 135,
+				"ExplodeSeedlingCount": 2,
+				"ExplodeProjectileType": "atombomb",
+        "SeedlingType": "seedling_sun",
+				"PlantfoodCallingType": [
+          "seedling"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_sun"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantRedirection": [
+          {
+            "Type": "seedling_sunflower",
+            "Weight": 2.5
+          },
+          {
+            "Type": "seedling_twinsunflower",
+            "Weight": 1.5
+          }
+        ]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_sunflower"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_sunflower@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_sunflower"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 20,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Sun",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "sunflower",
+        "GrowingTime": 2,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_twinsunflower"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_twinsunflower@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_twinsunflower"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 20,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Sun",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "twinsunflower",
+        "GrowingTime": 4,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"atombomb_Peashooter"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "atombomb",
+				"Properties": "RTID(atombomb_Peashooter@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "ID": 6,
+          "NAME": {"zh":"喷射石榴LV4","en":"喷射石榴LV4"},
+          "_CARDSPRITENAME": "atombomb",
+          "CODENAME": "atombomb",
+          "TYPE": [
+            "plant"
+          ],
+          "OBTAINWORLD": "frontyard",
+          "ZENGARDEN": {
+            "PlantPlace": "dirt"
+          },
+          "BOOST": 1,
+          "COSTUME": 1,
+          "PROPS": "RTID(atombomb@PlantProps)",
+          "ALMANAC": "RTID(peashooter1Almanac@CurrentLevel)"
+        }
+			}
+		},
+    {
+      "aliases": [
+        "peashooter1Almanac"
+      ],
+      "objclass": "PlantAlmanacProperties",
+      "objdata": {
+        "Introduction": {"zh":"图鉴","en":"图鉴"},
+        "BriefIntroduction": {"zh":"造成180伤害，可获得两株双发射手，三线射手或星星果","en":"造成180伤害，可获得两株双发射手，三线射手或星星果"}
+      }
+    },
+    {
+			"aliases": [
+				"atombomb_Peashooter"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 35,
+				"CooldownFrom": 0.75,
+				"SunCost": 150,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Peashooter",
+				"ExplodeDamage": 180,
+				"ExplodeSeedlingCount": 2,
+				"ExplodeProjectileType": "atombomb",
+        "SeedlingType": "seedling_peashooter1",
+				"PlantfoodCallingType": [
+          "seedling"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_peashooter1"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantRedirection": [
+          {
+            "Type": "seedling_repeater",
+            "Weight": 2
+          },
+          {
+            "Type": "seedling_threepeater",
+            "Weight": 1
+          },
+          {
+            "Type": "seedling_starfruit",
+            "Weight": 1
+          }
+        ]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_threepeater"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_threepeater@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_threepeater"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 15,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Peashooter",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "threepeater",
+        "GrowingTime": 5,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_repeater"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_repeater@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_repeater"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 15,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Peashooter",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "repeater",
+        "GrowingTime": 4,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_starfruit"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_starfruit@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_starfruit"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 15,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Peashooter",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "starfruit",
+        "GrowingTime": 3,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"atombomb_Lobber"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "atombomb",
+				"Properties": "RTID(atombomb_Lobber@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "ID": 7,
+          "NAME": {"zh":"重炮石榴LV2","en":"重炮石榴LV2"},
+          "_CARDSPRITENAME": "atombomb",
+          "CODENAME": "atombomb",
+          "TYPE": [
+            "plant"
+          ],
+          "OBTAINWORLD": "frontyard",
+          "ZENGARDEN": {
+            "PlantPlace": "dirt"
+          },
+          "BOOST": 1,
+          "COSTUME": 1,
+          "PROPS": "RTID(atombomb@PlantProps)",
+          "ALMANAC": "RTID(lobber1Almanac@CurrentLevel)"
+        }
+			}
+		},
+    {
+      "aliases": [
+        "lobber1Almanac"
+      ],
+      "objclass": "PlantAlmanacProperties",
+      "objdata": {
+        "Introduction": {"zh":"图鉴","en":"图鉴"},
+        "BriefIntroduction": {"zh":"造成120伤害，可获得两株卷心菜投手，玉米投手或西瓜投手","en":"造成120伤害，可获得两株卷心菜投手，玉米投手或西瓜投手"}
+      }
+    },
+    {
+			"aliases": [
+				"atombomb_Lobber"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 35,
+				"CooldownFrom": 0.75,
+				"SunCost": 150,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Lobber",
+				"ExplodeDamage": 120,
+				"ExplodeSeedlingCount": 2,
+				"ExplodeProjectileType": "atombomb",
+        "SeedlingType": "seedling_lobber",
+				"PlantfoodCallingType": [
+          "seedling"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_lobber"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantRedirection": [
+          {
+            "Type": "seedling_cabbagepult",
+            "Weight": 2
+          },
+          {
+            "Type": "seedling_kernelpult",
+            "Weight": 3
+          },
+          {
+            "Type": "seedling_melonpult",
+            "Weight": 1
+          }
+        ]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_cabbagepult"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_cabbagepult@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_cabbagepult"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 15,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Lobber",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "cabbagepult",
+        "GrowingTime": 3,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_kernelpult"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_kernelpult@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_kernelpult"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 15,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Lobber",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "kernelpult",
+        "GrowingTime": 3,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_melonpult"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_melonpult@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_melonpult"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 15,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Lobber",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "melonpult",
+        "GrowingTime": 5,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"atombomb_Doom"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "atombomb",
+				"Properties": "RTID(atombomb_Doom@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "ID": 8,
+          "NAME": {"zh":"连环爆炸石榴LV2","en":"连环爆炸石榴LV2"},
+          "_CARDSPRITENAME": "atombomb",
+          "CODENAME": "atombomb",
+          "TYPE": [
+            "plant"
+          ],
+          "OBTAINWORLD": "market",
+          "ZENGARDEN": {
+            "PlantPlace": "dirt"
+          },
+          "BOOST": 1,
+          "COSTUME": 1,
+          "PROPS": "RTID(atombomb@PlantProps)",
+          "ALMANAC": "RTID(Doom1Almanac@CurrentLevel)"
+        }
+			}
+		},
+    {
+      "aliases": [
+        "Doom1Almanac"
+      ],
+      "objclass": "PlantAlmanacProperties",
+      "objdata": {
+        "Introduction": {"zh":"图鉴","en":"图鉴"},
+        "BriefIntroduction": {"zh":"造成1200伤害，立刻释放三株樱桃炸弹或火爆辣椒","en":"造成1200伤害，立刻释放三株樱桃炸弹或火爆辣椒"}
+      }
+    },
+    {
+			"aliases": [
+				"atombomb_Doom"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 70,
+				"CooldownFrom": 0,
+				"SunCost": 450,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Explosive",
+				"ExplodeDamage": 1200,
+				"ExplodeSeedlingCount": 3,
+				"ExplodeProjectileType": "atombomb",
+        "SeedlingType": "seedling_doom",
+				"PlantfoodCallingType": [
+          "seedling"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_doom"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantRedirection": [
+          {
+            "Type": "seedling_cherry_bomb",
+            "Weight": 1
+          },
+          {
+            "Type": "seedling_jalapeno",
+            "Weight": 1
+          }
+        ]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_cherry_bomb"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_cherry_bomb@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_cherry_bomb"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 15,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Explosive",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "cherry_bomb",
+        "GrowingTime": 0.1,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_jalapeno"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_jalapeno@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_jalapeno"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 15,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Fire",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "jalapeno",
+        "GrowingTime": 0.1,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"atombomb_Defence"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "atombomb",
+				"Properties": "RTID(atombomb_Defence@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "ID": 9,
+          "NAME": {"zh":"坚固石榴LV3","en":"坚固石榴LV3"},
+          "_CARDSPRITENAME": "atombomb",
+          "CODENAME": "atombomb",
+          "TYPE": [
+            "plant"
+          ],
+          "OBTAINWORLD": "frontyard",
+          "ZENGARDEN": {
+            "PlantPlace": "dirt"
+          },
+          "BOOST": 1,
+          "COSTUME": 1,
+          "PROPS": "RTID(atombomb@PlantProps)",
+          "ALMANAC": "RTID(defence1Almanac@CurrentLevel)"
+        }
+			}
+		},
+    {
+      "aliases": [
+        "defence1Almanac"
+      ],
+      "objclass": "PlantAlmanacProperties",
+      "objdata": {
+        "Introduction": {"zh":"图鉴","en":"图鉴"},
+        "BriefIntroduction": {"zh":"造成600伤害，可获得两株坚果墙，高坚果或全息坚果","en":"造成600伤害，可获得两株坚果墙，高坚果或全息坚果"}
+      }
+    },
+    {
+			"aliases": [
+				"atombomb_Defence"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 40,
+				"CooldownFrom": 0.75,
+				"SunCost": 225,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Defence",
+				"ExplodeDamage": 600,
+				"ExplodeSeedlingCount": 2,
+				"ExplodeProjectileType": "atombomb",
+        "SeedlingType": "seedling_defence",
+				"PlantfoodCallingType": [
+          "seedling"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_defence"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantRedirection": [
+          {
+            "Type": "seedling_wallnut",
+            "Weight": 2
+          },
+          {
+            "Type": "seedling_tallnut",
+            "Weight": 1
+          },
+          {
+            "Type": "seedling_holonut",
+            "Weight": 2
+          }
+        ]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_wallnut"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_wallnut@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_wallnut"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 20,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Defence",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "wallnut",
+        "GrowingTime": 5,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_tallnut"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_tallnut@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_tallnut"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 20,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Defence",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "tallnut",
+        "GrowingTime": 5,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_holonut"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_holonut@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_holonut"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 20,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Defence",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "holonut",
+        "GrowingTime": 3.5,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"atombomb_Explosive"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "atombomb",
+				"Properties": "RTID(atombomb_Explosive@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "ID": 10,
+          "NAME": {"zh":"爆炸石榴LV3","en":"爆炸石榴LV3"},
+          "_CARDSPRITENAME": "atombomb",
+          "CODENAME": "atombomb",
+          "TYPE": [
+            "plant"
+          ],
+          "OBTAINWORLD": "frontyard",
+          "ZENGARDEN": {
+            "PlantPlace": "dirt"
+          },
+          "BOOST": 1,
+          "COSTUME": 1,
+          "PROPS": "RTID(atombomb@PlantProps)",
+          "ALMANAC": "RTID(explosive1Almanac@CurrentLevel)"
+        }
+			}
+		},
+    {
+      "aliases": [
+        "explosive1Almanac"
+      ],
+      "objclass": "PlantAlmanacProperties",
+      "objdata": {
+        "Introduction": {"zh":"图鉴","en":"图鉴"},
+        "BriefIntroduction": {"zh":"造成850伤害，可获得两株土豆地雷","en":"造成850伤害，可获得两株土豆地雷"}
+      }
+    },
+    {
+			"aliases": [
+				"atombomb_Explosive"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 40,
+				"CooldownFrom": 0.75,
+				"SunCost": 250,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Explosive",
+				"ExplodeDamage": 850,
+				"ExplodeSeedlingCount": 2,
+				"ExplodeProjectileType": "atombomb",
+        "SeedlingType": "seedling_explosive",
+				"PlantfoodCallingType": [
+          "seedling"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_explosive"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantRedirection": [
+          {
+            "Type": "seedling_potatomine",
+            "Weight": 1
+          }
+        ]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_potatomine"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_potatomine@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_potatomine"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 20,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Explosive",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "potatomine",
+        "GrowingTime": 3,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"atombomb_Poison"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "atombomb",
+				"Properties": "RTID(atombomb_Poison@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "ID": 11,
+          "NAME": {"zh":"醉熏石榴","en":"醉熏石榴"},
+          "_CARDSPRITENAME": "atombomb",
+          "CODENAME": "atombomb",
+          "TYPE": [
+            "plant"
+          ],
+          "OBTAINWORLD": "frontyard",
+          "ZENGARDEN": {
+            "PlantPlace": "dirt"
+          },
+          "BOOST": 1,
+          "COSTUME": 1,
+          "PROPS": "RTID(atombomb@PlantProps)",
+          "ALMANAC": "RTID(poison1Almanac@CurrentLevel)"
+        }
+			}
+		},
+    {
+      "aliases": [
+        "poison1Almanac"
+      ],
+      "objclass": "PlantAlmanacProperties",
+      "objdata": {
+        "Introduction": {"zh":"图鉴","en":"图鉴"},
+        "BriefIntroduction": {"zh":"造成50伤害，可获得三株迷你垫材","en":"造成100伤害，可获得三株迷你垫材"}
+      }
+    },
+    {
+			"aliases": [
+				"atombomb_Poison"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 20,
+				"CooldownFrom": 0.75,
+				"SunCost": 50,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Poison",
+				"ExplodeDamage": 50,
+				"ExplodeSeedlingCount": 3,
+				"ExplodeProjectileType": "atombomb",
+        "SeedlingType": "seedling_poison",
+				"PlantfoodCallingType": [
+          "seedling"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_poison"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantRedirection": [
+          {
+            "Type": "seedling_puffshroom",
+            "Weight": 1
+          }
+        ]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_puffshroom"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_puffshroom@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_puffshroom"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 20,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Poison",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "puffshroom",
+        "GrowingTime": 0.1,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"atombomb_Electricity"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "atombomb",
+				"Properties": "RTID(atombomb_Electricity@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "ID": 12,
+          "NAME": {"zh":"疾电石榴","en":"疾电石榴"},
+          "_CARDSPRITENAME": "atombomb",
+          "CODENAME": "atombomb",
+          "TYPE": [
+            "plant"
+          ],
+          "OBTAINWORLD": "frontyard",
+          "ZENGARDEN": {
+            "PlantPlace": "dirt"
+          },
+          "BOOST": 1,
+          "COSTUME": 1,
+          "PROPS": "RTID(atombomb@PlantProps)",
+          "ALMANAC": "RTID(electricity1Almanac@CurrentLevel)"
+        }
+			}
+		},
+    {
+      "aliases": [
+        "electricity1Almanac"
+      ],
+      "objclass": "PlantAlmanacProperties",
+      "objdata": {
+        "Introduction": {"zh":"图鉴","en":"图鉴"},
+        "BriefIntroduction": {"zh":"造成100伤害，可获得两株闪电芦苇","en":"造成100伤害，可获得两株闪电芦苇"}
+      }
+    },
+    {
+			"aliases": [
+				"atombomb_Electricity"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 35,
+				"CooldownFrom": 0.75,
+				"SunCost": 275,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Electricity",
+				"ExplodeDamage": 100,
+				"ExplodeSeedlingCount": 2,
+				"ExplodeProjectileType": "atombomb",
+        "SeedlingType": "seedling_electricity",
+				"PlantfoodCallingType": [
+          "seedling"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_electricity"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantRedirection": [
+          {
+            "Type": "seedling_lightningreed",
+            "Weight": 1
+          }
+        ]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_lightningreed"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_lightningreed@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_lightningreed"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 20,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Electricity",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "lightningreed",
+        "GrowingTime": 3,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"atombomb_Melee"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "atombomb",
+				"Properties": "RTID(atombomb_Melee@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "ID": 13,
+          "NAME": {"zh":"重击石榴","en":"重击石榴"},
+          "_CARDSPRITENAME": "atombomb",
+          "CODENAME": "atombomb",
+          "TYPE": [
+            "plant"
+          ],
+          "OBTAINWORLD": "frontyard",
+          "ZENGARDEN": {
+            "PlantPlace": "dirt"
+          },
+          "BOOST": 1,
+          "COSTUME": 1,
+          "PROPS": "RTID(atombomb@PlantProps)",
+          "ALMANAC": "RTID(melee1Almanac@CurrentLevel)"
+        }
+			}
+		},
+    {
+      "aliases": [
+        "melee1Almanac"
+      ],
+      "objclass": "PlantAlmanacProperties",
+      "objdata": {
+        "Introduction": {"zh":"图鉴","en":"图鉴"},
+        "BriefIntroduction": {"zh":"造成150伤害，可获得一株菜问","en":"造成150伤害，可获得一株菜问"}
+      }
+    },
+    {
+			"aliases": [
+				"atombomb_Melee"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 35,
+				"CooldownFrom": 0.75,
+				"SunCost": 175,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Melee",
+				"ExplodeDamage": 150,
+				"ExplodeSeedlingCount": 1,
+				"ExplodeProjectileType": "atombomb",
+        "SeedlingType": "seedling_melee",
+				"PlantfoodCallingType": [
+          "seedling"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_melee"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantRedirection": [
+          {
+            "Type": "seedling_bonkchoy",
+            "Weight": 1
+          }
+        ]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_bonkchoy"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_bonkchoy@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_bonkchoy"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 20,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Melee",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "bonkchoy",
+        "GrowingTime": 3,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"atombomb_Veteran1"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "atombomb",
+				"Properties": "RTID(atombomb_Veteran1@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "ID": 14,
+          "NAME": {"zh":"精锐突破石榴","en":"精锐突破石榴"},
+          "_CARDSPRITENAME": "atombomb",
+          "CODENAME": "atombomb",
+          "TYPE": [
+            "plant"
+          ],
+          "OBTAINWORLD": "market",
+          "ZENGARDEN": {
+            "PlantPlace": "dirt"
+          },
+          "BOOST": 1,
+          "COSTUME": 1,
+          "PROPS": "RTID(atombomb@PlantProps)",
+          "ALMANAC": "RTID(veteran1Almanac@CurrentLevel)"
+        }
+			}
+		},
+    {
+      "aliases": [
+        "veteran1Almanac"
+      ],
+      "objclass": "PlantAlmanacProperties",
+      "objdata": {
+        "Introduction": {"zh":"图鉴","en":"图鉴"},
+        "BriefIntroduction": {"zh":"造成100伤害，可获得一株苹果迫击炮，雪滴花或电能豌豆","en":"造成100伤害，可获得一株苹果迫击炮，雪滴花或电能豌豆"}
+      }
+    },
+    {
+			"aliases": [
+				"atombomb_Veteran1"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 35,
+				"CooldownFrom": 0,
+				"SunCost": 250,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "none",
+				"ExplodeDamage": 100,
+				"ExplodeSeedlingCount": 1,
+				"ExplodeProjectileType": "atombomb",
+        "SeedlingType": "seedling_veteran1",
+				"PlantfoodCallingType": [
+          "seedling"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_veteran1"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantRedirection": [
+          {
+            "Type": "seedling_applemortar",
+            "Weight": 1
+          },
+          {
+            "Type": "seedling_electricpeashooter",
+            "Weight": 1
+          },
+          {
+            "Type": "seedling_snowdrop",
+            "Weight": 1
+          }
+        ]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_applemortar"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_applemortar@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_applemortar"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 15,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Lobber",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "applemortar",
+        "GrowingTime": 5,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_electricpeashooter"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_electricpeashooter@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_electricpeashooter"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 15,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Electricity",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "electricpeashooter",
+        "GrowingTime": 5,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_snowdrop"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_snowdrop@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_snowdrop"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 15,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Cold",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "snowdrop",
+        "GrowingTime": 3,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"atombomb_Attack"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "atombomb",
+				"Properties": "RTID(atombomb_Attack@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "ID": 15,
+          "NAME": {"zh":"城堡守军石榴","en":"城堡守军石榴"},
+          "_CARDSPRITENAME": "atombomb",
+          "CODENAME": "atombomb",
+          "TYPE": [
+            "plant"
+          ],
+          "OBTAINWORLD": "dark",
+          "ZENGARDEN": {
+            "PlantPlace": "dirt"
+          },
+          "BOOST": 1,
+          "COSTUME": 1,
+          "PROPS": "RTID(atombomb@PlantProps)",
+          "ALMANAC": "RTID(attack1Almanac@CurrentLevel)"
+        }
+			}
+		},
+    {
+      "aliases": [
+        "attack1Almanac"
+      ],
+      "objclass": "PlantAlmanacProperties",
+      "objdata": {
+        "Introduction": {"zh":"图鉴","en":"图鉴"},
+        "BriefIntroduction": {"zh":"造成120伤害，可获得四株胆小菇，花生，大喷菇或磁力菇","en":"造成120伤害，可获得四株胆小菇，花生，大喷菇或磁力菇"}
+      }
+    },
+    {
+			"aliases": [
+				"atombomb_Attack"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 30,
+				"CooldownFrom": 0.75,
+				"SunCost": 300,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "none",
+				"ExplodeDamage": 120,
+				"ExplodeSeedlingCount": 4,
+				"ExplodeProjectileType": "atombomb",
+        "SeedlingType": "seedling_attack",
+				"PlantfoodCallingType": [
+          "seedling"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_attack"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantRedirection": [
+          {
+            "Type": "seedling_scaredyshroom",
+            "Weight": 1
+          },
+          {
+            "Type": "seedling_fumeshroom",
+            "Weight": 4
+          },
+          {
+            "Type": "seedling_peanut",
+            "Weight": 2
+          },
+          {
+            "Type": "seedling_magnetshroom",
+            "Weight": 2
+          }
+        ]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_scaredyshroom"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_scaredyshroom@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_scaredyshroom"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 15,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Poison",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "scaredyshroom",
+        "GrowingTime": 1,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_fumeshroom"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_fumeshroom@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_fumeshroom"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 15,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Poison",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "fumeshroom",
+        "GrowingTime": 3,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_peanut"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_peanut@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_peanut"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 15,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Defence",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "peanut",
+        "GrowingTime": 5,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_magnetshroom"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_magnetshroom@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_magnetshroom"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 15,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Slow",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "magnetshroom",
+        "GrowingTime": 3,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"atombomb_Support"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "atombomb",
+				"Properties": "RTID(atombomb_Support@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "ID": 16,
+          "NAME": {"zh":"以战养战石榴","en":"以战养战石榴"},
+          "_CARDSPRITENAME": "atombomb",
+          "CODENAME": "atombomb",
+          "TYPE": [
+            "plant"
+          ],
+          "OBTAINWORLD": "dark",
+          "ZENGARDEN": {
+            "PlantPlace": "dirt"
+          },
+          "BOOST": 1,
+          "COSTUME": 1,
+          "PROPS": "RTID(atombomb@PlantProps)",
+          "ALMANAC": "RTID(support1Almanac@CurrentLevel)"
+        }
+			}
+		},
+    {
+      "aliases": [
+        "support1Almanac"
+      ],
+      "objclass": "PlantAlmanacProperties",
+      "objdata": {
+        "Introduction": {"zh":"图鉴","en":"图鉴"},
+        "BriefIntroduction": {"zh":"无伤害，可获得八株阳光豆或魅惑菇","en":"无伤害，可获得八株阳光豆或魅惑菇"}
+      }
+    },
+    {
+			"aliases": [
+				"atombomb_Support"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 75,
+				"CooldownFrom": 0,
+				"SunCost": 0,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "none",
+				"ExplodeDamage": 0,
+				"ExplodeSeedlingCount": 8,
+				"ExplodeProjectileType": "atombomb",
+        "SeedlingType": "seedling_support",
+				"PlantfoodCallingType": [
+          "seedling"
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_support"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantRedirection": [
+          {
+            "Type": "seedling_hypnoshroom",
+            "Weight": 1
+          },
+          {
+            "Type": "seedling_sunbean",
+            "Weight": 3
+          }
+        ]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_hypnoshroom"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_hypnoshroom@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_hypnoshroom"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 15,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Magic",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "hypnoshroom",
+        "GrowingTime": 1,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [
+				"seedling_sunbean"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "seedling",
+				"Properties": "RTID(seedling_sunbean@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"seedling_sunbean"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {
+				"Cooldown": 15,
+				"CooldownFrom": 0.75,
+				"SunCost": 75,
+				"BeghouledCost": 2000,
+				"Toughness": 300,
+				"Family": "Sun",
+				"Explode0Damage": 0,
+				"Explode0SeedlingCount": 0,
+				"Explode1Damage": 0,
+				"Explode1SeedlingCount": 0,
+				"GrowUpType": "sunbean",
+        "GrowingTime": 1,
+				"ExplodeProjectileType": "",
+				"SeedlingType": "",
+				"PlantfoodCallingType": [
+				]
+			}
+		},
+    {
+			"aliases": [ 
+        "SeedBank" 
+      ],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+        "PresetPlantList": 
+        [],
+        "PlantIncludeList": [
+        "escaperoot","puffshroom","gravebuster","goldbloom","atombomb_Sun",
+        "atombomb_Peashooter","atombomb_Lobber","atombomb_Poison",
+        "atombomb_Electricity","atombomb_Defence","atombomb_Melee",
+        "atombomb_Explosive","atombomb_Doom","atombomb_Veteran1",
+        "atombomb_Attack","atombomb_Support"
+				],
+        "UnlockAll": true,
+        "OverrideSeedSlotsCount": 7,
+				"SelectionMethod": "chooser"
+			}
+		},
+    {
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 6,
+        "WaveCount": 18,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)",
+            "RTID(Wave4GravestoneEvent0@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)",
+            "RTID(Wave6GraveSpawnEvent0@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)",
+            "RTID(Wave8GravestoneEvent0@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)",
+            "RTID(Wave10GraveSpawnEvent0@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave11@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave12@CurrentLevel)",
+            "RTID(Wave12GravestoneEvent0@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave13@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave14@CurrentLevel)",
+            "RTID(Wave14GraveSpawnEvent0@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave15@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave16@CurrentLevel)",
+            "RTID(Wave16GravestoneEvent0@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave17@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave18@CurrentLevel)",
+            "RTID(Wave18GravestoneEvent0@CurrentLevel)",
+            "RTID(Wave18GraveSpawnEvent0@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_armor3@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"3",
+            "Type": "RTID(dark_imp@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+            "Type": "RTID(dark@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "4",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(dark_imp@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_imp@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "Zombies": [
+          {
+            "Row":"1",
+            "Type":"RTID(dark@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+						"Type": "RTID(dark_king@ZombieTypes)"
+					},
+          {
+            "Row":"3",
+						"Type": "RTID(dark_armor1@ZombieTypes)"
+					},
+          {
+            "Row":"4",
+						"Type": "RTID(dark@ZombieTypes)"
+					},
+          {
+            "Row":"5",
+						"Type": "RTID(dark_juggler@ZombieTypes)"
+					}
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"1",
+						"Type": "RTID(dark_armor2@ZombieTypes)"
+					},
+          {
+            "Row":"3",
+            "Type":"RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+            "Type":"RTID(dark_imp_dragon@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"1",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row":"3",
+            "Type": "RTID(dark_armor3@ZombieTypes)"
+          },
+          {
+            "Row":"4",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+            "Type": "RTID(dark_imp@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_wizard@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_king@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"1",
+            "Type":"RTID(dark_imp_dragon@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+            "Type":"RTID(dark_wizard@ZombieTypes)"
+          },
+          {
+            "Row":"3",
+            "Type":"RTID(dark_imp@ZombieTypes)"
+          },
+          {
+            "Row":"4",
+						"Type": "RTID(dark_imp_dragon@ZombieTypes)"
+					},
+          {
+            "Row":"5",
+            "Type":"RTID(dark_imp@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+						"Type": "RTID(dark_wizard@ZombieTypes)"
+					}
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "Zombies": [
+          {
+            "Row":"1",
+						"Type": "RTID(dark_armor1@ZombieTypes)"
+					},
+          {
+            "Row":"2",
+            "Type":"RTID(dark_king@ZombieTypes)"
+          },
+          {
+            "Row":"3",
+						"Type": "RTID(dark_gargantuar@ZombieTypes)"
+					},
+          {
+            "Row":"4",
+            "Type":"RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+						"Type": "RTID(dark_king@ZombieTypes)"
+					},
+          {
+            "Row":"2",
+            "Type":"RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+            "Type":"RTID(dark_armor2@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave13"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"1",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+            "Type": "RTID(dark_imp@ZombieTypes)"
+          },
+          {
+            "Row":"3",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row":"4",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+            "Type": "RTID(dark_imp_dragon@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Row":"4",
+            "Type": "RTID(dark@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave14"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(dark_wizard@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark_wizard@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(dark_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_king_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_wizard_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_armor4@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave16"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "4",
+            "Type": "RTID(dark_king@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_imp@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_imp@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_imp_dragon@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_imp_dragon@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave17"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_armor3@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_wizard@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_wizard@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave18"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(dark_gargantuar@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_gargantuar@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(dark_king_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(dark_king_veteran@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_wizard_veteran@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4GravestoneEvent0"
+      ],
+      "objclass": "SpawnGravestonesWaveActionProps",
+      "objdata": {
+        "GravestonePool": [
+          {
+            "Count": 2,
+            "Type": "RTID(gravestone_dark@GridItemTypes)"
+          },
+          {
+            "Count": 4,
+            "Type": "RTID(gravestoneSunOnDestruction@GridItemTypes)"
+          }
+        ],
+        "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+        "SpawnPositionsPool": [
+          {
+            "mX": 5,
+            "mY": 1
+          },
+          {
+            "mX": 5,
+            "mY": 3
+          },
+          {
+            "mX": 6,
+            "mY": 0
+          },
+          {
+            "mX": 6,
+            "mY": 2
+          },
+          {
+            "mX": 6,
+            "mY": 4
+          },
+          {
+            "mX": 7,
+            "mY": 0
+          },
+          {
+            "mX": 7,
+            "mY": 1
+          },
+          {
+            "mX": 7,
+            "mY": 2
+          },
+          {
+            "mX": 7,
+            "mY": 3
+          },
+          {
+            "mX": 7,
+            "mY": 4
+          }
+        ],
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+      }
+    },
+    {
+      "aliases": [
+        "Wave8GravestoneEvent0"
+      ],
+      "objclass": "SpawnGravestonesWaveActionProps",
+      "objdata": {
+        "GravestonePool": [
+          {
+            "Count": 8,
+            "Type": "RTID(gravestone_dark@GridItemTypes)"
+          },
+          {
+            "Count": 5,
+            "Type": "RTID(gravestoneSunOnDestruction@GridItemTypes)"
+          }
+        ],
+        "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+        "SpawnPositionsPool": [
+          {
+            "mX": 5,
+            "mY": 0
+          },
+          {
+            "mX": 5,
+            "mY": 1
+          },
+          {
+            "mX": 5,
+            "mY": 2
+          },
+          {
+            "mX": 5,
+            "mY": 3
+          },
+          {
+            "mX": 5,
+            "mY": 4
+          },
+          {
+            "mX": 6,
+            "mY": 0
+          },
+          {
+            "mX": 6,
+            "mY": 1
+          },
+          {
+            "mX": 6,
+            "mY": 2
+          },
+          {
+            "mX": 6,
+            "mY": 3
+          },
+          {
+            "mX": 6,
+            "mY": 4
+          },
+          {
+            "mX": 7,
+            "mY": 0
+          },
+          {
+            "mX": 7,
+            "mY": 1
+          },
+          {
+            "mX": 7,
+            "mY": 2
+          },
+          {
+            "mX": 7,
+            "mY": 3
+          },
+          {
+            "mX": 7,
+            "mY": 4
+          },
+          {
+            "mX": 8,
+            "mY": 0
+          },
+          {
+            "mX": 8,
+            "mY": 1
+          },
+          {
+            "mX": 8,
+            "mY": 2
+          },
+          {
+            "mX": 8,
+            "mY": 3
+          },
+          {
+            "mX": 8,
+            "mY": 4
+          }
+        ],
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+      }
+    },
+    {
+      "aliases": [
+        "Wave12GravestoneEvent0"
+      ],
+      "objclass": "SpawnGravestonesWaveActionProps",
+      "objdata": {
+        "GravestonePool": [
+          {
+            "Count": 12,
+            "Type": "RTID(gravestone_dark@GridItemTypes)"
+          },
+          {
+            "Count": 5,
+            "Type": "RTID(gravestoneSunOnDestruction@GridItemTypes)"
+          }
+        ],
+        "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+        "SpawnPositionsPool": [
+          {
+            "mX": 5,
+            "mY": 0
+          },
+          {
+            "mX": 5,
+            "mY": 1
+          },
+          {
+            "mX": 5,
+            "mY": 2
+          },
+          {
+            "mX": 5,
+            "mY": 3
+          },
+          {
+            "mX": 5,
+            "mY": 4
+          },
+          {
+            "mX": 6,
+            "mY": 0
+          },
+          {
+            "mX": 6,
+            "mY": 1
+          },
+          {
+            "mX": 6,
+            "mY": 2
+          },
+          {
+            "mX": 6,
+            "mY": 3
+          },
+          {
+            "mX": 6,
+            "mY": 4
+          },
+          {
+            "mX": 7,
+            "mY": 0
+          },
+          {
+            "mX": 7,
+            "mY": 1
+          },
+          {
+            "mX": 7,
+            "mY": 2
+          },
+          {
+            "mX": 7,
+            "mY": 3
+          },
+          {
+            "mX": 7,
+            "mY": 4
+          },
+          {
+            "mX": 8,
+            "mY": 0
+          },
+          {
+            "mX": 8,
+            "mY": 1
+          },
+          {
+            "mX": 8,
+            "mY": 2
+          },
+          {
+            "mX": 8,
+            "mY": 3
+          },
+          {
+            "mX": 8,
+            "mY": 4
+          }
+        ],
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+      }
+    },
+    {
+      "aliases": [
+        "Wave16GravestoneEvent0"
+      ],
+      "objclass": "SpawnGravestonesWaveActionProps",
+      "objdata": {
+        "GravestonePool": [
+          {
+            "Count": 10,
+            "Type": "RTID(gravestone_dark@GridItemTypes)"
+          },
+          {
+            "Count": 4,
+            "Type": "RTID(gravestoneSunOnDestruction@GridItemTypes)"
+          }
+        ],
+        "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+        "SpawnPositionsPool": [
+          {
+            "mX": 5,
+            "mY": 0
+          },
+          {
+            "mX": 5,
+            "mY": 1
+          },
+          {
+            "mX": 5,
+            "mY": 2
+          },
+          {
+            "mX": 5,
+            "mY": 3
+          },
+          {
+            "mX": 5,
+            "mY": 4
+          },
+          {
+            "mX": 6,
+            "mY": 0
+          },
+          {
+            "mX": 6,
+            "mY": 1
+          },
+          {
+            "mX": 6,
+            "mY": 2
+          },
+          {
+            "mX": 6,
+            "mY": 3
+          },
+          {
+            "mX": 6,
+            "mY": 4
+          },
+          {
+            "mX": 7,
+            "mY": 0
+          },
+          {
+            "mX": 7,
+            "mY": 1
+          },
+          {
+            "mX": 7,
+            "mY": 2
+          },
+          {
+            "mX": 7,
+            "mY": 3
+          },
+          {
+            "mX": 7,
+            "mY": 4
+          },
+          {
+            "mX": 8,
+            "mY": 0
+          },
+          {
+            "mX": 8,
+            "mY": 1
+          },
+          {
+            "mX": 8,
+            "mY": 2
+          },
+          {
+            "mX": 8,
+            "mY": 3
+          },
+          {
+            "mX": 8,
+            "mY": 4
+          }
+        ],
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+      }
+    },
+    {
+      "aliases": [
+        "Wave18GravestoneEvent0"
+      ],
+      "objclass": "SpawnGravestonesWaveActionProps",
+      "objdata": {
+        "GravestonePool": [
+          {
+            "Count": 12,
+            "Type": "RTID(gravestone_dark@GridItemTypes)"
+          },
+          {
+            "Count": 3,
+            "Type": "RTID(gravestoneSunOnDestruction@GridItemTypes)"
+          }
+        ],
+        "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+        "SpawnPositionsPool": [
+          {
+            "mX": 4,
+            "mY": 0
+          },
+          {
+            "mX": 4,
+            "mY": 1
+          },
+          {
+            "mX": 4,
+            "mY": 4
+          },
+          {
+            "mX": 3,
+            "mY": 2
+          },
+          {
+            "mX": 3,
+            "mY": 3
+          },
+          {
+            "mX": 5,
+            "mY": 0
+          },
+          {
+            "mX": 5,
+            "mY": 2
+          },
+          {
+            "mX": 6,
+            "mY": 1
+          },
+          {
+            "mX": 6,
+            "mY": 3
+          },
+          {
+            "mX": 6,
+            "mY": 5
+          },
+          {
+            "mX": 7,
+            "mY": 0
+          },
+          {
+            "mX": 7,
+            "mY": 1
+          },
+          {
+            "mX": 7,
+            "mY": 2
+          },
+          {
+            "mX": 8,
+            "mY": 3
+          },
+          {
+            "mX": 8,
+            "mY": 4
+          }
+        ],
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+      }
+    },
+    {
+      "aliases": [
+        "Wave6GraveSpawnEvent0"
+      ],
+      "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+      "objdata": {
+        "AdditionalPlantfood": "0",
+        "GridTypes": [
+          "RTID(gravestone_dark@GridItemTypes)",
+          "RTID(gravestoneSunOnDestruction@GridItemTypes)",
+          "RTID(gravestonePlantfoodOnDestruction@GridItemTypes)"
+        ],
+        "WaveStartMessage": "[WARNING_GRAVESTONE_SPAWN]",
+        "ZombieSpawnWaitTime": "1",
+        "Zombies": [
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_imp@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_imp@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10GraveSpawnEvent0"
+      ],
+      "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+      "objdata": {
+        "AdditionalPlantfood": "0",
+        "GridTypes": [
+          "RTID(gravestone_dark@GridItemTypes)",
+          "RTID(gravestoneSunOnDestruction@GridItemTypes)",
+          "RTID(gravestonePlantfoodOnDestruction@GridItemTypes)"
+        ],
+        "WaveStartMessage": "[WARNING_GRAVESTONE_SPAWN]",
+        "ZombieSpawnWaitTime": "1",
+        "Zombies": [
+          {
+            "Type": "RTID(dark_wizard@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave14GraveSpawnEvent0"
+      ],
+      "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+      "objdata": {
+        "AdditionalPlantfood": "0",
+        "GridTypes": [
+          "RTID(gravestone_dark@GridItemTypes)",
+          "RTID(gravestoneSunOnDestruction@GridItemTypes)",
+          "RTID(gravestonePlantfoodOnDestruction@GridItemTypes)"
+        ],
+        "WaveStartMessage": "[WARNING_GRAVESTONE_SPAWN]",
+        "ZombieSpawnWaitTime": "1",
+        "Zombies": [
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_imp_dragon@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_imp_dragon@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_imp@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_imp@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave18GraveSpawnEvent0"
+      ],
+      "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+      "objdata": {
+        "AdditionalPlantfood": "0",
+        "GridTypes": [
+          "RTID(gravestone_dark@GridItemTypes)",
+          "RTID(gravestoneSunOnDestruction@GridItemTypes)",
+          "RTID(gravestonePlantfoodOnDestruction@GridItemTypes)"
+        ],
+        "WaveStartMessage": "[WARNING_GRAVESTONE_SPAWN]",
+        "ZombieSpawnWaitTime": "1",
+        "Zombies": [
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_juggler@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(dark_wizard@ZombieTypes)"
+          }
+        ]
+      }
+    }
+  ],
+  "version": 1
+}

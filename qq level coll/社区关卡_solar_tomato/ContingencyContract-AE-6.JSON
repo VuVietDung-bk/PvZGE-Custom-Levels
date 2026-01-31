@@ -1,0 +1,637 @@
+{
+  "#comment": "ContingencyContract",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "Contingency Contract!",
+        "FirstIntroNarrative": "CC_Intro",
+        "LevelNumber": 6,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(PowerupPurchaseIntro@CurrentLevel)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(Gravestones@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)"
+        ],
+        "Name": "ContingencyContract-AE-6",
+        "NameMultiLanguage": {
+          "en": "ContingencyContract-AE-6",
+          "zh": "危机合约-上古埃及-day6"
+        },
+        "WritenBy": "solar_tomato",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(EgyptStage@LevelModules)"
+      }
+    },
+    { 
+      "objclass": "NarrativeProperties",
+      "aliases": [
+        "CC_Intro"
+      ],
+      "objdata": {
+        "AutoAdvance": true,
+        "DelayBetweenLines": 3,
+        "Flow": [
+          {
+            "Character": "winnie",
+            "Action": "NPC_ENTER",
+            "Delay": 0.5
+          },
+          {
+            "Character": "winnie",
+            "Action": "SAY",
+            "Lines": {
+              "en": "Welcome to Contingency Contract. This constitutes a high-difficulty assignment",
+              "zh": "欢迎来到危机合约，这是一项高难度任务"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "winnie",
+            "Action": "SAY",
+            "Lines": {
+              "en": "You will revisit previous mainline stages here, though they appear significantly altered",
+              "zh": "你将在这里重新体验之前的主线关卡，尽管它们看起来大有不同"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "winnie",
+            "Action": "SAY",
+            "Lines": {
+              "en": "This stage returns to our sixth exploration day in Ancient Egypt, though it represents your first challenge attempt",
+              "zh": "本关将回到我们在古埃及探索的第6天，同时也是你的第1天合约挑战"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "winnie",
+            "Action": "SAY",
+            "Lines": {
+              "en": "Calculate your survival duration under sustained zombie assault parameters?",
+              "zh": "你能在尸潮的攻势下生存多久？"
+            },
+            "Delay": 0.3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(BeatTheLevel@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": [
+        "BeatTheLevel"
+      ],
+      "objclass": "StarChallengeBeatTheLevelProps",
+      "objdata": {
+        "DescriptionsMultilanguage": [
+          {
+            "en": "All zombies gain +100% health",
+            "zh": "所有僵尸生命值+100%"
+          },
+          {
+            "en": "All Camel Zombie formations are extended by 3, and Camel Sign health is increased by 100%",
+            "zh": "所有骆驼牌僵尸阵的长度+3，骆驼牌耐久度+100%"
+          },
+          {
+            "en": "All Ra gain +100% health and sun capacity",
+            "zh": "所有太阳神的生命值和阳光容纳量+100%"
+          },
+          {
+            "en": "Dynamic point requirement for all zombies reduced by 50%",
+            "zh": "所有僵尸的动态点数需求-50%"
+          },
+          {
+            "en": "Initial plant slots reduced to 4",
+            "zh": "初始植物携带位减少至4"
+          },
+          {
+            "en": "All lawn mowers are removed",
+            "zh": "失去所有割草机"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Gravestones"
+      ],
+      "objclass": "GravestoneProperties",
+      "objdata": {
+        "ForceSpawnData": [
+          {
+            "GridX": 7,
+            "GridY": 0
+          },
+          {
+            "GridX": 6,
+            "GridY": 0
+          },
+          {
+            "GridX": 5,
+            "GridY": 1
+          },
+          {
+            "GridX": 7,
+            "GridY": 3
+          },
+          {
+            "GridX": 6,
+            "GridY": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "OverrideSeedSlotsCount":4,
+        "SelectionMethod": "chooser"
+      }
+    },
+    {
+      "aliases": [
+        "PowerupPurchaseIntro"
+      ],
+      "objclass": "PowerupPurchaseIntroProperties",
+      "objdata": {
+        "Narrative": "BUY_POWERUPS"
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {
+            "PointIncrementPerWave": -40,
+            "StartingPoints": -100,
+            "StartingWave": 3,
+            "ZombiePool": [
+              "RTID(mummy@CurrentLevel)",
+              "RTID(mummy_armor1@CurrentLevel)",
+              "RTID(ra@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": -25,
+            "StartingPoints": -100,
+            "StartingWave": 4,
+            "ZombiePool": [
+              "RTID(mummy@CurrentLevel)",
+              "RTID(mummy_armor1@CurrentLevel)",
+              "RTID(ra@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": -10,
+            "StartingPoints": -100,
+            "StartingWave": 5,
+            "ZombiePool": [
+              "RTID(mummy@CurrentLevel)",
+              "RTID(mummy_armor1@CurrentLevel)",
+              "RTID(ra@CurrentLevel)"
+            ]
+          },
+          {},
+          {
+            "PointIncrementPerWave": 20,
+            "StartingPoints": 100,
+            "StartingWave": 5,
+            "ZombiePool": [
+              "RTID(mummy@CurrentLevel)",
+              "RTID(mummy_armor1@CurrentLevel)",
+              "RTID(ra@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 40,
+            "StartingPoints": 200,
+            "StartingWave": 4,
+            "ZombiePool": [
+              "RTID(mummy_armor1@CurrentLevel)",
+              "RTID(ra@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 60,
+            "StartingPoints": 400,
+            "StartingWave": 3,
+            "ZombiePool": [
+              "RTID(mummy_armor1@CurrentLevel)",
+              "RTID(ra@CurrentLevel)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 10,
+        "SpawnColEnd": 9,
+        "SpawnColStart": 7,
+        "WaveCount": 10,
+        "WaveSpendingPointIncrement": 50,
+        "WaveSpendingPoints": 100,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)",
+            "RTID(Wave10SandstormEvent0@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(mummy@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(mummy@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(mummy@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(mummy@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "Zombies": [
+          {
+            "Row": "3",
+            "Type": "RTID(mummy_armor1@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "4",
+            "Type": "RTID(camel_onehump@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(mummy@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(ra@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(mummy_armor1@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(mummy@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(mummy_armor1@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(ra@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(camel_onehump@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(mummy@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(mummy_armor1@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(ra@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "Zombies": [
+          {
+            "Row": "5",
+            "Type": "RTID(camel_onehump@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(camel_onehump@CurrentLevel)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(camel_onehump@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10SandstormEvent0"
+      ],
+      "objclass": "StormZombieSpawnerProps",
+      "objdata": {
+        "ColumnEnd": 8,
+        "ColumnStart": 5,
+        "GroupSize": 1,
+        "TimeBetweenGroups": 3,
+        "Waves": "",
+        "Type": "sandstorm",
+        "Zombies": [
+          {
+            "Type": "RTID(mummy@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(mummy@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(mummy@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+			"aliases": [
+				"mummy"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(mummy@CurrentLevel)",
+				"ZombieBasedOn": "mummy"
+			}
+		},
+		{
+			"aliases": [
+				"mummy"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.185,
+				"EatDPS": 100,
+				"Toughness": 380,
+				"WavePointCost": 50,
+				"Weight": 1000
+      }
+		},
+    {
+			"aliases": [
+				"mummy_armor1"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(mummy_armor1@CurrentLevel)",
+				"ZombieBasedOn": "mummy_armor1"
+			}
+		},
+		{
+			"aliases": [
+				"mummy_armor1"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.185,
+				"EatDPS": 100,
+				"Toughness": 380,
+				"StartingArmors": [
+					"egypt_armor1"
+				],
+				"WavePointCost": 100,
+				"Weight": 3000
+      }
+		},
+    {
+			"aliases": [
+				"ra"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(ra@CurrentLevel)",
+				"ZombieBasedOn": "ra"
+			}
+		},
+		{
+			"aliases": [
+				"ra"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"MaxAbsorbValue": 500,
+				"WalkSPS": 0.2,
+				"EatDPS": 100,
+				"Toughness": 760,
+				"WavePointCost": 50,
+				"Weight": 700
+      }
+		},
+    {
+			"aliases": [
+				"camel_onehump"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(camel_onehump@CurrentLevel)",
+				"ZombieBasedOn": "camel_onehump"
+			}
+		},
+		{
+			"aliases": [
+				"camel_onehump"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "CannotBeTossedByCitron": false,
+				"WalkSPS": 0.12,
+				"EatDPS": 100,
+				"Toughness": 500,
+				"ZombieInside": "mummy",
+				"TeamMemberCount": [
+					6
+				],
+				"NormalDeathWhenMowed": true,
+				"WavePointCost": 300,
+				"Weight": 3000
+      }
+		}
+  ],
+  "version": 1
+}

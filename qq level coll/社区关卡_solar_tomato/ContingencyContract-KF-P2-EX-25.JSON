@@ -1,0 +1,1661 @@
+{
+    "#comment": "ContingencyContract",
+    "objects": [
+        {
+            "objclass": "LevelDefinition",
+            "objdata": {
+                "Description": "醉翁之意不在酒，在乎吃主之间也",
+                "LevelNumber": 25,
+                "Loot": "RTID(DefaultLoot@LevelModules)",
+                "Modules": [
+                    "RTID(StandardIntro@LevelModules)",
+                    "RTID(DefaultSunDropper@LevelModules)",
+                    "RTID(ZombiesDeadWinCon@LevelModules)",
+                    "RTID(KongfuMowers@LevelModules)",
+                    "RTID(KongfuRack@CurrentLevel)",
+                    "RTID(TaichiTile@CurrentLevel)",
+                    "RTID(SeedBank@CurrentLevel)",
+                    "RTID(ChallengeModule@CurrentLevel)",
+                    "RTID(DefaultZombieWinCondition@LevelModules)",
+                    "RTID(NewWaves@CurrentLevel)"
+                ],
+                "Name": "ContingencyContract-KF-P2-EX-25",
+                "NameMultiLanguage": {
+                "en": "ContingencyContract-KF-P2-EX-25",
+                "zh": "危机合约-武林寺庙第二部分-紧急-day25"
+                },
+                "WritenBy": "保罗_刘(solar_tomato修改)",
+                "StageModule": "RTID(MonkStage@LevelModules)"
+            }
+        },
+        {
+            "aliases": [
+                "TaichiTile"
+            ],
+            "objclass": "InitialGridItemProperties",
+            "objdata": {
+                "InitialGridItemPlacements": [
+                    {
+                        "GridX": 4,
+                        "GridY": 2,
+                        "TypeName": "taichitile"
+                    }
+                ]
+            }
+        },
+        {
+        "aliases": [
+            "ChallengeModule"
+        ],
+        "objclass": "StarChallengeModuleProperties",
+        "objdata": {
+            "Challenges": [
+            [
+                "RTID(BeatTheLevel@CurrentLevel)"
+            ]
+            ],
+            "ChallengesAlwaysAvailable": true
+        }
+        },
+        {
+        "aliases": [
+            "BeatTheLevel"
+        ],
+        "objclass": "StarChallengeBeatTheLevelProps",
+        "objdata": {
+            "DescriptionsMultilanguage": [
+            {
+                "en": "All normal zombies gain +100% movement speed and +100% armor durability, and all special zombies gain +80% health and +80% attack damage",
+                "zh": "所有普通僵尸的移动速度和防具耐久度+100%，特殊僵尸的生命值和攻击力+80%"
+            },
+            {
+                "en": "All Drink Monk are more likely to drink, receive reduced damage while drinking, and gain increased attack damage, movement speed and damage reduction when intoxicated",
+                "zh": "所有醉酒武僧更容易喝酒，喝酒时受到的伤害降低，醉酒状态下攻击力，移动速度和减伤增加"
+            },
+            {
+                "en": "All Nunchaku Monk and Torch Monk gain +40% health and +40% movement speed. Nunchaku Monk Zombies have increased parry duration and reflected projectile damage",
+                "zh": "所有双截棍武僧和火把武僧的生命值和移动速度+40%，双截棍反弹时间和反弹子弹伤害提升"
+            },
+            {
+                "en": "Additional Kongfu Racks appear, some zombies emerge from under Kongfu Racks during certain waves, and certain plants are disabled",
+                "zh": "出现额外兵器架，一些僵尸会在部分波次从兵器架下出现，禁用部分植物"
+            }
+            ]
+        }
+        },
+        {
+            "aliases": [
+                "KongfuRack"
+            ],
+            "objclass": "GravestoneProperties",
+            "objdata": {
+                "ForceSpawnData": [
+                    {
+                        "GridX": 3,
+                        "GridY": 1,
+                        "TypeName": "kongfu_rack_helmet"
+                    },
+                    {
+                        "GridX": 5,
+                        "GridY": 1,
+                        "TypeName": "kongfu_rack_blade"
+                    },
+                    {
+                        "GridX": 7,
+                        "GridY": 1,
+                        "TypeName": "kongfu_rack_torch"
+                    },
+                    {
+                        "GridX": 3,
+                        "GridY": 3,
+                        "TypeName": "kongfu_rack_blade"
+                    },
+                    {
+                        "GridX": 5,
+                        "GridY": 3,
+                        "TypeName": "kongfu_rack_torch"
+                    },
+                    {
+                        "GridX": 7,
+                        "GridY": 3,
+                        "TypeName": "kongfu_rack_helmet"
+                    },
+                    {
+                        "GridX": 1,
+                        "GridY": 1,
+                        "TypeName": "kongfu_rack_nunchaku"
+                    },
+                    {
+                        "GridX": 1,
+                        "GridY": 3,
+                        "TypeName": "kongfu_rack_helmet"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "SeedBank"
+            ],
+            "objclass": "SeedBankProperties",
+            "objdata": {
+                "PlantExcludeList": [
+          "blover","hurrikale"
+        ],
+                "SelectionMethod": "chooser"
+            }
+        },
+        {
+            "aliases": [
+                "NewWaves"
+            ],
+            "objclass": "WaveManagerModuleProperties",
+            "objdata": {
+                "DynamicZombies": [
+                    {
+                        "PointIncrementPerWave": -40,
+                        "StartingPoints": -100,
+                        "StartingWave": 3,
+                        "ZombiePool": [
+                            "RTID(kongfu_bronze_strong@CurrentLevel)",
+                            "RTID(monk_drink@CurrentLevel)",
+                            "RTID(monk_nunchaku@CurrentLevel)",
+                            "RTID(monk_torch@CurrentLevel)",
+                            "RTID(monk_armor2@CurrentLevel)",
+                            "RTID(monk_armor1@CurrentLevel)",
+                            "RTID(monk_imp@CurrentLevel)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": -25,
+                        "StartingPoints": -100,
+                        "StartingWave": 4,
+                        "ZombiePool": [
+                            "RTID(kongfu_bronze_strong@CurrentLevel)",
+                            "RTID(monk_drink@CurrentLevel)",
+                            "RTID(monk_nunchaku@CurrentLevel)",
+                            "RTID(monk_torch@CurrentLevel)",
+                            "RTID(monk_armor2@CurrentLevel)",
+                            "RTID(monk_armor1@CurrentLevel)",
+                            "RTID(monk_imp@CurrentLevel)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": -10,
+                        "StartingPoints": -100,
+                        "StartingWave": 5,
+                        "ZombiePool": [
+                            "RTID(kongfu_bronze_strong@CurrentLevel)",
+                            "RTID(monk_drink@CurrentLevel)",
+                            "RTID(monk_nunchaku@CurrentLevel)",
+                            "RTID(monk_torch@CurrentLevel)",
+                            "RTID(monk_armor2@CurrentLevel)",
+                            "RTID(monk_armor1@CurrentLevel)",
+                            "RTID(monk_imp@CurrentLevel)"
+                        ]
+                    },
+                    {},
+                    {
+                        "PointIncrementPerWave": 20,
+                        "StartingPoints": 100,
+                        "StartingWave": 5,
+                        "ZombiePool": [
+                            "RTID(monk_drink@CurrentLevel)",
+                            "RTID(monk_imp@CurrentLevel)",
+                            "RTID(kongfu_chi@CurrentLevel)",
+                            "RTID(monk_armor1@CurrentLevel)",
+                            "RTID(monk@CurrentLevel)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 40,
+                        "StartingPoints": 200,
+                        "StartingWave": 4,
+                        "ZombiePool": [
+                            "RTID(monk_drink@CurrentLevel)",
+                            "RTID(monk_imp@CurrentLevel)",
+                            "RTID(kongfu_chi@CurrentLevel)",
+                            "RTID(monk_armor1@CurrentLevel)",
+                            "RTID(monk_armor2@CurrentLevel)",
+                            "RTID(monk@CurrentLevel)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 60,
+                        "StartingPoints": 400,
+                        "StartingWave": 3,
+                        "ZombiePool": [
+                            "RTID(monk_drink@CurrentLevel)",
+                            "RTID(monk_imp@CurrentLevel)",
+                            "RTID(kongfu_chi@CurrentLevel)",
+                            "RTID(monk_armor2@CurrentLevel)",
+                            "RTID(monk@CurrentLevel)"
+                        ]
+                    }
+                ],
+                "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 7,
+                "WaveCount": 14,
+                "WaveSpendingPointIncrement": 100,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    [
+                        "RTID(Wave1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave2@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave3@CurrentLevel)",
+                        "RTID(Wave3GraveSpawnEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave4@CurrentLevel)",
+                        "RTID(Wave4GravestoneEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave5@CurrentLevel)",
+                        "RTID(Wave5Event0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave6@CurrentLevel)",
+                        "RTID(Wave6GraveSpawnEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave7@CurrentLevel)",
+                        "RTID(Wave7GravestoneEvent0@CurrentLevel)",
+                        "RTID(Wave7TaichiTileEvent@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave8@CurrentLevel)",
+                        "RTID(Wave8GravestoneEvent0@CurrentLevel)",
+                        "RTID(Wave8GraveSpawnEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave9@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave10@CurrentLevel)",
+                        "RTID(Wave10GravestoneEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave11@CurrentLevel)",
+                        "RTID(Wave11Event0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave12@CurrentLevel)",
+                        "RTID(Wave12GravestoneEvent0@CurrentLevel)",
+                        "RTID(Wave12GraveSpawnEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave13@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave14@CurrentLevel)",
+                        "RTID(Wave14Event0@CurrentLevel)",
+                        "RTID(Wave14GraveSpawnEvent0@CurrentLevel)",
+                        "RTID(Wave14GravestoneEvent0@CurrentLevel)"
+                    ]
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave4GravestoneEvent0"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {
+                        "Count": 2,
+                        "Type": "RTID(kongfu_rack_helmet@GridItemTypes)"
+                    },
+                    {
+                        "Count": 3,
+                        "Type": "RTID(kongfu_rack_torch@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {
+                        "mX": 6,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 4
+                    }
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+                "maxX": 8,
+                "minX": 0
+            }
+        },
+        {
+            "aliases": [
+                "Wave7GravestoneEvent0"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {
+                        "Count": 2,
+                        "Type": "RTID(kongfu_rack_helmet@GridItemTypes)"
+                    },
+                    {
+                        "Count": 2,
+                        "Type": "RTID(kongfu_rack_torch@GridItemTypes)"
+                    },
+                    {
+                        "Count": 1,
+                        "Type": "RTID(kongfu_rack_nunchaku@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {
+                        "mX": 5,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 4
+                    }
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+                "maxX": 8,
+                "minX": 0
+            }
+        },
+        {
+            "aliases": [
+                "Wave8GravestoneEvent0"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {
+                        "Count": 2,
+                        "Type": "RTID(kongfu_rack_nunchaku@GridItemTypes)"
+                    },
+                    {
+                        "Count": 3,
+                        "Type": "RTID(kongfu_rack_torch@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {
+                        "mX": 6,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 4,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 4
+                    }
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+                "maxX": 8,
+                "minX": 0
+            }
+        },
+        {
+            "aliases": [
+                "Wave10GravestoneEvent0"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {
+                        "Count": 2,
+                        "Type": "RTID(kongfu_rack_helmet@GridItemTypes)"
+                    },
+                    {
+                        "Count": 5,
+                        "Type": "RTID(kongfu_rack_torch@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {
+                        "mX": 7,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 4,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 4
+                    }
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+                "maxX": 8,
+                "minX": 0
+            }
+        },
+        {
+            "aliases": [
+                "Wave12GravestoneEvent0"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {
+                        "Count": 3,
+                        "Type": "RTID(kongfu_rack_helmet@GridItemTypes)"
+                    },
+                    {
+                        "Count": 4,
+                        "Type": "RTID(kongfu_rack_nunchaku@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {
+                        "mX": 6,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 4
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 7,
+                        "mY": 3
+                    }
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+                "maxX": 8,
+                "minX": 0
+            }
+        },
+        {
+            "aliases": [
+                "Wave14GravestoneEvent0"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {
+                        "Count": 1,
+                        "Type": "RTID(kongfu_rack_helmet@GridItemTypes)"
+                    },
+                    {
+                        "Count": 2,
+                        "Type": "RTID(kongfu_rack_nunchaku@GridItemTypes)"
+                    },
+                    {
+                        "Count": 2,
+                        "Type": "RTID(kongfu_rack_torch@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {
+                        "mX": 3,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 3,
+                        "mY": 4
+                    },
+                    {
+                        "mX": 4,
+                        "mY": 2
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 0
+                    },
+                    {
+                        "mX": 6,
+                        "mY": 3
+                    }
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+                "maxX": 8,
+                "minX": 0
+            }
+        },
+        {
+      "aliases": [
+        "Wave3GraveSpawnEvent0"
+      ],
+      "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+      "objdata": {
+        "AdditionalPlantfood": "0",
+        "GridTypes": [
+          "RTID(kongfu_rack_torch@GridItemTypes)",
+          "RTID(kongfu_rack_helmet@GridItemTypes)",
+          "RTID(kongfu_rack_nunchaku@GridItemTypes)",
+          "RTID(kongfu_rack_blade@GridItemTypes)"
+        ],
+        "SuppressActionIfNoGridItemsFound": false,
+        "WaveStartMessage": "[WARNING_GRAVESTONE_SPAWN]",
+        "ZombieSpawnWaitTime": "1",
+        "Zombies": [
+          {
+            "Type": "RTID(monk@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6GraveSpawnEvent0"
+      ],
+      "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+      "objdata": {
+        "AdditionalPlantfood": "0",
+        "GridTypes": [
+          "RTID(kongfu_rack_torch@GridItemTypes)",
+          "RTID(kongfu_rack_helmet@GridItemTypes)",
+          "RTID(kongfu_rack_nunchaku@GridItemTypes)",
+          "RTID(kongfu_rack_blade@GridItemTypes)"
+        ],
+        "SuppressActionIfNoGridItemsFound": false,
+        "WaveStartMessage": "[WARNING_GRAVESTONE_SPAWN]",
+        "ZombieSpawnWaitTime": "1",
+        "Zombies": [
+          {
+            "Type": "RTID(monk@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(monk@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8GraveSpawnEvent0"
+      ],
+      "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+      "objdata": {
+        "AdditionalPlantfood": "0",
+        "GridTypes": [
+          "RTID(kongfu_rack_torch@GridItemTypes)",
+          "RTID(kongfu_rack_helmet@GridItemTypes)",
+          "RTID(kongfu_rack_nunchaku@GridItemTypes)",
+          "RTID(kongfu_rack_blade@GridItemTypes)"
+        ],
+        "SuppressActionIfNoGridItemsFound": false,
+        "WaveStartMessage": "[WARNING_GRAVESTONE_SPAWN]",
+        "ZombieSpawnWaitTime": "1",
+        "Zombies": [
+          {
+            "Type": "RTID(monk_armor1@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(monk_armor1@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(monk@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(monk_imp@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12GraveSpawnEvent0"
+      ],
+      "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+      "objdata": {
+        "AdditionalPlantfood": "0",
+        "GridTypes": [
+          "RTID(kongfu_rack_torch@GridItemTypes)",
+          "RTID(kongfu_rack_helmet@GridItemTypes)",
+          "RTID(kongfu_rack_nunchaku@GridItemTypes)",
+          "RTID(kongfu_rack_blade@GridItemTypes)"
+        ],
+        "SuppressActionIfNoGridItemsFound": false,
+        "WaveStartMessage": "[WARNING_GRAVESTONE_SPAWN]",
+        "ZombieSpawnWaitTime": "1",
+        "Zombies": [
+          {
+            "Type": "RTID(monk_armor2@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(monk_armor1@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(monk_armor1@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(monk_drink@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave14GraveSpawnEvent0"
+      ],
+      "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+      "objdata": {
+        "AdditionalPlantfood": "0",
+        "GridTypes": [
+          "RTID(kongfu_rack_torch@GridItemTypes)",
+          "RTID(kongfu_rack_helmet@GridItemTypes)",
+          "RTID(kongfu_rack_nunchaku@GridItemTypes)",
+          "RTID(kongfu_rack_blade@GridItemTypes)"
+        ],
+        "SuppressActionIfNoGridItemsFound": false,
+        "WaveStartMessage": "[WARNING_GRAVESTONE_SPAWN]",
+        "ZombieSpawnWaitTime": "1",
+        "Zombies": [
+          {
+            "Type": "RTID(monk_armor2@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(monk_armor2@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(monk_armor1@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(monk_armor1@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(monk_armor1@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(monk@CurrentLevel)"
+          }
+        ]
+      }
+    },
+        {
+            "aliases": [
+                "Wave7TaichiTileEvent"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "DisplacePlants": false,
+                "GravestonePool": [
+                    {
+                        "Count": 1,
+                        "Type": "RTID(taichitile@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+                "SpawnPositionsPool": [
+                    {
+                        "mX": 5,
+                        "mY": 2
+                    }
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+                "maxX": 8,
+                "minX": 3
+            }
+        },
+        {
+            "aliases": [
+                "Wave1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(monk@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(monk@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(monk@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(monk@CurrentLevel)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(monk@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Row": "4",
+                        "Type": "RTID(monk_imp@CurrentLevel)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(monk@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave4"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "3",
+                        "Type": "RTID(monk_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(monk_drink@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave5"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    1,
+                    1,
+                    1,
+                    0,
+                    1,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(monk_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_chi@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(kongfu_chi@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave6"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(monk_drink@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(monk_drink@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(monk_drink@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave7"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    1,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Row": "5",
+                        "Type": "RTID(monk_drink@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(monk_drink@CurrentLevel)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(monk_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(monk_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(monk_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(monk_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(monk_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(monk_imp@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(monk_imp@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave8"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(kongfu_chi@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(kongfu_chi@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_chi@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave9"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(monk_drink@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(monk_drink@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(monk_imp@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(monk_imp@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave10"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(monk_imp@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(monk_imp@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(monk_imp@CurrentLevel)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(kongfu_chi@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(kongfu_chi@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave11"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(monk_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(monk_armor2@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave12"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(monk_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(monk_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(monk_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(monk_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(monk_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(monk_imp@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(monk_imp@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(monk_imp@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave13"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Row": "3",
+                        "Type": "RTID(kongfu_chi@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(kongfu_chi@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(monk_drink@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(monk_drink@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave14"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(monk_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(monk_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(monk_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(monk_armor2@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(monk_armor1@CurrentLevel)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(monk_drink@CurrentLevel)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(monk_drink@CurrentLevel)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(monk_drink@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave5Event0"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": 2,
+                "SwashbucklerCount": 6,
+                "TimeBetweenGroups": 3.5,
+                "ZombieType": "RTID(kongfu_rocket_imp@CurrentLevel)",
+                "WaveStartMessage": "[WARNING_ROCKET_STRIKE]"
+            }
+        },
+        {
+            "aliases": [
+                "Wave11Event0"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": 3,
+                "SwashbucklerCount": 9,
+                "TimeBetweenGroups": 3.5,
+                "ZombieType": "RTID(kongfu_rocket_imp@CurrentLevel)",
+                "WaveStartMessage": "[WARNING_ROCKET_STRIKE]"
+            }
+        },
+        {
+            "aliases": [
+                "Wave14Event0"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": 3,
+                "SwashbucklerCount": 12,
+                "TimeBetweenGroups": 3.5,
+                "ZombieType": "RTID(kongfu_rocket_imp@CurrentLevel)",
+                "WaveStartMessage": "[WARNING_ROCKET_STRIKE]"
+            }
+        },
+        {
+      "aliases": [
+        "kongfu_armor1"
+      ],
+      "objclass": "ArmorType",
+      "objdata": {
+        "Properties": "RTID(kongfu_armor1@CurrentLevel)",
+        "ArmorBaseOn": "kongfu_armor1"
+      }
+    },
+		{
+      "aliases": [
+        "kongfu_armor1"
+      ],
+      "objclass": "ArmorProperties",
+      "objdata": {
+        "isMetal": false,
+        "isIce": false,
+        "Toughness": 740,
+        "BowlingLevel": 1
+      }
+    },
+    {
+      "aliases": [
+        "kongfu_armor2"
+      ],
+      "objclass": "ArmorType",
+      "objdata": {
+        "Properties": "RTID(kongfu_armor2@CurrentLevel)",
+        "ArmorBaseOn": "kongfu_armor2"
+      }
+    },
+		{
+      "aliases": [
+        "kongfu_armor2"
+      ],
+      "objclass": "ArmorProperties",
+      "objdata": {
+        "isMetal": true,
+        "isIce": false,
+        "Toughness": 2200,
+        "BowlingLevel": 2
+      }
+    },
+    {
+      "aliases": [
+        "kongfu_armor3"
+      ],
+      "objclass": "ArmorType",
+      "objdata": {
+        "Properties": "RTID(kongfu_armor3@CurrentLevel)",
+        "ArmorBaseOn": "kongfu_armor3"
+      }
+    },
+		{
+      "aliases": [
+        "kongfu_armor3"
+      ],
+      "objclass": "ArmorProperties",
+      "objdata": {
+        "isMetal": true,
+        "isIce": false,
+        "Toughness": 3200,
+        "BowlingLevel": 3
+      }
+    },
+        {
+			"aliases": [
+				"monk"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(monk@CurrentLevel)",
+				"ZombieBasedOn": "monk"
+			}
+		},
+		{
+			"aliases": [
+				"monk"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+                "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.4,
+				"EatDPS": 100,
+				"Toughness": 190,
+				"WavePointCost": 100,
+				"Weight": 1000,
+				"ZombieTypesToSummonBecomingFlag": [
+					"monk",
+					"monk_armor1",
+					"monk_armor2"
+				],
+				"ZombieCountToSummon": 3
+      }
+		},
+    {
+			"aliases": [
+				"monk_armor1"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(monk_armor1@CurrentLevel)",
+				"ZombieBasedOn": "monk_armor1"
+			}
+		},
+		{
+			"aliases": [
+				"monk_armor1"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.4,
+				"EatDPS": 100,
+				"Toughness": 190,
+				"StartingArmors": [
+					"kongfu_armor1"
+				],
+				"WavePointCost": 200,
+				"Weight": 3000
+      }
+		},
+    {
+			"aliases": [
+				"monk_armor2"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(monk_armor2@CurrentLevel)",
+				"ZombieBasedOn": "monk_armor2"
+			}
+		},
+		{
+			"aliases": [
+				"monk_armor2"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+                "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.4,
+				"EatDPS": 100,
+				"Toughness": 190,
+				"StartingArmors": [
+					"kongfu_armor2"
+				],
+				"WavePointCost": 400,
+				"Weight": 4000
+      }
+		},
+    {
+			"aliases": [
+				"monk_armor3"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(monk_armor3@CurrentLevel)",
+				"ZombieBasedOn": "monk_armor3"
+			}
+		},
+		{
+			"aliases": [
+				"monk_armor3"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+                "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.4,
+				"EatDPS": 100,
+				"Toughness": 190,
+				"StartingArmors": [
+					"kongfu_armor3"
+				],
+				"WavePointCost": 550,
+				"Weight": 4500
+      }
+		},
+    {
+			"aliases": [
+				"monk_flag"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(monk_flag@CurrentLevel)",
+				"ZombieBasedOn": "monk_flag"
+			}
+		},
+		{
+			"aliases": [
+				"monk_flag"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+                "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.52,
+				"EatDPS": 100,
+				"Toughness": 190,
+				"WavePointCost": 100,
+				"Weight": 100
+      }
+		},
+    {
+			"aliases": [
+				"kongfu_chi"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(kongfu_chi@CurrentLevel)",
+				"ZombieBasedOn": "kongfu_chi"
+			}
+		},
+		{
+			"aliases": [
+				"kongfu_chi"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"CannotBeTossedByCitron": false,
+				"ChiInterval": 7,
+				"ChiIntervalStart": 4,
+				"WalkSPS": 0.15,
+				"EatDPS": 180,
+				"Toughness": 540,
+				"WavePointCost": 250,
+				"Weight": 1000
+      }
+		},
+    {
+			"aliases": [
+				"kongfu_rocket_imp"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(kongfu_rocket_imp@CurrentLevel)",
+				"ZombieBasedOn": "kongfu_rocket_imp"
+			}
+		},
+		{
+			"aliases": [
+				"kongfu_rocket_imp"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"KilledByShrinkingViolet": true,
+				"CannotBeGrabbedByPtero": true,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.4,
+				"WalkSpeedMultFlying": 7,
+				"EatDPS": 180,
+				"Toughness": 342,
+				"WavePointCost": 100,
+				"Weight": 1000
+      }
+		},
+        {
+			"aliases": [
+				"monk_blade"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(monk_blade@CurrentLevel)",
+				"ZombieBasedOn": "monk_blade"
+			}
+		},
+		{
+			"aliases": [
+				"monk_blade"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"CannotBeTossedByCitron": false,
+				"BladeDamage": 450,
+				"WalkSPS": 0.24,
+				"EatDPS": 180,
+				"Toughness": 1080,
+				"WavePointCost": 150,
+				"Weight": 1500
+      }
+		},
+    {
+			"aliases": [
+				"monk_torch"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(monk_torch@CurrentLevel)",
+				"ZombieBasedOn": "monk_torch"
+			}
+		},
+		{
+			"aliases": [
+				"monk_torch"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"CannotBeCarriedByFanStorm": true,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.42,
+				"EatDPS": 180,
+				"FireDPS": 1800,
+				"Toughness": 680.4,
+				"WavePointCost": 250,
+				"Weight": 3000
+      }
+		},
+    {
+			"aliases": [
+				"monk_nunchaku"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(monk_nunchaku@CurrentLevel)",
+				"ZombieBasedOn": "monk_nunchaku"
+			}
+		},
+		{
+			"aliases": [
+				"monk_nunchaku"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"CannotBeTossedByCitron": false,
+				"HammerDuration": 8,
+				"RestDuration": 0.1,
+				"ProjectileDamageMult": 30,
+				"WalkSPS": 0.28,
+				"EatDPS": 180,
+				"Toughness": 1512,
+				"WavePointCost": 200,
+				"Weight": 2000
+      }
+		},
+    {
+			"aliases": [
+				"monk_drink"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(monk_drink@CurrentLevel)",
+				"ZombieBasedOn": "monk_drink"
+			}
+		},
+		{
+			"aliases": [
+				"monk_drink"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"CannotBeTossedByCitron": false,
+				"ArmDroppingHealthPct": 0.25,
+				"DrinkHealthPct": 0.75,
+				"DrinkingDamageMult": 0.15,
+				"DrunkDamageMult": 0.35,
+				"DrunkEatingDamageScale": 3,
+				"DrunkWalkingSpeedScale": 3.5,
+				"WalkSPS": 0.2,
+				"EatDPS": 180,
+				"Toughness": 1080,
+				"HitDamage": 450,
+				"WavePointCost": 500,
+				"Weight": 3000
+      }
+		},
+    {
+			"aliases": [
+				"monk_imp"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(monk_imp@CurrentLevel)",
+				"ZombieBasedOn": "monk_imp"
+			}
+		},
+		{
+			"aliases": [
+				"monk_imp"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"KilledByShrinkingViolet": true,
+				"CannotBeGrabbedByPtero": true,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.22,
+				"TimeBeforeFirst": {
+					"Min": 3,
+					"Max": 6
+				},
+				"TimeBetween": {
+					"Min": 5,
+					"Max": 7
+				},
+				"FlyDuration": {
+					"Min": 3,
+					"Max": 4
+				},
+				"LeapBackDistance": 0.5,
+				"FlyingSpeedScale": 4.5,
+				"PlantsThatBlock": [
+					"tallnut"
+				],
+				"ZombiesThatBlock": [
+					"future_protector_shield",
+					"modern_moonflower_shield",
+					"future_infinut_shield"
+				],
+				"EatDPS": 180,
+				"Toughness": 1080,
+				"WavePointCost": 400,
+				"Weight": 500
+      }
+		}
+    ],
+    "version": 1
+}

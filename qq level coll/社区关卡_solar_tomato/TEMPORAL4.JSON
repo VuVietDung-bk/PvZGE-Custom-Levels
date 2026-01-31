@@ -1,0 +1,2557 @@
+{
+  "#comment": "Temporal_Strike",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "Prepare to withstand the pursuit of time!",
+        "FirstIntroNarrative": "TEMPORAL_Intro",
+        "LevelNumber": 5,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(ForzenPlantPlacement@CurrentLevel)",
+          "RTID(LostCityTrapTileGroups@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(Shallowpuddle@CurrentLevel)",
+          "RTID(LevelScheduler@CurrentLevel)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(Tide@CurrentLevel)"
+        ],
+        "Name": "Temporal Strike-day4",
+        "NameMultiLanguage": {
+          "en": "Temporal Strike-day4",
+          "zh": "超时空追击-day4"
+        },
+        "WritenBy": "solar_tomato",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(PersuitStage@LevelModules)"
+      }
+    },
+    { 
+      "objclass": "NarrativeProperties",
+      "aliases": [
+        "TEMPORAL_Intro"
+      ],
+      "objdata": {
+        "AutoAdvance": true,
+        "DelayBetweenLines": 3,
+        "Flow": [
+          {
+            "Character": "winnie",
+            "Action": "NPC_ENTER",
+            "Delay": 0.5
+          },
+          {
+            "Character": "crazydave",
+            "Action": "NPC_ENTER",
+            "Delay": 0.5
+          },
+          {
+            "Character": "winnie",
+            "Action": "SAY",
+            "Lines": {
+              "en": "Our equipment has been rendered inoperative due to unauthorized application of carbonated beverage",
+              "zh": "我们的设备被不明个体泼洒的碳酸饮料瘫痪了"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "winnie",
+            "Action": "SAY",
+            "Lines": {
+                "en": "Reinforcements may experience delayed arrival",
+                "zh": "支援可能会晚些到来"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "crazydave",
+            "Action": "SAY",
+            "Lines": {
+              "en": "Well, that's a real pickle in the taco",
+              "zh": "哦，那可真是个不幸的消息"
+            },
+            "Delay": 0.3
+          },
+          {
+            "Character": "crazydave",
+            "Action": "SAY",
+            "Lines": {
+              "en": "Now my Diet Coke won't get to have its taco-tastic combo meal",
+              "zh": "我的健怡可乐再也无法搭配上属于它的玉米卷了"
+            },
+            "Delay": 0.3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(BeatTheLevel@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": [
+        "BeatTheLevel"
+      ],
+      "objclass": "StarChallengeBeatTheLevelProps",
+      "objdata": {
+        "DescriptionsMultilanguage": [
+          {
+            "en": "Survive for 360 seconds",
+            "zh": "坚持360秒"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Shallowpuddle"
+      ],
+      "objclass": "InitialGridItemProperties",
+      "objdata": {
+        "InitialGridItemMatrixes": [
+          {
+            "GridMatrix": [
+              "110010011",
+              "111000011",
+              "110000111",
+              "110100011",
+              "110001011"
+            ],
+            "TypeName": "shallowpuddle"
+          }
+        ]
+      }
+    },
+    {
+			"aliases": [ 
+        "Tide" 
+      ],
+			"objclass": "TideProperties",
+			"objdata": 
+      {
+				"StartingWaveLocation": 0
+			}
+		},
+    {
+      "aliases": [
+        "LevelScheduler"
+      ],
+      "objclass": "LevelSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 1,
+          "Min": 1
+        },
+        "TimeBetween": {
+          "Max": 30,
+          "Min": 30
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(SchedulerTidal0@CurrentLevel)",
+          "RTID(SchedulerPortal1@CurrentLevel)",
+          "RTID(SchedulerTidal1@CurrentLevel)",
+          "RTID(SchedulerPortal2@CurrentLevel)",
+          "RTID(SchedulerTidal2@CurrentLevel)",
+          "RTID(SchedulerTidal3@CurrentLevel)",
+          "RTID(SchedulerPortal3@CurrentLevel)",
+          "RTID(SchedulerTidal4@CurrentLevel)",
+          "RTID(SchedulerTidal5@CurrentLevel)",
+          "RTID(SchedulerPortal4@CurrentLevel)",
+          "RTID(SchedulerTidal6@CurrentLevel)",
+          "RTID(SchedulerTidal7@CurrentLevel)",
+          "RTID(SchedulerPortal5@CurrentLevel)",
+          "RTID(SchedulerTidal8@CurrentLevel)",
+          "RTID(SchedulerTidal9@CurrentLevel)",
+          "RTID(SchedulerPortal6@CurrentLevel)",
+          "RTID(SchedulerTidal10@CurrentLevel)",
+          "RTID(SchedulerHalf@CurrentLevel)",
+          "RTID(SchedulerFinally@CurrentLevel)",
+          "RTID(SchedulerDone@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerTidal0"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 60,
+          "Min": 60
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(TidalChangeEvent0@CurrentLevel)"
+        ]
+      }
+    },
+    {
+			"aliases": [ 
+        "TidalChangeEvent0" 
+      ],
+			"objclass": "TidalChangeWaveActionProps",
+			"objdata": 
+      {
+				"TidalChange": 
+        {
+					"ChangeAmount": 5,
+					"ChangeType": "absolute"
+				}
+			}
+		},
+    {
+      "aliases": [
+        "SchedulerPortal1"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 55,
+          "Min": 55
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent1@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 8,
+        "PortalRow": "3",
+        "PortalType": "RTID(Portal1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal1"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal1props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal1props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 5,
+            "Max": 5
+          },
+          "Scale": 1,
+          "World": "beach",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerTidal1"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 80,
+          "Min": 80
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(TidalChangeEvent1@CurrentLevel)"
+        ]
+      }
+    },
+    {
+			"aliases": [ 
+        "TidalChangeEvent1" 
+      ],
+			"objclass": "TidalChangeWaveActionProps",
+			"objdata": 
+      {
+				"TidalChange": 
+        {
+					"ChangeAmount": 0,
+					"ChangeType": "absolute"
+				}
+			}
+		},
+    {
+      "aliases": [
+        "SchedulerPortal2"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 115,
+          "Min": 115
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent2-1@CurrentLevel)",
+          "RTID(PortalsEvent2-2@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent2-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "1",
+        "PortalType": "RTID(Portal2-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal2-1"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal2-1props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal2-1props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 5,
+            "Max": 5
+          },
+          "Scale": 1,
+          "World": "beach",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent2-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "3",
+        "PortalType": "RTID(Portal2-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal2-2"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal2-2props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal2-2props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 5,
+            "Max": 5
+          },
+          "Scale": 1,
+          "World": "beach",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 100,
+            "ZombieTypeName": "beach_surfer_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerTidal2"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 120,
+          "Min": 120
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(TidalChangeEvent2@CurrentLevel)"
+        ]
+      }
+    },
+    {
+			"aliases": [ 
+        "TidalChangeEvent2" 
+      ],
+			"objclass": "TidalChangeWaveActionProps",
+			"objdata": 
+      {
+				"TidalChange": 
+        {
+					"ChangeAmount": 7,
+					"ChangeType": "absolute"
+				}
+			}
+		},
+    {
+      "aliases": [
+        "SchedulerTidal3"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 140,
+          "Min": 140
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(TidalChangeEvent3@CurrentLevel)"
+        ]
+      }
+    },
+    {
+			"aliases": [ 
+        "TidalChangeEvent3" 
+      ],
+			"objclass": "TidalChangeWaveActionProps",
+			"objdata": 
+      {
+				"TidalChange": 
+        {
+					"ChangeAmount": 0,
+					"ChangeType": "absolute"
+				}
+			}
+		},
+    {
+      "aliases": [
+        "SchedulerPortal3"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 175,
+          "Min": 175
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent3-1@CurrentLevel)",
+          "RTID(PortalsEvent3-2@CurrentLevel)",
+          "RTID(PortalsEvent3-3@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent3-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "0",
+        "PortalType": "RTID(Portal3-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent3-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "3",
+        "PortalType": "RTID(Portal3-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal3-1"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal3-1props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal3-1props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 5,
+            "Max": 5
+          },
+          "Scale": 1,
+          "World": "beach",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent3-3"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "4",
+        "PortalType": "RTID(Portal3-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal3-2"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal3-2props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal3-2props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 5,
+            "Max": 5
+          },
+          "Scale": 1,
+          "World": "beach",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 100,
+            "ZombieTypeName": "beach_surfer_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer_veteran"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerTidal4"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 180,
+          "Min": 180
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(TidalChangeEvent4@CurrentLevel)"
+        ]
+      }
+    },
+    {
+			"aliases": [ 
+        "TidalChangeEvent4" 
+      ],
+			"objclass": "TidalChangeWaveActionProps",
+			"objdata": 
+      {
+				"TidalChange": 
+        {
+					"ChangeAmount": 9,
+					"ChangeType": "absolute"
+				}
+			}
+		},
+    {
+      "aliases": [
+        "SchedulerTidal5"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 200,
+          "Min": 200
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(TidalChangeEvent5@CurrentLevel)"
+        ]
+      }
+    },
+    {
+			"aliases": [ 
+        "TidalChangeEvent5" 
+      ],
+			"objclass": "TidalChangeWaveActionProps",
+			"objdata": 
+      {
+				"TidalChange": 
+        {
+					"ChangeAmount": 0,
+					"ChangeType": "absolute"
+				}
+			}
+		},
+    {
+      "aliases": [
+        "SchedulerHalf"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 180,
+          "Min": 180
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Half@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Half"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "Charge over half, countdown 180 seconds",
+          "zh": "充能过半，倒计时180秒"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal4"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 235,
+          "Min": 235
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent4-1@CurrentLevel)",
+          "RTID(PortalsEvent4-2@CurrentLevel)",
+          "RTID(PortalsEvent4-3@CurrentLevel)",
+          "RTID(PortalsEvent4-4@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent4-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "0",
+        "PortalType": "RTID(Portal4-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent4-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "4",
+        "PortalType": "RTID(Portal4-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal4-1"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal4-1props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal4-1props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 5,
+            "Max": 5
+          },
+          "Scale": 1,
+          "World": "beach",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent4-3"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 8,
+        "PortalRow": "1",
+        "PortalType": "RTID(Portal4-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent4-4"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 8,
+        "PortalRow": "3",
+        "PortalType": "RTID(Portal4-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal4-2"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal4-2props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal4-2props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 5,
+            "Max": 5
+          },
+          "Scale": 1,
+          "World": "beach",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 100,
+            "ZombieTypeName": "beach_surfer_veteran"
+          },
+          {
+            "Weight": 100,
+            "ZombieTypeName": "beach_surfer_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerTidal6"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 240,
+          "Min": 240
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(TidalChangeEvent6@CurrentLevel)"
+        ]
+      }
+    },
+    {
+			"aliases": [ 
+        "TidalChangeEvent6" 
+      ],
+			"objclass": "TidalChangeWaveActionProps",
+			"objdata": 
+      {
+				"TidalChange": 
+        {
+					"ChangeAmount": 6,
+					"ChangeType": "absolute"
+				}
+			}
+		},
+    {
+      "aliases": [
+        "SchedulerTidal7"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 260,
+          "Min": 260
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(TidalChangeEvent7@CurrentLevel)"
+        ]
+      }
+    },
+    {
+			"aliases": [ 
+        "TidalChangeEvent7" 
+      ],
+			"objclass": "TidalChangeWaveActionProps",
+			"objdata": 
+      {
+				"TidalChange": 
+        {
+					"ChangeAmount": 0,
+					"ChangeType": "absolute"
+				}
+			}
+		},
+    {
+      "aliases": [
+        "SchedulerPortal5"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 295,
+          "Min": 295
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent5-1@CurrentLevel)",
+          "RTID(PortalsEvent5-2@CurrentLevel)",
+          "RTID(PortalsEvent5-3@CurrentLevel)",
+          "RTID(PortalsEvent5-4@CurrentLevel)",
+          "RTID(PortalsEvent5-5@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "0",
+        "PortalType": "RTID(Portal5-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "1",
+        "PortalType": "RTID(Portal5-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-3"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 8,
+        "PortalRow": "2",
+        "PortalType": "RTID(Portal5-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-4"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "3",
+        "PortalType": "RTID(Portal5-2@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent5-5"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "4",
+        "PortalType": "RTID(Portal5-1@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal5-1"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal5-1props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal5-1props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 5,
+            "Max": 5
+          },
+          "Scale": 1,
+          "World": "beach",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer_veteran"
+          }
+        ]
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal5-2"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal5-2props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal5-2props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 5,
+            "Max": 5
+          },
+          "Scale": 1,
+          "World": "beach",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer_veteran"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerTidal8"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 300,
+          "Min": 300
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(TidalChangeEvent8@CurrentLevel)"
+        ]
+      }
+    },
+    {
+			"aliases": [ 
+        "TidalChangeEvent8" 
+      ],
+			"objclass": "TidalChangeWaveActionProps",
+			"objdata": 
+      {
+				"TidalChange": 
+        {
+					"ChangeAmount": 5,
+					"ChangeType": "absolute"
+				}
+			}
+		},
+    {
+      "aliases": [
+        "SchedulerTidal9"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 320,
+          "Min": 320
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(TidalChangeEvent9@CurrentLevel)"
+        ]
+      }
+    },
+    {
+			"aliases": [ 
+        "TidalChangeEvent9" 
+      ],
+			"objclass": "TidalChangeWaveActionProps",
+			"objdata": 
+      {
+				"TidalChange": 
+        {
+					"ChangeAmount": 0,
+					"ChangeType": "absolute"
+				}
+			}
+		},
+    {
+      "aliases": [
+        "SchedulerFinally"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 330,
+          "Min": 330
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Finally@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Finally"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "The elimination system is about to activate, countdown 30 seconds",
+          "zh": "抹杀系统即将启动，倒计时30秒"
+        },
+        "LifeSpan": 5
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerPortal6"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 335,
+          "Min": 335
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(PortalsEvent6-1@CurrentLevel)",
+          "RTID(PortalsEvent6-2@CurrentLevel)",
+          "RTID(PortalsEvent6-3@CurrentLevel)",
+          "RTID(PortalsEvent6-4@CurrentLevel)",
+          "RTID(PortalsEvent6-5@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent6-1"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "0",
+        "PortalType": "RTID(Portal6@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent6-2"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "1",
+        "PortalType": "RTID(Portal6@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent6-3"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "2",
+        "PortalType": "RTID(Portal6@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent6-4"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 7,
+        "PortalRow": "3",
+        "PortalType": "RTID(Portal6@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "aliases": [
+        "PortalsEvent6-5"
+      ],
+      "objclass": "SpawnModernPortalsWaveActionProps",
+      "objdata": {
+        "PortalColumn": 6,
+        "PortalRow": "4",
+        "PortalType": "RTID(Portal6@CurrentLevel)",
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": ""
+      }
+    },
+    {
+      "objclass": "PortalType",
+        "aliases": [
+          "Portal6"
+        ],
+        "objdata": {
+          "Properties": "RTID(Portal6props@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "PortalProps",
+        "aliases": [
+          "Portal6props"
+        ],
+        "objdata": {
+          "TimeBeforeFirst": {
+            "Min": 8,
+            "Max": 8
+          },
+          "TimeBetween": {
+            "Min": 5,
+            "Max": 5
+          },
+          "Scale": 1,
+          "World": "beach",
+          "ZombieTypesToSpawn": [
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer_veteran"
+          },
+          {
+            "Weight": 1,
+            "ZombieTypeName": "beach_surfer_veteran"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SchedulerTidal10"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 340,
+          "Min": 340
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(TidalChangeEvent10@CurrentLevel)"
+        ]
+      }
+    },
+    {
+			"aliases": [ 
+        "TidalChangeEvent10" 
+      ],
+			"objclass": "TidalChangeWaveActionProps",
+			"objdata": 
+      {
+				"TidalChange": 
+        {
+					"ChangeAmount": 9,
+					"ChangeType": "absolute"
+				}
+			}
+		},
+    {
+      "aliases": [
+        "SchedulerDone"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 360,
+          "Min": 360
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": true,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(done@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "done"
+      ],
+      "objclass": "TutorialLabelProperties",
+      "objdata": {
+        "String": "",
+        "StringMultiLanguage": {
+          "en": "The offensive has ended!",
+          "zh": "攻势结束！"
+        },
+        "LifeSpan": 10
+      }
+    },
+    {
+			"aliases": [ 
+        "SeedBank" 
+      ],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+				"SelectionMethod": "chooser"
+			}
+		},
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 70,
+            "StartingPoints": 200,
+            "StartingWave": 9,
+            "ZombiePool": [
+            "RTID(beach@ZombieTypes)",
+            "RTID(beach_armor1@ZombieTypes)",
+            "RTID(beach_armor2@ZombieTypes)",
+            "RTID(beach_fem@ZombieTypes)",
+            "RTID(beach_fem_armor1@ZombieTypes)",
+            "RTID(beach_fem_armor2@ZombieTypes)",
+            "RTID(duckytube@ZombieTypes)",
+            "RTID(duckytube_armor1@ZombieTypes)",
+            "RTID(duckytube_armor2@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 90,
+            "StartingPoints": 200,
+            "StartingWave": 9,
+            "ZombiePool": [
+            "RTID(beach@ZombieTypes)",
+            "RTID(beach_armor1@ZombieTypes)",
+            "RTID(beach_armor2@ZombieTypes)",
+            "RTID(beach_fem@ZombieTypes)",
+            "RTID(beach_fem_armor1@ZombieTypes)",
+            "RTID(beach_fem_armor2@ZombieTypes)",
+            "RTID(duckytube@ZombieTypes)",
+            "RTID(duckytube_armor1@ZombieTypes)",
+            "RTID(duckytube_armor2@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 110,
+            "StartingPoints": 200,
+            "StartingWave": 9,
+            "ZombiePool": [
+            "RTID(beach@ZombieTypes)",
+            "RTID(beach_armor1@ZombieTypes)",
+            "RTID(beach_armor2@ZombieTypes)",
+            "RTID(beach_fem@ZombieTypes)",
+            "RTID(beach_fem_armor1@ZombieTypes)",
+            "RTID(beach_fem_armor2@ZombieTypes)",
+            "RTID(duckytube@ZombieTypes)",
+            "RTID(duckytube_armor1@ZombieTypes)",
+            "RTID(duckytube_armor2@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 150,
+            "StartingPoints": 200,
+            "StartingWave": 9,
+            "ZombiePool": [
+            "RTID(beach@ZombieTypes)",
+            "RTID(beach_armor1@ZombieTypes)",
+            "RTID(beach_armor2@ZombieTypes)",
+            "RTID(beach_fem@ZombieTypes)",
+            "RTID(beach_fem_armor1@ZombieTypes)",
+            "RTID(beach_fem_armor2@ZombieTypes)",
+            "RTID(duckytube@ZombieTypes)",
+            "RTID(duckytube_armor1@ZombieTypes)",
+            "RTID(duckytube_armor2@ZombieTypes)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 5,
+        "WaveCount": 30,
+        "MinNextWaveHealthPercentage": 0.7,
+        "ZombieCountdownFirstWaveSecs": 3,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave11@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave12@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave13@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave14@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave15@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave16@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave17@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave18@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave19@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave20@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ],
+          [
+            "RTID(WaveEndless@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(beach@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(beach@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(beach_fem@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach_fem_armor2@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(beach_fem@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach_fem_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+				"DynamicPlantfood": [
+					1,
+					1,
+					1,
+					1,
+					1,
+					1,
+					1
+				],
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(beach_fem_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(beach_fem@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(beach@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach_fem_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(beach_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(beach_fem_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(beach@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"1",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Row":"3",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row":"4",
+            "Type": "RTID(beach_fem_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"1",
+            "Type": "RTID(beach_fem@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row":"3",
+            "Type": "RTID(beach_fem_armor1@ZombieTypes)"
+          },
+          {
+            "Row":"4",
+            "Type": "RTID(beach_fem_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+				"DynamicPlantfood": [
+					1,
+					1,
+					1,
+					1,
+					1,
+					1,
+					1
+				],
+        "Zombies": [
+          {
+            "Row":"1",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Row":"3",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Row":"4",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Row":"1",
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(beach_fem_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach_fem@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(beach_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(beach_fem@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(beach_fem_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave13"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"1",
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          },
+          {
+            "Row":"3",
+            "Type": "RTID(beach_fem_armor2@ZombieTypes)"
+          },
+          {
+            "Row":"4",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave14"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"4",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Row":"1",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Row":"3",
+            "Type": "RTID(beach_fem_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(beach@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"1",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Row":"1",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(beach_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(beach_fem_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach_fem_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave16"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(duckytube@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(beach_fem_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(beach_fem_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave17"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(beach_fem_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave18"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"2",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          },
+          {
+            "Row":"3",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          },
+          {
+            "Row":"5",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          },
+          {
+            "Row":"1",
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(beach_fem_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave19"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"5",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Row":"1",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+            "Type": "RTID(beach_armor2@ZombieTypes)"
+          },
+          {
+            "Row":"3",
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach_fem_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave20"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row":"1",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Row":"2",
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Row":"1",
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(beach_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(beach_fem_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(beach_fem_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WaveEndless"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(pirate_captain@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(duckytube_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(duckytube_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(duckytube@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(duckytube@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_fem_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_fem_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    }
+  ],
+  "version": 1
+}

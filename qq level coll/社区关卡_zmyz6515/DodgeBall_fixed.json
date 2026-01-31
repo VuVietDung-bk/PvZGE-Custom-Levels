@@ -1,0 +1,562 @@
+{
+  "#comment": "Dodge Ball",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "Let's Play Dodge Ball!",
+        "DescriptionMultiLanguage": {
+		"en": "Let's Play Dodge Ball!",
+		"zh": "让我们来玩躲避球游戏吧！"
+	   },
+        "LevelNumber": 114514,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(Rails@CurrentLevel)",
+          "RTID(Trap@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(Placement@CurrentLevel)",
+          "RTID(ProtectThePlant@CurrentLevel)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)"
+        ],
+        "MusicType": "MiniGame_A",
+        "Name": "Dodge Ball",
+        "NameMultiLanguage": {
+		"en": "Dodge Ball",
+		"zh": "躲避球"
+	   },
+        "NormalPresentTable": "cowboy_normal_01",
+        "ShinyPresentTable": "cowboy_shiny_01",
+        "StageModule": "RTID(EgyptStage@LevelModules)"
+      }
+    },
+    {
+      "aliases": [
+        "Placement"
+      ],
+      "objclass": "InitialGridItemProperties",
+      "objdata": {
+        "InitialGridItemMatrixes": [
+          {
+            "GridMatrix": [
+              "000100000",
+              "000100000",
+              "000100000",
+              "000100000",
+              "000100000"
+            ],
+            "TypeName": "potholepuddle"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Trap"
+      ],
+      "objclass": "TrapTileProperties",
+      "objdata": {
+        "TrapTiles": [
+          {
+            "Group": "flame",
+            "Location": {
+              "mX": 0,
+              "mY": 0
+            },
+            "RecoverDelay": 1
+          },
+          {
+            "Group": "flame",
+            "Location": {
+              "mX": 0,
+              "mY": 1
+            },
+            "RecoverDelay": 1
+          },
+          {
+            "Group": "flame",
+            "Location": {
+              "mX": 0,
+              "mY": 2
+            },
+            "RecoverDelay": 1
+          },
+          {
+            "Group": "flame",
+            "Location": {
+              "mX": 0,
+              "mY": 3
+            },
+            "RecoverDelay": 1
+          },
+          {
+            "Group": "flame",
+            "Location": {
+              "mX": 0,
+              "mY": 4
+            },
+            "RecoverDelay": 1
+          }
+        ]
+      }
+    },
+    {
+       "aliases": [
+           "ProtectThePlant"
+       ],
+       "objclass": "ProtectThePlantChallengeProperties",
+       "objdata": {
+           "SuppressObjectiveTip": true,
+           "MustProtectCount": 1,
+           "Plants": [
+               {
+                   "GridX": 5,
+                   "GridY": 2,
+                   "PlantType": "wallnut",
+                   "Level": -1
+               }
+           ]
+       }
+    },
+    {
+      "aliases": [
+        "fast"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(fast@CurrentLevel)",
+        "ZombieBasedOn": "explorer"
+      }
+    },
+    {
+     	"aliases": [
+     		"fast"
+     	],
+     	"objclass": "ZombieProperties",
+     	"objdata": {
+     		"CannotBeTossedByCitron": false,
+     		"WalkSPS": 0.60,
+     		"EatDPS": 100,
+     		"FireDPS": 2000,
+     		"Toughness": 250,
+     		"WavePointCost": 250,
+     		"Weight": 3000,
+     		"HitRect": "RTID(CommonHitRect@RectangleProps)",
+     		"AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+     		"HitRectWithFire": "RTID(ExplorerWithFireHitRect@RectangleProps)",
+     		"AttackRectWithFire": "RTID(ExplorerWithFireAttackRect@RectangleProps)"
+     	}
+    },
+    {
+      "aliases": [
+        "Rails"
+      ],
+      "objclass": "RailcartProperties",
+      "objdata": {
+        "RailcartType": "railcart_egypt",
+        "Railcarts": [
+          {
+            "Column": 5,
+            "Row": 2
+          }
+        ],
+        "Rails": [
+          {
+            "Column": 5,
+            "RowEnd": 4,
+            "RowStart": 0
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PresetPlantList": [
+          {
+            "Level": -1,
+            "PlantType": "iceburg"
+          }
+        ],
+        "SelectionMethod": "preset"
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 10,
+        "SuppressFlagZombie": true,
+        "WaveCount": 10,
+        "WaveSpendingPointIncrement": 75,
+        "WaveSpendingPoints": 200,
+        "Waves": [
+          [
+            "RTID(Torch2@CurrentLevel)"
+          ],
+          [
+            "RTID(Torch3@CurrentLevel)",
+            "RTID(Fire23@CurrentLevel)"
+          ],
+          [
+            "RTID(Torch3@CurrentLevel)"
+          ],
+          [
+            "RTID(Torch3@CurrentLevel)"
+          ],
+          [
+            "RTID(Torch41@CurrentLevel)"
+          ],
+          [
+            "RTID(Torch42@CurrentLevel)",
+            "RTID(Fire135@CurrentLevel)"
+          ],
+          [
+            "RTID(Torch43@CurrentLevel)",
+            "RTID(Fire24@CurrentLevel)"
+          ],
+          [
+            "RTID(Torch44@CurrentLevel)"
+          ],
+          [
+            "RTID(Torch42@CurrentLevel)",
+            "RTID(Fire45@CurrentLevel)"
+          ],
+          [
+            "RTID(Torch3@CurrentLevel)",
+            "RTID(Fire24@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Torch2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(explorer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(explorer@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Torch3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(explorer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(explorer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(explorer@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Torch41"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(fast@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(fast@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(fast@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(fast@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Torch42"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(fast@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(fast@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(fast@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(fast@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Torch43"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(fast@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(fast@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(fast@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(fast@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Torch44"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(fast@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(fast@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(fast@CurrentLevel)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(fast@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Torch45"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(fast@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(fast@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(fast@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(fast@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Fire12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Column": "2",
+            "Type": "RTID(mummy@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Column": "2",
+            "Type": "RTID(mummy@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Fire23"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "2",
+            "Column": "2",
+            "Type": "RTID(mummy@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Column": "2",
+            "Type": "RTID(mummy@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Fire34"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "3",
+            "Column": "2",
+            "Type": "RTID(mummy@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Column": "2",
+            "Type": "RTID(mummy@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Fire45"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "4",
+            "Column": "2",
+            "Type": "RTID(mummy@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Column": "2",
+            "Type": "RTID(mummy@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Fire15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Column": "2",
+            "Type": "RTID(mummy@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Column": "2",
+            "Type": "RTID(mummy@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Fire24"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "2",
+            "Column": "2",
+            "Type": "RTID(mummy@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Column": "2",
+            "Type": "RTID(mummy@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Fire135"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Column": "2",
+            "Type": "RTID(mummy@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Column": "2",
+            "Type": "RTID(mummy@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Column": "2",
+            "Type": "RTID(mummy@ZombieTypes)"
+          }
+        ]
+      }
+    }
+  ],
+  "version": 1
+}

@@ -1,0 +1,1211 @@
+{
+  "#comment": "Solartomato1",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "新概念条件-展示",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(SeedBank@CurrentLevel)",
+           "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(Rails@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(NewWaves@CurrentLevel)"
+        ],
+        "Name": "新概念条件-展示",
+        "MusicType": "MiniGame_B",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(FutureNightStage@LevelModules)"
+      }
+    },
+   {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PresetPlantList": [
+        ],
+        "SelectionMethod": "chooser"
+      }
+    },
+     {
+            "aliases": [
+                "ChallengeModule"
+            ],
+            "objclass": "StarChallengeModuleProperties",
+            "objdata": {
+                "Challenges": [
+                    [
+                        "RTID(DoNotPlantBeforeLine@CurrentLevel)",
+                        "RTID(BeatTheLevel@CurrentLevel)"
+                    ]
+                ],
+                "ChallengesAlwaysAvailable": true
+            }
+        },
+          {
+            "aliases": [
+                "BeatTheLevel"
+            ],
+            "objclass": "StarChallengeBeatTheLevelProps",
+            "objdata": {
+                "DescriptionsMultilanguage": [
+                    {
+                        "en": "At least 20 plants must be alive on the field when clearing the level",
+                        "zh": "通关时场上至少有20株植物存活"
+                    }
+                ]
+            }
+        },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 30,
+            "StartingPoints": 100,
+            "StartingWave": 5,
+            "ZombiePool": [
+              "RTID(future@ZombieTypes)",
+              "RTID(future_armor4@ZombieTypes)",
+              "RTID(football_mech@ZombieTypes)",
+              "RTID(mech_cone@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 40,
+            "StartingPoints": 200,
+            "StartingWave": 5,
+            "ZombiePool": [
+             "RTID(future@ZombieTypes)",
+              "RTID(future_armor4@ZombieTypes)",
+              "RTID(football_mech@ZombieTypes)",
+              "RTID(mech_cone@ZombieTypes)",
+              "RTID(feastivus_e@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 50,
+            "StartingPoints": 300,
+            "StartingWave": 4,
+            "ZombiePool": [
+                "RTID(future@ZombieTypes)",
+              "RTID(future_armor4@ZombieTypes)",
+              "RTID(football_mech@ZombieTypes)",
+              "RTID(mech_cone@ZombieTypes)",
+              "RTID(feastivus_e@CurrentLevel)",
+              "RTID(shoot@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 60,
+            "StartingPoints": 400,
+            "StartingWave": 3,
+            "ZombiePool": [
+             "RTID(future@ZombieTypes)",
+              "RTID(future_armor4@ZombieTypes)",
+              "RTID(football_mech@ZombieTypes)",
+              "RTID(mech_cone@ZombieTypes)",
+              "RTID(feastivus_e@CurrentLevel)",
+"RTID(shoot@CurrentLevel)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+      {
+            "aliases": [
+                "feastivus_e"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(feastivus_e@CurrentLevel)",
+                "ZombieBasedOn": "future_imp"
+            }
+        },
+          {
+            "aliases": [
+                "shoot"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(shoot@CurrentLevel)",
+                "ZombieBasedOn": "eighties_punk"
+            }
+        },
+        {
+			"aliases": [
+				"shoot"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.23125,
+				"EatDPS": 100,
+				"Toughness": 250,
+				"PushCooldown": 2,
+				"JamStyle": "jam_punk",
+				"WavePointCost": 300,
+         "StartingArmors": [
+					"future_armor4"
+				],
+				"Weight": 1000,
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+        	{
+			"aliases": [
+				"feastivus_e"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"CannotBeEnlightenedBySolarSage": true,
+				"KilledByShrinkingViolet": true,
+				"CannotBeGrabbedByPtero": true,
+				"CannotBeTossedByCitron": false,
+				"CannotCarryPlantfoodsInWaves": true,
+				"CannotBeSwallowedByChomper": true,
+				"ChiliStunDurationMult": 0,
+				"EMPStunTimeScale": 1,
+				"WalkSPS": 0.22,
+				"EatDPS": 100,
+				"Toughness": 270,
+        "StartingArmors": [
+					"dark_armor3"
+				],
+				"NormalDeathWhenMowed": true,
+				"ImmuneToGarlic": true,
+				"WavePointCost": 150,
+				"Weight": 1000,
+				"HitRect": "RTID(ImpHitRect@RectangleProps)",
+				"AttackRect": "RTID(ImpAttackRect@RectangleProps)"
+			}
+		},
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+          "LevelJamList": [
+                     "jam_rap",
+                     "jam_punk"
+                      ],
+        "SuppressFlagZombie": true,
+        "FlagWaveInterval": 5,
+        "WaveCount": 15,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)",
+            "RTID(Wave1GravestoneEvent0@CurrentLevel)",
+            "RTID(Wave1GravestoneEvent1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)",
+            "RTID(Wave4GravestoneEvent0@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)",
+            "RTID(Wave6GravestoneEvent0@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)",
+            "RTID(Wave9GravestoneEvent0@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)",
+            "RTID(Wave10StormEvent0@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave11@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave12@CurrentLevel)",
+            "RTID(Wave12StormEvent0@CurrentLevel)"
+          ],
+            [
+            "RTID(Wave13@CurrentLevel)",
+            "RTID(Wave13GravestoneEvent0@CurrentLevel)",
+            "RTID(Wave13GravestoneEvent1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave14@CurrentLevel)",
+            "RTID(Wave14GravestoneEvent0@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave15@CurrentLevel)",
+            "RTID(Wave15StormEvent0@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+      {
+      "aliases": [
+        "Wave10StormEvent0"
+      ],
+      "objclass": "StormZombieSpawnerProps",
+      "objdata": {
+        "ColumnEnd": 4,
+        "ColumnStart": 3,
+        "GroupSize": 2,
+        "TimeBetweenGroups": 2,
+        "Type": "sandstorm",
+        "Waves": "",
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_mc@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_mc@ZombieTypes)"
+          }
+        ]
+      }
+    },
+      {
+      "aliases": [
+        "Wave15StormEvent0"
+      ],
+      "objclass": "StormZombieSpawnerProps",
+      "objdata": {
+        "ColumnEnd": 3,
+        "ColumnStart": 2,
+        "GroupSize": 2,
+        "TimeBetweenGroups": 2,
+        "Type": "sandstorm",
+        "Waves": "",
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_mc@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_mc@ZombieTypes)"
+          },
+            {
+            "Type": "RTID(eighties_mc@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_mc@ZombieTypes)"
+          }
+        ]
+      }
+    },
+     {
+      "aliases": [
+        "Wave12StormEvent0"
+      ],
+      "objclass": "StormZombieSpawnerProps",
+      "objdata": {
+        "ColumnEnd": 3,
+        "ColumnStart": 2,
+        "GroupSize": 2,
+        "TimeBetweenGroups": 2,
+        "Type": "sandstorm",
+        "Waves": "",
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_mc@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_mc@ZombieTypes)"
+          },
+            {
+            "Type": "RTID(eighties_mc@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_mc@ZombieTypes)"
+          }
+        ]
+      }
+    },
+      {
+      "aliases": [
+        "Wave1GravestoneEvent0"
+      ],
+      "objclass": "SpawnGravestonesWaveActionProps",
+      "objdata": {
+        "GravestonePool": [
+          {
+            "Count": 0,
+            "Type": "RTID(gravestone_dark@GridItemTypes)"
+          },
+          {
+            "Count": 2,
+            "Type": "RTID(gravestoneSunOnDestruction@GridItemTypes)"
+          },
+          {
+            "Count": 0,
+            "Type": "RTID(gravestonePlantfoodOnDestruction@GridItemTypes)"
+          }
+        ],
+        "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+        "SpawnPositionsPool": [
+          {
+            "mX": 2,
+            "mY": 2
+          },
+          {
+            "mX": 2,
+            "mY": 4
+          }
+        ],
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+      }
+    },
+      {
+      "aliases": [
+        "Wave1GravestoneEvent1"
+      ],
+      "objclass": "SpawnGravestonesWaveActionProps",
+      "objdata": {
+        "GravestonePool": [
+          {
+            "Count": 0,
+            "Type": "RTID(gravestone_dark@GridItemTypes)"
+          },
+          {
+            "Count": 2,
+            "Type": "RTID(speaker@GridItemTypes)"
+          },
+          {
+            "Count": 0,
+            "Type": "RTID(gravestonePlantfoodOnDestruction@GridItemTypes)"
+          }
+        ],
+        "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+        "SpawnPositionsPool": [
+          {
+            "mX": 3,
+            "mY": 0
+          },
+          {
+            "mX": 4,
+            "mY": 1
+          }
+        ],
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+      }
+    },
+      {
+      "aliases": [
+        "Wave4GravestoneEvent0"
+      ],
+      "objclass": "SpawnGravestonesWaveActionProps",
+      "objdata": {
+        "GravestonePool": [
+          {
+            "Count": 0,
+            "Type": "RTID(gravestone_dark@GridItemTypes)"
+          },
+          {
+            "Count": 3,
+            "Type": "RTID(speaker@GridItemTypes)"
+          },
+          {
+            "Count": 0,
+            "Type": "RTID(gravestonePlantfoodOnDestruction@GridItemTypes)"
+          }
+        ],
+        "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+        "SpawnPositionsPool": [
+          {
+            "mX": 2,
+            "mY": 3
+          },
+           {
+            "mX": 3,
+            "mY": 2
+          },
+          {
+            "mX": 2,
+            "mY": 1
+          }
+        ],
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+      }
+    },
+      {
+      "aliases": [
+        "Wave6GravestoneEvent0"
+      ],
+      "objclass": "SpawnGravestonesWaveActionProps",
+      "objdata": {
+        "GravestonePool": [
+          {
+            "Count": 0,
+            "Type": "RTID(gravestone_dark@GridItemTypes)"
+          },
+          {
+            "Count": 3,
+            "Type": "RTID(speaker@GridItemTypes)"
+          },
+          {
+            "Count": 0,
+            "Type": "RTID(gravestonePlantfoodOnDestruction@GridItemTypes)"
+          }
+        ],
+        "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+        "SpawnPositionsPool": [
+          {
+            "mX": 1,
+            "mY": 3
+          },
+           {
+            "mX": 2,
+            "mY": 2
+          },
+          {
+            "mX": 1,
+            "mY": 1
+          }
+        ],
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+      }
+    },
+      {
+      "aliases": [
+        "Wave9GravestoneEvent0"
+      ],
+      "objclass": "SpawnGravestonesWaveActionProps",
+      "objdata": {
+        "GravestonePool": [
+          {
+            "Count": 0,
+            "Type": "RTID(gravestone_dark@GridItemTypes)"
+          },
+          {
+            "Count": 3,
+            "Type": "RTID(tent@GridItemTypes)"
+          },
+          {
+            "Count": 0,
+            "Type": "RTID(gravestonePlantfoodOnDestruction@GridItemTypes)"
+          }
+        ],
+        "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+        "SpawnPositionsPool": [
+          {
+            "mX": 5,
+            "mY": 0
+          },
+           {
+            "mX": 5,
+            "mY": 2
+          },
+          {
+            "mX": 5,
+            "mY": 4
+          }
+        ],
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+      }
+    },
+      {
+      "aliases": [
+        "Wave13GravestoneEvent0"
+      ],
+      "objclass": "SpawnGravestonesWaveActionProps",
+      "objdata": {
+        "GravestonePool": [
+          {
+            "Count": 0,
+            "Type": "RTID(gravestone_dark@GridItemTypes)"
+          },
+          {
+            "Count": 4,
+            "Type": "RTID(garvestone_future@GridItemTypes)"
+          },
+          {
+            "Count": 0,
+            "Type": "RTID(gravestonePlantfoodOnDestruction@GridItemTypes)"
+          }
+        ],
+        "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+        "SpawnPositionsPool": [
+          {
+            "mX": 4,
+            "mY": 0
+          },
+            {
+            "mX": 4,
+            "mY": 2
+          },
+           {
+            "mX": 4,
+            "mY": 4
+          },
+          {
+            "mX": 4,
+            "mY": 3
+          }
+        ],
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+      }
+    },
+      {
+      "aliases": [
+        "Wave13GravestoneEvent1"
+      ],
+      "objclass": "SpawnGravestonesWaveActionProps",
+      "objdata": {
+        "GravestonePool": [
+          {
+            "Count": 0,
+            "Type": "RTID(gravestone_dark@GridItemTypes)"
+          },
+          {
+            "Count": 4,
+            "Type": "RTID(tent@GridItemTypes)"
+          },
+          {
+            "Count": 0,
+            "Type": "RTID(gravestonePlantfoodOnDestruction@GridItemTypes)"
+          }
+        ],
+        "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+        "SpawnPositionsPool": [
+          {
+            "mX": 3,
+            "mY": 0
+          },
+            {
+            "mX": 3,
+            "mY": 2
+          },
+           {
+            "mX": 3,
+            "mY": 4
+          },
+          {
+            "mX": 3,
+            "mY": 3
+          }
+        ],
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+      }
+    },
+      {
+      "aliases": [
+        "Wave14GravestoneEvent0"
+      ],
+      "objclass": "SpawnGravestonesWaveActionProps",
+      "objdata": {
+        "GravestonePool": [
+          {
+            "Count": 0,
+            "Type": "RTID(gravestone_dark@GridItemTypes)"
+          },
+          {
+            "Count": 4,
+            "Type": "RTID(tent@GridItemTypes)"
+          },
+          {
+            "Count": 0,
+            "Type": "RTID(gravestonePlantfoodOnDestruction@GridItemTypes)"
+          }
+        ],
+        "SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+        "SpawnPositionsPool": [
+          {
+            "mX": 5,
+            "mY": 0
+          },
+            {
+            "mX": 5,
+            "mY": 2
+          },
+           {
+            "mX": 5,
+            "mY": 4
+          },
+          {
+            "mX": 5,
+            "mY": 3
+          }
+        ],
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "4",
+            "Type": "RTID(future_imp@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(future_imp@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(eighties_punk@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(eighties_punk@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)"
+          },
+            {
+            "Type": "RTID(future_armor2@ZombieTypes)"
+          },
+            {
+            "Row": "1",
+            "Type": "RTID(future_armor4@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(football_mech@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(future_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(future_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(future_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(future_imp@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(mech_cone@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(mech_cone@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(eighties_punk@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(eighties_punk@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(shoot@CurrentLevel)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(eighties_punk@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(eighties_punk@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(future_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(future_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(future_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(future_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(shoot@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(mech_cone@ZombieTypes)"
+          },
+           {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+           {
+            
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(mech_cone@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(mech_cone@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+    
+          {
+            "Row": "2",
+            "Type": "RTID(future_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(future_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(future_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(eighties_punk@ZombieTypes)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(eighties_punk@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(future_armor4@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(mech_cone@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(football_mech@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          },
+            {
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(shoot@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(shoot@CurrentLevel)"
+          },
+           {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+           {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+           {
+            
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(shoot@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          },
+           {
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(future_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(football_mech@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(football_mech@ZombieTypes)"
+          },
+           {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+           {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+           {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+           {
+            
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(football_mech@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_punk@ZombieTypes)"
+          },
+           {
+            "Type": "RTID(eighties_punk@ZombieTypes)"
+          },  {
+            "Type": "RTID(eighties_punk@ZombieTypes)"
+          },
+           {
+            "Type": "RTID(eighties_punk@ZombieTypes)"
+          },  {
+            "Type": "RTID(shoot@CurrentLevel)"
+          },
+           {
+            "Type": "RTID(shoot@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(shoot@CurrentLevel)"
+          }
+        ]
+      }
+    },
+      {
+      "aliases": [
+        "Wave13"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(mech_cone@ZombieTypes)"
+          },
+           {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+           {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+           {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+           {
+            
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(mech_cone@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          }, {
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          }, {
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          }, {
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          }, {
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          }, {
+            "Type": "RTID(future_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)"
+          }
+        ]
+      }
+    },
+      {
+      "aliases": [
+        "Wave14"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(football_mech@ZombieTypes)"
+          },
+           {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+           {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+           {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+           {
+            
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(football_mech@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)"
+          },  {
+            "Type": "RTID(football_mech@ZombieTypes)"
+          },  {
+            "Type": "RTID(shoot@CurrentLevel)"
+          },  {
+            "Type": "RTID(shoot@CurrentLevel)"
+          },  {
+            "Type": "RTID(future_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)"
+          }
+        ]
+      }
+    },
+      {
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(shoot@CurrentLevel)"
+          },
+          {
+            "Row": "2",
+            "Type": "RTID(shoot@CurrentLevel)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(shoot@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(future_imp@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)"
+          },
+            {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+           {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+           {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+           {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+           {
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+           {
+            
+            "Type": "RTID(eighties_breakdancer@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          }, 
+           {
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          },
+           {
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          }, 
+           {
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(feastivus_e@CurrentLevel)"
+          }
+        ]
+      }
+    }
+  ],
+  "version": 1
+}

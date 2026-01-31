@@ -1,0 +1,591 @@
+{
+	"#comment": "Bird's crafting",
+	"objects": [
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "只是运气（不用辅助工具），不是过关",
+				"LevelNumber": 114514,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+					"RTID(StandardIntro@LevelModules)",
+					"RTID(SeedBank@CurrentLevel)",
+					"RTID(ZombiesDeadWinCon@LevelModules)",
+					"RTID(DefaultZombieWinCondition@LevelModules)",
+					"RTID(ProtectThePlant@CurrentLevel)",
+					"RTID(SliderPlacement0@CurrentLevel)",
+					"RTID(BeatTheLevel@CurrentLevel)",
+					"RTID(FrozenPlantPlacement@CurrentLevel)",
+					"RTID(Tide0@CurrentLevel)",
+					"RTID(ChallengeModule@CurrentLevel)",
+					"RTID(NewWaves@CurrentLevel)"
+				],
+				"Name": "Luck：",
+				"NameMultiLanguage": {
+					"en": "Luck：共擎",
+					"zh": "Luck：共擎"
+				},
+				"WritenBy": "Birdscraft",
+				"NormalPresentTable": "egypt_normal_01",
+				"ShinyPresentTable": "egypt_shiny_01",
+				"StartingSun":425,
+				"StageModule": "RTID(SummerNightsStage@LevelModules)"
+			}
+		},
+		
+		{
+			"aliases":[
+				"ChallengeModule"
+			],
+			"objclass":"StarChallengeModuleProperties",
+			"objdata":{
+				"Challenges":[
+					["RTID(DoNotPlantBeforeLine@CurrentLevel)"]
+				],
+				"ChallengesAlwaysAvailable":true
+				}
+		},
+		{
+			"aliases": [
+				"DoNotPlantBeforeLine"
+			],
+            "objclass": "MoldColonyChallengeProps",
+            "objdata": {
+                "Locations": "RTID(nothingness@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "nothingness"
+            ],
+            "objclass": "BoardGridMapProps",
+            "objdata": {
+                "Values": [
+                    [1,1,1,1,1,1,1,1,1],
+                    [0,0,0,0,0,0,0,0,0],
+                    [1,1,1,1,1,1,1,1,1],
+                    [0,0,0,0,0,0,0,0,0],
+                    [1,1,1,1,1,1,1,1,1]
+                ]
+            }
+        },
+		
+		{
+			"aliases":[
+				"ProtectThePlant"
+			],
+			"objclass":"ProtectThePlantChallengeProperties",
+			"objdata":{
+				"MustProtectCount":3,
+				"Plants":[
+				{
+					"Level":-1,
+					"GridX":4,
+					"GridY":0,
+					"PlantType":"potatomine"
+				},
+				{
+					"Level":-1,
+					"GridX":4,
+					"GridY":2,
+					"PlantType":"potatomine"
+				},
+				{
+					"Level":-1,
+					"GridX":4,
+					"GridY":4,
+					"PlantType":"potatomine"
+				}
+				]
+			}
+		},
+		
+		{
+			"aliases": [
+				"FrozenPlantPlacement"
+			],
+			"objclass": "InitialPlantProperties",
+			"objdata":{
+				"InitialPlantPlacements": [
+				{
+					"GridX": 5,
+					"GridY": 0,
+					"TypeName": "potatomine",
+					"Level": -1
+				},
+				{
+					"GridX": 5,
+					"GridY": 2,
+					"TypeName": "potatomine",
+					"Level": -1
+				},
+				{
+					"GridX": 5,
+					"GridY": 4,
+					"TypeName": "potatomine",
+					"Level": -1
+				}
+				]
+			}
+		},
+		
+		{
+			"aliases": [
+				"SliderPlacement0"
+			],
+			"objclass": "InitialGridItemProperties",
+			"objdata": {
+				"InitialGridItemPlacements": [
+				{
+					"GridX": 8,
+					"GridY": 0,
+					"TypeName": "slider_down_modern"
+				},
+				{
+					"GridX": 8,
+					"GridY": 4,
+					"TypeName": "slider_up_modern"
+				},
+				{
+					"GridX": 8,
+					"GridY": 2,
+					"TypeName": "slider_up_modern"
+				}
+				]
+			}
+		},
+		
+		{
+			"aliases": [
+				"SeedBank"
+			],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+				"PresetPlantList": [
+				{
+					"Level": -1,
+					"PlantType": "primalsunflower"
+				},{
+					"Level": -1,
+					"PlantType": "goldleaf"
+				},{
+					"Level": -1,
+					"PlantType": "guacodile"
+				},{
+					"Level": -1,
+					"PlantType": "guacodile"
+				},{
+					"Level": -1,
+					"PlantType": "primalwallnut"
+				}
+				],
+				"SelectionMethod": "preset"
+			}
+		},
+		
+		{
+			"aliases": ["WaveManagerProps"],
+			"objclass": "WaveManagerProperties",
+			"objdata": {
+				"LevelJamList": [
+					"jam_rap"
+				],
+				"SuppressFlagZombie":true,
+				"FlagWaveInterval": 100,
+				"WaveCount": 1,
+				"Waves": [
+					["RTID(Wave6TidalChangeEvent0@CurrentLevel)"],
+					["RTID(Wave1@CurrentLevel)"],
+					["RTID(Wave2@CurrentLevel)"],
+					["RTID(Wave3@CurrentLevel)"],
+					["RTID(Wave4@CurrentLevel)"],
+					["RTID(Wave4.5@CurrentLevel)"],
+					["RTID(Wave5@CurrentLevel)"],
+					["RTID(Wave6@CurrentLevel)","RTID(Wave6TidalChangeEvent0@CurrentLevel)"],
+					["RTID(Wave7@CurrentLevel)","RTID(chickenu@CurrentLevel)","RTID(Wave7TidalChangeEvent0@CurrentLevel)"],
+				]
+			}
+		},
+		{
+			"aliases":["BeatTheLevel"],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+					"试着让两面盾牌同时举起"
+				] 
+			}
+		},
+		{
+			"aliases": [
+				"NewWaves"
+			],
+			"objclass": "WaveManagerModuleProperties",
+			"objdata": {
+				"DynamicZombies": [
+				],
+				"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+			}
+		},
+		{
+			"aliases": [
+				"Tide0"
+			],
+			"objclass": "TideProperties",
+			"objdata": {
+				"StartingWaveLocation": 0
+			}
+		},
+		{
+			"aliases": [
+				"Wave1"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					}
+					
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave2"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					}
+					
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave3"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(summer_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(modern_allstar@ZombieTypes)",
+						"Row": 5
+					}
+					
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave4"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(eighties_breakdancer@ZombieTypes)",
+						"Row":2
+					},
+					{
+						"Type": "RTID(eighties_breakdancer@ZombieTypes)",
+						"Row":4
+					},
+					{
+						"Type": "RTID(modern_allstar@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(future_armor4@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(newspaper_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(modern_allstar@ZombieTypes)"
+					}
+					
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave4.5"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+				
+					{
+						"Type": "RTID(summer_gargantuar@ZombieTypes)",
+						"Row": 1
+					},
+					{
+						"Type": "RTID(summer_armor2@ZombieTypes)",
+						"Row": 4
+					},
+					{
+						"Type": "RTID(mech_cone@ZombieTypes)",
+						"Row": 5
+					},
+					{
+						"Type": "RTID(future_armor4@ZombieTypes)",
+						"Row": 4
+					},
+					{
+						"Type": "RTID(mech_cone@ZombieTypes)",
+						"Row": 4
+					},
+					{
+						"Type": "RTID(future_armor4@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(newspaper_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(modern_allstar@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(modern_allstar@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(newspaper_veteran@ZombieTypes)"
+					}
+					
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave5"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(future_protector_low@CurrentLevel)",
+						"Row":1
+					},
+					{
+						"Type": "RTID(future_protector_low@CurrentLevel)",
+						"Row":5
+					},
+					{
+						"Type": "RTID(mech_cone@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(mech_cone@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(newspaper_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(modern_allstar@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(mech_cone@ZombieTypes)"
+					}
+					
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave6"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						
+						"Column":"7",
+						"Type": "RTID(eighties_breakdancer@ZombieTypes)",
+						"Row": 2
+					},
+					{
+						
+						"Column":"7",
+						"Type": "RTID(eighties_breakdancer@ZombieTypes)",
+						"Row": 4
+					},
+					{
+						"Type": "RTID(eighties_breakdancer@ZombieTypes)",
+						"Row":2
+					},
+					{
+						"Type": "RTID(eighties_breakdancer@ZombieTypes)",
+						"Row":4
+					},
+					{
+						"Type": "RTID(future_armor4@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(future_armor4@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(mech_cone@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(football_mech@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(mech_cone@ZombieTypes)"
+					}
+					
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave6TidalChangeEvent0"
+			],
+			"objclass": "TidalChangeWaveActionProps",
+			"objdata": {
+				"TidalChange": {
+					"ChangeAmount": 1,
+					"ChangeType": "absolute"
+				}
+			}
+		},
+		{
+			"aliases": [
+				"chickenu"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						
+						"Column":"6",
+						"Type": "RTID(chicken@ZombieTypes)",
+						"Row": 1
+					},
+					{
+						
+						"Column":"6",
+						"Type": "RTID(chicken@ZombieTypes)",
+						"Row": 3
+					},
+					{
+						
+						"Column":"6",
+						"Type": "RTID(chicken@ZombieTypes)",
+						"Row": 5
+					}
+					
+					
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave7"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						
+						"Column":"7",
+						"Type": "RTID(eighties_breakdancer@ZombieTypes)",
+						"Row": 2
+					},
+					{
+						
+						"Column":"7",
+						"Type": "RTID(eighties_breakdancer@ZombieTypes)",
+						"Row": 4
+					},
+					{
+						
+						"Column":"6",
+						"Type": "RTID(eighties_breakdancer@ZombieTypes)",
+						"Row": 2
+					},
+					{
+						
+						"Column":"6",
+						"Type": "RTID(eighties_breakdancer@ZombieTypes)",
+						"Row": 4
+					},
+					{
+						"Type": "RTID(lostcity_crystalskull@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_crystalskull@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_crystalskull@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(future_armor4@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(mech_cone@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(modern_allstar@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(mech_cone@ZombieTypes)"
+					}
+					
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave7TidalChangeEvent0"
+			],
+			"objclass": "TidalChangeWaveActionProps",
+			"objdata": {
+				"TidalChange": {
+					"ChangeAmount": 3,
+					"ChangeType": "absolute"
+				}
+			}
+		},
+		{
+			"aliases": [
+				"future_protector_low"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(future_protector_low@CurrentLevel)",
+				"ZombieBasedOn": "future_protector"
+			}
+		},
+		{
+			"aliases": [
+				"future_protector_low"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"Toughness": 400,
+			}
+		}
+	],
+	"version": 1
+}

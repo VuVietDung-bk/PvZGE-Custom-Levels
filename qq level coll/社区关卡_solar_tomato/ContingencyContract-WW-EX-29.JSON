@@ -1,0 +1,773 @@
+{
+  "#comment": "ContingencyContract",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "面对天灾，我们并非无计可施!",
+        "LevelNumber": 29,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(Rails@CurrentLevel)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(WestMowers@LevelModules)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(ModPlants@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(ProtectThePlant@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)"
+        ],
+        "Name": "ContingencyContract-WW-EX-29",
+        "NameMultiLanguage": {
+          "en": "ContingencyContract-WW-EX-29",
+          "zh": "危机合约-狂野西部-紧急-day29"
+        },
+        "WritenBy": "solar_tomato",
+        "NormalPresentTable": "cowboy_normal_01",
+        "ShinyPresentTable": "cowboy_shiny_01",
+        "StageModule": "RTID(WestStage@LevelModules)",
+        "MusicType": "MiniGame_B"
+      }
+    },
+    {
+			"aliases": [
+				"magnifying_grass"
+			],
+			"objclass": "ProjectileType",
+			"objdata": {
+				"ProjectileBasedOn": "magnifying_grass",
+				"Props": "RTID(magnifying_grass@CurrentLevel)"
+			}
+		},
+    {
+			"aliases": [
+				"magnifying_grass"
+			],
+			"objclass": "ProjectileProperties",
+			"objdata": {
+				"Damage": 1550,
+				"Size": {
+					"w": 16,
+					"h": 16
+				},
+				"CannotBeReversedByJester": true
+			}
+		},
+    {
+      "aliases": [
+        "ModPlants"
+      ],
+      "objclass": "PlantModifierProperties",
+      "objdata": {
+        "HidePlantfood": true,
+        "SuppressParticle": true,
+        "List": [
+          {
+           "Type": "magnifyinggrass",
+           "NewObjdata": {
+              "ShootSunCost": 150,
+              "SunProducerList": [
+                "sunflower",
+					      "twinsunflower",
+					      "sunshroom",
+					      "primalsunflower",
+					      "moonflower"
+				      ],
+				      "PeaType": "magnifying_grass",
+				      "PlantfoodDuration": 3,
+				      "PlantfoodDurationExtendPerProducer": 0.15,
+				      "PlantfoodDPS": 200,
+				      "ShootInterval": 0.333,
+				      "Cooldown": 5,
+				      "CooldownFrom": 1,
+				      "SunCost": 50,
+				      "BeghouledCost": 500,
+				      "Toughness": 300,
+				      "Family": "Electricity"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Rails"
+      ],
+      "objclass": "RailcartProperties",
+      "objdata": {
+        "RailcartType": "railcart_cowboy",
+        "Railcarts": [
+          {
+            "Column": 4,
+            "Row": 2
+          }
+        ],
+        "Rails": [
+          {
+            "Column": 4,
+            "RowEnd": 4,
+            "RowStart": 0
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PlantExcludeList": [
+          "blover","hurrikale","magnifyinggrass",
+          "wintermelon","icebloom","missiletoe",
+          "glaciershroom","coldsnapdragon","iceweed"
+        ],
+        "SelectionMethod": "chooser"
+      }
+    },
+    {
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(BeatTheLevel@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": [
+        "BeatTheLevel"
+      ],
+      "objclass": "StarChallengeBeatTheLevelProps",
+      "objdata": {
+        "DescriptionsMultilanguage": [
+          {
+            "en": "All zombies except Imps gain +150% health and movement speed, +200% armor durability, and -25% dynamic point requirement",
+            "zh": "除小鬼外所有僵尸的生命值和移动速度+150%，防具耐久度+200%，动态点数需求-25%"
+          },
+          {
+            "en": "All Piano have -70% movement speed but gain +150% attack damage and health",
+            "zh": "所有钢琴僵尸的移动速度-70%，但是攻击力和生命值+150%"
+          },
+          {
+            "en": "All West Bull gain +200% attack damage and +50% health",
+            "zh": "所有机械牛的攻击力+200%，生命值+50%"
+          },
+          {
+            "en": "All Prospector immediately relocate to the backline upon entry and do not linger, with +100% health and attack damage",
+            "zh": "所有淘金僵尸入场后立刻转移到后场且不再停留，生命值和攻击力+100%"
+          },
+          {
+            "en": "Some waves and dynamic spawning are modified, with certain plants disabled",
+            "zh": "部分波次和动态出怪有所不同，禁用部分植物"
+          },
+          {
+            "en": "Magnifying Grass damage significantly increased, but consumes more sun",
+            "zh": "棱镜草攻击力大幅提升，消耗更多阳光"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ProtectThePlant"
+      ],
+      "objclass": "ProtectThePlantChallengeProperties",
+      "objdata": {
+        "MustProtectCount": 5,
+        "SuppressObjectiveTip": true,
+        "Plants": [
+          {
+            "GridX": 5,
+            "GridY": 0,
+            "PlantType": "magnifyinggrass"
+          },
+          {
+            "GridX": 5,
+            "GridY": 1,
+            "PlantType": "magnifyinggrass"
+          },
+          {
+            "GridX": 5,
+            "GridY": 2,
+            "PlantType": "magnifyinggrass"
+          },
+          {
+            "GridX": 5,
+            "GridY": 3,
+            "PlantType": "magnifyinggrass"
+          },
+          {
+            "GridX": 5,
+            "GridY": 4,
+            "PlantType": "magnifyinggrass"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 20,
+            "StartingPoints": 200,
+            "StartingWave": 5,
+            "ZombiePool": [
+              "RTID(cowboy_armor4@CurrentLevel)",
+              "RTID(poncho_plate@CurrentLevel)",
+              "RTID(prospector@CurrentLevel)",
+              "RTID(west_bull@CurrentLevel)",
+              "RTID(piano@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 30,
+            "StartingPoints": 350,
+            "StartingWave": 4,
+            "ZombiePool": [
+              "RTID(cowboy_armor4@CurrentLevel)",
+              "RTID(poncho_plate@CurrentLevel)",
+              "RTID(prospector@CurrentLevel)",
+              "RTID(west_bull@CurrentLevel)",
+              "RTID(piano@CurrentLevel)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 40,
+            "StartingPoints": 450,
+            "StartingWave": 3,
+            "ZombiePool": [
+              "RTID(cowboy_armor4@CurrentLevel)",
+              "RTID(poncho_plate@CurrentLevel)",
+              "RTID(prospector@CurrentLevel)",
+              "RTID(west_bull@CurrentLevel)",
+              "RTID(piano@CurrentLevel)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 3,
+        "FlagWaveVeteranOverrideTypes": [
+          1,
+          1,
+          1
+        ],
+        "WaveCount": 9,
+        "WaveSpendingPointIncrement": 100,
+        "WaveSpendingPoints": 600,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(cowboy_armor2@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(prospector@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(poncho_plate@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(prospector@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(cowboy_armor2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(cowboy_armor2@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(prospector@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(west_bull@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(cowboy_armor2@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(cowboy_armor1@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(cowboy_armor4@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(cowboy_armor2@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(cowboy_armor1@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(cowboy_armor1@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(piano@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(cowboy_armor1@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(cowboy_armor2@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(prospector@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(cowboy_armor4@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(prospector@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(prospector@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(prospector@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(cowboy_armor2@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(west_bull@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(cowboy_armor1@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(piano@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(west_bull@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(west_bull@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(cowboy_armor2@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(cowboy_armor4@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "cowboy_armor1"
+      ],
+      "objclass": "ArmorType",
+      "objdata": {
+        "Properties": "RTID(cowboy_armor1@CurrentLevel)",
+        "ArmorBaseOn": "cowboy_armor1"
+      }
+    },
+		{
+      "aliases": [
+        "cowboy_armor1"
+      ],
+      "objclass": "ArmorProperties",
+      "objdata": {
+        "isMetal": false,
+        "isIce": false,
+        "Toughness": 1110,
+        "BowlingLevel": 1
+      }
+    },
+    {
+      "aliases": [
+        "cowboy_armor2"
+      ],
+      "objclass": "ArmorType",
+      "objdata": {
+        "Properties": "RTID(cowboy_armor2@CurrentLevel)",
+        "ArmorBaseOn": "cowboy_armor2"
+      }
+    },
+		{
+      "aliases": [
+        "cowboy_armor2"
+      ],
+      "objclass": "ArmorProperties",
+      "objdata": {
+        "isMetal": true,
+        "isIce": false,
+        "Toughness": 3300,
+        "BowlingLevel": 2
+      }
+    },
+    {
+      "aliases": [
+        "cowboy_armor4"
+      ],
+      "objclass": "ArmorType",
+      "objdata": {
+        "Properties": "RTID(cowboy_armor4@CurrentLevel)",
+        "ArmorBaseOn": "cowboy_armor4"
+      }
+    },
+		{
+      "aliases": [
+        "cowboy_armor4"
+      ],
+      "objclass": "ArmorProperties",
+      "objdata": {
+        "isMetal": false,
+        "isIce": false,
+        "Toughness": 6600,
+        "BowlingLevel": 4
+      }
+    },
+    {
+			"aliases": [
+				"cowboy_armor1"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(cowboy_armor1@CurrentLevel)",
+				"ZombieBasedOn": "cowboy_armor1"
+			}
+		},
+		{
+			"aliases": [
+				"cowboy_armor1"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"DanceSPSScale": 1.2,
+				"WalkSPS": 0.4625,
+				"EatDPS": 100,
+				"Toughness": 475,
+				"StartingArmors": [
+					"cowboy_armor1"
+				],
+				"WavePointCost": 150,
+				"Weight": 3000
+      }
+		},
+    {
+			"aliases": [
+				"cowboy_armor2"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(cowboy_armor2@CurrentLevel)",
+				"ZombieBasedOn": "cowboy_armor2"
+			}
+		},
+		{
+			"aliases": [
+				"cowboy_armor2"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"DanceSPSScale": 1.2,
+				"WalkSPS": 0.4625,
+				"EatDPS": 100,
+				"Toughness": 475,
+				"StartingArmors": [
+					"cowboy_armor2"
+				],
+				"WavePointCost": 300,
+				"Weight": 4000
+      }
+		},
+    {
+			"aliases": [
+				"cowboy_armor4"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(cowboy_armor4@CurrentLevel)",
+				"ZombieBasedOn": "cowboy_armor4"
+			}
+		},
+		{
+			"aliases": [
+				"cowboy_armor4"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "ZombieSort": "Normal",
+				"CannotBeTossedByCitron": false,
+				"CannotCarryPlantfoodsInWaves": true,
+				"DanceSPSScale": 1.2,
+				"WalkSPS": 0.4625,
+				"EatDPS": 100,
+				"Toughness": 475,
+				"StartingArmors": [
+					"cowboy_armor4"
+				],
+				"WavePointCost": 525,
+				"Weight": 4000
+      }
+		},
+    {
+			"aliases": [
+				"prospector"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(prospector@CurrentLevel)",
+				"ZombieBasedOn": "prospector"
+			}
+		},
+		{
+			"aliases": [
+				"prospector"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "CannotBeTossedByCitron": false,
+				"WalkSPS": 0.4,
+				"EatDPS": 200,
+				"Toughness": 950,
+				"WavePointCost": 150,
+				"Weight": 3000,
+				"LandingStunnTime": 0,
+				"ExplodeCountdown": 0.01
+      }
+		},
+    {
+			"aliases": [
+				"piano"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(piano@CurrentLevel)",
+				"ZombieBasedOn": "piano"
+			}
+		},
+		{
+			"aliases": [
+				"piano"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "CannotBeSwallowedByChomper": true,
+				"CannotBeEnlightenedBySolarSage": true,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.15,
+				"EatDPS": 10000,
+				"Toughness": 5250,
+				"NormalDeathWhenMowed": true,
+				"ImmuneToGarlic": true,
+				"WavePointCost": 337.5,
+				"Weight": 2000
+      }
+		},
+    {
+			"aliases": [
+				"poncho_plate"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(poncho_plate@CurrentLevel)",
+				"ZombieBasedOn": "poncho_plate"
+			}
+		},
+		{
+			"aliases": [
+				"poncho_plate"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "CannotBeTossedByCitron": false,
+				"WalkSPS": 0.4625,
+				"EatDPS": 100,
+				"Toughness": 475,
+				"ShieldToughness": 3300,
+				"PonchoToughness": 60,
+				"ChanceToPlate": 1,
+				"WavePointCost": 300,
+				"Weight": 4000
+      }
+		},
+    {
+			"aliases": [
+				"west_bull"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(west_bull@CurrentLevel)",
+				"ZombieBasedOn": "west_bull"
+			}
+		},
+		{
+			"aliases": [
+				"west_bull"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+        "CannotBeEnlightenedBySolarSage": true,
+				"ImmuneToSweetPotato": true,
+				"CannotBeTossedByCitron": false,
+				"CannotBeGrabbedByPtero": true,
+				"CannotBeSwallowedByChomper": true,
+				"EatDPS": 300,
+				"Toughness": 4875,
+				"NormalDeathWhenMowed": true,
+				"BullRunAgainDelay": 3,
+				"WalkSPS": 0.5,
+				"RushSPS": 2.5,
+				"ImpThrowDistance": 4,
+				"ImmuneToGarlic": true,
+				"WavePointCost": 450,
+				"Weight": 1000
+      }
+		}
+  ],
+  "version": 1
+}
