@@ -1,0 +1,922 @@
+{
+	"#comment": "making these is actually a lot of fun :D",
+	"Information": {
+		"name": {
+			"en": "Treacherous Travels world 1 day 7",
+			"zh-CN": ""
+		},
+		"Author": "BlockAgent007",
+		"Introduction": {
+			"en": "",
+			"zh-CN": ""
+		},
+		"GameVersion": "",
+		"Version": "1.0",
+		"CreatedAt": "2025-12-7",
+		"UpdatedAt": "",
+		"Difficulty": "Easy",
+		"Category": "Survival"
+	},
+	"objects":[
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "Treacherous Travels by BlockAgent007",
+				"LevelNumber": 7,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+        				"RTID(ZombiesDeadWinCon@LevelModules)",
+        				"RTID(DefaultZombieWinCondition@LevelModules)",
+        				"RTID(NewWaves@CurrentLevel)",
+        				"RTID(SeedBank@CurrentLevel)",
+						"RTID(PlantMods@CurrentLevel)",
+						"RTID(StandardIntro@LevelModules)",
+						"RTID(SunDropper@CurrentLevel)",
+						"RTID(ChallengeModule@CurrentLevel)",
+						"RTID(WestMowers@LevelModules)"
+      				],
+				"Name": "1-7: The Nutcracker",
+				"WritenBy": "BlockAgent007",
+				"MusicType": "MiniGame_B",
+				"NormalPresentTable": "egypt_normal_01",
+      				"ShinyPresentTable": "egypt_shiny_01",
+				"StageModule": "RTID(WestStage@LevelModules)"
+			}
+		},
+		{
+			"aliases": [
+				"ProtectThePlant"
+			],
+			"objclass": "ProtectThePlantChallengeProperties",
+			"objdata": {
+				"SuppressObjectiveTip": false,
+				"MustProtectCount": 3,
+				"Plants": [
+					{
+						"GridX": 5,
+						"GridY": 1,
+						"PlantType": "wallnut"
+					},
+					{
+						"GridX": 5,
+						"GridY": 2,
+						"PlantType": "wallnut"
+					},
+					{
+						"GridX": 5,
+						"GridY": 3,
+						"PlantType": "wallnut"
+					}
+				]
+			}
+		},
+        {
+            "aliases": [
+                "SunDropper"
+            ],
+            "objclass": "SunDropperProperties",
+            "objdata": {
+                "InitialSunDropDelay": 5,
+                "SunCountdownBase": 5,
+                "SunCountdownIncreasePerSun": 1,
+                "SunCountdownMax": 9.5,
+                "SunCountdownRange": 0.5,
+                "Value": 25
+            }
+        },
+		{
+    		"aliases": [
+        		"PlantMods"
+			],
+    		"objclass": "PlantModifierProperties",
+    		"objdata": {
+        		"HidePlantfood": true,
+        		"SuppressParticle": true,
+        		"List": [
+        			{
+            			"Type": "sunflower",
+            			"NewObjdata": {
+            				"SunValue": 25
+						}
+        			},
+					{
+            			"Type": "cactus",
+            			"NewObjdata": {
+            				"SunCost": 150,
+							"PeaType": "thorn",
+							"PierceCount": 2,
+							"PierceCountAdditional": 0
+						}
+        			},
+					{
+						"Type": "springbean",
+						"NewObjdata": {
+							"KnockbackDistance": 3,
+							"RestTime": 11
+						}
+					}
+				]
+			}
+		},
+		 {
+            "aliases": [
+                "thorn"
+            ],
+            "objclass": "ProjectileType",
+            "objdata": {
+                "ProjectileBasedOn": "cactus",
+                "Props": "RTID(thorn@ProjectileProps)"
+            }
+        },
+		{
+            "aliases": [
+                "thorn"
+            ],
+            "objclass": "ProjectileProperties",
+            "objdata": {
+                "MaxHitCount": {
+                    "Min": 2,
+                    "Max": 2
+                },
+                "Damage": 15,
+                "Size": {
+                    "w": 16,
+                    "h": 16
+                },
+                "DestroysBalloons": true
+            }
+        },
+		{
+			"aliases": [
+				"SeedBank"
+			],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+                "SuppressObjectiveTip": true,
+				"UnlockAll": true,
+				"OverrideSeedSlotsCount": 6,
+				"SuggestPlantList": [
+					[
+						"splitpea",
+						"cactus"
+					]
+				],
+				"PlantIncludeList": [
+					"peashooter",
+					"sunflower",
+					"cherry_bomb",
+					"wallnut",
+					"potatomine",
+					"cactus",
+					"splitpea",
+					"springbean"
+				],
+				"SelectionMethod": "chooser"
+			}
+		},
+		{
+			"aliases": [
+				"ChallengeModule"
+		],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)",
+						"RTID(ProtectThePlant@CurrentLevel)"
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+				"BeatTheLevel"
+			],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+				"TIP: Spring Beans can send a zombie back 3 tiles, but have to take a short nap after springing."
+				],
+				"DescriptionsMultiLanguage": [
+					{
+					"en": "123",
+					"zh": "112233"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"jackochicken"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(jackochickenP@CurrentLevel)",
+				"ZombieBasedOn": "chicken_pumpkin"
+			}
+		},
+		{
+			"aliases": [
+				"jackochickenP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"KilledByShrinkingViolet": true,
+				"CannotBeTossedByCitron": false,
+				"CanBeEasilySwallowedByChomper": true,
+				"ImmuneToSporeShroom": false,
+				"IgnoredInWaves": true,
+				"WalkSPS": 0.7,
+				"WalkSPSVarience": 0,
+				"EatDPS": 500,
+				"Toughness": 80,
+				"DoesNotDamageHeavilyToGarlic": true,
+				"NormalDeathWhenMowed": true,
+				"WavePointCost": 150,
+				"Weight": 1000,
+				"HitRect": "RTID(CowboyChickenHitRect@RectangleProps)",
+				"AttackRect": "RTID(CowboyChickenAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"prospector_armor1"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(prospectorP1@CurrentLevel)",
+				"ZombieBasedOn": "prospector"
+			}
+		},
+		{
+			"aliases": [
+				"prospectorP1"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.16,
+				"EatDPS": 90,
+				"Toughness": 170,
+				"LandingStunnTime": 2.75,
+				"ExplodeCountdown": 4,
+				"StartingArmors": [
+        			"lostcity_armor1"
+        		],
+				"WavePointCost": 250,
+				"Weight": 3000,
+				"HitRect":"RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"poncho"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(ponchoP@CurrentLevel)",
+				"ZombieBasedOn": "poncho"
+			}
+		},
+		{
+			"aliases": [
+				"ponchoP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.145,
+				"EatDPS": 1000,
+				"Toughness": 190,
+				"ShieldToughness": 1100,
+				"PonchoToughness": 100,
+				"ChanceToPlate": 1,
+				"WavePointCost": 300,
+				"Weight": 4000,
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+            "aliases": [
+                "WaveManagerProps", "NewWaves"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 7,
+                "WaveCount": 14,
+                "Waves": [
+                    ["RTID(CowboyEdge@CurrentLevel)"],
+                    ["RTID(CowboyEdge@CurrentLevel)"],
+                    ["RTID(CowboyEdge@CurrentLevel)"],
+                    ["RTID(CowboyMiddle@CurrentLevel)"],
+                    ["RTID(Wave5@CurrentLevel)"],
+					["RTID(Wave6@CurrentLevel)", "RTID(PonchoEdge@CurrentLevel)"],
+					["RTID(Wave7@CurrentLevel)", "RTID(PonchoMiddle1@CurrentLevel)"],
+					["RTID(Wave8@CurrentLevel)", "RTID(ChickenEdge3)"],
+					["RTID(Wave9@CurrentLevel)", "RTID(ChickenEdge1)", "RTID(PonchoMiddle2@CurrentLevel)"],
+					["RTID(Wave10@CurrentLevel)", "RTID(ChickenEdge2)"],
+					["RTID(Wave11@CurrentLevel)", "RTID(PonchoMiddle2@CurrentLevel)"],
+					["RTID(Wave12@CurrentLevel)", "RTID(ChickenEdge3)", "RTID(PonchoMiddle1@CurrentLevel)"],
+					["RTID(Wave13@CurrentLevel)"],
+					["RTID(Wave14@CurrentLevel)", "RTID(ChickenEdge2)"]
+                ]
+            }
+        },
+		{
+			"aliases":[
+				"Wave5"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave6"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave7"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+                    {
+						"Type": "RTID(cowboy@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(prospector_armor1@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave8"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+                    {
+						"Type": "RTID(cowboy@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave9"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+                    {
+						"Type": "RTID(cowboy@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave10"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(prospector_armor1@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(prospector_armor1@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave11"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy@ZombieTypes)"
+					},
+                    {
+						"Type": "RTID(cowboy@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(prospector_armor1@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave12"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy@ZombieTypes)"
+					},
+                    {
+						"Type": "RTID(cowboy@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(jackochicken@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(jackochicken@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave13"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy@ZombieTypes)"
+					},
+                    {
+						"Type": "RTID(cowboy@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy@ZombieTypes)"
+					},
+                    {
+						"Type": "RTID(cowboy@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave14"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(poncho@CurrentLevel)",
+						"Row": 2
+					},
+					{
+						"Type": "RTID(poncho@CurrentLevel)",
+						"Row": 3
+					},
+					{
+						"Type": "RTID(poncho@CurrentLevel)",
+						"Row": 4
+					},
+					{
+						"Type": "RTID(prospector_armor1@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+            "aliases": [
+                "CowboyEdge"
+            ],
+            "objclass": "RandomEventsProps",
+            "objdata": {
+                "EventCount": {
+                    "Min": 1,
+                    "Max": 1
+                },
+                "Events": [
+                    "RTID(CowboyLane1@CurrentLevel)",
+                    "RTID(CowboyLane5@CurrentLevel)"
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "CowboyMiddle"
+            ],
+            "objclass": "RandomEventsProps",
+            "objdata": {
+                "EventCount": {
+                    "Min": 1,
+                    "Max": 1
+                },
+                "Events": [
+                    "RTID(CowboyLane2@CurrentLevel)",
+					"RTID(CowboyLane3@CurrentLevel)",
+                    "RTID(CowboyLane4@CurrentLevel)"
+                ]
+            }
+        },
+		{
+			"aliases":[
+				"CowboyLane1"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy@ZombieTypes)",
+						"Row": 1
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"CowboyLane2"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy@ZombieTypes)",
+						"Row": 2
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"CowboyLane3"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy@ZombieTypes)",
+						"Row": 3
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"CowboyLane4"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy@ZombieTypes)",
+						"Row": 4
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"CowboyLane5"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy@ZombieTypes)",
+						"Row": 5
+					}
+				]
+			}
+		},
+		{
+            "aliases": [
+                "PonchoEdge"
+            ],
+            "objclass": "RandomEventsProps",
+            "objdata": {
+                "EventCount": {
+                    "Min": 1,
+                    "Max": 1
+                },
+                "Events": [
+                    "RTID(PonchoLane1@CurrentLevel)",
+                    "RTID(PonchoLane5@CurrentLevel)"
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PonchoMiddle1"
+            ],
+            "objclass": "RandomEventsProps",
+            "objdata": {
+                "EventCount": {
+                    "Min": 1,
+                    "Max": 1
+                },
+                "Events": [
+                    "RTID(PonchoLane2@CurrentLevel)",
+					"RTID(PonchoLane3@CurrentLevel)",
+                    "RTID(PonchoLane4@CurrentLevel)"
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "PonchoMiddle2"
+            ],
+            "objclass": "RandomEventsProps",
+            "objdata": {
+                "EventCount": {
+                    "Min": 1,
+                    "Max": 1
+                },
+                "Events": [
+                    "RTID(PonchoLane2_3@CurrentLevel)",
+					"RTID(PonchoLane3_4@CurrentLevel)",
+                    "RTID(PonchoLane2_4@CurrentLevel)"
+                ]
+            }
+        },
+		{
+			"aliases":[
+				"PonchoLane1"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(poncho@CurrentLevel)",
+						"Row": 1
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"PonchoLane2"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(poncho@CurrentLevel)",
+						"Row": 2
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"PonchoLane2_3"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(poncho@CurrentLevel)",
+						"Row": 2
+					},
+					{
+						"Type": "RTID(poncho@CurrentLevel)",
+						"Row": 3
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"PonchoLane3"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(poncho@CurrentLevel)",
+						"Row": 3
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"PonchoLane3_4"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(poncho@CurrentLevel)",
+						"Row": 3
+					},
+					{
+						"Type": "RTID(poncho@CurrentLevel)",
+						"Row": 4
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"PonchoLane4"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(poncho@CurrentLevel)",
+						"Row": 4
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"PonchoLane2_4"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(poncho@CurrentLevel)",
+						"Row": 2
+					},
+					{
+						"Type": "RTID(poncho@CurrentLevel)",
+						"Row": 4
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"PonchoLane5"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(poncho@CurrentLevel)",
+						"Row": 5
+					}
+				]
+			}
+		},
+		{
+            "aliases": [
+                "ChickenEdge1"
+            ],
+            "objclass": "RandomEventsProps",
+            "objdata": {
+                "EventCount": {
+                    "Min": 1,
+                    "Max": 1
+                },
+                "Events": [
+                    "RTID(ChickenLane1@CurrentLevel)",
+                    "RTID(ChickenLane5@CurrentLevel)"
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "ChickenEdge2"
+            ],
+            "objclass": "RandomEventsProps",
+            "objdata": {
+                "EventCount": {
+                    "Min": 2,
+                    "Max": 2
+                },
+                "Events": [
+                    "RTID(ChickenLane1@CurrentLevel)",
+                    "RTID(ChickenLane5@CurrentLevel)"
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "ChickenEdge3"
+            ],
+            "objclass": "RandomEventsProps",
+            "objdata": {
+                "EventCount": {
+                    "Min": 3,
+                    "Max": 3
+                },
+                "Events": [
+                    "RTID(ChickenLane1@CurrentLevel)",
+                    "RTID(ChickenLane5@CurrentLevel)"
+                ]
+            }
+        },
+		{
+			"aliases":[
+				"ChickenLane1"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(jackochicken@CurrentLevel)",
+						"Row": 1
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"ChickenLane5"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(jackochicken@CurrentLevel)",
+						"Row": 5
+					}
+				]
+			}
+		}
+	],
+	"version": 1
+}

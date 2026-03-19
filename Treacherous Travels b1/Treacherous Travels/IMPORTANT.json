@@ -1,0 +1,144 @@
+{
+	"#comment": "CHECK THE README",
+	"Information": {
+		"name": {
+			"en": "CHECK README.txt",
+			"zh-CN": ""
+		},
+		"Author": "BlockAgent007",
+		"Introduction": {
+			"en": "",
+			"zh-CN": ""
+		},
+		"GameVersion": "",
+		"Version": "1.0",
+		"CreatedAt": "2026-02-7",
+		"UpdatedAt": "",
+		"Difficulty": "Very Easy",
+		"Category": "Reading comprehension"
+	},
+	"objects":[
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "GO READ README.txt",
+				"LevelNumber": 0,
+				"StartingSun": 0,
+				"PlantFood": false,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+        				"RTID(ZombiesDeadWinCon@LevelModules)",
+        				"RTID(DefaultZombieWinCondition@LevelModules)",
+        				"RTID(NewWaves@CurrentLevel)",
+        				"RTID(SeedBank@CurrentLevel)",
+						"RTID(ChallengeModule@CurrentLevel)",
+						"RTID(LevelScheduler@CurrentLevel)",
+						"RTID(StandardIntro@LevelModules)"
+      				],
+				"Name": "CHECK README.txt",
+				"WritenBy": "BlockAgent007",
+				"NormalPresentTable": "egypt_normal_01",
+      				"ShinyPresentTable": "egypt_shiny_01",
+				"StageModule": "RTID(TutorialStage@LevelModules)"
+			}
+		},
+		{
+			"aliases": [
+				"ChallengeModule"
+		],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+				"BeatTheLevel"
+		],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+				"Please read README.txt before playing the pack. Thanks!"
+				],
+				"DescriptionsMultiLanguage": [
+					{
+					"en": "123",
+					"zh": "112233"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SeedBank"
+			],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+                "SuppressObjectiveTip": true,
+				"PresetPlantList": [],
+				"SelectionMethod": "preset"
+			}
+		},
+		{
+			"aliases": [
+				"LevelScheduler"
+			],
+			"objclass": "LevelSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 1,
+					"Min": 0
+				},
+				"TimeBetween": {
+					"Max": 0,
+					"Min": 0
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+        		"SuppressRewardState": true,
+				"Events": [
+					"RTID(Wave1@CurrentLevel)"
+				]
+			}
+		},
+		{
+            "aliases": [
+                "WaveManagerProps", "NewWaves"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 1,
+                "WaveCount": 1,
+				"SuppressFlagZombie": true,
+                "Waves": [
+                    ["RTID(Wave1@CurrentLevel)"]
+                ]
+            }
+        },
+		{
+			"aliases": [
+    			"Wave1"
+			],
+			"objclass": "LoseGameWaveActionProps",
+			"objdata": {
+				"Tip": {
+    				"en": "READ README.txt",
+    				"zh": "READ README.txt"
+				},
+    			"SmallTip": {
+    				"en": "",
+    				"zh": ""
+   				}
+			}
+		}
+	],
+	"version": 1
+}
