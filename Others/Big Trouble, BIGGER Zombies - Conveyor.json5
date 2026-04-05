@@ -1,0 +1,881 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "maido",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2024-12-06",
+    "UpdatedAt": "2024-12-06",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "Big Trouble, BIGGER Zombies",
+		"FirstIntroNarrative": "INTRO",
+		"FirstOutroNarrative": "OUTRO",
+		"ReplayIntroNarrative": "INTRO",
+		"ReplayOutroNarrative": "OUTRO",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		  "RTID(StandardIntro@LevelModules)",
+		  "RTID(ChallengeModule@CurrentLevel)",
+		  "RTID(ModernMowers@LevelModules)",
+		  "RTID(ConveyorBelt@CurrentLevel)"
+        ],
+        "Name": "Big Trouble, BIGGER Zombies",
+        "WritenBy": "maido",
+		"MusicType": "MiniGame_B",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(ModernStage@LevelModules)"
+      }
+    },
+	    {
+            "aliases": [
+                "ConveyorBelt"
+            ],
+            "objclass": "ConveyorSeedBankProperties",
+            "objdata": {
+                "DropDelayConditions": [
+                    {
+                        "Delay": 3,
+                        "MaxPackets": 0
+                    },
+                    {
+                        "Delay": 4,
+                        "MaxPackets": 1
+                    },
+                    {
+                        "Delay": 6,
+                        "MaxPackets": 4
+                    },
+                    {
+                        "Delay": 8,
+                        "MaxPackets": 8
+                    }
+                ],
+                "InitialPlantList": [
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 5,
+                        "PlantType": "gatling",
+                        "Weight": 40
+                    },
+                    {
+					    "MaxWeightFactor": 0,
+						"MaxCount": 15,
+                        "PlantType": "redstinger",
+                        "Weight": 50
+                    },					
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 8,
+                        "PlantType": "asparagus",
+                        "Weight": 75
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 5,
+                        "PlantType": "citron",
+                        "Weight": 75
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 5,
+                        "PlantType": "buttercup",
+                        "Weight": 75
+                    },
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 2,
+                        "PlantType": "banana",
+                        "Weight": 55
+                    },	
+					{
+					    "MaxWeightFactor": 0,
+						"MaxCount": 1,
+                        "PlantType": "hurrikale",
+                        "Weight": 40
+                    },						
+                ],
+                "SpeedConditions": [
+                    {
+                        "MaxPackets": 0,
+                        "Speed": 150
+                    }
+                ]
+            }
+        },
+	{
+      "aliases": [
+        "small_basic"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(small_basic@CurrentLevel)",
+        "ZombieBasedOn": "tutorial"
+      }
+    },
+    {
+		"aliases": [
+			"small_basic"
+		],
+		"objclass": "ZombieProperties",
+		"objdata": {
+		"ZombieSort": "Normal",		
+		"ImmuneToShrinkingViolet": true,
+		"CannotBeEnlightenedBySolarSage": true,
+		"CannotBeKnockedBackByProjectiles": true,
+		"CannotBeTossedByCitron": true,
+		"CannotBeSwallowedByChomper": true,
+		"WalkSPS": 0.14,
+		"Toughness": 610,
+		"SpawnedScale": 1.5,
+		"EatDPS": 250,
+		"WavePointCost": 200,
+		"Weight": 1000,
+		"HitRect": "RTID(CommonHitRect@RectangleProps)",
+		"AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+	  }
+	},
+	{
+      "aliases": [
+        "small_chicken"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(small_chicken@CurrentLevel)",
+        "ZombieBasedOn": "chicken"
+      }
+    },
+	{
+		"aliases": [
+			"small_chicken"
+		],
+		"objclass": "ZombieProperties",
+		"objdata": {
+		"ZombieSort": "Normal",		
+		"ImmuneToShrinkingViolet": true,
+		"CannotBeEnlightenedBySolarSage": true,
+		"CannotBeKnockedBackByProjectiles": true,
+		"CannotBeTossedByCitron": true,
+		"CannotBeSwallowedByChomper": true,
+		"WalkSPS": 0.27,
+		"Toughness": 150,
+		"SpawnedScale": 1.5,
+		"EatDPS": 100,
+		"WavePointCost": 100,
+		"Weight": 1000,
+		"HitRect": "RTID(CommonHitRect@RectangleProps)",
+		"AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+	  }
+	},
+	{
+      "aliases": [
+        "small_flag"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(small_flag@CurrentLevel)",
+        "ZombieBasedOn": "tutorial_flag"
+      }
+    },
+    {
+		"aliases": [
+			"small_flag"
+		],
+		"objclass": "ZombieProperties",
+		"objdata": {
+		"ZombieSort": "Normal",
+		"ImmuneToShrinkingViolet": true,
+		"CannotBeEnlightenedBySolarSage": true,
+		"CannotBeKnockedBackByProjectiles": true,
+		"CannotBeTossedByCitron": true,
+		"CannotBeSwallowedByChomper": true,
+		"WalkSPS": 0.17,
+		"Toughness": 610,
+		"SpawnedScale": 1.5,
+		"EatDPS": 250,
+		"WavePointCost": 75,
+		"Weight": 1000,
+		"HitRect": "RTID(CommonHitRect@RectangleProps)",
+		"AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+	  }
+	},
+	{
+      "aliases": [
+        "small_cone"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(small_cone@CurrentLevel)",
+        "ZombieBasedOn": "tutorial_armor1"
+      }
+    },
+    {
+		"aliases": [
+			"small_cone"
+		],
+		"objclass": "ZombieProperties",
+		"objdata": {
+		"ZombieSort": "Normal",
+		"ImmuneToShrinkingViolet": true,
+		"CannotBeEnlightenedBySolarSage": true,
+		"CannotBeKnockedBackByProjectiles": true,
+		"CannotBeTossedByCitron": true,
+		"CannotBeSwallowedByChomper": true,
+		"WalkSPS": 0.14,
+		"Toughness": 610,
+		"SpawnedScale": 1.5,
+		"EatDPS": 250,
+		"StartingArmors": ["small_armor1"],
+		"WavePointCost": 500,
+		"Weight": 2000,
+		"HitRect": "RTID(CommonHitRect@RectangleProps)",
+		"AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+	  }
+	},
+	{
+      "aliases": [
+        "small_bucket"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(small_bucket@CurrentLevel)",
+        "ZombieBasedOn": "tutorial_armor2"
+      }
+    },
+    {
+		"aliases": [
+			"small_bucket"
+		],
+		"objclass": "ZombieProperties",
+		"objdata": {
+		"ZombieSort": "Normal",
+		"ImmuneToShrinkingViolet": true,
+		"CannotBeEnlightenedBySolarSage": true,
+		"CannotBeKnockedBackByProjectiles": true,
+		"CannotBeTossedByCitron": true,
+		"CannotBeSwallowedByChomper": true,
+		"WalkSPS": 0.14,
+		"Toughness": 610,
+		"SpawnedScale": 1.5,
+		"EatDPS": 250,
+		"StartingArmors": ["small_armor2"],
+		"WavePointCost": 700,
+		"Weight": 4000,
+		"HitRect": "RTID(CommonHitRect@RectangleProps)",
+		"AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+	  }
+	},
+	{
+      "aliases": [
+        "small_paper"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(small_paper@CurrentLevel)",
+        "ZombieBasedOn": "modern_newspaper"
+      }
+    },
+	{
+		"aliases": [
+			"small_paper"
+		],
+		"objclass": "ZombieProperties",
+		"objdata": {
+		"ZombieSort": "Normal",
+		"ImmuneToShrinkingViolet": true,
+		"CannotBeEnlightenedBySolarSage": true,
+		"CannotBeKnockedBackByProjectiles": true,
+		"CannotBeTossedByCitron": true,
+		"CannotBeSwallowedByChomper": true,
+		"WalkSPS": 0.14,
+		"EatDPS": 250,
+		"Toughness": 900,
+		"EnragedDamageScale": 3,
+		"EnragedSpeedScale": 1.5,
+		"NewspaperHealth": 600,		
+		"SpawnedScale": 1.5,
+		"WavePointCost": 1200,
+		"Weight": 3000,
+		"HitRect": "RTID(CommonHitRect@RectangleProps)",
+		"AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+	  }
+	},
+	{
+      "aliases": [
+        "small_football"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(small_football@CurrentLevel)",
+        "ZombieBasedOn": "modern_allstar"
+      }
+    },
+	{
+		"aliases": [
+			"small_football"
+		],
+		"objclass": "ZombieProperties",
+		"objdata": {
+		"ZombieSort": "Normal",
+		"ImmuneToShrinkingViolet": true,
+		"CannotBeEnlightenedBySolarSage": true,
+		"CannotBeKnockedBackByProjectiles": true,
+		"CannotBeTossedByCitron": true,
+		"CannotBeSwallowedByChomper": true,
+		"SmashDamage": 1500,
+		"WalkSPS": 0.13,
+		"EatDPS": 250,
+		"Toughness": 3200,
+		"RunningSpeedScale": 6,
+		"SpawnedScale": 1.5,
+		"WavePointCost": 900,
+		"Weight": 4000,
+		"HitRect": "RTID(CommonHitRect@RectangleProps)",
+		"AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+	  }
+	},
+	{
+      "aliases": [
+        "small_gargantuar"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(small_gargantuar@CurrentLevel)",
+        "ZombieBasedOn": "tutorial_gargantuar"
+      }
+    },
+    {
+		"aliases": [
+			"small_gargantuar"
+		],
+		"objclass": "ZombieProperties",
+		"objdata": {
+		"ZombieSort": "Gargantuar",
+		"CannotBeHypnotizedByProjectiles": true,
+		"CannotChangeLaneByPowerToss": true,
+		"CannotBeFlickedByPowerToss": true,
+		"CannotBeDraggedByTangleKelp": true,		
+		"ImmuneToShrinkingViolet": true,
+		"CannotBeKnockedBackByProjectiles": true,
+		"CannotBeTossedByCitron": true,
+		"CannotBeEnlightenedBySolarSage": true,
+		"CannotBeSwallowedByChomper": true,
+		"CannotCarryPlantfoodsInWaves": true,
+		"ChiliStunDurationMult": 0.5,
+		"IgnoredBySnapPea": true, 
+		"SmashDamage": 1500,
+		"WalkSPS": 0.16,
+		"EatDPS": 100,
+		"Toughness": 9000,
+		"SpawnedScale": 1.5,
+		"LivesInDeepWater": true,
+		"NormalDeathWhenMowed": true,
+		"WavePointCost": 2500,
+		"Weight": 3000,
+		"HitRect": "RTID(GargantuarHitRect@RectangleProps)",
+		"AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+	  }
+	},
+{
+  "objclass": "ArmorProperties",
+  "aliases": [
+    "small_armor1"
+  ],
+  "objdata": {
+    "isMetal": false,
+    "isIce": false,
+    "Toughness": 750,
+    "BowlingLevel": 2
+  }
+},
+{
+  "objclass": "ArmorType",
+  "aliases": [
+    "small_armor1"
+  ],
+  "objdata": {
+    "Properties": "RTID(small_armor1@CurrentLevel)",
+    "ArmorBasedOn": "modern_armor1"
+  }
+},
+{
+  "objclass": "ArmorProperties",
+  "aliases": [
+    "small_armor2"
+  ],
+  "objdata": {
+    "isMetal": true,
+    "isIce": false,
+    "Toughness": 2200,
+    "BowlingLevel": 3
+  }
+},
+{
+  "objclass": "ArmorType",
+  "aliases": [
+    "small_armor2"
+  ],
+  "objdata": {
+    "Properties": "RTID(small_armor2@CurrentLevel)",
+    "ArmorBasedOn": "modern_armor2"
+  }
+},
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PresetPlantList": [
+          
+        ],
+        "SelectionMethod": "chooser"
+      }
+    },
+    	
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 10,
+        "WaveCount": 40,
+        "Waves": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+		  [],
+          []
+        ]
+      }
+    },
+//This is the scripted Zombie Ambush setup, currently for waves 10, 20, 30, and 40
+       {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 10,
+				"LevelJamList": ["jam_punk","jam_8bit","jam_pop","jam_rap","jam_metal"],
+				"SuppressFlagZombie": true,
+                "SpawnColEnd": 9,
+                "SpawnColStart": 6,
+                "WaveCount": 30,
+                "WaveSpendingPointIncrement": 50,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    ["RTID(Wave1@CurrentLevel)"],
+                    ["RTID(Wave2@CurrentLevel)"],
+                    ["RTID(Wave3@CurrentLevel)"],
+                    ["RTID(Wave4@CurrentLevel)"],
+                    ["RTID(Wave5@CurrentLevel)"],
+                    ["RTID(Wave6@CurrentLevel)"],
+                    ["RTID(Wave7@CurrentLevel)"],
+                    ["RTID(Wave8@CurrentLevel)"],
+                    ["RTID(Wave9@CurrentLevel)"],
+                    ["RTID(SurpriseZombie@CurrentLevel)","RTID(Wave10@CurrentLevel)"],
+					["RTID(Wave11@CurrentLevel)"],
+					["RTID(Wave12@CurrentLevel)"],
+					["RTID(Wave13@CurrentLevel)"],
+					["RTID(Wave14@CurrentLevel)"],
+					["RTID(Wave15@CurrentLevel)"],
+					["RTID(Wave16@CurrentLevel)"],
+					["RTID(Wave17@CurrentLevel)","RTID(AllstarSpawn@CurrentLevel)"],
+					["RTID(Wave18@CurrentLevel)"],
+					["RTID(Wave19@CurrentLevel)"],
+					["RTID(SurpriseZombie@CurrentLevel)","RTID(Wave20@CurrentLevel)"],
+                ]
+            }
+        },
+///WAVES	
+	{
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(small_basic@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(small_basic@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(small_cone@CurrentLevel)"},
+		  {"Type": "RTID(small_chicken@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(small_chicken@CurrentLevel)"},
+		  {"Type": "RTID(small_chicken@CurrentLevel)"},
+		  {"Type": "RTID(small_chicken@CurrentLevel)"},
+		  {"Type": "RTID(small_basic@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+		  {"Type": "RTID(small_cone@CurrentLevel)"},
+		  {"Type": "RTID(small_basic@CurrentLevel)"},
+		  {"Type": "RTID(small_basic@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(small_bucket@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(small_bucket@CurrentLevel)"},
+		  {"Type": "RTID(small_cone@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(small_bucket@CurrentLevel)"},
+		  {"Type": "RTID(small_paper@CurrentLevel)"},
+		  {"Type": "RTID(small_basic@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(small_football@CurrentLevel)"},
+		  {"Type": "RTID(small_basic@CurrentLevel)"},
+		  {"Type": "RTID(small_basic@CurrentLevel)"},
+		  {"Type": "RTID(small_chicken@CurrentLevel)"},
+		  {"Type": "RTID(small_chicken@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(small_paper@CurrentLevel)"},
+		  {"Type": "RTID(small_bucket@CurrentLevel)"},
+		  {"Type": "RTID(small_cone@CurrentLevel)"},
+		  {"Type": "RTID(small_basic@CurrentLevel)"},
+		  {"Type": "RTID(small_chicken@CurrentLevel)"},
+		  {"Type": "RTID(small_basic@CurrentLevel)"},
+		  {"Type": "RTID(small_chicken@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(small_bucket@CurrentLevel)"},
+		  {"Type": "RTID(small_cone@CurrentLevel)"},
+		  {"Type": "RTID(small_cone@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(small_gargantuar@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave13"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(small_cone@CurrentLevel)"},
+		  {"Type": "RTID(small_cone@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave14"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(small_paper@CurrentLevel)"},
+		  {"Type": "RTID(small_football@CurrentLevel)"},
+		  {"Type": "RTID(small_cone@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+		  {"Type": "RTID(small_paper@CurrentLevel)"},
+		  {"Type": "RTID(small_bucket@CurrentLevel)"},
+		  {"Type": "RTID(small_bucket@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave16"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(small_bucket@CurrentLevel)"},
+		  {"Type": "RTID(small_cone@CurrentLevel)"},
+		  {"Type": "RTID(small_basic@CurrentLevel)"},{"Type": "RTID(small_cone@CurrentLevel)"},
+		  {"Type": "RTID(small_basic@CurrentLevel)"},{"Type": "RTID(small_basic@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave17"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(small_paper@CurrentLevel)"},
+		  {"Type": "RTID(small_football@CurrentLevel)"},
+		  {"Type": "RTID(small_bucket@CurrentLevel)"},
+		  {"Type": "RTID(small_football@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave18"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(small_gargantuar@CurrentLevel)"},
+		  {"Type": "RTID(small_cone@CurrentLevel)"},
+		  {"Type": "RTID(small_cone@CurrentLevel)"},
+		  {"Type": "RTID(small_cone@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave19"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(small_paper@CurrentLevel)"},
+		  {"Type": "RTID(small_bucket@CurrentLevel)"},
+		  {"Type": "RTID(small_cone@CurrentLevel)"},
+		  {"Type": "RTID(small_cone@CurrentLevel)"},
+		  {"Type": "RTID(small_cone@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+      "aliases": [
+        "Wave20"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+		  {"Type": "RTID(small_gargantuar@CurrentLevel)"},
+		  {"Type": "RTID(small_football@CurrentLevel)"},
+		  {"Type": "RTID(small_football@CurrentLevel)"},
+		  {"Type": "RTID(small_bucket@CurrentLevel)"},
+		  {"Type": "RTID(small_paper@CurrentLevel)"},
+		  {"Type": "RTID(small_bucket@CurrentLevel)"},
+		  {"Type": "RTID(small_cone@CurrentLevel)"},
+		  {"Type": "RTID(small_cone@CurrentLevel)"},
+		  {"Type": "RTID(small_cone@CurrentLevel)"},
+		  {"Type": "RTID(small_basic@CurrentLevel)"},
+		  {"Type": "RTID(small_chicken@CurrentLevel)"},
+		  {"Type": "RTID(small_basic@CurrentLevel)"},
+		  {"Type": "RTID(small_chicken@CurrentLevel)"},
+		  {"Type": "RTID(small_chicken@CurrentLevel)"},
+		  {"Type": "RTID(small_chicken@CurrentLevel)"},
+        ]
+      }
+    },
+	{
+        "aliases": [
+                "SurpriseZombie"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 0.8,
+                    "Min": 0.8
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(SurpriseZombieProp@CurrentLevel)"
+                ]
+            }
+        },
+        {
+             "aliases": [
+                "SurpriseZombieProp"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {"Type": "RTID(small_flag@CurrentLevel)"},
+                ],
+                "MustKillAllToNextWave": false
+            }
+        },
+///WAVES END
+  ],
+  "version": 1
+}
