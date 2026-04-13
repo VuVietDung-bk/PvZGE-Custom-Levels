@@ -234,11 +234,11 @@
       ["RTID(KongfuHole@CurrentLevel)", "RTID(PlantFoodSpawner0@CurrentLevel)"],
       ["RTID(KongfuHole@CurrentLevel)"],
       ["RTID(KongfuHole@CurrentLevel)", "RTID(TigerRush1@CurrentLevel)"],
-      ["RTID(KongfuHole@CurrentLevel)", "RTID(BronzeStrong@CurrentLevel)"],
+      ["RTID(KongfuHole@CurrentLevel)", "RTID(BronzeStrongZom@CurrentLevel)"],
       ["RTID(KongfuHole@CurrentLevel)", "RTID(PlantFoodSpawner1@CurrentLevel)"],
-      ["RTID(KongfuHole@CurrentLevel)", "RTID(BronzeHook@CurrentLevel)"],
+      ["RTID(KongfuHole@CurrentLevel)", "RTID(BronzeHookZom@CurrentLevel)"],
       ["RTID(KongfuHole@CurrentLevel)", "RTID(TigerRush1@CurrentLevel)"],
-      ["RTID(KongfuHole@CurrentLevel)", "RTID(BronzeChi@CurrentLevel)"],
+      ["RTID(KongfuHole@CurrentLevel)", "RTID(BronzeChiZom@CurrentLevel)"],
       ["RTID(KongfuHole@CurrentLevel)", "RTID(PlantFoodSpawner2@CurrentLevel)"],
       ["RTID(KongfuHole@CurrentLevel)", "RTID(TigerRush2@CurrentLevel)"],
       ["RTID(KongfuHole@CurrentLevel)", "RTID(BronzeStrong@CurrentLevel)", "RTID(BronzeHook@CurrentLevel)"],
@@ -247,11 +247,11 @@
       ["RTID(KongfuHole@CurrentLevel)", "RTID(TigerRush2@CurrentLevel)"],
       ["RTID(KongfuHole@CurrentLevel)", "RTID(BronzeStrong@CurrentLevel)"],
       ["RTID(KongfuHole@CurrentLevel)", "RTID(BronzeHook@CurrentLevel)", "RTID(BronzeChi@CurrentLevel)"],
-      ["RTID(KongfuHole@CurrentLevel)", "RTID(PlantFoodSpawner2@CurrentLevel)", "RTID(TigerRush3@CurrentLevel)"],
+      ["RTID(KongfuHole@CurrentLevel)", "RTID(TigerRush3@CurrentLevel)"],
       ["RTID(KongfuHole@CurrentLevel)", "RTID(BronzeChi@CurrentLevel)"],
       ["RTID(KongfuHole@CurrentLevel)", "RTID(BronzeStrong@CurrentLevel)"],
       ["RTID(KongfuHole@CurrentLevel)", "RTID(BronzeChi@CurrentLevel)", "RTID(TigerRush3@CurrentLevel)"],
-      ["RTID(KongfuHole@CurrentLevel)", "RTID(BronzeChi@CurrentLevel)", "RTID(PlantFoodSpawner3@CurrentLevel)"],
+      ["RTID(KongfuHole@CurrentLevel)", "RTID(BronzeChi@CurrentLevel)"],
       ["RTID(KongfuHole@CurrentLevel)", "RTID(BronzeHook@CurrentLevel)"],
       ["RTID(KongfuHole@CurrentLevel)", "RTID(BronzeStrong@CurrentLevel)", "RTID(TigerRush3@CurrentLevel)"],
       ["RTID(KongfuHole@CurrentLevel)", "RTID(BronzeChi@CurrentLevel)"],
@@ -262,7 +262,7 @@
 ,
     {
       "aliases": [
-        "BronzeStrong"
+        "BronzeStrongZom"
       ],
       "objclass": "SpawnZombiesJitteredWaveActionProps",
       "objdata": {
@@ -275,7 +275,30 @@
     },
     {
       "aliases": [
-        "BronzeHook"
+        "BronzeStrong"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.1,
+          "Min": 0.1
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": ["RTID(BronzeStrongZom@CurrentLevel)"]
+      }
+    },
+    {
+      "aliases": [
+        "BronzeHookZom"
       ],
       "objclass": "SpawnZombiesJitteredWaveActionProps",
       "objdata": {
@@ -288,7 +311,30 @@
     },
     {
       "aliases": [
-        "BronzeChi"
+        "BronzeHook"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.1,
+          "Min": 0.1
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": ["RTID(BronzeHookZom@CurrentLevel)"]
+      }
+    },
+    {
+      "aliases": [
+        "BronzeChiZom"
       ],
       "objclass": "SpawnZombiesJitteredWaveActionProps",
       "objdata": {
@@ -297,6 +343,29 @@
             "Type": "RTID(kongfu_bronze_chi@ZombieTypes)"
           }
         ]
+      }
+    },
+    {
+      "aliases": [
+        "BronzeChi"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.1,
+          "Min": 0.1
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": ["RTID(BronzeChiZom@CurrentLevel)"]
       }
     },
 		{
@@ -323,68 +392,44 @@
             }
         },
         {
-		
-        "aliases": [
-            "TigerRush1"
-        ],
-        "objclass": "SpawnZombiesJitteredWaveActionProps",
-        "objdata": {
-            "Zombies": [
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 1},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 2},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 3},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 4},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 5}
-            ]
-        }
-    },
+            "aliases": [
+                "TigerRush1"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": 1,
+                "SwashbucklerCount": 5,
+                "TimeBetweenGroups": 0.5,
+                "ZombieType": "RTID(kongfu_rocket_imp@ZombieTypes)",
+                "WaveStartMessage": "[WARNING_ROCKET_STRIKE]"
+            }
+        },
     {
-		
-        "aliases": [
-            "TigerRush2"
-        ],
-        "objclass": "SpawnZombiesJitteredWaveActionProps",
-        "objdata": {
-            "Zombies": [
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 1},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 2},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 3},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 4},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 5},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 1},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 2},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 3},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 4},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 5}
-            ]
-        }
-    },
+            "aliases": [
+                "TigerRush2"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": 2,
+                "SwashbucklerCount": 10,
+                "TimeBetweenGroups": 0.5,
+                "ZombieType": "RTID(kongfu_rocket_imp@ZombieTypes)",
+                "WaveStartMessage": "[WARNING_ROCKET_STRIKE]"
+            }
+        },
     {
-		
-        "aliases": [
-            "TigerRush3"
-        ],
-        "objclass": "SpawnZombiesJitteredWaveActionProps",
-        "objdata": {
-            "Zombies": [
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 1},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 2},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 3},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 4},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 5},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 1},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 2},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 3},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 4},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 5},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 1},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 2},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 3},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 4},
-                {"Type": "RTID(kongfu_rocket_imp@ZombieTypes)", "Row": 5}
-            ]
-        }
-    },
+            "aliases": [
+                "TigerRush3"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": 3,
+                "SwashbucklerCount": 15,
+                "TimeBetweenGroups": 0.5,
+                "ZombieType": "RTID(kongfu_rocket_imp@ZombieTypes)",
+                "WaveStartMessage": "[WARNING_ROCKET_STRIKE]"
+            }
+        },
         {
             "aliases": [
                 "PlantFoodSpawner0"

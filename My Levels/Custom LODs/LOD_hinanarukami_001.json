@@ -1,0 +1,571 @@
+{
+	"#comment": "Level Of The Day",
+	"objects": [
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "[PLAYERS_TRIP_TO_LOD]",
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+					"RTID(LevelOfTheDayIntro@LevelModules)",
+					"RTID(LevelOfTheDayModule@CurrentLevel)",
+					"RTID(EightiesMowers@LevelModules)",
+					"RTID(DefaultZombieWinCondition@LevelModules)",
+					"RTID(ConveyorBelt@CurrentLevel)",
+					"RTID(ZombiesDeadWinCon@LevelModules)"
+				],
+				"Name": "[LOD_LEVEL_NAME]",
+				"WritenBy": "hinanarukami",
+		        "MusicType": "MiniGame_A",
+				"NormalPresentTable": "egypt_normal_01",
+				"ShinyPresentTable": "egypt_shiny_01",
+				"StageModule": "RTID(EightiesTutorialStage@LevelModules)",
+				"VictoryModule": "RTID(LevelOfTheDayOutro@LevelModules)",
+				"IsLevelOfTheDay": true
+			}
+		},
+		{
+			"aliases": [
+				"LevelOfTheDayModule"
+			],
+			"objclass": "LevelOfTheDayModuleProperties",
+			"objdata": {
+				"FlagCount": 2,
+				"PlantfoodToSpawnCount": 0,
+				"PointIncrementPerWave": 60,
+				"StartingPoints": 200,
+				"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)",
+				"WavesPerFlag": 9,
+				"ZombiePool": [
+					"RTID(mummy@ZombieTypes)",
+					"RTID(pirate@ZombieTypes)",
+					"RTID(cowboy@ZombieTypes)",
+					"RTID(kongfu@ZombieTypes)",
+					"RTID(future@ZombieTypes)",
+					"RTID(dark@ZombieTypes)",
+					"RTID(beach@ZombieTypes)",
+					"RTID(iceage@ZombieTypes)",
+					"RTID(lostcity@ZombieTypes)",
+					"RTID(sky@ZombieTypes)",
+					"RTID(eighties@ZombieTypes)",
+					"RTID(dino@ZombieTypes)",
+					"RTID(tutorial@ZombieTypes)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"WaveManagerProps"
+			],
+			"objclass": "WaveManagerProperties",
+			"objdata": {
+				"FlagWaveInterval": 9,
+				"WaveCount": 18,
+				"Waves": [
+					["RTID(Enter8bitEvent@CurrentLevel)"],
+					["RTID(Wave2@CurrentLevel)"],
+					["RTID(Wave3@CurrentLevel)"],
+					["RTID(Additional0@CurrentLevel)", "RTID(BullZom@CurrentLevel)"],
+					["RTID(ArcadeZom@CurrentLevel)", "RTID(BlastronautZom@CurrentLevel)"],
+					["RTID(RodeoZom@CurrentLevel)"],
+					["RTID(Arcade@CurrentLevel)", "RTID(Blastronaut@CurrentLevel)"],
+					["RTID(Arcade@CurrentLevel)", "RTID(Arcade@CurrentLevel)"],
+					["RTID(Additional1@CurrentLevel)", "RTID(Nunchaku@CurrentLevel)", "RTID(Sunday@CurrentLevel)"],
+					["RTID(Bull@CurrentLevel)", "RTID(Arcade@CurrentLevel)", "RTID(SundayZom@CurrentLevel)", "RTID(Blastronaut@CurrentLevel)"],
+					["RTID(Garg@CurrentLevel)", "RTID(NunchakuZom@CurrentLevel)", "RTID(AllstarZom@CurrentLevel)"],
+					["RTID(Arcade@CurrentLevel)", "RTID(Sunday@CurrentLevel)", "RTID(Sunday@CurrentLevel)"],
+					["RTID(Excavator@CurrentLevel)", "RTID(Nunchaku@CurrentLevel)", "RTID(Allstar@CurrentLevel)", "RTID(Blastronaut@CurrentLevel)", "RTID(Blastronaut@CurrentLevel)"],
+					["RTID(Bull@CurrentLevel)", "RTID(Rodeo@CurrentLevel)", "RTID(Arcade@CurrentLevel)", "RTID(Allstar@CurrentLevel)"],
+					["RTID(GargZom@CurrentLevel)", "RTID(ExcavatorZom@CurrentLevel)", "RTID(Nunchaku@CurrentLevel)", "RTID(Sunday@CurrentLevel)", "RTID(Blastronaut@CurrentLevel)", "RTID(Blastronaut@CurrentLevel)", "RTID(Allstar@CurrentLevel)"],
+					["RTID(Excavator@CurrentLevel)", "RTID(Sunday@CurrentLevel)", "RTID(Bull@CurrentLevel)"],
+					["RTID(Garg@CurrentLevel)", "RTID(Excavator@CurrentLevel)", "RTID(Nunchaku@CurrentLevel)", "RTID(Arcade@CurrentLevel)", "RTID(Blastronaut@CurrentLevel)", "RTID(Blastronaut@CurrentLevel)", "RTID(Blastronaut@CurrentLevel)"],
+					["RTID(Garg@CurrentLevel)", "RTID(Excavator@CurrentLevel)", "RTID(Rodeo@CurrentLevel)", "RTID(Arcade@CurrentLevel)", "RTID(Arcade@CurrentLevel)", "RTID(Allstar@CurrentLevel)", "RTID(Allstar@CurrentLevel)"]
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave2"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{"Type": "RTID(mummy@ZombieTypes)"}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave3"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{"Type": "RTID(pirate@ZombieTypes)"}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"ConveyorBelt"
+			],
+			"objclass": "ConveyorSeedBankProperties",
+			"objdata": {
+				"DropDelayConditions": [
+					{
+						"Delay": 5,
+						"MaxPackets": 0
+					},
+					{
+						"Delay": 6,
+						"MaxPackets": 3
+					},
+					{
+						"Delay": 8,
+						"MaxPackets": 4
+					},
+					{
+						"Delay": 10,
+						"MaxPackets": 6
+					}
+				],
+				"InitialPlantList": [
+					{
+						"MaxWeightFactor": 0,
+						"MaxCount": 2,
+						"PlantType": "escaperoot",
+						"Weight": 70
+					},
+					{
+						"MaxWeightFactor": 0,
+						"MaxCount": 2,
+						"PlantType": "sapfling",
+						"Weight": 70
+					},
+					{
+						"MaxWeightFactor": 0,
+						"MaxCount": 10,
+						"PlantType": "puffshroom",
+						"Weight": 100
+					},
+					{
+						"MaxWeightFactor": 0,
+						"MaxCount": 5,
+						"PlantType": "scaredyshroom",
+						"Weight": 70
+					}
+				],
+				"SpeedConditions": [
+					{
+						"MaxPackets": 0,
+						"Speed": 150
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Additional1"
+			],
+			"objclass": "ModifyConveyorWaveActionProps",
+			"objdata": {
+				"Add": [
+					{
+						"MaxWeightFactor": 0.0,
+						"MinWeightFactor": 0.0,
+						"Type": "RTID(strawburst@PlantTypes)",
+						"MaxCount": 2,
+						"Weight": 100
+					},
+					{
+						"MaxWeightFactor": 0.0,
+						"MinWeightFactor": 0.0,
+						"Type": "RTID(coconutcannon@PlantTypes)",
+						"MaxCount": 2,
+						"Weight": 100
+					},
+					{
+						"MaxWeightFactor": 0.0,
+						"MinWeightFactor": 0.0,
+						"Type": "RTID(endurian@PlantTypes)",
+						"MaxCount": 5,
+						"Weight": 70
+					},
+					{
+						"MaxWeightFactor": 0.0,
+						"MinWeightFactor": 0.0,
+						"Type": "RTID(pvine@PlantTypes)",
+						"MaxCount": 10,
+						"Weight": 100
+					},
+					{
+						"MaxWeightFactor": 0.0,
+						"MinWeightFactor": 0.0,
+						"Type": "RTID(stunion@PlantTypes)",
+						"MaxCount": 1,
+						"Weight": 50
+					}
+				],
+				"Remove": [
+					{
+						"MaxWeightFactor": 0.0,
+						"MinWeightFactor": 0.0,
+						"Type": "RTID(puffshroom@PlantTypes)",
+						"MaxCount": 0,
+						"Weight": 0
+					},
+					{
+						"MaxWeightFactor": 0.0,
+						"MinWeightFactor": 0.0,
+						"Type": "RTID(scaredyshroom@PlantTypes)",
+						"MaxCount": 0,
+						"Weight": 0
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Additional0"
+			],
+			"objclass": "ModifyConveyorWaveActionProps",
+			"objdata": {
+				"Add": [
+					{
+						"MaxWeightFactor": 0.0,
+						"MinWeightFactor": 0.0,
+						"Type": "RTID(gatling@PlantTypes)",
+						"MaxCount": 1,
+						"Weight": 90
+					},
+					{
+						"MaxWeightFactor": 0.0,
+						"MinWeightFactor": 0.0,
+						"Type": "RTID(torchwood@PlantTypes)",
+						"MaxCount": 1,
+						"Weight": 90
+					}
+				],
+				"Remove": []
+			}
+		},
+		{
+			"aliases": [
+				"BullZom"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{"Type": "RTID(west_bull@ZombieTypes)"}
+				]
+			}
+		},
+		{
+        	"aliases": [
+                "Bull"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 0.1,
+                    "Min": 0.1
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": ["RTID(BullZom@CurrentLevel)"]
+            }
+        },
+		{
+			"aliases": [
+				"RodeoZom"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{"Type": "RTID(west_bull_veteran@ZombieTypes)"}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Rodeo"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0.1,
+					"Min": 0.1
+				},
+				"TimeBetween": {
+					"Max": 1,
+					"Min": 1
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": ["RTID(RodeoZom@CurrentLevel)"]
+			}
+		},
+		{
+			"aliases": [
+				"NunchakuZom"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{"Type": "RTID(monk_nunchaku@ZombieTypes)"}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Nunchaku"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0.1,
+					"Min": 0.1
+				},
+				"TimeBetween": {
+					"Max": 1,
+					"Min": 1
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": ["RTID(NunchakuZom@CurrentLevel)"]
+			}
+		},
+		{
+			"aliases": [
+				"BlastronautZom"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{"Type": "RTID(future_jetpack_veteran@ZombieTypes)"}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Blastronaut"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0.1,
+					"Min": 0.1
+				},
+				"TimeBetween": {
+					"Max": 1,
+					"Min": 1
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": ["RTID(BlastronautZom@CurrentLevel)"]
+			}
+		},
+		{
+			"aliases": [
+				"GargZom"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{"Type": "RTID(iceage_gargantuar@ZombieTypes)"}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Garg"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0.1,
+					"Min": 0.1
+				},
+				"TimeBetween": {
+					"Max": 1,
+					"Min": 1
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": ["RTID(GargZom@CurrentLevel)"]
+			}
+		},
+		{
+			"aliases": [
+				"ArcadeZom"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{"Type": "RTID(eighties_arcade@ZombieTypes)"}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Arcade"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0.1,
+					"Min": 0.1
+				},
+				"TimeBetween": {
+					"Max": 1,
+					"Min": 1
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": ["RTID(ArcadeZom@CurrentLevel)"]
+			}
+		},
+		{
+			"aliases": [
+				"SundayZom"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{"Type": "RTID(newspaper_veteran@ZombieTypes)"}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Sunday"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0.1,
+					"Min": 0.1
+				},
+				"TimeBetween": {
+					"Max": 1,
+					"Min": 1
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": ["RTID(SundayZom@CurrentLevel)"]
+			}
+		},
+		{
+			"aliases": [
+				"AllstarZom"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{"Type": "RTID(modern_allstar@ZombieTypes)"}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Allstar"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0.1,
+					"Min": 0.1
+				},
+				"TimeBetween": {
+					"Max": 1,
+					"Min": 1
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": ["RTID(AllstarZom@CurrentLevel)"]
+			}
+		},
+		{
+			"aliases": [
+				"ExcavatorZom"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{"Type": "RTID(lostcity_excavator@ZombieTypes)"}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Excavator"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0.1,
+					"Min": 0.1
+				},
+				"TimeBetween": {
+					"Max": 1,
+					"Min": 1
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": ["RTID(ExcavatorZom@CurrentLevel)"]
+			}
+		},
+		{
+			"aliases": [
+				"Enter8bitEvent"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"NotificationEvents": [
+					"jam_8bit"
+				]
+			}
+		}
+	],
+	"version": 1
+}

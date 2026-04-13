@@ -50,7 +50,11 @@
       ],
       "objclass": "ZombieProperties",
       "objdata": {
+        "CannotBeEnlightenedBySolarSage": true,
 		"ZombieSort": "Gargantuar",
+        "CannotBeGrabbedByPtero": true,
+        "CannotChangeLaneByPowerToss": true, 
+        "CannotBeFlickedByPowerToss": true,
         "CannotBeDraggedByTangleKelp": true,
         "CannotBeTossedByCitron": true,
         "CannotBeSwallowedByChomper": true,
@@ -100,7 +104,7 @@
         "ExcludeListSunProducers": "true",
         "PlantExcludeList": ["blover", "glaciershroom", "icebloom", "powerlily", "atombomb_seedling", "filamint", "reinforcemint", 
         "bombardmint", "armamint", "containmint", "enchantmint", "spearmint", "peppermint", "wintermint", "concealmint", 
-        "enforcemint", "enlightenmint", "ailmint", "appeasemint"],
+        "enforcemint", "enlightenmint", "ailmint", "appeasemint", "caulipower"],
         "SelectionMethod": "chooser"
       }
     },
@@ -145,7 +149,11 @@
                 "RTID(iceage_gargantuar@ZombieTypes)",
                 "RTID(lostcity_gargantuar@ZombieTypes)",
                 "RTID(taco_metalgarg@CurrentLevel)",
-                "RTID(dino_gargantuar@ZombieTypes)"
+                "RTID(dino_gargantuar@ZombieTypes)",
+                "RTID(kongfu_bronze_chi@ZombieTypes)",
+                "RTID(kongfu_bronze_hook@ZombieTypes)",
+                "RTID(kongfu_bronze_strong@ZombieTypes)",
+                "RTID(sky_gargantuar@ZombieTypes)",
             ]
           },
           {
@@ -162,7 +170,11 @@
                 "RTID(iceage_gargantuar@ZombieTypes)",
                 "RTID(lostcity_gargantuar@ZombieTypes)",
                 "RTID(taco_metalgarg@CurrentLevel)",
-                "RTID(dino_gargantuar@ZombieTypes)"
+                "RTID(dino_gargantuar@ZombieTypes)",
+                "RTID(kongfu_bronze_chi@ZombieTypes)",
+                "RTID(kongfu_bronze_hook@ZombieTypes)",
+                "RTID(kongfu_bronze_strong@ZombieTypes)",
+                "RTID(sky_gargantuar@ZombieTypes)",
             ]
           },
           {
@@ -179,7 +191,11 @@
                 "RTID(iceage_gargantuar@ZombieTypes)",
                 "RTID(lostcity_gargantuar@ZombieTypes)",
                 "RTID(taco_metalgarg@CurrentLevel)",
-                "RTID(dino_gargantuar@ZombieTypes)"
+                "RTID(dino_gargantuar@ZombieTypes)",
+                "RTID(kongfu_bronze_chi@ZombieTypes)",
+                "RTID(kongfu_bronze_hook@ZombieTypes)",
+                "RTID(kongfu_bronze_strong@ZombieTypes)",
+                "RTID(sky_gargantuar@ZombieTypes)",
             ]
           },
           {
@@ -196,7 +212,11 @@
                 "RTID(iceage_gargantuar@ZombieTypes)",
                 "RTID(lostcity_gargantuar@ZombieTypes)",
                 "RTID(taco_metalgarg@CurrentLevel)",
-                "RTID(dino_gargantuar@ZombieTypes)"
+                "RTID(dino_gargantuar@ZombieTypes)",
+                "RTID(kongfu_bronze_chi@ZombieTypes)",
+                "RTID(kongfu_bronze_hook@ZombieTypes)",
+                "RTID(kongfu_bronze_strong@ZombieTypes)",
+                "RTID(sky_gargantuar@ZombieTypes)",
             ]
           }
         ],
@@ -213,10 +233,10 @@
         "WaveCount": 50,
         "Waves": [
             [], ///Wave 1
-            ["RTID(RelicHunter@CurrentLevel)"], ///Wave 2
-            ["RTID(QigongZombie@CurrentLevel)"], ///Wave 3
+            ["RTID(RelicHunterZom@CurrentLevel)"], ///Wave 2
+            ["RTID(QigongZombieZom@CurrentLevel)"], ///Wave 3
             ["RTID(RelicHunter@CurrentLevel)"], ///Wave 4
-            ["RTID(SummerGargantuar@CurrentLevel)", "RTID(BreakdancerZombie@CurrentLevel)", "RTID(EnterRapEvent@CurrentLevel)"], ///Wave 5
+            ["RTID(SummerGargantuarZom@CurrentLevel)", "RTID(BreakdancerZombieZom@CurrentLevel)", "RTID(EnterRapEvent@CurrentLevel)"], ///Wave 5
             ["RTID(RelicHunter@CurrentLevel)", "RTID(QigongZombie@CurrentLevel)"], ///Wave 6
             [], ///Wave 7
             ["RTID(RelicHunter@CurrentLevel)"], ///Wave 8
@@ -267,7 +287,7 @@
 },
     {
         "aliases": [
-            "SummerGargantuar"
+            "SummerGargantuarZom"
         ],
         "objclass": "SpawnZombiesJitteredWaveActionProps",
         "objdata": {
@@ -283,7 +303,21 @@
     },
     {
         "aliases": [
-            "RelicHunter"
+            "SummerGargantuar"
+        ],
+        "objclass": "WaveSchedulerProps",
+        "objdata": {
+            "TimeBeforeFirst": {"Max": 0.1, "Min": 0.1},
+            "TimeBetween": {"Max": 1, "Min": 1},
+            "Repeat": {"Max": 1, "Min": 1},
+            "RewardWhenEnded": false,
+            "SuppressRewardState": false,
+            "Events": ["RTID(SummerGargantuarZom@CurrentLevel)"]
+        }
+    },
+    {
+        "aliases": [
+            "RelicHunterZom"
         ],
         "objclass": "SpawnZombiesJitteredWaveActionProps",
         "objdata": {
@@ -308,7 +342,21 @@
     },
     {
         "aliases": [
-            "BreakdancerZombie"
+            "RelicHunter"
+        ],
+        "objclass": "WaveSchedulerProps",
+        "objdata": {
+            "TimeBeforeFirst": {"Max": 0.1, "Min": 0.1},
+            "TimeBetween": {"Max": 1, "Min": 1},
+            "Repeat": {"Max": 1, "Min": 1},
+            "RewardWhenEnded": false,
+            "SuppressRewardState": false,
+            "Events": ["RTID(RelicHunterZom@CurrentLevel)"]
+        }
+    },
+    {
+        "aliases": [
+            "BreakdancerZombieZom"
         ],
         "objclass": "SpawnZombiesJitteredWaveActionProps",
         "objdata": {
@@ -333,7 +381,21 @@
     },
     {
         "aliases": [
-            "QigongZombie"
+            "BreakdancerZombie"
+        ],
+        "objclass": "WaveSchedulerProps",
+        "objdata": {
+            "TimeBeforeFirst": {"Max": 0.1, "Min": 0.1},
+            "TimeBetween": {"Max": 1, "Min": 1},
+            "Repeat": {"Max": 1, "Min": 1},
+            "RewardWhenEnded": false,
+            "SuppressRewardState": false,
+            "Events": ["RTID(BreakdancerZombieZom@CurrentLevel)"]
+        }
+    },
+    {
+        "aliases": [
+            "QigongZombieZom"
         ],
         "objclass": "SpawnZombiesJitteredWaveActionProps",
         "objdata": {
@@ -354,6 +416,20 @@
                     "Type": "RTID(kongfu_chi@ZombieTypes)", "Row": 5
                 }
             ]
+        }
+    },
+    {
+        "aliases": [
+            "QigongZombie"
+        ],
+        "objclass": "WaveSchedulerProps",
+        "objdata": {
+            "TimeBeforeFirst": {"Max": 0.1, "Min": 0.1},
+            "TimeBetween": {"Max": 1, "Min": 1},
+            "Repeat": {"Max": 1, "Min": 1},
+            "RewardWhenEnded": false,
+            "SuppressRewardState": false,
+            "Events": ["RTID(QigongZombieZom@CurrentLevel)"]
         }
     },
         {
