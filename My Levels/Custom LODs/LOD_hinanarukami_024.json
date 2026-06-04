@@ -1,0 +1,802 @@
+{
+  "#comment": "Level Of The Day",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "[PLAYERS_TRIP_TO_LOD]",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(LevelOfTheDayModule@CurrentLevel)",
+          "RTID(LevelOfTheDayIntro@LevelModules)",
+          "RTID(IceageMowers@LevelModules)",
+          "RTID(ConveyorBelt@CurrentLevel)"
+        ],
+        "Name": "[LOD_LEVEL_NAME]",
+        "WritenBy": "hinanarukami",
+        "MusicType": "MiniGame_A",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(IceageVeteranStage@LevelModules)",
+        "VictoryModule": "RTID(LevelOfTheDayOutro@LevelModules)",
+        "IsLevelOfTheDay": true
+      }
+    },
+    {
+      "aliases": [
+        "ConveyorBelt"
+      ],
+      "objclass": "ConveyorSeedBankProperties",
+      "objdata": {
+        "DropDelayConditions": [
+          {
+            "Delay": 5,
+            "MaxPackets": 0
+          },
+          {
+            "Delay": 6,
+            "MaxPackets": 3
+          },
+          {
+            "Delay": 8,
+            "MaxPackets": 6
+          },
+          {
+            "Delay": 10,
+            "MaxPackets": 10
+          }
+        ],
+        "InitialPlantList": [
+          {
+            "MaxWeightFactor": 0,
+            "MaxCount": 2,
+            "PlantType": "jalapeno",
+            "Weight": 30
+          },
+          {
+            "MaxWeightFactor": 0,
+            "MaxCount": 5,
+            "PlantType": "sapfling",
+            "Weight": 50
+          },
+          {
+            "MaxWeightFactor": 0,
+            "MaxCount": 10,
+            "PlantType": "bloomerang",
+            "Weight": 50
+          },
+          {
+            "MaxWeightFactor": 0,
+            "MaxCount": 1,
+            "PlantType": "stunion",
+            "Weight": 20
+          }
+        ],
+        "SpeedConditions": [
+          {
+            "MaxPackets": 0,
+            "Speed": 150
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "LevelOfTheDayModule"
+      ],
+      "objclass": "LevelOfTheDayModuleProperties",
+      "objdata": {
+        "FlagCount": 3,
+        "PointIncrementPerWave": 80,
+        "StartingPoints": -60,
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)",
+        "WavesPerFlag": 7,
+        "ZombiePool": [
+          "RTID(iceage_armor1@ZombieTypes)",
+          "RTID(iceage_armor2@ZombieTypes)",
+          "RTID(iceage_armor4@ZombieTypes)",
+          "RTID(iceage_hunter@ZombieTypes)",
+          "RTID(iceage_hunter_veteran@ZombieTypes)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 7,
+        "WaveCount": 21,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)",
+            "RTID(PlantFoodSpawner0@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)",
+            "RTID(PlantFoodSpawner1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)",
+            "RTID(Additional0@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)",
+            "RTID(PlantFoodSpawner2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave11@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave12@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave13@CurrentLevel)",
+            "RTID(PlantFoodSpawner3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave14@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave15@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave16@CurrentLevel)",
+            "RTID(PlantFoodSpawner100@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave17@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave18@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave19@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave20@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave21@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Additional0"
+      ],
+      "objclass": "ModifyConveyorWaveActionProps",
+      "objdata": {
+        "Add": [
+          {
+            "MaxWeightFactor": 0.0,
+            "MinWeightFactor": 0.0,
+            "Type": "RTID(coconutcannon@PlantTypes)",
+            "MaxCount": 5,
+            "Weight": 55
+          },
+          {
+            "MaxWeightFactor": 0.0,
+            "MinWeightFactor": 0.0,
+            "Type": "RTID(spikerock@PlantTypes)",
+            "MaxCount": 10,
+            "Weight": 40
+          }
+        ],
+        "Remove": [
+          {
+            "MaxWeightFactor": 0.0,
+            "MinWeightFactor": 0.0,
+            "Type": "RTID(bloomerang@PlantTypes)",
+            "MaxCount": 5,
+            "Weight": 30
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(iceage_imp@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(iceage_imp@ZombieTypes)",
+            "Row": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(iceage_dodo@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(iceage_armor1@ZombieTypes)",
+            "Row": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(iceage_troglobite@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)",
+            "Row": 2
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(iceage_troglobite_veteran@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_troglobite_veteran@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(west_bull@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(piano@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(piano@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(west_bull@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(cowboy_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(cowboy_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(west_bull@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(west_bull@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(piano@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(west_bull@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(piano@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(piano@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(poncho_plate@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(poncho_plate@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(poncho_plate@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(poncho_plate@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave13"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(piano@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(piano@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(piano@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(piano@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(west_bull@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave14"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave16"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(poncho_plate@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(poncho_plate@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(poncho_plate@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(poncho_plate@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(poncho_plate@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave17"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave18"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(disco_mech@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave19"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave20"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_weaselhoarder@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(iceage_gargantuar@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave21"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(west_bull@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(west_bull@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(west_bull@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(piano@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(piano@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PlantFoodSpawner0"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(iceage@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PlantFoodSpawner1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(iceage@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PlantFoodSpawner2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(iceage@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PlantFoodSpawner3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(iceage@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PlantFoodSpawner100"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(iceage@ZombieTypes)"
+          }
+        ]
+      }
+    }
+  ],
+  "version": 1
+}

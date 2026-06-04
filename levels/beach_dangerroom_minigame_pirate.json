@@ -1,0 +1,458 @@
+{
+  "#comment": "Egypt MiniGame Danger Room",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "[PLAYERS_TRIP_TO_DANGER_ROOM_MINIGAME]",
+        "ForceToRestart": true,
+        "IsDangerRoomMiniGame": true,
+        "LevelNumber": 666,
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(DangerRoomMinigameModule@CurrentLevel)",
+          "RTID(BowlingBulbMinigame@CurrentLevel)",
+          "RTID(ConveyorBelt@CurrentLevel)",
+          "RTID(PirateMowers@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(PiratePlanks@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)"
+        ],
+        "Name": "[DANGER_ROOM_BEACH_MINIGAME_LEVEL_NAME]",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(PirateStage@LevelModules)"
+      }
+    },
+    {
+      "objclass": "WaveManagerModuleProperties",
+      "aliases": [
+        "NewWaves"
+      ],
+      "objdata": {}
+    },
+    {
+      "aliases": [
+        "ConveyorBelt"
+      ],
+      "objclass": "ConveyorSeedBankProperties",
+      "objdata": {
+        "DropDelayConditions": [
+          {
+            "Delay": 2,
+            "MaxPackets": 0
+          },
+          {
+            "Delay": 3,
+            "MaxPackets": 2
+          },
+          {
+            "Delay": 4,
+            "MaxPackets": 4
+          },
+          {
+            "Delay": 5,
+            "MaxPackets": 8
+          }
+        ],
+        "InitialPlantList": [
+          {
+            "MaxCount": 3,
+            "MaxWeightFactor": 0,
+            "PlantType": "tool_projectile_bowlingbulb1",
+            "Weight": 30
+          }
+        ],
+        "SpeedConditions": [
+          {
+            "MaxPackets": 0,
+            "Speed": 100
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "BowlingBulbMinigame"
+      ],
+      "objclass": "BowlingMinigameProperties",
+      "objdata": {
+        "BowlingFoulLine": 2
+      }
+    },
+    {
+      "aliases": [
+        "ConveyorDesigner"
+      ],
+      "objclass": "DangerRoomConveyorDesignerProperties",
+      "objdata": {
+        "InitialPlantList": [
+          {
+            "MaxCount": {
+              "//": "Go from 3 to 1",
+              "SlopeCoefficient": -0.5,
+              "YIntercept": 7,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "3"
+              }
+            },
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowlingbulb1",
+            "Weight": {
+              "SlopeCoefficient": -2,
+              "YIntercept": 70,
+              "LowerLimit": {
+                "Value": "20"
+              },
+              "UpperLimit": {
+                "Value": "30"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "//": "Go from 3 to 1",
+              "SlopeCoefficient": -0.5,
+              "YIntercept": 7,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "3"
+              }
+            },
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowlingbulb2",
+            "Weight": {
+              "SlopeCoefficient": -2,
+              "YIntercept": 80,
+              "LowerLimit": {
+                "Value": "20"
+              },
+              "UpperLimit": {
+                "Value": "40"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "//": "Go from 3 to 4 at level 5",
+              "SlopeCoefficient": 1,
+              "YIntercept": 7,
+              "LowerLimit": {
+                "Value": "2"
+              },
+              "UpperLimit": {
+                "Value": "3"
+              }
+            },
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowlingbulb3",
+            "Weight": {
+              "SlopeCoefficient": 2,
+              "YIntercept": 10,
+              "LowerLimit": {
+                "Value": "30"
+              },
+              "UpperLimit": {
+                "Value": "50"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "//": "Go from 2 to 1 at level 10",
+              "SlopeCoefficient": -1,
+              "YIntercept": 12,
+              "LowerLimit": {
+                "Value": "1"
+              },
+              "UpperLimit": {
+                "Value": "2"
+              }
+            },
+            "MaxCountCooldownSeconds": 6,
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowlingbulb_explode",
+            "Weight": {
+              "SlopeCoefficient": 2,
+              "YIntercept": 10,
+              "LowerLimit": {
+                "Value": "30"
+              },
+              "UpperLimit": {
+                "Value": "50"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "//": "Go from 2 to 1 at level 10",
+              "SlopeCoefficient": 0.1,
+              "YIntercept": 0,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "10"
+              }
+            },
+            "MaxCountCooldownSeconds": 6,
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowling_wallnut",
+            "Weight": {
+              "SlopeCoefficient": 1,
+              "YIntercept": 10,
+              "LowerLimit": {
+                "Value": "30"
+              },
+              "UpperLimit": {
+                "Value": "50"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "//": "Go from 2 to 1 at level 10",
+              "SlopeCoefficient": 0.1,
+              "YIntercept": -1,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "4"
+              }
+            },
+            "MaxCountCooldownSeconds": 6,
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowling_explodeonut",
+            "Weight": {
+              "SlopeCoefficient": 1,
+              "YIntercept": 10,
+              "LowerLimit": {
+                "Value": "10"
+              },
+              "UpperLimit": {
+                "Value": "20"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "//": "Go from 2 to 1 at level 10",
+              "SlopeCoefficient": 0.1,
+              "YIntercept": -1,
+              "LowerLimit": {
+                "Value": "1"
+              },
+              "UpperLimit": {
+                "Value": "4"
+              }
+            },
+            "MaxCountCooldownSeconds": 6,
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowling_holonut",
+            "Weight": {
+              "SlopeCoefficient": 1,
+              "YIntercept": 10,
+              "LowerLimit": {
+                "Value": "10"
+              },
+              "UpperLimit": {
+                "Value": "20"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "//": "Go from 2 to 1 at level 10",
+              "SlopeCoefficient": 0.5,
+              "YIntercept": -10,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "4"
+              }
+            },
+            "MaxCountCooldownSeconds": 6,
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowling_primalwallnut",
+            "Weight": {
+              "SlopeCoefficient": 1,
+              "YIntercept": -10,
+              "LowerLimit": {
+                "Value": "10"
+              },
+              "UpperLimit": {
+                "Value": "20"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "//": "Go from 3 to 1",
+              "SlopeCoefficient": -0.5,
+              "YIntercept": 7,
+              "LowerLimit": {
+                "Value": "1"
+              },
+              "UpperLimit": {
+                "Value": "2"
+              }
+            },
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowlingbulb_iceburg",
+            "Weight": {
+              "SlopeCoefficient": 5,
+              "YIntercept": -50,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "30"
+              }
+            }
+          },
+          {
+            "MaxCount": {
+              "//": "Go from 3 to 1",
+              "SlopeCoefficient": 0.5,
+              "YIntercept": -5,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "1"
+              }
+            },
+            "MaxWeightFactor": {
+              "YIntercept": 0
+            },
+            "PlantType": "tool_projectile_bowling_tallnut",
+            "Weight": {
+              "SlopeCoefficient": 5,
+              "YIntercept": -50,
+              "LowerLimit": {
+                "Value": "0"
+              },
+              "UpperLimit": {
+                "Value": "20"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "DangerRoomMinigameModule"
+      ],
+      "objclass": "DangerRoomMiniGameModuleProperties",
+      "objdata": {
+        "WorldSpecificProperties": "RTID(BeachDangerRoomMiniGameProps@PropertySheets)",
+        "MaxFlagWave": 3,
+        "LevelDesigners": [
+          "RTID(PirateDangerRoomWaveGenerator@CurrentLevel)",
+          "RTID(PlankDesigner@CurrentLevel)",
+          "RTID(RaidingPartyGenerator@CurrentLevel)",
+          "RTID(ConveyorDesigner@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PiratePlanks"
+      ],
+      "objclass": "PiratePlankProperties",
+      "objdata": {
+        "PlankRows": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PirateDangerRoomWaveGenerator"
+      ],
+      "objclass": "DangerRoomJitteredWaveGenerator",
+      "objdata": {
+        "StartingPoints": 400,
+        "BasePointIncrementPerWave": 40,
+        "BasePointIncrementPerLevel": 5,
+        "SuppressPlantfood": true,
+        "MustContainZombie": [
+          "RTID(pirate@ZombieTypes)"
+        ],
+        "MinDynamicZombieType": 5,
+        "ZombiePool": [
+          "RTID(barrelroller@ZombieTypes)",
+          "RTID(cannon@ZombieTypes)",
+          "RTID(pirate_armor1@ZombieTypes)",
+          "RTID(pirate_armor2@ZombieTypes)",
+          "RTID(pirate_armor4@ZombieTypes)",
+          "RTID(pirate_captain@ZombieTypes)",
+          "RTID(seagull@ZombieTypes)",
+          "RTID(pelican@ZombieTypes)",
+          "RTID(swashbuckler@ZombieTypes)",
+          "RTID(pirate_gargantuar@ZombieTypes)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PlankDesigner"
+      ],
+      "objclass": "DangerRoomPlankDesigner",
+      "objdata": {
+        "PlankLayouts": [
+          "11011",
+          "01111",
+          "11100",
+          "01110",
+          "00111",
+          "11111"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "RaidingPartyGenerator"
+      ],
+      "objclass": "DangerRoomRaidingPartyDesigner",
+      "objdata": {
+        "BasePartyCount": 0,
+        "BasePartyCountPerLevel": 0.5,
+        "BasePartyZombiesCount": 1,
+        "BasePartyZombiesCountPerLevel": 0.4,
+        "MaxPartyZombies": 10,
+        "MaxPartyCount": 5,
+        "BasePartyStartWave": 5
+      }
+    }
+  ],
+  "version": 1
+}

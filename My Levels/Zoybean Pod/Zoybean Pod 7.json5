@@ -49,19 +49,19 @@
       ],
       "objclass": "ZombieProperties",
       "objdata": {
-		"CannotBeTossedByCitron": false,
-		"WalkSPS": 0.23125,
-		"EatDPS": 100,
-		"Toughness": 250,
-		"JamAttackDamage": 2001,
-		"JamStyle": "jam_8bit",
-		"WavePointCost": 450,
+        "CannotBeTossedByCitron": false,
+        "WalkSPS": 0.23125,
+        "EatDPS": 100,
+        "Toughness": 250,
+        "JamAttackDamage": 2001,
+        "JamStyle": "jam_8bit",
+        "WavePointCost": 450,
         "Weight": 4000,
-		"HitRect": "RTID(CommonHitRect@RectangleProps)",
-		"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+        "HitRect": "RTID(CommonHitRect@RectangleProps)",
+        "AttackRect": "RTID(CommonAttackRect@RectangleProps)"
       }
     },
-	{
+    {
       "aliases": [
         "taco_metalgarg"
       ],
@@ -77,21 +77,20 @@
       ],
       "objclass": "ZombieProperties",
       "objdata": {
-		"ZombieSort": "Gargantuar",
+        "ZombieSort": "Gargantuar",
         "CannotBeDraggedByTangleKelp": true,
         "CannotBeTossedByCitron": true,
         "CannotBeSwallowedByChomper": true,
         "CannotCarryPlantfoodsInWaves": true,
         "WalkSPS": 0.24,
-		"EatDPS": 100,
-		"Toughness": 3600,
-		"LivesInDeepWater": true,
-		"NormalDeathWhenMowed": true,
-		"CannotCarryPlantfoodsInWaves": true,
-		"SmashDamage": 1500,
-		"JamStyle": "jam_8bit",
-		"WavePointCost": 1500,
-		"Weight": 3000,
+        "EatDPS": 100,
+        "Toughness": 3600,
+        "LivesInDeepWater": true,
+        "NormalDeathWhenMowed": true,
+        "SmashDamage": 1500,
+        "JamStyle": "jam_8bit",
+        "WavePointCost": 1500,
+        "Weight": 3000,
       }
     },
     {
@@ -104,11 +103,11 @@
           "glaciershroom"
         ],
         "PresetPlantList": [
-                    {
-                        "PlantType": "zoybeanpod",
-                        "Level": -1
-                    }
-                ],
+          {
+            "PlantType": "zoybeanpod",
+            "Level": -1
+          }
+        ],
         "SelectionMethod": "chooser"
       }
     },
@@ -210,15 +209,14 @@
           ],
           [
             "RTID(Arcade3@CurrentLevel)",
-            "RTID(SpawnArcade8@CurrentLevel)", "RTID(MC1@CurrentLevel)"
+            "RTID(SpawnArcade8@CurrentLevel)",
+            "RTID(MC1@CurrentLevel)"
           ],
           [
             "RTID(Arcade4@CurrentLevel)",
             "RTID(PlantFoodSpawner1@CurrentLevel)"
           ],
-          [
-            
-          ],
+          [],
           [
             "RTID(Arcade5@CurrentLevel)",
             "RTID(SpawnArcade8@CurrentLevel)"
@@ -228,7 +226,8 @@
           ],
           [
             "RTID(Arcade5@CurrentLevel)",
-            "RTID(SpawnArcade8@CurrentLevel)", "RTID(MC1@CurrentLevel)"
+            "RTID(SpawnArcade8@CurrentLevel)",
+            "RTID(MC1@CurrentLevel)"
           ],
           [
             "RTID(Arcade5@CurrentLevel)",
@@ -260,7 +259,8 @@
             "RTID(Arcade5@CurrentLevel)",
             "RTID(SpawnArcade8@CurrentLevel)",
             "RTID(SpawnArcade7@CurrentLevel)",
-            "RTID(SpawnArcade6@CurrentLevel)", "RTID(MC3@CurrentLevel)"
+            "RTID(SpawnArcade6@CurrentLevel)",
+            "RTID(MC3@CurrentLevel)"
           ]
         ]
       }
@@ -369,7 +369,7 @@
     },
     {
       "aliases": [
-        "Arcade5"
+        "Arcade5Zom"
       ],
       "objclass": "SpawnZombiesJitteredWaveActionProps",
       "objdata": {
@@ -398,65 +398,90 @@
       }
     },
     {
-			"aliases": [
-				"MC1"
-			],
-			"objclass": "StormZombieSpawnerProps",
-			"objdata": {
-				"ColumnEnd": 8,
-				"ColumnStart": 7,
-				"GroupSize": 2,
-				"TimeBetweenGroups": 2.5,
-				"Type": "sandstorm",
-				"Zombies": [
-          {
-            "Type": "RTID(taco_mc@CurrentLevel)"
-          },
-          {
-            "Type": "RTID(taco_mc@CurrentLevel)"
-          }
-				]
-			}
-		},
+      "aliases": [
+        "Arcade5"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.1,
+          "Min": 0.1
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Arcade5Zom@CurrentLevel)"
+        ]
+      }
+    },
     {
-			"aliases": [
-				"MC2"
-			],
-			"objclass": "StormZombieSpawnerProps",
-			"objdata": {
-				"ColumnEnd": 7,
-				"ColumnStart": 6,
-				"GroupSize": 2,
-				"TimeBetweenGroups": 2.5,
-				"Type": "sandstorm",
-				"Zombies": [
-          {
-            "Type": "RTID(taco_mc@CurrentLevel)"
-          },
-          {
-            "Type": "RTID(taco_mc@CurrentLevel)"
-          },
+      "aliases": [
+        "MC1"
+      ],
+      "objclass": "StormZombieSpawnerProps",
+      "objdata": {
+        "ColumnEnd": 8,
+        "ColumnStart": 7,
+        "GroupSize": 2,
+        "TimeBetweenGroups": 2.5,
+        "Type": "sandstorm",
+        "Zombies": [
           {
             "Type": "RTID(taco_mc@CurrentLevel)"
           },
           {
             "Type": "RTID(taco_mc@CurrentLevel)"
           }
-				]
-			}
-		},
+        ]
+      }
+    },
     {
-			"aliases": [
-				"MC3"
-			],
-			"objclass": "StormZombieSpawnerProps",
-			"objdata": {
-				"ColumnEnd": 6,
-				"ColumnStart": 5,
-				"GroupSize": 2,
-				"TimeBetweenGroups": 2.5,
-				"Type": "sandstorm",
-				"Zombies": [
+      "aliases": [
+        "MC2"
+      ],
+      "objclass": "StormZombieSpawnerProps",
+      "objdata": {
+        "ColumnEnd": 7,
+        "ColumnStart": 6,
+        "GroupSize": 2,
+        "TimeBetweenGroups": 2.5,
+        "Type": "sandstorm",
+        "Zombies": [
+          {
+            "Type": "RTID(taco_mc@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(taco_mc@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(taco_mc@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(taco_mc@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "MC3"
+      ],
+      "objclass": "StormZombieSpawnerProps",
+      "objdata": {
+        "ColumnEnd": 6,
+        "ColumnStart": 5,
+        "GroupSize": 2,
+        "TimeBetweenGroups": 2.5,
+        "Type": "sandstorm",
+        "Zombies": [
           {
             "Type": "RTID(taco_mc@CurrentLevel)"
           },
@@ -475,9 +500,9 @@
           {
             "Type": "RTID(taco_mc@CurrentLevel)"
           }
-				]
-			}
-		},
+        ]
+      }
+    },
     {
       "aliases": [
         "SpawnArcade8"

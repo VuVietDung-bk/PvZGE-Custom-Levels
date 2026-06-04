@@ -1,0 +1,1108 @@
+{
+  "#Ride Or Tide - Day 2 by ScatterPattern": "NLM v 0.9.9",
+  "Information": {
+    "Author": "ScatterPattern",
+    "Introduction": "<PLAYERNAME>'s Tidal Wave",
+    "Version": 1,
+    "CreatedAt": "12/05/2026"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Name": "Ride Or Tide - Day 2",
+        "Description": "<PLAYERNAME>'s Tidal Wave",
+        "StageModule": "RTID(SkyStage@LevelModules)",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(Tide@.)",
+          "RTID(GI@CurrentLevel)"
+        ],
+        "StartingSun": 50,
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "WritenBy": "ScatterPattern",
+        "FirstIntroNarrative": "INTRO"
+      }
+    },
+    {
+    "aliases": [
+        "INTRO"
+    ],
+    "objclass": "NarrativeProperties",
+    "objdata": {
+        "Flow": [
+        {
+                "Character": "winnie",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "winnie",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "We're being shot down! Retaliate NOW!",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "They are... more so attacking our plants, not the ship... Close enough!",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "Hold back our fortress!",
+                    "zh": "???"
+                }
+            }
+        ]
+    }
+},
+    {
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 0,
+            "StartingPoints": 0,
+            "StartingWave": 0,
+            "ZombiePool": [
+            ]
+          },
+          {
+            "PointIncrementPerWave": 100,
+            "StartingPoints": 0,
+            "StartingWave": 0,
+            "ZombiePool": [
+              "RTID(sky_unarmed@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 150,
+            "StartingPoints": 100,
+            "StartingWave": 0,
+            "ZombiePool": [
+              "RTID(sky_unarmed_armor1@ZombieTypes)",
+              "RTID(sky_unarmed_armor2@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 200,
+            "StartingPoints": 400,
+            "StartingWave": 0,
+            "ZombiePool": [
+              "RTID(sky_t@.)",
+              "RTID(sky_armor1_t@.)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      },
+      "aliases": [
+        "NewWaves"
+      ]
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 6,
+        "WaveCount": 12,
+        "Waves": [
+          [
+            "RTID(Wave1@.)"
+          ],
+          [
+            "RTID(Wave2@.)"
+          ],
+          [
+            "RTID(Wave3@.)"
+          ],
+          [
+            "RTID(Wave4@.)",
+            "RTID(TideTo1@.)"
+          ],
+          [
+            "RTID(Wave5@.)",
+            "RTID(TideTo4@.)"
+          ],
+          [
+            "RTID(Wave6@.)",
+            "RTID(Ambush1-ParachuteRain@.)",
+            "RTID(TideTo5@.)"
+          ],
+          [
+            "RTID(Wave7@.)"
+          ],
+          [
+            "RTID(Wave8@.)",
+            "RTID(Ambush2-ParachuteRain@.)"
+          ],
+          [
+            "RTID(Wave9@.)"
+          ],
+          [
+            "RTID(Wave10@.)",
+            "RTID(TideTo3@.)"
+          ],
+          [
+            "RTID(Wave11@.)",
+            "RTID(Ambush13-LowTide@.)",
+            "RTID(TideTo1@.)"
+          ],
+          [
+            "RTID(Wave12@.)",
+            "RTID(Ambush1-ParachuteRain@.)",
+            "RTID(Ambush5-SpiderRain@.)",
+            "RTID(TideTo5@.)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Tide"
+      ],
+      "objclass": "TideProperties",
+      "objdata": {
+        "StartingWaveLocation": "5"
+      }
+    },
+    {
+      "aliases": [
+        "GI"
+      ],
+      "objclass": "InitialGridItemProperties",
+      "objdata": {
+        "InitialGridItemPlacements": [
+          {
+            "GridX": "4",
+            "GridY": "0",
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": "4",
+            "GridY": "2",
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": "4",
+            "GridY": "4",
+            "TypeName": "gravestone_future"
+          }
+        ]
+      }
+    },
+    {
+      "objclass": "ZombieType",
+      "aliases": [
+        "pirate_captain"
+      ],
+      "objdata": {
+        "Properties": "RTID(pirate_captain@.)",
+        "ZombieBasedOn": "pirate_captain"
+      }
+    },
+    {
+      "objclass": "ZombieProperties",
+      "aliases": [
+        "pirate_captain"
+      ],
+      "objdata": {
+        "EatDPS": 100,
+        "Toughness": 420,
+        "WalkSPS": 0.09,
+        "ParrotCooldown": 4,
+        "ParrotRetryCooldown": 0.1,
+        "WavePointCost": 500,
+        "Weight": 1000,
+        "HitRect": "RTID(CommonHitRect@RectangleProps)",
+        "AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+      }
+    },
+    {
+      "objclass": "ZombieType",
+      "aliases": [
+        "sky_armor1_t"
+      ],
+      "objdata": {
+        "Properties": "RTID(sky_armor1_t@.)",
+        "ZombieBasedOn": "sky"
+      }
+    },
+    {
+      "objclass": "ZombieProperties",
+      "aliases": [
+        "sky_armor1_t"
+      ],
+      "objdata": {
+        "WalkSPS": 0.2,
+        "EatDPS": 100,
+        "WavePointCost": 700,
+        "Weight": 1000,
+        "SpawnedScale": 1,
+        "AlwaysShoots": true,
+        "ProjectileType": "airraid_0",
+        "ProjectileCountPerShot": 3,
+        "ProjectileAngle": 5,
+        "ShootsTowardsAirRaidPlant": false,
+        "ProjectileSpeed": {
+          "Min": 6,
+          "Max": 6
+        },
+        "TimeBeforeFirst": {
+          "Min": 7,
+          "Max": 7
+        },
+        "TimeBetween": {
+          "Min": 4,
+          "Max": 4
+        },
+        
+      "StartingArmors": [
+        "sky_armor1"
+      ]
+      }
+    },
+    {
+      "objclass": "ZombieType",
+      "aliases": [
+        "sky_t"
+      ],
+      "objdata": {
+        "Properties": "RTID(sky_t@.)",
+        "ZombieBasedOn": "sky"
+      }
+    },
+    {
+      "objclass": "ZombieProperties",
+      "aliases": [
+        "sky_t"
+      ],
+      "objdata": {
+        "WalkSPS": 0.27,
+        "EatDPS": 100,
+        "WavePointCost": 300,
+        "Weight": 1000,
+        "SpawnedScale": 1,
+        "AlwaysShoots": true,
+        "ProjectileType": "airraid_0",
+        "ProjectileCountPerShot": 1,
+        "ProjectileAngle": 0,
+        "ShootsTowardsAirRaidPlant": false,
+        "ProjectileSpeed": {
+          "Min": 6,
+          "Max": 6
+        },
+        "TimeBeforeFirst": {
+          "Min": 2,
+          "Max": 3
+        },
+        "TimeBetween": {
+          "Min": 2,
+          "Max": 3
+        }
+      }
+    },
+    {
+      "objclass": "ZombieType",
+      "aliases": [
+        "lostcity_lostpilot"
+      ],
+      "objdata": {
+        "Properties": "RTID(lostcity_lostpilot@.)",
+        "ZombieBasedOn": "lostcity_lostpilot"
+      }
+    },
+    {
+      "objclass": "ZombieProperties",
+      "aliases": [
+        "lostcity_lostpilot"
+      ],
+      "objdata": {
+        "HangingNoEatTimeUntilDrop": 6,
+        "WalkSPS": 0.1,
+        "EatDPS": 100,
+        "Toughness": 350,
+        "WavePointCost": 150,
+        "Weight": 3000,
+        "HitRect": "RTID(CommonHitRect@RectangleProps)",
+        "AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+        "ZombiesToBringWith": []
+      }
+    },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "UnlockAll": false,
+        "SelectionMethod": "chooser",
+        "PresetPlantList": [],
+        "PlantExcludeList": [
+          "blover",
+          "hurrikale",
+          "draftodil",
+          "umbrellaleaf"
+        ],
+        "CardDecks": {
+          "Credits": ["Decks marked with (S) were made by Scatter,",
+                         "decks marked with (H) were made by Hikari",
+                         "all challenging decks have been tested by Hikari!"],
+          "Recommended": [
+            {
+              "Name": {
+                "en": "Pumped Up (H)",
+                "zh": "???"
+              },
+              "HugeWaveGem": 2,
+              "Leader": 1,
+              "Plants": [
+                "sunflower",
+                "phatbeet",
+                "pumpkin",
+                "magnetshroom"
+              ]
+            },
+            {
+              "Name": {
+                "en": "The Breeze (S)",
+                "zh": "???"
+              },
+              "HugeWaveGem": 2,
+              "Leader": 1,
+              "Plants": [
+                "primalsunflower",
+                "wintermelon",
+                "shinevine",
+                "magnetshroom"
+              ]
+            }
+          ],
+          "Challenging": [
+            {
+              "Name": {
+                "en": "DIY Shield (S)",
+                "zh": "???"
+              },
+              "HugeWaveGem": 2,
+              "Leader": 1,
+              "Plants": [
+                "goldleaf",
+                "electriccurrant",
+                "garlic",
+                "pumpkin",
+                "magnetshroom"
+              ]
+            },
+            {
+              "Name": {
+                "en": "Primed (H)",
+                "zh": "???"
+              },
+              "HugeWaveGem": 1,
+              "Leader": 1,
+              "Plants": [
+                "sunflower",
+                "primalpeashooter",
+                "moonbean"
+              ]
+            },
+            {
+              "Name": {
+                "en": "Murk Lurk (S)",
+                "zh": "???"
+              },
+              "HugeWaveGem": 1,
+              "Leader": 1,
+              "Plants": [
+                "moonflower",
+                "gloomvine",
+                "murkadamia"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "aliases": [
+        "Ambush1-ParachuteRain"
+      ],
+      "objclass": "ParachuteRainZombieSpawnerProps",
+      "objdata": {
+        "ColumnEnd": "2",
+        "ColumnStart": "2",
+        "GroupSize": "2",
+        "SpiderCount": 4,
+        "SpiderZombieName": "lostcity_lostpilot",
+        "TimeBeforeFullSpawn": "3",
+        "TimeBetweenGroups": "1",
+        "WaveStartMessage": "[WARNING_PARACHUTERAIN]",
+        "ZombieFallTime": "1.5"
+      }
+    },
+    {
+      "aliases": [
+        "Ambush2-ParachuteRain"
+      ],
+      "objclass": "ParachuteRainZombieSpawnerProps",
+      "objdata": {
+        "ColumnEnd": "3",
+        "ColumnStart": "6",
+        "GroupSize": "1",
+        "SpiderCount": 6,
+        "SpiderZombieName": "lostcity_lostpilot",
+        "TimeBeforeFullSpawn": "2",
+        "TimeBetweenGroups": "0.1",
+        "WaveStartMessage": "[WARNING_PARACHUTERAIN]",
+        "ZombieFallTime": "5"
+      }
+    },
+    {
+      "aliases": [
+        "Ambush5-SpiderRain"
+      ],
+      "objclass": "SpiderRainZombieSpawnerProps",
+      "objdata": {
+        "ColumnEnd": 8,
+        "ColumnStart": 7,
+        "GroupSize": 1,
+        "SpiderCount": 4,
+        "SpiderZombieName": "sky_t",
+        "TimeBeforeFullSpawn": 2,
+        "TimeBetweenGroups": 0.25,
+        "WaveStartMessage": "Jet Rain!",
+        "ZombieFallTime": 1.5
+      }
+    },
+    {
+      "aliases": [
+        "Ambush13-LowTide"
+      ],
+      "objclass": "BeachStageEventZombieSpawnerProps",
+      "objdata": {
+        "ColumnEnd": "7",
+        "ColumnStart": "6",
+        "GroupSize": "2",
+        "TimeBeforeFullSpawn": "1",
+        "TimeBetweenGroups": "0.25",
+        "WaveStartMessage": "[WARNING_LOW_TIDE]",
+        "ZombieCount": 6,
+        "ZombieName": "sky"
+      }
+    },
+    {
+      "aliases": [
+        "TideTo1"
+      ],
+      "objclass": "TidalChangeWaveActionProps",
+      "objdata": {
+        "TidalChange": {
+          "ChangeAmount": 1,
+          "ChangeType": "absolute"
+        }
+      }
+    },
+    {
+      "aliases": [
+        "TideTo3"
+      ],
+      "objclass": "TidalChangeWaveActionProps",
+      "objdata": {
+        "TidalChange": {
+          "ChangeAmount": 3,
+          "ChangeType": "absolute"
+        }
+      }
+    },
+    {
+      "aliases": [
+        "TideTo4"
+      ],
+      "objclass": "TidalChangeWaveActionProps",
+      "objdata": {
+        "TidalChange": {
+          "ChangeAmount": 4,
+          "ChangeType": "absolute"
+        }
+      }
+    },
+    {
+      "aliases": [
+        "TideTo5"
+      ],
+      "objclass": "TidalChangeWaveActionProps",
+      "objdata": {
+        "TidalChange": {
+          "ChangeAmount": 5,
+          "ChangeType": "absolute"
+        }
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(sky_unarmed@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_unarmed@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(sky_unarmed@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky_unarmed@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor1@ZombieTypes)",
+            "Row": 2
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(sky_t@.)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky_t@.)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_t@.)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(sky_unarmed@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_unarmed@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor1@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(sky_t@.)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_t@.)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky_t@.)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_t@.)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky_t@.)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(sky_t@.)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(sky_t@.)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky_t@.)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_t@.)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky_t@.)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(sky_unarmed@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_unarmed@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky_unarmed@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_unarmed@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky_unarmed@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky_t@CurrentLevel)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_bug@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_bug@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_bug@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_bug@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pirate_captain@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky_unarmed_armor2@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    }
+  ]
+}

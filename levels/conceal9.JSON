@@ -1,0 +1,781 @@
+{
+    "#comment": "回溯",
+    "objects": [
+        {
+            "objclass": "LevelDefinition",
+            "objdata": {
+                "Description": "[MEET_CONCEAL_FAMILY]",
+                "LevelNumber": 9,
+                "ForceToWorldMap": true,
+                "FirstRewardParam": "shadowpeashooter",
+                "FirstRewardType": "unlock_plant",
+                "FirstIntroNarrative": "CONCEAL_I",
+                "Loot": "RTID(DefaultLoot@LevelModules)",
+                "Modules": [
+                    "RTID(DefaultSunDropper@LevelModules)",
+                    "RTID(StandardIntro@LevelModules)",
+                    "RTID(ModernMowers@LevelModules)",
+                    "RTID(NewWaves@CurrentLevel)",
+                    "RTID(ChallengeModule@CurrentLevel)",
+                    "RTID(InitialPlantPlacement@CurrentLevel)",
+                    "RTID(ProtectThePlant@CurrentLevel)",
+                    "RTID(DefaultZombieWinCondition@LevelModules)",
+                    "RTID(SeedBank@CurrentLevel)",
+                    "RTID(ZombiesDeadWinCon@LevelModules)"
+                ],
+                "Name": "[EPIC_PLANT_CONCEAL_LEVEL_NAME]",
+                "WritenBy": "莱池_余垛",
+                "MusicType": "MiniGame_B",
+                "StageModule": "RTID(FallsStage@LevelModules)"
+            }
+        },
+        {
+            "aliases": [
+                "SeedBank"
+            ],
+            "objclass": "SeedBankProperties",
+            "objdata": {
+                "CardDecks": {
+                    "SuppressChallengingHugeWaveGems": false,
+                    "ChallengingLocked": true,
+                    "Challenging": [
+                        {
+                            "Name": {
+                                "en": "Plague Raging",
+                                "zh": "瘟疫肆虐"
+                            },
+                            "HugeWaveGem": 0,
+                            "Leader": 1,
+                            "Plants": [
+                                "chilibean",
+                                "shadowshroom",
+                                "wallnut",
+                                "garlic"
+                            ]
+                        },
+                        {
+                            "Name": {
+                                "en": "Stuck in Place",
+                                "zh": "寸步难行"
+                            },
+                            "HugeWaveGem": 0,
+                            "Leader": 2,
+                            "Plants": [
+                                "spikeweed",
+                                "coldsnapdragon",
+                                "murkadamia",
+                                "endurian"
+                            ]
+                        },
+                        {
+                            "Name": {
+                                "en": "The Artillery Unit",
+                                "zh": "炮兵部队"
+                            },
+                            "HugeWaveGem": 0,
+                            "Leader": 1,
+                            "Plants": [
+                                "nightshade",
+                                "dusklobber",
+                                "iceburg",
+                                "potatomine"
+                            ]
+                        },
+                        {
+                            "Name": {
+                                "en": "Flip the Wok",
+                                "zh": "颠勺"
+                            },
+                            "HugeWaveGem": 1,
+                            "Leader": 0,
+                            "Plants": [
+                                "chardguard"
+                            ]
+                        },
+                        {
+                            "Name": {
+                                "en": "Glance around",
+                                "zh": "上顾下盼"
+                            },
+                            "HugeWaveGem": 2,
+                            "Leader": 0,
+                            "Plants": [
+                                "shadowpeashooter"
+                            ]
+                        },
+                        {
+                            "Name": {
+                                "en": "Disapparition & Apparition",
+                                "zh": "幻影移形"
+                            },
+                            "HugeWaveGem": 3,
+                            "Leader": 0,
+                            "Plants": [
+                                "grimrose"
+                            ]
+                        }
+                    ]
+                },
+                "PlantIncludeList": [
+                    "chilibean",
+                    "shadowshroom",
+                    "wallnut",
+                    "garlic",
+                    "chardguard",
+                    "grimrose",
+                    "spikeweed",
+                    "coldsnapdragon",
+                    "murkadamia",
+                    "shadowpeashooter",
+                    "endurian",
+                    "nightshade",
+                    "dusklobber",
+                    "potatomine",
+                    "iceburg"
+                ],
+                "UnlockAll": true,
+                "SelectionMethod": "chooser"
+            }
+        },
+        {
+            "aliases": [
+                "ProtectThePlant"
+            ],
+            "objclass": "ProtectThePlantChallengeProperties",
+            "objdata": {
+                "SuppressObjectiveTip": true,
+                "MustProtectCount": 3,
+                "Plants": [
+                    {
+                        "GridX": 2,
+                        "GridY": 2,
+                        "PlantType": "escaperoot",
+                        "Level": -1
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "InitialPlantPlacement"
+            ],
+            "objclass": "InitialPlantProperties",
+            "objdata": {
+                "InitialPlantPlacements": [
+                    {
+                        "GridX": 0,
+                        "GridY": 0,
+                        "TypeName": "moonflower"
+                    },
+                    {
+                        "GridX": 0,
+                        "GridY": 3,
+                        "TypeName": "shadowpeashooter"
+                    },
+                    {
+                        "GridX": 1,
+                        "GridY": 4,
+                        "TypeName": "shadowpeashooter"
+                    },
+                    {
+                        "GridX": 0,
+                        "GridY": 2,
+                        "TypeName": "snowpea"
+                    },
+                    {
+                        "GridX": 1,
+                        "GridY": 0,
+                        "TypeName": "bonkchoy"
+                    },
+                    {
+                        "GridX": 1,
+                        "GridY": 1,
+                        "TypeName": "peach"
+                    },
+                    {
+                        "GridX": 1,
+                        "GridY": 2,
+                        "TypeName": "sunshroom"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ChallengeModule"
+            ],
+            "objclass": "StarChallengeModuleProperties",
+            "objdata": {
+                "Challenges": [
+                    [
+                        "RTID(BeatTheLevel@CurrentLevel)"
+                    ]
+                ],
+                "ChallengesAlwaysAvailable": true
+            }
+        },
+        {
+            "aliases": [
+                "BeatTheLevel"
+            ],
+            "objclass": "StarChallengeBeatTheLevelProps",
+            "objdata": {
+                "DescriptionsMultilanguage": [
+                    {
+                        "en": "The escaperoot must survive",
+                        "zh": "逃脱树根必须存活"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "NewWaves"
+            ],
+            "objclass": "WaveManagerModuleProperties",
+            "objdata": {
+                "DynamicZombies": [
+                    {},
+                    {},
+                    {},
+                    {
+                        "PointIncrementPerWave": 20,
+                        "StartingPoints": 100,
+                        "StartingWave": 5,
+                        "ZombiePool": [
+                            "RTID(dino_imp@ZombieTypes)",
+                            "RTID(foodfight_armor1@ZombieTypes)",
+                            "RTID(tutorial_armor4@ZombieTypes)",
+                            "RTID(pharaoh@ZombieTypes)",
+                            "RTID(modern_newspaper@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 40,
+                        "StartingPoints": 200,
+                        "StartingWave": 5,
+                        "ZombiePool": [
+                            "RTID(dino_imp@ZombieTypes)",
+                            "RTID(foodfight_armor1@ZombieTypes)",
+                            "RTID(foodfight_armor2@ZombieTypes)",
+                            "RTID(tutorial_armor4@ZombieTypes)",
+                            "RTID(pharaoh@ZombieTypes)",
+                            "RTID(modern_newspaper@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 50,
+                        "StartingPoints": 300,
+                        "StartingWave": 4,
+                        "ZombiePool": [
+                            "RTID(dino_imp@ZombieTypes)",
+                            "RTID(foodfight_armor1@ZombieTypes)",
+                            "RTID(foodfight_armor2@ZombieTypes)",
+                            "RTID(tutorial_armor4@ZombieTypes)",
+                            "RTID(pharaoh@ZombieTypes)",
+                            "RTID(modern_newspaper@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 60,
+                        "StartingPoints": 400,
+                        "StartingWave": 3,
+                        "ZombiePool": [
+                            "RTID(dino_imp@ZombieTypes)",
+                            "RTID(foodfight_armor2@ZombieTypes)",
+                            "RTID(tutorial_armor4@ZombieTypes)",
+                            "RTID(pharaoh@ZombieTypes)",
+                            "RTID(modern_newspaper@ZombieTypes)"
+                        ]
+                    }
+                ],
+                "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 4,
+                "WaveCount": 12,
+                "WaveSpendingPointIncrement": 100,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    [
+                        "RTID(Wave1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave2@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave3@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave4@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave5@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave6@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave7@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave8@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave9@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave10@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave11@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave12@CurrentLevel)"
+                    ]
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(foodfight_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(foodfight_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(foodfight_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(foodfight_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(foodfight_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(foodfight_armor1@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(foodfight_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "4",
+                        "Type": "RTID(tutorial_armor4@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(tutorial_armor4@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(foodfight_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(foodfight_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave4"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(tutorial_armor4@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(tutorial_armor4@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(abbot_fan@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(abbot_fan@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave5"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(tutorial_armor4@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(tutorial_armor4@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(abbot_fan@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(abbot_fan@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave6"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(pharaoh@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(pharaoh@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(pharaoh@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave7"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Row": "4",
+                        "Type": "RTID(pharaoh@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(abbot_fan@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(pharaoh@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(abbot_fan@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave8"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(pharaoh@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(abbot_fan@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(pharaoh@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(abbot_fan@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(pharaoh@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(abbot_fan@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave9"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(pharaoh@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(pharaoh@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(pharaoh@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(abbot_fan@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(abbot_fan@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(abbot_fan@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave10"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave11"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(pharaoh@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(modern_newspaper@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(pharaoh@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(abbot_fan@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(abbot_fan@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave12"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    1,
+                    1,
+                    1,
+                    0,
+                    1,
+                    1,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(tutorial_armor4@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(tutorial_armor4@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(tutorial_armor4@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(tutorial_armor4@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(tutorial_armor4@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(pharaoh@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(pharaoh@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(pharaoh@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(pharaoh@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(pharaoh@ZombieTypes)"
+                    }
+                ]
+            }
+        }
+    ],
+    "version": 1
+}

@@ -1,0 +1,2039 @@
+{
+  "#Save Our Seeds - Day 19 by ScatterPattern": "NLM v 0.4",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Name": "Save Our Seeds - Night 19",
+        "Description": "S.O.S!",
+        "StageModule": "RTID(DarkStage@LevelModules)",
+        "LevelNumber": 1,
+        "FirstRewardParam": "puffshroom",
+        "FirstRewardType": "unlock_plant",
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(GI@CurrentLevel)",
+          "RTID(BeatTheLevel@CurrentLevel)"
+        ],
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StartingSun": 200,
+        "FirstIntroNarrative": "INTRO",
+        "FirstOutroNarrative": "OUTRO"
+      }
+    },
+
+    {
+    "aliases": [
+        "INTRO"
+    ],
+    "objclass": "NarrativeProperties",
+    "objdata": {
+        "Flow": [
+        {
+                "Character": "crazydave",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "crazydave",
+                "Action": "TIRED",
+                "Lines": {
+                    "en": "Psst, neighbor!",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "crazydave",
+                "Action": "TIRED",
+                "Lines": {
+                    "en": "You know how Puffungi costs a lot but spreads?",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "crazydave",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "What if you shovel the copies and get a refund for them, like you \"planted\" them?",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "crazydave",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "Don't tell Penny about this! It's just an investment, okay?",
+                    "zh": "???"
+                }
+            }
+        ]
+      }
+    },
+
+    {
+    "aliases": [
+        "OUTRO"
+    ],
+    "objclass": "NarrativeProperties",
+    "objdata": {
+        "Flow": [
+        {
+                "Character": "crazydave",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "winnie",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "crazydave",
+                "Action": "SHOUT",
+                "Lines": {
+                    "en": "We got the fungus!",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "How did you two get so many expensive plants down?",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "crazydave",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "Err... Sun graves, a lot of them.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "TIRED",
+                "Lines": {
+                    "en": "Really now?",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "Anyway, I'll start the preparations for departure.",
+                    "zh": "???"
+                }
+            }
+        ]
+      }
+    },
+
+
+    {
+      "objclass": "PlantProperties",
+      "aliases": [
+        "puffungi_props"
+      ],
+      "objdata": {
+        "PeaType": "puffungi_spore",
+        "PeaTypePlantfood": "puffungi_spore",
+        "ShootInterval": 0.6,
+        "ShootIntervalAdditional": 0,
+        "PlantfoodPeaCount": 40,
+        "LifeSpan": 999999,
+        "Cooldown": 30,
+        "CooldownFrom": 0.1,
+        "SunCost": 125,
+        "BeghouledCost": 300,
+        "Toughness": 600,
+        "Family": "Poison",
+        "MintIgnoringLifeSpan": true,
+        "MintBoostedProps": {
+          "ResistanceMult": 10,
+          "SpeedMult": 4,
+          "Plantfood": true
+        },
+        "CostumeOnSpawn": 0,
+        "SpawnedScale": 1.2
+      }
+    },
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "puffungi"
+      ],
+      "objdata": {
+        "PlantBasedOn": "puffshroom",
+        "Properties": "RTID(puffungi_props@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "NAME": {
+            "en": "Puffungi",
+            "zh": "???"
+         },
+         "OBTAINWORLD": "mint",
+         "ALMANAC": "RTID(puffungi_almanac@CurrentLevel)"
+        }
+      }
+    },
+    {
+      "objclass": "PlantAlmanacProperties",
+      "aliases": [
+        "puffungi_almanac"
+      ],
+      "objdata": {
+        "BriefIntroduction": {
+          "en": "Shoots large peas at the enemies",
+          "zh": "???"
+        }
+      }
+    },
+    {
+    "aliases": [
+        "puffungi_spore"
+    ],
+    "objclass": "ProjectileType",
+    "objdata": {
+        "ProjectileBasedOn": "puffshroom_spore",
+        "Props": "RTID(puffungi_spore_p@CurrentLevel)"
+    }
+},
+{
+    "aliases": [
+        "puffungi_spore_p"
+    ],
+    "objclass": "ProjectileProperties",
+    "objdata": {
+      "PlantTypeToSpawn": "puffungi",
+      "CannotBeReversedByJester": true,
+        "Damage": 10,
+          "Size": {
+            "w": 12,
+            "h": 12
+          }
+    }
+},
+
+
+
+{
+      "objclass": "StarChallengeBeatTheLevelProps",
+      "objdata": {
+        "Descriptions": [
+          "TIP: Shovel Refund Boost heavily recommended for this level!"
+        ],
+        "DescriptionsMultiLanguage": []
+      },
+      "aliases": [
+        "BeatTheLevel"
+      ]
+    },
+    {
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "PresetPlantList": [
+          {
+            "PlantType": "puffungi",
+            "Level": -1
+          },
+          {
+            "PlantType": "cantaloupe",
+            "Level": -1
+          },
+          {
+            "PlantType": "banana",
+            "Level": -1
+          },
+          {
+            "PlantType": "doomshroom",
+            "Level": -1
+          }
+        ],
+        "SelectionMethod": "preset"
+      },
+      "aliases": [
+        "SeedBank"
+      ]
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 8,
+        "WaveCount": 16,
+        "Waves": [
+          [
+            "RTID(Wave1@.)"
+          ],
+          [
+            "RTID(Wave2@.)"
+          ],
+          [
+            "RTID(Wave3@.)"
+          ],
+          [
+            "RTID(Wave4@.)"
+          ],
+          [
+            "RTID(Wave5@.)"
+          ],
+          [
+            "RTID(Wave6@.)"
+          ],
+          [
+            "RTID(Wave7@.)"
+          ],
+          [
+            "RTID(Wave8@.)"
+          ],
+          [
+            "RTID(Wave9@.)"
+          ],
+          [
+            "RTID(Wave10@.)"
+          ],
+          [
+            "RTID(Wave11@.)"
+          ],
+          [
+            "RTID(Wave12@.)"
+          ],
+          [
+            "RTID(Wave13@.)"
+          ],
+          [
+            "RTID(Wave14@.)"
+          ],
+          [
+            "RTID(Wave15@.)"
+          ],
+          [
+            "RTID(Wave16@.)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "GI"
+      ],
+      "objclass": "InitialGridItemProperties",
+      "objdata": {
+        "InitialGridItemPlacements": [
+          {
+            "GridX": "2",
+            "GridY": "1",
+            "TypeName": "gravestoneSunOnDestruction"
+          },
+          {
+            "GridX": "2",
+            "GridY": "3",
+            "TypeName": "gravestoneSunOnDestruction"
+          },
+          {
+            "GridX": "8",
+            "GridY": "0",
+            "TypeName": "gravestoneSunOnDestruction"
+          },
+          {
+            "GridX": "8",
+            "GridY": "4",
+            "TypeName": "gravestoneSunOnDestruction"
+          },
+          {
+            "GridX": "7",
+            "GridY": "1",
+            "TypeName": "gravestonePlantfoodOnDestruction"
+          },
+          {
+            "GridX": "7",
+            "GridY": "3",
+            "TypeName": "gravestoneSunOnDestruction"
+          },
+          {
+            "GridX": "7",
+            "GridY": "4",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "6",
+            "GridY": "4",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "6",
+            "GridY": "3",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "5",
+            "GridY": "3",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "5",
+            "GridY": "4",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "4",
+            "GridY": "4",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "3",
+            "GridY": "3",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "3",
+            "GridY": "4",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "4",
+            "GridY": "3",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "2",
+            "GridY": "4",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "2",
+            "GridY": "2",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "3",
+            "GridY": "2",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "3",
+            "GridY": "1",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "3",
+            "GridY": "0",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "2",
+            "GridY": "0",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "4",
+            "GridY": "0",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "4",
+            "GridY": "1",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "4",
+            "GridY": "2",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "5",
+            "GridY": "2",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "5",
+            "GridY": "1",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "6",
+            "GridY": "0",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "6",
+            "GridY": "1",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "6",
+            "GridY": "2",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "5",
+            "GridY": "0",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "7",
+            "GridY": "0",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "7",
+            "GridY": "2",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "8",
+            "GridY": "1",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "8",
+            "GridY": "2",
+            "TypeName": "gravestone_dark"
+          },
+          {
+            "GridX": "8",
+            "GridY": "3",
+            "TypeName": "gravestone_dark"
+          }
+        ]
+      }
+    },
+    {
+      "objclass": "ZombieType",
+      "aliases": [
+        "dark_king"
+      ],
+      "objdata": {
+        "Properties": "RTID(dark_king@.)",
+        "ZombieBasedOn": "dark_king"
+      }
+    },
+    {
+      "objclass": "ZombieProperties",
+      "aliases": [
+        "dark_king"
+      ],
+      "objdata": {
+        "CannotBeHypnotizedByProjectiles": true,
+        "CannotBeGrabbedByPtero": true,
+        "ImmuneToShrinkingViolet": true,
+        "CannotBeTossedByCitron": true,
+        "CannotBeSwallowedByChomper": true,
+        "CannotCarryPlantfoodsInWaves": true,
+        "KnightingAreaW": 2,
+        "DelayBetweenKnightings": 5,
+        "WalkSPS": 0.185,
+        "EatDPS": 100,
+        "Toughness": 1600,
+        "NormalDeathWhenMowed": true,
+        "ImmuneToGarlic": true,
+        "WavePointCost": 750,
+        "Weight": 2000,
+        "ArmorToGive": "dark_armor3",
+        "HitRect": "RTID(DarkKingHitRect@RectangleProps)",
+        "AttackRect": "RTID(DarkKingAttackRect@RectangleProps)",
+        "PlantablePlants": [
+          "cherry_bomb",
+          "jalapeno",
+          "powerlily",
+          "iceburg",
+          "empea",
+          "powerplant",
+          "goldleaf",
+          "grapeshot",
+          "solarsage"
+        ],
+        "ValidKnightTargets": [
+          "dark",
+          "dark_armor1",
+          "dark_armor2",
+          "dark_armor3"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark_king@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 2,
+        "Zombies": [
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_king@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_king@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_king@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave13"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave14"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_king@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_king@CurrentLevel)",
+            "Row": 2
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(modern_allstar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave16"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_gargantuar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor3@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_king@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_king@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dark_king@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_king@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dark_king@CurrentLevel)",
+            "Row": 5
+          }
+        ]
+      }
+    }
+  ]
+}

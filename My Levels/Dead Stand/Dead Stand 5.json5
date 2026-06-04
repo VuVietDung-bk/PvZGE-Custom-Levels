@@ -1,0 +1,481 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "hinanarukami",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2026-04-18",
+    "UpdatedAt": "2026-04-18",
+    "Difficulty": "Normal",
+    "Category": "Last Stand"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "Last or Dead???",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+		      "RTID(StandardIntro@LevelModules)",
+		      "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(LastStand@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(PlantsLost@CurrentLevel)",
+          "RTID(mold@CurrentLevel)"
+        ],
+        "Name": "Dead Stand - Level 5",
+        "WritenBy": "hinanarukami",
+		    "MusicType": "MiniGame_B",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(ArenaStage@LevelModules)"
+      }
+    },
+    {
+      "objclass": "StarChallengePlantsLostProps",
+      "aliases": [
+        "PlantsLost"
+      ],
+      "objdata": {
+        "MaximumPlantsLost": 0
+      }
+    },
+        {
+            "aliases": [
+                "LastStand"
+            ],
+            "objclass": "LastStandMinigameProperties",
+            "objdata": {
+                "StartingSun": 875
+            }
+        },
+        {
+            "aliases": [
+                "ChallengeModule"
+            ],
+            "objclass": "StarChallengeModuleProperties",
+            "objdata": {
+                "Challenges": [
+                    [
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+                ],
+                "ChallengesAlwaysAvailable": true
+            }
+        },
+        {
+			"aliases": [
+			"BeatTheLevel"
+		],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+				"Survive with 3 slots",
+				],
+				"DescriptionsMultiLanguage": [
+					{
+					"en": "123",
+					"zh": "112233"
+					}
+				]
+			}
+		},
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "OverrideSeedSlotsCount": 3,
+	      "ExcludeListSunProducers": "true",
+        "SelectionMethod": "chooser",
+        "PlantExcludeList": [
+          "plantern", "grimrose"
+        ],
+      }
+    },
+    {
+            "objclass": "MoldColonyChallengeProps",
+            "aliases": [
+                "mold"
+            ],
+            "objdata": {
+            "MoldMatrix": [
+                "000111000",
+                "000111000",
+                "000111000",
+                "000111000",
+                "000111000"
+                ]
+            }
+        },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 350, // Difficulty D, easiest
+            "StartingPoints": 450,
+            "StartingWave": 0,
+            "ZombiePool": [
+                "RTID(dark_juggler@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 390, // Difficulty C, normal
+            "StartingPoints": 450,
+            "StartingWave": 0,
+            "ZombiePool": [
+                "RTID(dark_juggler@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 420, // Difficulty B, advanced
+            "StartingPoints": 450,
+            "StartingWave": 0,
+            "ZombiePool": [
+                "RTID(dark_juggler@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 450, // Difficulty AAAAAAAAA
+            "StartingPoints": 450,
+            "StartingWave": 0,
+            "ZombiePool": [
+                "RTID(dark_juggler@ZombieTypes)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 4,
+        "WaveCount": 12,
+        "SuppressFlagZombie": true,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave11@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave12@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(tomb_raiser@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(tomb_raiser@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Style": "sandstorm",
+            "Type": "RTID(dark_armor4@ZombieTypes)",
+            "Row": 2,
+            "Column": 3
+          },
+          {
+            "Type": "RTID(tomb_raiser@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(tomb_raiser@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Style": "sandstorm",
+            "Type": "RTID(dark_armor4@ZombieTypes)",
+            "Row": 5,
+            "Column": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Style": "sandstorm",
+            "Type": "RTID(abbot_torch@ZombieTypes)",
+            "Row": 1,
+            "Column": 6
+          },
+          {
+            "Style": "sandstorm",
+            "Type": "RTID(abbot_torch@ZombieTypes)",
+            "Row": 2,
+            "Column": 6
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Style": "sandstorm",
+            "Type": "RTID(abbot_torch@ZombieTypes)",
+            "Row": 4,
+            "Column": 4
+          },
+          {
+            "Type": "RTID(tomb_raiser@ZombieTypes)",
+            "Row": 2
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(tomb_raiser@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Style": "sandstorm",
+            "Type": "RTID(dino_bully_veteran@ZombieTypes)",
+            "Row": 5,
+            "Column": 6
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 2
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Style": "sandstorm",
+            "Type": "RTID(dark_armor4@ZombieTypes)",
+            "Row": 2,
+            "Column": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Style": "sandstorm",
+            "Type": "RTID(dark_armor4@ZombieTypes)",
+            "Row": 2,
+            "Column": 4
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(tomb_raiser@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Style": "sandstorm",
+            "Type": "RTID(dark_armor4@ZombieTypes)",
+            "Row": 5,
+            "Column": 4
+          },
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Style": "sandstorm",
+            "Type": "RTID(abbot_torch@ZombieTypes)",
+            "Row": 4,
+            "Column": 6
+          },
+          {
+            "Type": "RTID(tomb_raiser@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Style": "sandstorm",
+            "Type": "RTID(abbot_torch@ZombieTypes)",
+            "Row": 2,
+            "Column": 6
+          },
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dark_king_veteran@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Style": "sandstorm",
+            "Type": "RTID(dino_bully_veteran@ZombieTypes)",
+            "Row": 4,
+            "Column": 2
+          },
+          {
+            "Style": "sandstorm",
+            "Type": "RTID(dino_bully_veteran@ZombieTypes)",
+            "Row": 2,
+            "Column": 4
+          },
+          {
+            "Style": "sandstorm",
+            "Type": "RTID(dino_bully_veteran@ZombieTypes)",
+            "Row": 1,
+            "Column": 6
+          },
+        ]
+      }
+    }
+  ],
+  "version": 1
+}

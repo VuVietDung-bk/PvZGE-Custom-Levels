@@ -1,0 +1,1553 @@
+{
+  "#Save Our Seeds - Night 37 by ScatterPattern": "NLM v 0.5",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Name": "Save Our Seeds - Night 37",
+        "Description": "S.O.S!",
+        "StageModule": "RTID(EightiesStage@LevelModules)",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "FirstRewardParam": "electricblueberry",
+        "FirstRewardType": "unlock_plant",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(InitialPlants@CurrentLevel)",
+          "RTID(EightiesMowers@LevelModules)"
+        ],
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "FirstIntroNarrative": "INTRO"
+      }
+    },
+
+    {
+    "aliases": [
+        "INTRO"
+    ],
+    "objclass": "NarrativeProperties",
+    "objdata": {
+        "Flow": [
+            {
+                "Character": "crazydave",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "winnie",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "crazydave",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "Where have the zombies gone this time?",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "They're still here, User Dave. They're simply invisible.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "crazydave",
+                "Action": "TIRED",
+                "Lines": {
+                    "en": "But how does that make sense? What magic is going on?",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "TIRED",
+                "Lines": {
+                    "en": "I... don't have an answer to that actually.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "Fortunately, Electric Shockberry can detect them without issue.",
+                    "zh": "???"
+                }
+            }
+          ]
+      }
+    },
+
+
+
+    {
+      "objclass": "PlantProperties",
+      "aliases": [
+        "electricshockberry_props"
+      ],
+      "objdata": {
+        "Cooldown": 30,
+    "CooldownFrom": 0.1,
+    "SunCost": 500,
+    "BeghouledCost": 4500,
+    "Toughness": 300,
+    "ImmuneToLightningCharge": true,
+    "Family": "Electricity",
+    "PlantFoodCloudSpeed": 15,
+    "PlantFoodLightningBoltDamage": 10000,
+    "NormalCloudSpeed": 15,
+    "NormalLightningBoltDamage": 10000,
+    "WeightTargetNormalZombie": 15,
+    "WeightTargetGargantuarZombie": 55,
+    "WeightTargetOtherZombie": 30,
+    "AttackCooldownStart": 0,
+    "AttackCooldownStartAdditional": 0,
+    "AttackCooldownBetween": 2,
+    "AttackCooldownBetweenAdditional": 0,
+    "CallsElectricCurrant": true,
+    "RedAttackStunDuration": 3,
+    "MintDamageFactor": 2,
+    "MintBoostedProps": {
+      "ResistanceMult": 1,
+      "SpeedMult": 4,
+      "Plantfood": false
+    },
+        "CostumeOnSpawn": 0,
+        "SpawnedScale": 1.2
+      }
+    },
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "electricshockberry"
+      ],
+      "objdata": {
+        "PlantBasedOn": "electricblueberry",
+        "Properties": "RTID(electricshockberry_props@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "NAME": {
+            "en": "Electric Shockberry",
+            "zh": "???"
+         },
+         "OBTAINWORLD": "mint",
+         "ALMANAC": "RTID(electricshockberry_almanac@CurrentLevel)"
+        }
+      }
+    },
+    {
+      "objclass": "PlantAlmanacProperties",
+      "aliases": [
+        "electricshockberry_almanac"
+      ],
+      "objdata": {
+        "BriefIntroduction": {
+          "en": "Sends rapid thunder at high-value targets",
+          "zh": "???"
+        }
+      }
+    },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "SelectionMethod": "preset",
+        "PresetPlantList": [
+          {
+            "PlantType": "sunshroom",
+            "Level": -1
+          },
+          {
+            "PlantType": "electricshockberry",
+            "Level": -1
+          },
+          {
+            "PlantType": "glaciershroom",
+            "Level": -1
+          },
+          {
+            "PlantType": "iceburg",
+            "Level": -1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 6,
+        "WaveCount": 18,
+        "Waves": [
+          [
+            "RTID(Wave1@.)"
+          ],
+          [
+            "RTID(Wave2@.)"
+          ],
+          [
+            "RTID(Wave3@.)"
+          ],
+          [
+            "RTID(Wave4@.)"
+          ],
+          [
+            "RTID(Wave5@.)"
+          ],
+          [
+            "RTID(Wave6@.)"
+          ],
+          [
+            "RTID(Wave7@.)"
+          ],
+          [
+            "RTID(Wave8@.)"
+          ],
+          [
+            "RTID(Wave9@.)"
+          ],
+          [
+            "RTID(Wave10@.)"
+          ],
+          [
+            "RTID(Wave11@.)"
+          ],
+          [
+            "RTID(Wave12@.)"
+          ],
+          [
+            "RTID(Wave13@.)"
+          ],
+          [
+            "RTID(Wave14@.)"
+          ],
+          [
+            "RTID(Wave15@.)"
+          ],
+          [
+            "RTID(Wave16@.)"
+          ],
+          [
+            "RTID(Wave17@.)"
+          ],
+          [
+            "RTID(Wave18@.)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "InitialPlants"
+      ],
+      "objclass": "InitialPlantProperties",
+      "objdata": {
+        "InitialPlantPlacements": [
+          {
+            "TypeName": "electricshockberry",
+            "GridX": "1",
+            "GridY": "2"
+          },
+          {
+            "TypeName": "glaciershroom",
+            "GridX": "0",
+            "GridY": "1"
+          }
+        ]
+      }
+    },
+    {
+      "objclass": "ZombieType",
+      "aliases": [
+        "eighties"
+      ],
+      "objdata": {
+        "Properties": "RTID(eighties@.)",
+        "ZombieBasedOn": "eighties"
+      }
+    },
+    {
+      "objclass": "ZombieProperties",
+      "aliases": [
+        "eighties"
+      ],
+      "objdata": {
+        "ZombieSort": "Normal",
+        "WalkSPS": 0.185,
+        "EatDPS": 100,
+        "Toughness": 190,
+        "WavePointCost": 100,
+        "Weight": 1000,
+        "HitRect": "RTID(CommonHitRect@RectangleProps)",
+        "AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+        "SpawnedScale": 0.001
+      }
+    },
+    {
+      "objclass": "ZombieType",
+      "aliases": [
+        "eighties_punk"
+      ],
+      "objdata": {
+        "Properties": "RTID(eighties_punk@.)",
+        "ZombieBasedOn": "eighties_punk"
+      }
+    },
+    {
+      "objclass": "ZombieProperties",
+      "aliases": [
+        "eighties_punk"
+      ],
+      "objdata": {
+        "WalkSPS": 0.23125,
+        "EatDPS": 100,
+        "Toughness": 250,
+        "PushCooldown": 2,
+        "JamStyle": "jam_punk",
+        "WavePointCost": 300,
+        "Weight": 1000,
+        "HitRect": "RTID(CommonHitRect@RectangleProps)",
+        "AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+        "SpawnedScale": 0.001
+      }
+    },
+    {
+      "objclass": "ZombieType",
+      "aliases": [
+        "eighties_glitter"
+      ],
+      "objdata": {
+        "Properties": "RTID(eighties_glitter@.)",
+        "ZombieBasedOn": "eighties_glitter"
+      }
+    },
+    {
+      "objclass": "ZombieProperties",
+      "aliases": [
+        "eighties_glitter"
+      ],
+      "objdata": {
+        "WalkSPS": 0.19,
+        "EatDPS": 100,
+        "Toughness": 490,
+        "RainbowTrailLength": 3.125,
+        "JamStyle": "jam_pop",
+        "WavePointCost": 300,
+        "Weight": 1000,
+        "HitRect": "RTID(CommonHitRect@RectangleProps)",
+        "AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+        "SpawnedScale": 0.001
+      }
+    },
+    {
+      "objclass": "ZombieType",
+      "aliases": [
+        "eighties_mc"
+      ],
+      "objdata": {
+        "Properties": "RTID(eighties_mc@.)",
+        "ZombieBasedOn": "eighties_mc"
+      }
+    },
+    {
+      "objclass": "ZombieProperties",
+      "aliases": [
+        "eighties_mc"
+      ],
+      "objdata": {
+        "WalkSPS": 0.23125,
+        "EatDPS": 100,
+        "Toughness": 250,
+        "JamAttackDamage": 2001,
+        "JamStyle": "jam_rap",
+        "WavePointCost": 350,
+        "Weight": 1000,
+        "HitRect": "RTID(CommonHitRect@RectangleProps)",
+        "AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+        "SpawnedScale": 0.001
+      }
+    },
+    {
+      "objclass": "ZombieType",
+      "aliases": [
+        "eighties_breakdancer"
+      ],
+      "objdata": {
+        "Properties": "RTID(eighties_breakdancer@.)",
+        "ZombieBasedOn": "eighties_breakdancer"
+      }
+    },
+    {
+      "objclass": "ZombieProperties",
+      "aliases": [
+        "eighties_breakdancer"
+      ],
+      "objdata": {
+        "WalkSPS": 0.23125,
+        "EatDPS": 100,
+        "Toughness": 250,
+        "JamWalkSpeedMult": 1.5,
+        "KickDistance": 1.5625,
+        "KickingTime": 0.5,
+        "JamStyle": "jam_rap",
+        "WavePointCost": 300,
+        "Weight": 1000,
+        "HitRect": "RTID(CommonHitRect@RectangleProps)",
+        "AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+        "SpawnedScale": 0.001
+      }
+    },
+    {
+      "objclass": "ZombieType",
+      "aliases": [
+        "eighties_arcade"
+      ],
+      "objdata": {
+        "Properties": "RTID(eighties_arcade@.)",
+        "ZombieBasedOn": "eighties_arcade"
+      }
+    },
+    {
+      "objclass": "ZombieProperties",
+      "aliases": [
+        "eighties_arcade"
+      ],
+      "objdata": {
+        "NumberOfArcadeCabinetsToSpawnWith": 1,
+        "WalkSPS": 0.19,
+        "EatDPS": 100,
+        "Toughness": 490,
+        "JamStyle": "jam_8bit",
+        "WavePointCost": 600,
+        "Weight": 1000,
+        "HitRect": "RTID(BullyHitRect@RectangleProps)",
+        "AttackRect": "RTID(BullyAttackRect@RectangleProps)",
+        "SpawnedScale": 0.001
+      }
+    },
+    {
+      "objclass": "ZombieType",
+      "aliases": [
+        "eighties_gargantuar"
+      ],
+      "objdata": {
+        "Properties": "RTID(eighties_gargantuar@.)",
+        "ZombieBasedOn": "eighties_gargantuar"
+      }
+    },
+    {
+      "objclass": "ZombieProperties",
+      "aliases": [
+        "eighties_gargantuar"
+      ],
+      "objdata": {
+        "CannotBeEnlightenedBySolarSage": true,
+        "ZombieSort": "Gargantuar",
+        "CannotBeGrabbedByPtero": true,
+        "CannotChangeLaneByPowerToss": true,
+        "CannotBeFlickedByPowerToss": true,
+        "CannotBeDraggedByTangleKelp": true,
+        "CannotBeTossedByCitron": true,
+        "CannotBeSwallowedByChomper": true,
+        "WalkSPS": 0.24,
+        "EatDPS": 100,
+        "Toughness": 3600,
+        "LivesInDeepWater": true,
+        "NormalDeathWhenMowed": true,
+        "CannotCarryPlantfoodsInWaves": true,
+        "SmashDamage": 1500,
+        "JamStyle": "jam_metal",
+        "WaveType": "eighties_gargantuar_wave",
+        "WavePointCost": 1500,
+        "Weight": 3000,
+        "ImpType": "eighties_imp",
+        "HitRect": "RTID(GargantuarHitRect@RectangleProps)",
+        "AttackRect": "RTID(GargantuarAttackRect@RectangleProps)",
+        "SpawnedScale": 0.001
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "NotificationEvents": [
+          "jam_punk"
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties_punk@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "NotificationEvents": [
+          "jam_pop"
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_glitter@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_glitter@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_glitter@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties_glitter@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_glitter@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "NotificationEvents": [
+          "jam_rap"
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_mc@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties_mc@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_mc@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_mc@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_mc@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_mc@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties_mc@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_mc@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties_mc@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties_mc@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_breakdancer@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave13"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave14"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "NotificationEvents": [
+          "jam_8bit"
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_arcade@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties_arcade@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_arcade@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave16"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_arcade@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties_arcade@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_arcade@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties_arcade@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties_arcade@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave17"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "NotificationEvents": [
+          "jam_metal"
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_gargantuar@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_gargantuar@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties@CurrentLevel)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave18"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_gargantuar@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties_gargantuar@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_gargantuar@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties_gargantuar@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties_gargantuar@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties_gargantuar@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(eighties_gargantuar@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties_gargantuar@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties_gargantuar@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_gargantuar@CurrentLevel)",
+            "Row": 1
+          }
+        ]
+      }
+    }
+  ]
+}

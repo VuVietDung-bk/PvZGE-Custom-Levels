@@ -1,0 +1,1306 @@
+{
+  "#Save Our Seeds - Day 22 by ScatterPattern": "NLM v 0.4",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Name": "Save Our Seeds - Day 22",
+        "Description": "S.O.S!",
+        "StageModule": "RTID(BeachStage@LevelModules)",
+        "LevelNumber": 1,
+        "FirstRewardParam": "bowlingbulb",
+        "FirstRewardType": "unlock_plant",
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(GI@CurrentLevel)",
+          "RTID(BeachMowers@LevelModules)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(Tide@CurrentLevel)"
+        ],
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "FirstOutroNarrative": "OUTRO"
+      }
+    },
+
+{
+    "aliases": [
+        "OUTRO"
+    ],
+    "objclass": "NarrativeProperties",
+    "objdata": {
+        "Flow": [
+        {
+                "Character": "winnie",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "winnie",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "That's Bowling Bomb saved.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "User Dave, have you finished napping on that beach chair?",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "crazydaveicon",
+                "Action": "TIRED",
+                "Lines": {
+                    "en": "Five more minutes...",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "QUIET",
+                "Lines": {
+                    "en": "*sigh*",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "TIRED",
+                "Lines": {
+                    "en": "At least he won't bother during the preparations.",
+                    "zh": "???"
+                }
+            }
+        ]
+      }
+    },
+
+
+
+{
+      "objclass": "PlantProperties",
+      "aliases": [
+        "squadflower_props"
+      ],
+      "objdata": {
+        "SunValue": 300,
+        "ProduceInterval": 18,
+        "ProduceIntervalAdditional": 2,
+        "ProduceCountdownStart": 3,
+        "ProduceCountdownStartAdditional": 0,
+        "SunCost": 325,
+        "Toughness": 2500,
+        "Family": "Sun",
+        "CostumeOnSpawn": 6,
+        "SpawnedScale": 1.2
+      }
+    },
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "squadflower"
+      ],
+      "objdata": {
+        "PlantBasedOn": "twinsunflower",
+        "Properties": "RTID(squadflower_props@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "NAME": {
+            "en": "Squadflower",
+            "zh": "???"
+         },
+         "OBTAINWORLD": "mint",
+         "ALMANAC": "RTID(squadflower_almanac@CurrentLevel)"
+        }
+      }
+    },
+    {
+      "objclass": "PlantAlmanacProperties",
+      "aliases": [
+        "squadflower_almanac"
+      ],
+      "objdata": {
+        "BriefIntroduction": {
+          "en": "Blocks zombies and produces more sun",
+          "zh": "???"
+        }
+      }
+    },
+
+
+
+
+{
+      "objclass": "PlantProperties",
+      "aliases": [
+        "bowlingbomb_props"
+      ],
+      "objdata": {
+        "Cooldown": 15,
+    "CooldownFrom": 0.1,
+    "SunCost": 500,
+    "BeghouledCost": 2000,
+    "Toughness": 400,
+    "Family": "Peashooter",
+    "StartingHeight": 0,
+    "AmmoRefreshTime": 7,
+    "RollOrder": "210",
+    "LoadOrder": "210",
+    "Bowling0": "bowling_pf",
+    "Bowling1": "bowling_pf",
+    "Bowling2": "bowling_pf",
+    "BowlingPlantfood": "bowling_pf",
+    "MintBoostedProps": {
+      "ResistanceMult": 1,
+      "SpeedMult": 6,
+      "Plantfood": true
+    },
+        "CostumeOnSpawn": 0,
+        "SpawnedScale": 1.2
+      }
+    },
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "bowlingbomb"
+      ],
+      "objdata": {
+        "PlantBasedOn": "bowlingbulb",
+        "Properties": "RTID(bowlingbomb_props@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "NAME": {
+            "en": "Bowling Bomb",
+            "zh": "???"
+         },
+         "OBTAINWORLD": "mint",
+         "ALMANAC": "RTID(bowlingbomb_almanac@CurrentLevel)"
+        }
+      }
+    },
+    {
+      "objclass": "PlantAlmanacProperties",
+      "aliases": [
+        "bowlingbomb_almanac"
+      ],
+      "objdata": {
+        "BriefIntroduction": {
+          "en": "Rolls bouncing, explosive shots that redirect when hitting a zombie",
+          "zh": "???"
+        }
+      }
+    },
+
+
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "SelectionMethod": "preset",
+        "PresetPlantList": [
+          {
+            "PlantType": "squadflower",
+            "Level": -1
+          },
+          {
+            "PlantType": "goldbloom",
+            "Level": -1
+          },
+          {
+            "PlantType": "bowlingbomb",
+            "Level": -1
+          },
+          {
+            "PlantType": "lilypad",
+            "Level": -1
+          }
+        ]
+      }
+    },
+
+
+
+    {
+      "aliases": [
+        "Tide"
+      ],
+      "objclass": "TideProperties",
+      "objdata": {
+        "StartingWaveLocation": 7
+      }
+    },
+    {
+      "aliases": [
+              "LowTideChange1"
+      ],
+      "objclass": "TidalChangeWaveActionProps",
+      "objdata": {
+              "TidalChange": {
+                      "ChangeAmount": 1,
+                      "ChangeType": "absolute"
+              }
+      }
+    },
+    {
+      "aliases": [
+              "LowTideChange6"
+      ],
+      "objclass": "TidalChangeWaveActionProps",
+      "objdata": {
+              "TidalChange": {
+                      "ChangeAmount": 6,
+                      "ChangeType": "absolute"
+              }
+      }
+    },
+    {
+      "aliases": [
+              "LowTideEvent"
+      ],
+      "objclass": "BeachStageEventZombieSpawnerProps",
+      "objdata": {
+              "ColumnEnd": 7,
+              "ColumnStart": 2,
+              "GroupSize": 3,
+              "TimeBeforeFullSpawn": 0.75,
+              "TimeBetweenGroups": 0.15,
+              "WaveStartMessage": "[WARNING_LOW_TIDE]",
+              "ZombieCount": 12,
+              "ZombieName": "beach_flag"
+      }
+    },
+
+
+
+
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 4,
+        "WaveCount": 12,
+        "ZombieCountdownFirstWaveSecs": 20,
+        "Waves": [
+          [
+            "RTID(Wave1@.)"
+          ],
+          [
+            "RTID(Wave2@.)"
+          ],
+          [
+            "RTID(Wave3@.)"
+          ],
+          [
+            "RTID(Wave4@.)"
+          ],
+          [
+            "RTID(Wave5@.)"
+          ],
+          [
+            "RTID(Wave6@.)",
+            "RTID(LowTideChange1@.)",
+            "RTID(LowTideEvent@.)"
+          ],
+          [
+            "RTID(Wave7@.)"
+          ],
+          [
+            "RTID(Wave8@.)",
+            "RTID(LowTideChange6@.)"
+          ],
+          [
+            "RTID(Wave9@.)"
+          ],
+          [
+            "RTID(Wave10@.)"
+          ],
+          [
+            "RTID(Wave11@.)",
+            "RTID(LowTideChange1@.)",
+            "RTID(LowTideEvent@.)"
+          ],
+          [
+            "RTID(Wave12@.)",
+            "RTID(LowTideChange6@.)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "GI"
+      ],
+      "objclass": "InitialGridItemProperties",
+      "objdata": {
+        "InitialGridItemPlacements": [
+          {
+            "GridX": "6",
+            "GridY": "0",
+            "TypeName": "surfboard"
+          },
+          {
+            "GridX": "6",
+            "GridY": "1",
+            "TypeName": "surfboard"
+          },
+          {
+            "GridX": "8",
+            "GridY": "3",
+            "TypeName": "surfboard"
+          },
+          {
+            "GridX": "8",
+            "GridY": "2",
+            "TypeName": "surfboard"
+          },
+          {
+            "GridX": "5",
+            "GridY": "4",
+            "TypeName": "surfboard"
+          },
+          {
+            "GridX": "4",
+            "GridY": "3",
+            "TypeName": "surfboard"
+          },
+          {
+            "GridX": "4",
+            "GridY": "2",
+            "TypeName": "surfboard"
+          },
+          {
+            "GridX": "5",
+            "GridY": "0",
+            "TypeName": "surfboard"
+          },
+          {
+            "GridX": "4",
+            "GridY": "0",
+            "TypeName": "surfboard"
+          },
+          {
+            "GridX": "3",
+            "GridY": "0",
+            "TypeName": "surfboard"
+          },
+          {
+            "GridX": "8",
+            "GridY": "0",
+            "TypeName": "surfboard"
+          },
+          {
+            "GridX": "7",
+            "GridY": "1",
+            "TypeName": "planttarget_squid"
+          },
+          {
+            "GridX": "8",
+            "GridY": "4",
+            "TypeName": "planttarget_squid"
+          }
+        ]
+      }
+    },
+    {
+      "objclass": "ZombieType",
+      "aliases": [
+        "beach_flag_armor1"
+      ],
+      "objdata": {
+        "Properties": "RTID(beach_flag_armor1@.)",
+        "ZombieBasedOn": "beach_flag"
+      }
+    },
+    {
+      "objclass": "ZombieProperties",
+      "aliases": [
+        "beach_flag_armor1"
+      ],
+      "objdata": {
+        "ZombieSort": "Normal",
+        "CannotCarryPlantfoodsInWaves": true,
+        "WalkSPS": 0.24,
+        "EatDPS": 100,
+        "Toughness": 190,
+        "WavePointCost": 100,
+        "Weight": 100,
+        "HitRect": "RTID(CommonHitRect@RectangleProps)",
+        "AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+        "StartingArmors": [
+          "beach_armor2"
+        ]
+      }
+    },
+    {
+      "objclass": "ZombieType",
+      "aliases": [
+        "beach_flag_armor2"
+      ],
+      "objdata": {
+        "Properties": "RTID(beach_flag_armor2@.)",
+        "ZombieBasedOn": "beach_flag"
+      }
+    },
+    {
+      "objclass": "ZombieProperties",
+      "aliases": [
+        "beach_flag_armor2"
+      ],
+      "objdata": {
+        "ZombieSort": "Normal",
+        "CannotCarryPlantfoodsInWaves": true,
+        "WalkSPS": 0.24,
+        "EatDPS": 100,
+        "Toughness": 190,
+        "WavePointCost": 100,
+        "Weight": 100,
+        "HitRect": "RTID(CommonHitRect@RectangleProps)",
+        "AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+        "StartingArmors": [
+          "beach_armor2"
+        ]
+      }
+    },
+    {
+      "objclass": "ZombieType",
+      "aliases": [
+        "beach_flag_armor4"
+      ],
+      "objdata": {
+        "Properties": "RTID(beach_flag_armor4@.)",
+        "ZombieBasedOn": "beach_flag"
+      }
+    },
+    {
+      "objclass": "ZombieProperties",
+      "aliases": [
+        "beach_flag_armor4"
+      ],
+      "objdata": {
+        "ZombieSort": "Normal",
+        "CannotCarryPlantfoodsInWaves": true,
+        "WalkSPS": 0.24,
+        "EatDPS": 100,
+        "Toughness": 190,
+        "WavePointCost": 100,
+        "Weight": 100,
+        "HitRect": "RTID(CommonHitRect@RectangleProps)",
+        "AttackRect": "RTID(CommonAttackRect@RectangleProps)",
+        "StartingArmors": [
+          "beach_armor4"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 2
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(beach_flag_armor4@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(swashbuckler@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(swashbuckler@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(swashbuckler@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(swashbuckler@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(swashbuckler@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag_armor4@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag_armor2@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag_armor4@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag_armor2@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(beach_surfer_veteran@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_surfer_veteran@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_surfer_veteran@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(beach_flag_armor2@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag_armor2@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag_armor2@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag_armor2@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag_armor2@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag_armor2@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag_armor2@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag_armor2@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag_armor2@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(swashbuckler@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(swashbuckler@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_flag_armor2@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_flag_armor2@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag_armor2@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag_armor2@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(cannon@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag_armor4@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag_armor2@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag_armor2@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag_armor2@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag_armor1@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_surfer_veteran@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_surfer_veteran@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_flag@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    }
+  ]
+}

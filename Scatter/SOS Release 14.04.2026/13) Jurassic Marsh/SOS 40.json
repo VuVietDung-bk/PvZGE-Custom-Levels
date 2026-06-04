@@ -1,0 +1,856 @@
+{
+  "#Save Our Seeds - Day 40 by ScatterPattern": "NLM v 0.5",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Name": "Save Our Seeds - Day 40",
+        "Description": "S.O.S!",
+        "StageModule": "RTID(DinoStage@LevelModules)",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "FirstRewardParam": "primalpeashooter",
+        "FirstRewardType": "unlock_plant",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(InitialPlants@CurrentLevel)",
+          "RTID(DinoMowers@LevelModules)",
+          "RTID(LevelScheduler@CurrentLevel)",
+          "RTID(LevelSchedulerDanger@CurrentLevel)",
+          "RTID(Railcart@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(CollectSun@CurrentLevel)",
+          "RTID(SlowSunDropper@LevelModules)"
+        ],
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "MusicType": "MiniGame_B",
+        "FirstIntroNarrative": "INTRO",
+        "FirstOutroNarrative": "OUTRO"
+      }
+    },
+    {
+  "objclass": "AutoCollectProperties",
+  "aliases": [
+    "CollectSun"
+  ],
+  "objdata": {
+    "AutoCollectList": [
+      "sun"
+    ]
+  }
+},
+
+
+    {
+    "aliases": [
+        "INTRO"
+    ],
+    "objclass": "NarrativeProperties",
+    "objdata": {
+        "Flow": [
+        {
+                "Character": "winnie",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "winnie",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "It seems the meteors are oddly magnetic.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "They are attracted to the metallic rails I've placed on the end of the lawn.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "Prime Peashooter can push zombies onto those rails. Good luck.",
+                    "zh": "???"
+                }
+            }
+        ]
+      }
+    },
+
+
+    {
+    "aliases": [
+        "OUTRO"
+    ],
+    "objclass": "NarrativeProperties",
+    "objdata": {
+        "Flow": [
+        {
+                "Character": "winnie",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "crazydave",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "crazydave",
+                "Action": "SHOUT",
+                "Lines": {
+                    "en": "That was meteortastic!",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "TIRED",
+                "Lines": {
+                    "en": "...What does that even mean?",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "crazydave",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "This made me crave spaghetti with meatballs!",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "What?",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "Did travelling to the jurassic era impact your thinking, User Dave?",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "crazydave",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "Perhaps it has, but I'm hungry as ever!",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "That's realistic at least.",
+                    "zh": "???"
+                }
+            }
+        ]
+      }
+    },
+
+
+
+
+    {
+  "objclass": "PlantProperties",
+  "aliases": [
+    "primepeashooter_props"
+  ],
+  "objdata": {
+    "ShootInterval": 1.8,
+    "ShootIntervalAdditional": 0,
+    "PeaType": "pea_prime",
+    "PeaTypePlantfood": "pea_prime",
+    "PlantfoodPeaCount": 8,
+    "KnockbackDistance": 4,
+    "KnockbackChance": 0.8,
+    "Cooldown": 10,
+    "CooldownFrom": 1,
+    "SunCost": 350,
+    "BeghouledCost": 3000,
+    "Toughness": 300,
+    "Family": "Peashooter",
+    "MintBoostedProps": {
+      "ResistanceMult": 1,
+      "SpeedMult": 2,
+      "Plantfood": false
+    },
+        "SpawnedScale": 1.2
+  }
+},
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "primepeashooter"
+      ],
+      "objdata": {
+        "PlantBasedOn": "primalpeashooter",
+        "Properties": "RTID(primepeashooter_props@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "NAME": {
+            "en": "Prime Peashooter",
+            "zh": "???"
+         },
+         "OBTAINWORLD": "mint",
+         "ALMANAC": "RTID(primepeashooter_almanac@CurrentLevel)"
+        }
+      }
+    },
+    {
+      "objclass": "PlantAlmanacProperties",
+      "aliases": [
+        "primepeashooter_almanac"
+      ],
+      "objdata": {
+        "BriefIntroduction": {
+          "en": "Shoots heavy knockback peas",
+          "zh": "???"
+        }
+      }
+    },
+    {
+    "aliases": [
+        "pea_prime"
+    ],
+    "objclass": "ProjectileType",
+    "objdata": {
+        "ProjectileBasedOn": "pea_primal",
+        "Props": "RTID(pea_prime_p@CurrentLevel)"
+    }
+},
+{
+  "objclass": "ProjectileProperties",
+  "aliases": [
+    "pea_prime_p"
+  ],
+  "objdata": {
+    "Damage": 40,
+    "YellowIgnitedType": "pea_primal_flame_yellow",
+    "BlueIgnitedType": "pea_primal1_flame_blue",
+    "StunDuration": 2,
+    "Size": {
+      "w": 16,
+      "h": 16
+    }
+  }
+},
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "SelectionMethod": "preset",
+        "SuppressObjectiveTip": true,
+        "PresetPlantList": [
+          {
+            "PlantType": "intensivecarrot",
+            "Level": -1
+          }
+        ],
+        "PlantExcludeList": []
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "objclass": "RailcartProperties",
+      "objdata": {
+        "RailcartType": "railcart_pirate",
+        "Railcarts": [],
+        "Rails": [
+          {
+            "Column": 8,
+            "RowStart": 0,
+            "RowEnd": 4
+          }
+        ]
+      },
+      "aliases": [
+        "Railcart"
+      ]
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 7,
+        "WaveCount": 7,
+        "Waves": [
+          [
+            "RTID(Wave1@.)"
+          ],
+          [
+            "RTID(Wave2@.)"
+          ],
+          [
+            "RTID(Wave3@.)",
+            "RTID(TRex5@.)"
+          ],
+          [
+            "RTID(Wave4@.)"
+          ],
+          [
+            "RTID(Wave5@.)"
+          ],
+          [
+            "RTID(Wave6@.)",
+            "RTID(Trex1@.)",
+            "RTID(Trex3@.)",
+            "RTID(Trex5@.)"
+          ],
+          [
+            "RTID(Wave7@.)"
+          ]
+        ],
+        "ZombieCountdownFirstWaveSecs": 0.1
+      }
+    },
+    {
+        "aliases": [
+            "meteor_c"
+        ],
+        "objclass": "ProjectileType",
+        "objdata": {
+            "ProjectileBasedOn": "zomboss_missile_dark",
+            "Props": "RTID(meteor_p@CurrentLevel)"
+        }
+    },
+    {
+        "aliases": [
+            "meteor_p"
+        ],
+        "objclass": "ProjectileProperties",
+        "objdata": {
+            "IgnoredBy3SectionStaff": true,
+    "SupressArmorProtection": true,
+    "FlameDamage": 500,
+    "FlameDuration": 6,
+    "DragonImpType": "invis",
+    "SuppressArmorImpactSound": true,
+    "SuppressZombieImpactSound": true,
+    "CannotBeReversedByJester": true,
+    "WarmsOnImpact": true,
+    "Size": {
+      "w": 30,
+      "h": 30
+    }
+        }
+    },
+    {
+  "objclass": "ZombieType",
+  "aliases": [
+    "invis"
+  ],
+  "objdata": {
+    "Properties": "RTID(invis@.)",
+    "ZombieBasedOn": "dino"
+  }
+},
+{
+  "objclass": "ZombieProperties",
+  "aliases": [
+    "invis"
+  ],
+  "objdata": {
+    "WalkSPS": 0,
+    "Toughness": 1,
+    "EatDPS": 0,
+    "HitRect": "",
+    "AttackRect": "",
+    "SpawnedScale": 0.001
+  }
+},
+    {
+      "aliases": [
+          "LevelScheduler"
+      ],
+      "objclass": "LevelSchedulerProps",
+      "objdata": {
+          "TimeBeforeFirst": {
+              "Max": 3,
+              "Min": 3
+          },
+          "TimeBetween": {
+              "Max": 2,
+              "Min": 2
+          },
+          "Repeat": {
+              "Max": 9999,
+              "Min": 9999
+          },
+          "RewardWhenEnded": false,
+          "SuppressRewardState": false,
+          "Events": [
+              "RTID(MeteorEvent@CurrentLevel)"
+          ]
+      }
+    },
+    {
+      "aliases": [
+          "LevelSchedulerDanger"
+      ],
+      "objclass": "LevelSchedulerProps",
+      "objdata": {
+          "TimeBeforeFirst": {
+              "Max": 12,
+              "Min": 12
+          },
+          "TimeBetween": {
+              "Max": 21,
+              "Min": 18
+          },
+          "Repeat": {
+              "Max": 9999,
+              "Min": 9999
+          },
+          "RewardWhenEnded": false,
+          "SuppressRewardState": false,
+          "Events": [
+              "RTID(MeteorDangerEvent@CurrentLevel)"
+          ]
+      }
+    },
+    {
+      "aliases": [
+        "MeteorEvent"
+      ],
+      "objclass": "MissileLocateWaveActionProps",
+      "objdata": {
+        "MissileCount": 1,
+        "ColumnStart": 8,
+        "ColumnEnd": 8,
+        "MissileFallCountdown": 0.01,
+        "WaveStartMessage": "",
+        "ProjectileType": "meteor_c"
+      }
+    },
+    {
+      "aliases": [
+        "MeteorDangerEvent"
+      ],
+      "objclass": "MissileLocateWaveActionProps",
+      "objdata": {
+        "MissileCount": 1,
+        "ColumnStart": 0,
+        "ColumnEnd": 1,
+        "MissileFallCountdown": 6,
+        "WaveStartMessage": "",
+        "ProjectileType": "meteor_c"
+      }
+    },
+    {
+      "aliases": [
+        "InitialPlants"
+      ],
+      "objclass": "InitialPlantProperties",
+      "objdata": {
+        "InitialPlantPlacements": [
+          {
+            "TypeName": "primepeashooter",
+            "GridX": "1",
+            "GridY": "2"
+          },
+          {
+            "TypeName": "escaperoot",
+            "GridX": "1",
+            "GridY": "0"
+          },
+          {
+            "TypeName": "escaperoot",
+            "GridX": "1",
+            "GridY": "4"
+          },
+          {
+            "TypeName": "peashooter",
+            "GridX": "1",
+            "GridY": "1"
+          },
+          {
+            "TypeName": "peashooter",
+            "GridX": "1",
+            "GridY": "3"
+          },
+
+
+          {
+            "TypeName": "explodeonut",
+            "GridX": "0",
+            "GridY": "0"
+          },
+          {
+            "TypeName": "snowpea",
+            "GridX": "0",
+            "GridY": "1"
+          },
+          {
+            "TypeName": "chardguard",
+            "GridX": "0",
+            "GridY": "2"
+          },
+          {
+            "TypeName": "repeater",
+            "GridX": "0",
+            "GridY": "3"
+          },
+          {
+            "TypeName": "wallnut",
+            "GridX": "0",
+            "GridY": "4"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PlantsLost"
+      ],
+      "objclass": "StarChallengePlantsLostProps",
+      "objdata": {
+        "MaximumPlantsLost": "4"
+      }
+    },
+    {
+      "aliases": [
+        "Challenges"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(PlantsLost@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+  "objclass": "ZombieType",
+  "aliases": [
+    "dino_bully_tuff"
+  ],
+  "objdata": {
+    "Properties": "RTID(dino_bully_tuff@.)",
+    "ZombieBasedOn": "dino_bully"
+  }
+},
+{
+  "objclass": "ZombieProperties",
+  "aliases": [
+    "dino_bully_tuff"
+  ],
+  "objdata": {
+    "WalkSPS": 0.1,
+    "EatDPS": 100,
+    "Toughness": 3000,
+    "CannotBeKnockedBackByProjectiles": true,
+    "SmashDamage": 0,
+    "CraterLifetime": 0,
+    "WavePointCost": 450,
+    "Weight": 4500,
+    "SpawnedScale": 1.3,
+    "HitRect": "RTID(BullyHitRect@RectangleProps)",
+    "AttackRect": "RTID(BullyAttackRect@RectangleProps)"
+  }
+},
+{
+      "objclass": "DinoWaveActionProps",
+      "aliases": [
+        "TRex1"
+      ],
+      "objdata": {
+        "DinoRow": 0,
+        "DinoType": "tyranno"
+      }
+    },
+    {
+      "objclass": "DinoWaveActionProps",
+      "aliases": [
+        "TRex3"
+      ],
+      "objdata": {
+        "DinoRow": 2,
+        "DinoType": "tyranno"
+      }
+    },
+    {
+      "objclass": "DinoWaveActionProps",
+      "aliases": [
+        "TRex5"
+      ],
+      "objdata": {
+        "DinoRow": 4,
+        "DinoType": "tyranno"
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "MustKillAllToNextWave": true,
+        "Zombies": [
+          {
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 3,
+            "Column": 6
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "MustKillAllToNextWave": true,
+        "Zombies": [
+          {
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 1,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 5,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(dino_armor1@ZombieTypes)",
+            "Row": 2,
+            "Column": 8
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "MustKillAllToNextWave": true,
+        "Zombies": [
+          {
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 5,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(dino_armor3@ZombieTypes)",
+            "Row": 5,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(dino_armor2@ZombieTypes)",
+            "Row": 5,
+            "Column": 6
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "MustKillAllToNextWave": true,
+        "Zombies": [
+          {
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 1,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 2,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 3,
+            "Column": 8
+          }
+          ,{
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 4,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 5,
+            "Column": 8
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "MustKillAllToNextWave": true,
+        "Zombies": [
+          {
+            "Type": "RTID(dino_bully@ZombieTypes)",
+            "Row": 1,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 3,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 4,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 3,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 3,
+            "Column": 6
+          },
+          {
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 4,
+            "Column": 6
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "MustKillAllToNextWave": true,
+        "Zombies": [
+          {
+            "Type": "RTID(dino_armor3@ZombieTypes)",
+            "Row": 1,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(dino_armor3@ZombieTypes)",
+            "Row": 3,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(dino_armor3@ZombieTypes)",
+            "Row": 5,
+            "Column": 7
+          },
+
+
+          {
+            "Type": "RTID(dino_armor3@ZombieTypes)",
+            "Row": 1,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(dino_armor3@ZombieTypes)",
+            "Row": 3,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(dino_armor3@ZombieTypes)",
+            "Row": 5,
+            "Column": 8
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 1,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(dino_bully_tuff@CurrentLevel)",
+            "Row": 2,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 3,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(dino_bully_tuff@CurrentLevel)",
+            "Row": 4,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 5,
+            "Column": 8
+          },
+
+
+
+          {
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 1,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 3,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(dino_armor4@ZombieTypes)",
+            "Row": 5,
+            "Column": 7
+          }
+        ]
+      }
+    }
+  ]
+}

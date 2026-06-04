@@ -1,0 +1,575 @@
+{
+  "#Ride Or Tide - Day 1 by ScatterPattern": "NLM v 0.9.9",
+  "Information": {
+    "Author": "ScatterPattern",
+    "Introduction": "<PLAYERNAME>'s Tidal Wave",
+    "Version": 1,
+    "CreatedAt": "10/05/2026"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Name": "Ride Or Tide - Day 1",
+        "Description": "<PLAYERNAME>'s Tidal Wave",
+        "StageModule": "RTID(SkyStage@LevelModules)",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(Tide@.)"
+        ],
+        "StartingSun": 50,
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "FirstIntroNarrative": "INTRO",
+        "WritenBy": "ScatterPattern"
+      }
+    },
+    {
+    "aliases": [
+        "INTRO"
+    ],
+    "objclass": "NarrativeProperties",
+    "objdata": {
+        "Flow": [
+        {
+                "Character": "winnie",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "winnie",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "WARNING: Tsunami detected, chase imminent.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "crazydave",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "crazydave",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "The water is here again!? B...But it left!",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "TIRED",
+                "Lines": {
+                    "en": "Zombies came with it. Here we go again...",
+                    "zh": "???"
+                }
+            }
+        ]
+    }
+},
+    {
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 0,
+            "StartingPoints": 0,
+            "StartingWave": 0,
+            "ZombiePool": [
+            ]
+          },
+          {
+            "PointIncrementPerWave": 150,
+            "StartingPoints": 0,
+            "StartingWave": 0,
+            "ZombiePool": [
+              "RTID(sky@ZombieTypes)",
+              "RTID(sky_armor1@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 150,
+            "StartingPoints": 200,
+            "StartingWave": 0,
+            "ZombiePool": [
+              "RTID(sky_armor1@ZombieTypes)",
+              "RTID(sky_armor2@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 250,
+            "StartingPoints": 400,
+            "StartingWave": 0,
+            "ZombiePool": [
+              "RTID(sky_armor1@ZombieTypes)",
+              "RTID(sky_armor2@ZombieTypes)",
+              "RTID(sky_twin_lower@ZombieTypes)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      },
+      "aliases": [
+        "NewWaves"
+      ]
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 7,
+        "WaveCount": 7,
+        "Waves": [
+          [
+            "RTID(Wave1@.)"
+          ],
+          [
+            "RTID(Wave2@.)"
+          ],
+          [
+            "RTID(Wave3@.)"
+          ],
+          [
+            "RTID(Wave4@.)"
+          ],
+          [
+            "RTID(Wave5@.)",
+            "RTID(Ambush1-Dropship@.)"
+          ],
+          [
+            "RTID(Wave6@.)"
+          ],
+          [
+            "RTID(Wave7@.)",
+            "RTID(Ambush2-Dropship@.)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Tide"
+      ],
+      "objclass": "TideProperties",
+      "objdata": {
+        "StartingWaveLocation": "3"
+      }
+    },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "UnlockAll": false,
+        "SelectionMethod": "chooser",
+        "PresetPlantList": [],
+        "PlantExcludeList": [
+          "blover",
+          "hurrikale",
+          "draftodil",
+          "umbrellaleaf"
+        ],
+        "CardDecks": {
+          "Challenging": [
+            {"Credits": ["Decks marked with (S) were made by Scatter,",
+                         "decks marked with (H) were made by Hikari",
+                         "all decks have been tested by Hikari!"]},
+            {
+              "Name": {
+                "en": "Banana Split (S)",
+                "zh": "???"
+              },
+              "HugeWaveGem": 2,
+              "Leader": 1,
+              "Plants": [
+                "primalsunflower",
+                "banana",
+                "moonbean"
+              ]
+            },
+            {
+              "Name": {
+                "en": "Bean Bag (H)",
+                "zh": "???"
+              },
+              "HugeWaveGem": 1,
+              "Leader": 0,
+              "Plants": [
+                "moonbean",
+                "imitater",
+                "celerystalker"
+              ]
+            },
+            {
+              "Name": {
+                "en": "Too Sour? (H)",
+                "zh": "???"
+              },
+              "HugeWaveGem": 1,
+              "Leader": 2,
+              "Plants": [
+                "primalsunflower",
+                "shinevine",
+                "citron"
+              ]
+            },
+            {
+              "Name": {
+                "en": "Over Here! (S)",
+                "zh": "???"
+              },
+              "HugeWaveGem": 1,
+              "Leader": 2,
+              "Plants": [
+                "plantern",
+                "shinevine",
+                "hotdate",
+                "imitater",
+                "garlic",
+                "atombomb_seedling"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "aliases": [
+        "Ambush1-Dropship"
+      ],
+      "objclass": "DropShipZombieSpawnerProps",
+      "objdata": {
+        "DropShipType": "sky_dropship",
+        "DropShipPosition": {
+          "mX": 6,
+          "mY": 0
+        },
+        "DropShipShiftedProperties": {
+          "ImpType": "sky_imp",
+          "ImpCount": {
+            "Min": 2,
+            "Max": 3
+          },
+          "TimeBeforeFirst": {
+            "Min": 2,
+            "Max": 2
+          },
+          "TimeBetween": {
+            "Min": 4,
+            "Max": 4
+          },
+          "ImpLandingColumns": [
+            0,
+            1
+          ],
+          "ImpLandingRows": [],
+          "ImpFlyingDuration": {
+            "Min": 3,
+            "Max": 3.5
+          }
+        }
+      }
+    },
+    {
+      "aliases": [
+        "Ambush2-Dropship"
+      ],
+      "objclass": "DropShipZombieSpawnerProps",
+      "objdata": {
+        "DropShipType": "sky_dropship",
+        "DropShipPosition": {
+          "mX": 4,
+          "mY": 0
+        },
+        "DropShipShiftedProperties": {
+          "ImpType": "sky_imp",
+          "ImpCount": {
+            "Min": 4,
+            "Max": 6
+          },
+          "TimeBeforeFirst": {
+            "Min": 2,
+            "Max": 2
+          },
+          "TimeBetween": {
+            "Min": 3,
+            "Max": 3
+          },
+          "ImpLandingColumns": [
+            0,
+            1
+          ],
+          "ImpLandingRows": [],
+          "ImpFlyingDuration": {
+            "Min": 3,
+            "Max": 3.5
+          }
+        }
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(sky_armor2@ZombieTypes)",
+            "Row": 2
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(sky_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky@ZombieTypes)",
+            "Row": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(sky_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(sky@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(sky@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "MustKillAllToNextWave": true,
+        "Zombies": [
+          {
+            "Type": "RTID(sky_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky_armor2@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(sky_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(sky_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(sky@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(sky@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -76,19 +76,19 @@
             "objdata": {
                 "DropDelayConditions": [
                     {
-                        "Delay": 4,
+                        "Delay": 5,
                         "MaxPackets": 0
                     },
                     {
-                        "Delay": 6,
+                        "Delay": 7,
                         "MaxPackets": 3
                     },
                     {
-                        "Delay": 8,
+                        "Delay": 9,
                         "MaxPackets": 6
                     },
                     {
-                        "Delay": 10,
+                        "Delay": 11,
                         "MaxPackets": 10
                     }
                 ],
@@ -197,22 +197,22 @@
                       "RTID(Wave2@CurrentLevel)", 
                     ],
                     [
-                      "RTID(ImpCannon@CurrentLevel)"
+                      "RTID(ImpCannonZom@CurrentLevel)"
                     ],
                     [
-                      "RTID(ImpPorter@CurrentLevel)", "RTID(ParachuteRainEventSmall@CurrentLevel)"
+                      "RTID(ImpPorterZom@CurrentLevel)", "RTID(ParachuteRainEventSmall@CurrentLevel)"
                     ],
                     [
-                      "RTID(Additional1@CurrentLevel)", "RTID(Barrel1@CurrentLevel)"
+                      "RTID(Additional1@CurrentLevel)", "RTID(Barrel1Zom@CurrentLevel)"
                     ],
                     [
-                      "RTID(PlantFoodSpawner0@CurrentLevel)", "RTID(RelicHunter@CurrentLevel)"
+                      "RTID(PlantFoodSpawner0@CurrentLevel)", "RTID(RelicHunterZom@CurrentLevel)"
                     ],
                     [
                       "RTID(ParachuteRainEventSmall@CurrentLevel)", "RTID(Barrel1@CurrentLevel)"
                     ],
                     [
-                      "RTID(AbbotFan@CurrentLevel)", "RTID(ImpCannon@CurrentLevel)"
+                      "RTID(AbbotFanZom@CurrentLevel)", "RTID(ImpCannon@CurrentLevel)"
                     ],
                     [
                       "RTID(PlantFoodSpawner1@CurrentLevel)", "RTID(RelicHunter@CurrentLevel)", "RTID(Barrel2@CurrentLevel)"
@@ -287,7 +287,7 @@
     },
     {
       "aliases": [
-        "ImpPorter"
+        "ImpPorterZom"
       ],
       "objclass": "SpawnZombiesJitteredWaveActionProps",
       "objdata": {
@@ -302,7 +302,30 @@
     },
     {
       "aliases": [
-        "AbbotFan"
+        "ImpPorter"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.1,
+          "Min": 0.1
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": ["RTID(ImpPorterZom@CurrentLevel)"]
+      }
+    },
+    {
+      "aliases": [
+        "AbbotFanZom"
       ],
       "objclass": "SpawnZombiesJitteredWaveActionProps",
       "objdata": {
@@ -317,7 +340,30 @@
     },
     {
       "aliases": [
-        "ImpCannon"
+        "AbbotFan"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.1,
+          "Min": 0.1
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": ["RTID(AbbotFanZom@CurrentLevel)"]
+      }
+    },
+    {
+      "aliases": [
+        "ImpCannonZom"
       ],
       "objclass": "SpawnZombiesJitteredWaveActionProps",
       "objdata": {
@@ -332,7 +378,30 @@
     },
     {
       "aliases": [
-        "RelicHunter"
+        "ImpCannon"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.1,
+          "Min": 0.1
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": ["RTID(ImpCannonZom@CurrentLevel)"]
+      }
+    },
+    {
+      "aliases": [
+        "RelicHunterZom"
       ],
       "objclass": "SpawnZombiesJitteredWaveActionProps",
       "objdata": {
@@ -346,14 +415,82 @@
       }
     },
     {
+      "aliases": [
+        "RelicHunter"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.1,
+          "Min": 0.1
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": ["RTID(RelicHunterZom@CurrentLevel)"]
+      }
+    },
+    {
         "aliases": [
-            "Barrel1"
+            "Barrel1Zom"
         ],
         "objclass": "SpawnZombiesJitteredWaveActionProps",
         "objdata": {
             "Zombies": [
                 {
                     "Type": "RTID(barrelroller@ZombieTypes)", "Row": 1
+                },
+                {
+                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 5
+                }
+            ]
+        }
+    },
+    {
+        "aliases": [
+            "Barrel1"
+        ],
+        "objclass": "WaveSchedulerProps",
+        "objdata": {
+            "TimeBeforeFirst": {
+                "Max": 0.1,
+                "Min": 0.1
+            },
+            "TimeBetween": {
+                "Max": 1,
+                "Min": 1
+            },
+            "Repeat": {
+                "Max": 1,
+                "Min": 1
+            },
+            "RewardWhenEnded": false,
+            "SuppressRewardState": false,
+            "Events": ["RTID(Barrel1Zom@CurrentLevel)"]
+        }
+    },
+    {
+        "aliases": [
+            "Barrel2Zom"
+        ],
+        "objclass": "SpawnZombiesJitteredWaveActionProps",
+        "objdata": {
+            "Zombies": [
+                {
+                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 4
+                },
+                {
+                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 2
+                },
+                {
+                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 3
                 },
                 {
                     "Type": "RTID(barrelroller@ZombieTypes)", "Row": 5
@@ -365,11 +502,34 @@
         "aliases": [
             "Barrel2"
         ],
+        "objclass": "WaveSchedulerProps",
+        "objdata": {
+            "TimeBeforeFirst": {
+                "Max": 0.1,
+                "Min": 0.1
+            },
+            "TimeBetween": {
+                "Max": 1,
+                "Min": 1
+            },
+            "Repeat": {
+                "Max": 1,
+                "Min": 1
+            },
+            "RewardWhenEnded": false,
+            "SuppressRewardState": false,
+            "Events": ["RTID(Barrel2Zom@CurrentLevel)"]
+        }
+    },
+    {
+        "aliases": [
+            "Barrel3Zom"
+        ],
         "objclass": "SpawnZombiesJitteredWaveActionProps",
         "objdata": {
             "Zombies": [
                 {
-                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 4
+                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 1
                 },
                 {
                     "Type": "RTID(barrelroller@ZombieTypes)", "Row": 2
@@ -378,7 +538,13 @@
                     "Type": "RTID(barrelroller@ZombieTypes)", "Row": 3
                 },
                 {
+                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 4
+                },
+                {
                     "Type": "RTID(barrelroller@ZombieTypes)", "Row": 5
+                },
+                {
+                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 1
                 }
             ]
         }
@@ -387,6 +553,29 @@
         "aliases": [
             "Barrel3"
         ],
+        "objclass": "WaveSchedulerProps",
+        "objdata": {
+            "TimeBeforeFirst": {
+                "Max": 0.1,
+                "Min": 0.1
+            },
+            "TimeBetween": {
+                "Max": 1,
+                "Min": 1
+            },
+            "Repeat": {
+                "Max": 1,
+                "Min": 1
+            },
+            "RewardWhenEnded": false,
+            "SuppressRewardState": false,
+            "Events": ["RTID(Barrel3Zom@CurrentLevel)"]
+        }
+    },
+    {
+        "aliases": [
+            "Barrel4Zom"
+        ],
         "objclass": "SpawnZombiesJitteredWaveActionProps",
         "objdata": {
             "Zombies": [
@@ -406,7 +595,13 @@
                     "Type": "RTID(barrelroller@ZombieTypes)", "Row": 5
                 },
                 {
-                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 1
+                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 2
+                },
+                {
+                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 4
+                },
+                {
+                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 3
                 }
             ]
         }
@@ -415,39 +610,28 @@
         "aliases": [
             "Barrel4"
         ],
-        "objclass": "SpawnZombiesJitteredWaveActionProps",
+        "objclass": "WaveSchedulerProps",
         "objdata": {
-            "Zombies": [
-                {
-                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 1
-                },
-                {
-                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 2
-                },
-                {
-                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 3
-                },
-                {
-                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 4
-                },
-                {
-                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 5
-                },
-                {
-                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 2
-                },
-                {
-                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 4
-                },
-                {
-                    "Type": "RTID(barrelroller@ZombieTypes)", "Row": 3
-                }
-            ]
+            "TimeBeforeFirst": {
+                "Max": 0.1,
+                "Min": 0.1
+            },
+            "TimeBetween": {
+                "Max": 1,
+                "Min": 1
+            },
+            "Repeat": {
+                "Max": 1,
+                "Min": 1
+            },
+            "RewardWhenEnded": false,
+            "SuppressRewardState": false,
+            "Events": ["RTID(Barrel4Zom@CurrentLevel)"]
         }
     },
     {
         "aliases": [
-            "Barrel5"
+            "Barrel5Zom"
         ],
         "objclass": "SpawnZombiesJitteredWaveActionProps",
         "objdata": {
@@ -483,6 +667,29 @@
                     "Type": "RTID(barrelroller@ZombieTypes)", "Row": 5
                 }
             ]
+        }
+    },
+    {
+        "aliases": [
+            "Barrel5"
+        ],
+        "objclass": "WaveSchedulerProps",
+        "objdata": {
+            "TimeBeforeFirst": {
+                "Max": 0.1,
+                "Min": 0.1
+            },
+            "TimeBetween": {
+                "Max": 1,
+                "Min": 1
+            },
+            "Repeat": {
+                "Max": 1,
+                "Min": 1
+            },
+            "RewardWhenEnded": false,
+            "SuppressRewardState": false,
+            "Events": ["RTID(Barrel5Zom@CurrentLevel)"]
         }
     },
     {

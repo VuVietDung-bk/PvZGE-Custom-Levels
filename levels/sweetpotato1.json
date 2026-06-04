@@ -1,0 +1,1644 @@
+{
+    "objects": [
+        {
+            "objclass": "LevelDefinition",
+            "objdata": {
+                "Description": "[PLAYERS_ATTEMPT_TO_GET_PLANT]",
+                "LevelNumber": 1,
+                "FirstIntroNarrative": "SWEETPOTATO_A_INTRO",
+                "Loot": "RTID(DefaultLoot@LevelModules)",
+                "Modules": [
+                    "RTID(ZombiesDeadWinCon@LevelModules)",
+                    "RTID(DefaultZombieWinCondition@LevelModules)",
+                    "RTID(NewWaves@CurrentLevel)",
+                    "RTID(EightiesMowers@LevelModules)",
+                    "RTID(GridItemPlacement@CurrentLevel)",
+                    "RTID(LevelScheduler@CurrentLevel)",
+                    "RTID(Rails@CurrentLevel)",
+                    "RTID(ModPlants@CurrentLevel)",
+                    "RTID(FrozenPlantPlacement@CurrentLevel)"
+                ],
+                "PlantToIntroduce": "sweetpotato",
+                "Name": "[EPIC_PLANT_LEVEL_NAME]",
+                "WritenBy": "莱池_余垛",
+                "NormalPresentTable": "egypt_normal_01",
+                "ShinyPresentTable": "egypt_shiny_01",
+                "StageModule": "RTID(EightiesStage@LevelModules)"
+            }
+        },
+        {
+            "aliases": [
+                "ModPlants"
+            ],
+            "objclass": "PlantModifierProperties",
+            "objdata": {
+                "List": [
+                    {
+                        "Type": "sweetpotato",
+                        "NewObjdata": {
+                            "Toughness": 4000000,
+                            "AttractsEveryFrame": true,
+                            "LaneChangeTime": 0.2,
+                            "TimeBetweenLaneChanges": 0
+                        }
+                    },
+                    {
+                        "Type": "lilypad",
+                        "NewObjdata": {
+                            "Toughness": 4000000
+                        }
+                    },
+                    {
+                        "Type": "spikeweed",
+                        "NewObjdata": {
+                            "AttackInterval": 0.1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "FrozenPlantPlacement"
+            ],
+            "objclass": "InitialPlantProperties",
+            "objdata": {
+                "InitialPlantPlacements": [
+                    {
+                        "GridX": 2,
+                        "GridY": 1,
+                        "TypeName": "sweetpotato"
+                    },
+                    {
+                        "GridX": 3,
+                        "GridY": 1,
+                        "TypeName": "spikeweed"
+                    },
+                    {
+                        "GridX": 3,
+                        "GridY": 3,
+                        "TypeName": "spikeweed"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "GridItemPlacement"
+            ],
+            "objclass": "InitialGridItemProperties",
+            "objdata": {
+                "InitialGridItemMatrixes": [],
+                "InitialGridItemPlacements": [
+                    {
+                        "GridX": 6,
+                        "GridY": 1,
+                        "TypeName": "slider_up"
+                    },
+                    {
+                        "GridX": 6,
+                        "GridY": 3,
+                        "TypeName": "slider_down"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Rails"
+            ],
+            "objclass": "RailcartProperties",
+            "objdata": {
+                "DynamicRailCarts": [
+                    {},
+                    {},
+                    {},
+                    {
+                        "RailcartType": "railcart_dark",
+                        "Railcarts": [
+                            {
+                                "Column": 2,
+                                "Row": 1
+                            }
+                        ],
+                        "Rails": [
+                            {
+                                "Column": 2,
+                                "RowEnd": 3,
+                                "RowStart": 1
+                            }
+                        ]
+                    },
+                    {
+                        "RailcartType": "railcart_dark",
+                        "Railcarts": [
+                            {
+                                "Column": 2,
+                                "Row": 1
+                            }
+                        ],
+                        "Rails": [
+                            {
+                                "Column": 2,
+                                "RowEnd": 3,
+                                "RowStart": 1
+                            }
+                        ]
+                    },
+                    {
+                        "RailcartType": "railcart_dark",
+                        "Railcarts": [
+                            {
+                                "Column": 2,
+                                "Row": 1
+                            }
+                        ],
+                        "Rails": [
+                            {
+                                "Column": 2,
+                                "RowEnd": 4,
+                                "RowStart": 0
+                            }
+                        ]
+                    },
+                    {
+                        "RailcartType": "railcart_dark",
+                        "Railcarts": [
+                            {
+                                "Column": 2,
+                                "Row": 1
+                            }
+                        ],
+                        "Rails": [
+                            {
+                                "Column": 2,
+                                "RowEnd": 4,
+                                "RowStart": 0
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "NewWaves"
+            ],
+            "objclass": "WaveManagerModuleProperties",
+            "objdata": {
+                "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "SuppressFlagZombie": true,
+                "Waves": [],
+                "ZombieCountdownFirstWaveSecs": 290
+            }
+        },
+        {
+            "aliases": [
+                "LevelScheduler"
+            ],
+            "objclass": "LevelSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 2,
+                    "Min": 2
+                },
+                "TimeBetween": {
+                    "Max": 30,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(2@CurrentLevel)",
+                    "RTID(rap@CurrentLevel)",
+                    "RTID(GravestoneEvent0@CurrentLevel)",
+                    "RTID(Scheduler0@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler0"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 2,
+                    "Min": 2
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(1@CurrentLevel)",
+                    "RTID(Scheduler1@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler1"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 2,
+                    "Min": 2
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(4@CurrentLevel)",
+                    "RTID(Scheduler2@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler2"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 2,
+                    "Min": 2
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(35@CurrentLevel)",
+                    "RTID(Scheduler3@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler3"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 2,
+                    "Min": 2
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(12@CurrentLevel)",
+                    "RTID(Scheduler4@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler4"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(123@CurrentLevel)",
+                    "RTID(Scheduler5@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler5"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(35@CurrentLevel)",
+                    "RTID(Scheduler6@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler6"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 2,
+                    "Min": 2
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(45@CurrentLevel)",
+                    "RTID(Scheduler7@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler7"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(35@CurrentLevel)",
+                    "RTID(pop@CurrentLevel)",
+                    "RTID(Scheduler8@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler8"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(1@CurrentLevel)",
+                    "RTID(Scheduler9@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler9"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(2@CurrentLevel)",
+                    "RTID(Scheduler10@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler10"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(3@CurrentLevel)",
+                    "RTID(Scheduler11@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler11"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(4@CurrentLevel)",
+                    "RTID(Scheduler12@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler12"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(5@CurrentLevel)",
+                    "RTID(Scheduler13@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler13"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(4@CurrentLevel)",
+                    "RTID(Scheduler14@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler14"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(3@CurrentLevel)",
+                    "RTID(Scheduler15@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler15"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(2@CurrentLevel)",
+                    "RTID(Scheduler16@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler16"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(1@CurrentLevel)",
+                    "RTID(Scheduler17@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler17"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 3,
+                    "Min": 3
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(345@CurrentLevel)",
+                    "RTID(metal@CurrentLevel)",
+                    "RTID(Scheduler18@CurrentLevel)",
+                    "RTID(Scheduler20@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler18"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "TimeBetween": {
+                    "Max": 2,
+                    "Min": 2
+                },
+                "Repeat": {
+                    "Max": 11,
+                    "Min": 11
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(123@CurrentLevel)",
+                    "RTID(Scheduler19@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler19"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(345@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler20"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 21,
+                    "Min": 21
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(Scheduler21@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler21"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 2,
+                    "Min": 2
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(23@CurrentLevel)",
+                    "RTID(rap@CurrentLevel)",
+                    "RTID(Scheduler22@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler22"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 2,
+                    "Min": 2
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(45@CurrentLevel)",
+                    "RTID(Scheduler23@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler23"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 2,
+                    "Min": 2
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(12@CurrentLevel)",
+                    "RTID(Scheduler24@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler24"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 2,
+                    "Min": 2
+                },
+                "TimeBetween": {
+                    "Max": 60,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(23@CurrentLevel)",
+                    "RTID(Scheduler25@CurrentLevel)",
+                    "RTID(Scheduler27@CurrentLevel)",
+                    "RTID(Scheduler29@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler25"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 2,
+                    "Min": 2
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 3,
+                    "Min": 3
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(23@CurrentLevel)",
+                    "RTID(Scheduler26@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler26"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 0.5,
+                    "Min": 0.5
+                },
+                "TimeBetween": {
+                    "Max": 0.5,
+                    "Min": 0.5
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(12@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler27"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 6,
+                    "Min": 6
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 3,
+                    "Min": 3
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(45@CurrentLevel)",
+                    "RTID(Scheduler28@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler28"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 0.5,
+                    "Min": 0.5
+                },
+                "TimeBetween": {
+                    "Max": 0.5,
+                    "Min": 0.5
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(34@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler29"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 10,
+                    "Min": 10
+                },
+                "TimeBetween": {
+                    "Max": 0.5,
+                    "Min": 0.5
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(123@CurrentLevel)",
+                    "RTID(8bit@CurrentLevel)",
+                    "RTID(Scheduler31@CurrentLevel)",
+                    "RTID(Scheduler30@CurrentLevel)",
+                    "RTID(Scheduler32@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler30"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 0.5,
+                    "Min": 0.5
+                },
+                "TimeBetween": {
+                    "Max": 0.5,
+                    "Min": 0.5
+                },
+                "Repeat": {
+                    "Max": 8,
+                    "Min": 8
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(123@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler31"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 4.7,
+                    "Min": 4.7
+                },
+                "TimeBetween": {
+                    "Max": 4.7,
+                    "Min": 4.7
+                },
+                "Repeat": {
+                    "Max": 3,
+                    "Min": 3
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(345@CurrentLevel)",
+                    "RTID(Scheduler30@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler32"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 21,
+                    "Min": 21
+                },
+                "TimeBetween": {
+                    "Max": 5,
+                    "Min": 5
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(45@CurrentLevel)",
+                    "RTID(metal@CurrentLevel)",
+                    "RTID(Scheduler33@CurrentLevel)",
+                    "RTID(Scheduler35@CurrentLevel)",
+                    "RTID(Scheduler37@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler33"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 0.5,
+                    "Min": 0.5
+                },
+                "TimeBetween": {
+                    "Max": 1.7,
+                    "Min": 1.7
+                },
+                "Repeat": {
+                    "Max": 3,
+                    "Min": 3
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(13@CurrentLevel)",
+                    "RTID(Scheduler34@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler34"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 0.5,
+                    "Min": 0.5
+                },
+                "TimeBetween": {
+                    "Max": 0.5,
+                    "Min": 0.5
+                },
+                "Repeat": {
+                    "Max": 2,
+                    "Min": 2
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(35@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler35"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 6,
+                    "Min": 6
+                },
+                "TimeBetween": {
+                    "Max": 2.7,
+                    "Min": 2.7
+                },
+                "Repeat": {
+                    "Max": 4,
+                    "Min": 4
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(35@CurrentLevel)",
+                    "RTID(Scheduler36@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler36"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 0.5,
+                    "Min": 0.5
+                },
+                "TimeBetween": {
+                    "Max": 0.5,
+                    "Min": 0.5
+                },
+                "Repeat": {
+                    "Max": 4,
+                    "Min": 4
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(13@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler37"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 17,
+                    "Min": 17
+                },
+                "TimeBetween": {
+                    "Max": 1.4,
+                    "Min": 1.4
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(123@CurrentLevel)",
+                    "RTID(Scheduler38@CurrentLevel)",
+                    "RTID(Scheduler40@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler38"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 0.6,
+                    "Min": 0.6
+                },
+                "TimeBetween": {
+                    "Max": 1.2,
+                    "Min": 1.2
+                },
+                "Repeat": {
+                    "Max": 20,
+                    "Min": 20
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(123@CurrentLevel)",
+                    "RTID(Scheduler39@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler39"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 0.6,
+                    "Min": 0.6
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(345@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler40"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 28,
+                    "Min": 28
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": true,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(clear@CurrentLevel)",
+                    "RTID(Scheduler41@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(chicken@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "4"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "4",
+                        "Type": "RTID(chicken@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(chicken@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "3",
+                        "Type": "RTID(chicken@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "5"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 0,
+                "Zombies": [
+                    {
+                        "Row": "5",
+                        "Type": "RTID(chicken@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "13"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(chicken@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(chicken_pumpkin@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "45"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "4",
+                        "Type": "RTID(chicken_pumpkin@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(chicken_pumpkin@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "12"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(chicken_pumpkin@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(chicken@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "35"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "5",
+                        "Type": "RTID(chicken@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(chicken_pumpkin@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "34"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "4",
+                        "Type": "RTID(chicken@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(chicken_pumpkin@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "23"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "3",
+                        "Type": "RTID(chicken@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(chicken_pumpkin@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "123"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(chicken@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(chicken_pumpkin@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(chicken@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "345"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "4",
+                        "Type": "RTID(chicken@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(chicken_pumpkin@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(chicken_pumpkin@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "punk"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "NotificationEvents": [
+                    "jam_punk"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "pop"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "NotificationEvents": [
+                    "jam_pop"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "rap"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "NotificationEvents": [
+                    "jam_rap"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "8bit"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "NotificationEvents": [
+                    "jam_8bit"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "metal"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "NotificationEvents": [
+                    "jam_metal"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "clear"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "NotificationEvents": [
+                    "jam_clear"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "GravestoneEvent0"
+            ],
+            "objclass": "SpawnGravestonesWaveActionProps",
+            "objdata": {
+                "GravestonePool": [
+                    {
+                        "Count": 1,
+                        "Type": "RTID(gravestone_future@GridItemTypes)"
+                    },
+                    {
+                        "Count": 1,
+                        "Type": "RTID(gravestone_cowboy@GridItemTypes)"
+                    },
+                    {
+                        "Count": 1,
+                        "Type": "RTID(gravestone_pirate@GridItemTypes)"
+                    },
+                    {
+                        "Count": 1,
+                        "Type": "RTID(gravestone_iceage@GridItemTypes)"
+                    }
+                ],
+                "SpawnEffectAnimID": "POPANIM_EFFECTS_DIRT_SPAWN_DIRT",
+                "SpawnEffectAnimPlay": "tomb_dirt_anim",
+                "SpawnPositionsPool": [
+                    {
+                        "mX": 4,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 1
+                    },
+                    {
+                        "mX": 4,
+                        "mY": 3
+                    },
+                    {
+                        "mX": 5,
+                        "mY": 3
+                    }
+                ],
+                "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+            }
+        }
+    ],
+    "version": 1
+}

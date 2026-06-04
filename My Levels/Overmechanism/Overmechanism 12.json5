@@ -1,811 +1,943 @@
 {
-  "#comment": "Sample Level",
-  "Information": {
-    "Author": "hinanarukami",
-    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
-    "Version": "1.0",
-    "CreatedAt": "2025-07-19",
-    "UpdatedAt": "2025-07-19",
-    "Difficulty": "Normal",
-    "Category": "Survival"
-  },
-  "objects": [
-    {
-      "objclass": "LevelDefinition",
-      "objdata": {
-        "Description": "Something is wrong...",
-        "LevelNumber": 1,
-        "Loot": "RTID(DefaultLoot@LevelModules)",
-        "Modules": [
-          "RTID(ZombiesDeadWinCon@LevelModules)",
-          "RTID(DefaultZombieWinCondition@LevelModules)",
-          "RTID(NewWaves@CurrentLevel)",
-		  "RTID(StandardIntro@LevelModules)",
-          "RTID(ChallengeModule@CurrentLevel)",
-          "RTID(SeedBank@CurrentLevel)",
-          "RTID(SlowSunDropper@LevelModules)",
-          "RTID(EightiesMowers@LevelModules)"
-        ],
-        "Name": "Overmechanism - Level 12",
-        "WritenBy": "hinanarukami",
-        "NormalPresentTable": "egypt_normal_01",
-        "ShinyPresentTable": "egypt_shiny_01",
-        "StageModule": "RTID(EightiesStage@LevelModules)"
-      }
-    },   
-    {
-      "aliases": [
-        "SeedBank"
-      ],
-      "objclass": "SeedBankProperties",
-      "objdata": {
-        "PlantExcludeList": [
-          "blover", "glaciershroom", "icebloom", "wintermelon", "coldsnapdragon", "atombomb_seedling", "filamint", "reinforcemint", 
-          "bombardmint", "armamint", "containmint", "enchantmint", "spearmint", "peppermint", "wintermint", "concealmint", 
-          "enforcemint", "enlightenmint", "ailmint", "appeasemint", "snowdrop"
-        ],
-        "SelectionMethod": "chooser"
-      }
+    "#comment": "Sample Level",
+    "Information": {
+        "Author": "hinanarukami",
+        "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+        "Version": "1.0",
+        "CreatedAt": "2025-07-19",
+        "UpdatedAt": "2025-07-19",
+        "Difficulty": "Normal",
+        "Category": "Survival"
     },
-    {
-			"aliases": [
-			"ChallengeModule"
-		],
-			"objclass": "StarChallengeModuleProperties",
-			"objdata": {
-				"Challenges": [
-					[
-						"RTID(BeatTheLevel@CurrentLevel)"
-					]
-				],
-				"ChallengeAlwaysAvailable": true
-			}
-		},
-		{
-			"aliases": [
-			"BeatTheLevel"
-		],
-			"objclass": "StarChallengeBeatTheLevelProps",
-			"objdata": {
-				"Descriptions": [
-				"Survive the overmechanism!",
-				],
-				"DescriptionsMultiLanguage": [
-					{
-					"en": "123",
-					"zh": "112233"
-					}
-				]
-			}
-		},
-    {
-      "aliases": [
-        "NewWaves"
-      ],
-      "objclass": "WaveManagerModuleProperties",
-      "objdata": {
-        "DynamicZombies": [
-          {},
-          {},
-          {},
-          {
-            "PointIncrementPerWave": 100, // Difficulty D, easiest
-            "StartingPoints": 150,
-            "StartingWave": 1,
-            "ZombiePool": [
-                "RTID(eighties@ZombieTypes)",
-                "RTID(eighties_armor1@ZombieTypes)",
-                "RTID(eighties_armor2@ZombieTypes)",
-                "RTID(eighties_imp@ZombieTypes)",
-                "RTID(eighties_gargantuar@ZombieTypes)",
-                "RTID(eighties_punk@ZombieTypes)"
-            ]
-          },
-          {
-            "PointIncrementPerWave": 150, // Difficulty C, normal
-            "StartingPoints": 150,
-            "StartingWave": 1,
-            "ZombiePool": [
-                "RTID(eighties@ZombieTypes)",
-                "RTID(eighties_armor1@ZombieTypes)",
-                "RTID(eighties_armor2@ZombieTypes)",
-                "RTID(eighties_imp@ZombieTypes)",
-                "RTID(eighties_gargantuar@ZombieTypes)",
-                "RTID(eighties_punk@ZombieTypes)",
-                "RTID(lostcity_excavator@ZombieTypes)"
-            ]
-          },
-          {
-            "PointIncrementPerWave": 200, // Difficulty B, advanced
-            "StartingPoints": 150,
-            "StartingWave": 1,
-            "ZombiePool": [
-                "RTID(eighties@ZombieTypes)",
-                "RTID(eighties_armor1@ZombieTypes)",
-                "RTID(eighties_armor2@ZombieTypes)",
-                "RTID(eighties_imp@ZombieTypes)",
-                "RTID(eighties_gargantuar@ZombieTypes)",
-                "RTID(eighties_punk@ZombieTypes)",
-                "RTID(lostcity_excavator@ZombieTypes)",
-                "RTID(dino_bully_veteran@ZombieTypes)"
-            ]
-          },
-          {
-            "PointIncrementPerWave": 250, // Difficulty AAAAAAAAA
-            "StartingPoints": 150,
-            "StartingWave": 1,
-            "ZombiePool": [
-                "RTID(eighties@ZombieTypes)",
-                "RTID(eighties_armor1@ZombieTypes)",
-                "RTID(eighties_armor2@ZombieTypes)",
-                "RTID(eighties_imp@ZombieTypes)",
-                "RTID(eighties_gargantuar@ZombieTypes)",
-                "RTID(eighties_punk@ZombieTypes)",
-                "RTID(lostcity_excavator@ZombieTypes)",
-                "RTID(dino_bully_veteran@ZombieTypes)",
-                "RTID(chicken_farmer@ZombieTypes)"
-            ]
-          }
-        ],
-        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
-      }
-    },
-    {
-      "aliases": [
-        "WaveManagerProps"
-      ],
-      "objclass": "WaveManagerProperties",
-      "objdata": {
-        "FlagWaveInterval": 6,
-        "WaveCount": 30,
-        "Waves": [
-            ["RTID(EnterPunkEvent@CurrentLevel)", "RTID(Wave1@CurrentLevel)"],
-            ["RTID(Chicken1@CurrentLevel)"],
-            ["RTID(Bug1@CurrentLevel)"],
-            ["RTID(Pelican1@CurrentLevel)"],
-            ["RTID(Allstar1Zom@CurrentLevel)"],
-            ["RTID(Bug2@CurrentLevel)", "RTID(Chicken2@CurrentLevel)", "RTID(Allstar1@CurrentLevel)"],
-            ["RTID(Pelican2@CurrentLevel)", "RTID(PlantFoodSpawner0@CurrentLevel)"],
-            ["RTID(Allstar2@CurrentLevel)"],
-            ["RTID(Bug3@CurrentLevel)"],
-            ["RTID(Bug2@CurrentLevel)", "RTID(Pelican2@CurrentLevel)"],
-            ["RTID(Chicken3@CurrentLevel)"],
-            ["RTID(Pelican3@CurrentLevel)", "RTID(Bug4@CurrentLevel)"],
-            ["RTID(Allstar3@CurrentLevel)"],
-            ["RTID(Pelican4@CurrentLevel)", "RTID(Bug3@CurrentLevel)", "RTID(PlantFoodSpawner1@CurrentLevel)"],
-            ["RTID(Chicken4@CurrentLevel)", "RTID(Rockpuncher@CurrentLevel)"],
-            ["RTID(Allstar4@CurrentLevel)"],
-            ["RTID(Pelican5@CurrentLevel)"],
-            ["RTID(Allstar4@CurrentLevel)", "RTID(Bug4@CurrentLevel)"],
-            ["RTID(Bug5@CurrentLevel)"],
-            ["RTID(Chicken5@CurrentLevel)", "RTID(Rockpuncher@CurrentLevel)"],
-            ["RTID(Allstar5@CurrentLevel)", "RTID(PlantFoodSpawner2@CurrentLevel)"],
-            ["RTID(Pelican5@CurrentLevel)", "RTID(Pelican2@CurrentLevel)"],
-            ["RTID(Bug5@CurrentLevel)", "RTID(Bug2@CurrentLevel)"],
-            ["RTID(Rockpuncher@CurrentLevel)", "RTID(Pelican5@CurrentLevel)", "RTID(Bug5@CurrentLevel)"],
-            ["RTID(Allstar5@CurrentLevel)", "RTID(Allstar2@CurrentLevel)"],
-            ["RTID(Pelican5@CurrentLevel)", "RTID(Pelican5@CurrentLevel)"],
-            ["RTID(Chicken5@CurrentLevel)", "RTID(Chicken5@CurrentLevel)", "RTID(Rockpuncher@CurrentLevel)"],
-            ["RTID(Allstar5@CurrentLevel)", "RTID(Allstar3@CurrentLevel)", "RTID(PlantFoodSpawner3@CurrentLevel)"],
-            ["RTID(Bug5@CurrentLevel)", "RTID(Bug5@CurrentLevel)"],
-            ["RTID(Allstar5@CurrentLevel)", "RTID(Allstar5@CurrentLevel)", "RTID(Pelican5@CurrentLevel)", "RTID(Chicken5@CurrentLevel)", "RTID(Bug5@CurrentLevel)", "RTID(Bug5@CurrentLevel)", "RTID(Rockpuncher@CurrentLevel)", "RTID(Rockpuncher@CurrentLevel)"],
-        ]
-      }
-    },
-    {
-      "aliases": [
-        "Wave1"
-      ],
-      "objclass": "SpawnZombiesJitteredWaveActionProps",
-      "objdata": {
-        "Zombies": [
-          {
-            "Type": "RTID(eighties_imp@ZombieTypes)"
-          }
-        ]
-      }
-    },
-		{
-      "aliases": [
-        "Allstar1Zom"
-      ],
-      "objclass": "SpawnZombiesJitteredWaveActionProps",
-      "objdata": {
-        "Zombies": [
-          {
-            "Type": "RTID(modern_allstar@ZombieTypes)"
-          }
-        ]
-      }
-    },
-    {
-      "aliases": [
-        "Allstar2Zom"
-      ],
-      "objclass": "SpawnZombiesJitteredWaveActionProps",
-      "objdata": {
-        "Zombies": [
-          {
-            "Type": "RTID(modern_allstar@ZombieTypes)"
-          },
-          {
-            "Type": "RTID(modern_allstar@ZombieTypes)"
-          }
-        ]
-      }
-    },
-    {
-      "aliases": [
-        "Allstar3Zom"
-      ],
-      "objclass": "SpawnZombiesJitteredWaveActionProps",
-      "objdata": {
-        "Zombies": [
-          {
-            "Type": "RTID(modern_allstar@ZombieTypes)"
-          },
-          {
-            "Type": "RTID(modern_allstar@ZombieTypes)"
-          },
-          {
-            "Type": "RTID(modern_allstar@ZombieTypes)"
-          }
-        ]
-      }
-    },
-    {
-      "aliases": [
-        "Allstar4Zom"
-      ],
-      "objclass": "SpawnZombiesJitteredWaveActionProps",
-      "objdata": {
-        "Zombies": [
-          {
-            "Type": "RTID(modern_allstar@ZombieTypes)"
-          },
-          {
-            "Type": "RTID(modern_allstar@ZombieTypes)"
-          },
-          {
-            "Type": "RTID(modern_allstar@ZombieTypes)"
-          },
-          {
-            "Type": "RTID(modern_allstar@ZombieTypes)"
-          }
-        ]
-      }
-    },
-    {
-      "aliases": [
-        "Allstar5Zom"
-      ],
-      "objclass": "SpawnZombiesJitteredWaveActionProps",
-      "objdata": {
-        "Zombies": [
-          {
-            "Type": "RTID(modern_allstar@ZombieTypes)"
-          },
-          {
-            "Type": "RTID(modern_allstar@ZombieTypes)"
-          },
-          {
-            "Type": "RTID(modern_allstar@ZombieTypes)"
-          },
-          {
-            "Type": "RTID(modern_allstar@ZombieTypes)"
-          },
-          {
-            "Type": "RTID(modern_allstar@ZombieTypes)"
-          }
-        ]
-      }
-    },
-    {
-      "aliases": [
-        "RockpuncherZom"
-      ],
-      "objclass": "SpawnZombiesJitteredWaveActionProps",
-      "objdata": {
-        "Zombies": [
-          {
-            "Type": "RTID(dino_bully_veteran@ZombieTypes)"
-          },
-          {
-            "Type": "RTID(dino_bully_veteran@ZombieTypes)"
-          },
-          {
-            "Type": "RTID(dino_bully_veteran@ZombieTypes)"
-          },
-          {
-            "Type": "RTID(dino_bully_veteran@ZombieTypes)"
-          },
-          {
-            "Type": "RTID(dino_bully_veteran@ZombieTypes)"
-          },
-          {
-            "Type": "RTID(dino_bully_veteran@ZombieTypes)"
-          },
-          {
-            "Type": "RTID(dino_bully_veteran@ZombieTypes)"
-          },
-          {
-            "Type": "RTID(dino_bully_veteran@ZombieTypes)"
-          },
-          {
-            "Type": "RTID(dino_bully_veteran@ZombieTypes)"
-          },
-          {
-            "Type": "RTID(dino_bully_veteran@ZombieTypes)"
-          }
-        ]
-      }
-    },
-    {
-        "aliases": [
-            "Bug1"
-        ],
-        "objclass": "SpawnZombiesJitteredWaveActionProps",
-        "objdata": {
-            "Zombies": [
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                }
-            ]
-        }
-    },
-    {
-        "aliases": [
-            "Bug2Zom"
-        ],
-        "objclass": "SpawnZombiesJitteredWaveActionProps",
-        "objdata": {
-            "Zombies": [
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                }
-            ]
-        }
-    },
-    {
-        "aliases": [
-            "Bug3"
-        ],
-        "objclass": "SpawnZombiesJitteredWaveActionProps",
-        "objdata": {
-            "Zombies": [
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                }
-            ]
-        }
-    },
-    {
-        "aliases": [
-            "Bug4Zom"
-        ],
-        "objclass": "SpawnZombiesJitteredWaveActionProps",
-        "objdata": {
-            "Zombies": [
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                }
-            ]
-        }
-    },
-    {
-        "aliases": [
-            "Bug5Zom"
-        ],
-        "objclass": "SpawnZombiesJitteredWaveActionProps",
-        "objdata": {
-            "Zombies": [
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
-                }
-            ]
-        }
-    },
-    {
-        "aliases": [
-            "Pelican1"
-        ],
-        "objclass": "SpawnZombiesJitteredWaveActionProps",
-        "objdata": {
-            "Zombies": [
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                }
-            ]
-        }
-    },
-    {
-        "aliases": [
-            "Pelican2Zom"
-        ],
-        "objclass": "SpawnZombiesJitteredWaveActionProps",
-        "objdata": {
-            "Zombies": [
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                }
-            ]
-        }
-    },
-    {
-        "aliases": [
-            "Pelican3"
-        ],
-        "objclass": "SpawnZombiesJitteredWaveActionProps",
-        "objdata": {
-            "Zombies": [
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                }
-            ]
-        }
-    },
-    {
-        "aliases": [
-            "Pelican4"
-        ],
-        "objclass": "SpawnZombiesJitteredWaveActionProps",
-        "objdata": {
-            "Zombies": [
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                }
-            ]
-        }
-    },
-    {
-        "aliases": [
-            "Pelican5"
-        ],
-        "objclass": "SpawnZombiesJitteredWaveActionProps",
-        "objdata": {
-            "Zombies": [
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(pelican@ZombieTypes)"
-                }
-            ]
-        }
-    },
-    {
-        "aliases": [
-            "Chicken1"
-        ],
-        "objclass": "SpawnZombiesJitteredWaveActionProps",
-        "objdata": {
-            "Zombies": [
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                }
-            ]
-        }
-    },
-    {
-        "aliases": [
-            "Chicken2"
-        ],
-        "objclass": "SpawnZombiesJitteredWaveActionProps",
-        "objdata": {
-            "Zombies": [
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                }
-            ]
-        }
-    },
-    {
-        "aliases": [
-            "Chicken3"
-        ],
-        "objclass": "SpawnZombiesJitteredWaveActionProps",
-        "objdata": {
-            "Zombies": [
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                }
-            ]
-        }
-    },
-    {
-        "aliases": [
-            "Chicken4"
-        ],
-        "objclass": "SpawnZombiesJitteredWaveActionProps",
-        "objdata": {
-            "Zombies": [
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                }
-            ]
-        }
-    },
-    {
-        "aliases": [
-            "Chicken5Zom"
-        ],
-        "objclass": "SpawnZombiesJitteredWaveActionProps",
-        "objdata": {
-            "Zombies": [
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                },
-                {
-                    "Type": "RTID(chicken_farmer@ZombieTypes)"
-                }
-            ]
-        }
-    },
-
+    "objects": [
+        {
+            "objclass": "LevelDefinition",
+            "objdata": {
+                "Description": "Something is wrong...",
+                "LevelNumber": 1,
+                "Loot": "RTID(DefaultLoot@LevelModules)",
+                "Modules": [
+                    "RTID(ZombiesDeadWinCon@LevelModules)",
+                    "RTID(DefaultZombieWinCondition@LevelModules)",
+                    "RTID(NewWaves@CurrentLevel)",
+                    "RTID(StandardIntro@LevelModules)",
+                    "RTID(ChallengeModule@CurrentLevel)",
+                    "RTID(SeedBank@CurrentLevel)",
+                    "RTID(SlowSunDropper@LevelModules)",
+                    "RTID(EightiesMowers@LevelModules)"
+                ],
+                "Name": "Overmechanism - Level 12",
+                "WritenBy": "hinanarukami",
+                "NormalPresentTable": "egypt_normal_01",
+                "ShinyPresentTable": "egypt_shiny_01",
+                "StageModule": "RTID(EightiesStage@LevelModules)"
+            }
+        },
+        {
+            "aliases": [
+                "SeedBank"
+            ],
+            "objclass": "SeedBankProperties",
+            "objdata": {
+                "PlantExcludeList": [
+                    "blover",
+                    "glaciershroom",
+                    "icebloom",
+                    "wintermelon",
+                    "coldsnapdragon",
+                    "atombomb_seedling",
+                    "filamint",
+                    "reinforcemint",
+                    "bombardmint",
+                    "armamint",
+                    "containmint",
+                    "enchantmint",
+                    "spearmint",
+                    "peppermint",
+                    "wintermint",
+                    "concealmint",
+                    "enforcemint",
+                    "enlightenmint",
+                    "ailmint",
+                    "appeasemint",
+                    "snowdrop"
+                ],
+                "SelectionMethod": "chooser"
+            }
+        },
+        {
+            "aliases": [
+                "ChallengeModule"
+            ],
+            "objclass": "StarChallengeModuleProperties",
+            "objdata": {
+                "Challenges": [
+                    [
+                        "RTID(BeatTheLevel@CurrentLevel)"
+                    ]
+                ],
+                "ChallengeAlwaysAvailable": true
+            }
+        },
+        {
+            "aliases": [
+                "BeatTheLevel"
+            ],
+            "objclass": "StarChallengeBeatTheLevelProps",
+            "objdata": {
+                "Descriptions": [
+                    "Survive the overmechanism!",
+                ],
+                "DescriptionsMultiLanguage": [
+                    {
+                        "en": "123",
+                        "zh": "112233"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "NewWaves"
+            ],
+            "objclass": "WaveManagerModuleProperties",
+            "objdata": {
+                "DynamicZombies": [
+                    {},
+                    {},
+                    {},
+                    {
+                        "PointIncrementPerWave": 100, // Difficulty D, easiest
+                        "StartingPoints": 150,
+                        "StartingWave": 1,
+                        "ZombiePool": [
+                            "RTID(eighties@ZombieTypes)",
+                            "RTID(eighties_armor1@ZombieTypes)",
+                            "RTID(eighties_armor2@ZombieTypes)",
+                            "RTID(eighties_imp@ZombieTypes)",
+                            "RTID(eighties_gargantuar@ZombieTypes)",
+                            "RTID(eighties_punk@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 150, // Difficulty C, normal
+                        "StartingPoints": 150,
+                        "StartingWave": 1,
+                        "ZombiePool": [
+                            "RTID(eighties@ZombieTypes)",
+                            "RTID(eighties_armor1@ZombieTypes)",
+                            "RTID(eighties_armor2@ZombieTypes)",
+                            "RTID(eighties_imp@ZombieTypes)",
+                            "RTID(eighties_gargantuar@ZombieTypes)",
+                            "RTID(eighties_punk@ZombieTypes)",
+                            "RTID(lostcity_excavator@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 200, // Difficulty B, advanced
+                        "StartingPoints": 150,
+                        "StartingWave": 1,
+                        "ZombiePool": [
+                            "RTID(eighties@ZombieTypes)",
+                            "RTID(eighties_armor1@ZombieTypes)",
+                            "RTID(eighties_armor2@ZombieTypes)",
+                            "RTID(eighties_imp@ZombieTypes)",
+                            "RTID(eighties_gargantuar@ZombieTypes)",
+                            "RTID(eighties_punk@ZombieTypes)",
+                            "RTID(lostcity_excavator@ZombieTypes)",
+                            "RTID(dino_bully_veteran@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 250, // Difficulty AAAAAAAAA
+                        "StartingPoints": 150,
+                        "StartingWave": 1,
+                        "ZombiePool": [
+                            "RTID(eighties@ZombieTypes)",
+                            "RTID(eighties_armor1@ZombieTypes)",
+                            "RTID(eighties_armor2@ZombieTypes)",
+                            "RTID(eighties_imp@ZombieTypes)",
+                            "RTID(eighties_gargantuar@ZombieTypes)",
+                            "RTID(eighties_punk@ZombieTypes)",
+                            "RTID(lostcity_excavator@ZombieTypes)",
+                            "RTID(dino_bully_veteran@ZombieTypes)",
+                            "RTID(chicken_farmer@ZombieTypes)"
+                        ]
+                    }
+                ],
+                "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 6,
+                "WaveCount": 30,
+                "Waves": [
+                    [
+                        "RTID(EnterPunkEvent@CurrentLevel)",
+                        "RTID(Wave1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Chicken1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Bug1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Pelican1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Allstar1Zom@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Bug2@CurrentLevel)",
+                        "RTID(Chicken2@CurrentLevel)",
+                        "RTID(Allstar1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Pelican2@CurrentLevel)",
+                        "RTID(PlantFoodSpawner0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Allstar2@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Bug3@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Bug2@CurrentLevel)",
+                        "RTID(Pelican2@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Chicken3@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Pelican3@CurrentLevel)",
+                        "RTID(Bug4@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Allstar3@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Pelican4@CurrentLevel)",
+                        "RTID(Bug3@CurrentLevel)",
+                        "RTID(PlantFoodSpawner1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Chicken4@CurrentLevel)",
+                        "RTID(Rockpuncher@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Allstar4@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Pelican5@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Allstar4@CurrentLevel)",
+                        "RTID(Bug4@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Bug5@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Chicken5@CurrentLevel)",
+                        "RTID(Rockpuncher@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Allstar5@CurrentLevel)",
+                        "RTID(PlantFoodSpawner2@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Pelican5@CurrentLevel)",
+                        "RTID(Pelican2@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Bug5@CurrentLevel)",
+                        "RTID(Bug2@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Rockpuncher@CurrentLevel)",
+                        "RTID(Pelican5@CurrentLevel)",
+                        "RTID(Bug5@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Allstar5@CurrentLevel)",
+                        "RTID(Allstar2@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Pelican5@CurrentLevel)",
+                        "RTID(Pelican5@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Chicken5@CurrentLevel)",
+                        "RTID(Chicken5@CurrentLevel)",
+                        "RTID(Rockpuncher@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Allstar5@CurrentLevel)",
+                        "RTID(Allstar3@CurrentLevel)",
+                        "RTID(PlantFoodSpawner3@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Bug5@CurrentLevel)",
+                        "RTID(Bug5@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Allstar5@CurrentLevel)",
+                        "RTID(Allstar5@CurrentLevel)",
+                        "RTID(Pelican5@CurrentLevel)",
+                        "RTID(Chicken5@CurrentLevel)",
+                        "RTID(Bug5@CurrentLevel)",
+                        "RTID(Bug5@CurrentLevel)",
+                        "RTID(Rockpuncher@CurrentLevel)",
+                        "RTID(Rockpuncher@CurrentLevel)"
+                    ],
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(eighties_imp@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Allstar1Zom"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Allstar2Zom"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Allstar3Zom"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Allstar4Zom"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Allstar5Zom"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(modern_allstar@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "RockpuncherZom"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(dino_bully_veteran@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(dino_bully_veteran@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(dino_bully_veteran@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(dino_bully_veteran@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(dino_bully_veteran@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(dino_bully_veteran@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(dino_bully_veteran@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(dino_bully_veteran@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(dino_bully_veteran@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(dino_bully_veteran@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Bug1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Bug2Zom"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Bug3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Bug4Zom"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Bug5Zom"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(lostcity_bug_armor2@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Pelican1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Pelican2Zom"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Pelican3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Pelican4"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Pelican5Zom"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(pelican@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Pelican5"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 0.1,
+                    "Min": 0.1
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(Pelican5Zom@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Chicken1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Chicken2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Chicken3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Chicken4"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Chicken5Zom"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(chicken_farmer@ZombieTypes)"
+                    }
+                ]
+            }
+        },
         {
             "aliases": [
                 "PlantFoodSpawner0"
@@ -829,7 +961,7 @@
                 ]
             }
         },
-		{
+        {
             "aliases": [
                 "PlantFoodSpawner1"
             ],
@@ -852,7 +984,7 @@
                 ]
             }
         },
-		{
+        {
             "aliases": [
                 "PlantFoodSpawner2"
             ],
@@ -875,7 +1007,7 @@
                 ]
             }
         },
-		{
+        {
             "aliases": [
                 "PlantFoodSpawner3"
             ],
@@ -910,149 +1042,305 @@
             }
         },
         {
-            "aliases": ["Allstar1"],
+            "aliases": [
+                "Allstar1"
+            ],
             "objclass": "WaveSchedulerProps",
             "objdata": {
-                "TimeBeforeFirst": {"Max": 0.1, "Min": 0.1},
-                "TimeBetween": {"Max": 1, "Min": 1},
-                "Repeat": {"Max": 1, "Min": 1},
+                "TimeBeforeFirst": {
+                    "Max": 0.1,
+                    "Min": 0.1
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
                 "RewardWhenEnded": false,
                 "SuppressRewardState": false,
-                "Events": ["RTID(Allstar1Zom@CurrentLevel)"]
+                "Events": [
+                    "RTID(Allstar1Zom@CurrentLevel)"
+                ]
             }
         },
         {
-            "aliases": ["Bug2"],
+            "aliases": [
+                "Bug2"
+            ],
             "objclass": "WaveSchedulerProps",
             "objdata": {
-                "TimeBeforeFirst": {"Max": 0.1, "Min": 0.1},
-                "TimeBetween": {"Max": 1, "Min": 1},
-                "Repeat": {"Max": 1, "Min": 1},
+                "TimeBeforeFirst": {
+                    "Max": 0.1,
+                    "Min": 0.1
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
                 "RewardWhenEnded": false,
                 "SuppressRewardState": false,
-                "Events": ["RTID(Bug2Zom@CurrentLevel)"]
+                "Events": [
+                    "RTID(Bug2Zom@CurrentLevel)"
+                ]
             }
         },
         {
-            "aliases": ["Pelican2"],
+            "aliases": [
+                "Pelican2"
+            ],
             "objclass": "WaveSchedulerProps",
             "objdata": {
-                "TimeBeforeFirst": {"Max": 0.1, "Min": 0.1},
-                "TimeBetween": {"Max": 1, "Min": 1},
-                "Repeat": {"Max": 1, "Min": 1},
+                "TimeBeforeFirst": {
+                    "Max": 0.1,
+                    "Min": 0.1
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
                 "RewardWhenEnded": false,
                 "SuppressRewardState": false,
-                "Events": ["RTID(Pelican2Zom@CurrentLevel)"]
+                "Events": [
+                    "RTID(Pelican2Zom@CurrentLevel)"
+                ]
             }
         },
         {
-            "aliases": ["Allstar2"],
+            "aliases": [
+                "Allstar2"
+            ],
             "objclass": "WaveSchedulerProps",
             "objdata": {
-                "TimeBeforeFirst": {"Max": 0.1, "Min": 0.1},
-                "TimeBetween": {"Max": 1, "Min": 1},
-                "Repeat": {"Max": 1, "Min": 1},
+                "TimeBeforeFirst": {
+                    "Max": 0.1,
+                    "Min": 0.1
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
                 "RewardWhenEnded": false,
                 "SuppressRewardState": false,
-                "Events": ["RTID(Allstar2Zom@CurrentLevel)"]
+                "Events": [
+                    "RTID(Allstar2Zom@CurrentLevel)"
+                ]
             }
         },
         {
-            "aliases": ["Bug3"],
+            "aliases": [
+                "Bug3"
+            ],
             "objclass": "WaveSchedulerProps",
             "objdata": {
-                "TimeBeforeFirst": {"Max": 0.1, "Min": 0.1},
-                "TimeBetween": {"Max": 1, "Min": 1},
-                "Repeat": {"Max": 1, "Min": 1},
+                "TimeBeforeFirst": {
+                    "Max": 0.1,
+                    "Min": 0.1
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
                 "RewardWhenEnded": false,
                 "SuppressRewardState": false,
-                "Events": ["RTID(Bug3Zom@CurrentLevel)"]
+                "Events": [
+                    "RTID(Bug3Zom@CurrentLevel)"
+                ]
             }
         },
         {
-            "aliases": ["Bug4"],
+            "aliases": [
+                "Bug4"
+            ],
             "objclass": "WaveSchedulerProps",
             "objdata": {
-                "TimeBeforeFirst": {"Max": 0.1, "Min": 0.1},
-                "TimeBetween": {"Max": 1, "Min": 1},
-                "Repeat": {"Max": 1, "Min": 1},
+                "TimeBeforeFirst": {
+                    "Max": 0.1,
+                    "Min": 0.1
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
                 "RewardWhenEnded": false,
                 "SuppressRewardState": false,
-                "Events": ["RTID(Bug4Zom@CurrentLevel)"]
+                "Events": [
+                    "RTID(Bug4Zom@CurrentLevel)"
+                ]
             }
         },
         {
-            "aliases": ["Allstar3"],
+            "aliases": [
+                "Allstar3"
+            ],
             "objclass": "WaveSchedulerProps",
             "objdata": {
-                "TimeBeforeFirst": {"Max": 0.1, "Min": 0.1},
-                "TimeBetween": {"Max": 1, "Min": 1},
-                "Repeat": {"Max": 1, "Min": 1},
+                "TimeBeforeFirst": {
+                    "Max": 0.1,
+                    "Min": 0.1
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
                 "RewardWhenEnded": false,
                 "SuppressRewardState": false,
-                "Events": ["RTID(Allstar3Zom@CurrentLevel)"]
+                "Events": [
+                    "RTID(Allstar3Zom@CurrentLevel)"
+                ]
             }
         },
         {
-            "aliases": ["Allstar4"],
+            "aliases": [
+                "Allstar4"
+            ],
             "objclass": "WaveSchedulerProps",
             "objdata": {
-                "TimeBeforeFirst": {"Max": 0.1, "Min": 0.1},
-                "TimeBetween": {"Max": 1, "Min": 1},
-                "Repeat": {"Max": 1, "Min": 1},
+                "TimeBeforeFirst": {
+                    "Max": 0.1,
+                    "Min": 0.1
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
                 "RewardWhenEnded": false,
                 "SuppressRewardState": false,
-                "Events": ["RTID(Allstar4Zom@CurrentLevel)"]
+                "Events": [
+                    "RTID(Allstar4Zom@CurrentLevel)"
+                ]
             }
         },
         {
-            "aliases": ["Rockpuncher"],
+            "aliases": [
+                "Rockpuncher"
+            ],
             "objclass": "WaveSchedulerProps",
             "objdata": {
-                "TimeBeforeFirst": {"Max": 0.1, "Min": 0.1},
-                "TimeBetween": {"Max": 1, "Min": 1},
-                "Repeat": {"Max": 1, "Min": 1},
+                "TimeBeforeFirst": {
+                    "Max": 0.1,
+                    "Min": 0.1
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
                 "RewardWhenEnded": false,
                 "SuppressRewardState": false,
-                "Events": ["RTID(RockpuncherZom@CurrentLevel)"]
+                "Events": [
+                    "RTID(RockpuncherZom@CurrentLevel)"
+                ]
             }
         },
         {
-            "aliases": ["Bug5"],
+            "aliases": [
+                "Bug5"
+            ],
             "objclass": "WaveSchedulerProps",
             "objdata": {
-                "TimeBeforeFirst": {"Max": 0.1, "Min": 0.1},
-                "TimeBetween": {"Max": 1, "Min": 1},
-                "Repeat": {"Max": 1, "Min": 1},
+                "TimeBeforeFirst": {
+                    "Max": 0.1,
+                    "Min": 0.1
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
                 "RewardWhenEnded": false,
                 "SuppressRewardState": false,
-                "Events": ["RTID(Bug5Zom@CurrentLevel)"]
+                "Events": [
+                    "RTID(Bug5Zom@CurrentLevel)"
+                ]
             }
         },
         {
-            "aliases": ["Chicken5"],
+            "aliases": [
+                "Chicken5"
+            ],
             "objclass": "WaveSchedulerProps",
             "objdata": {
-                "TimeBeforeFirst": {"Max": 0.1, "Min": 0.1},
-                "TimeBetween": {"Max": 1, "Min": 1},
-                "Repeat": {"Max": 1, "Min": 1},
+                "TimeBeforeFirst": {
+                    "Max": 0.1,
+                    "Min": 0.1
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
                 "RewardWhenEnded": false,
                 "SuppressRewardState": false,
-                "Events": ["RTID(Chicken5Zom@CurrentLevel)"]
+                "Events": [
+                    "RTID(Chicken5Zom@CurrentLevel)"
+                ]
             }
         },
         {
-            "aliases": ["Allstar5"],
+            "aliases": [
+                "Allstar5"
+            ],
             "objclass": "WaveSchedulerProps",
             "objdata": {
-                "TimeBeforeFirst": {"Max": 0.1, "Min": 0.1},
-                "TimeBetween": {"Max": 1, "Min": 1},
-                "Repeat": {"Max": 1, "Min": 1},
+                "TimeBeforeFirst": {
+                    "Max": 0.1,
+                    "Min": 0.1
+                },
+                "TimeBetween": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
                 "RewardWhenEnded": false,
                 "SuppressRewardState": false,
-                "Events": ["RTID(Allstar5Zom@CurrentLevel)"]
+                "Events": [
+                    "RTID(Allstar5Zom@CurrentLevel)"
+                ]
             }
         }
-  ],
-  "version": 1
+    ],
+    "version": 1
 }

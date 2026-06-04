@@ -1,0 +1,341 @@
+{
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "[PLAYERS_ATTEMPT_TO_GET_PLANT]",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(ConveyorBelt@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(ChallengeModule@CurrentLevel)"
+        ],
+        "PlantToIntroduce": "doomshroom",
+        "Name": "[EPIC_PLANT_LEVEL_NAME]",
+        "WritenBy": "莱池_余垛",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(EightiesTutorialStage@LevelModules)"
+      }
+    },
+    {
+      "aliases": [
+        "//LevelScheduler"
+      ],
+      "objclass": "LevelSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.5,
+          "Min": 0.5
+        },
+        "TimeBetween": {
+          "Max": 30,
+          "Min": 30
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(ModConveyor0@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ModConveyor0"
+      ],
+      "objclass": "ModifyConveyorWaveActionProps",
+      "objdata": {
+        "Add": [],
+        "Remove": [
+          {
+            "Type": "RTID(primalwallnut@PlantTypes)"
+          },
+          {
+            "Type": "RTID(thymewarp@PlantTypes)"
+          },
+          {
+            "Type": "RTID(doomshroom@PlantTypes)"
+          },
+          {
+            "Type": "RTID(phatbeet@PlantTypes)"
+          },
+          {
+            "Type": "RTID(hurrikale@PlantTypes)"
+          },
+          {
+            "Type": "RTID(iceburg@PlantTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ConveyorBelt"
+      ],
+      "objclass": "ConveyorSeedBankProperties",
+      "objdata": {
+        "DropDelayConditions": [
+          {
+            "Delay": 0.0000001,
+            "MaxPackets": 0
+          }
+        ],
+        "InitialPlantList": [
+          {
+            "MaxDelivered": 2,
+            "MaxCount": 2,
+            "MaxWeightFactor": 0,
+            "PlantType": "primalwallnut",
+            "Weight": 100
+          },
+          {
+            "MaxDelivered": 1,
+            "MaxCount": 1,
+            "MaxWeightFactor": 0,
+            "PlantType": "thymewarp",
+            "Weight": 100
+          },
+          {
+            "MaxDelivered": 1,
+            "MaxCount": 1,
+            "MaxWeightFactor": 0,
+            "PlantType": "doomshroom",
+            "Weight": 100
+          },
+          {
+            "MaxDelivered": 2,
+            "MaxCount": 2,
+            "MaxWeightFactor": 0,
+            "PlantType": "phatbeet",
+            "Weight": 100
+          },
+          {
+            "MaxDelivered": 2,
+            "MaxCount": 2,
+            "MaxWeightFactor": 0,
+            "PlantType": "hurrikale",
+            "Weight": 100
+          },
+          {
+            "MaxDelivered": 2,
+            "MaxCount": 2,
+            "MaxWeightFactor": 0,
+            "PlantType": "iceburg",
+            "Weight": 100
+          }
+        ],
+        "SpeedConditions": [
+          {
+            "MaxPackets": 0,
+            "Speed": 1500
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 3,
+        "WaveCount": 6,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(eighties@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(eighties_armor1@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Row": "3",
+            "Type": "RTID(eighties@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(eighties_armor1@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "NotificationEvents": [
+          "jam_8bit"
+        ],
+        "Zombies": [
+          {
+            "Row": "1",
+            "Type": "RTID(eighties@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(eighties_arcade@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(eighties_arcade@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(eighties_arcade@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(eighties_arcade@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "NotificationEvents": [
+          "jam_punk"
+        ],
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(eighties_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(eighties_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(eighties_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(eighties_armor2@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(eighties_armor2@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Row": "2",
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Row": "4",
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Row": "1",
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Row": "3",
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          },
+          {
+            "Row": "5",
+            "Type": "RTID(modern_allstar@ZombieTypes)"
+          }
+        ]
+      }
+    }
+  ],
+  "version": 1
+}

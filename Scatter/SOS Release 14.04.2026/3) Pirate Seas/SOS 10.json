@@ -1,0 +1,1657 @@
+{
+  "#Save Our Seeds - Day 10 by ScatterPattern": "NLM v 0.3.1",
+  "#": "holy crap this level is actually possible without using plant food wtf",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Name": "Save Our Seeds - Day 10",
+        "Description": "S.O.S!",
+        "StageModule": "RTID(PirateStage@LevelModules)",
+        "FirstRewardParam": "kernelpult",
+        "FirstRewardType": "unlock_plant",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(ConveyorSeedBank@CurrentLevel)",
+          "RTID(GI@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(PiratePlank@CurrentLevel)",
+          "RTID(BeatTheLevel@CurrentLevel)"
+        ],
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "FirstOutroNarrative": "OUTRO"
+      }
+    },
+
+
+    {
+      "objclass": "PlantProperties",
+      "aliases": [
+        "butterpult_props"
+      ],
+      "objdata": {
+        "ButterType": "butter",
+        "ThrowInterval": 0.7,
+        "ThrowIntervalAdditional": 0.1,
+        "ChanceToButter": 1,
+        "Cooldown": 20,
+        "CooldownFrom": 0.5,
+        "SunCost": 275,
+        "Toughness": 300,
+        "Family": "Lobber",
+        "CostumeOnSpawn": 0,
+        "SpawnedScale": 1.2
+      }
+    },
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "butterpult"
+      ],
+      "objdata": {
+        "PlantBasedOn": "kernelpult",
+        "Properties": "RTID(butterpult_props@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "NAME": {
+            "en": "Butter-pult",
+            "zh": "???"
+         },
+         "OBTAINWORLD": "mint",
+         "ALMANAC": "RTID(butterpult_almanac@CurrentLevel)"
+        }
+      }
+    },
+    {
+      "objclass": "PlantAlmanacProperties",
+      "aliases": [
+        "butterpult_almanac"
+      ],
+      "objdata": {
+        "BriefIntroduction": {
+          "en": "Quickly flings stunning butter at zombies",
+          "zh": "???"
+        }
+      }
+    },
+
+
+
+
+    {
+    "aliases": [
+        "OUTRO"
+    ],
+    "objclass": "NarrativeProperties",
+    "objdata": {
+        "Flow": [
+        {
+                "Character": "crazydave",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "crazydave",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "You have Butter-pult now!",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "crazydave",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "Just in time, I need my bread buttered. I just ran out of butter.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "crazydave",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "The zombies can probably wait.",
+                    "zh": "???"
+                }
+            }
+        ]
+      }
+    },
+    {
+      "objclass": "PiratePlankProperties",
+      "objdata": {
+        "PlankRows": []
+      },
+      "aliases": [
+        "PiratePlank"
+      ]
+    },
+    {
+      "objclass": "StarChallengeBeatTheLevelProps",
+      "objdata": {
+        "Descriptions": [
+          "Shovel Butter-pults to get them back on the conveyor"
+        ],
+        "DescriptionsMultiLanguage": []
+      },
+      "aliases": [
+        "BeatTheLevel"
+      ]
+    },
+    {
+      "objclass": "ConveyorSeedBankProperties",
+      "objdata": {
+        "DropDelayConditions": [
+          {
+            "Delay": 0.5,
+            "MaxPackets": 0
+          }
+        ],
+        "InitialPlantList": [
+          {
+            "PlantType": "butterpult",
+            "Weight": 1,
+            "MaxCount": 2,
+            "MaxCountCooldownSeconds": 99999,
+            "MaxWeightFactor": 0.0
+          }
+        ],
+        "SpeedConditions": [
+          {
+            "MaxPackets": 0,
+            "Speed": 250
+          }
+        ]
+      },
+      "aliases": [
+        "ConveyorSeedBank"
+      ]
+    },
+    {
+      "objclass": "ModifyConveyorWaveActionProps",
+      "objdata": {
+        "Add": [
+          {
+            "Type": "RTID(butterpult@CurrentLevel)",
+            "Weight": 1,
+            "MaxCount": 1,
+            "MaxCountCooldownSeconds": 99999,
+            "MaxWeightFactor": 0.0
+          }
+        ],
+        "Remove": []
+      },
+      "aliases": [
+        "AddButter"
+      ]
+    },
+
+
+    {
+      "aliases": [
+        "GI"
+      ],
+      "objclass": "InitialGridItemProperties",
+      "objdata": {
+        "InitialGridItemPlacements": []
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 5,
+        "WaveCount": 15,
+        "Waves": [
+          [
+            "RTID(Wave1@.)"
+          ],
+          [
+            "RTID(Wave2@.)"
+          ],
+          [
+            "RTID(Wave3@.)"
+          ],
+          [
+            "RTID(Wave4@.)"
+          ],
+          [
+            "RTID(Wave5@.)"
+          ],
+          [
+            "RTID(Wave6@.)"
+          ],
+          [
+            "RTID(Wave7@.)"
+          ],
+          [
+            "RTID(Wave8@.)"
+          ],
+          [
+            "RTID(Wave9@.)"
+          ],
+          [
+            "RTID(Wave10@.)"
+          ],
+          [
+            "RTID(Wave11@.)"
+          ],
+          [
+            "RTID(Wave12@.)"
+          ],
+          [
+            "RTID(Wave13@.)"
+          ],
+          [
+            "RTID(Wave14@.)"
+          ],
+          [
+            "RTID(Wave15@.)"
+          ]
+        ],
+        "ZombieCountdownFirstWaveSecs": 0.01,
+        "MaxNextWaveHealthPercentage": 0.1,
+        "MinNextWaveHealthPercentage": 0.05
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave13"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave14"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(pelican@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(seagull@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    }
+  ]
+}

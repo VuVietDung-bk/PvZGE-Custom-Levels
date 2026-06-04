@@ -1,0 +1,1497 @@
+{
+  "#Save Our Seeds - Day 21 by ScatterPattern": "NLM v 0.4",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Name": "Save Our Seeds - Day 21",
+        "Description": "S.O.S!",
+        "StageModule": "RTID(BeachStage@LevelModules)",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(InitialPlants@CurrentLevel)",
+          "RTID(BeachMowers@LevelModules)",
+          "RTID(RailcartBeach@CurrentLevel)",
+          "RTID(DefaultSunDropper@LevelModules)",
+          "RTID(SOS@CurrentLevel)",
+          "RTID(Tide@CurrentLevel)"
+        ],
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "FirstIntroNarrative": "INTRO"
+      }
+    },
+
+
+    {
+    "aliases": [
+        "INTRO"
+    ],
+    "objclass": "NarrativeProperties",
+    "objdata": {
+        "Flow": [
+        {
+                "Character": "crazydave",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "crazydave",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "This feels much nicer for my nose!",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "crazydave",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "Neighbor, you can do your stuff and things. I will be at the shore!",
+                    "zh": "???"
+                }
+            }
+        ]
+      }
+    },
+
+
+
+
+    {
+      "objclass": "PlantProperties",
+      "aliases": [
+        "megapeashooter_props"
+      ],
+      "objdata": {
+        "ShootInterval": 1.5,
+        "ShootIntervalAdditional": 0.25,
+        "PlantfoodPeaCount": 15,
+        "Cooldown": 5,
+        "CooldownFrom": 1,
+        "SunCost": 400,
+        "BeghouledCost": 1000,
+        "Toughness": 300,
+        "PeaType": "pea_mega_c",
+        "PeaTypePlantfood": "pea_mega_c",
+        "Family": "Peashooter",
+        "CostumeOnSpawn": 2,
+        "SpawnedScale": 1.2
+      }
+    },
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "megapeashooter"
+      ],
+      "objdata": {
+        "PlantBasedOn": "peashooter",
+        "Properties": "RTID(megapeashooter_props@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "NAME": {
+            "en": "Mega Peashooter",
+            "zh": "???"
+         },
+         "OBTAINWORLD": "mint",
+         "ALMANAC": "RTID(megapeashooter_almanac@CurrentLevel)"
+        }
+      }
+    },
+    {
+      "objclass": "PlantAlmanacProperties",
+      "aliases": [
+        "megapeashooter_almanac"
+      ],
+      "objdata": {
+        "BriefIntroduction": {
+          "en": "Shoots large peas at the enemies",
+          "zh": "???"
+        }
+      }
+    },
+    {
+    "aliases": [
+        "pea_mega_c"
+    ],
+    "objclass": "ProjectileType",
+    "objdata": {
+        "ProjectileBasedOn": "pea_mega",
+        "Props": "RTID(pea_mega_p@CurrentLevel)"
+    }
+},
+{
+    "aliases": [
+        "pea_mega_p"
+    ],
+    "objclass": "ProjectileProperties",
+    "objdata": {
+        "Damage": 400,
+        "Size": {
+          "w": 20,
+          "h": 20
+        },
+        "SplashDamage": [
+          {
+            "Damage": 100,
+            "Range": {
+              "w": 1,
+              "h": 1
+            }
+          }
+        ]
+    }
+},
+
+
+
+
+
+{
+      "objclass": "PlantProperties",
+      "aliases": [
+        "squadflower_props"
+      ],
+      "objdata": {
+        "SunValue": 300,
+        "ProduceInterval": 18,
+        "ProduceIntervalAdditional": 2,
+        "ProduceCountdownStart": 3,
+        "ProduceCountdownStartAdditional": 0,
+        "SunCost": 325,
+        "Toughness": 2500,
+        "Family": "Sun",
+        "CostumeOnSpawn": 6,
+        "SpawnedScale": 1.2
+      }
+    },
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "squadflower"
+      ],
+      "objdata": {
+        "PlantBasedOn": "twinsunflower",
+        "Properties": "RTID(squadflower_props@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "NAME": {
+            "en": "Squadflower",
+            "zh": "???"
+         },
+         "OBTAINWORLD": "mint",
+         "ALMANAC": "RTID(squadflower_almanac@CurrentLevel)"
+        }
+      }
+    },
+    {
+      "objclass": "PlantAlmanacProperties",
+      "aliases": [
+        "squadflower_almanac"
+      ],
+      "objdata": {
+        "BriefIntroduction": {
+          "en": "Blocks zombies and produces more sun",
+          "zh": "???"
+        }
+      }
+    },
+    {
+      "objclass": "PlantProperties",
+      "aliases": [
+        "butterpult_props"
+      ],
+      "objdata": {
+        "ButterType": "butter",
+        "ThrowInterval": 0.7,
+        "ThrowIntervalAdditional": 0.1,
+        "ChanceToButter": 1,
+        "Cooldown": 20,
+        "CooldownFrom": 0.5,
+        "SunCost": 275,
+        "Toughness": 300,
+        "Family": "Lobber",
+        "CostumeOnSpawn": 0,
+        "SpawnedScale": 1.2
+      }
+    },
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "butterpult"
+      ],
+      "objdata": {
+        "PlantBasedOn": "kernelpult",
+        "Properties": "RTID(butterpult_props@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "NAME": {
+            "en": "Butter-pult",
+            "zh": "???"
+         },
+         "OBTAINWORLD": "mint",
+         "ALMANAC": "RTID(butterpult_almanac@CurrentLevel)"
+        }
+      }
+    },
+    {
+      "objclass": "PlantAlmanacProperties",
+      "aliases": [
+        "butterpult_almanac"
+      ],
+      "objdata": {
+        "BriefIntroduction": {
+          "en": "Quickly flings stunning butter at zombies",
+          "zh": "???"
+        }
+      }
+    },
+
+
+
+    {
+      "objclass": "PlantProperties",
+      "aliases": [
+        "zappingreed_props"
+      ],
+      "objdata": {
+         "Damage": 10,
+         "SplashDamage": 10,
+         "SplashCount": 999,
+         "AttackInterval": 0.3,
+         "AttackIntervalAdditional": 0.1,
+         "RedAttackStunDuration": 0.1,
+         "CallsElectricCurrant": true,
+         "Family": "Electricity",
+         "SunCost": 200,
+        "CostumeOnSpawn": 2,
+        "SpawnedScale": 1.2
+      }
+    },
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "zappingreed"
+      ],
+      "objdata": {
+        "PlantBasedOn": "lightningreed",
+        "Properties": "RTID(zappingreed_props@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "NAME": {
+            "en": "Zapping Reed",
+            "zh": "???"
+         },
+         "OBTAINWORLD": "mint",
+         "ALMANAC": "RTID(zappingreed_almanac@CurrentLevel)"
+        }
+      }
+    },
+    {
+      "objclass": "PlantAlmanacProperties",
+      "aliases": [
+        "zappingreed_almanac"
+      ],
+      "objdata": {
+        "BriefIntroduction": {
+          "en": "Rapidly zaps all available zombies",
+          "zh": "???"
+        }
+      }
+    },
+
+
+    {
+      "objclass": "PlantProperties",
+      "aliases": [
+        "phaserbean_props"
+      ],
+      "objdata": {
+         "Damage": 100,
+         "ShootInterval": 0.7,
+         "ShootIntervalAdditional": 0,
+         "DamagePlantfood": 3600,
+         "Cooldown": 5,
+         "CooldownFrom": 1,
+         "SunCost": 400,
+        "CostumeOnSpawn": 0,
+        "SpawnedScale": 1.2
+      }
+    },
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "phaserbean"
+      ],
+      "objdata": {
+        "PlantBasedOn": "laser_bean",
+        "Properties": "RTID(phaserbean_props@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "NAME": {
+            "en": "Phaser Bean",
+            "zh": "???"
+         },
+         "OBTAINWORLD": "mint",
+         "ALMANAC": "RTID(phaserbean_almanac@CurrentLevel)"
+        }
+      }
+    },
+    {
+      "objclass": "PlantAlmanacProperties",
+      "aliases": [
+        "phaserbean_almanac"
+      ],
+      "objdata": {
+        "BriefIntroduction": {
+          "en": "Shoots mighty lasers down the lane",
+          "zh": "???"
+        }
+      }
+    },
+
+    {
+      "objclass": "PlantProperties",
+      "aliases": [
+        "puffungi_props"
+      ],
+      "objdata": {
+        "PeaType": "puffungi_spore",
+        "PeaTypePlantfood": "puffungi_spore",
+        "ShootInterval": 0.6,
+        "ShootIntervalAdditional": 0,
+        "PlantfoodPeaCount": 40,
+        "LifeSpan": 999999,
+        "Cooldown": 30,
+        "CooldownFrom": 1,
+        "SunCost": 125,
+        "BeghouledCost": 300,
+        "Toughness": 600,
+        "Family": "Poison",
+        "MintIgnoringLifeSpan": true,
+        "MintBoostedProps": {
+          "ResistanceMult": 10,
+          "SpeedMult": 4,
+          "Plantfood": true
+        },
+        "CostumeOnSpawn": 0,
+        "SpawnedScale": 1.2
+      }
+    },
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "puffungi"
+      ],
+      "objdata": {
+        "PlantBasedOn": "puffshroom",
+        "Properties": "RTID(puffungi_props@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "NAME": {
+            "en": "Puffungi",
+            "zh": "???"
+         },
+         "OBTAINWORLD": "mint",
+         "ALMANAC": "RTID(puffungi_almanac@CurrentLevel)"
+        }
+      }
+    },
+    {
+      "objclass": "PlantAlmanacProperties",
+      "aliases": [
+        "puffungi_almanac"
+      ],
+      "objdata": {
+        "BriefIntroduction": {
+          "en": "Spreads by shooting spores at zombies",
+          "zh": "???"
+        }
+      }
+    },
+    {
+    "aliases": [
+        "puffungi_spore"
+    ],
+    "objclass": "ProjectileType",
+    "objdata": {
+        "ProjectileBasedOn": "puffshroom_spore",
+        "Props": "RTID(puffungi_spore_p@CurrentLevel)"
+    }
+},
+{
+    "aliases": [
+        "puffungi_spore_p"
+    ],
+    "objclass": "ProjectileProperties",
+    "objdata": {
+      "PlantTypeToSpawn": "puffungi",
+      "CannotBeReversedByJester": true,
+        "Damage": 10,
+          "Size": {
+            "w": 12,
+            "h": 12
+          }
+    }
+},
+
+
+
+
+{
+      "objclass": "PlantProperties",
+      "aliases": [
+        "bowlingbomb_props"
+      ],
+      "objdata": {
+        "Cooldown": 30,
+    "CooldownFrom": 0.1,
+    "SunCost": 550,
+    "BeghouledCost": 2000,
+    "Toughness": 400,
+    "Family": "Peashooter",
+    "StartingHeight": 0,
+    "AmmoRefreshTime": 7,
+    "RollOrder": "210",
+    "LoadOrder": "210",
+    "Bowling0": "bowling_pf",
+    "Bowling1": "bowling_pf",
+    "Bowling2": "bowling_pf",
+    "BowlingPlantfood": "bowling_pf",
+    "MintBoostedProps": {
+      "ResistanceMult": 1,
+      "SpeedMult": 6,
+      "Plantfood": true
+    },
+        "CostumeOnSpawn": 0,
+        "SpawnedScale": 1.2
+      }
+    },
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "bowlingbomb"
+      ],
+      "objdata": {
+        "PlantBasedOn": "bowlingbulb",
+        "Properties": "RTID(bowlingbomb_props@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "NAME": {
+            "en": "Bowling Bomb",
+            "zh": "???"
+         },
+         "OBTAINWORLD": "mint",
+         "ALMANAC": "RTID(bowlingbomb_almanac@CurrentLevel)"
+        }
+      }
+    },
+    {
+      "objclass": "PlantAlmanacProperties",
+      "aliases": [
+        "bowlingbomb_almanac"
+      ],
+      "objdata": {
+        "BriefIntroduction": {
+          "en": "Rolls bouncing, explosive shots that redirect when hitting a zombie",
+          "zh": "???"
+        }
+      }
+    },
+
+
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "SelectionMethod": "chooser",
+        "CardDecks": {
+          "Recommended": [
+            {
+              "Name": {
+                "en": "Budget Saviour",
+                "zh": "???"
+              },
+              "Leader": 4,
+              "Plants": [
+                "primalsunflower",
+                "squadflower",
+                "zappingreed",
+                "lilypad",
+                "tanglekelp"
+              ]
+            },
+            {
+              "Name": {
+                "en": "Our Hero!",
+                "zh": "???"
+              },
+              "Leader": 3,
+              "Plants": [
+                "goldbloom",
+                "squadflower",
+                "lilypad",
+                "seashooter",
+                "torchwood",
+                "pvine"
+              ]
+            }
+          ],
+          "ChallengingLocked": false,
+          "Challenging": [
+            {
+              "HugeWaveGem": 999,
+              "Name": {
+                "en": "Risky Rescue NEED SUGGESTIONS",
+                "zh": "???"
+              },
+              "Leader": 2,
+              "Plants": [
+                "zombiepotion_speed",
+                "zombiepotion_toughness",
+                "zombiepotion_invisibility",
+                "bamboobusket",
+                "phatbeet_rhythm",
+                "hollybarrierleaf",
+                "hotpotato",
+                "hotpotato"
+              ]
+            }
+          ]
+        },
+        "PlantIncludeList": [
+          "megapeashooter",
+          "squadflower",
+          "butterpult",
+          "zappingreed",
+          "phaserbean",
+          "puffungi",
+    "sunflower",
+    "peashooter",
+    "wallnut",
+    "potatomine",
+    "cabbagepult",
+    "bloomerang",
+    "iceburg",
+    "gravebuster",
+    "twinsunflower",
+    "bonkchoy",
+    "repeater",
+    "iceweed",
+    "snowdrop",
+    "squash",
+    "dandelion",
+    "pvine",
+    "kernelpult",
+    "snapdragon",
+    "spikeweed",
+    "coconutcannon",
+    "cherry_bomb",
+    "springbean",
+    "spikerock",
+    "threepeater",
+    "buttercup",
+    "splitpea",
+    "chilibean",
+    "lightningreed",
+    "tallnut",
+    "jalapeno",
+    "peapod",
+    "melonpult",
+    "wintermelon",
+    "imitater",
+    "electricpeashooter",
+    "sapfling",
+    "electriccurrant",
+    "marigold",
+    "laser_bean",
+    "blover",
+    "citron",
+    "empea",
+    "starfruit",
+    "pinkstarfruit",
+    "shootingstarfruit",
+    "holonut",
+    "magnifyinggrass",
+    "powerplant",
+    "applemortar",
+    "solartomato",
+    "pumpkin",
+    "hollyknight",
+    "gumnut",
+    "hypnoshroom",
+    "sunshroom",
+    "puffshroom",
+    "fumeshroom",
+    "sunbean",
+    "peanut",
+    "magnetshroom",
+    "scaredyshroom",
+    "plantern",
+    "vamporcini",
+    "glaciershroom",
+    "doomshroom",
+    "lilypad",
+    "tanglekelp",
+    "bowlingbulb",
+    "homingthistle",
+    "guacodile",
+    "banana",
+    "seashroom",
+    "chomper",
+    "missiletoe",
+    "seashooter",
+    "ghostpepper",
+    "parsnip",
+    "icebloom",
+    "hurrikale",
+    "hotpotato",
+    "pepperpult",
+    "chardguard",
+    "firepeashooter",
+    "stunion",
+    "xshot",
+    "pyrevine",
+    "jackolantern",
+    "sweetpotato",
+    "hotdate",
+    "gatling",
+    "megagatling",
+    "torchwood",
+    "lavaguava",
+    "redstinger",
+    "akee",
+    "endurian",
+    "toadstool",
+    "stallia",
+    "goldleaf",
+    "zoybeanpod",
+    "aloe",
+    "shinevine",
+    "skyshooter",
+    "moonbean",
+    "floawerPot",
+    "firegourd",
+    "snowpea",
+    "bambooshoot",
+    "turnip",
+    "peach",
+    "powerlily",
+    "lychee",
+    "solarsage",
+    "cantaloupe",
+    "bamboozle",
+    "atombomb_seedling",
+    "strawburst",
+    "cactus",
+    "phatbeet",
+    "celerystalker",
+    "thymewarp",
+    "electricblueberry",
+    "garlic",
+    "sporeshroom",
+    "intensivecarrot",
+    "caulipower",
+    "bloominghearts",
+    "grapeshot",
+    "primalpeashooter",
+    "primalwallnut",
+    "perfumeshroom",
+    "coldsnapdragon",
+    "primalsunflower",
+    "primalpotatomine",
+    "shrinkingviolet",
+    "meteorflower",
+    "explodeonut",
+    "moonflower",
+    "nightshade",
+    "shadowshroom",
+    "dusklobber",
+    "grimrose",
+    "goldbloom",
+    "escaperoot",
+    "murkadamia",
+    "shadowpeashooter",
+    "noctarine",
+    "gloomvine",
+    "gloomshroom",
+    "umbrellaleaf",
+    "snappea",
+    "cranjelly",
+    "appeasemint",
+    "enlightenmint",
+    "reinforcemint",
+    "bombardmint",
+    "armamint",
+    "spearmint",
+    "wintermint",
+    "enforcemint",
+    "peppermint",
+    "ailmint",
+    "filamint",
+    "enchantmint",
+    "concealmint",
+    "containmint"
+        ]
+      }
+    },
+
+
+
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "Tide"
+      ],
+      "objclass": "TideProperties",
+      "objdata": {
+        "StartingWaveLocation": 7
+      }
+    },
+    {
+      "aliases": [
+              "LowTideChange3"
+      ],
+      "objclass": "TidalChangeWaveActionProps",
+      "objdata": {
+              "TidalChange": {
+                      "ChangeAmount": 3,
+                      "ChangeType": "absolute"
+              }
+      }
+    },
+    {
+      "aliases": [
+              "LowTideChange6"
+      ],
+      "objclass": "TidalChangeWaveActionProps",
+      "objdata": {
+              "TidalChange": {
+                      "ChangeAmount": 6,
+                      "ChangeType": "absolute"
+              }
+      }
+    },
+    {
+      "aliases": [
+              "LowTideEvent"
+      ],
+      "objclass": "BeachStageEventZombieSpawnerProps",
+      "objdata": {
+              "ColumnEnd": 6,
+              "ColumnStart": 3,
+              "GroupSize": 2,
+              "TimeBeforeFullSpawn": 0.5,
+              "TimeBetweenGroups": 0.2,
+              "WaveStartMessage": "[WARNING_LOW_TIDE]",
+              "ZombieCount": 6,
+              "ZombieName": "beach_armor1"
+      }
+    },
+    {
+      "aliases": [
+        "SOS"
+      ],
+      "objclass": "ProtectThePlantChallengeProperties",
+      "objdata": {
+        "Plants": [
+          {
+            "PlantType": "bowlingbomb",
+            "GridX": "0",
+            "GridY": "2",
+            "Level": "0"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "RailcartBeach"
+      ],
+      "objclass": "RailcartProperties",
+      "objdata": {
+        "RailcartType": "railcart_beach",
+        "Railcarts": [
+          {
+            "Column": "0",
+            "Row": "2"
+          }
+        ],
+        "Rails": [
+          {
+            "Column": "0",
+            "RowStart": 0,
+            "RowEnd": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 7,
+        "WaveCount": 7,
+        "Waves": [
+          [
+            "RTID(Wave1@.)"
+          ],
+          [
+            "RTID(Wave2@.)"
+          ],
+          [
+            "RTID(Wave3@.)"
+          ],
+          [
+            "RTID(Wave4@.)"
+          ],
+          [
+            "RTID(Wave5@.)",
+            "RTID(LowTideChange3@.)",
+            "RTID(LowTideEvent@.)"
+          ],
+          [
+            "RTID(Wave6@.)"
+          ],
+          [
+            "RTID(Wave7@.)",
+            "RTID(LowTideChange6@.)"
+          ]
+        ],
+        "MaxNextWaveHealthPercentage": 0.1,
+        "MinNextWaveHealthPercentage": 0.1
+      }
+    },
+    {
+      "aliases": [
+        "InitialPlants"
+      ],
+      "objclass": "InitialPlantProperties",
+      "objdata": {
+        "InitialPlantPlacements": [
+          {
+            "TypeName": "lilypad",
+            "GridX": "2",
+            "GridY": "1"
+          },
+          {
+            "TypeName": "lilypad",
+            "GridX": "2",
+            "GridY": "0"
+          },
+          {
+            "TypeName": "lilypad",
+            "GridX": "3",
+            "GridY": "3"
+          },
+          {
+            "TypeName": "lilypad",
+            "GridX": "4",
+            "GridY": "2"
+          },
+          {
+            "TypeName": "lilypad",
+            "GridX": "6",
+            "GridY": "4"
+          },
+          {
+            "TypeName": "lilypad",
+            "GridX": "5",
+            "GridY": "0"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(beach_armor4@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_armor4@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_armor4@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_armor4@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_armor4@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(beach_surfer_veteran@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_surfer_veteran@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_surfer_veteran@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_armor4@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_armor4@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_armor4@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_armor4@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_surfer_veteran@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_surfer_veteran@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_surfer_veteran@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_surfer@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(beach_octopus@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(beach_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(beach_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(beach_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(beach@ZombieTypes)",
+            "Row": 2
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1517 @@
+{
+  "#Save Our Seeds - Day 16 by ScatterPattern": "NLM v 0.3.1",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Name": "Save Our Seeds - Day 16",
+        "Description": "S.O.S!",
+        "StageModule": "RTID(FutureNightStage@LevelModules)",
+        "LevelNumber": 1,
+        "FirstRewardParam": "laser_bean",
+        "FirstRewardType": "unlock_plant",
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(ConveyorSeedBank@CurrentLevel)",
+          "RTID(GI@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(FutureMowers@LevelModules)"
+        ],
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "FirstOutroNarrative": "OUTRO"
+      }
+    },
+
+    {
+    "aliases": [
+        "OUTRO"
+    ],
+    "objclass": "NarrativeProperties",
+    "objdata": {
+        "Flow": [
+        {
+                "Character": "winnie",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "crazydave",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "winnie",
+                "Action": "TIRED",
+                "Lines": {
+                    "en": "That's Phaser Bean rescued, only 9 more to go.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "crazydave",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "How did the plants end up everywhere?",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "Rifts caused by Project Paradox, User Dave.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "crazydave",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "Why one per time period?",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "TIRED",
+                "Lines": {
+                    "en": "I don't actually know.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "But we still have to get them all if we are to face what's waiting for us in the Present.",
+                    "zh": "???"
+                }
+            }
+        ]
+      }
+    },
+
+
+    {
+      "objclass": "PlantProperties",
+      "aliases": [
+        "phaserbean_props"
+      ],
+      "objdata": {
+         "Damage": 100,
+         "ShootInterval": 0.7,
+         "ShootIntervalAdditional": 0,
+         "DamagePlantfood": 3600,
+         "Cooldown": 5,
+         "CooldownFrom": 1,
+         "SunCost": 400,
+        "CostumeOnSpawn": 0,
+        "SpawnedScale": 1.2
+      }
+    },
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "phaserbean"
+      ],
+      "objdata": {
+        "PlantBasedOn": "laser_bean",
+        "Properties": "RTID(phaserbean_props@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "NAME": {
+            "en": "Phaser Bean",
+            "zh": "???"
+         },
+         "OBTAINWORLD": "mint",
+         "ALMANAC": "RTID(phaserbean_almanac@CurrentLevel)"
+        }
+      }
+    },
+    {
+      "objclass": "PlantAlmanacProperties",
+      "aliases": [
+        "phaserbean_almanac"
+      ],
+      "objdata": {
+        "BriefIntroduction": {
+          "en": "Shoots mighty lasers down the lane",
+          "zh": "???"
+        }
+      }
+    },
+
+
+
+
+
+    {
+      "objclass": "ConveyorSeedBankProperties",
+      "objdata": {
+        "DropDelayConditions": [
+          {
+            "Delay": 7,
+            "MaxPackets": 0
+          }
+        ],
+        "InitialPlantList": [
+          {
+            "PlantType": "laser_bean",
+            "Weight": 8
+          }
+        ],
+        "SpeedConditions": []
+      },
+      "aliases": [
+        "ConveyorSeedBank"
+      ]
+    },
+    {
+      "objclass": "ModifyConveyorWaveActionProps",
+      "objdata": {
+        "Add": [
+          {
+            "Type": "RTID(lightningreed@PlantTypes)",
+            "Weight": 6
+          }
+        ],
+        "Remove":[
+        ]
+      },
+      "aliases": [
+        "ConveyorAddLReed"
+      ]
+    },
+    {
+      "objclass": "ModifyConveyorWaveActionProps",
+      "objdata": {
+        "Add": [
+          {
+            "Type": "RTID(phaserbean@CurrentLevel)",
+            "Weight": 999
+          }
+        ],
+        "Remove":[
+          {
+            "PlantType": "laser_bean",
+            "Weight": 8
+          }
+        ]
+      },
+      "aliases": [
+        "ConveyorAddPhaser"
+      ]
+    },
+    {
+      "aliases": [
+        "GI"
+      ],
+      "objclass": "InitialGridItemProperties",
+      "objdata": {
+        "InitialGridItemPlacements": [
+          {
+            "GridX": 1,
+            "GridY": 0,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 2,
+            "GridY": 0,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 3,
+            "GridY": 0,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 4,
+            "GridY": 0,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 5,
+            "GridY": 0,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 6,
+            "GridY": 0,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 7,
+            "GridY": 0,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 8,
+            "GridY": 0,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 2,
+            "GridY": 2,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 3,
+            "GridY": 2,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 4,
+            "GridY": 2,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 5,
+            "GridY": 2,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 6,
+            "GridY": 2,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 7,
+            "GridY": 2,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 8,
+            "GridY": 2,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 8,
+            "GridY": 4,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 7,
+            "GridY": 4,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 6,
+            "GridY": 4,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 5,
+            "GridY": 4,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 4,
+            "GridY": 4,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 3,
+            "GridY": 4,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 2,
+            "GridY": 4,
+            "TypeName": "gravestone_future"
+          },
+          {
+            "GridX": 1,
+            "GridY": 4,
+            "TypeName": "gravestone_future"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 7,
+        "WaveCount": 7,
+        "Waves": [
+          [
+            "RTID(Wave1@.)"
+          ],
+          [
+            "RTID(Wave2@.)"
+          ],
+          [
+            "RTID(Wave3@.)",
+            "RTID(ConveyorAddLReed@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@.)"
+          ],
+          [
+            "RTID(Wave5@.)"
+          ],
+          [
+            "RTID(Wave6@.)",
+            "RTID(ConveyorAddPhaser@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@.)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(barrelroller@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor4@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(future_armor1@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    }
+  ]
+}

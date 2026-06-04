@@ -1,0 +1,2382 @@
+{
+  "#Save Our Seeds - Day 28 by ScatterPattern": "NLM v 0.4",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Name": "Save Our Seeds - Day 28",
+        "Description": "S.O.S!",
+        "StageModule": "RTID(LostCityNightStage@LevelModules)",
+        "LevelNumber": 1,
+        "FirstRewardParam": "toadstool",
+        "FirstRewardType": "unlock_plant",
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(GI@CurrentLevel)",
+          "RTID(LostCityMowers@LevelModules)",
+          "RTID(RailcartTutorial@CurrentLevel)"
+        ],
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StartingSun": 900,
+        "FirstOutroNarrative": "OUTRO"
+      }
+    },
+
+
+    {
+    "aliases": [
+        "OUTRO"
+    ],
+    "objclass": "NarrativeProperties",
+    "objdata": {
+        "Flow": [
+        {
+                "Character": "winnie",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "crazydave",
+                "Action": "NPC_ENTER"
+            },
+            {
+                "Character": "winnie",
+                "Action": "SAY",
+                "Lines": {
+                    "en": "Apologies for being late, we were lost in the jungle.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "winnie",
+                "Action": "TIRED",
+                "Lines": {
+                    "en": "...I see you've already rescued Toadsteel.",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "crazydave",
+                "Action": "SHOUT",
+                "Lines": {
+                    "en": "Not the mushrooms again!",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "crazydave",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "I'm going right back into the jungle, far from fungi!",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "crazydave",
+                "Action": "EXCITED",
+                "Lines": {
+                    "en": "The funny-looking frogs are better company than infectious fungus anyway!",
+                    "zh": "???"
+                }
+            },
+            {
+                "Character": "crazydave",
+                "Action": "NPC_EXIT"
+            },
+            {
+                "Character": "winnie",
+                "Action": "TIRED",
+                "Lines": {
+                    "en": "Is he talking about dart frogs?",
+                    "zh": "???"
+                }
+            }
+        ]
+      }
+    },
+
+    {
+      "objclass": "PlantProperties",
+      "aliases": [
+        "toadsteel_props"
+      ],
+      "objdata": {
+        "Cooldown": 5,
+    "CooldownFrom": 1,
+    "SunCost": 450,
+    "BeghouledCost": 1500,
+    "Toughness": 5000,
+    "Family": "Sun",
+    "TongueDistance": 4.5,
+    "TongueSlapDamage": 200,
+    "ChewTime": 3,
+    "SunProducePerZombie": 75,
+    "MaxZombieChewCount": 1,
+    "WaitTimePF": 6,
+    "TongueDistancePf": 15,
+    "TongueSlapDamagePF": 600,
+    "ChewTimePF": 0.5,
+    "SunProducePerZombiePF": 100,
+    "MaxZombieChewCountPF": 10,
+    "MintProductionFactor": 2,
+    "MintBoostedProps": {
+      "ResistanceMult": 1,
+      "SpeedMult": 5,
+      "Plantfood": false
+    },
+        "CostumeOnSpawn": 1,
+        "SpawnedScale": 1.2
+      }
+    },
+    {
+      "objclass": "PlantType",
+      "aliases": [
+        "toadsteel"
+      ],
+      "objdata": {
+        "PlantBasedOn": "toadstool",
+        "Properties": "RTID(toadsteel_props@CurrentLevel)",
+        "ShiftedPlantFeatures": {
+          "NAME": {
+            "en": "Toadsteel",
+            "zh": "???"
+         },
+         "OBTAINWORLD": "mint",
+         "ALMANAC": "RTID(toadsteel_almanac@CurrentLevel)"
+        }
+      }
+    },
+    {
+      "objclass": "PlantAlmanacProperties",
+      "aliases": [
+        "toadsteel_almanac"
+      ],
+      "objdata": {
+        "BriefIntroduction": {
+          "en": "Eats and blocks zombies, producing sun for each zombie eaten",
+          "zh": "???"
+        }
+      }
+    },
+
+
+
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "SelectionMethod": "preset",
+        "PresetPlantList": [
+          {
+            "PlantType": "toadsteel",
+            "Level": -1
+          },
+          {
+            "PlantType": "toadsteel",
+            "Level": -1
+          },
+          {
+            "PlantType": "toadsteel",
+            "Level": -1
+          },
+          {
+            "PlantType": "cherry_bomb",
+            "Level": -1
+          },
+          {
+            "PlantType": "powerlily",
+            "Level": -1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "RailcartTutorial"
+      ],
+      "objclass": "RailcartProperties",
+      "objdata": {
+        "RailcartType": "railcart_pirate",
+        "Railcarts": [
+          {
+            "Column": "0",
+            "Row": "1"
+          },
+          {
+            "Column": "1",
+            "Row": "1"
+          },
+          {
+            "Column": "2",
+            "Row": "1"
+          },
+          {
+            "Column": "3",
+            "Row": "1"
+          },
+          {
+            "Column": "4",
+            "Row": "1"
+          },
+          {
+            "Column": "5",
+            "Row": "1"
+          },
+          {
+            "Column": "6",
+            "Row": "1"
+          },
+          {
+            "Column": "7",
+            "Row": "1"
+          },
+          {
+            "Column": "8",
+            "Row": "1"
+          },
+          {
+            "Column": "0",
+            "Row": "3"
+          },
+          {
+            "Column": "1",
+            "Row": "3"
+          },
+          {
+            "Column": "2",
+            "Row": "3"
+          },
+          {
+            "Column": "3",
+            "Row": "3"
+          },
+          {
+            "Column": "4",
+            "Row": "3"
+          },
+          {
+            "Column": "5",
+            "Row": "3"
+          },
+          {
+            "Column": "6",
+            "Row": "3"
+          },
+          {
+            "Column": "7",
+            "Row": "3"
+          },
+          {
+            "Column": "8",
+            "Row": "3"
+          }
+        ],
+        "Rails": [
+          {
+            "Column": "0",
+            "RowStart": 0,
+            "RowEnd": 3
+          },
+          {
+            "Column": "1",
+            "RowStart": 1,
+            "RowEnd": 4
+          },
+          {
+            "Column": "2",
+            "RowStart": 0,
+            "RowEnd": 3
+          },
+          {
+            "Column": "3",
+            "RowStart": 1,
+            "RowEnd": 4
+          },
+          {
+            "Column": "4",
+            "RowStart": 0,
+            "RowEnd": 3
+          },
+          {
+            "Column": "5",
+            "RowStart": 1,
+            "RowEnd": 4
+          },
+          {
+            "Column": "6",
+            "RowStart": 0,
+            "RowEnd": 3
+          },
+          {
+            "Column": "7",
+            "RowStart": 1,
+            "RowEnd": 4
+          },
+          {
+            "Column": "8",
+            "RowStart": 0,
+            "RowEnd": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 5,
+        "WaveCount": 25,
+        "Waves": [
+          [
+            "RTID(Wave1@.)"
+          ],
+          [
+            "RTID(Wave2@.)"
+          ],
+          [
+            "RTID(Wave3@.)"
+          ],
+          [
+            "RTID(Wave4@.)"
+          ],
+          [
+            "RTID(Wave5@.)"
+          ],
+          [
+            "RTID(Wave6@.)"
+          ],
+          [
+            "RTID(Wave7@.)"
+          ],
+          [
+            "RTID(Wave8@.)"
+          ],
+          [
+            "RTID(Wave9@.)"
+          ],
+          [
+            "RTID(Wave10@.)"
+          ],
+          [
+            "RTID(Wave11@.)",
+            "RTID(Parachutes@.)"
+          ],
+          [
+            "RTID(Wave12@.)"
+          ],
+          [
+            "RTID(Wave13@.)"
+          ],
+          [
+            "RTID(Wave14@.)"
+          ],
+          [
+            "RTID(Wave15@.)"
+          ],
+          [
+            "RTID(Wave16@.)"
+          ],
+          [
+            "RTID(Wave17@.)",
+            "RTID(Parachutes@.)",
+            "RTID(ParachutesWarn@.)"
+          ],
+          [
+            "RTID(Wave18@.)"
+          ],
+          [
+            "RTID(Wave19@.)"
+          ],
+          [
+            "RTID(Wave20@.)"
+          ],
+          [
+            "RTID(Wave21@.)",
+            "RTID(Parachutes@.)",
+            "RTID(ParachutesWarn@.)"
+          ],
+          [
+            "RTID(Wave22@.)"
+          ],
+          [
+            "RTID(Wave23@.)"
+          ],
+          [
+            "RTID(Wave24@.)"
+          ],
+          [
+            "RTID(Wave25@.)",
+            "RTID(Parachutes@.)",
+            "RTID(Parachutes@.)",
+            "RTID(ParachutesWarn@.)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "GI"
+      ],
+      "objclass": "InitialGridItemProperties",
+      "objdata": {
+        "InitialGridItemPlacements": [
+          {
+            "GridX": "5",
+            "GridY": "0",
+            "TypeName": "goldtile"
+          },
+          {
+            "GridX": "4",
+            "GridY": "4",
+            "TypeName": "goldtile"
+          },
+          {
+            "GridX": "3",
+            "GridY": "0",
+            "TypeName": "goldtile"
+          },
+          {
+            "GridX": "2",
+            "GridY": "4",
+            "TypeName": "goldtile"
+          },
+          {
+            "GridX": "1",
+            "GridY": "0",
+            "TypeName": "goldtile"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(football_mech@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_impporter@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave13"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave14"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(football_mech@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave16"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave17"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave18"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave19"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_impporter@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_impporter@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_impporter@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_impporter@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave20"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave21"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave22"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_crystalskull@ZombieTypes)",
+            "Row": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave23"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave24"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(football_mech@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_impporter@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_impporter@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_impporter@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_impporter@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_impporter@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave25"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_gargantuar@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_gargantuar@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_bug_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(lostcity_relichunter@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_excavator@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_impporter@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_impporter@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(lostcity_impporter@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(lostcity_impporter@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+    "aliases": [
+        "ParachutesWarn"
+    ],
+    "objclass": "WaveWarningProps",
+    "objdata": {
+        "LabelR": 217,
+        "LabelG": 155,
+        "LabelB": 45,
+        "LabelAInit": 1,
+        "OutlineR": 0,
+        "OutlineG": 0,
+        "OutlineB": 0,
+        "String": "Parachute Rain!",
+        "Sound": "HugeWave",
+        "LabelTargetScale": 0.5,
+        "LabelInitScale": 4,
+        "Duration": 2.5,
+        "InitTime": 0.33
+    }
+},
+    {
+      "aliases": [
+        "Parachutes"
+      ],
+      "objclass": "SpawnZombiesFromGroundSpawnerProps",
+      "objdata": {
+        "ColumnStart": 4,
+        "ColumnEnd": 9,
+        "Zombies": [
+          {
+            "Type": "RTID(lostcity_lostpilot@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(lostcity_lostpilot@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(lostcity_lostpilot@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(lostcity_lostpilot@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(lostcity_lostpilot@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(lostcity_lostpilot@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(lostcity_lostpilot@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(lostcity_lostpilot@ZombieTypes)"
+          }
+        ]
+      }
+    }
+  ]
+}

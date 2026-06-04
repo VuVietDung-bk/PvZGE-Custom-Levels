@@ -42,7 +42,7 @@
       "objdata": {
         "PlantExcludeList": [
           "blover", "glaciershroom", "icebloom", "snowdrop", "hurrikale", "wallnut", "primalwallnut", "tallnut", "holonut", "peanut", "explodeonut",
-          "turnip", "chardguard", "endurian", "garlic", "buttercup", "vamporcini", "sweetpotato", "torchwood", "umbrellaleaf", "atombomb_seedling", 
+          "turnip", "chardguard", "endurian", "garlic", "buttercup", "vamporcini", "sweetpotato", "torchwood", "umbrellaleaf", "atombomb_seedling", "pineapple",
           "filamint", "reinforcemint", "bombardmint", "armamint", "containmint", "enchantmint", "spearmint", "peppermint", "wintermint", "concealmint", 
           "enforcemint", "enlightenmint", "ailmint", "appeasemint", "pumpkin", "bamboozle", "hollyknight", "lychee", "murkadamia"
         ],
@@ -182,15 +182,15 @@
       ["RTID(TigerRush1@CurrentLevel)"],
       ["RTID(TigerRush1@CurrentLevel)"],
       ["RTID(TigerRush1@CurrentLevel)"],
-      ["RTID(TigerRush1@CurrentLevel)", "RTID(BronzeStrong@CurrentLevel)"],
+      ["RTID(TigerRush1@CurrentLevel)", "RTID(BronzeStrongZom@CurrentLevel)"],
       ["RTID(TigerRush2@CurrentLevel)"],
       ["RTID(TigerRush2@CurrentLevel)", "RTID(PlantFoodSpawner0@CurrentLevel)"],
       ["RTID(TigerRush2@CurrentLevel)"],
-      ["RTID(TigerRush2@CurrentLevel)", "RTID(BronzeHook@CurrentLevel)"],
+      ["RTID(TigerRush2@CurrentLevel)", "RTID(BronzeHookZom@CurrentLevel)"],
       ["RTID(TigerRush3@CurrentLevel)"],
       ["RTID(TigerRush3@CurrentLevel)"],
       ["RTID(TigerRush3@CurrentLevel)"],
-      ["RTID(TigerRush3@CurrentLevel)", "RTID(PlantFoodSpawner1@CurrentLevel)", "RTID(BronzeChi@CurrentLevel)"],
+      ["RTID(TigerRush3@CurrentLevel)", "RTID(PlantFoodSpawner1@CurrentLevel)", "RTID(BronzeChiZom@CurrentLevel)"],
       ["RTID(TigerRush4@CurrentLevel)"],
       ["RTID(TigerRush4@CurrentLevel)"],
       ["RTID(TigerRush4@CurrentLevel)"],
@@ -209,7 +209,7 @@
 ,
 		{
       "aliases": [
-        "BronzeStrong"
+        "BronzeStrongZom"
       ],
       "objclass": "SpawnZombiesJitteredWaveActionProps",
       "objdata": {
@@ -222,7 +222,21 @@
     },
     {
       "aliases": [
-        "BronzeHook"
+        "BronzeStrong"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {"Max": 0.1, "Min": 0.1},
+        "TimeBetween": {"Max": 1, "Min": 1},
+        "Repeat": {"Max": 1, "Min": 1},
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": ["RTID(BronzeStrongZom@CurrentLevel)"]
+      }
+    },
+    {
+      "aliases": [
+        "BronzeHookZom"
       ],
       "objclass": "SpawnZombiesJitteredWaveActionProps",
       "objdata": {
@@ -235,7 +249,21 @@
     },
     {
       "aliases": [
-        "BronzeChi"
+        "BronzeHook"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {"Max": 0.1, "Min": 0.1},
+        "TimeBetween": {"Max": 1, "Min": 1},
+        "Repeat": {"Max": 1, "Min": 1},
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": ["RTID(BronzeHookZom@CurrentLevel)"]
+      }
+    },
+    {
+      "aliases": [
+        "BronzeChiZom"
       ],
       "objclass": "SpawnZombiesJitteredWaveActionProps",
       "objdata": {
@@ -244,6 +272,20 @@
             "Type": "RTID(kongfu_bronze_chi@ZombieTypes)"
           }
         ]
+      }
+    },
+    {
+      "aliases": [
+        "BronzeChi"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {"Max": 0.1, "Min": 0.1},
+        "TimeBetween": {"Max": 1, "Min": 1},
+        "Repeat": {"Max": 1, "Min": 1},
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": ["RTID(BronzeChiZom@CurrentLevel)"]
       }
     },
     {

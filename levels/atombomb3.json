@@ -1,0 +1,832 @@
+{
+    "objects": [
+        {
+            "objclass": "LevelDefinition",
+            "objdata": {
+                "Description": "[PLAYERS_ATTEMPT_TO_GET_PLANT]",
+                "LevelNumber": 3,
+                "Loot": "RTID(DefaultLoot@LevelModules)",
+                "Modules": [
+                    "RTID(StandardIntro@LevelModules)",
+                    "RTID(IceageMowers@LevelModules)",
+                    "RTID(DefaultSunDropper@LevelModules)",
+                    "RTID(SeedBank@CurrentLevel)",
+                    "RTID(NewWaves@CurrentLevel)",
+                    "RTID(ChallengeModule@CurrentLevel)",
+                    "RTID(ProtectThePlant@CurrentLevel)",
+                    "RTID(DefaultZombieWinCondition@LevelModules)",
+                    "RTID(ZombiesDeadWinCon@LevelModules)"
+                ],
+                "PlantToIntroduce": "atombomb",
+                "MusicType": "MiniGame_B",
+                "Name": "[EPIC_PLANT_LEVEL_NAME]",
+                "WritenBy": "莱池_余垛",
+                "StageModule": "RTID(FeastivusStage@LevelModules)"
+            }
+        },
+        {
+            "aliases": [
+                "ProtectThePlant"
+            ],
+            "objclass": "ProtectThePlantChallengeProperties",
+            "objdata": {
+                "MustProtectCount": 3,
+                "Plants": [
+                    {
+                        "GridX": 5,
+                        "GridY": 1,
+                        "PlantType": "starfruit"
+                    },
+                    {
+                        "GridX": 3,
+                        "GridY": 2,
+                        "PlantType": "starfruit"
+                    },
+                    {
+                        "GridX": 5,
+                        "GridY": 3,
+                        "PlantType": "starfruit"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "SeedBank"
+            ],
+            "objclass": "SeedBankProperties",
+            "objdata": {
+                "PresetPlantList": [
+                    {
+                        "Level": -1,
+                        "PlantType": "atombomb_seedling"
+                    }
+                ],
+                "CardDecks": {
+                    "Recommended": [
+                        {
+                            "Name": {
+                                "en": "Redoubled Power",
+                                "zh": "如虎添翼"
+                            },
+                            "Leader": 2,
+                            "Plants": [
+                                "atombomb_seedling",
+                                "twinsunflower",
+                                "wintermelon",
+                                "chardguard"
+                            ]
+                        },
+                        {
+                            "Name": {
+                                "en": "Swipe Their Heads Off!",
+                                "zh": "一扫而空！"
+                            },
+                            "Leader": 2,
+                            "Plants": [
+                                "atombomb_seedling",
+                                "moonflower",
+                                "dusklobber",
+                                "guacodile",
+                                "chardguard",
+                                "goldleaf"
+                            ]
+                        },
+                        {
+                            "Name": {
+                                "en": "Energetic Alliance",
+                                "zh": "强强联手"
+                            },
+                            "Leader": 2,
+                            "Plants": [
+                                "atombomb_seedling",
+                                "primalsunflower",
+                                "explodeonut",
+                                "imitater",
+                                "blover",
+                                "cranjelly"
+                            ]
+                        }
+                    ],
+                    "Challenging": [
+                        {
+                            "Name": {
+                                "en": "Hurry Scurry",
+                                "zh": "手忙脚乱"
+                            },
+                            "Leader": 2,
+                            "HugeWaveGem": 2,
+                            "Plants": [
+                                "atombomb_seedling",
+                                "twinsunflower",
+                                "magnifyinggrass",
+                                "chardguard"
+                            ]
+                        },
+                        {
+                            "Name": {
+                                "en": "Atomic Storage",
+                                "zh": "储能"
+                            },
+                            "Leader": 1,
+                            "HugeWaveGem": 2,
+                            "Plants": [
+                                "atombomb_seedling",
+                                "escaperoot",
+                                "primalsunflower",
+                                "goldleaf",
+                                "spikerock",
+                                "garlic"
+                            ]
+                        }
+                    ]
+                },
+                "SelectionMethod": "chooser"
+            }
+        },
+        {
+            "aliases": [
+                "ChallengeModule"
+            ],
+            "objclass": "StarChallengeModuleProperties",
+            "objdata": {
+                "Challenges": [
+                    [
+                        "RTID(BeatTheLevel@CurrentLevel)",
+                        "RTID(SimultaneousPlants@CurrentLevel)"
+                    ]
+                ],
+                "ChallengesAlwaysAvailable": true
+            }
+        },
+        {
+            "aliases": [
+                "SimultaneousPlants"
+            ],
+            "objclass": "StarChallengeSimultaneousPlantsProps",
+            "objdata": {
+                "MaximumPlants": 18
+            }
+        },
+        {
+            "aliases": [
+                "NewWaves"
+            ],
+            "objclass": "WaveManagerModuleProperties",
+            "objdata": {
+                "DynamicZombies": [
+                    {},
+                    {},
+                    {},
+                    {},
+                    {
+                        "PointIncrementPerWave": 40,
+                        "StartingPoints": 200,
+                        "StartingWave": 5,
+                        "ZombiePool": [
+                            "RTID(feastivus_imp@ZombieTypes)",
+                            "RTID(feastivus_poncho_plate@ZombieTypes)",
+                            "RTID(feastivus_poncho_no_plate@ZombieTypes)",
+                            "RTID(feastivus_poncho@ZombieTypes)",
+                            "RTID(feastivus_gargantuar@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 50,
+                        "StartingPoints": 300,
+                        "StartingWave": 4,
+                        "ZombiePool": [
+                            "RTID(feastivus_imp@ZombieTypes)",
+                            "RTID(feastivus_poncho_plate@ZombieTypes)",
+                            "RTID(feastivus_poncho@ZombieTypes)",
+                            "RTID(feastivus_gargantuar@ZombieTypes)"
+                        ]
+                    },
+                    {
+                        "PointIncrementPerWave": 60,
+                        "StartingPoints": 400,
+                        "StartingWave": 3,
+                        "ZombiePool": [
+                            "RTID(feastivus_imp@ZombieTypes)",
+                            "RTID(feastivus_poncho_plate@ZombieTypes)",
+                            "RTID(feastivus_poncho@ZombieTypes)",
+                            "RTID(feastivus_gargantuar@ZombieTypes)"
+                        ]
+                    }
+                ],
+                "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 5,
+                "WaveCount": 15,
+                "WaveSpendingPointIncrement": 100,
+                "WaveSpendingPoints": 150,
+                "Waves": [
+                    [
+                        "RTID(Wave1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave2@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave3@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave4@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave5@CurrentLevel)",
+                        "RTID(Wave5RaidingPartyEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave6@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave7@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave8@CurrentLevel)",
+                        "RTID(Wave8RaidingPartyEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave9@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave10@CurrentLevel)",
+                        "RTID(Wave10RaidingPartyEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave11@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave12@CurrentLevel)",
+                        "RTID(Wave12RaidingPartyEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave13@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave14@CurrentLevel)",
+                        "RTID(Wave14RaidingPartyEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(Wave15@CurrentLevel)",
+                        "RTID(Wave15RaidingPartyEvent0@CurrentLevel)"
+                    ]
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave1"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(feastivus_armor1@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave2"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Type": "RTID(feastivus_imp@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(feastivus_imp@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(feastivus_imp@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave3"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(feastivus_swashbuckler@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(feastivus_swashbuckler@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(feastivus_piano@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave4"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(feastivus_poncho_no_plate@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(feastivus_poncho_plate@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(feastivus_poncho_no_plate@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave5"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(feastivus_poncho_plate@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(feastivus_poncho_no_plate@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(feastivus_poncho_plate@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(feastivus_poncho_plate@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(feastivus_poncho_no_plate@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(feastivus_piano@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave6"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "4",
+                        "Type": "RTID(feastivus_swashbuckler@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(feastivus_swashbuckler@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(feastivus_swashbuckler@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave7"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(feastivus_swashbuckler@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(feastivus_swashbuckler@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(feastivus_poncho_plate@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(feastivus_poncho_plate@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(feastivus_camel_twohump@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave8"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "2",
+                        "Type": "RTID(feastivus_piano@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(feastivus_poncho_plate@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(feastivus_poncho_plate@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(feastivus_poncho_plate@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(feastivus_camel_onehump@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(feastivus_camel_onehump@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave9"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "5",
+                        "Type": "RTID(feastivus_piano@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(feastivus_camel_twohump@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(feastivus_camel_onehump@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(feastivus_camel_twohump@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(feastivus_camel_onehump@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(feastivus_camel_onehump@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave10"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0
+                ],
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(feastivus_piano@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(feastivus_piano@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(feastivus_poncho_plate@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(feastivus_gargantuar@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(feastivus_camel_twohump@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(feastivus_camel_twohump@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave11"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "4",
+                        "Type": "RTID(feastivus_piano@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(feastivus_camel_twohump@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(feastivus_camel_twohump@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave12"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(feastivus_poncho_plate@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(feastivus_piano@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(feastivus_poncho_plate@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(feastivus_poncho_plate@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(feastivus_piano@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave13"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(feastivus_camel_twohump@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(feastivus_camel_twohump@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(feastivus_camel_onehump@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(feastivus_camel_twohump@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(feastivus_camel_onehump@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave14"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "AdditionalPlantfood": 1,
+                "DynamicPlantfood": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "Zombies": [
+                    {
+                        "Row": "3",
+                        "Type": "RTID(feastivus_piano@ZombieTypes)"
+                    },
+                    {
+                        "Row": "1",
+                        "Type": "RTID(feastivus_camel_twohump@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(feastivus_poncho_plate@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(feastivus_camel_onehump@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(feastivus_camel_twohump@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(feastivus_poncho_plate@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave15"
+            ],
+            "objclass": "SpawnZombiesJitteredWaveActionProps",
+            "objdata": {
+                "Zombies": [
+                    {
+                        "Row": "1",
+                        "Type": "RTID(feastivus_camel_twohump@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(feastivus_camel_twohump@ZombieTypes)"
+                    },
+                    {
+                        "Row": "3",
+                        "Type": "RTID(feastivus_camel_onehump@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(feastivus_camel_twohump@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(feastivus_camel_onehump@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(feastivus_piano@ZombieTypes)"
+                    },
+                    {
+                        "Row": "5",
+                        "Type": "RTID(feastivus_piano@ZombieTypes)"
+                    },
+                    {
+                        "Row": "2",
+                        "Type": "RTID(feastivus_gargantuar@ZombieTypes)"
+                    },
+                    {
+                        "Row": "4",
+                        "Type": "RTID(feastivus_gargantuar@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Wave5RaidingPartyEvent0"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": "2",
+                "SwashbucklerCount": 5,
+                "TimeBetweenGroups": "1",
+                "ZombieType": "RTID(feastivus_swashbuckler@ZombieTypes)",
+                "WaveStartMessage": " "
+            }
+        },
+        {
+            "aliases": [
+                "Wave8RaidingPartyEvent0"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": "2",
+                "SwashbucklerCount": 6,
+                "TimeBetweenGroups": "1",
+                "ZombieType": "RTID(feastivus_swashbuckler@ZombieTypes)",
+                "WaveStartMessage": " "
+            }
+        },
+        {
+            "aliases": [
+                "Wave10RaidingPartyEvent0"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": "2",
+                "SwashbucklerCount": 8,
+                "TimeBetweenGroups": "1",
+                "ZombieType": "RTID(feastivus_swashbuckler@ZombieTypes)",
+                "WaveStartMessage": " "
+            }
+        },
+        {
+            "aliases": [
+                "Wave12RaidingPartyEvent0"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": "2",
+                "SwashbucklerCount": 5,
+                "TimeBetweenGroups": "1",
+                "ZombieType": "RTID(feastivus_swashbuckler@ZombieTypes)",
+                "WaveStartMessage": " "
+            }
+        },
+        {
+            "aliases": [
+                "Wave14RaidingPartyEvent0"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": "2",
+                "SwashbucklerCount": 6,
+                "TimeBetweenGroups": "1",
+                "ZombieType": "RTID(feastivus_swashbuckler@ZombieTypes)",
+                "WaveStartMessage": " "
+            }
+        },
+        {
+            "aliases": [
+                "Wave15RaidingPartyEvent0"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": "2",
+                "SwashbucklerCount": 9,
+                "TimeBetweenGroups": "1",
+                "ZombieType": "RTID(feastivus_swashbuckler@ZombieTypes)",
+                "WaveStartMessage": " "
+            }
+        }
+    ],
+    "version": 1
+}
