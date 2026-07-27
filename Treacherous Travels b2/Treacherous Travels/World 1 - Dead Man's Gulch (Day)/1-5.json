@@ -1,0 +1,774 @@
+{
+	"#comment": "new minigame because Not OK Corral kinda sucks",
+	"Information": {
+		"name": {
+			"en": "Treacherous Travels world 1 day 5",
+			"zh-CN": ""
+		},
+		"Author": "BlockAgent007",
+		"Introduction": {
+			"en": "",
+			"zh-CN": ""
+		},
+		"GameVersion": "",
+		"Version": "1.1",
+		"CreatedAt": "2025-11-18",
+		"UpdatedAt": "2026-07-5",
+		"Difficulty": "Easy",
+		"Category": "Survival"
+	},
+	"objects":[
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "<PLAYERNAME>'s trip to Dead Guy's Gulch",
+				"LevelNumber": 5,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+        				"RTID(ZombiesDeadWinCon@LevelModules)",
+        				"RTID(DefaultZombieWinCondition@LevelModules)",
+        				"RTID(NewWaves@CurrentLevel)",
+        				"RTID(SeedBank@CurrentLevel)",
+						"RTID(PlantMods@CurrentLevel)",
+						"RTID(StandardIntro@LevelModules)",
+						"RTID(SunDropper@CurrentLevel)",
+						"RTID(ChallengeModule@CurrentLevel)",
+						"RTID(GameOverLine@CurrentLevel)"
+      				],
+				"Name": "1-5: Wind From The West I",
+				"WrittenBy": "BlockAgent007",
+				"MusicType": "MiniGame_B",
+				"NormalPresentTable": "egypt_normal_01",
+      				"ShinyPresentTable": "egypt_shiny_01",
+				"StageModule": "RTID(World1Stage@CurrentLevel)"
+			}
+		},
+		{
+			"aliases": [
+				"World1Stage"
+			],
+			"objclass": "LawnType",
+			"objdata": {
+				"LawnBaseOn": "WestStage",
+				"Properties": "RTID(WestStage@CurrentLevel)"
+			}
+		},
+		{
+			"aliases": [
+				"WestStage"
+			],
+			"objclass": "LawnProperties",
+			"objdata": {
+				"Basic_Zombie": [
+					"cowboy"
+				],
+				"Flag_Zombie": [
+					"cowboy_flag"
+				],
+				"Rally_Zombie": [
+					"cowboy_flag_veteran"
+				],
+				"Armor1_Zombie": [
+					"cowboy_armor1"
+				],
+				"Armor2_Zombie": [
+					"cowboy_armor2"
+				],
+				"Armor3_Zombie": [
+					"cowboy_armor2"
+				],
+				"Armor4_Zombie": [
+					"cowboy_armor4"
+				],
+				"Gravestone": [
+					"gravestone_cowboy"
+				],
+				"RailCart": "railcart_cowboy",
+				"Music": "Cowboy",
+				"IsAtNight": false,
+				"SuppressYeti": true
+			}
+		},
+		{
+			"aliases": [
+        		"GameOverLine"
+    		],
+    		"objclass": "StarChallengeZombieDistanceProps",
+    		"objdata": {
+        		"TargetDistance": 8.99,
+				"SuppressObjectiveTip": true
+    		}
+		},
+        {
+            "aliases": [
+                "SunDropper"
+            ],
+            "objclass": "SunDropperProperties",
+            "objdata": {
+                "InitialSunDropDelay": 5,
+                "SunCountdownBase": 5,
+                "SunCountdownIncreasePerSun": 1,
+                "SunCountdownMax": 9.5,
+                "SunCountdownRange": 0.5,
+                "Value": 25
+            }
+        },
+		{
+    		"aliases": [
+        		"PlantMods"
+			],
+    		"objclass": "PlantModifierProperties",
+    		"objdata": {
+        		"HidePlantfood": true,
+        		"SuppressParticle": true,
+        		"List": [
+					{
+            			"Type": "peashooter",
+            			"NewObjdata": {
+            				"Cooldown": 3
+						}
+        			},
+        			{
+            			"Type": "sunflower",
+            			"NewObjdata": {
+            				"SunValue": 25
+						}
+        			},
+					{
+            			"Type": "cactus",
+            			"NewObjdata": {
+            				"SunCost": 150,
+							"PeaType": "thorn",
+							"PierceCount": 2,
+							"PierceCountAdditional": 0
+						}
+        			}
+				]
+			}
+		},
+		 {
+            "aliases": [
+                "thorn"
+            ],
+            "objclass": "ProjectileType",
+            "objdata": {
+                "ProjectileBasedOn": "cactus",
+                "Props": "RTID(thornP@CurrentLevel)"
+            }
+        },
+		{
+            "aliases": [
+                "thornP"
+            ],
+            "objclass": "ProjectileProperties",
+            "objdata": {
+                "MaxHitCount": {
+                    "Min": 2,
+                    "Max": 2
+                },
+                "Damage": 15,
+                "Size": {
+                    "w": 16,
+                    "h": 16
+                },
+                "DestroysBalloons": true
+            }
+        },
+		{
+			"aliases": [
+				"SeedBank"
+			],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+                "SuppressObjectiveTip": true,
+				"UnlockAll": true,
+				"OverrideSeedSlotsCount": 5,
+				"SuggestPlantList": [
+					[
+						"splitpea"
+					]
+				],
+				"PlantIncludeList": [
+					"peashooter",
+					"sunflower",
+					"cherrybomb",
+					"wallnut",
+					"potatomine",
+					"Cactus",
+					"splitpea"
+				],
+				"SelectionMethod": "chooser"
+			}
+		},
+		{
+			"aliases": [
+				"ChallengeModule"
+		],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+				"BeatTheLevel"
+		],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"Descriptions": [
+				"Survive while zombies strike from the west"
+				],
+				"DescriptionsMultiLanguage": [
+					{
+					"en": "123",
+					"zh": "112233"
+					}
+				]
+			}
+		},
+		{
+    		"aliases": [
+        		"cherrybomb"
+    		],
+			"objclass": "PlantType",
+    		"objdata": {
+        		"PlantBasedOn": "cherry_bomb",
+				"Properties": "RTID(cherry_bomb@PlantProps)",
+        		"ShiftedPlantFeatures": {
+        			"ALMANAC": "RTID(cherrybombA@CurrentLevel)",
+					"OBTAINWORLD": "frontyard",
+					"CODENAME": "cherrybomb"
+        		}
+    		}
+    	},
+    	{
+    		"aliases": [
+        		"cherrybombA"
+    		],
+			"objclass": "PlantAlmanacProperties",
+    		"objdata": {
+        		"BriefIntroduction": {
+        			"en": "Blows up all zombies in a medium area",
+        			"zh": "Blows up all zombies in a medium area"
+        		}
+    		}
+    	},
+		{
+    		"aliases": [
+        		"Cactus"
+    		],
+			"objclass": "PlantType",
+    		"objdata": {
+        		"PlantBasedOn": "cactus",
+				"Properties": "RTID(cactus@PlantProps)",
+        		"ShiftedPlantFeatures": {
+        			"ALMANAC": "RTID(CactusA@CurrentLevel)",
+					"OBTAINWORLD": "cowboy",
+					"CODENAME": "Cactus"
+        		}
+    		}
+    	},
+    	{
+    		"aliases": [
+        		"CactusA"
+    		],
+			"objclass": "PlantAlmanacProperties",
+    		"objdata": {
+				"Introduction": {
+        			"en": "Cacti fire piercing thorns that do slightly less damage than Peas. They burrow when zombies get close, avoiding being eaten and stabbing tramplers.",
+        			"zh": "Cacti fire piercing thorns that do slightly less damage than Peas. They burrow when zombies get close, avoiding being eaten and stabbing tramplers."
+        		},
+        		"BriefIntroduction": {
+        			"en": "Fires piercing weaker-than-peas thorns and hides to stab zombies trampling it",
+        			"zh": "Fires piercing weaker-than-peas thorns and hides to stab zombies trampling it"
+        		}
+    		}
+    	},
+		{
+			"aliases": [
+				"cowboy_b"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(cowboy_bP@CurrentLevel)",
+				"ZombieBasedOn": "cowboy"
+			}
+		},
+		{
+			"aliases": [
+				"cowboy_bP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ChanceToReverse": 1,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.185,
+				"EatDPS": 100,
+				"Toughness": 190,
+				"WavePointCost": 100,
+				"Weight": 1000,
+				"HitRect":"RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"cowboy_flag_b"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(cowboy_flag_bP@CurrentLevel)",
+				"ZombieBasedOn": "cowboy_flag"
+			}
+		},
+		{
+			"aliases": [
+				"cowboy_flag_bP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ChanceToReverse": 1,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.24,
+				"EatDPS": 100,
+				"Toughness": 190,
+				"WavePointCost": 100,
+				"Weight": 1000,
+				"HitRect":"RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"cowboy_armor1_b"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(cowboy_armor1_bP@CurrentLevel)",
+				"ZombieBasedOn": "cowboy_armor1"
+			}
+		},
+		{
+			"aliases": [
+				"cowboy_armor1_bP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ChanceToReverse": 1,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.185,
+				"EatDPS": 100,
+				"Toughness": 190,
+				"StartingArmors": ["cowboy_armor1"],
+				"WavePointCost": 200,
+				"Weight": 3000,
+				"HitRect":"RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"cowboy_armor2_b"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(cowboy_armor2_bP@CurrentLevel)",
+				"ZombieBasedOn": "cowboy_armor2"
+			}
+		},
+		{
+			"aliases": [
+				"cowboy_armor2_bP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ChanceToReverse": 1,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.185,
+				"EatDPS": 100,
+				"Toughness": 190,
+				"StartingArmors": ["cowboy_armor2"],
+				"WavePointCost": 400,
+				"Weight": 4000,
+				"HitRect":"RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"jackochicken"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(jackochickenP@CurrentLevel)",
+				"ZombieBasedOn": "chicken_pumpkin"
+			}
+		},
+		{
+			"aliases": [
+				"jackochickenP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"KilledByShrinkingViolet": true,
+				"CannotBeTossedByCitron": false,
+				"CanBeEasilySwallowedByChomper": true,
+				"ImmuneToSporeShroom": false,
+				"IgnoredInWaves": true,
+				"WalkSPS": 0.7,
+				"WalkSPSVarience": 0,
+				"EatDPS": 500,
+				"Toughness": 80,
+				"DoesNotDamageHeavilyToGarlic": true,
+				"NormalDeathWhenMowed": true,
+				"WavePointCost": 150,
+				"Weight": 1000,
+				"HitRect": "RTID(CowboyChickenHitRect@RectangleProps)",
+				"AttackRect": "RTID(CowboyChickenAttackRect@RectangleProps)"
+			}
+		},
+		{
+            "aliases": [
+                "WaveManagerProps", "NewWaves"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 7,
+				"SuppressFlagZombie": true,
+                "WaveCount": 14,
+                "Waves": [
+                    ["RTID(Wave1@CurrentLevel)"],
+                    ["RTID(Wave2@CurrentLevel)"],
+                    ["RTID(Wave3@CurrentLevel)"],
+                    ["RTID(Wave4@CurrentLevel)"],
+                    ["RTID(Wave5@CurrentLevel)"],
+					["RTID(Wave6@CurrentLevel)"],
+					["RTID(Wave7@CurrentLevel)", "RTID(Flag@CurrentLevel)"],
+					["RTID(Wave8@CurrentLevel)"],
+					["RTID(Wave9@CurrentLevel)"],
+					["RTID(Wave10@CurrentLevel)"],
+					["RTID(Wave11@CurrentLevel)"],
+					["RTID(Wave12@CurrentLevel)"],
+					["RTID(Wave13@CurrentLevel)", "RTID(Flag@CurrentLevel)"],
+					["RTID(Wave14@CurrentLevel)"]
+                ]
+            }
+        },
+		{
+			"aliases":[
+				"Wave1"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave2"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave3"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave4"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy_armor1_b@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave5"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave6"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1_b@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave7"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+                    {
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave8"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+                    {
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave9"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy_armor1_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1_b@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave10"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1_b@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave11"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_armor2_b@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave12"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_armor2_b@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave13"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"MustKillAllToNextWave": true,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy_armor1_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_armor1_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_armor2_b@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(cowboy_armor2_b@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave14"
+			],
+			"objclass":"TutorialLabelProperties",
+			"objdata":{
+				"String": "Oh whoops, that was the last of them!",
+				"LifeSpan": 3
+			}
+		},
+		{
+			"aliases": [
+				"Flag"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+                    "Max": 0,
+                    "Min": 0
+                },
+                "TimeBetween": {
+                    "Max": 0,
+                    "Min": 0
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+				"RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(FlagZombie@CurrentLevel)"
+                ]
+			}
+		},
+		{
+			"aliases": [
+				"FlagZombie"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy_flag_b@CurrentLevel)"
+					}
+				]
+			}
+		}
+	],
+	"version": 1
+}

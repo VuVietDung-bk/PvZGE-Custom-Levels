@@ -1,0 +1,723 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "hinanarukami",
+    "Introduction": "Sandbox levels based on Blue Gutsy's",
+    "Version": "1.0",
+    "CreatedAt": "2026-06-10",
+    "UpdatedAt": "2026-06-10",
+    "Difficulty": "Normal",
+    "Category": "Survival"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "A random quest for a random plant in a random world",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ModernMowers@LevelModules)",
+          "RTID(ConveyorBelt@CurrentLevel)",
+          "RTID(ModPlants@CurrentLevel)",
+          "RTID(InitialPlant@CurrentLevel)"
+        ],
+        "Name": "Marigolds - Level 0",
+        "MusicType": "MiniGame_A",
+        "WrittenBy": "hinanarukami",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(ModernStage@LevelModules)"
+      }
+    },
+    {
+      "aliases": [
+        "ModPlants"
+      ],
+      "objclass": "PlantModifierProperties",
+      "objdata": {
+        "List": [
+          {
+            "Type": "containmint",
+            "NewObjdata": {
+              "Lifespan": 177013
+            }
+          }
+        ]
+      }
+    },
+    {
+      "objclass": "InitialPlantProperties",
+      "objdata": {
+        "InitialPlantPlacements": [
+          {
+            "TypeName": "containmint",
+            "GridX": 8,
+            "GridY": 2
+          },
+          {
+            "TypeName": "glaciershroom",
+            "GridX": 0,
+            "GridY": 2
+          }
+        ]
+      },
+      "aliases": [
+        "InitialPlant"
+      ]
+    },
+    {
+      "aliases": [
+        "ConveyorBelt"
+      ],
+      "objclass": "ConveyorSeedBankProperties",
+      "objdata": {
+        "DropDelayConditions": [
+          {
+            "Delay": 1,
+            "MaxPackets": 0
+          },
+          {
+            "Delay": 2,
+            "MaxPackets": 3
+          },
+          {
+            "Delay": 4,
+            "MaxPackets": 6
+          },
+          {
+            "Delay": 8,
+            "MaxPackets": 10
+          }
+        ],
+        "InitialPlantList": [
+          {
+            "MaxWeightFactor": 0,
+            "MaxCount": 45,
+            "PlantType": "marigold",
+            "Weight": 35
+          }
+        ],
+        "SpeedConditions": [
+          {
+            "MaxPackets": 0,
+            "Speed": 200
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 30, // Difficulty D, easiest
+            "StartingPoints": 200,
+            "StartingWave": 5,
+            "ZombiePool": [
+              "RTID(tutorial@ZombieTypes)",
+              "RTID(tutorial_armor1@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 40, // Difficulty C, normal
+            "StartingPoints": 200,
+            "StartingWave": 4,
+            "ZombiePool": [
+              "RTID(tutorial@ZombieTypes)",
+              "RTID(tutorial_armor1@ZombieTypes)",
+              "RTID(tutorial_armor2@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 50, // Difficulty B, advanced
+            "StartingPoints": 200,
+            "StartingWave": 3,
+            "ZombiePool": [
+              "RTID(tutorial@ZombieTypes)",
+              "RTID(tutorial_armor1@ZombieTypes)",
+              "RTID(tutorial_armor2@ZombieTypes)",
+              "RTID(dino_imp@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 60, // Difficulty AAAAAAAAA
+            "StartingPoints": 200,
+            "StartingWave": 2,
+            "ZombiePool": [
+              "RTID(tutorial_armor1@ZombieTypes)",
+              "RTID(tutorial_armor2@ZombieTypes)",
+              "RTID(dino_imp@ZombieTypes)"
+            ]
+          }
+        ],
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 3,
+        "WaveCount": 12,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)",
+            "RTID(PlantFoodSpawner0@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)",
+            "RTID(PlantFoodSpawner1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)",
+            "RTID(PlantFoodSpawner2@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave11@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave12@CurrentLevel)",
+            "RTID(PlantFoodSpawner3@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(tutorial@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(tutorial@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(tutorial@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(tutorial@ZombieTypes)",
+            "Row": 2
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(tutorial@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(tutorial@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)",
+            "Row": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(tutorial@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(tutorial@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dino_imp@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(dino_imp@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(tutorial_armor1@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dino_imp@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(dino_imp@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dino_imp@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(pharaoh@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(dino_imp@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pharaoh@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(dino_imp@ZombieTypes)",
+            "Row": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(pharaoh@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dino_imp@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(pharaoh@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(tutorial_armor4@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pharaoh@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(dino_imp@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pharaoh@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(dino_imp@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(tutorial@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(tutorial_armor2@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pharaoh@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pharaoh@ZombieTypes)",
+            "Row": 2
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(tutorial@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(tutorial@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(pharaoh@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(tutorial_armor4@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pharaoh@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(tutorial_armor4@ZombieTypes)",
+            "Row": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(tutorial@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(pharaoh@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(tutorial@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(tutorial_armor4@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(tutorial@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(pharaoh@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(tutorial@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(tutorial_armor4@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(tutorial@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(tutorial_armor4@ZombieTypes)",
+            "Row": 2
+          }
+        ]
+      }
+    },
+    // These blocks handle predetermined Plant Food; currently set up to use basics and their armored variants
+    // There are 7 levels of difficulties: - - - D C B A
+    {
+      "aliases": [
+        "PlantFoodSpawner0"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(modern@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PlantFoodSpawner1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(modern@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PlantFoodSpawner2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(modern@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PlantFoodSpawner3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(modern@ZombieTypes)"
+          }
+        ]
+      }
+    }
+  ],
+  "version": 1
+}

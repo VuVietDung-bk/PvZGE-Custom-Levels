@@ -1,0 +1,258 @@
+{
+  "#comment": "Sample Level",
+  "Information": {
+    "Author": "hinanarukami",
+    "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+    "Version": "1.0",
+    "CreatedAt": "2026-07-09",
+    "UpdatedAt": "2026-07-09",
+    "Difficulty": "Normal",
+    "Category": "Last Stand"
+  },
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "Last or Dead???",
+        "LevelNumber": 1,
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "Modules": [
+          "RTID(ZombiesDeadWinCon@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(NewWaves@CurrentLevel)",
+          "RTID(StandardIntro@LevelModules)",
+          "RTID(ChallengeModule@CurrentLevel)",
+          "RTID(LastStand@CurrentLevel)",
+          "RTID(SeedBank@CurrentLevel)",
+          "RTID(KillZombies@CurrentLevel)",
+          "RTID(ProtectThePlant@CurrentLevel)",
+          "RTID(LevelDeadLine@CurrentLevel)"
+        ],
+        "Name": "Dead Stand - Level 10",
+        "WrittenBy": "hinanarukami",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(EightiesStage@LevelModules)"
+      }
+    },
+    {
+      "objclass": "StarChallengePlantsLostProps",
+      "aliases": [
+        "PlantsLost"
+      ],
+      "objdata": {
+        "MaximumPlantsLost": 2
+      }
+    },
+    {
+      "aliases": [
+        "ProtectThePlant"
+      ],
+      "objclass": "ProtectThePlantChallengeProperties",
+      "objdata": {
+        "MustProtectCount": 3,
+        "Plants": [
+          {
+            "GridX": 4,
+            "GridY": 0,
+            "PlantType": "chardguard"
+          },
+          {
+            "GridX": 4,
+            "GridY": 2,
+            "PlantType": "chardguard"
+          },
+          {
+            "GridX": 4,
+            "GridY": 4,
+            "PlantType": "chardguard"
+          },
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "KillZombies"
+      ],
+      "objclass": "StarChallengeKillZombiesInTimeProps",
+      "objdata": {
+        "Time": 1,
+        "ZombiesToKill": 120
+      }
+    },
+    {
+      "objclass": "LevelDeadLineProps",
+      "aliases": [
+        "LevelDeadLine"
+      ],
+      "objdata": {
+        "SuppressObjectiveTip": false,
+        "Countdown": 200,
+        "Events": [
+          "RTID(LoseGameImmediately@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "LoseGameImmediately"
+      ],
+      "objclass": "LoseGameWaveActionProps",
+      "objdata": {
+        "Tip": {
+          "en": "Skill Issue!",
+          "zh": "菜就多练!"
+        },
+        "SmallTip": {
+          "en": "",
+          "zh": ""
+        }
+      }
+    },
+    {
+      "aliases": [
+        "LastStand"
+      ],
+      "objclass": "LastStandMinigameProperties",
+      "objdata": {
+        "StartingPlantfood": 0,
+        "StartingSun": 1125
+      }
+    },
+    {
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(BeatTheLevel@CurrentLevel)",
+            "RTID(PlantsLost@CurrentLevel)"
+          ]
+        ],
+        "ChallengesAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": [
+        "BeatTheLevel"
+      ],
+      "objclass": "StarChallengeBeatTheLevelProps",
+      "objdata": {
+        "Descriptions": [
+          "Survive with 4 slots"
+        ],
+        "DescriptionsMultiLanguage": [
+          {
+            "en": "123",
+            "zh": "112233"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "SeedBank"
+      ],
+      "objclass": "SeedBankProperties",
+      "objdata": {
+        "OverrideSeedSlotsCount": 4,
+        "ExcludeListSunProducers": "true",
+        "PlantExcludeList": [
+          "icebloom",
+          "filamint",
+          "reinforcemint",
+          "bombardmint",
+          "armamint",
+          "containmint",
+          "enchantmint",
+          "spearmint",
+          "peppermint",
+          "wintermint",
+          "concealmint",
+          "enforcemint",
+          "enlightenmint",
+          "ailmint",
+          "appeasemint",
+          "glaciershroom",
+          "plantern",
+          "moonflower",
+          "chardguard"
+        ],
+        "SelectionMethod": "chooser"
+      }
+    },
+    {
+      "aliases": [
+        "NewWaves"
+      ],
+      "objclass": "WaveManagerModuleProperties",
+      "objdata": {
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "FlagWaveInterval": 2,
+        "WaveCount": 2,
+        "SuppressFlagZombie": true,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(eighties_punk_veteran@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(eighties_punk_veteran@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(eighties_punk_veteran@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(eighties_punk_veteran@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(eighties_punk_veteran@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "NotificationEvents": [
+          "jam_punk"
+        ],
+        "Zombies": []
+      }
+    }
+  ],
+  "version": 1
+}

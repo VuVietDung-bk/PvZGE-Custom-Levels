@@ -1,0 +1,521 @@
+{
+	"#comment": "Oh dear this sun drop rate is cursed",
+	"Information": {
+		"name": {
+			"en": "Treacherous Travels world 2 evening 1",
+			"zh-CN": ""
+		},
+		"Author": "BlockAgent007",
+		"Introduction": {
+			"en": "",
+			"zh-CN": ""
+		},
+		"GameVersion": "",
+		"Version": "1.0",
+		"CreatedAt": "2026-02-16",
+		"UpdatedAt": "",
+		"Difficulty": "Easy",
+		"Category": "Survival"
+	},
+	"objects":[
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "<PLAYERNAME>'s trip to the Dark Jungle",
+				"LevelNumber": 1,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"FirstRewardType": "unlock_plant",
+				"FirstRewardParam": "puffshroom",
+				"ReplayRewardType": "unlock_plant",
+				"ReplayRewardParam": "puffshroom",
+				"Modules": [
+        				"RTID(ZombiesDeadWinCon@LevelModules)",
+        				"RTID(DefaultZombieWinCondition@LevelModules)",
+        				"RTID(NewWaves@CurrentLevel)",
+        				"RTID(SeedBank@CurrentLevel)",
+						"RTID(PlantMods@CurrentLevel)",
+						"RTID(EveningLight@CurrentLevel)",
+						"RTID(SunDropper@CurrentLevel)",
+						"RTID(StandardIntro@LevelModules)",
+						"RTID(LostCityMowers@LevelModules)"
+      				],
+				"Name": "2-1: Dimly lit",
+				"WrittenBy": "BlockAgent007",
+				"NormalPresentTable": "egypt_normal_01",
+      				"ShinyPresentTable": "egypt_shiny_01",
+				"StageModule": "RTID(World2Stage@CurrentLevel)"
+			}
+		},
+		{
+    		"aliases": [
+        		"EveningLight"
+    		],
+    		"objclass": "LawnCameraProps",
+    		"objdata": {
+        		"MaterialProps": {
+					"//": "Better delete this property if not used",
+					"MultColor": {
+						"r": 175,
+						"g": 175,
+						"b": 255,
+						"a": 255
+					},
+					"AddColor": {
+						"r": 0,
+						"g": 0,
+						"b": 0
+					},
+					"Chill": 0,
+					"Gold": 0,
+					"Saturation": 0.2
+        		},
+        		"DontClear": false,
+        		"//": "Dont change it yet.",
+        		"//OrthoHeight": 320,
+        		"Offset": {
+          			"x": 0,
+          			"y": 0
+        		}
+      		}
+    	},
+		{
+			"aliases": [
+				"World2Stage"
+			],
+			"objclass": "LawnType",
+			"objdata": {
+				"LawnBaseOn": "LostCityStage",
+				"Properties": "RTID(ForestStage@CurrentLevel)"
+			}
+		},
+		{
+			"aliases": [
+				"ForestStage"
+			],
+			"objclass": "LawnProperties",
+			"objdata": {
+				"Basic_Zombie": [
+					"lostcity"
+				],
+				"Flag_Zombie": [
+					"lostcity_flag"
+				],
+				"Rally_Zombie": [
+					"lostcity_flag_veteran"
+				],
+				"Armor1_Zombie": [
+					"lostcity_armor1"
+				],
+				"Armor2_Zombie": [
+					"lostcity_armor2"
+				],
+				"Armor3_Zombie": [
+					"lostcity_armor2"
+				],
+				"Armor4_Zombie": [
+					"lostcity_armor4"
+				],
+				"Gravestone": [
+					"backpack"
+				],
+				"RailCart": "railcart_tutorial",
+				"Music": "Lostcity",
+				"IsAtNight": true,
+				"SuppressYeti": true
+			}
+		},
+        {
+            "aliases": [
+                "SunDropper"
+            ],
+            "objclass": "SunDropperProperties",
+            "objdata": {
+                "InitialSunDropDelay": 5,
+                "SunCountdownBase": 5,
+                "SunCountdownIncreasePerSun": 1,
+                "SunCountdownMax": 9.5,
+                "SunCountdownRange": 0.5,
+                "Value": 15
+            }
+        },
+		{
+    		"aliases": [
+        		"PlantMods"
+			],
+    		"objclass": "PlantModifierProperties",
+    		"objdata": {
+        		"HidePlantfood": true,
+        		"SuppressParticle": true,
+        		"List": [
+					{
+            			"Type": "peashooter",
+            			"NewObjdata": {
+            				"Cooldown": 3
+						}
+        			},
+        			{
+            			"Type": "sunflower",
+            			"NewObjdata": {
+            				"SunValue": 25
+						}
+        			},
+					{
+            			"Type": "cactus",
+            			"NewObjdata": {
+            				"SunCost": 150,
+							"PeaType": "thorn",
+							"PierceCount": 2,
+							"PierceCountAdditional": 0
+						}
+        			},
+					{
+						"Type": "springbean",
+						"NewObjdata": {
+							"KnockbackDistance": 3,
+							"RestTime": 11
+						}
+					},
+					{
+						"Type": "garlic",
+						"NewObjdata": {
+							"Cooldown": 10,
+							"ReceivesDamageWhenEaten": 100
+						}
+					}
+				]
+			}
+		},
+		{
+            "aliases": [
+                "thorn"
+            ],
+            "objclass": "ProjectileType",
+            "objdata": {
+                "ProjectileBasedOn": "cactus",
+                "Props": "RTID(thornP@CurrentLevel)"
+            }
+        },
+		{
+            "aliases": [
+                "thornP"
+            ],
+            "objclass": "ProjectileProperties",
+            "objdata": {
+                "MaxHitCount": {
+					"Max": 2,
+					"Min": 2
+				},
+                "Damage": 15,
+                "Size": {
+                    "w": 16,
+                    "h": 16
+                },
+                "DestroysBalloons": true
+            }
+        },
+		{
+			"aliases": [
+				"SeedBank"
+			],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+                "SuppressObjectiveTip": true,
+				"UnlockAll": true,
+				"OverrideSeedSlotsCount": 6,
+				"PlantIncludeList": [
+					"peashooter",
+					"sunflower",
+					"cherrybomb",
+					"wallnut",
+					"potatomine",
+					"Cactus",
+					"splitpea",
+					"Springbean",
+					"Garlic",
+					"tallnut"
+				],
+				"SelectionMethod": "chooser"
+			}
+		},
+		{
+    		"aliases": [
+        		"cherrybomb"
+    		],
+			"objclass": "PlantType",
+    		"objdata": {
+        		"PlantBasedOn": "cherry_bomb",
+				"Properties": "RTID(cherry_bomb@PlantProps)",
+        		"ShiftedPlantFeatures": {
+        			"ALMANAC": "RTID(cherrybombA@CurrentLevel)",
+					"OBTAINWORLD": "frontyard",
+					"CODENAME": "cherrybomb"
+        		}
+    		}
+    	},
+    	{
+    		"aliases": [
+        		"cherrybombA"
+    		],
+			"objclass": "PlantAlmanacProperties",
+    		"objdata": {
+        		"BriefIntroduction": {
+        			"en": "Blows up all zombies in a medium area",
+        			"zh": "Blows up all zombies in a medium area"
+        		}
+    		}
+    	},
+		{
+    		"aliases": [
+        		"Cactus"
+    		],
+			"objclass": "PlantType",
+    		"objdata": {
+        		"PlantBasedOn": "cactus",
+				"Properties": "RTID(cactus@PlantProps)",
+        		"ShiftedPlantFeatures": {
+        			"ALMANAC": "RTID(CactusA@CurrentLevel)",
+					"OBTAINWORLD": "cowboy",
+					"CODENAME": "Cactus"
+        		}
+    		}
+    	},
+    	{
+    		"aliases": [
+        		"CactusA"
+    		],
+			"objclass": "PlantAlmanacProperties",
+    		"objdata": {
+				"Introduction": {
+        			"en": "Cacti fire piercing thorns that do slightly less damage than Peas. They burrow when zombies get close, avoiding being eaten and stabbing tramplers.",
+        			"zh": "Cacti fire piercing thorns that do slightly less damage than Peas. They burrow when zombies get close, avoiding being eaten and stabbing tramplers."
+        		},
+        		"BriefIntroduction": {
+        			"en": "Fires piercing weaker-than-peas thorns and hides to stab zombies trampling it",
+        			"zh": "Fires piercing weaker-than-peas thorns and hides to stab zombies trampling it"
+        		}
+    		}
+    	},
+		{
+    		"aliases": [
+        		"Springbean"
+    		],
+			"objclass": "PlantType",
+    		"objdata": {
+        		"PlantBasedOn": "springbean",
+				"Properties": "RTID(springbean@PlantProps)",
+        		"ShiftedPlantFeatures": {
+        			"ALMANAC": "RTID(SpringbeanA@CurrentLevel)",
+					"OBTAINWORLD": "cowboy",
+					"CODENAME": "Springbean"
+        		}
+    		}
+    	},
+    	{
+    		"aliases": [
+        		"SpringbeanA"
+    		],
+			"objclass": "PlantAlmanacProperties",
+    		"objdata": {
+				"Introduction": {
+        			"en": "Spring Beans can send a zombie back 3 tiles, but have to take a short nap after springing.",
+        			"zh": "Spring Beans can send a zombie back 3 tiles, but have to take a short nap after springing."
+        		},
+        		"BriefIntroduction": {
+        			"en": "Knocks a zombie back 3 tiles, then rests",
+        			"zh": "Knocks a zombie back 3 tiles, then rests"
+        		}
+    		}
+    	},
+		{
+    		"aliases": [
+        		"Garlic"
+    		],
+			"objclass": "PlantType",
+    		"objdata": {
+        		"PlantBasedOn": "garlic",
+				"Properties": "RTID(garlic@PlantProps)",
+        		"ShiftedPlantFeatures": {
+        			"ALMANAC": "RTID(GarlicA@CurrentLevel)",
+					"OBTAINWORLD": "cowboy",
+					"CODENAME": "Garlic"
+        		}
+    		}
+    	},
+    	{
+    		"aliases": [
+        		"GarlicA"
+    		],
+			"objclass": "PlantAlmanacProperties",
+    		"objdata": {
+				"Introduction": {
+        			"en": "Garlics send any organic zombies that bite them to adjacent lanes, even the most ravenous ones!",
+        			"zh": "Garlics send any organic zombies that bite them to adjacent lanes, even the most ravenous ones!"
+        		},
+        		"BriefIntroduction": {
+        			"en": "Diverts organic zombies that bite it to other lanes",
+        			"zh": "Diverts organic zombies that bite it to other lanes"
+        		}
+    		}
+    	},
+		{
+            "aliases": [
+                "WaveManagerProps", "NewWaves"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 8,
+                "WaveCount": 8,
+                "Waves": [
+                    ["RTID(Wave1@CurrentLevel)"],
+                    ["RTID(Wave2@CurrentLevel)"],
+                    ["RTID(Wave3@CurrentLevel)"],
+                    ["RTID(Wave4@CurrentLevel)"],
+                    ["RTID(Wave5@CurrentLevel)"],
+					["RTID(Wave6@CurrentLevel)"],
+					["RTID(Wave7@CurrentLevel)"],
+					["RTID(Wave8@CurrentLevel)"]
+                ]
+            }
+        },
+		{
+			"aliases":[
+				"Wave1"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave2"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave3"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave4"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_armor1@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave5"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave6"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave7"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(lostcity_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave8"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+                    {
+						"Type": "RTID(lostcity_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(lostcity@ZombieTypes)"
+					}
+				]
+			}
+		}
+	],
+	"version": 1
+}

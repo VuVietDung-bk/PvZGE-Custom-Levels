@@ -1,0 +1,486 @@
+{
+	"#comment": "a water lane in the tutorial? no way",
+	"Information": {
+		"name": {
+			"en": "Treacherous Travels intro day 3",
+			"zh-CN": ""
+		},
+		"Author": "BlockAgent007",
+		"Introduction": {
+			"en": "",
+			"zh-CN": ""
+		},
+		"GameVersion": "",
+		"Version": "1.1",
+		"CreatedAt": "2025-07-8",
+		"UpdatedAt": "2026-07-5",
+		"Difficulty": "Easy",
+		"Category": "Survival"
+	},
+	"objects":[
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "<PLAYERNAME>'s house",
+				"LevelNumber": 3,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"FirstRewardType": "unlock_plant",
+				"FirstRewardParam": "wallnut",
+				"ReplayRewardType": "unlock_plant",
+				"ReplayRewardParam": "wallnut",
+				"Modules": [
+        				"RTID(ZombiesDeadWinCon@LevelModules)",
+        				"RTID(DefaultZombieWinCondition@LevelModules)",
+        				"RTID(NewWaves@CurrentLevel)",
+        				"RTID(SeedBank@CurrentLevel)",
+						"RTID(PlantMods@CurrentLevel)",
+						"RTID(StandardIntro@LevelModules)",
+						"RTID(LevelScheduler@CurrentLevel)",
+						"RTID(SunDropper@CurrentLevel)",
+						"RTID(WaterLanes@CurrentLevel)",
+						"RTID(ModernMowers@LevelModules)"
+      				],
+				"Name": "0-3: No swimming",
+				"WrittenBy": "BlockAgent007",
+				"NormalPresentTable": "egypt_normal_01",
+      				"ShinyPresentTable": "egypt_shiny_01",
+				"StageModule": "RTID(World0Stage@CurrentLevel)"
+			}
+		},
+		{
+			"aliases": [
+				"World0Stage"
+			],
+			"objclass": "LawnType",
+			"objdata": {
+				"LawnBaseOn": "TutorialStage",
+				"Properties": "RTID(FrontLawnStage@CurrentLevel)"
+			}
+		},
+		{
+			"aliases": [
+				"FrontLawnStage"
+			],
+			"objclass": "LawnProperties",
+			"objdata": {
+				"Basic_Zombie": [
+					"tutorial"
+				],
+				"Flag_Zombie": [
+					"tutorial_flag"
+				],
+				"Rally_Zombie": [
+					"tutorial_flag_veteran"
+				],
+				"Armor1_Zombie": [
+					"tutorial_armor1"
+				],
+				"Armor2_Zombie": [
+					"tutorial_armor2"
+				],
+				"Armor3_Zombie": [
+					"tutorial_armor2"
+				],
+				"Armor4_Zombie": [
+					"tutorial_armor4"
+				],
+				"Gravestone": [
+					"gravestone_tutorial"
+				],
+				"RailCart": "railcart_tutorial",
+				"Music": "Tutorial",
+				"IsAtNight": false,
+				"SuppressYeti": true
+			}
+		},
+		{
+			"aliases": [
+				"WaterLanes"
+			],
+			"objclass": "InitialGridItemProperties",
+			"objdata": {
+				"InitialGridItemMatrixes": [
+					{
+						"GridMatrix": [
+							"000000000",
+							"000000000",
+							"111111111",
+							"000000000",
+							"000000000"
+						],
+						"TypeName": "potholepuddle"
+					}
+				]
+			}
+		},
+        {
+            "aliases": [
+                "SunDropper"
+            ],
+            "objclass": "SunDropperProperties",
+            "objdata": {
+                "InitialSunDropDelay": 5,
+                "SunCountdownBase": 5,
+                "SunCountdownIncreasePerSun": 1,
+                "SunCountdownMax": 9.5,
+                "SunCountdownRange": 0.5,
+                "Value": 25
+            }
+        },
+		{
+    		"aliases": [
+        		"PlantMods"
+			],
+    		"objclass": "PlantModifierProperties",
+    		"objdata": {
+        		"HidePlantfood": true,
+        		"SuppressParticle": true,
+        		"List": [
+					{
+            			"Type": "peashooter",
+            			"NewObjdata": {
+            				"Cooldown": 3
+						}
+        			},
+        			{
+            			"Type": "sunflower",
+            			"NewObjdata": {
+            				"SunValue": 25
+						}
+        			}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SeedBank"
+			],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+                "SuppressObjectiveTip": true,
+				"UnlockAll": true,
+				"PresetPlantList": [
+					{
+						"PlantType": "sunflower",
+						"Level": -1
+					},
+					{
+						"PlantType": "peashooter",
+						"Level": -1
+					},
+					{
+						"PlantType": "cherrybomb",
+						"Level": -1
+					}
+				],
+				"PlantIncludeList": [
+					"peashooter",
+					"sunflower",
+					"cherrybomb"
+				],
+				"SelectionMethod": "preset"
+			}
+		},
+		{
+    		"aliases": [
+        		"cherrybomb"
+    		],
+			"objclass": "PlantType",
+    		"objdata": {
+        		"PlantBasedOn": "cherry_bomb",
+        		"Properties": "RTID(cherry_bomb@PlantProps)",
+        		"ShiftedPlantFeatures": {
+        			"ALMANAC": "RTID(cherrybombA@CurrentLevel)",
+					"OBTAINWORLD": "frontyard",
+					"CODENAME": "cherrybomb"
+        		}
+    		}
+    	},
+    	{
+    		"aliases": [
+        		"cherrybombA"
+    		],
+			"objclass": "PlantAlmanacProperties",
+    		"objdata": {
+        		"BriefIntroduction": {
+        			"en": "Blows up all zombies in a medium area",
+        			"zh": "Blows up all zombies in a medium area"
+        		}
+    		}
+    	},
+		{
+			"aliases":[
+				"tutorial"
+			],
+			"objclass":"TutorialLabelProperties",
+			"objdata":{
+				"String": "Cherry Bombs blow up a 3x3 area of zombies.",
+				"LifeSpan": 7
+			}
+		},
+		{
+			"aliases": [
+				"LevelScheduler"
+			],
+			"objclass": "LevelSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0,
+					"Min": 0
+				},
+				"TimeBetween": {
+					"Max": 0,
+					"Min": 0
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+        		"SuppressRewardState": false,
+				"Events": [
+					"RTID(tutorial@CurrentLevel)"
+				]
+			}
+		},
+		{
+            "aliases": [
+                "WaveManagerProps", "NewWaves"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 10,
+                "WaveCount": 10,
+                "ZombieCountdownFirstWaveSecs" : 18,
+                "Waves": [
+                    ["RTID(Wave1@CurrentLevel)"],
+                    ["RTID(Wave2@CurrentLevel)"],
+                    ["RTID(Wave3@CurrentLevel)"],
+                    ["RTID(Wave4@CurrentLevel)"],
+                    ["RTID(Wave5@CurrentLevel)"],
+					["RTID(Wave6@CurrentLevel)"],
+					["RTID(Wave7@CurrentLevel)"],
+					["RTID(Wave8@CurrentLevel)"],
+					["RTID(Wave9@CurrentLevel)"],
+					["RTID(Wave10@CurrentLevel)"]
+                ]
+            }
+        },
+		{
+			"aliases":[
+				"Wave1"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(tutorial@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave2"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(tutorial@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave3"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(tutorial@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tutorial@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave4"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(tutorial@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tutorial@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(duckytube_armor1@ZombieTypes)",
+						"Row": 3
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave5"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(tutorial@ZombieTypes)"
+					},
+                    {
+						"Type": "RTID(tutorial@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tutorial@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave6"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(tutorial@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tutorial@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tutorial_armor1@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave7"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+                    {
+						"Type": "RTID(tutorial@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tutorial@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tutorial_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tutorial@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(duckytube_armor1@ZombieTypes)",
+						"Row": 3
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave8"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+                    {
+						"Type": "RTID(tutorial@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tutorial@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tutorial@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tutorial_armor1@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave9"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+                    {
+						"Type": "RTID(tutorial@ZombieTypes)"
+					},
+                    {
+						"Type": "RTID(tutorial@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tutorial@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tutorial_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tutorial_armor1@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases":[
+				"Wave10"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(tutorial@ZombieTypes)"
+					},
+                    {
+						"Type": "RTID(tutorial@ZombieTypes)"
+					},
+                    {
+						"Type": "RTID(tutorial@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tutorial_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tutorial_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(tutorial_armor1@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(duckytube_armor1@ZombieTypes)",
+						"Row": 3
+					}
+				]
+			}
+		}
+	],
+	"version": 1
+}

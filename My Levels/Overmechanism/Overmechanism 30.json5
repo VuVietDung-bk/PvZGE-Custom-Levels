@@ -20,17 +20,16 @@
           "RTID(ZombiesDeadWinCon@LevelModules)",
           "RTID(DefaultZombieWinCondition@LevelModules)",
           "RTID(NewWaves@CurrentLevel)",
-		  "RTID(StandardIntro@LevelModules)",
+          "RTID(StandardIntro@LevelModules)",
           "RTID(ChallengeModule@CurrentLevel)",
-          "RTID(SeedBank@CurrentLevel)",
-          "RTID(DefaultSunDropper@LevelModules)"
+          "RTID(SeedBank@CurrentLevel)"
         ],
         "Name": "Overmechanism - Level 30",
-        "WritenBy": "hinanarukami",
+        "WrittenBy": "hinanarukami",
         "MusicType": "MiniGame_B",
         "NormalPresentTable": "egypt_normal_01",
         "ShinyPresentTable": "egypt_shiny_01",
-        "StageModule": "RTID(FutureStage@LevelModules)"
+        "StageModule": "RTID(FutureNightStage@LevelModules)"
       }
     },
     {
@@ -40,44 +39,112 @@
       "objclass": "SeedBankProperties",
       "objdata": {
         "PlantExcludeList": [
-          "springbean", "glaciershroom", "icebloom", "snowdrop", "atombomb_seedling", "filamint", "reinforcemint", "bombardmint", 
-          "armamint", "containmint", "enchantmint", "spearmint", "peppermint", "wintermint", "concealmint", "enforcemint", 
-          "enlightenmint", "ailmint", "appeasemint"
+          "blover",
+          "glaciershroom",
+          "icebloom",
+          "snowdrop",
+          "atombomb_seedling",
+          "filamint",
+          "reinforcemint",
+          "bombardmint",
+          "armamint",
+          "containmint",
+          "enchantmint",
+          "spearmint",
+          "peppermint",
+          "wintermint",
+          "concealmint",
+          "enforcemint",
+          "enlightenmint",
+          "ailmint",
+          "appeasemint"
         ],
-        "SelectionMethod": "chooser"
+        "SelectionMethod": "chooser",
+        "CardDecks": {
+          "ChallengingLocked": false,
+          "Challenging": [
+            {
+              "Name": {
+                "en": "Challenge",
+                "zh": "挑战"
+              },
+              "Leader": 2,
+              "HugeWaveGem": 3,
+              "Plants": [
+                "sunshroom",
+                "goldleaf",
+                "banana",
+                "puffshroom",
+                "guacodile",
+                "primalpotatomine",
+                "chardguard",
+                "cherry_bomb"
+              ]
+            }
+          ]
+        }
       }
     },
     {
-			"aliases": [
-			"ChallengeModule"
-		],
-			"objclass": "StarChallengeModuleProperties",
-			"objdata": {
-				"Challenges": [
-					[
-						"RTID(BeatTheLevel@CurrentLevel)"
-					]
-				],
-				"ChallengeAlwaysAvailable": true
-			}
-		},
-		{
-			"aliases": [
-			"BeatTheLevel"
-		],
-			"objclass": "StarChallengeBeatTheLevelProps",
-			"objdata": {
-				"Descriptions": [
-				"Survive the overmechanism!",
-				],
-				"DescriptionsMultiLanguage": [
-					{
-					"en": "123",
-					"zh": "112233"
-					}
-				]
-			}
-		},
+      "aliases": [
+        "ChallengeModule"
+      ],
+      "objclass": "StarChallengeModuleProperties",
+      "objdata": {
+        "Challenges": [
+          [
+            "RTID(BeatTheLevel@CurrentLevel)"
+          ]
+        ],
+        "ChallengeAlwaysAvailable": true
+      }
+    },
+    {
+      "aliases": [
+        "BeatTheLevel"
+      ],
+      "objclass": "StarChallengeBeatTheLevelProps",
+      "objdata": {
+        "Descriptions": [
+          "Survive the overmechanism!",
+        ],
+        "DescriptionsMultiLanguage": [
+          {
+            "en": "123",
+            "zh": "112233"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "easter_af_t"
+      ],
+      "objclass": "ZombieType",
+      "objdata": {
+        "Properties": "RTID(easter_af_p@CurrentLevel)",
+        "ZombieBasedOn": "easter_gargantuar"
+      }
+    },
+    {
+      "aliases": [
+        "easter_af_p"
+      ],
+      "objclass": "ZombieProperties",
+      "objdata": {
+        "CannotBeEnlightenedBySolarSage": true,
+        "CannotBeGrabbedByPtero": true,
+        "CannotChangeLaneByPowerToss": true,
+        "CannotBeFlickedByPowerToss": true,
+        "CannotBeDraggedByTangleKelp": true,
+        "CannotBeTossedByCitron": true,
+        "CannotBeSwallowedByChomper": true,
+        "CannotCarryPlantfoodsInWaves": true,
+        "Toughness": 1800,
+        "WavePointCost": 2500,
+        "ImpType": "easter_egg_af"
+      }
+    },
     {
       "aliases": [
         "NewWaves"
@@ -90,66 +157,70 @@
           {},
           {
             "PointIncrementPerWave": 100, // Difficulty D, easiest
-            "StartingPoints": 150,
-            "StartingWave": 0,
+            "StartingPoints": 300,
+            "StartingWave": 1,
             "ZombiePool": [
-                "RTID(future@ZombieTypes)",
-                "RTID(future_armor1@ZombieTypes)",
-                "RTID(future_armor2@ZombieTypes)",
-                "RTID(future_armor4@ZombieTypes)",
-                "RTID(future_jetpack@ZombieTypes)",
-                "RTID(future_jetpack_veteran@ZombieTypes)",
-                "RTID(mech_cone@ZombieTypes)",
-                "RTID(football_mech@ZombieTypes)",
-                "RTID(future_gargantuar@ZombieTypes)"
+              "RTID(summer_bug@ZombieTypes)",
+              "RTID(summer_bug_armor1@ZombieTypes)",
+              "RTID(summer_bug_armor2@ZombieTypes)",
+              "RTID(newspaper_veteran@ZombieTypes)",
+              "RTID(future_jetpack@ZombieTypes)",
+              "RTID(future_jetpack_veteran@ZombieTypes)",
+              "RTID(sky_battleplane@ZombieTypes)",
+              "RTID(football_mech@ZombieTypes)",
+              "RTID(future_gargantuar@ZombieTypes)",
+              "RTID(explorer_veteran@ZombieTypes)",
+              "RTID(easter_af_t@CurrentLevel)"
             ]
           },
           {
             "PointIncrementPerWave": 160, // Difficulty C, normal
-            "StartingPoints": 150,
-            "StartingWave": 0,
+            "StartingPoints": 350,
+            "StartingWave": 1,
             "ZombiePool": [
-                "RTID(future@ZombieTypes)",
-                "RTID(future_armor1@ZombieTypes)",
-                "RTID(future_armor2@ZombieTypes)",
-                "RTID(future_armor4@ZombieTypes)",
-                "RTID(future_jetpack@ZombieTypes)",
-                "RTID(future_jetpack_veteran@ZombieTypes)",
-                "RTID(mech_cone@ZombieTypes)",
-                "RTID(football_mech@ZombieTypes)",
-                "RTID(future_gargantuar@ZombieTypes)"
+              "RTID(summer_bug@ZombieTypes)",
+              "RTID(summer_bug_armor1@ZombieTypes)",
+              "RTID(summer_bug_armor2@ZombieTypes)",
+              "RTID(newspaper_veteran@ZombieTypes)",
+              "RTID(future_jetpack@ZombieTypes)",
+              "RTID(future_jetpack_veteran@ZombieTypes)",
+              "RTID(sky_battleplane@ZombieTypes)",
+              "RTID(football_mech@ZombieTypes)",
+              "RTID(future_gargantuar@ZombieTypes)",
+              "RTID(explorer_veteran@ZombieTypes)",
+              "RTID(easter_af_t@CurrentLevel)"
             ]
           },
           {
             "PointIncrementPerWave": 220, // Difficulty B, advanced
-            "StartingPoints": 150,
-            "StartingWave": 0,
+            "StartingPoints": 400,
+            "StartingWave": 1,
             "ZombiePool": [
-                "RTID(future@ZombieTypes)",
-                "RTID(future_armor1@ZombieTypes)",
-                "RTID(future_armor2@ZombieTypes)",
-                "RTID(future_armor4@ZombieTypes)",
-                "RTID(future_jetpack@ZombieTypes)",
-                "RTID(future_jetpack_veteran@ZombieTypes)",
-                "RTID(mech_cone@ZombieTypes)",
-                "RTID(football_mech@ZombieTypes)",
-                "RTID(future_gargantuar@ZombieTypes)"
+              "RTID(summer_bug_armor1@ZombieTypes)",
+              "RTID(summer_bug_armor2@ZombieTypes)",
+              "RTID(newspaper_veteran@ZombieTypes)",
+              "RTID(future_jetpack_veteran@ZombieTypes)",
+              "RTID(sky_battleplane@ZombieTypes)",
+              "RTID(football_mech@ZombieTypes)",
+              "RTID(future_gargantuar@ZombieTypes)",
+              "RTID(explorer_veteran@ZombieTypes)",
+              "RTID(easter_af_t@CurrentLevel)"
             ]
           },
           {
             "PointIncrementPerWave": 280, // Difficulty AAAAAAAAA
-            "StartingPoints": 150,
-            "StartingWave": 0,
+            "StartingPoints": 450,
+            "StartingWave": 1,
             "ZombiePool": [
-                "RTID(future@ZombieTypes)",
-                "RTID(future_armor1@ZombieTypes)",
-                "RTID(future_armor2@ZombieTypes)",
-                "RTID(future_armor4@ZombieTypes)",
-                "RTID(future_jetpack@ZombieTypes)",
-                "RTID(future_jetpack_veteran@ZombieTypes)",
-                "RTID(mech_cone@ZombieTypes)",
-                "RTID(football_mech@ZombieTypes)",
-                "RTID(future_gargantuar@ZombieTypes)"
+              "RTID(future_armor1@ZombieTypes)",
+              "RTID(summer_bug_armor2@ZombieTypes)",
+              "RTID(newspaper_veteran@ZombieTypes)",
+              "RTID(future_jetpack_veteran@ZombieTypes)",
+              "RTID(sky_battleplane@ZombieTypes)",
+              "RTID(football_mech@ZombieTypes)",
+              "RTID(future_gargantuar@ZombieTypes)",
+              "RTID(explorer_veteran@ZombieTypes)",
+              "RTID(easter_af_t@CurrentLevel)"
             ]
           }
         ],
@@ -165,31 +236,332 @@
         "FlagWaveInterval": 8,
         "WaveCount": 24,
         "Waves": [
-            ["RTID(Shield9@CurrentLevel)"],
-            ["RTID(Shield8@CurrentLevel)"],
-            ["RTID(Shield7@CurrentLevel)"],
-            ["RTID(Shield6@CurrentLevel)"],
-            ["RTID(PlantFoodSpawner0@CurrentLevel)", "RTID(Shield5@CurrentLevel)", "RTID(Shield9@CurrentLevel)"],
-            ["RTID(Shield4@CurrentLevel)", "RTID(Shield8@CurrentLevel)"],
-            ["RTID(Shield3@CurrentLevel)", "RTID(Shield7@CurrentLevel)"],
-            ["RTID(Shield2@CurrentLevel)", "RTID(Shield6@CurrentLevel)"],
-            ["RTID(Shield1@CurrentLevel)", "RTID(Shield4@CurrentLevel)", "RTID(Shield5@CurrentLevel)"],
-            ["RTID(PlantFoodSpawner1@CurrentLevel)", "RTID(Shield3@CurrentLevel)", "RTID(Shield8@CurrentLevel)", "RTID(Shield9@CurrentLevel)"],
-            ["RTID(Shield2@CurrentLevel)", "RTID(Shield6@CurrentLevel)", "RTID(Shield7@CurrentLevel)"],
-            ["RTID(Shield1@CurrentLevel)", "RTID(Shield4@CurrentLevel)", "RTID(Shield5@CurrentLevel)"],
-            ["RTID(Shield2@CurrentLevel)", "RTID(Shield3@CurrentLevel)", "RTID(Shield8@CurrentLevel)", "RTID(Shield9@CurrentLevel)"],
-            ["RTID(Shield1@CurrentLevel)", "RTID(Shield4@CurrentLevel)", "RTID(Shield7@CurrentLevel)", "RTID(Shield6@CurrentLevel)"],
-            ["RTID(PlantFoodSpawner2@CurrentLevel)", "RTID(Shield2@CurrentLevel)", "RTID(Shield3@CurrentLevel)", "RTID(Shield8@CurrentLevel)", "RTID(Shield5@CurrentLevel)"],
-            ["RTID(Shield1@CurrentLevel)", "RTID(Shield4@CurrentLevel)", "RTID(Shield7@CurrentLevel)", "RTID(Shield6@CurrentLevel)"],
-            ["RTID(Shield2@CurrentLevel)", "RTID(Shield3@CurrentLevel)", "RTID(Shield8@CurrentLevel)", "RTID(Shield5@CurrentLevel)", "RTID(Shield9@CurrentLevel)"],
-            ["RTID(Shield5@CurrentLevel)", "RTID(Shield6@CurrentLevel)", "RTID(Shield8@CurrentLevel)", "RTID(Shield7@CurrentLevel)", "RTID(Shield9@CurrentLevel)"],
-            ["RTID(Shield5@CurrentLevel)", "RTID(Shield4@CurrentLevel)", "RTID(Shield3@CurrentLevel)", "RTID(Shield2@CurrentLevel)", "RTID(Shield1@CurrentLevel)"],
-            ["RTID(PlantFoodSpawner3@CurrentLevel)", "RTID(Shield5@CurrentLevel)", "RTID(Shield6@CurrentLevel)", "RTID(Shield8@CurrentLevel)", "RTID(Shield7@CurrentLevel)", "RTID(Shield9@CurrentLevel)"],
-            ["RTID(Shield6@CurrentLevel)", "RTID(Shield5@CurrentLevel)", "RTID(Shield4@CurrentLevel)", "RTID(Shield3@CurrentLevel)", "RTID(Shield2@CurrentLevel)", "RTID(Shield1@CurrentLevel)"],
-            ["RTID(Shield4@CurrentLevel)", "RTID(Shield5@CurrentLevel)", "RTID(Shield6@CurrentLevel)", "RTID(Shield8@CurrentLevel)", "RTID(Shield7@CurrentLevel)", "RTID(Shield9@CurrentLevel)"],
-            ["RTID(Shield6@CurrentLevel)", "RTID(Shield5@CurrentLevel)", "RTID(Shield4@CurrentLevel)", "RTID(Shield3@CurrentLevel)", "RTID(Shield2@CurrentLevel)", "RTID(Shield1@CurrentLevel)"],
-            ["RTID(Shield4@CurrentLevel)", "RTID(Shield5@CurrentLevel)", "RTID(Shield6@CurrentLevel)", "RTID(Shield8@CurrentLevel)", "RTID(Shield7@CurrentLevel)", "RTID(Shield9@CurrentLevel)"],
-            ]
+          [
+            "RTID(Shield9@CurrentLevel)",
+            "RTID(Wave1@CurrentLevel)"
+          ],
+          [
+            "RTID(Shield8@CurrentLevel)",
+            "RTID(Wave2@CurrentLevel)"
+          ],
+          [
+            "RTID(Shield7@CurrentLevel)",
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Shield6@CurrentLevel)"
+          ],
+          [
+            "RTID(PlantFoodSpawner0@CurrentLevel)",
+            "RTID(Shield5@CurrentLevel)",
+            "RTID(Shield9@CurrentLevel)"
+          ],
+          [
+            "RTID(Shield4@CurrentLevel)",
+            "RTID(Shield8@CurrentLevel)"
+          ],
+          [
+            "RTID(Shield3@CurrentLevel)",
+            "RTID(Shield7@CurrentLevel)"
+          ],
+          [
+            "RTID(Shield2@CurrentLevel)",
+            "RTID(Shield6@CurrentLevel)"
+          ],
+          [
+            "RTID(Shield1@CurrentLevel)",
+            "RTID(Shield4@CurrentLevel)",
+            "RTID(Shield5@CurrentLevel)"
+          ],
+          [
+            "RTID(PlantFoodSpawner1@CurrentLevel)",
+            "RTID(Shield3@CurrentLevel)",
+            "RTID(Shield8@CurrentLevel)",
+            "RTID(Shield9@CurrentLevel)"
+          ],
+          [
+            "RTID(Shield2@CurrentLevel)",
+            "RTID(Shield6@CurrentLevel)",
+            "RTID(Shield7@CurrentLevel)",
+            "RTID(Garg5@CurrentLevel)"
+          ],
+          [
+            "RTID(Shield1@CurrentLevel)",
+            "RTID(Shield4@CurrentLevel)",
+            "RTID(Shield5@CurrentLevel)"
+          ],
+          [
+            "RTID(Shield2@CurrentLevel)",
+            "RTID(Shield3@CurrentLevel)",
+            "RTID(Shield8@CurrentLevel)",
+            "RTID(Shield9@CurrentLevel)"
+          ],
+          [
+            "RTID(Shield1@CurrentLevel)",
+            "RTID(Shield4@CurrentLevel)",
+            "RTID(Shield7@CurrentLevel)",
+            "RTID(Shield6@CurrentLevel)",
+            "RTID(Imp5@CurrentLevel)"
+          ],
+          [
+            "RTID(PlantFoodSpawner2@CurrentLevel)",
+            "RTID(Shield2@CurrentLevel)",
+            "RTID(Shield3@CurrentLevel)",
+            "RTID(Shield8@CurrentLevel)",
+            "RTID(Shield5@CurrentLevel)"
+          ],
+          [
+            "RTID(Shield1@CurrentLevel)",
+            "RTID(Shield4@CurrentLevel)",
+            "RTID(Shield7@CurrentLevel)",
+            "RTID(Shield6@CurrentLevel)"
+          ],
+          [
+            "RTID(Shield2@CurrentLevel)",
+            "RTID(Shield3@CurrentLevel)",
+            "RTID(Shield8@CurrentLevel)",
+            "RTID(Shield5@CurrentLevel)",
+            "RTID(Shield9@CurrentLevel)",
+            "RTID(Imp5@CurrentLevel)"
+          ],
+          [
+            "RTID(Shield5@CurrentLevel)",
+            "RTID(Shield6@CurrentLevel)",
+            "RTID(Shield8@CurrentLevel)",
+            "RTID(Shield7@CurrentLevel)",
+            "RTID(Shield9@CurrentLevel)"
+          ],
+          [
+            "RTID(Shield5@CurrentLevel)",
+            "RTID(Shield4@CurrentLevel)",
+            "RTID(Shield3@CurrentLevel)",
+            "RTID(Shield2@CurrentLevel)",
+            "RTID(Shield1@CurrentLevel)"
+          ],
+          [
+            "RTID(PlantFoodSpawner3@CurrentLevel)",
+            "RTID(Shield5@CurrentLevel)",
+            "RTID(Shield6@CurrentLevel)",
+            "RTID(Shield8@CurrentLevel)",
+            "RTID(Shield7@CurrentLevel)",
+            "RTID(Shield9@CurrentLevel)"
+          ],
+          [
+            "RTID(Shield6@CurrentLevel)",
+            "RTID(Shield5@CurrentLevel)",
+            "RTID(Shield4@CurrentLevel)",
+            "RTID(Shield3@CurrentLevel)",
+            "RTID(Shield2@CurrentLevel)",
+            "RTID(Shield1@CurrentLevel)",
+            "RTID(Garg5@CurrentLevel)",
+            "RTID(Imp5@CurrentLevel)"
+          ],
+          [
+            "RTID(Shield4@CurrentLevel)",
+            "RTID(Shield5@CurrentLevel)",
+            "RTID(Shield6@CurrentLevel)",
+            "RTID(Shield8@CurrentLevel)",
+            "RTID(Shield7@CurrentLevel)",
+            "RTID(Shield9@CurrentLevel)"
+          ],
+          [
+            "RTID(Shield6@CurrentLevel)",
+            "RTID(Shield5@CurrentLevel)",
+            "RTID(Shield4@CurrentLevel)",
+            "RTID(Shield3@CurrentLevel)",
+            "RTID(Shield2@CurrentLevel)",
+            "RTID(Shield1@CurrentLevel)"
+          ],
+          [
+            "RTID(Shield4@CurrentLevel)",
+            "RTID(Shield5@CurrentLevel)",
+            "RTID(Shield6@CurrentLevel)",
+            "RTID(Shield8@CurrentLevel)",
+            "RTID(Shield7@CurrentLevel)",
+            "RTID(Shield9@CurrentLevel)",
+            "RTID(Garg5@CurrentLevel)",
+            "RTID(Imp5@CurrentLevel)"
+          ],
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(sky_battleplane@ZombieTypes)",
+            "Row": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(sky_battleplane@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_gargantuar@ZombieTypes)",
+            "Row": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(future_jetpack_veteran@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(future_jetpack_veteran@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(future_jetpack_veteran@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(future_jetpack_veteran@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(future_jetpack_veteran@ZombieTypes)",
+            "Row": 5
+          },
+          {
+            "Type": "RTID(football_mech@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(easter_af_t@CurrentLevel)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Garg5Zom"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(easter_af_t@CurrentLevel)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(easter_af_t@CurrentLevel)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(easter_af_t@CurrentLevel)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(easter_af_t@CurrentLevel)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(easter_af_t@CurrentLevel)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Garg5"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.1,
+          "Min": 0.1
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Garg5Zom@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Imp5Zom"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(sky_battleplane@ZombieTypes)",
+            "Row": 1
+          },
+          {
+            "Type": "RTID(sky_battleplane@ZombieTypes)",
+            "Row": 2
+          },
+          {
+            "Type": "RTID(sky_battleplane@ZombieTypes)",
+            "Row": 3
+          },
+          {
+            "Type": "RTID(sky_battleplane@ZombieTypes)",
+            "Row": 4
+          },
+          {
+            "Type": "RTID(sky_battleplane@ZombieTypes)",
+            "Row": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Imp5"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.1,
+          "Min": 0.1
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Imp5Zom@CurrentLevel)"
+        ]
       }
     },
     {
@@ -200,19 +572,29 @@
       "objdata": {
         "Zombies": [
           {
-            "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 1, "Column": 9
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 1,
+            "Column": 9
           },
           {
-            "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 2, "Column": 9
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 2,
+            "Column": 9
           },
           {
-            "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 3, "Column": 9
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 3,
+            "Column": 9
           },
           {
-            "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 4, "Column": 9
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 4,
+            "Column": 9
           },
           {
-            "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 5, "Column": 9
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 5,
+            "Column": 9
           }
         ]
       }
@@ -237,405 +619,583 @@
         },
         "RewardWhenEnded": false,
         "SuppressRewardState": false,
-        "Events": ["RTID(Shield9Zom@CurrentLevel)"]
+        "Events": [
+          "RTID(Shield9Zom@CurrentLevel)"
+        ]
       }
     },
     {
-  "aliases": [
-    "Shield8Zom"
-  ],
-  "objclass": "SpawnZombiesJitteredWaveActionProps",
-  "objdata": {
-    "Zombies": [
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 1, "Column": 8 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 2, "Column": 8 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 3, "Column": 8 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 4, "Column": 8 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 5, "Column": 8 }
-    ]
-  }
-},
-{
-  "aliases": [
-    "Shield8"
-  ],
-  "objclass": "WaveSchedulerProps",
-  "objdata": {
-    "TimeBeforeFirst": {
-      "Max": 0.1,
-      "Min": 0.1
+      "aliases": [
+        "Shield8Zom"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 1,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 2,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 3,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 4,
+            "Column": 8
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 5,
+            "Column": 8
+          }
+        ]
+      }
     },
-    "TimeBetween": {
-      "Max": 1,
-      "Min": 1
-    },
-    "Repeat": {
-      "Max": 1,
-      "Min": 1
-    },
-    "RewardWhenEnded": false,
-    "SuppressRewardState": false,
-    "Events": ["RTID(Shield8Zom@CurrentLevel)"]
-  }
-},
-{
-  "aliases": [
-    "Shield7Zom"
-  ],
-  "objclass": "SpawnZombiesJitteredWaveActionProps",
-  "objdata": {
-    "Zombies": [
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 1, "Column": 7 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 2, "Column": 7 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 3, "Column": 7 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 4, "Column": 7 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 5, "Column": 7 }
-    ]
-  }
-},
-{
-  "aliases": [
-    "Shield7"
-  ],
-  "objclass": "WaveSchedulerProps",
-  "objdata": {
-    "TimeBeforeFirst": {
-      "Max": 0.1,
-      "Min": 0.1
-    },
-    "TimeBetween": {
-      "Max": 1,
-      "Min": 1
-    },
-    "Repeat": {
-      "Max": 1,
-      "Min": 1
-    },
-    "RewardWhenEnded": false,
-    "SuppressRewardState": false,
-    "Events": ["RTID(Shield7Zom@CurrentLevel)"]
-  }
-},
-{
-  "aliases": [
-    "Shield6Zom"
-  ],
-  "objclass": "SpawnZombiesJitteredWaveActionProps",
-  "objdata": {
-    "Zombies": [
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 1, "Column": 6 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 2, "Column": 6 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 3, "Column": 6 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 4, "Column": 6 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 5, "Column": 6 }
-    ]
-  }
-},
-{
-  "aliases": [
-    "Shield6"
-  ],
-  "objclass": "WaveSchedulerProps",
-  "objdata": {
-    "TimeBeforeFirst": {
-      "Max": 0.1,
-      "Min": 0.1
-    },
-    "TimeBetween": {
-      "Max": 1,
-      "Min": 1
-    },
-    "Repeat": {
-      "Max": 1,
-      "Min": 1
-    },
-    "RewardWhenEnded": false,
-    "SuppressRewardState": false,
-    "Events": ["RTID(Shield6Zom@CurrentLevel)"]
-  }
-},
-{
-  "aliases": [
-    "Shield5Zom"
-  ],
-  "objclass": "SpawnZombiesJitteredWaveActionProps",
-  "objdata": {
-    "Zombies": [
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 1, "Column": 5 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 2, "Column": 5 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 3, "Column": 5 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 4, "Column": 5 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 5, "Column": 5 }
-    ]
-  }
-},
-{
-  "aliases": [
-    "Shield5"
-  ],
-  "objclass": "WaveSchedulerProps",
-  "objdata": {
-    "TimeBeforeFirst": {
-      "Max": 0.1,
-      "Min": 0.1
-    },
-    "TimeBetween": {
-      "Max": 1,
-      "Min": 1
-    },
-    "Repeat": {
-      "Max": 1,
-      "Min": 1
-    },
-    "RewardWhenEnded": false,
-    "SuppressRewardState": false,
-    "Events": ["RTID(Shield5Zom@CurrentLevel)"]
-  }
-},
-{
-  "aliases": [
-    "Shield4Zom"
-  ],
-  "objclass": "SpawnZombiesJitteredWaveActionProps",
-  "objdata": {
-    "Zombies": [
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 1, "Column": 4 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 2, "Column": 4 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 3, "Column": 4 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 4, "Column": 4 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 5, "Column": 4 }
-    ]
-  }
-},
-{
-  "aliases": [
-    "Shield4"
-  ],
-  "objclass": "WaveSchedulerProps",
-  "objdata": {
-    "TimeBeforeFirst": {
-      "Max": 0.1,
-      "Min": 0.1
-    },
-    "TimeBetween": {
-      "Max": 1,
-      "Min": 1
-    },
-    "Repeat": {
-      "Max": 1,
-      "Min": 1
-    },
-    "RewardWhenEnded": false,
-    "SuppressRewardState": false,
-    "Events": ["RTID(Shield4Zom@CurrentLevel)"]
-  }
-},
-{
-  "aliases": [
-    "Shield3Zom"
-  ],
-  "objclass": "SpawnZombiesJitteredWaveActionProps",
-  "objdata": {
-    "Zombies": [
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 1, "Column": 3 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 2, "Column": 3 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 3, "Column": 3 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 4, "Column": 3 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 5, "Column": 3 }
-    ]
-  }
-},
-{
-  "aliases": [
-    "Shield3"
-  ],
-  "objclass": "WaveSchedulerProps",
-  "objdata": {
-    "TimeBeforeFirst": {
-      "Max": 0.1,
-      "Min": 0.1
-    },
-    "TimeBetween": {
-      "Max": 1,
-      "Min": 1
-    },
-    "Repeat": {
-      "Max": 1,
-      "Min": 1
-    },
-    "RewardWhenEnded": false,
-    "SuppressRewardState": false,
-    "Events": ["RTID(Shield3Zom@CurrentLevel)"]
-  }
-},
-{
-  "aliases": [
-    "Shield2Zom"
-  ],
-  "objclass": "SpawnZombiesJitteredWaveActionProps",
-  "objdata": {
-    "Zombies": [
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 1, "Column": 2 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 2, "Column": 2 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 3, "Column": 2 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 4, "Column": 2 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 5, "Column": 2 }
-    ]
-  }
-},
-{
-  "aliases": [
-    "Shield2"
-  ],
-  "objclass": "WaveSchedulerProps",
-  "objdata": {
-    "TimeBeforeFirst": {
-      "Max": 0.1,
-      "Min": 0.1
-    },
-    "TimeBetween": {
-      "Max": 1,
-      "Min": 1
-    },
-    "Repeat": {
-      "Max": 1,
-      "Min": 1
-    },
-    "RewardWhenEnded": false,
-    "SuppressRewardState": false,
-    "Events": ["RTID(Shield2Zom@CurrentLevel)"]
-  }
-},
-{
-  "aliases": [
-    "Shield1Zom"
-  ],
-  "objclass": "SpawnZombiesJitteredWaveActionProps",
-  "objdata": {
-    "Zombies": [
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 1, "Column": 1 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 2, "Column": 1 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 3, "Column": 1 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 4, "Column": 1 },
-      { "Type": "RTID(future_protector_shield@ZombieTypes)", "Row": 5, "Column": 1 }
-    ]
-  }
-},
-{
-  "aliases": [
-    "Shield1"
-  ],
-  "objclass": "WaveSchedulerProps",
-  "objdata": {
-    "TimeBeforeFirst": {
-      "Max": 0.1,
-      "Min": 0.1
-    },
-    "TimeBetween": {
-      "Max": 1,
-      "Min": 1
-    },
-    "Repeat": {
-      "Max": 1,
-      "Min": 1
-    },
-    "RewardWhenEnded": false,
-    "SuppressRewardState": false,
-    "Events": ["RTID(Shield1Zom@CurrentLevel)"]
-  }
-},
-        {
-            "aliases": [
-                "PlantFoodSpawner0"
-            ],
-            "objclass": "SpawnZombiesJitteredWaveActionProps",
-            "objdata": {
-                "AdditionalPlantfood": 1,
-                "DynamicPlantfood": [
-                    0,
-                    0,
-                    0,
-                    1,
-                    0,
-                    0,
-                    0
-                ],
-                "Zombies": [
-                    {
-                        "Type": "RTID(future_armor4@ZombieTypes)"
-                    }
-                ]
-            }
+    {
+      "aliases": [
+        "Shield8"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.1,
+          "Min": 0.1
         },
-		{
-            "aliases": [
-                "PlantFoodSpawner1"
-            ],
-            "objclass": "SpawnZombiesJitteredWaveActionProps",
-            "objdata": {
-                "AdditionalPlantfood": 1,
-                "DynamicPlantfood": [
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    1,
-                    0
-                ],
-                "Zombies": [
-                    {
-                        "Type": "RTID(future_armor4@ZombieTypes)"
-                    }
-                ]
-            }
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
         },
-		{
-            "aliases": [
-                "PlantFoodSpawner2"
-            ],
-            "objclass": "SpawnZombiesJitteredWaveActionProps",
-            "objdata": {
-                "AdditionalPlantfood": 1,
-                "DynamicPlantfood": [
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    0,
-                    1
-                ],
-                "Zombies": [
-                    {
-                        "Type": "RTID(future_armor4@ZombieTypes)"
-                    }
-                ]
-            }
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
         },
-		{
-            "aliases": [
-                "PlantFoodSpawner3"
-            ],
-            "objclass": "SpawnZombiesJitteredWaveActionProps",
-            "objdata": {
-                "AdditionalPlantfood": 1,
-                "DynamicPlantfood": [
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    1,
-                    0
-                ],
-                "Zombies": [
-                    {
-                        "Type": "RTID(future_armor4@ZombieTypes)"
-                    }
-                ]
-            }
-        }
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Shield8Zom@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Shield7Zom"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 1,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 2,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 3,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 4,
+            "Column": 7
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 5,
+            "Column": 7
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Shield7"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.1,
+          "Min": 0.1
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Shield7Zom@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Shield6Zom"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 1,
+            "Column": 6
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 2,
+            "Column": 6
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 3,
+            "Column": 6
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 4,
+            "Column": 6
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 5,
+            "Column": 6
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Shield6"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.1,
+          "Min": 0.1
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Shield6Zom@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Shield5Zom"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 1,
+            "Column": 5
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 2,
+            "Column": 5
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 3,
+            "Column": 5
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 4,
+            "Column": 5
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 5,
+            "Column": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Shield5"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.1,
+          "Min": 0.1
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Shield5Zom@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Shield4Zom"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 1,
+            "Column": 4
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 2,
+            "Column": 4
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 3,
+            "Column": 4
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 4,
+            "Column": 4
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 5,
+            "Column": 4
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Shield4"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.1,
+          "Min": 0.1
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Shield4Zom@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Shield3Zom"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 1,
+            "Column": 3
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 2,
+            "Column": 3
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 3,
+            "Column": 3
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 4,
+            "Column": 3
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 5,
+            "Column": 3
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Shield3"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.1,
+          "Min": 0.1
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Shield3Zom@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Shield2Zom"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 1,
+            "Column": 2
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 2,
+            "Column": 2
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 3,
+            "Column": 2
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 4,
+            "Column": 2
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 5,
+            "Column": 2
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Shield2"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.1,
+          "Min": 0.1
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Shield2Zom@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Shield1Zom"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "Zombies": [
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 1,
+            "Column": 1
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 2,
+            "Column": 1
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 3,
+            "Column": 1
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 4,
+            "Column": 1
+          },
+          {
+            "Type": "RTID(future_protector_shield@ZombieTypes)",
+            "Row": 5,
+            "Column": 1
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Shield1"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.1,
+          "Min": 0.1
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Shield1Zom@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PlantFoodSpawner0"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PlantFoodSpawner1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PlantFoodSpawner2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "PlantFoodSpawner3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "DynamicPlantfood": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "Zombies": [
+          {
+            "Type": "RTID(newspaper_veteran@ZombieTypes)"
+          }
+        ]
+      }
+    }
   ],
   "version": 1
 }

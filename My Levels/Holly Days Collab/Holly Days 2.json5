@@ -1,0 +1,1003 @@
+{
+    "#comment": "Sample Level",
+    "Information": {
+        "Author": "hinanarukami",
+        "Introduction": "A sandbox level based on Mr. Blues' which was based on Altverz's sandbox levels.",
+        "Version": "1.0",
+        "CreatedAt": "2026-06-20",
+        "UpdatedAt": "2026-06-20",
+        "Difficulty": "Normal",
+        "Category": "Minesweeper"
+    },
+    "objects": [
+        {
+            "objclass": "LevelDefinition",
+            "objdata": {
+                "Description": "Use your brain instead of memorizing",
+                "LevelNumber": 1,
+                "Loot": "RTID(DefaultLoot@LevelModules)",
+                "Modules": [
+                    "RTID(ZombiesDeadWinCon@LevelModules)",
+                    "RTID(DefaultZombieWinCondition@LevelModules)",
+                    "RTID(Intro@CurrentLevel)",
+                    "RTID(NewWaves@CurrentLevel)",
+                    "RTID(LevelDeadLine@CurrentLevel)",
+                    "RTID(LevelScheduler@CurrentLevel)",
+                    "RTID(ChallengeModule@CurrentLevel)",
+                    "RTID(FrozenPlantPlacement@CurrentLevel)",
+                    "RTID(ConveyorBelt@CurrentLevel)"
+                ],
+                "Name": "Holly Days - Night 2\nMinesweeper",
+                "WrittenBy": "hinanarukami",
+                "MusicType": "MiniGame_B",
+                "NormalPresentTable": "egypt_normal_01",
+                "ShinyPresentTable": "egypt_shiny_01",
+                "StageModule": "RTID(ModernNightStage@LevelModules)"
+            }
+        },
+        {
+            "objclass": "LevelIntroProperties",
+            "aliases": [
+                "Intro"
+            ],
+            "objdata": {
+                "PanStartOffset": 0,
+                "PanStreetOffset": 0,
+                "PanEndOffset": 0,
+                "PanRightDuration": 0.1,
+                "PanLeftDuration": 0.1,
+                "PanMoveRightTime": 0.1,
+                "PanMoveLeftTime": 0.1,
+                "AdditionalStartingSun": 0,
+                "ZombiePreviewOff": false
+            }
+        },
+        {
+            "aliases": [
+                "SunProduced"
+            ],
+            "objclass": "StarChallengeSunProducedProps",
+            "objdata": {
+                "SuppressObjectiveTip": true,
+                "TargetSun": 1750
+            }
+        },
+        {
+            "aliases": [
+                "ConveyorBelt"
+            ],
+            "objclass": "ConveyorSeedBankProperties",
+            "objdata": {
+                "DropDelayConditions": [
+                    {
+                        "Delay": 1,
+                        "MaxPackets": 0
+                    },
+                    {
+                        "Delay": 1,
+                        "MaxPackets": 3
+                    },
+                    {
+                        "Delay": 1,
+                        "MaxPackets": 6
+                    },
+                    {
+                        "Delay": 1,
+                        "MaxPackets": 8
+                    },
+                    {
+                        "Delay": 2,
+                        "MaxPackets": 10
+                    }
+                ],
+                "InitialPlantList": [
+                    {
+                        "MaxWeightFactor": 0,
+                        "MaxCount": 2,
+                        "PlantType": "hotpotato",
+                        "Weight": 30
+                    }
+                ],
+                "SpeedConditions": [
+                    {
+                        "MaxPackets": 0,
+                        "Speed": 150
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ChallengeModule"
+            ],
+            "objclass": "StarChallengeModuleProperties",
+            "objdata": {
+                "Challenges": [
+                    [
+                        "RTID(SunProduced@CurrentLevel)",
+                        "RTID(BeatTheLevel@CurrentLevel)"
+                    ]
+                ],
+                "ChallengeAlwaysAvailable": true
+            }
+        },
+        {
+            "aliases": [
+                "BeatTheLevel"
+            ],
+            "objclass": "StarChallengeBeatTheLevelProps",
+            "objdata": {
+                "Descriptions": [
+                    "This is basically a minesweeper minigame\nEpsilon (Purple) tiles mean there's no mine in 3x3 area around that tile\nBeta (Red) tiles mean there's 1 mine in 3x3 area\nGamma (Cyan) tiles mean there're 2 mines in 3x3 area\nDelta (Yellow) tiles mean there're 3 mines in 3x3 area"
+                ],
+                "DescriptionsMultiLanguage": [
+                    {
+                        "en": "123",
+                        "zh": "112233"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "seedling_epsilon"
+            ],
+            "objclass": "PlantType",
+            "objdata": {
+                "PlantBasedOn": "seedling",
+                "Properties": "RTID(seedling_epsilon_p@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "seedling_epsilon_p"
+            ],
+            "objclass": "PlantProperties",
+            "objdata": {
+                "GrowingTime": 0.1,
+                "GrowUpType": "powerplant_epsilon",
+                "SpawnedScale": 0.001
+            }
+        },
+        {
+            "aliases": [
+                "seedling_beta"
+            ],
+            "objclass": "PlantType",
+            "objdata": {
+                "PlantBasedOn": "seedling",
+                "Properties": "RTID(seedling_beta_p@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "seedling_beta_p"
+            ],
+            "objclass": "PlantProperties",
+            "objdata": {
+                "GrowingTime": 0.1,
+                "GrowUpType": "powerplant_beta",
+                "SpawnedScale": 0.001
+            }
+        },
+        {
+            "aliases": [
+                "seedling_gamma"
+            ],
+            "objclass": "PlantType",
+            "objdata": {
+                "PlantBasedOn": "seedling",
+                "Properties": "RTID(seedling_gamma_p@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "seedling_gamma_p"
+            ],
+            "objclass": "PlantProperties",
+            "objdata": {
+                "GrowingTime": 0.1,
+                "GrowUpType": "powerplant_gamma",
+                "SpawnedScale": 0.001
+            }
+        },
+        {
+            "aliases": [
+                "seedling_delta"
+            ],
+            "objclass": "PlantType",
+            "objdata": {
+                "PlantBasedOn": "seedling",
+                "Properties": "RTID(seedling_delta_p@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "seedling_delta_p"
+            ],
+            "objclass": "PlantProperties",
+            "objdata": {
+                "GrowingTime": 0.1,
+                "GrowUpType": "powerplant_delta",
+                "SpawnedScale": 0.001
+            }
+        },
+        {
+            "aliases": [
+                "seedling_alpha"
+            ],
+            "objclass": "PlantType",
+            "objdata": {
+                "PlantBasedOn": "seedling",
+                "Properties": "RTID(seedling_alpha_p@CurrentLevel)"
+            }
+        },
+        {
+            "aliases": [
+                "seedling_alpha_p"
+            ],
+            "objclass": "PlantProperties",
+            "objdata": {
+                "GrowingTime": 0.1,
+                "GrowUpType": "powerplant_alpha",
+                "SpawnedScale": 0.001
+            }
+        },
+        {
+            "aliases": [
+                "mine"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(mine_p@CurrentLevel)",
+                "ZombieBasedOn": "tutorial"
+            }
+        },
+        {
+            "aliases": [
+                "mine_p"
+            ],
+            "objclass": "ZombieProperties",
+            "objdata": {
+                "CannotBeEnlightenedBySolarSage": true,
+                "KilledByShrinkingViolet": false,
+                "ImmuneToGarlic": true,
+                "CannotBeGrabbedByPtero": true,
+                "CannotBeTossedByCitron": true,
+                "ChillInsteadOfFreeze": true,
+                "CannotBePushedBySliders": true,
+                "WalkSPS": 10,
+                "DoesNotDamageHeavilyToGarlic": false,
+                "EatDPS": 1000,
+                "Toughness": 125,
+                "WavePointCost": 0,
+                "Weight": 0,
+                "NormalDeathWhenMowed": true,
+                "HitRect": "RTID(CowboyChickenHitRect@RectangleProps)",
+                "AttackRect": "RTID(CowboyChickenAttackRect@RectangleProps)",
+                "SpawnedScale": 0.01
+            }
+        },
+        {
+            "aliases": [
+                "sun"
+            ],
+            "objclass": "ZombieType",
+            "objdata": {
+                "Properties": "RTID(sun_p@CurrentLevel)",
+                "ZombieBasedOn": "tutorial"
+            }
+        },
+        {
+            "aliases": [
+                "sun_p"
+            ],
+            "objclass": "ZombieProperties",
+            "objdata": {
+                "CannotBeEnlightenedBySolarSage": true,
+                "KilledByShrinkingViolet": false,
+                "ImmuneToGarlic": true,
+                "CannotBeGrabbedByPtero": true,
+                "CannotBeTossedByCitron": true,
+                "ChillInsteadOfFreeze": true,
+                "CannotBePushedBySliders": true,
+                "WalkSPS": 0,
+                "WalkSPSVarience": 0,
+                "DoesNotDamageHeavilyToGarlic": false,
+                "EatDPS": 1000,
+                "Toughness": 125,
+                "WavePointCost": 0,
+                "Weight": 0,
+                "NormalDeathWhenMowed": true,
+                "HitRect": "RTID(CowboyChickenHitRect@RectangleProps)",
+                "AttackRect": "RTID(CowboyChickenAttackRect@RectangleProps)",
+                "SpawnedScale": 0.01
+            }
+        },
+        {
+            "aliases": [
+                "FrozenPlantPlacement"
+            ],
+            "objclass": "InitialPlantProperties",
+            "objdata": {
+                "InitialPlantPlacements": [
+                    {
+                        "GridX": 2,
+                        "GridY": 0,
+                        "TypeName": "seedling_alpha",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 4,
+                        "GridY": 0,
+                        "TypeName": "seedling_alpha",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 5,
+                        "GridY": 0,
+                        "TypeName": "seedling_alpha",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 7,
+                        "GridY": 0,
+                        "TypeName": "seedling_alpha",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 0,
+                        "GridY": 2,
+                        "TypeName": "seedling_alpha",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 4,
+                        "GridY": 2,
+                        "TypeName": "seedling_alpha",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 7,
+                        "GridY": 2,
+                        "TypeName": "seedling_alpha",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 8,
+                        "GridY": 2,
+                        "TypeName": "seedling_alpha",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 0,
+                        "GridY": 4,
+                        "TypeName": "seedling_alpha",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 2,
+                        "GridY": 4,
+                        "TypeName": "seedling_alpha",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 0,
+                        "GridY": 0,
+                        "TypeName": "seedling_epsilon",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 1,
+                        "GridY": 0,
+                        "TypeName": "seedling_beta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 3,
+                        "GridY": 0,
+                        "TypeName": "seedling_gamma",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 6,
+                        "GridY": 0,
+                        "TypeName": "seedling_gamma",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 8,
+                        "GridY": 0,
+                        "TypeName": "seedling_beta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 0,
+                        "GridY": 1,
+                        "TypeName": "seedling_beta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 1,
+                        "GridY": 1,
+                        "TypeName": "seedling_gamma",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 2,
+                        "GridY": 1,
+                        "TypeName": "seedling_beta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 3,
+                        "GridY": 1,
+                        "TypeName": "seedling_delta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 4,
+                        "GridY": 1,
+                        "TypeName": "seedling_delta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 5,
+                        "GridY": 1,
+                        "TypeName": "seedling_delta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 6,
+                        "GridY": 1,
+                        "TypeName": "seedling_delta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 7,
+                        "GridY": 1,
+                        "TypeName": "seedling_delta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 8,
+                        "GridY": 1,
+                        "TypeName": "seedling_delta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 1,
+                        "GridY": 2,
+                        "TypeName": "seedling_beta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 2,
+                        "GridY": 2,
+                        "TypeName": "seedling_epsilon",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 3,
+                        "GridY": 2,
+                        "TypeName": "seedling_beta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 5,
+                        "GridY": 2,
+                        "TypeName": "seedling_beta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 6,
+                        "GridY": 2,
+                        "TypeName": "seedling_beta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 0,
+                        "GridY": 3,
+                        "TypeName": "seedling_gamma",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 1,
+                        "GridY": 3,
+                        "TypeName": "seedling_delta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 2,
+                        "GridY": 3,
+                        "TypeName": "seedling_beta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 3,
+                        "GridY": 3,
+                        "TypeName": "seedling_gamma",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 4,
+                        "GridY": 3,
+                        "TypeName": "seedling_beta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 5,
+                        "GridY": 3,
+                        "TypeName": "seedling_beta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 6,
+                        "GridY": 3,
+                        "TypeName": "seedling_beta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 7,
+                        "GridY": 3,
+                        "TypeName": "seedling_gamma",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 8,
+                        "GridY": 3,
+                        "TypeName": "seedling_gamma",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 1,
+                        "GridY": 4,
+                        "TypeName": "seedling_gamma",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 3,
+                        "GridY": 4,
+                        "TypeName": "seedling_beta",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 4,
+                        "GridY": 4,
+                        "TypeName": "seedling_epsilon",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 5,
+                        "GridY": 4,
+                        "TypeName": "seedling_epsilon",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 6,
+                        "GridY": 4,
+                        "TypeName": "seedling_epsilon",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 7,
+                        "GridY": 4,
+                        "TypeName": "seedling_epsilon",
+                        "Condition": "icecubed"
+                    },
+                    {
+                        "GridX": 8,
+                        "GridY": 4,
+                        "TypeName": "seedling_epsilon",
+                        "Condition": "icecubed"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "NewWaves"
+            ],
+            "objclass": "WaveManagerModuleProperties",
+            "objdata": {
+                "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
+            }
+        },
+        {
+            "objclass": "LevelDeadLineProps",
+            "aliases": [
+                "LevelDeadLine"
+            ],
+            "objdata": {
+                "SuppressObjectiveTip": false,
+                "Countdown": 180,
+                "Events": [
+                    "RTID(CleanUp@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "SuppressFlagZombie": true,
+                "Waves": [],
+                "ZombieCountdownFirstWaveSecs": 180
+            }
+        },
+        {
+            "aliases": [
+                "LevelScheduler"
+            ],
+            "objclass": "LevelSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "TimeBetween": {
+                    "Max": 30,
+                    "Min": 30
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(SpawnPlants@CurrentLevel)",
+                    "RTID(Scheduler0@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Scheduler0"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 0,
+                    "Min": 0
+                },
+                "TimeBetween": {
+                    "Max": 3,
+                    "Min": 3
+                },
+                "Repeat": {
+                    "Max": 61,
+                    "Min": 61
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(SpawnFromAlpha@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "CleanUp"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 0,
+                    "Min": 0
+                },
+                "TimeBetween": {
+                    "Max": 5,
+                    "Min": 5
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(SpawnFromTiles@CurrentLevel)",
+                    "RTID(SpawnSolarTomato@CurrentLevel)",
+                    "RTID(Final@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "SpawnSolarTomato"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 2,
+                    "Min": 2
+                },
+                "TimeBetween": {
+                    "Max": 5,
+                    "Min": 5
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": false,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(SpawnTomatos@CurrentLevel)",
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Final"
+            ],
+            "objclass": "WaveSchedulerProps",
+            "objdata": {
+                "TimeBeforeFirst": {
+                    "Max": 4,
+                    "Min": 4
+                },
+                "TimeBetween": {
+                    "Max": 5,
+                    "Min": 5
+                },
+                "Repeat": {
+                    "Max": 1,
+                    "Min": 1
+                },
+                "RewardWhenEnded": true,
+                "SuppressRewardState": false,
+                "Events": [
+                    "RTID(SpawnFromTiles@CurrentLevel)"
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "SpawnPlants"
+            ],
+            "objclass": "SpawnPlantsWaveActionProps",
+            "objdata": {
+                "Plants": [
+                    {
+                        "TypeName": "hotpotato",
+                        "SpawnAnim": "grow",
+                        "GridX": 2,
+                        "GridY": 2
+                    },
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "SpawnFromTiles"
+            ],
+            "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+            "objdata": {
+                "GridTypes": [
+                    "RTID(powertile_beta@GridItemTypes)",
+                    "RTID(powertile_gamma@GridItemTypes)",
+                    "RTID(powertile_delta@GridItemTypes)",
+                    "RTID(powertile_epsilon@GridItemTypes)"
+                ],
+                "ZombieSpawnWaitTime": "0.1",
+                "Zombies": [
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(sun@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "SpawnFromAlpha"
+            ],
+            "objclass": "SpawnZombiesFromGridItemSpawnerProps",
+            "objdata": {
+                "GridTypes": [
+                    "RTID(powertile_alpha@GridItemTypes)"
+                ],
+                "ZombieSpawnWaitTime": "0.1",
+                "Zombies": [
+                    {
+                        "Type": "RTID(mine@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(mine@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(mine@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(mine@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(mine@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(mine@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(mine@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(mine@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(mine@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(mine@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(mine@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(mine@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(mine@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(mine@CurrentLevel)"
+                    },
+                    {
+                        "Type": "RTID(mine@CurrentLevel)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "SpawnTomatos"
+            ],
+            "objclass": "SpawnPlantsWaveActionProps",
+            "objdata": {
+                "Plants": [
+                    {
+                        "TypeName": "solartomato",
+                        "SpawnAnim": "grow",
+                        "GridX": 1,
+                        "GridY": 1
+                    },
+                    {
+                        "TypeName": "solartomato",
+                        "SpawnAnim": "grow",
+                        "GridX": 4,
+                        "GridY": 1
+                    },
+                    {
+                        "TypeName": "solartomato",
+                        "SpawnAnim": "grow",
+                        "GridX": 7,
+                        "GridY": 1
+                    },
+                    {
+                        "TypeName": "solartomato",
+                        "SpawnAnim": "grow",
+                        "GridX": 1,
+                        "GridY": 4
+                    },
+                    {
+                        "TypeName": "solartomato",
+                        "SpawnAnim": "grow",
+                        "GridX": 4,
+                        "GridY": 4
+                    },
+                    {
+                        "TypeName": "solartomato",
+                        "SpawnAnim": "grow",
+                        "GridX": 7,
+                        "GridY": 4
+                    }
+                ]
+            }
+        },
+    ],
+    "version": 1
+}

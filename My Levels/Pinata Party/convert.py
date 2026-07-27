@@ -63,7 +63,7 @@ def convert_lod_json(old_path, new_path):
                 objdata["FlagWaveInterval"] = waves_per_flag
             objdata["WaveCount"] = wave_count
 
-    # 3️⃣ Cập nhật LevelDefinition (thêm WritenBy, MusicType, xóa VictoryModule)
+    # 3️⃣ Cập nhật LevelDefinition (thêm WrittenBy, MusicType, xóa VictoryModule)
     for obj in new_objects:
         if obj.get("objclass") == "LevelDefinition":
             objdata = obj["objdata"]
@@ -71,7 +71,7 @@ def convert_lod_json(old_path, new_path):
                 print("➡️  Xóa VictoryModule khỏi LevelDefinition")
                 objdata.pop("VictoryModule")
 
-            objdata.setdefault("WritenBy", "hinanarukami")
+            objdata.setdefault("WrittenBy", "hinanarukami")
             objdata.setdefault("MusicType", "MiniGame_A")
 
     # 4️⃣ Thêm DynamicPlantfood cho các Wave có AdditionalPlantfood
