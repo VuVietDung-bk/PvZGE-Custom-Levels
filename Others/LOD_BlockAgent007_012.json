@@ -1,0 +1,365 @@
+{
+	"#comment": "",
+	"Information": {
+		"name": {
+			"en": "Pinata party",
+			"zh-CN": ""
+		},
+		"Author": "BlockAgent007",
+		"Introduction": {
+			"en": "",
+			"zh-CN": ""
+		},
+		"GameVersion": "",
+		"Version": "1.0",
+		"CreatedAt": "2026-08-1",
+		"UpdatedAt": "",
+		"Difficulty": "Easy",
+		"Category": "Survival"
+	},
+	"objects":[
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "[PLAYERS_TRIP_TO_LOD]",
+				"LevelNumber": 1,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+						"RTID(LevelOfTheDayIntro@LevelModules)",
+						"RTID(LevelOfTheDayModule@CurrentLevel)",
+        				"RTID(ZombiesDeadWinCon@LevelModules)",
+        				"RTID(DefaultZombieWinCondition@LevelModules)",
+                        "RTID(FrontLawnMowers@LevelModules)",
+						"RTID(KongfuTNT@CurrentLevel)",
+        				"RTID(NewWaves@CurrentLevel)",
+						"RTID(Conveyor@CurrentLevel)"
+      				],
+				"Name": "[LOD_LEVEL_NAME]",
+				"WrittenBy": "BlockAgent007",
+				"MusicType": "MiniGame_A",
+				"DraperPromo": "explodeonut",
+				"NormalPresentTable": "egypt_normal_01",
+      			"ShinyPresentTable": "egypt_shiny_01",
+				"StageModule": "RTID(SummerNightsStage@LevelModules)",
+				"VictoryModule": "RTID(LevelOfTheDayOutro@LevelModules)",
+				"IsLevelOfTheDay": true
+			}
+		},
+		{
+            "aliases": [
+                "KongfuTNT"
+            ],
+            "objclass": "KongfuTNTProperties",
+            "objdata": {
+                "Speed": 0.5,
+                "TriggerGameLose": true,
+                "DamagesToZombies": false,
+                "DamagesToPlants": true,
+                "SpawnData": [
+                    {
+                        "Speed": 0.5,
+                        "WireLength": 6.1,
+                        "GridX": -2,
+                        "GridY": 0
+                    },
+                    {
+                        "Speed": 0.5,
+                        "WireLength": 6.5,
+                        "GridX": -2,
+                        "GridY": 1
+                    },
+                    {
+                        "Speed": 0.5,
+                        "WireLength": 6.5,
+                        "GridX": -2,
+                        "GridY": 2
+                    },
+                    {
+                        "Speed": 0.5,
+                        "WireLength": 6.5,
+                        "GridX": -2,
+                        "GridY": 3
+                    },
+                    {
+                        "Speed": 0.5,
+                        "WireLength": 6.1,
+                        "GridX": -2,
+                        "GridY": 4
+                    }
+                ]
+            }
+        },
+		{
+			"aliases": [
+				"Conveyor"
+			],
+			"objclass": "ConveyorSeedBankProperties",
+			"objdata": {
+				"DropDelayConditions": [
+                    {
+                        "Delay": 5,
+                        "MaxPackets": 6
+                    },
+					{
+                        "Delay": 6.5,
+                        "MaxPackets": 8
+                    },
+					{
+                        "Delay": 7,
+                        "MaxPackets": 10
+                    }
+                ],
+                "InitialPlantList": [
+                    {
+					    "Weight": 10,
+                        "PlantType": "snowpea",
+						"MaxWeightFactor": 0,
+						"MaxCount": 5
+                    },
+					{
+					    "Weight": 1,
+                        "PlantType": "bloomerang",
+						"MaxWeightFactor": 0,
+						"MaxCount": 5
+                    }
+				],
+                "SpeedConditions": [
+                    {
+                        "Speed": 100
+                    }
+                ],
+				"AutoHide": false
+			}
+		},
+		{
+			"aliases": [
+				"LevelOfTheDayModule"
+			],
+			"objclass": "LevelOfTheDayModuleProperties",
+			"objdata": {
+				"FlagCount": 2,
+				"PlantfoodToSpawnCount": 3,
+				"PointIncrementPerWave": 175,
+				"StartingPoints": 1250,
+				"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)",
+				"WavesPerFlag": 7,
+				"ZombiePool": [
+					"RTID(summer_basic@ZombieTypes)",
+					"RTID(summer_armor1@ZombieTypes)",
+					"RTID(summer_armor2@ZombieTypes)",
+					"RTID(summer_bug@ZombieTypes)",
+					"RTID(summer_bug_armor1@ZombieTypes)",
+					"RTID(summer_bug_armor2@ZombieTypes)",
+					"RTID(summer_gargantuar@ZombieTypes)",
+                    "RTID(summer_imp@ZombieTypes)",
+                    "RTID(future_protector@ZombieTypes)",
+                    "RTID(explorer_veteran@ZombieTypes)",
+					"RTID(barrelroller@ZombieTypes)"
+				]
+			}
+		},
+		{
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 7,
+                "WaveCount": 14,
+                "Waves": [
+                    [],
+                    ["RTID(Wave2ModConveyor@CurrentLevel)"],
+                    [],
+                    ["RTID(DinoTimeEvent@CurrentLevel)"],
+                    [],
+					["RTID(Wave6Event@CurrentLevel)"],
+					["RTID(Wave7ModConveyor@CurrentLevel)", "RTID(DinoTimeEvent2@CurrentLevel)", "RTID(DinoTimeEvent4@CurrentLevel)"],
+					[],
+                    [],
+                    ["RTID(Wave10Event@CurrentLevel)", "RTID(DinoTimeEvent1@CurrentLevel)", "RTID(DinoTimeEvent3@CurrentLevel)", "RTID(DinoTimeEvent5@CurrentLevel)"],
+                    [],
+                    ["RTID(Wave12Event@CurrentLevel)"],
+					[],
+					["RTID(Wave14Event@CurrentLevel)", "RTID(DinoTimeEvent1@CurrentLevel)", "RTID(DinoTimeEvent2@CurrentLevel)", "RTID(DinoTimeEvent3@CurrentLevel)", "RTID(DinoTimeEvent4@CurrentLevel)", "RTID(DinoTimeEvent5@CurrentLevel)"]
+                ]
+            }
+        },
+        {
+			"aliases": [
+				"DinoTimeEvent"
+			],
+			"objclass": "DinoWaveActionProps",
+			"objdata": {
+				"DinoRow": "???",
+				"DinoType": "tyranno",
+				"DinoWaveDuration": 5
+			}
+		},
+        {
+			"aliases": [
+				"DinoTimeEvent1"
+			],
+			"objclass": "DinoWaveActionProps",
+			"objdata": {
+				"DinoRow": 0,
+				"DinoType": "tyranno",
+				"DinoWaveDuration": 5
+			}
+		},
+        {
+			"aliases": [
+				"DinoTimeEvent2"
+			],
+			"objclass": "DinoWaveActionProps",
+			"objdata": {
+				"DinoRow": 1,
+				"DinoType": "tyranno",
+				"DinoWaveDuration": 5
+			}
+		},
+        {
+			"aliases": [
+				"DinoTimeEvent3"
+			],
+			"objclass": "DinoWaveActionProps",
+			"objdata": {
+				"DinoRow": 2,
+				"DinoType": "tyranno",
+				"DinoWaveDuration": 5
+			}
+		},
+        {
+			"aliases": [
+				"DinoTimeEvent4"
+			],
+			"objclass": "DinoWaveActionProps",
+			"objdata": {
+				"DinoRow": 3,
+				"DinoType": "tyranno",
+				"DinoWaveDuration": 5
+			}
+		},
+        {
+			"aliases": [
+				"DinoTimeEvent5"
+			],
+			"objclass": "DinoWaveActionProps",
+			"objdata": {
+				"DinoRow": 4,
+				"DinoType": "tyranno",
+				"DinoWaveDuration": 5
+			}
+		},
+		{
+            "aliases": [
+                "Wave6Event"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": 5,
+                "SwashbucklerCount": 5,
+                "TimeBetweenGroups": 0,
+                "ZombieType": "RTID(swashbuckler@ZombieTypes)"
+            }
+        },
+		{
+            "aliases": [
+                "Wave10Event"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": 5,
+                "SwashbucklerCount": 5,
+                "TimeBetweenGroups": 0,
+                "ZombieType": "RTID(swashbuckler@ZombieTypes)"
+            }
+        },
+		{
+            "aliases": [
+                "Wave12Event"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": 5,
+                "SwashbucklerCount": 10,
+                "TimeBetweenGroups": 0,
+                "ZombieType": "RTID(swashbuckler@ZombieTypes)"
+            }
+        },
+		{
+            "aliases": [
+                "Wave14Event"
+            ],
+            "objclass": "RaidingPartyZombieSpawnerProps",
+            "objdata": {
+                "GroupSize": 5,
+                "SwashbucklerCount": 15,
+                "TimeBetweenGroups": 0,
+                "ZombieType": "RTID(swashbuckler@ZombieTypes)"
+            }
+        },
+		{
+            "aliases": [
+                "Wave2ModConveyor"
+            ],
+            "objclass": "ModifyConveyorWaveActionProps",
+            "objdata": {
+                "Add": [
+					{
+					    "Weight": 5,
+                        "Type": "RTID(bloomerang@PlantTypes)",
+						"MaxWeightFactor": 0
+                    },
+                    {
+					    "Weight": 1,
+                        "Type": "RTID(jalapeno@PlantTypes)",
+						"MaxWeightFactor": 0,
+						"MaxCount": 1
+                    },
+					 {
+					    "Weight": 7,
+                        "Type": "RTID(chardguard@PlantTypes)",
+						"MaxWeightFactor": 0,
+						"MaxCount": 5
+                    }
+                ],
+                "Remove": [
+					{
+                        "Type": "RTID(bloomerang@PlantTypes)"
+                    }
+				]
+            }
+        },
+		{
+            "aliases": [
+                "Wave7ModConveyor"
+            ],
+            "objclass": "ModifyConveyorWaveActionProps",
+            "objdata": {
+                "Add": [
+					{
+					    "Weight": 5,
+                        "Type": "RTID(bloomerang@PlantTypes)",
+						"MaxWeightFactor": 0,
+                        "MaxCount": 15
+                    },
+                    {
+					    "Weight": 3,
+                        "Type": "RTID(lavaguava@PlantTypes)",
+						"MaxWeightFactor": 0,
+						"MaxCount": 1
+                    }
+                ],
+                "Remove": [
+                    {
+                        "Type": "RTID(bloomerang@PlantTypes)"
+                    },
+                    {
+                        "Type": "RTID(jalapeno@PlantTypes)"
+                    }
+                ]
+            }
+        }
+	],
+	"version": 1
+}

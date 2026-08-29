@@ -1,0 +1,385 @@
+{
+	"#comment": "",
+	"Information": {
+		"name": {
+			"en": "Pinata party",
+			"zh-CN": ""
+		},
+		"Author": "BlockAgent007",
+		"Introduction": {
+			"en": "",
+			"zh-CN": ""
+		},
+		"GameVersion": "",
+		"Version": "1.0",
+		"CreatedAt": "2026-07-31",
+		"UpdatedAt": "",
+		"Difficulty": "Easy",
+		"Category": "Survival"
+	},
+	"objects":[
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "[PLAYERS_TRIP_TO_LOD]",
+				"LevelNumber": 1,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+						"RTID(LevelOfTheDayIntro@LevelModules)",
+						"RTID(LevelOfTheDayModule@CurrentLevel)",
+						"RTID(FrontLawnMowers@LevelModules)",
+        				"RTID(ZombiesDeadWinCon@LevelModules)",
+        				"RTID(DefaultZombieWinCondition@LevelModules)",
+						"RTID(FastSunDropper@LevelModules)",
+						"RTID(SunObjective@CurrentLevel)",
+						"RTID(SunHoldout@CurrentLevel)",
+						"RTID(GoldTiles@CurrentLevel)",
+        				"RTID(NewWaves@CurrentLevel)",
+						"RTID(PlantMods@CurrentLevel)",
+						"RTID(SeedBank@CurrentLevel)"
+      				],
+				"Name": "[LOD_LEVEL_NAME]",
+				"WrittenBy": "BlockAgent007",
+				"MusicType": "MiniGame_B",
+				"DraperPromo": "marigold",
+				"NormalPresentTable": "egypt_normal_01",
+      			"ShinyPresentTable": "egypt_shiny_01",
+				"StageModule": "RTID(PaddysStage@LevelModules)",
+				"VictoryModule": "RTID(LevelOfTheDayOutro@LevelModules)",
+				"IsLevelOfTheDay": true
+			}
+		},
+		{
+			"aliases": [
+				"GoldTiles"
+			],
+			"objclass": "InitialGridItemProperties",
+			"objdata": {
+				"InitialGridItemMatrixes": [
+					{
+						"GridMatrix": [
+							"000111000",
+							"001010000",
+							"000111000",
+							"000010100",
+							"000111000"
+						],
+						"TypeName": "goldtile"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SeedBank"
+			],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+                "SuppressObjectiveTip": false,
+				"PresetPlantList": [
+					{
+						"PlantType": "peashooter",
+						"Level": -1
+					},
+					{
+						"PlantType": "wallnut",
+						"Level": -1
+					},
+					{
+						"PlantType": "marigold",
+						"Level": -1
+					},
+					{
+						"PlantType": "imitater",
+						"Level": -1
+					},
+					{
+						"PlantType": "blover",
+						"Level": -1
+					}
+				],
+				"SelectionMethod": "preset"
+			}
+		},
+		{
+    		"aliases": [
+        		"PlantMods"
+			],
+    		"objclass": "PlantModifierProperties",
+    		"objdata": {
+        		"HidePlantfood": true,
+        		"SuppressParticle": true,
+        		"List": [
+					{
+            			"Type": "marigold",
+            			"NewObjdata": {
+            				"ChanceToTurn": 1,
+							"ProduceCountdownStart": 2
+						}
+        			}
+				]
+			}
+		},
+		{
+    		"aliases": [
+        		"SunObjective"
+    		],
+			"objclass": "StarChallengeSunProducedProps",
+    		"objdata": {
+        		"TargetSun": 4000
+    		}
+		},
+		{
+			"aliases": [
+				"SunHoldout"
+			],
+			"objclass": "StarChallengeSpendSunHoldoutProps",
+			"objdata": {
+				"HoldoutSeconds": 40
+			}
+		},
+		{
+			"aliases": [
+				"LevelOfTheDayModule"
+			],
+			"objclass": "LevelOfTheDayModuleProperties",
+			"objdata": {
+				"FlagCount": 2,
+				"PlantfoodToSpawnCount": 3,
+				"PointIncrementPerWave": 150,
+				"StartingPoints": 300,
+				"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)",
+				"WavesPerFlag": 5,
+				"ZombiePool": [
+					"RTID(stpatrick@ZombieTypes)",
+					"RTID(stpatrick_armor1@ZombieTypes)",
+					"RTID(stpatrick_armor2@ZombieTypes)",
+					"RTID(stpatrick_dodo@ZombieTypes)",
+					"RTID(beach_surfer@ZombieTypes)",
+					"RTID(mech_cone@ZombieTypes)"
+				]
+			}
+		},
+		{
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 5,
+                "WaveCount": 10,
+                "Waves": [
+                    [],
+                    [],
+                    [],
+                    [],
+                    ["RTID(Wave5LeprechaunsEvent@CurrentLevel)"],
+					[],
+					["RTID(//Wave7Sandstorm@CurrentLevel)"],
+					[],
+                    [],
+                    ["RTID(Wave10LeprechaunsEvent@CurrentLevel)"]
+                ]
+            }
+        },
+		{
+			"aliases": [
+				"Wave5LeprechaunsEvent"
+			],
+			"objclass": "SpiderRainZombieSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 8,
+				"ColumnStart": 4,
+				"GroupSize": 2,
+				"SpiderCount": 8,
+				"SpiderZombieName": "stpatrick_imp",
+				"TimeBeforeFullSpawn": 0.9,
+				"TimeBetweenGroups": 0.1,
+				"WaveStartMessage": "[WARNING_LEPRACHAUNS]",
+				"ZombieFallTime": 1.5
+			}
+		},
+		{
+            "aliases": [
+                "Wave7Sandstorm"
+            ],
+            "objclass": "StormZombieSpawnerProps",
+            "objdata": {
+                "ColumnEnd": 5,
+                "ColumnStart": 4,
+                "GroupSize": 5,
+                "TimeBetweenGroups": 1,
+                "Type": "sandstorm",
+                "Zombies": [
+                	{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					}
+                ]
+            }
+        },
+		{
+			"aliases": [
+				"Wave10LeprechaunsEvent"
+			],
+			"objclass": "SpiderRainZombieSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 8,
+				"ColumnStart": 2,
+				"GroupSize": 2,
+				"SpiderCount": 10,
+				"SpiderZombieName": "stpatrick_imp",
+				"TimeBeforeFullSpawn": 1.1,
+				"TimeBetweenGroups": 0.1,
+				"WaveStartMessage": "[WARNING_LEPRACHAUNS]",
+				"ZombieFallTime": 1.5
+			}
+		},
+		{
+            "aliases": [
+                "Wave11Sandstorm"
+            ],
+            "objclass": "StormZombieSpawnerProps",
+            "objdata": {
+                "ColumnEnd": 5,
+                "ColumnStart": 4,
+                "GroupSize": 2,
+                "TimeBetweenGroups": 0.5,
+                "Type": "sandstorm",
+                "Zombies": [
+                	{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					}
+                ]
+            }
+        },
+		{
+            "aliases": [
+                "Wave13Sandstorm"
+            ],
+            "objclass": "StormZombieSpawnerProps",
+            "objdata": {
+                "ColumnEnd": 5,
+                "ColumnStart": 4,
+                "GroupSize": 1,
+                "TimeBetweenGroups": 0.1,
+                "Type": "sandstorm",
+                "Zombies": [
+                	{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					}
+                ]
+            }
+        },
+		{
+			"aliases": [
+				"Wave15LeprechaunsEvent"
+			],
+			"objclass": "SpiderRainZombieSpawnerProps",
+			"objdata": {
+				"ColumnEnd": 8,
+				"ColumnStart": 2,
+				"GroupSize": 2,
+				"SpiderCount": 14,
+				"SpiderZombieName": "stpatrick_imp",
+				"TimeBeforeFullSpawn": 1.1,
+				"TimeBetweenGroups": 0.1,
+				"WaveStartMessage": "[WARNING_LEPRACHAUNS]",
+				"ZombieFallTime": 1.5
+			}
+		},
+		{
+            "aliases": [
+                "Wave15Sandstorm"
+            ],
+            "objclass": "StormZombieSpawnerProps",
+            "objdata": {
+                "ColumnEnd": 5,
+                "ColumnStart": 4,
+                "GroupSize": 2,
+                "TimeBetweenGroups": 0.1,
+                "Type": "sandstorm",
+                "Zombies": [
+                	{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer_veteran@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(beach_surfer_veteran@ZombieTypes)"
+					}
+                ]
+            }
+        }
+	],
+	"version": 1
+}
