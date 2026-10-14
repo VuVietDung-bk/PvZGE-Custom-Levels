@@ -1,0 +1,371 @@
+{
+	"#comment": "I keep telling you, Pea-Nut is a Pirate Seas plant",
+	"Information": {
+		"name": {
+			"en": "Pinata party",
+			"zh-CN": ""
+		},
+		"Author": "BlockAgent007",
+		"Introduction": {
+			"en": "Pea-Nut appreciation level",
+			"zh-CN": ""
+		},
+		"GameVersion": "",
+		"Version": "1.0",
+		"CreatedAt": "2026-06-19",
+		"UpdatedAt": "",
+		"Difficulty": "Easy",
+		"Category": "Survival"
+	},
+	"objects":[
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "[PLAYERS_TRIP_TO_LOD]",
+				"LevelNumber": 1,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+						"RTID(LevelOfTheDayIntro@LevelModules)",
+						"RTID(LevelOfTheDayModule@CurrentLevel)",
+						"RTID(PirateMowers@LevelModules)",
+        				"RTID(ZombiesDeadWinCon@LevelModules)",
+        				"RTID(DefaultZombieWinCondition@LevelModules)",
+						"RTID(DefaultSunDropper@LevelModules)",
+						"RTID(PiratePlanks@CurrentLevel)",
+        				"RTID(NewWaves@CurrentLevel)",
+						"RTID(SeedBank@CurrentLevel)"
+      				],
+				"Name": "[LOD_LEVEL_NAME]",
+				"WrittenBy": "BlockAgent007",
+				"DraperPromo": "peanut",
+				"NormalPresentTable": "egypt_normal_01",
+      			"ShinyPresentTable": "egypt_shiny_01",
+				"StageModule": "RTID(PirateStage@LevelModules)",
+				"VictoryModule": "RTID(LevelOfTheDayOutro@LevelModules)",
+				"IsLevelOfTheDay": true
+			}
+		},
+		{
+			"aliases": [
+				"PiratePlanks"
+			],
+			"objclass": "PiratePlankProperties",
+			"objdata": {
+				"PlankRows": [2,3]
+			}
+		},
+		{
+			"aliases": [
+				"SeedBank"
+			],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+                "SuppressObjectiveTip": false,
+				"PresetPlantList": [
+					{
+						"PlantType": "sunflower",
+						"Level": -1
+					},
+					{
+						"PlantType": "snapdragon",
+						"Level": -1
+					},
+					{
+						"PlantType": "peanut",
+						"Level": -1
+					},
+					{
+						"PlantType": "squash",
+						"Level": -1
+					}
+				],
+				"SelectionMethod": "preset"
+			}
+		},
+		{
+			"aliases": [
+				"LevelOfTheDayModule"
+			],
+			"objclass": "LevelOfTheDayModuleProperties",
+			"objdata": {
+				"FlagCount": 3,
+				"PlantfoodToSpawnCount": 4,
+				"PointIncrementPerWave": 150,
+				"StartingPoints": 100,
+				"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)",
+				"WavesPerFlag": 6,
+				"ZombiePool": [
+					"RTID(pirate@ZombieTypes)",
+					"RTID(pirate_armor1@ZombieTypes)",
+					"RTID(pirate_armor2@ZombieTypes)",
+					"RTID(barrelroller@ZombieTypes)",
+					"RTID(swashbuckler@ZombieTypes)",
+					"RTID(pelican@ZombieTypes)"
+				]
+			}
+		},
+		{
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 6,
+                "WaveCount": 18,
+				"SuppressFlagZombie": false,
+                "Waves": [
+                    [],
+                    [],
+                    [],
+                    ["RTID(Wave4RaidingPartyEvent@CurrentLevel)"],
+                    ["RTID(Wave5@CurrentLevel)"],
+					["RTID(Wave6RaidingPartyEvent@CurrentLevel)"],
+					["RTID(Wave7@CurrentLevel)"],
+					["RTID(Wave8@CurrentLevel)", "RTID(Wave8RaidingPartyEvent@CurrentLevel)"],
+                    ["RTID(Wave9@CurrentLevel)", "RTID(Wave9RaidingPartyEvent@CurrentLevel)"],
+                    [],
+                    ["RTID(Wave11RaidingPartyEvent@CurrentLevel)"],
+                    ["RTID(Wave12@CurrentLevel)"],
+					["RTID(Wave13RaidingPartyEvent@CurrentLevel)"],
+					["RTID(Wave14RaidingPartyEvent@CurrentLevel)"],
+					["RTID(Wave15RaidingPartyEvent@CurrentLevel)"],
+					["RTID(Wave16@CurrentLevel)", "RTID(Wave16RaidingPartyEvent@CurrentLevel)"],
+					[],
+					["RTID(Wave18@CurrentLevel)", "RTID(Wave18RaidingPartyEvent@CurrentLevel)"]
+                ]
+            }
+        },
+		{
+			"aliases": [
+				"Wave4RaidingPartyEvent"
+			],
+			"objclass": "RaidingPartyZombieSpawnerProps",
+			"objdata": {
+				"GroupSize": 2,
+				"SwashbucklerCount": 2,
+				"TimeBetweenGroups": 1
+			}
+		},
+		{
+			"aliases": [
+				"Wave5"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cannon@ZombieTypes)",
+						"Row": 2
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave6RaidingPartyEvent"
+			],
+			"objclass": "RaidingPartyZombieSpawnerProps",
+			"objdata": {
+				"GroupSize": 3,
+				"SwashbucklerCount": 3,
+				"TimeBetweenGroups": 1
+			}
+		},
+		{
+			"aliases": [
+				"Wave7"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cannon@ZombieTypes)",
+						"Row": 1
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave8"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cannon@ZombieTypes)",
+						"Row": 5
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave8RaidingPartyEvent"
+			],
+			"objclass": "RaidingPartyZombieSpawnerProps",
+			"objdata": {
+				"GroupSize": 2,
+				"SwashbucklerCount": 4,
+				"TimeBetweenGroups": 1
+			}
+		},
+		{
+			"aliases": [
+				"Wave9"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cannon@ZombieTypes)",
+						"Row": 2
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave9RaidingPartyEvent"
+			],
+			"objclass": "RaidingPartyZombieSpawnerProps",
+			"objdata": {
+				"GroupSize": 3,
+				"SwashbucklerCount": 6,
+				"TimeBetweenGroups": 1
+			}
+		},
+		{
+			"aliases": [
+				"Wave11RaidingPartyEvent"
+			],
+			"objclass": "RaidingPartyZombieSpawnerProps",
+			"objdata": {
+				"GroupSize": 4,
+				"SwashbucklerCount": 8,
+				"TimeBetweenGroups": 1
+			}
+		},
+		{
+			"aliases": [
+				"Wave12"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cannon@ZombieTypes)",
+						"Row": 5
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave13RaidingPartyEvent"
+			],
+			"objclass": "RaidingPartyZombieSpawnerProps",
+			"objdata": {
+				"GroupSize": 3,
+				"SwashbucklerCount": 6,
+				"TimeBetweenGroups": 1
+			}
+		},
+		{
+			"aliases": [
+				"Wave14"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cannon@ZombieTypes)",
+						"Row": 1
+					},
+					{
+						"Type": "RTID(cannon@ZombieTypes)",
+						"Row": 2
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave15RaidingPartyEvent"
+			],
+			"objclass": "RaidingPartyZombieSpawnerProps",
+			"objdata": {
+				"GroupSize": 4,
+				"SwashbucklerCount": 8,
+				"TimeBetweenGroups": 1
+			}
+		},
+		{
+			"aliases": [
+				"Wave16"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cannon@ZombieTypes)",
+						"Row": 5
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave16RaidingPartyEvent"
+			],
+			"objclass": "RaidingPartyZombieSpawnerProps",
+			"objdata": {
+				"GroupSize": 1,
+				"SwashbucklerCount": 10,
+				"TimeBetweenGroups": 0.2
+			}
+		},
+		{
+			"aliases": [
+				"Wave18"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cannon@ZombieTypes)",
+						"Row": 1
+					},
+					{
+						"Type": "RTID(cannon@ZombieTypes)",
+						"Row": 2
+					},
+					{
+						"Type": "RTID(cannon@ZombieTypes)",
+						"Row": 5
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave18RaidingPartyEvent"
+			],
+			"objclass": "RaidingPartyZombieSpawnerProps",
+			"objdata": {
+				"GroupSize": 4,
+				"SwashbucklerCount": 12,
+				"TimeBetweenGroups": 1
+			}
+		}
+	],
+	"version": 1
+}

@@ -1,0 +1,377 @@
+{
+	"#comment": "you should play Treacherous Travels",
+	"Information": {
+		"name": {
+			"en": "Pinata party",
+			"zh-CN": ""
+		},
+		"Author": "BlockAgent007",
+		"Introduction": {
+			"en": "Wind From The West lol",
+			"zh-CN": ""
+		},
+		"GameVersion": "",
+		"Version": "1.0",
+		"CreatedAt": "2026-04-28",
+		"UpdatedAt": "2026-06-21",
+		"Difficulty": "Easy",
+		"Category": "Survival"
+	},
+	"objects": [
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "[PLAYERS_TRIP_TO_LOD]",
+				"LevelNumber": 1,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+					"RTID(LevelOfTheDayIntro@LevelModules)",
+					"RTID(LevelOfTheDayModule@CurrentLevel)",
+					"RTID(WestMowers@LevelModules)",
+					"RTID(ZombiesDeadWinCon@LevelModules)",
+					"RTID(DefaultZombieWinCondition@LevelModules)",
+					"RTID(NewWaves@CurrentLevel)",
+					"RTID(SeedBank@CurrentLevel)",
+					"RTID(GameOverLine@CurrentLevel)",
+					"RTID(DefaultSunDropper@LevelModules)",
+					"RTID(ChallengeModule@CurrentLevel)"
+				],
+				"Name": "[LOD_LEVEL_NAME]",
+				"WrittenBy": "BlockAgent007",
+				"MusicType": "MiniGame_B",
+				"DraperPromo": "splitpea",
+				"NormalPresentTable": "egypt_normal_01",
+				"ShinyPresentTable": "egypt_shiny_01",
+				"StageModule": "RTID(BackwardsWestStage@CurrentLevel)",
+				"VictoryModule": "RTID(LevelOfTheDayOutro@LevelModules)",
+				"IsLevelOfTheDay": true
+			}
+		},
+		{
+			"aliases": [
+				"BackwardsWestStage"
+			],
+			"objclass": "LawnType",
+			"objdata": {
+				"LawnBaseOn": "WestStage",
+				"Properties": "RTID(WestStage@CurrentLevel)"
+			}
+		},
+		{
+			"aliases": [
+				"WestStage"
+			],
+			"objclass": "LawnProperties",
+			"objdata": {
+				"Basic_Zombie": [
+					"cowboy_b"
+				],
+				"Flag_Zombie": [
+					"cowboy_flag_b"
+				],
+				"Rally_Zombie": [
+					"cowboy_flag_b"
+				],
+				"Armor1_Zombie": [
+					"cowboy_armor1_b"
+				],
+				"Armor2_Zombie": [
+					"cowboy_armor2_b"
+				],
+				"Armor3_Zombie": [
+					"cowboy_armor2_b"
+				],
+				"Armor4_Zombie": [
+					"cowboy_armor2_b"
+				],
+				"Gravestone": [
+					"gravestone_cowboy"
+				],
+				"RailCart": "railcart_cowboy",
+				"Music": "Cowboy",
+				"IsAtNight": false,
+				"SuppressYeti": true
+			}
+		},
+		{
+			"aliases": [
+				"GameOverLine"
+			],
+			"objclass": "StarChallengeZombieDistanceProps",
+			"objdata": {
+				"TargetDistance": 8.99,
+				"SuppressObjectiveTip": true
+			}
+		},
+		{
+			"aliases": [
+				"SeedBank"
+			],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+				"SuppressObjectiveTip": true,
+				"PresetPlantList": [
+					{
+						"PlantType": "sunflower",
+						"Level": -1
+					},
+					{
+						"PlantType": "splitpea",
+						"Level": -1
+					},
+					{
+						"PlantType": "wallnut",
+						"Level": -1
+					},
+					{
+						"PlantType": "potatomine",
+						"Level": -1
+					},
+					{
+						"PlantType": "cherry_bomb",
+						"Level": -1
+					}
+				],
+				"SelectionMethod": "preset"
+			}
+		},
+		{
+			"aliases": [
+				"ChallengeModule"
+			],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+				"BeatTheLevel"
+			],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"DescriptionsMultilanguage": [
+					{
+						"en": "Survive while zombies come from the left",
+						"zh": "在左侧袭来的僵尸潮中生存下来"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"cowboy_b"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(cowboy_bP@CurrentLevel)",
+				"ZombieBasedOn": "cowboy"
+			}
+		},
+		{
+			"aliases": [
+				"cowboy_bP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"RefuseToSurrender": true,
+				"ChanceToReverse": 1,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.185,
+				"EatDPS": 100,
+				"Toughness": 190,
+				"WavePointCost": 100,
+				"Weight": 1000,
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"cowboy_flag_b"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(cowboy_flag_bP@CurrentLevel)",
+				"ZombieBasedOn": "cowboy_flag"
+			}
+		},
+		{
+			"aliases": [
+				"cowboy_flag_bP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"RefuseToSurrender": true,
+				"ChanceToReverse": 1,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.24,
+				"EatDPS": 100,
+				"Toughness": 190,
+				"WavePointCost": 100,
+				"Weight": 1000,
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"cowboy_armor1_b"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(cowboy_armor1_bP@CurrentLevel)",
+				"ZombieBasedOn": "cowboy_armor1"
+			}
+		},
+		{
+			"aliases": [
+				"cowboy_armor1_bP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"RefuseToSurrender": true,
+				"ChanceToReverse": 1,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.185,
+				"EatDPS": 100,
+				"Toughness": 190,
+				"StartingArmors": [
+					"cowboy_armor1"
+				],
+				"WavePointCost": 200,
+				"Weight": 3000,
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"cowboy_armor2_b"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(cowboy_armor2_bP@CurrentLevel)",
+				"ZombieBasedOn": "cowboy_armor2"
+			}
+		},
+		{
+			"aliases": [
+				"cowboy_armor2_bP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"RefuseToSurrender": true,
+				"ChanceToReverse": 1,
+				"CannotBeTossedByCitron": false,
+				"WalkSPS": 0.185,
+				"EatDPS": 100,
+				"Toughness": 190,
+				"StartingArmors": [
+					"cowboy_armor2"
+				],
+				"WavePointCost": 400,
+				"Weight": 4000,
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"LevelOfTheDayModule"
+			],
+			"objclass": "LevelOfTheDayModuleProperties",
+			"objdata": {
+				"FlagCount": 2,
+				"PlantfoodToSpawnCount": 2,
+				"PointIncrementPerWave": 150,
+				"StartingPoints": 200,
+				"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)",
+				"WavesPerFlag": 8,
+				"ZombiePool": [
+					"RTID(cowboy_b@CurrentLevel)",
+					"RTID(cowboy_armor1_b@CurrentLevel)",
+					"RTID(cowboy_armor2_b@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"WaveManagerProps"
+			],
+			"objclass": "WaveManagerProperties",
+			"objdata": {
+				"FlagWaveInterval": 8,
+				"WaveCount": 16,
+				"SuppressFlagZombie": true,
+				"Waves": [
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[
+						"RTID(Flag@CurrentLevel)"
+					],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[
+						"RTID(Flag@CurrentLevel)"
+					],
+					[]
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Flag"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0,
+					"Min": 0
+				},
+				"TimeBetween": {
+					"Max": 0,
+					"Min": 0
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": [
+					"RTID(FlagZombie@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"FlagZombie"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(cowboy_flag_b@CurrentLevel)"
+					}
+				]
+			}
+		}
+	],
+	"version": 1
+}

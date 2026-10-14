@@ -1,0 +1,742 @@
+{
+	"#comment": "big trouble little zombie",
+	"Information": {
+		"name": {
+			"en": "Pinata party",
+			"zh-CN": ""
+		},
+		"Author": "BlockAgent007",
+		"Introduction": {
+			"en": "a trip down memory lane",
+			"zh-CN": ""
+		},
+		"GameVersion": "",
+		"Version": "1.0",
+		"CreatedAt": "2026-04-28",
+		"UpdatedAt": "2026-06-21",
+		"Difficulty": "Easy",
+		"Category": "Survival"
+	},
+	"objects": [
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "[PLAYERS_TRIP_TO_LOD]",
+				"LevelNumber": 1,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+					"RTID(LevelOfTheDayIntro@LevelModules)",
+					"RTID(LevelOfTheDayModule@CurrentLevel)",
+					"RTID(FrontLawnMowers@LevelModules)",
+					"RTID(ZombiesDeadWinCon@LevelModules)",
+					"RTID(DefaultZombieWinCondition@LevelModules)",
+					"RTID(NewWaves@CurrentLevel)",
+					"RTID(WaterLanes@CurrentLevel)",
+					"RTID(IPP@CurrentLevel)",
+					"RTID(ChallengeModule@CurrentLevel)",
+					"RTID(Conveyor@CurrentLevel)"
+				],
+				"Name": "[LOD_LEVEL_NAME]",
+				"WrittenBy": "BlockAgent007",
+				"MusicType": "MiniGame_A",
+				"NormalPresentTable": "egypt_normal_01",
+				"ShinyPresentTable": "egypt_shiny_01",
+				"StageModule": "RTID(TinyModernStage@CurrentLevel)",
+				"VictoryModule": "RTID(LevelOfTheDayOutro@LevelModules)",
+				"IsLevelOfTheDay": true
+			}
+		},
+		{
+			"aliases": [
+				"TinyModernStage"
+			],
+			"objclass": "LawnType",
+			"objdata": {
+				"LawnBaseOn": "ModernStage",
+				"Properties": "RTID(ModernStage@CurrentLevel)"
+			}
+		},
+		{
+			"aliases": [
+				"ModernStage"
+			],
+			"objclass": "LawnProperties",
+			"objdata": {
+				"Basic_Zombie": [
+					"tiny",
+					"tinyDuckytube"
+				],
+				"Flag_Zombie": [
+					"tinyFlag",
+					"tinyDuckFlag"
+				],
+				"Rally_Zombie": [
+					"tinyFlag",
+					"tinyDuckFlag"
+				],
+				"Armor1_Zombie": [
+					"tiny_armor1",
+					"tinyDuck_armor1"
+				],
+				"Armor2_Zombie": [
+					"tinySnorkel"
+				],
+				"Armor3_Zombie": [
+					"tinyAllstar"
+				],
+				"Armor4_Zombie": [
+					"tiny_yeti"
+				],
+				"Gravestone": [
+					"gravestone_tutorial"
+				],
+				"RailCart": "railcart_tutorial",
+				"Music": "Modern",
+				"IsAtNight": false,
+				"SuppressYeti": true
+			}
+		},
+		{
+			"aliases": [
+				"WaterLanes"
+			],
+			"objclass": "InitialGridItemProperties",
+			"objdata": {
+				"InitialGridItemMatrixes": [
+					{
+						"GridMatrix": [
+							"000000000",
+							"000000000",
+							"111111111",
+							"111111111",
+							"000000000"
+						],
+						"TypeName": "potholepuddle"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"IPP"
+			],
+			"objclass": "InitialPlantProperties",
+			"objdata": {
+				"InitialPlantPlacements": [
+					{
+						"GridX": 0,
+						"GridY": 2,
+						"Level": -1,
+						"TypeName": "lilypad"
+					},
+					{
+						"GridX": 0,
+						"GridY": 3,
+						"Level": -1,
+						"TypeName": "lilypad"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Conveyor"
+			],
+			"objclass": "ConveyorSeedBankProperties",
+			"objdata": {
+				"DropDelayConditions": [
+					{
+						"Delay": 5,
+						"MaxPackets": 6
+					},
+					{
+						"Delay": 7,
+						"MaxPackets": 8
+					},
+					{
+						"Delay": 10,
+						"MaxPackets": 10
+					}
+				],
+				"InitialPlantList": [
+					{
+						"Weight": 5,
+						"PlantType": "peashooter",
+						"MaxWeightFactor": 8,
+						"MinWeightFactor": 0.5
+					},
+					{
+						"Weight": 2,
+						"PlantType": "cabbagepult",
+						"MaxWeightFactor": 8,
+						"MinWeightFactor": 0.5
+					},
+					{
+						"Weight": 3,
+						"PlantType": "primalwallnut",
+						"MaxWeightFactor": 0,
+						"MaxCount": 6
+					},
+					{
+						"Weight": 7,
+						"PlantType": "lilypad",
+						"MaxWeightFactor": 0,
+						"MaxCount": 12
+					}
+				],
+				"SpeedConditions": [
+					{
+						"Speed": 100
+					}
+				],
+				"AutoHide": false
+			}
+		},
+		{
+			"aliases": [
+				"ChallengeModule"
+			],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+				"BeatTheLevel"
+			],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"DescriptionsMultilanguage": [
+					{
+						"en": "Survive against weaker zombies",
+						"zh": "在面对较弱的僵尸时生存下来"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"tiny"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tinyP@CurrentLevel)",
+				"ZombieBasedOn": "tutorial"
+			}
+		},
+		{
+			"aliases": [
+				"tinyP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"WalkSPS": 0.185,
+				"Toughness": 50,
+				"EatDPS": 100,
+				"SpawnedScale": 0.5,
+				"WavePointCost": 50,
+				"Weight": 1000,
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"tinyCone"
+			],
+			"objclass": "ArmorType",
+			"objdata": {
+				"Properties": "RTID(tinyConeP@CurrentLevel)",
+				"ArmorBasedOn": "modern_armor1"
+			}
+		},
+		{
+			"aliases": [
+				"tinyConeP"
+			],
+			"objclass": "ArmorProperties",
+			"objdata": {
+				"isMetal": false,
+				"isIce": false,
+				"Toughness": 90,
+				"BowlingLevel": 1
+			}
+		},
+		{
+			"aliases": [
+				"tiny_armor1"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tinyP1@CurrentLevel)",
+				"ZombieBasedOn": "tutorial"
+			}
+		},
+		{
+			"aliases": [
+				"tinyP1"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"StartingArmors": [
+					"tinyCone"
+				],
+				"ZombieSort": "Normal",
+				"WalkSPS": 0.185,
+				"Toughness": 50,
+				"EatDPS": 100,
+				"SpawnedScale": 0.5,
+				"WavePointCost": 100,
+				"Weight": 3000,
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"tinyDuckytube"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tinyDuckytubeP@CurrentLevel)",
+				"ZombieBasedOn": "duckytube"
+			}
+		},
+		{
+			"aliases": [
+				"tinyDuckytubeP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"ChooseToSpawnOnDeepWaterRows": true,
+				"SpeedScaleInWater": 2,
+				"LivesInDeepWater": true,
+				"WalkSPS": 0.17,
+				"EatDPS": 100,
+				"SpawnedScale": 0.5,
+				"Toughness": 50,
+				"WavePointCost": 100,
+				"Weight": 250,
+				"HitRect": "RTID(SnorkelHitRect@CurrentLevel)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"tinyDuck_armor1"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tinyDuckP1@CurrentLevel)",
+				"ZombieBasedOn": "duckytube"
+			}
+		},
+		{
+			"aliases": [
+				"tinyDuckP1"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"StartingArmors": [
+					"tinyCone"
+				],
+				"ZombieSort": "Normal",
+				"ChooseToSpawnOnDeepWaterRows": true,
+				"SpeedScaleInWater": 2,
+				"LivesInDeepWater": true,
+				"WalkSPS": 0.17,
+				"EatDPS": 100,
+				"SpawnedScale": 0.5,
+				"Toughness": 50,
+				"WavePointCost": 200,
+				"Weight": 750,
+				"HitRect": "RTID(SnorkelHitRect@CurrentLevel)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"tinyFlag"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tinyFlagP@CurrentLevel)",
+				"ZombieBasedOn": "tutorial_flag"
+			}
+		},
+		{
+			"aliases": [
+				"tinyFlagP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"WalkSPS": 0.24,
+				"Toughness": 50,
+				"EatDPS": 100,
+				"SpawnedScale": 0.5,
+				"WavePointCost": 50,
+				"Weight": 100,
+				"HitRect": "RTID(CommonHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"tinyDuckFlag"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tinyDuckFlagP@CurrentLevel)",
+				"ZombieBasedOn": "duckytube_flag"
+			}
+		},
+		{
+			"aliases": [
+				"tinyDuckFlagP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ZombieSort": "Normal",
+				"ChooseToSpawnOnDeepWaterRows": true,
+				"SpeedScaleInWater": 2,
+				"LivesInDeepWater": true,
+				"WalkSPS": 0.24,
+				"Toughness": 50,
+				"EatDPS": 100,
+				"SpawnedScale": 0.5,
+				"WavePointCost": 50,
+				"Weight": 100,
+				"HitRect": "RTID(SnorkelHitRect@CurrentLevel)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"tiny_flag"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"ZombieRedirection": [
+					{
+						"Type": "tinyFlag",
+						"Weight": 2
+					},
+					{
+						"Type": "tinyDuckFlag",
+						"Weight": 3
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"tinySnorkel"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tinySnorkelP@CurrentLevel)",
+				"ZombieBasedOn": "beach_snorkel"
+			}
+		},
+		{
+			"aliases": [
+				"tinySnorkelP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"ChooseToSpawnOnDeepWaterRows": true,
+				"LivesInDeepWater": true,
+				"ZombieSort": "Normal",
+				"WalkSPS": 0.185,
+				"Toughness": 80,
+				"SpawnedScale": 0.5,
+				"EatDPS": 100,
+				"WavePointCost": 150,
+				"Weight": 500,
+				"HitRect": "RTID(SnorkelHitRect@CurrentLevel)",
+				"AttackRect": "RTID(SnorkelAttackRect@CurrentLevel)"
+			}
+		},
+		{
+			"aliases": [
+				"SnorkelHitRect"
+			],
+			"objclass": "RectangleProps",
+			"objdata": {
+				"Values": {
+					"x": 0,
+					"y": 38,
+					"w": 48,
+					"h": 200
+				}
+			}
+		},
+		{
+			"aliases": [
+				"SnorkelAttackRect"
+			],
+			"objclass": "RectangleProps",
+			"objdata": {
+				"Values": {
+					"x": 0,
+					"y": 38,
+					"w": 32,
+					"h": 384
+				}
+			}
+		},
+		{
+			"aliases": [
+				"tinyAllstar"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tinyAllstarP@CurrentLevel)",
+				"ZombieBasedOn": "modern_allstar"
+			}
+		},
+		{
+			"aliases": [
+				"tinyAllstarP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"SmashDamage": 1500,
+				"WalkSPS": 0.16,
+				"EatDPS": 200,
+				"Toughness": 380,
+				"SpawnedScale": 0.5,
+				"IsSpawnedFlying": false,
+				"RunningSpeedScale": 9,
+				"WavePointCost": 750,
+				"Weight": 3500,
+				"HitRect": "RTID(BullyHitRect@RectangleProps)",
+				"AttackRect": "RTID(BullyAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"tiny_yeti"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(tiny_yetiP@CurrentLevel)",
+				"ZombieBasedOn": "treasureyeti"
+			}
+		},
+		{
+			"aliases": [
+				"tiny_yetiP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"SpawnedScale": 0.5,
+				"CannotCarryPlantfoodsInWaves": true,
+				"RetreatSpeedScale": 2,
+				"ImmuneToGarlic": true,
+				"LivesInDeepWater": false,
+				"ImmuneToSweetPotato": true,
+				"CannotBeCarriedByFanStorm": true,
+				"CannotBeGrabbedByPtero": true,
+				"CannotBeEnlightenedBySolarSage": true,
+				"CannotBeSwallowedByChomper": true,
+				"PrizeProps": [
+					{
+						"Weight": 1,
+						"Prize": {
+							"Type": "sprout",
+							"Count": 3
+						}
+					},
+					{
+						"Weight": 5,
+						"Prize": {
+							"Type": "gem",
+							"Count": 10
+						}
+					},
+					{
+						"Weight": 2,
+						"Prize": {
+							"Type": "coin_gold",
+							"Count": 20
+						}
+					},
+					{
+						"Weight": 0.5,
+						"Prize": {
+							"Type": "coin_silver",
+							"Count": 40
+						}
+					}
+				],
+				"WalkForwardTime": {
+					"Min": 10,
+					"Max": 15
+				},
+				"WalkSPS": 0.185,
+				"Toughness": 120,
+				"EatDPS": 100,
+				"WavePointCost": 100,
+				"Weight": 10,
+				"HitRect": "RTID(YetiHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"LevelOfTheDayModule"
+			],
+			"objclass": "LevelOfTheDayModuleProperties",
+			"objdata": {
+				"FlagCount": 2,
+				"PlantfoodToSpawnCount": 2,
+				"PointIncrementPerWave": 110,
+				"StartingPoints": 200,
+				"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)",
+				"WavesPerFlag": 7,
+				"ZombiePool": [
+					"RTID(tiny@CurrentLevel)",
+					"RTID(tiny_armor1@CurrentLevel)",
+					"RTID(tinyDuckytube@CurrentLevel)",
+					"RTID(tinyDuck_armor1@CurrentLevel)",
+					"RTID(tinySnorkel@CurrentLevel)",
+					"RTID(tinyAllstar@CurrentLevel)",
+					"RTID(tiny_yeti@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"WaveManagerProps"
+			],
+			"objclass": "WaveManagerProperties",
+			"objdata": {
+				"FlagWaveInterval": 7,
+				"WaveCount": 14,
+				"SuppressFlagZombie": true,
+				"Waves": [
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[
+						"RTID(Flag@CurrentLevel)"
+					],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[],
+					[
+						"RTID(Flag@CurrentLevel)",
+						"RTID(PoolAmbush@CurrentLevel)"
+					]
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Flag"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0,
+					"Min": 0
+				},
+				"TimeBetween": {
+					"Max": 0,
+					"Min": 0
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": [
+					"RTID(FlagZombie@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"PoolAmbush"
+			],
+			"objclass": "SpawnZombiesFromGroundSpawnerProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"ZombieSpawnWaitTime": 2,
+				"ColumnStart": 3,
+				"ColumnEnd": 8,
+				"RowStart": 2,
+				"RowEnd": 3,
+				"Zombies": [
+					{
+						"Type": "RTID(tinyDuck_armor1@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(tinyDuck_armor1@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(tinyDuck_armor1@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(tinyDuckytube@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(tinyDuckytube@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(tinyDuckytube@CurrentLevel)"
+					},
+					{
+						"Type": "RTID(tinyDuckytube@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"FlagZombie"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(tinyFlag@CurrentLevel)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"FlagDuck"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(tiny_flag@CurrentLevel)"
+					}
+				]
+			}
+		}
+	],
+	"version": 1
+}

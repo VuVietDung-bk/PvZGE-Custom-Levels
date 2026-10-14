@@ -1,0 +1,1006 @@
+{
+	"#comment": "time to plow the yard",
+	"Information": {
+		"name": {
+			"en": "Pinata party",
+			"zh-CN": ""
+		},
+		"Author": "BlockAgent007",
+		"Introduction": {
+			"en": "too much ice",
+			"zh-CN": ""
+		},
+		"GameVersion": "",
+		"Version": "1.0",
+		"CreatedAt": "2026-05-20",
+		"UpdatedAt": "",
+		"Difficulty": "Easy",
+		"Category": "Survival"
+	},
+	"objects": [
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "[PLAYERS_TRIP_TO_LOD]",
+				"LevelNumber": 1,
+				"StartingSun": 75,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+					"RTID(LevelOfTheDayIntro@LevelModules)",
+					"RTID(LevelOfTheDayModule@CurrentLevel)",
+					"RTID(IceageMowers@LevelModules)",
+					"RTID(ZombiesDeadWinCon@LevelModules)",
+					"RTID(DefaultZombieWinCondition@LevelModules)",
+					"RTID(DefaultSunDropper@LevelModules)",
+					"RTID(NewWaves@CurrentLevel)",
+					"RTID(ChallengeModule@CurrentLevel)",
+					"RTID(SeedBank@CurrentLevel)",
+					"RTID(PlantMods@CurrentLevel)",
+					"RTID(Rails@CurrentLevel)",
+					"RTID(IPP@CurrentLevel)"
+				],
+				"Name": "[LOD_LEVEL_NAME]",
+				"WrittenBy": "BlockAgent007",
+				"MusicType": "MiniGame_B",
+				"DraperPromo": "firepeashooter",
+				"NormalPresentTable": "egypt_normal_01",
+				"ShinyPresentTable": "egypt_shiny_01",
+				"StageModule": "RTID(IceageTutorialStage@LevelModules)",
+				"VictoryModule": "RTID(LevelOfTheDayOutro@LevelModules)",
+				"IsLevelOfTheDay": true
+			}
+		},
+		{
+			"aliases": [
+				"IPP"
+			],
+			"objclass": "InitialPlantProperties",
+			"objdata": {
+				"InitialPlantPlacements": [
+					{
+						"GridX": 0,
+						"GridY": 2,
+						"Level": -1,
+						"TypeName": "firepeashooter"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Rails"
+			],
+			"objclass": "RailcartProperties",
+			"objdata": {
+				"RailcartType": "railcart_tutorial",
+				"Rails": [
+					{
+						"Column": 0,
+						"RowStart": 0,
+						"RowEnd": 4
+					}
+				],
+				"Railcarts": [
+					{
+						"Column": 0,
+						"Row": 2
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"PlantMods"
+			],
+			"objclass": "PlantModifierProperties",
+			"objdata": {
+				"HidePlantfood": true,
+				"SuppressParticle": true,
+				"List": [
+					{
+						"Type": "firepeashooter",
+						"NewObjdata": {
+							"ShootInterval": 1
+						}
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"spike"
+			],
+			"objclass": "PlantType",
+			"objdata": {
+				"PlantBasedOn": "zombiepotion_speed",
+				"Properties": "RTID(spikeweed@PlantProps)",
+				"ShiftedPlantFeatures": {
+					"TYPE": [
+						"potion"
+					],
+					"CODENAME": "spike",
+					"RES": {
+						"Disabled": "Spikeweed",
+						"Plant": "Spikeweed"
+					}
+				}
+			}
+		},
+		{
+			"aliases": [
+				"spikeP"
+			],
+			"objclass": "PlantProperties",
+			"objdata": {}
+		},
+		{
+			"aliases": [
+				"SeedBank"
+			],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+				"SuppressObjectiveTip": false,
+				"PresetPlantList": [
+					{
+						"PlantType": "primalsunflower",
+						"Level": -1
+					},
+					{
+						"PlantType": "citron",
+						"Level": -1
+					},
+					{
+						"PlantType": "wallnut",
+						"Level": -1
+					},
+					{
+						"PlantType": "stallia",
+						"Level": -1
+					}
+				],
+				"SelectionMethod": "preset"
+			}
+		},
+		{
+			"aliases": [
+				"yeti"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(yetiP@CurrentLevel)",
+				"ZombieBasedOn": "treasureyeti"
+			}
+		},
+		{
+			"aliases": [
+				"yetiP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"CannotCarryPlantfoodsInWaves": true,
+				"RetreatSpeedScale": 2,
+				"ImmuneToGarlic": true,
+				"LivesInDeepWater": true,
+				"ImmuneToSweetPotato": true,
+				"CannotBeCarriedByFanStorm": true,
+				"CannotBeGrabbedByPtero": true,
+				"CannotBeEnlightenedBySolarSage": true,
+				"CannotBeSwallowedByChomper": true,
+				"PrizeProps": [
+					{
+						"Weight": 1,
+						"Prize": {
+							"Type": "coin_gold",
+							"Count": 5
+						}
+					},
+					{
+						"Weight": 4,
+						"Prize": {
+							"Type": "coin_silver",
+							"Count": 20
+						}
+					}
+				],
+				"WalkForwardTime": {
+					"Min": 10,
+					"Max": 15
+				},
+				"WalkSPS": 0.185,
+				"Toughness": 700,
+				"EatDPS": 100,
+				"WavePointCost": 200,
+				"Weight": 100,
+				"HitRect": "RTID(YetiHitRect@RectangleProps)",
+				"AttackRect": "RTID(CommonAttackRect@RectangleProps)"
+			}
+		},
+		{
+			"aliases": [
+				"ice"
+			],
+			"objclass": "ZombieType",
+			"objdata": {
+				"Properties": "RTID(iceP@CurrentLevel)",
+				"ZombieBasedOn": "zomboni"
+			}
+		},
+		{
+			"aliases": [
+				"iceP"
+			],
+			"objclass": "ZombieProperties",
+			"objdata": {
+				"CannotChangeLaneByPowerToss": true,
+				"CannotBeFlickedByPowerToss": true,
+				"CannotBeGummedByGumnut": true,
+				"CannotBeEnlightenedBySolarSage": true,
+				"CannotBeGrabbedByPtero": true,
+				"ImmuneToSweetPotato": true,
+				"CannotBeDraggedByTangleKelp": true,
+				"CannotBeTossedByCitron": true,
+				"CannotBeSwallowedByChomper": true,
+				"WalkSPS": 7,
+				"EatDPS": 1000,
+				"Toughness": 99999999999,
+				"LivesInDeepWater": true,
+				"NormalDeathWhenMowed": true,
+				"ChiliStunDurationMult": 0,
+				"ImmuneToGarlic": true,
+				"WavePointCost": 400,
+				"Weight": 4000,
+				"HitRect": "RTID(iceHitbox@CurrentLevel)",
+				"AttackRect": "RTID(iceHitbox@CurrentLevel)"
+			}
+		},
+		{
+			"aliases": [
+				"iceHitbox"
+			],
+			"objclass": "RectangleProps",
+			"objdata": {
+				"Values": {
+					"x": 60,
+					"y": 38,
+					"w": 48,
+					"h": 96
+				}
+			}
+		},
+		{
+			"aliases": [
+				"ChallengeModule"
+			],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengeAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+				"BeatTheLevel"
+			],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"DescriptionsMultilanguage": [
+					{
+						"en": "Thaw the ice trails with fire peas",
+						"zh": "用火球融化冰道"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"LevelOfTheDayModule"
+			],
+			"objclass": "LevelOfTheDayModuleProperties",
+			"objdata": {
+				"FlagCount": 2,
+				"PlantfoodToSpawnCount": 3,
+				"PointIncrementPerWave": 110,
+				"StartingPoints": 200,
+				"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)",
+				"WavesPerFlag": 7,
+				"ZombiePool": [
+					"RTID(zomboni@ZombieTypes)",
+					"RTID(feastivus@ZombieTypes)",
+					"RTID(feastivus_armor1@ZombieTypes)",
+					"RTID(feastivus_armor2@ZombieTypes)",
+					"RTID(feastivus_armor2@ZombieTypes)",
+					"RTID(feastivus_gargantuar@ZombieTypes)",
+					"RTID(yeti@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"WaveManagerProps"
+			],
+			"objclass": "WaveManagerProperties",
+			"objdata": {
+				"FlagWaveInterval": 7,
+				"WaveCount": 14,
+				"SuppressFlagZombie": true,
+				"Waves": [
+					[],
+					[],
+					[],
+					[],
+					[
+						"RTID(SnapFrostEvent1@CurrentLevel)",
+						"RTID(snapfrost_alert@CurrentLevel)"
+					],
+					[],
+					[
+						"RTID(Flag@CurrentLevel)"
+					],
+					[],
+					[
+						"RTID(SnapFrostEvent2@CurrentLevel)",
+						"RTID(snapfrost_alert@CurrentLevel)"
+					],
+					[],
+					[],
+					[
+						"RTID(SnapFrostEvent3@CurrentLevel)",
+						"RTID(snapfrost_alert@CurrentLevel)"
+					],
+					[],
+					[
+						"RTID(Flag@CurrentLevel)",
+						"RTID(SnapFrostEvent4@CurrentLevel)",
+						"RTID(snapfrost_alert@CurrentLevel)"
+					]
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SnapFrostEvent1"
+			],
+			"objclass": "RandomEventsProps",
+			"objdata": {
+				"EventCount": {
+					"Min": 1,
+					"Max": 1
+				},
+				"Events": [
+					"RTID(SnapFrost1_1@CurrentLevel)",
+					"RTID(SnapFrost1_2@CurrentLevel)",
+					"RTID(SnapFrost1_3@CurrentLevel)",
+					"RTID(SnapFrost1_4@CurrentLevel)",
+					"RTID(SnapFrost1_5@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SnapFrostEvent2"
+			],
+			"objclass": "RandomEventsProps",
+			"objdata": {
+				"EventCount": {
+					"Min": 1,
+					"Max": 1
+				},
+				"Events": [
+					"RTID(SnapFrost2_1@CurrentLevel)",
+					"RTID(SnapFrost2_2@CurrentLevel)",
+					"RTID(SnapFrost2_3@CurrentLevel)",
+					"RTID(SnapFrost2_4@CurrentLevel)",
+					"RTID(SnapFrost2_5@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SnapFrostEvent3"
+			],
+			"objclass": "RandomEventsProps",
+			"objdata": {
+				"EventCount": {
+					"Min": 2,
+					"Max": 2
+				},
+				"Events": [
+					"RTID(SnapFrost2_1@CurrentLevel)",
+					"RTID(SnapFrost2_2@CurrentLevel)",
+					"RTID(SnapFrost2_3@CurrentLevel)",
+					"RTID(SnapFrost2_4@CurrentLevel)",
+					"RTID(SnapFrost2_5@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SnapFrostEvent4"
+			],
+			"objclass": "RandomEventsProps",
+			"objdata": {
+				"EventCount": {
+					"Min": 3,
+					"Max": 3
+				},
+				"Events": [
+					"RTID(SnapFrost2_1@CurrentLevel)",
+					"RTID(SnapFrost2_2@CurrentLevel)",
+					"RTID(SnapFrost2_3@CurrentLevel)",
+					"RTID(SnapFrost2_4@CurrentLevel)",
+					"RTID(SnapFrost2_5@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SnapFrost1_1"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0.75,
+					"Min": 0.75
+				},
+				"TimeBetween": {
+					"Max": 0,
+					"Min": 0
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": [
+					"RTID(spike1_4@CurrentLevel)",
+					"RTID(ice1@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SnapFrost1_2"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0.75,
+					"Min": 0.75
+				},
+				"TimeBetween": {
+					"Max": 0,
+					"Min": 0
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": [
+					"RTID(spike2_4@CurrentLevel)",
+					"RTID(ice2@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SnapFrost1_3"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0.75,
+					"Min": 0.75
+				},
+				"TimeBetween": {
+					"Max": 0,
+					"Min": 0
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": [
+					"RTID(spike3_4@CurrentLevel)",
+					"RTID(ice3@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SnapFrost1_4"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0.75,
+					"Min": 0.75
+				},
+				"TimeBetween": {
+					"Max": 0,
+					"Min": 0
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": [
+					"RTID(spike4_4@CurrentLevel)",
+					"RTID(ice4@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SnapFrost1_5"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0.75,
+					"Min": 0.75
+				},
+				"TimeBetween": {
+					"Max": 0,
+					"Min": 0
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": [
+					"RTID(spike5_4@CurrentLevel)",
+					"RTID(ice5@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SnapFrost2_1"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0.75,
+					"Min": 0.75
+				},
+				"TimeBetween": {
+					"Max": 0,
+					"Min": 0
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": [
+					"RTID(spike1_5@CurrentLevel)",
+					"RTID(ice1@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SnapFrost2_2"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0.75,
+					"Min": 0.75
+				},
+				"TimeBetween": {
+					"Max": 0,
+					"Min": 0
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": [
+					"RTID(spike2_5@CurrentLevel)",
+					"RTID(ice2@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SnapFrost2_3"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0.75,
+					"Min": 0.75
+				},
+				"TimeBetween": {
+					"Max": 0,
+					"Min": 0
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": [
+					"RTID(spike3_5@CurrentLevel)",
+					"RTID(ice3@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SnapFrost2_4"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0.75,
+					"Min": 0.75
+				},
+				"TimeBetween": {
+					"Max": 0,
+					"Min": 0
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": [
+					"RTID(spike4_5@CurrentLevel)",
+					"RTID(ice4@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SnapFrost2_5"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0.75,
+					"Min": 0.75
+				},
+				"TimeBetween": {
+					"Max": 0,
+					"Min": 0
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": [
+					"RTID(spike5_5@CurrentLevel)",
+					"RTID(ice5@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"spike1_4"
+			],
+			"objclass": "SpawnPlantsWaveActionProps",
+			"objdata": {
+				"Plants": [
+					{
+						"TypeName": "spikeweed",
+						"SpawnAnim": "grow",
+						"AllowSpawnOnOtherPlants": true,
+						"GridX": 3,
+						"GridY": 0
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"spike2_4"
+			],
+			"objclass": "SpawnPlantsWaveActionProps",
+			"objdata": {
+				"Plants": [
+					{
+						"TypeName": "spikeweed",
+						"SpawnAnim": "grow",
+						"AllowSpawnOnOtherPlants": true,
+						"GridX": 3,
+						"GridY": 1
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"spike3_4"
+			],
+			"objclass": "SpawnPlantsWaveActionProps",
+			"objdata": {
+				"Plants": [
+					{
+						"TypeName": "spikeweed",
+						"SpawnAnim": "grow",
+						"AllowSpawnOnOtherPlants": true,
+						"GridX": 3,
+						"GridY": 2
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"spike4_4"
+			],
+			"objclass": "SpawnPlantsWaveActionProps",
+			"objdata": {
+				"Plants": [
+					{
+						"TypeName": "spikeweed",
+						"SpawnAnim": "grow",
+						"AllowSpawnOnOtherPlants": true,
+						"GridX": 3,
+						"GridY": 3
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"spike5_4"
+			],
+			"objclass": "SpawnPlantsWaveActionProps",
+			"objdata": {
+				"Plants": [
+					{
+						"TypeName": "spikeweed",
+						"SpawnAnim": "grow",
+						"AllowSpawnOnOtherPlants": true,
+						"GridX": 3,
+						"GridY": 4
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"spike1_5"
+			],
+			"objclass": "SpawnPlantsWaveActionProps",
+			"objdata": {
+				"Plants": [
+					{
+						"TypeName": "spikeweed",
+						"SpawnAnim": "grow",
+						"AllowSpawnOnOtherPlants": true,
+						"GridX": 4,
+						"GridY": 0
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"spike2_5"
+			],
+			"objclass": "SpawnPlantsWaveActionProps",
+			"objdata": {
+				"Plants": [
+					{
+						"TypeName": "spikeweed",
+						"SpawnAnim": "grow",
+						"AllowSpawnOnOtherPlants": true,
+						"GridX": 4,
+						"GridY": 1
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"spike3_5"
+			],
+			"objclass": "SpawnPlantsWaveActionProps",
+			"objdata": {
+				"Plants": [
+					{
+						"TypeName": "spikeweed",
+						"SpawnAnim": "grow",
+						"AllowSpawnOnOtherPlants": true,
+						"GridX": 4,
+						"GridY": 2
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"spike4_5"
+			],
+			"objclass": "SpawnPlantsWaveActionProps",
+			"objdata": {
+				"Plants": [
+					{
+						"TypeName": "spikeweed",
+						"SpawnAnim": "grow",
+						"AllowSpawnOnOtherPlants": true,
+						"GridX": 4,
+						"GridY": 3
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"spike5_5"
+			],
+			"objclass": "SpawnPlantsWaveActionProps",
+			"objdata": {
+				"Plants": [
+					{
+						"TypeName": "spikeweed",
+						"SpawnAnim": "grow",
+						"AllowSpawnOnOtherPlants": true,
+						"GridX": 4,
+						"GridY": 4
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"ice1"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(ice@CurrentLevel)",
+						"Row": 1
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"ice2"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(ice@CurrentLevel)",
+						"Row": 2
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"ice3"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(ice@CurrentLevel)",
+						"Row": 3
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"ice4"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(ice@CurrentLevel)",
+						"Row": 4
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"ice5"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(ice@CurrentLevel)",
+						"Row": 5
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Flag"
+			],
+			"objclass": "WaveSchedulerProps",
+			"objdata": {
+				"TimeBeforeFirst": {
+					"Max": 0,
+					"Min": 0
+				},
+				"TimeBetween": {
+					"Max": 0,
+					"Min": 0
+				},
+				"Repeat": {
+					"Max": 1,
+					"Min": 1
+				},
+				"RewardWhenEnded": false,
+				"SuppressRewardState": false,
+				"Events": [
+					"RTID(FlagZombie@CurrentLevel)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"FlagZombie"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(feastivus_flag@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"snapfrost_alert"
+			],
+			"objclass": "WaveWarningProps",
+			"objdata": {
+				"LabelR": 130,
+				"LabelG": 249,
+				"LabelB": 255,
+				"LabelAInit": 4,
+				"OutLineR": 0,
+				"OutLineG": 204,
+				"OutLineB": 255,
+				"String": "Snap-frost!",
+				"Sound": "",
+				"LabelTargetScale": 0.5,
+				"LabelInitScale": 4,
+				"Duration": 2.5,
+				"InitTime": 0.33
+			}
+		}
+	],
+	"version": 1
+}

@@ -25,7 +25,9 @@
           "RTID(LastStand@CurrentLevel)",
           "RTID(SeedBank@CurrentLevel)",
           "RTID(PlantsLost@CurrentLevel)",
-          "RTID(ZombieDistance@CurrentLevel)"
+          "RTID(ZombieDistance@CurrentLevel)",
+          "RTID(SimultaneousPlants@CurrentLevel)",
+          "RTID(LevelDeadLine@CurrentLevel)"
         ],
         "Name": "Dead Stand - Level 2",
         "WrittenBy": "hinanarukami",
@@ -33,6 +35,44 @@
         "NormalPresentTable": "egypt_normal_01",
         "ShinyPresentTable": "egypt_shiny_01",
         "StageModule": "RTID(IceageVeteranStage@LevelModules)"
+      }
+    },
+    {
+      "objclass": "StarChallengeSimultaneousPlantsProps",
+      "aliases": [
+        "SimultaneousPlants"
+      ],
+      "objdata": {
+        "MaximumPlants": 13
+      }
+    },
+    {
+      "objclass": "LevelDeadLineProps",
+      "aliases": [
+        "LevelDeadLine"
+      ],
+      "objdata": {
+        "SuppressObjectiveTip": false,
+        "Countdown": 500,
+        "Events": [
+          "RTID(LoseGameImmediately@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "LoseGameImmediately"
+      ],
+      "objclass": "LoseGameWaveActionProps",
+      "objdata": {
+        "Tip": {
+          "en": "Skill Issue!",
+          "zh": "菜就多练!"
+        },
+        "SmallTip": {
+          "en": "",
+          "zh": ""
+        }
       }
     },
     {
@@ -60,7 +100,7 @@
       "objclass": "LastStandMinigameProperties",
       "objdata": {
         "StartingPlantfood": 0,
-        "StartingSun": 2250
+        "StartingSun": 2175
       }
     },
     {
@@ -103,10 +143,10 @@
         "OverrideSeedSlotsCount": 4,
         "ExcludeListSunProducers": "true",
         "PlantExcludeList": [
+          "megagatling",
           "plantern",
-          "glaciershroom",
           "moonflower",
-          "icebloom",
+          "chardguard",
           "inferno",
           "filamint",
           "reinforcemint",

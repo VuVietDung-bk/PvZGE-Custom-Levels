@@ -1,0 +1,876 @@
+{
+  "#comment": "Level Of The Day Test 20",
+  "objects": [
+    {
+      "objclass": "LevelDefinition",
+      "objdata": {
+        "Description": "[PLAYERS_TRIP_TO_LOD]",
+        "Loot": "RTID(DefaultLoot@LevelModules)",
+        "DraperPromo": "intensivecarrot",
+        "Modules": [
+          "RTID(LevelOfTheDayIntro@LevelModules)",
+          "RTID(LevelOfTheDayModule@CurrentLevel)",
+          "RTID(BeachMowers@LevelModules)",
+          "RTID(DefaultZombieWinCondition@LevelModules)",
+          "RTID(ConveyorBelt@CurrentLevel)",
+          "RTID(Tide@CurrentLevel)",
+          "RTID(ZombiesDeadWinCon@LevelModules)"
+        ],
+        "Name": "[LOD_LEVEL_NAME]",
+        "NormalPresentTable": "egypt_normal_01",
+        "ShinyPresentTable": "egypt_shiny_01",
+        "StageModule": "RTID(BeachStage@LevelModules)",
+        "VictoryModule": "RTID(LevelOfTheDayOutro@LevelModules)",
+        "IsLevelOfTheDay": true,
+        "MusicType": "MiniGame_A",
+        "WrittenBy": "nort96"
+      }
+    },
+    {
+      "aliases": [
+        "Tide"
+      ],
+      "objclass": "TideProperties",
+      "objdata": {
+        "StartingWaveLocation": "6"
+      }
+    },
+    {
+      "aliases": [
+        "TideDelay1"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 3,
+          "Min": 3
+        },
+        "TimeBetween": {
+          "Max": 10,
+          "Min": 10
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Wave6TideEvent@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "TideDelay2"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 3,
+          "Min": 3
+        },
+        "TimeBetween": {
+          "Max": 10,
+          "Min": 10
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Wave12TideEvent@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "TideDelay3"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 3,
+          "Min": 3
+        },
+        "TimeBetween": {
+          "Max": 10,
+          "Min": 10
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(Wave18TideEvent@CurrentLevel)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "WaveManagerProps"
+      ],
+      "objclass": "WaveManagerProperties",
+      "objdata": {
+        "MaxNextWaveHealthPercentage": 0.700000,
+        "MinNextWaveHealthPercentage": 0.700000,
+        "Waves": [
+          [
+            "RTID(Wave1@CurrentLevel)",
+            "RTID(Wave1ModConveyor@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave2@CurrentLevel)",
+            "RTID(Wave2ModConveyor@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave3@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave4@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave5@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave6@CurrentLevel)",
+            "RTID(Wave6ModConveyor@CurrentLevel)",
+            "RTID(TideDelay1@CurrentLevel)",
+            "RTID(killeveryone@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave7@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave8@CurrentLevel)",
+            "RTID(Wave8ModConveyor@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave9@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave10@CurrentLevel)",
+            "RTID(Wave10ModConveyor@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave11@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave12@CurrentLevel)",
+            "RTID(Wave12ModConveyor@CurrentLevel)",
+            "RTID(TideDelay2@CurrentLevel)",
+            "RTID(killeveryone@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave13@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave14@CurrentLevel)",
+            "RTID(Wave14ModConveyor@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave15@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave16@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave17@CurrentLevel)"
+          ],
+          [
+            "RTID(Wave18@CurrentLevel)",
+            "RTID(Wave18ModConveyor@CurrentLevel)",
+            "RTID(TideDelay3@CurrentLevel)",
+            "RTID(killeveryone@CurrentLevel)"
+          ]
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_fem_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_fem_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(beach_fem@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_armor2@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_fem_armor4@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave3"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(duckytube_armor4@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave4"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_fem_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(duckytube_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave5"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_armor1@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(duckytube_armor4@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave7"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave9"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(duckytube_armor4@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_fem_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(duckytube_armor4@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "LevelOfTheDayModule"
+      ],
+      "objclass": "LevelOfTheDayModuleProperties",
+      "objdata": {
+        "FlagCount": 2,
+        "PlantfoodToSpawnCount": 2,
+        "PointIncrementPerWave": 75,
+        "StartingPoints": 100,
+        "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)",
+        "WavesPerFlag": 6,
+        "ZombiePool": [
+          "RTID(beach@ZombieTypes)",
+          "RTID(beach_armor1@ZombieTypes)",
+          "RTID(beach_armor2@ZombieTypes)",
+          "RTID(duckytube@ZombieTypes)",
+          "RTID(duckytube_armor1@ZombieTypes)",
+          "RTID(duckytube_armor2@ZombieTypes)",
+          "RTID(beach_fem@ZombieTypes)",
+          "RTID(beach_fem_armor1@ZombieTypes)",
+          "RTID(beach_fem_armor2@ZombieTypes)",
+          "RTID(beach_snorkel@ZombieTypes)",
+          "RTID(seagull@ZombieTypes)"
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "ConveyorBelt"
+      ],
+      "objclass": "ConveyorSeedBankProperties",
+      "objdata": {
+        "DropDelayConditions": [
+          {
+            "Delay": 3,
+            "MaxPackets": 0
+          },
+          {
+            "Delay": 6,
+            "MaxPackets": 2
+          },
+          {
+            "Delay": 9,
+            "MaxPackets": 4
+          },
+          {
+            "Delay": 12,
+            "MaxPackets": 8
+          }
+        ],
+        "InitialPlantList": [],
+        "SpeedConditions": [
+          {
+            "MaxPackets": 0,
+            "Speed": 100
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave11"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(duckytube_armor4@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave13"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(duckytube_armor4@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave14"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 1,
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_armor4@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave15"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_fem_armor4@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave16"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(future_protector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_fisherman@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_armor4@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(duckytube_armor4@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave17"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_fem_armor4@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave18"
+      ],
+      "objclass": "SpawnZombiesJitteredWaveActionProps",
+      "objdata": {
+        "AdditionalPlantfood": 0,
+        "Zombies": [
+          {
+            "Type": "RTID(prospector@ZombieTypes)"
+          },
+          {
+            "Type": "RTID(beach_gargantuar@ZombieTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave1ModConveyor"
+      ],
+      "objclass": "ModifyConveyorWaveActionProps",
+      "objdata": {
+        "Add": [
+          {
+            "MaxCount": 5,
+            "MaxWeightFactor": 0,
+            "Type": "RTID(cactus@PlantTypes)",
+            "Weight": 100
+          },
+          {
+            "MaxWeightFactor": 0,
+            "Type": "RTID(tanglekelp@PlantTypes)",
+            "Weight": 5
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave2ModConveyor"
+      ],
+      "objclass": "ModifyConveyorWaveActionProps",
+      "objdata": {
+        "Add": [
+          {
+            "MaxCount": 5,
+            "MaxWeightFactor": 0,
+            "Type": "RTID(homingthistle@PlantTypes)",
+            "Weight": 100
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6ModConveyor"
+      ],
+      "objclass": "ModifyConveyorWaveActionProps",
+      "objdata": {
+        "Add": [
+          {
+            "MaxDelivered": 10,
+            "MaxWeightFactor": 0,
+            "Type": "RTID(intensivecarrot@PlantTypes)",
+            "Weight": 125
+          }
+        ],
+        "Remove": [
+          {
+            "Type": "RTID(cactus@PlantTypes)"
+          },
+          {
+            "Type": "RTID(homingthistle@PlantTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave8ModConveyor"
+      ],
+      "objclass": "ModifyConveyorWaveActionProps",
+      "objdata": {
+        "Add": [
+          {
+            "MaxCount": 5,
+            "MaxWeightFactor": 0,
+            "Type": "RTID(zoybeanpod@PlantTypes)",
+            "Weight": 100
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave10ModConveyor"
+      ],
+      "objclass": "ModifyConveyorWaveActionProps",
+      "objdata": {
+        "Add": [
+          {
+            "MaxCount": 5,
+            "MaxWeightFactor": 0,
+            "Type": "RTID(skyshooter@PlantTypes)",
+            "Weight": 100
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave12ModConveyor"
+      ],
+      "objclass": "ModifyConveyorWaveActionProps",
+      "objdata": {
+        "Add": [
+          {
+            "MaxDelivered": 30,
+            "MaxWeightFactor": 0,
+            "Type": "RTID(intensivecarrot@PlantTypes)",
+            "Weight": 125
+          },
+          {
+            "MaxCount": 5,
+            "MaxWeightFactor": 0,
+            "Type": "RTID(turnip@PlantTypes)",
+            "Weight": 150
+          },
+          {
+            "MaxCount": 5,
+            "MaxWeightFactor": 0,
+            "Type": "RTID(skyshooter@PlantTypes)",
+            "Weight": 25
+          }
+        ],
+        "Remove": [
+          {
+            "Type": "RTID(zoybeanpod@PlantTypes)"
+          },
+          {
+            "Type": "RTID(tanglekelp@PlantTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave14ModConveyor"
+      ],
+      "objclass": "ModifyConveyorWaveActionProps",
+      "objdata": {
+        "Add": [
+          {
+            "MaxCount": 5,
+            "MaxWeightFactor": 0,
+            "Type": "RTID(guacodile@PlantTypes)",
+            "Weight": 40
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave18ModConveyor"
+      ],
+      "objclass": "ModifyConveyorWaveActionProps",
+      "objdata": {
+        "Add": [
+          {
+            "MaxWeightFactor": 0,
+            "Type": "RTID(intensivecarrot@PlantTypes)",
+            "Weight": 125
+          }
+        ],
+        "Remove": [
+          {
+            "Type": "RTID(turnip@PlantTypes)"
+          },
+          {
+            "Type": "RTID(skyshooter@PlantTypes)"
+          },
+          {
+            "Type": "RTID(guacodile@PlantTypes)"
+          }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Wave6TideEvent"
+      ],
+      "objclass": "TidalChangeWaveActionProps",
+      "objdata": {
+        "TidalChange": {
+          "ChangeAmount": 6,
+          "ChangeType": "absolute"
+        }
+      }
+    },
+    {
+      "aliases": [
+        "Wave12TideEvent"
+      ],
+      "objclass": "TidalChangeWaveActionProps",
+      "objdata": {
+        "TidalChange": {
+          "ChangeAmount": 4,
+          "ChangeType": "absolute"
+        }
+      }
+    },
+    {
+      "aliases": [
+        "Wave18TideEvent"
+      ],
+      "objclass": "TidalChangeWaveActionProps",
+      "objdata": {
+        "TidalChange": {
+          "ChangeAmount": 3,
+          "ChangeType": "absolute"
+        }
+      }
+    },
+    {
+      "aliases": [
+        "killeveryone"
+      ],
+      "objclass": "TidalChangeWaveActionProps",
+      "objdata": {
+        "TidalChange": {
+          "ChangeAmount": 9,
+          "ChangeType": "absolute"
+        }
+      }
+    }
+  ],
+  "version": 1
+}

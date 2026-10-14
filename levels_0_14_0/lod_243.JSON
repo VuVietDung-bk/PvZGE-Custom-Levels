@@ -1,0 +1,207 @@
+{
+	"objects": [
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "[PLAYERS_TRIP_TO_LOD]",
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+					"RTID(LevelOfTheDayIntro@LevelModules)",
+					"RTID(NewWaves@CurrentLevel)",
+					"RTID(ProtectThePlant@CurrentLevel)",
+					"RTID(Rails@CurrentLevel)",
+					"RTID(ZombiesDeadWinCon@LevelModules)",
+					"RTID(DefaultZombieWinCondition@LevelModules)"
+				],
+				"Name": "[LOD_LEVEL_NAME]",
+				"WrittenBy": "屑豌豆",
+				"MusicType": "MiniGame_A",
+				"StageModule": "RTID(SkyStage@LevelModules)",
+				"VictoryModule": "RTID(LevelOfTheDayOutro@LevelModules)",
+				"IsLevelOfTheDay": true
+			}
+		},
+		{
+			"aliases": [
+				"ProtectThePlant"
+			],
+			"objclass": "ProtectThePlantChallengeProperties",
+			"objdata": {
+				"MustProtectCount": 1,
+				"Plants": [
+					{
+						"GridX": 2,
+						"GridY": 1,
+						"PlantType": "homingthistle"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Rails"
+			],
+			"objclass": "RailcartProperties",
+			"objdata": {
+				"RailcartType": "railcart_sky",
+				"Railcarts": [
+					{
+						"Column": 2,
+						"Row": 1
+					}
+				],
+				"Rails": [
+					{
+						"Column": 2,
+						"RowEnd": 4,
+						"RowStart": 0
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"NewWaves"
+			],
+			"objclass": "WaveManagerModuleProperties",
+			"objdata": {
+				"WaveManagerProps": "RTID(WaveManager@CurrentLevel)"
+			}
+		},
+		{
+			"aliases": [
+				"WaveManager"
+			],
+			"objclass": "WaveManagerProperties",
+			"objdata": {
+				"FlagWaveInterval": 6,
+				"WaveCount": 6,
+				"SuppressFlagZombie": true,
+				"Waves": [
+					[
+						"RTID(Wave@CurrentLevel)"
+					],
+					[
+						"RTID(Wave@CurrentLevel)",
+						"RTID(DropShipEvent@CurrentLevel)"
+					],
+					[
+						"RTID(pf@CurrentLevel)",
+						"RTID(DropShipEvent@CurrentLevel)"
+					],
+					[
+						"RTID(Wave@CurrentLevel)",
+						"RTID(DropShipEvent@CurrentLevel)"
+					],
+					[
+						"RTID(Wave@CurrentLevel)",
+						"RTID(pf@CurrentLevel)",
+						"RTID(DropShipEvent@CurrentLevel)"
+					],
+					[
+						"RTID(Wave@CurrentLevel)",
+						"RTID(Wave@CurrentLevel)",
+						"RTID(DropShipEvent@CurrentLevel)",
+						"RTID(DropShipEvent@CurrentLevel)"
+					]
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 0,
+				"Zombies": [
+					{
+						"Type": "RTID(modern_balloon@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(modern_balloon@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(modern_balloon@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(modern_balloon@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(modern_balloon@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(modern_balloon@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"pf"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 1,
+				"Zombies": [
+					{
+						"Type": "RTID(modern_balloon@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(modern_balloon@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(modern_balloon@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(modern_balloon@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(modern_balloon@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(modern_balloon@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"DropShipEvent"
+			],
+			"objclass": "DropShipZombieSpawnerProps",
+			"objdata": {
+				"DropShipPosition": {
+					"mX": 4,
+					"mY": 1
+				},
+				"DropShipType": "sky_dropship",
+				"DropShipShiftedProperties": {
+					"ImpType": "sky_imp",
+					"ImpCount": {
+						"Min": 2,
+						"Max": 2
+					},
+					"TimeBeforeFirst": {
+						"Min": 1,
+						"Max": 1
+					},
+					"TimeBetween": {
+						"Min": 2,
+						"Max": 2
+					},
+					"ImpLandingColumns": [
+						2
+					],
+					"ImpLandingRows": [],
+					"ImpFlyingDuration": {
+						"Min": 3,
+						"Max": 3.5
+					}
+				}
+			}
+		},
+		{}
+	],
+	"version": 1
+}

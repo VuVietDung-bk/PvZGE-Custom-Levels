@@ -1,0 +1,841 @@
+{
+	"#comment": "Level Of The Day",
+	"objects": [
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Description": "[PLAYERS_TRIP_TO_LOD]",
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+					"RTID(ZombiesDeadWinCon@LevelModules)",
+					"RTID(DefaultZombieWinCondition@LevelModules)",
+					"RTID(LevelOfTheDayModule@CurrentLevel)",
+					"RTID(LevelOfTheDayIntro@LevelModules)",
+					"RTID(SeedBank@CurrentLevel)",
+					"RTID(ChallengeModule@CurrentLevel)",
+					"RTID(GoldTiles@CurrentLevel)",
+					"RTID(ThunderTiles@CurrentLevel)",
+					"RTID(Rails@CurrentLevel)",
+					"RTID(IPP@CurrentLevel)"
+				],
+				"Name": "[LOD_LEVEL_NAME]",
+				"WrittenBy": "hinanarukami",
+				"NormalPresentTable": "lostcity_normal_01",
+				"ShinyPresentTable": "lostcity_shiny_01",
+				"StageModule": "RTID(ValentinesStage@LevelModules)",
+				"MusicType": "MiniGame_B",
+				"VictoryModule": "RTID(LevelOfTheDayOutro@LevelModules)",
+				"IsLevelOfTheDay": true
+			}
+		},
+		{
+			"aliases": [
+				"ChallengeModule"
+			],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(PlantsLost@CurrentLevel)",
+						"RTID(BeatTheLevel@CurrentLevel)"
+					]
+				],
+				"ChallengesAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+				"PlantsLost"
+			],
+			"objclass": "StarChallengePlantsLostProps",
+			"objdata": {
+				"MaximumPlantsLost": 14
+			}
+		},
+		{
+			"aliases": [
+				"BeatTheLevel"
+			],
+			"objclass": "StarChallengeBeatTheLevelProps",
+			"objdata": {
+				"DescriptionsMultiLanguage": [
+					{
+						"en": "You have 2 more puff-shrooms than needed",
+						"zh": "你有比必要多 2 株的小喷菇"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"GoldTiles"
+			],
+			"objclass": "InitialGridItemProperties",
+			"objdata": {
+				"InitialGridItemPlacements": [
+					{
+						"GridX": 4,
+						"GridY": 0,
+						"TypeName": "goldtile"
+					},
+					{
+						"GridX": 4,
+						"GridY": 1,
+						"TypeName": "goldtile"
+					},
+					{
+						"GridX": 4,
+						"GridY": 2,
+						"TypeName": "goldtile"
+					},
+					{
+						"GridX": 4,
+						"GridY": 3,
+						"TypeName": "goldtile"
+					},
+					{
+						"GridX": 4,
+						"GridY": 4,
+						"TypeName": "goldtile"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"ThunderTiles"
+			],
+			"objclass": "TrapTileProperties",
+			"objdata": {
+				"TrapTiles": [
+					{
+						"Group": "thunder",
+						"Location": {
+							"mX": 1,
+							"mY": 2
+						},
+						"RecoverDelay": 12
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Rails"
+			],
+			"objclass": "RailcartProperties",
+			"objdata": {
+				"RailcartType": "railcart_tutorial",
+				"Railcarts": [
+					{
+						"Column": 0,
+						"Row": 2
+					}
+				],
+				"Rails": [
+					{
+						"Column": 0,
+						"RowEnd": 4,
+						"RowStart": 0
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"IPP"
+			],
+			"objclass": "InitialPlantProperties",
+			"objdata": {
+				"InitialPlantPlacements": [
+					{
+						"GridX": 0,
+						"GridY": 2,
+						"Level": -1,
+						"TypeName": "applemortar"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"SeedBank"
+			],
+			"objclass": "SeedBankProperties",
+			"objdata": {
+				"SelectionMethod": "preset",
+				"PresetPlantList": [
+					{
+						"PlantType": "puffshroom",
+						"Level": -1
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"LevelOfTheDayModule"
+			],
+			"objclass": "LevelOfTheDayModuleProperties",
+			"objdata": {
+				"FlagCount": 1,
+				"PlantfoodToSpawnCount": 0,
+				"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)",
+				"WavesPerFlag": 12
+			}
+		},
+		{
+			"aliases": [
+				"WaveManagerProps"
+			],
+			"objclass": "WaveManagerProperties",
+			"objdata": {
+				"FlagWaveInterval": 12,
+				"WaveCount": 12,
+				"SuppressFlagZombie": true,
+				"Waves": [
+					[
+						"RTID(Wave1@CurrentLevel)"
+					],
+					[
+						"RTID(Wave2@CurrentLevel)"
+					],
+					[
+						"RTID(Wave3@CurrentLevel)"
+					],
+					[
+						"RTID(Wave4@CurrentLevel)"
+					],
+					[
+						"RTID(Wave5@CurrentLevel)"
+					],
+					[
+						"RTID(Wave6@CurrentLevel)"
+					],
+					[
+						"RTID(Wave7@CurrentLevel)"
+					],
+					[
+						"RTID(Wave8@CurrentLevel)"
+					],
+					[
+						"RTID(Wave9@CurrentLevel)",
+						"RTID(GoldTileDestroyEvent@CurrentLevel)",
+						"RTID(Wave9RespawnGoldTilesEvent@CurrentLevel)"
+					],
+					[
+						"RTID(Wave10@CurrentLevel)"
+					],
+					[
+						"RTID(Wave11@CurrentLevel)",
+						"RTID(GoldTileDestroyEvent@CurrentLevel)",
+						"RTID(Wave11RespawnGoldTilesEvent@CurrentLevel)"
+					],
+					[
+						"RTID(Wave12@CurrentLevel)"
+					]
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave1"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 5,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 1,
+						"Column": 7
+					}
+				],
+				"MustKillAllToNextWave": true
+			}
+		},
+		{
+			"aliases": [
+				"Wave2"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 2,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 4,
+						"Column": 9
+					}
+				],
+				"MustKillAllToNextWave": true
+			}
+		},
+		{
+			"aliases": [
+				"Wave3"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 1,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 3,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 5,
+						"Column": 9
+					}
+				],
+				"MustKillAllToNextWave": true
+			}
+		},
+		{
+			"aliases": [
+				"Wave4"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 1,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 2,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 4,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 5,
+						"Column": 8
+					}
+				],
+				"MustKillAllToNextWave": true
+			}
+		},
+		{
+			"aliases": [
+				"Wave5"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 1,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 2,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 3,
+						"Column": 7
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 4,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 5,
+						"Column": 9
+					}
+				],
+				"MustKillAllToNextWave": true
+			}
+		},
+		{
+			"aliases": [
+				"Wave6"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 1,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 2,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 3,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 4,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 5,
+						"Column": 8
+					}
+				],
+				"MustKillAllToNextWave": true
+			}
+		},
+		{
+			"aliases": [
+				"Wave7"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 1,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 2,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 3,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 4,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 5,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 2,
+						"Column": 7
+					}
+				],
+				"MustKillAllToNextWave": true
+			}
+		},
+		{
+			"aliases": [
+				"Wave8"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 2,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 2,
+						"Column": 7
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 3,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 3,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 4,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 4,
+						"Column": 9
+					}
+				],
+				"MustKillAllToNextWave": true
+			}
+		},
+		{
+			"aliases": [
+				"Wave9"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 1,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 2,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 2,
+						"Column": 7
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 3,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 4,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 4,
+						"Column": 7
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 5,
+						"Column": 8
+					}
+				],
+				"MustKillAllToNextWave": true
+			}
+		},
+		{
+			"aliases": [
+				"Wave10"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 1,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 1,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 2,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 2,
+						"Column": 7
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 3,
+						"Column": 7
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 4,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 4,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 5,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 5,
+						"Column": 9
+					}
+				],
+				"MustKillAllToNextWave": true
+			}
+		},
+		{
+			"aliases": [
+				"Wave11"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 1,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 1,
+						"Column": 7
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 2,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 2,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 2,
+						"Column": 7
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 3,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 3,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 4,
+						"Column": 7
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 4,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 4,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 5,
+						"Column": 7
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 5,
+						"Column": 9
+					}
+				],
+				"MustKillAllToNextWave": true
+			}
+		},
+		{
+			"aliases": [
+				"Wave12"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 1,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 1,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 1,
+						"Column": 7
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 2,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 2,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 2,
+						"Column": 7
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 3,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 3,
+						"Column": 7
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 3,
+						"Column": 7
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 4,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 4,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 4,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 5,
+						"Column": 9
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 5,
+						"Column": 8
+					},
+					{
+						"Type": "RTID(lawn_armor4@ZombieTypes)",
+						"Row": 5,
+						"Column": 8
+					}
+				],
+				"MustKillAllToNextWave": true
+			}
+		},
+		{
+			"aliases": [
+				"GoldTileDestroyEvent"
+			],
+			"objclass": "GridItemDestructionProps",
+			"objdata": {
+				"GridTypes": [
+					"RTID(goldtile@GridItemTypes)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave9RespawnGoldTilesEvent"
+			],
+			"objclass": "SpawnGravestonesWaveActionProps",
+			"objdata": {
+				"GravestonePool": [
+					{
+						"Count": 5,
+						"Type": "RTID(goldtile@GridItemTypes)"
+					}
+				],
+				"SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+				"SpawnPositionsPool": [
+					{
+						"mX": 3,
+						"mY": 0
+					},
+					{
+						"mX": 3,
+						"mY": 1
+					},
+					{
+						"mX": 3,
+						"mY": 2
+					},
+					{
+						"mX": 3,
+						"mY": 3
+					},
+					{
+						"mX": 3,
+						"mY": 4
+					}
+				],
+				"SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+			}
+		},
+		{
+			"aliases": [
+				"Wave11RespawnGoldTilesEvent"
+			],
+			"objclass": "SpawnGravestonesWaveActionProps",
+			"objdata": {
+				"GravestonePool": [
+					{
+						"Count": 5,
+						"Type": "RTID(goldtile@GridItemTypes)"
+					}
+				],
+				"SpawnEffectAnimID": "POPANIM_EFFECTS_TOMBSTONE_DARK_SPAWN_EFFECT",
+				"SpawnPositionsPool": [
+					{
+						"mX": 2,
+						"mY": 0
+					},
+					{
+						"mX": 2,
+						"mY": 1
+					},
+					{
+						"mX": 2,
+						"mY": 2
+					},
+					{
+						"mX": 2,
+						"mY": 3
+					},
+					{
+						"mX": 2,
+						"mY": 4
+					}
+				],
+				"SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise"
+			}
+		}
+	],
+	"version": 1
+}

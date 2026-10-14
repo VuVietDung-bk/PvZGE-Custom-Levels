@@ -1,0 +1,652 @@
+{
+	"#comment": "Missile Toe Quest 1 Princess & Knights",
+	"objects": [
+		{
+			"objclass": "LevelDefinition",
+			"objdata": {
+				"Name": "[LOD_LEVEL_NAME]",
+				"Description": "[PLAYERS_TRIP_TO_LOD]",
+				"LevelNumber": 1,
+				"Loot": "RTID(DefaultLoot@LevelModules)",
+				"Modules": [
+					"RTID(StandardIntro@LevelModules)",
+					"RTID(ZombiesDeadWinCon@LevelModules)",
+					"RTID(ModernMowers@LevelModules)",
+					"RTID(ChallengeModule@CurrentLevel)",
+					"RTID(ConveyorBelt@CurrentLevel)",
+					"RTID(DefaultZombieWinCondition@LevelModules)",
+					"RTID(NewWaves@CurrentLevel)",
+					"RTID(FrozenPlantPlacement@CurrentLevel)",
+					"RTID(LevelOfTheDayModule@CurrentLevel)"
+				],
+				"WrittenBy": "P_Smithvanizi",
+				"MusicType": "MiniGame_B",
+				"StageModule": "RTID(FeastivusNightStage@LevelModules)",
+				"VictoryModule": "RTID(LevelOfTheDayOutro@LevelModules)",
+				"IsLevelOfTheDay": true
+			}
+		},
+		{
+			"aliases": [
+				"ChallengeModule"
+			],
+			"objclass": "StarChallengeModuleProperties",
+			"objdata": {
+				"Challenges": [
+					[
+						"RTID(PlantsLost@CurrentLevel)"
+					]
+				],
+				"ChallengesAlwaysAvailable": true
+			}
+		},
+		{
+			"aliases": [
+				"PlantsLost"
+			],
+			"objclass": "StarChallengePlantsLostProps",
+			"objdata": {
+				"MaximumPlantsLost": 0
+			}
+		},
+		{
+			"aliases": [
+				"FrozenPlantPlacement"
+			],
+			"objclass": "InitialPlantProperties",
+			"objdata": {
+				"InitialPlantPlacements": [
+					{
+						"GridX": 1,
+						"GridY": 2,
+						"TypeName": "missiletoe"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"LevelOfTheDayModule"
+			],
+			"objclass": "LevelOfTheDayModuleProperties",
+			"objdata": {
+				"FlagCount": 1,
+				"PlantfoodToSpawnCount": 0,
+				"PointIncrementPerWave": 40,
+				"StartingPoints": 0,
+				"WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)",
+				"WavesPerFlag": 12,
+				"ZombiePool": [
+					"RTID(feastivus_poncho_plate@ZombieTypes)",
+					"RTID(feastivus_poncho@ZombieTypes)",
+					"RTID(feastivus_armor1@ZombieTypes)",
+					"RTID(feastivus_armor2@ZombieTypes)"
+				]
+			}
+		},
+		{
+			"aliases": [
+				"ConveyorBelt"
+			],
+			"objclass": "ConveyorSeedBankProperties",
+			"objdata": {
+				"DropDelayConditions": [
+					{
+						"Delay": 6,
+						"MaxPackets": 0
+					},
+					{
+						"Delay": 8,
+						"MaxPackets": 3
+					}
+				],
+				"InitialPlantList": [
+					{
+						"MaxDelivered": 1,
+						"MaxWeightFactor": 0,
+						"PlantType": "hollyknight",
+						"Weight": 100
+					}
+				],
+				"SpeedConditions": [
+					{
+						"MaxPackets": 0,
+						"Speed": 100
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"NewWaves"
+			],
+			"objclass": "WaveManagerModuleProperties",
+			"objdata": {}
+		},
+		{
+			"aliases": [
+				"WaveManagerProps"
+			],
+			"objclass": "WaveManagerProperties",
+			"objdata": {
+				"FlagWaveInterval": 12,
+				"WaveCount": 12,
+				"LevelJamList": [
+					"jam_metal",
+					"jam_rap",
+					"jam_punk"
+				],
+				"Waves": [
+					[
+						"RTID(Wave1@CurrentLevel)"
+					],
+					[
+						"RTID(Wave2@CurrentLevel)",
+						"RTID(Wave2ModConveyor0@CurrentLevel)"
+					],
+					[
+						"RTID(Wave3@CurrentLevel)",
+						"RTID(Wave3ModConveyor0@CurrentLevel)"
+					],
+					[
+						"RTID(Wave4@CurrentLevel)",
+						"RTID(Wave4ModConveyor0@CurrentLevel)"
+					],
+					[
+						"RTID(Wave5@CurrentLevel)",
+						"RTID(Wave5ModConveyor0@CurrentLevel)"
+					],
+					[
+						"RTID(Wave6@CurrentLevel)",
+						"RTID(Wave6ModConveyor0@CurrentLevel)",
+						"RTID(Wave6RaidingPartyEvent0@CurrentLevel)"
+					],
+					[
+						"RTID(Wave7@CurrentLevel)"
+					],
+					[
+						"RTID(Wave8@CurrentLevel)",
+						"RTID(Wave8ModConveyor0@CurrentLevel)"
+					],
+					[
+						"RTID(Wave9@CurrentLevel)",
+						"RTID(Wave9RaidingPartyEvent0@CurrentLevel)"
+					],
+					[
+						"RTID(Wave10@CurrentLevel)",
+						"RTID(Wave10ModConveyor0@CurrentLevel)"
+					],
+					[
+						"RTID(Wave11@CurrentLevel)"
+					],
+					[
+						"RTID(Wave12@CurrentLevel)",
+						"RTID(Wave12ModConveyor0@CurrentLevel)",
+						"RTID(Wave12RaidingPartyEvent0@CurrentLevel)"
+					]
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave1"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Row": "3",
+						"Type": "RTID(modern_allstar@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave2"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Row": "3",
+						"Type": "RTID(feastivus_armor2@ZombieTypes)"
+					},
+					{
+						"Row": "2",
+						"Type": "RTID(feastivus@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave3"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Type": "RTID(modern_allstar@ZombieTypes)"
+					},
+					{
+						"Row": "3",
+						"Type": "RTID(feastivus@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave4"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Row": "2",
+						"Type": "RTID(feastivus@ZombieTypes)"
+					},
+					{
+						"Row": "3",
+						"Type": "RTID(feastivus@ZombieTypes)"
+					},
+					{
+						"Row": "4",
+						"Type": "RTID(feastivus@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(feastivus_piano@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave5"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Row": "2",
+						"Type": "RTID(eighties_punk@ZombieTypes)"
+					},
+					{
+						"Row": "4",
+						"Type": "RTID(eighties_punk@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(feastivus@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(feastivus@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave6"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Type": "RTID(feastivus_piano@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave6RaidingPartyEvent0"
+			],
+			"objclass": "RaidingPartyZombieSpawnerProps",
+			"objdata": {
+				"GroupSize": "1",
+				"SwashbucklerCount": 3,
+				"TimeBetweenGroups": "2",
+				"ZombieType": "RTID(feastivus_swashbuckler@ZombieTypes)"
+			}
+		},
+		{
+			"aliases": [
+				"Wave7"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Row": "3",
+						"Type": "RTID(disco_mech@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(feastivus_armor2@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave8"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Type": "RTID(feastivus_gargantuar@ZombieTypes)"
+					},
+					{
+						"Row": "1",
+						"Type": "RTID(feastivus_imp@ZombieTypes)"
+					},
+					{
+						"Row": "2",
+						"Type": "RTID(feastivus_imp@ZombieTypes)"
+					},
+					{
+						"Row": "3",
+						"Type": "RTID(feastivus_imp@ZombieTypes)"
+					},
+					{
+						"Row": "4",
+						"Type": "RTID(feastivus_imp@ZombieTypes)"
+					},
+					{
+						"Row": "5",
+						"Type": "RTID(feastivus_imp@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave9"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Type": "RTID(feastivus_piano@ZombieTypes)"
+					},
+					{
+						"Row": "2",
+						"Type": "RTID(feastivus_poncho@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(eighties_punk@ZombieTypes)"
+					},
+					{
+						"Row": "4",
+						"Type": "RTID(feastivus_poncho@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave9RaidingPartyEvent0"
+			],
+			"objclass": "RaidingPartyZombieSpawnerProps",
+			"objdata": {
+				"GroupSize": "1",
+				"SwashbucklerCount": 4,
+				"TimeBetweenGroups": "2",
+				"ZombieType": "RTID(feastivus_swashbuckler@ZombieTypes)"
+			}
+		},
+		{
+			"aliases": [
+				"Wave10"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Row": "2",
+						"Type": "RTID(holiday_gargantuar@ZombieTypes)"
+					},
+					{
+						"Row": "2",
+						"Type": "RTID(eighties_breakdancer@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave11"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"Zombies": [
+					{
+						"Type": "RTID(modern_allstar@ZombieTypes)"
+					},
+					{
+						"Type": "RTID(eighties_armor4@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave12"
+			],
+			"objclass": "SpawnZombiesJitteredWaveActionProps",
+			"objdata": {
+				"AdditionalPlantfood": 1,
+				"Zombies": [
+					{
+						"Row": "2",
+						"Type": "RTID(holiday_gargantuar@ZombieTypes)"
+					},
+					{
+						"Row": "3",
+						"Type": "RTID(eighties_gargantuar@ZombieTypes)"
+					},
+					{
+						"Row": "4",
+						"Type": "RTID(feastivus_gargantuar@ZombieTypes)"
+					},
+					{
+						"Row": "3",
+						"Type": "RTID(feastivus_piano@ZombieTypes)"
+					},
+					{
+						"Row": "1",
+						"Type": "RTID(holiday_imp@ZombieTypes)"
+					},
+					{
+						"Row": "2",
+						"Type": "RTID(holiday_imp@ZombieTypes)"
+					},
+					{
+						"Row": "3",
+						"Type": "RTID(holiday_imp@ZombieTypes)"
+					},
+					{
+						"Row": "4",
+						"Type": "RTID(holiday_imp@ZombieTypes)"
+					},
+					{
+						"Row": "5",
+						"Type": "RTID(holiday_imp@ZombieTypes)"
+					},
+					{
+						"Row": "1",
+						"Type": "RTID(feastivus_imp@ZombieTypes)"
+					},
+					{
+						"Row": "2",
+						"Type": "RTID(feastivus_imp@ZombieTypes)"
+					},
+					{
+						"Row": "3",
+						"Type": "RTID(feastivus_imp@ZombieTypes)"
+					},
+					{
+						"Row": "4",
+						"Type": "RTID(feastivus_imp@ZombieTypes)"
+					},
+					{
+						"Row": "5",
+						"Type": "RTID(feastivus_imp@ZombieTypes)"
+					}
+				]
+			}
+		},
+		{
+			"aliases": [
+				"Wave12RaidingPartyEvent0"
+			],
+			"objclass": "RaidingPartyZombieSpawnerProps",
+			"objdata": {
+				"GroupSize": "2",
+				"SwashbucklerCount": 6,
+				"TimeBetweenGroups": "1",
+				"ZombieType": "RTID(feastivus_swashbuckler@ZombieTypes)"
+			}
+		},
+		{
+			"aliases": [
+				"Wave2ModConveyor0"
+			],
+			"objclass": "ModifyConveyorWaveActionProps",
+			"objdata": {
+				"Add": [
+					{
+						"MaxDelivered": 1,
+						"Type": "RTID(hollyknight@PlantTypes)",
+						"Weight": 40
+					}
+				],
+				"Remove": []
+			}
+		},
+		{
+			"aliases": [
+				"Wave3ModConveyor0"
+			],
+			"objclass": "ModifyConveyorWaveActionProps",
+			"objdata": {
+				"Add": [
+					{
+						"MaxDelivered": 1,
+						"Type": "RTID(hollyknight@PlantTypes)",
+						"Weight": 40
+					}
+				],
+				"Remove": []
+			}
+		},
+		{
+			"aliases": [
+				"Wave4ModConveyor0"
+			],
+			"objclass": "ModifyConveyorWaveActionProps",
+			"objdata": {
+				"Add": [
+					{
+						"MaxDelivered": 1,
+						"Type": "RTID(hollyknight@PlantTypes)",
+						"Weight": 40
+					}
+				],
+				"Remove": []
+			}
+		},
+		{
+			"aliases": [
+				"Wave5ModConveyor0"
+			],
+			"objclass": "ModifyConveyorWaveActionProps",
+			"objdata": {
+				"Add": [
+					{
+						"MaxDelivered": 1,
+						"Type": "RTID(hollyknight@PlantTypes)",
+						"Weight": 40
+					}
+				],
+				"Remove": []
+			}
+		},
+		{
+			"aliases": [
+				"Wave6ModConveyor0"
+			],
+			"objclass": "ModifyConveyorWaveActionProps",
+			"objdata": {
+				"Add": [
+					{
+						"MaxDelivered": 2,
+						"Type": "RTID(hollyknight@PlantTypes)",
+						"Weight": 40
+					}
+				],
+				"Remove": []
+			}
+		},
+		{
+			"aliases": [
+				"Wave8ModConveyor0"
+			],
+			"objclass": "ModifyConveyorWaveActionProps",
+			"objdata": {
+				"Add": [
+					{
+						"MaxDelivered": 1,
+						"Type": "RTID(hollyknight@PlantTypes)",
+						"Weight": 40
+					},
+					{
+						"MaxDelivered": 1,
+						"Type": "RTID(missiletoe@PlantTypes)",
+						"Weight": 40
+					}
+				],
+				"Remove": []
+			}
+		},
+		{
+			"aliases": [
+				"Wave10ModConveyor0"
+			],
+			"objclass": "ModifyConveyorWaveActionProps",
+			"objdata": {
+				"Add": [
+					{
+						"MaxDelivered": 2,
+						"Type": "RTID(hollyknight@PlantTypes)",
+						"Weight": 40
+					}
+				],
+				"Remove": []
+			}
+		},
+		{
+			"aliases": [
+				"Wave12ModConveyor0"
+			],
+			"objclass": "ModifyConveyorWaveActionProps",
+			"objdata": {
+				"Add": [
+					{
+						"MaxDelivered": 2,
+						"Type": "RTID(hollyknight@PlantTypes)",
+						"Weight": 40
+					},
+					{
+						"MaxDelivered": 1,
+						"Type": "RTID(missiletoe@PlantTypes)",
+						"Weight": 40
+					}
+				],
+				"Remove": []
+			}
+		}
+	],
+	"version": 1
+}

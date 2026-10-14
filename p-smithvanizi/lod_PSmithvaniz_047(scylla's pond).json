@@ -1,0 +1,333 @@
+{
+    "#comment": "Scylla's Pond",
+    "objects": [
+        {
+            "objclass": "LevelDefinition",
+            "objdata": {
+                "Description": "[PLAYERS_TRIP_TO_LOD]",
+                "IsLevelOfTheDay": true,
+                "Loot": "RTID(DefaultLoot@LevelModules)",
+                "Modules": [
+                    "RTID(DefaultSunDropper@LevelModules)",
+                    "RTID(LevelOfTheDayIntro@LevelModules)",
+                    "RTID(LevelOfTheDayModule@CurrentLevel)",
+                    "RTID(ZombiesDeadWinCon@LevelModules)",
+                    "RTID(ChallengeModule@CurrentLevel)",
+                    "RTID(NewWaves@CurrentLevel)",
+                    "RTID(SeedBank@CurrentLevel)",
+                    "RTID(BeachMowers@LevelModules)",
+                    "RTID(Potholepuddle@CurrentLevel)",
+                    "RTID(FrozenPlantPlacement@CurrentLevel)",
+                    "RTID(DefaultZombieWinCondition@LevelModules)"
+                ],
+                "FirstIntroNarrative": "INTRO",
+                "Name": "[LOD_LEVEL_NAME]",
+                "WrittenBy": "P_Smithvanizi",
+                "MusicType": "MiniGame_A",
+                "NormalPresentTable": "cowboy_normal_01",
+                "ShinyPresentTable": "cowboy_shiny_01",
+                "StageModule": "RTID(ModernStage@LevelModules)",
+                "VictoryModule": "RTID(LevelOfTheDayOutro@LevelModules)"
+            }
+        },
+        {
+            "aliases": ["INTRO"],
+            "objclass": "NarrativeProperties",
+            "objdata": {
+                "Flow": [
+                    {
+                        "Character": "crazydave",
+                        "Action": "NPC_ENTER"
+                    },
+                    {
+                        "Character": "crazydave",
+                        "Action": "TIRED",
+                        "Lines": {
+                            "en": "A tranquil pond indeed!",
+                            "zh": "多么宁静的池塘啊！"
+                        }
+                    },
+                    {
+                        "Character": "winnie",
+                        "Action": "NPC_ENTER"
+                    },
+                    {
+                        "Character": "winnie",
+                        "Action": "TIRED",
+                        "Lines": {
+                            "en": "That's gravely misleading. I heard Circe has poisoned this pond. Watch out for monsters from the pond.",
+                            "zh": "事情并非如此。听说喀耳刻在池塘里下了毒药，小心池塘里的怪物。"
+                        }
+                    },
+                    {
+                        "Character": "crazydave",
+                        "Action": "TIRED",
+                        "Lines": {
+                            "en": "Are they even scarier than Scylla?",
+                            "zh": "那会比斯库拉还要可怕吗？"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "Potholepuddle"
+            ],
+            "objclass": "InitialGridItemProperties",
+            "objdata": {
+                "InitialGridItemMatrixes": [
+                    {
+                        "GridMatrix": [
+                            "111110000",
+                            "111110000",
+                            "111110000",
+                            "111110000",
+                            "111110000"
+                        ],
+                        "TypeName": "potholepuddle"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "FrozenPlantPlacement"
+            ],
+            "objclass": "InitialPlantProperties",
+            "objdata": {
+                "InitialPlantPlacements": [
+                    {
+                        "GridX": 0,
+                        "GridY": 0,
+                        "TypeName": "lotorpedo"
+                    },
+                    {
+                        "GridX": 0,
+                        "GridY": 1,
+                        "TypeName": "lotorpedo"
+                    },
+                    {
+                        "GridX": 0,
+                        "GridY": 2,
+                        "TypeName": "lotorpedo"
+                    },
+                    {
+                        "GridX": 0,
+                        "GridY": 3,
+                        "TypeName": "lotorpedo"
+                    },
+                    {
+                        "GridX": 0,
+                        "GridY": 4,
+                        "TypeName": "lotorpedo"
+                    },
+                    {
+                        "GridX": 4,
+                        "GridY": 0,
+                        "TypeName": "lilypad"
+                    },
+                    {
+                        "GridX": 4,
+                        "GridY": 1,
+                        "TypeName": "lilypad"
+                    },
+                    {
+                        "GridX": 4,
+                        "GridY": 2,
+                        "TypeName": "lilypad"
+                    },
+                    {
+                        "GridX": 4,
+                        "GridY": 3,
+                        "TypeName": "lilypad"
+                    },
+                    {
+                        "GridX": 4,
+                        "GridY": 4,
+                        "TypeName": "lilypad"
+                    },
+                    {
+                        "GridX": 4,
+                        "GridY": 0,
+                        "TypeName": "chardguard"
+                    },
+                    {
+                        "GridX": 4,
+                        "GridY": 1,
+                        "TypeName": "chardguard"
+                    },
+                    {
+                        "GridX": 4,
+                        "GridY": 2,
+                        "TypeName": "chardguard"
+                    },
+                    {
+                        "GridX": 4,
+                        "GridY": 3,
+                        "TypeName": "chardguard"
+                    },
+                    {
+                        "GridX": 4,
+                        "GridY": 4,
+                        "TypeName": "chardguard"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "ChallengeModule"
+            ],
+            "objclass": "StarChallengeModuleProperties",
+            "objdata": {
+                "Challenges": [
+                    [
+                        "RTID(ZombieDistance@CurrentLevel)"
+                    ]
+                ],
+                "ChallengesAlwaysAvailable": true
+            }
+        },
+        {
+            "aliases": [
+                "ZombieDistance"
+            ],
+            "objclass": "StarChallengeZombieDistanceProps",
+            "objdata": {
+                "TargetDistance": 5
+            }
+        },
+        {
+            "aliases": [
+                "SeedBank"
+            ],
+            "objclass": "SeedBankProperties",
+            "objdata": {
+                "PresetPlantList": [
+                    {
+                        "Level": -1,
+                        "PlantType": "chardguard"
+                    },
+                    {
+                        "Level": -1,
+                        "PlantType": "guacodile"
+                    }
+                ],
+                "SelectionMethod": "preset"
+            }
+        },
+        {
+            "aliases": [
+                "LevelOfTheDayModule"
+            ],
+            "objclass": "LevelOfTheDayModuleProperties",
+            "objdata": {
+                "FlagCount": 1,
+                "PlantfoodToSpawnCount": 3,
+                "PointIncrementPerWave": 0,
+                "StartingPoints": 0,
+                "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)",
+                "WavesPerFlag": 8,
+                "ZombiePool": []
+            }
+        },
+        {
+            "aliases": [
+                "WaveManagerProps"
+            ],
+            "objclass": "WaveManagerProperties",
+            "objdata": {
+                "FlagWaveInterval": 8,
+                "WaveCount": 8,
+                "SuppressFlagZombie": true,
+                "MaxNextWaveHealthPercentage": 0.25,
+                "MinNextWaveHealthPercentage": 0.2,
+                "WaveSpendingPointIncrement": 0,
+                "WaveSpendingPoints": 100,
+                "Waves": [
+                    [
+                        "RTID(GargantuarSpawnEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(GargantuarSpawnEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(GargantuarSpawnEvent0@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(GargantuarSpawnEvent1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(GargantuarSpawnEvent1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(GargantuarSpawnEvent1@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(GargantuarSpawnEvent2@CurrentLevel)"
+                    ],
+                    [
+                        "RTID(GargantuarSpawnEvent2@CurrentLevel)",
+                        "RTID(GargantuarSpawnEvent0@CurrentLevel)"
+                    ]
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "GargantuarSpawnEvent0"
+            ],
+            "objclass": "SpawnZombiesFromGroundSpawnerProps",
+            "objdata": {
+                "ColumnEnd": 2,
+                "ColumnStart": 2,
+                "Zombies": [
+                    {
+                        "Type": "RTID(beach_gargantuar@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "GargantuarSpawnEvent1"
+            ],
+            "objclass": "SpawnZombiesFromGroundSpawnerProps",
+            "objdata": {
+                "ColumnEnd": 2,
+                "ColumnStart": 2,
+                "Zombies": [
+                    {
+                        "Type": "RTID(beach_gargantuar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(beach_gargantuar@ZombieTypes)"
+                    }
+                ]
+            }
+        },
+        {
+            "aliases": [
+                "GargantuarSpawnEvent2"
+            ],
+            "objclass": "SpawnZombiesFromGroundSpawnerProps",
+            "objdata": {
+                "ColumnEnd": 2,
+                "ColumnStart": 2,
+                "Zombies": [
+                    {
+                        "Type": "RTID(beach_gargantuar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(beach_gargantuar@ZombieTypes)"
+                    },
+                    {
+                        "Type": "RTID(beach_gargantuar@ZombieTypes)"
+                    }
+                ]
+            }
+        }
+    ],
+    "version": 1
+}

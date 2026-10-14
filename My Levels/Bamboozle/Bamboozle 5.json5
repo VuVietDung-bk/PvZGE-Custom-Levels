@@ -31,7 +31,7 @@
         "MusicType": "MiniGame_B",
         "NormalPresentTable": "egypt_normal_01",
         "ShinyPresentTable": "egypt_shiny_01",
-        "StageModule": "RTID(ModernStage@LevelModules)"
+        "StageModule": "RTID(HeroesStage@LevelModules)"
       }
     },
     {
@@ -310,7 +310,6 @@
           "sunbean",
           "chardguard",
           "pumpkin",
-          "goldleaf",
           "garlic",
           "primalwallnut",
           "primalsunflower",
@@ -322,14 +321,14 @@
           "empea",
           "powerplant",
           "solartomato",
-          "magnetshroom",
           "stunion",
           "stallia",
           "turnip",
           "intensivecarrot",
-          "shrinkingviolet"
+          "pineapple"
         ],
-        "SelectionMethod": "chooser"
+        "SelectionMethod": "chooser",
+        "UnlockAll": true
       }
     },
     {
@@ -369,6 +368,43 @@
       ],
       "objclass": "WaveManagerModuleProperties",
       "objdata": {
+        "DynamicZombies": [
+          {},
+          {},
+          {},
+          {
+            "PointIncrementPerWave": 40, // Difficulty D, easiest
+            "StartingPoints": 100,
+            "StartingWave": 8,
+            "ZombiePool": [
+              "RTID(tutorial@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 60, // Difficulty C, normal
+            "StartingPoints": 100,
+            "StartingWave": 7,
+            "ZombiePool": [
+              "RTID(tutorial@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 80, // Difficulty B, advanced
+            "StartingPoints": 100,
+            "StartingWave": 6,
+            "ZombiePool": [
+              "RTID(tutorial@ZombieTypes)"
+            ]
+          },
+          {
+            "PointIncrementPerWave": 100, // Difficulty AAAAAAAAA
+            "StartingPoints": 100,
+            "StartingWave": 5,
+            "ZombiePool": [
+              "RTID(tutorial@ZombieTypes)"
+            ]
+          }
+        ],
         "WaveManagerProps": "RTID(WaveManagerProps@CurrentLevel)"
       }
     },
@@ -864,7 +900,7 @@
     },
     {
       "aliases": [
-        "Swashbuckler"
+        "SwashbucklerZom"
       ],
       "objclass": "SpawnZombiesJitteredWaveActionProps",
       "objdata": {
@@ -889,6 +925,31 @@
             "Type": "RTID(swashbuckler@ZombieTypes)",
             "Row": "5"
           }
+        ]
+      }
+    },
+    {
+      "aliases": [
+        "Swashbuckler"
+      ],
+      "objclass": "WaveSchedulerProps",
+      "objdata": {
+        "TimeBeforeFirst": {
+          "Max": 0.1,
+          "Min": 0.1
+        },
+        "TimeBetween": {
+          "Max": 1,
+          "Min": 1
+        },
+        "Repeat": {
+          "Max": 1,
+          "Min": 1
+        },
+        "RewardWhenEnded": false,
+        "SuppressRewardState": false,
+        "Events": [
+          "RTID(SwashbucklerZom@CurrentLevel)"
         ]
       }
     },
